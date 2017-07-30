@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% include heading.html %}
+
+<div class="mw8 center">
+	<div class="cf">
+		<div class="fl w-40 pr5 pt3">
+			<a target="_blank" href="{{ page.external }}/">
+				<img class="" src="{{ page.img-src }}" alt="{{ page.img-desc }}">
+			</a>
+		</div>
+		<div class="fl w-60">
+			<div class="bg-black-10 br2  ph4 pv2 mb4">
+				<h3>Description:</h3>
+				<p>{{page.long-description}}</p>
+			</div>
+			{% if page.services.size > 0 %}
+			<div class="bg-black-10 br2 ph4 pv2 mb4">
+				<h3>Services:</h3>
+				<ul>
+					{% for service in page.services %}
+						<li>{{ service }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+{{ content }}

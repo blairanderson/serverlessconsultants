@@ -1,0 +1,27 @@
+---
+layout: page
+title: ServerLess Consultants Directory
+description: Serverless Consultants Directory
+meta-title: Serverless Consultants Directory
+meta-description: Serverless Consultants Directory
+---
+
+<h1 class="ma0 pa0 tc">
+  {{page.title}}
+</h1>
+
+<section class="mw7 center cf">
+  {% for cons in site.consultants %}
+    <div class="fl w-50 w-third-m  w-25-ns pa2-ns hover-bg-near-white">
+      <h3 class="f5 f4-ns ma0 pa3 tc ba b--black-40 bg-transparent br2">
+        <a href="{{cons.url}}" class="ph2 ph0-ns pb3 link near-black hover-black-70">{{cons.title}}</a>
+     </h3>
+   </div>
+  {% endfor %}
+</section>
+
+<hr>
+
+<a class="db tc f3" href="https://github.com/blairanderson/serverlessconsultants/blob/master/_consultants/" target="_blank">
+  Add yourself to this list
+</a>

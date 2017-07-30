@@ -1,0 +1,55 @@
+---
+layout: default
+title: Serverless Directory - Plugins, Frameworks, Consultants
+description: Best Directory of Serverless Plugins, Serverless Frameworks, and Serverless Consultants
+---
+
+<header class="sans-serif">
+  <div class="cover bg-left bg-center-l" style="background-image: url(/img/bg.png)">
+    <div class="pv4 pv5-m pv6-l">
+      <div class="tc-l ph3">
+        <div class="f2 f1-l fw2 white-90 mb0 lh-title">Serverless Directory</div>
+        <h1 class="fw1 f3 white-80 mt3 mb4">Serverless Plugins and Frameworks</h1>
+        <a class="f6 no-underline grow dib v-mid white ba b--white ph3 pv2 mb3" href="/plugins/">Browse ServerLess Plugins</a>
+        <a class="f6 no-underline grow dib v-mid white ba b--white ph3 pv2 mb3" href="/framework-categories/all/">Browse All Frameworks</a>
+        <!-- <a class="f6 no-underline grow dib v-mid white ba b--white ph3 pv2 mb3" href="/consultants/">Browse All Consultants</a> -->
+      </div>
+    </div>
+  </div>
+</header>
+
+{% assign plugins = site.pages | where: "layout", 'plugin' | sort: "stars" | reverse %}
+<section class="cf pt4 pb2 mw8 center">
+  <h3 class="tc near-black">Popular Serverless Plugins</h3>
+  {% for plugin in plugins limit: 3 %}
+    {% include plugin-card.html plugin=plugin %}
+  {% endfor %}
+  <div class="tc cf">
+    <a class="f6 no-underline grow dib v-mid near-black" href="/plugins/">Browse All Plugins</a>
+  </div>
+</section>
+
+<hr class="mw4 center mt4 mb5">
+<h3 class="tc near-black">Popular Serverless Plugin <abbr title="GitHub Repo Topics">Topics</abbr></h3>
+{% assign site_topics = site.pages | where: "layout", 'topic' | sort: "count" | reverse %}
+<section class="cf pt4 pb2 mw8 center">
+  <ul class="list f6 pl0 mt3 mb0 cf">
+  {% for topic in site_topics %}
+    {% if topic.count > 2 %}
+      <li class="dib fl w-50 w-33-ns pv2 tc">
+        {% include topic-tag.html href=topic.url topic=topic.topic %}
+        <a href="{{topic.url}}" class="db link black-60">{{topic.count}} plugins</a>
+      </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+
+<hr class="mw4 center mt4 mb5">
+{% assign frameworks = site.frameworks | reverse %}
+<section class="cf pt4 pb2 mw8 center dn">
+  <h3 class="near-black tc">Some Popular Serverless Frameworks</h3>
+  {% for framework in frameworks limit:3 %}
+    {% include framework-card.html framework=framework %}
+  {% endfor %}
+</section>

@@ -1,0 +1,15 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+{% if jekyll.environment == "production" %}{% include analytics.html %}{% endif %}
+<body>
+{% include nav.html %}
+{{ content }}
+{% include footer.html %}
+{% include javascript.html %}
+</body>
+</html>

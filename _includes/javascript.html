@@ -1,0 +1,22 @@
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+
+{% if page.layout == 'plugin' %}
+<script>
+function success(data, status, xhr) {
+  $('#readme-content').html(data);
+}
+
+function error(data, status, xhr) {
+  $('#readme-content').remove();
+}
+
+$.ajax({
+  dataType: 'text',
+  url: 'https://api.github.com/repos/{{page.repo}}/readme',
+  headers: { Accept: 'application/vnd.github.v3.html' },
+  success: success,
+  error: error
+});
+</script>
+{% endif %}

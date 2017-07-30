@@ -1,0 +1,25 @@
+{
+  "name": "Serverless Directory",
+  "title": "Serverless Directory",
+  "version": "1.0.0",
+  "homepage": "https://serverlessconsultants.com",
+  "author": "ServerlessConsultants",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/blairanderson/serverlessconsultants/blob/gh-pages/LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blairanderson/serverlessconsultants.git"
+  },
+  "dependencies": {
+    "async": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "request": "^2.81.0",
+    "tachyons-sass": "^4.7.1"
+  },
+  "scripts": {
+    "postinstall": "gulp"
+  }
+}
