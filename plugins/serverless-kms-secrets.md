@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-kms-secrets
+title: Kms Secrets
 repo: SC5/serverless-kms-secrets
 homepage: 'https://github.com/SC5/serverless-kms-secrets'
 topics: 
-language: JavaScript
 license: 
 description: Allows to easily encrypt and decrypt secrets using KMS from the serverless CLI
 watchers: 16

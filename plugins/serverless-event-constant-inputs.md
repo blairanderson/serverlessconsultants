@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-event-constant-inputs
+title: Event Constant Inputs
 repo: dittto/serverless-event-constant-inputs
 homepage: 'https://github.com/dittto/serverless-event-constant-inputs'
 topics: 
-language: JavaScript
 license: 
 description: Allows you to add constant inputs to events in Serverless 1.0. For more info see [constant values in Cloudwatch](https://aws.amazon.com/blogs/compute/simply-serverless-use-constant-values-in-cloudwatch-event-triggered-lambda-functions/)
 watchers: 3

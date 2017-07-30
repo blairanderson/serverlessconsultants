@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-alexa-plugin
+title: Alexa Plugin
 repo: rajington/serverless-alexa-plugin
 homepage: 'https://github.com/rajington/serverless-alexa-plugin'
 topics: 
-language: JavaScript
 license: 
 description: Serverless plugin to support Alexa Lambda events
 watchers: 13

@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-simulate
+title: Plugin Simulate
 repo: gertjvr/serverless-plugin-simulate
 homepage: 'https://github.com/gertjvr/serverless-plugin-simulate'
 topics: 
-language: JavaScript
 license: 
 description: Simulate AWS Lambda and API Gateway locally using Docker
 watchers: 23

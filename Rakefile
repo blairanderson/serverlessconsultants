@@ -1,21 +1,17 @@
 require './github/extension'
-require 'active_support/core_ext/hash/indifferent_access'
+require 'active_support/core_ext/hash'
+require 'active_support/core_ext/string'
 require 'pry'
 require 'fast_blank'
 require 'dotenv'
 
-def before_sync
-  Dotenv.load
+desc "fetch github repos and stuff"
+task :github do
   puts 'syncing plugins'
   system "gulp sync:plugins"
   puts 'plugins synced'
-end
-
-desc "fetch github repos and stuff"
-task :github do
-  before_sync
   app = OpenStruct.new
-  extension = Github::Extension.new(app)
+  extension = Github::Extension.new(app, Dotenv.load)
   extension.sync
   # create projects
   extension.app.github.projects.each do |p|
@@ -25,17 +21,16 @@ task :github do
       post.puts "---"
       post.puts "# NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO"
       post.puts "layout: plugin"
-      post.puts "title: #{p.repo.split("/").last}"
+      post.puts "title: #{p.repo.split("/").last.gsub('serverless-', '').titleize}"
       post.puts "repo: #{p.repo}"
       post.puts "homepage: '#{p.homepage}'"
       post.puts "topics: #{p.topics.join(",")}"
-      %i[language license description watchers stars stars_trend stars_diff forks forks_trend forks_diff issues issues_trend issues_diff].each do |attr|
+      %i[license description watchers stars stars_trend stars_diff forks forks_trend forks_diff issues issues_trend issues_diff].each do |attr|
         post.puts "#{attr}: #{p.send(attr)}"
       end
       post.puts "---"
     end
   end
-
   # create topics
   topics = extension.app.github.projects
     .map(&:topics)
@@ -50,7 +45,6 @@ task :github do
         post.puts "layout: topic"
         post.puts "topic: #{name}"
         post.puts "title: #{name} ServerLess Plugins"
-
         post.puts "description: '#{count} #{name} ServerLess Plugins'"
         post.puts "count: #{count}"
         post.puts "---"

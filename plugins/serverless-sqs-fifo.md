@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-sqs-fifo
+title: Sqs Fifo
 repo: vortarian/serverless-sqs-fifo
 homepage: 'https://github.com/vortarian/serverless-sqs-fifo'
 topics: 
-language: JavaScript
 license: 
 description: A serverless plugin to handle creation of sqs fifo queue's in aws (stop-gap)
 watchers: 2

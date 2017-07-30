@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-diff
+title: Plugin Diff
 repo: nicka/serverless-plugin-diff
 homepage: 'https://github.com/nicka/serverless-plugin-diff'
 topics: 
-language: JavaScript
 license: 
 description: Compares your local AWS CloudFormation templates against deployed ones.
 watchers: 9

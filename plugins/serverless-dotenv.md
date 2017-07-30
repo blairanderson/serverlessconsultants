@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-dotenv
+title: Dotenv
 repo: Jimdo/serverless-dotenv
 homepage: 'https://github.com/Jimdo/serverless-dotenv'
-topics: aws,serverless-framework,serverless-plugin
-language: JavaScript
+topics: aws,serverless,serverless-framework,serverless-plugin
 license: 
 description: Fetch environment variables and write it to a .env file
 watchers: 3

@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-stack-outputs
+title: Plugin Stack Outputs
 repo: svdgraaf/serverless-plugin-stack-outputs
 homepage: 'https://github.com/svdgraaf/serverless-plugin-stack-outputs'
 topics: 
-language: JavaScript
 license: 
 description: Displays stack outputs for your serverless stacks when `sls info` is ran
 watchers: 7

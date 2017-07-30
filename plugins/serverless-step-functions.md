@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-step-functions
+title: Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
-topics: serverless-plugin,serverless-framework,serverless-architectures,aws,step-functions
-language: JavaScript
+topics: aws,serverless,serverless-architectures,serverless-framework,serverless-plugin,step-functions
 license: 
 description: AWS Step Functions with Serverless Framework.
 watchers: 136

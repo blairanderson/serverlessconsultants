@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-typescript
+title: Plugin Typescript
 repo: graphcool/serverless-plugin-typescript
 homepage: 'https://github.com/graphcool/serverless-plugin-typescript'
-topics: typescript,aws-lambda,babel,webpack,rollup,serverless-framework,serverless-plugin
-language: TypeScript
+topics: aws-lambda,babel,rollup,serverless,serverless-framework,serverless-plugin,typescript,webpack
 license: 
 description: Serverless plugin for zero-config Typescript support.
 watchers: 48

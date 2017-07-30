@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-aws-alerts
+title: Plugin Aws Alerts
 repo: ACloudGuru/serverless-plugin-aws-alerts
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-aws-alerts'
-topics: serverless-framework,aws,aws-cloudwatch
-language: JavaScript
+topics: aws,aws-cloudwatch,serverless,serverless-framework
 license: 
 description: A Serverless plugin to easily add CloudWatch alarms to functions
 watchers: 36

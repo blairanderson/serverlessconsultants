@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-vpc-discovery
+title: Vpc Discovery
 repo: amplify-education/serverless-vpc-discovery
 homepage: 'https://github.com/amplify-education/serverless-vpc-discovery'
 topics: 
-language: JavaScript
 license: 
 description: Serverless plugin for discovering VPC / Subnet / Security Group configuration by name.
 watchers: 6

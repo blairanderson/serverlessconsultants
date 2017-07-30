@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-build-plugin
+title: Build Plugin
 repo: nfour/serverless-build-plugin
 homepage: 'https://github.com/nfour/serverless-build-plugin'
-topics: build,plugin
-language: TypeScript
+topics: build,plugin,serverless
 license: 
 description: A Node.js focused build plugin for serverless.
 watchers: 27

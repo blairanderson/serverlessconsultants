@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-mocha-plugin
+title: Mocha Plugin
 repo: SC5/serverless-mocha-plugin
 homepage: 'https://github.com/SC5/serverless-mocha-plugin'
-topics: serverless-plugin,mocha,serverless-framework,test-driven-development
-language: JavaScript
+topics: mocha,serverless-framework,serverless-plugin,test-driven-development
 license: 
 description: A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Mocha
 watchers: 62

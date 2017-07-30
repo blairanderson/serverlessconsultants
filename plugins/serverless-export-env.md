@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-export-env
+title: Export Env
 repo: arabold/serverless-export-env
 homepage: 'https://github.com/arabold/serverless-export-env'
 topics: 
-language: JavaScript
 license: 
 description: Export environment variables into a .env file with automatic AWS CloudFormation reference resolution.
 watchers: 3

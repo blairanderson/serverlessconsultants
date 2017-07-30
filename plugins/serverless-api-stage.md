@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-api-stage
+title: Api Stage
 repo: leftclickben/serverless-api-stage
 homepage: 'https://github.com/leftclickben/serverless-api-stage'
 topics: 
-language: JavaScript
 license: 
 description: Serverless API Stage plugin, enables stage variables and logging for AWS API Gateway.
 watchers: 3

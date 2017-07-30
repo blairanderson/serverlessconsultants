@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-env-generator
+title: Env Generator
 repo: DieProduktMacher/serverless-env-generator
 homepage: 'https://github.com/DieProduktMacher/serverless-env-generator'
-topics: serverless-plugin,environment-variables,credentials,encryption,aws,aws-kms
-language: JavaScript
+topics: aws,aws-kms,credentials,encryption,environment-variables,serverless-plugin
 license: 
 description: Manage environment variables with YAML and load them with dotenv. Supports variable encryption with KMS, multiple stages and custom profiles.
 watchers: 7

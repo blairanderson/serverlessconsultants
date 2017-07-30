@@ -1,21 +1,20 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-dynamodb-autoscaling
+title: Dynamodb Autoscaling
 repo: sbstjn/serverless-dynamodb-autoscaling
 homepage: 'https://github.com/sbstjn/serverless-dynamodb-autoscaling'
-topics: sls,dynamodb,aws,scaling,capacity,amazon,cloudformation
-language: JavaScript
+topics: amazon,aws,capacity,cloudformation,dynamodb,scaling,serverless,sls
 license: 
 description: Configure Amazon DynamoDB's native Auto Scaling for your table capacities.
-watchers: 15
-stars: 15
+watchers: 16
+stars: 16
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-issues: 1
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

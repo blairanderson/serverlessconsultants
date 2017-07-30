@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-elastic-beanstalk.git
+title: Plugin Elastic Beanstalk.Git
 repo: rawphp/serverless-plugin-elastic-beanstalk.git
 homepage: 'https://github.com/rawphp/serverless-plugin-elastic-beanstalk.git'
 topics: 
-language: 
 license: 
 description: A serverless plugin to deploy applications to AWS ElasticBeanstalk.
 watchers: 

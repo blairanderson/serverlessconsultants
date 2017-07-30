@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-shell
+title: Shell
 repo: UnitedIncome/serverless-shell
 homepage: 'https://github.com/UnitedIncome/serverless-shell'
 topics: 
-language: JavaScript
 license: 
 description: Drop to a runtime shell with all the environment variables set that you'd have in lambda.
 watchers: 3

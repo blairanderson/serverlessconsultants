@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-dynalite
+title: Dynalite
 repo: sdd/serverless-dynalite
 homepage: 'https://github.com/sdd/serverless-dynalite'
-topics: serverless-plugin,dynamodb,dynalite,serverless-offline
-language: JavaScript
+topics: dynalite,dynamodb,serverless,serverless-offline,serverless-plugin
 license: 
 description: Run dynalite locally (no JVM, all JS) to simulate DynamoDB. Watch serverless.yml for table config updates.
 watchers: 2

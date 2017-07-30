@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-iopipe
+title: Plugin Iopipe
 repo: iopipe/serverless-plugin-iopipe
 homepage: 'https://github.com/iopipe/serverless-plugin-iopipe'
-topics: lambda,sls,agent,analytics,metrics,tracing,jscodeshift,codemod,plugin,nodejs
-language: JavaScript
+topics: agent,analytics,codemod,jscodeshift,lambda,metrics,nodejs,plugin,serverless,sls,tracing
 license: 
 description: See inside your Lambda functions with high fidelity metrics and monitoring.
 watchers: 2

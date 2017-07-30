@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-browserifier
+title: Plugin Browserifier
 repo: digitalmaas/serverless-plugin-browserifier
 homepage: 'https://github.com/digitalmaas/serverless-plugin-browserifier'
-topics: browserify,node-lambda,serverless-plugin-browserify,digitalmaas,serverless-plugin,plugin,aws,aws-lambda,node-js
-language: JavaScript
+topics: aws,aws-lambda,browserify,digitalmaas,node-js,node-lambda,plugin,serverless,serverless-plugin,serverless-plugin-browserify
 license: 
 description: Reduce the size and speed up your Node.js based lambda's using browserify.
 watchers: 2

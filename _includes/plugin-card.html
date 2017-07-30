@@ -1,10 +1,10 @@
 {% assign plugin = include.plugin %}
 {% capture href %}{{plugin.url}}{% endcapture %}
 <div class="fl w-100 w-50-m w-33-l pa2">
-  <div class="ba br3 b--black-10 bg-white aspect-ratio aspect-ratio--3x4">
+  <div class="ba br3 b--black-10 bg-white aspect-ratio aspect-ratio--1x1">
     <div class="aspect-ratio--object  overflow-hidden">
-      <h3 class="tc fw1 f2 mv1 pv3 lh-title truncate">
-        <a title="{{plugin.repo}}" class="link near-black dim" href="{{  href }}">{{  plugin.title | replace: "serverless-", '' }}</a>
+      <h3 class="tc fw1 f3 mv0 pv3 lh-title truncate">
+        <a title="{{plugin.repo}}" class="link near-black dim" href="{{ href }}">{{  plugin.title | replace: "serverless-", '' }}</a>
       </h3>
       <div class="cf bt bb tc pv2">
         <div class="fl w-33" title="GitHub Stars">
@@ -30,14 +30,14 @@
           </div>
         </div>
       </div>
-      <a class="db link dim fw1 ma0 pa0 f6 tc" rel="nofollow" href="{{  href }}"><small>-github-</small></a>
+      <a class="db link dim fw1 ma0 pa0 f6 tc" rel="nofollow noopener noreferrer" href="https://github.com/{{ plugin.repo }}"><small>-github-</small></a>
       <a class="link dim h3 overflow-hidden db pa2 tc near-black" href="{{  href }}">{{  plugin.description  | strip_html }}</a>
-      <dl class="ph3">
-        <dt class="dib b">Language:</dt>
-        <dd class="dib ml0 gray">{{  plugin.language }}</dd>
+      <!-- <dl class="ph3"> -->
+        <!-- <dt class="dib b">Language:</dt>
+        <dd class="dib ml0 gray">{{  plugin.language }}</dd> -->
         <!-- <dt>Templates:</dt><dd>{{  plugin.templates }}</dd> -->
         <!-- <dt>License:</dt><dd>{{  plugin.license }}</dd> -->
-      </dl>
+      <!-- </dl> -->
       {% assign topics = plugin.topics | split: ',' %}
       <div class="tc">
         {% for topic in topics limit: 5 %}

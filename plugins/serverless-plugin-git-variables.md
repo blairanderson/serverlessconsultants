@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-git-variables
+title: Plugin Git Variables
 repo: jacob-meacham/serverless-plugin-git-variables
 homepage: 'https://github.com/jacob-meacham/serverless-plugin-git-variables'
-topics: 
-language: Shell
+topics: serverless
 license: 
 description: A Serverless plugin to expose git variables (branch name, HEAD description, full commit hash) to your serverless services
 watchers: 8

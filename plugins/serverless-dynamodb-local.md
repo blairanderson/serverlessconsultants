@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-dynamodb-local
+title: Dynamodb Local
 repo: 99xt/serverless-dynamodb-local
 homepage: 'https://github.com/99xt/serverless-dynamodb-local'
-topics: dynamodb,dynamodb-local,serverless-offline,aws
-language: JavaScript
+topics: aws,dynamodb,dynamodb-local,serverless,serverless-offline
 license: 
 description: Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless
 watchers: 91

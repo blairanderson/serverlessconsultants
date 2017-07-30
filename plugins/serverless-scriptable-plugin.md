@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-scriptable-plugin
+title: Scriptable Plugin
 repo: weixu365/serverless-scriptable-plugin
 homepage: 'https://github.com/weixu365/serverless-scriptable-plugin'
-topics: 
-language: JavaScript
+topics: serverless
 license: 
 description: Customize Serverless behavior without writing a plugin.
 watchers: 16

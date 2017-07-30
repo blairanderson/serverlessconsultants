@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-encode-env-var-objects
+title: Plugin Encode Env Var Objects
 repo: yonomi/serverless-plugin-encode-env-var-objects
 homepage: 'https://github.com/yonomi/serverless-plugin-encode-env-var-objects'
 topics: 
-language: JavaScript
 license: 
 description: Serverless plugin to encode any environment variable objects.
 watchers: 0

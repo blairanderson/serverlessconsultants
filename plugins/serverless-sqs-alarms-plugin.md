@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-sqs-alarms-plugin
+title: Sqs Alarms Plugin
 repo: sbstjn/serverless-sqs-alarms-plugin
 homepage: 'https://github.com/sbstjn/serverless-sqs-alarms-plugin'
-topics: sqs,aws,lambda,sns,plugin
-language: JavaScript
+topics: aws,lambda,plugin,serverless,sns,sqs
 license: 
 description: Wrapper to setup CloudWatch Alarms on SQS queue length
 watchers: 9

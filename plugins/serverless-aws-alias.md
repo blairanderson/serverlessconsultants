@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-aws-alias
+title: Aws Alias
 repo: HyperBrain/serverless-aws-alias
 homepage: 'https://github.com/HyperBrain/serverless-aws-alias'
-topics: serverless-framework,aws,aws-lambda,lambda-functions,api-gateway,alias-stacks,stage
-language: JavaScript
+topics: alias-stacks,api-gateway,aws,aws-lambda,lambda-functions,serverless,serverless-framework,stage
 license: 
 description: This plugin enables use of AWS aliases on Lambda functions.
 watchers: 26

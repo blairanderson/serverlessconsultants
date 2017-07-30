@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-multiple-responses
+title: Plugin Multiple Responses
 repo: silvermine/serverless-plugin-multiple-responses
 homepage: 'https://github.com/silvermine/serverless-plugin-multiple-responses'
 topics: 
-language: JavaScript
 license: 
 description: Enable multiple content-types for Response template 
 watchers: 13

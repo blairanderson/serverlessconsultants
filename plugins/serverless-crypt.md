@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-crypt
+title: Crypt
 repo: marcy-terui/serverless-crypt
 homepage: 'https://github.com/marcy-terui/serverless-crypt'
 topics: 
-language: JavaScript
 license: 
 description: Securing the secrets on Serverless Framework by AWS KMS encryption.
 watchers: 33

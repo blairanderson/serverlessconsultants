@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-stack-config.git
+title: Plugin Stack Config.Git
 repo: rawphp/serverless-plugin-stack-config.git
 homepage: 'https://github.com/rawphp/serverless-plugin-stack-config.git'
 topics: 
-language: 
 license: 
 description: A serverless plugin to manage configurations for a stack across micro-services.
 watchers: 

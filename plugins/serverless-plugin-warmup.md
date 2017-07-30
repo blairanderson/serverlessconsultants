@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-warmup
+title: Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
-topics: serverless-plugin,lambda,aws-lambda,aws
-language: JavaScript
+topics: aws,aws-lambda,lambda,serverless,serverless-plugin
 license: 
 description: Keep your lambdas warm during Winter.
 watchers: 41

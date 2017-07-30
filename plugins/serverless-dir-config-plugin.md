@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-dir-config-plugin
+title: Dir Config Plugin
 repo: economysizegeek/serverless-dir-config-plugin
 homepage: 'https://github.com/economysizegeek/serverless-dir-config-plugin'
-topics: serverless-plugin,serverless-deployments
-language: JavaScript
+topics: serverless,serverless-deployments,serverless-plugin
 license: 
 description: EXPERIMENTAL - Serverless plugin to load function and resource definitions from a directory.
 watchers: 2

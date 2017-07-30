@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-enable-api-logs
+title: Enable Api Logs
 repo: paulSambolin/serverless-enable-api-logs
 homepage: 'https://github.com/paulSambolin/serverless-enable-api-logs'
 topics: 
-language: JavaScript
 license: 
 description: Enables Coudwatch logging for API Gateway events
 watchers: 4

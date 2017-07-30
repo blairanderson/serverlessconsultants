@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-resources-env
+title: Resources Env
 repo: rurri/serverless-resources-env
 homepage: 'https://github.com/rurri/serverless-resources-env'
 topics: 
-language: JavaScript
 license: 
 description: After Deploy, this plugin fetches cloudformation resource identifiers and sets them on AWS lambdas, and creates local .<state>-env file
 watchers: 11

@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-local-dev-server
+title: Local Dev Server
 repo: DieProduktMacher/serverless-local-dev-server
 homepage: 'https://github.com/DieProduktMacher/serverless-local-dev-server'
-topics: serverless-plugin,alexa,http,local,development,http-endpoint,aws-lambda,alexa-skill,facebook-messenger-bot
-language: JavaScript
+topics: alexa,alexa-skill,aws-lambda,development,facebook-messenger-bot,http,http-endpoint,local,serverless-plugin
 license: 
 description: Speeds up development of Alexa Skills, Chatbots and APIs by exposing your functions as local HTTP endpoints and mapping received events.
 watchers: 1

@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-external-sns-events
+title: Plugin External Sns Events
 repo: silvermine/serverless-plugin-external-sns-events
 homepage: 'https://github.com/silvermine/serverless-plugin-external-sns-events'
 topics: 
-language: JavaScript
 license: 
 description: Add ability for functions to use existing or external SNS topics as an event source
 watchers: 13

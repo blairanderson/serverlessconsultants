@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-log-forwarding
+title: Log Forwarding
 repo: amplify-education/serverless-log-forwarding
 homepage: 'https://github.com/amplify-education/serverless-log-forwarding'
 topics: 
-language: JavaScript
 license: 
 description: Serverless plugin for forwarding CloudWatch logs to another Lambda function.
 watchers: 3

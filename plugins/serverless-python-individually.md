@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-python-individually
+title: Python Individually
 repo: cfchou/serverless-python-individually
 homepage: 'https://github.com/cfchou/serverless-python-individually'
-topics: aws-lambda,serverless-plugin
-language: JavaScript
+topics: aws-lambda,serverless,serverless-plugin
 license: 
 description: A serverless framework plugin to install multiple lambda functions written in python
 watchers: 6

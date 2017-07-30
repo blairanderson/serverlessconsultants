@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-offline-scheduler
+title: Offline Scheduler
 repo: ajmath/serverless-offline-scheduler
 homepage: 'https://github.com/ajmath/serverless-offline-scheduler'
 topics: 
-language: JavaScript
 license: 
 description: Runs scheduled functions offline while integrating with serverless-offline
 watchers: 12

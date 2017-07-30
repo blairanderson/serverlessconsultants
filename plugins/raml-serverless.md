@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: raml-serverless
+title: Raml Serverless
 repo: andrewcurioso/raml-serverless
 homepage: 'https://github.com/andrewcurioso/raml-serverless'
 topics: 
-language: JavaScript
 license: 
 description: Serverless plugin to work with RAML API spec documents
 watchers: 13

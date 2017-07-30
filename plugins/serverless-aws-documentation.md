@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-aws-documentation
+title: Aws Documentation
 repo: 9cookies/serverless-aws-documentation
 homepage: 'https://github.com/9cookies/serverless-aws-documentation'
-topics: api-gateway,json-schema,documentation,documentation-generator,aws,aws-apigateway
-language: JavaScript
+topics: api-gateway,aws,aws-apigateway,documentation,documentation-generator,json-schema,serverless
 license: 
 description: Serverless plugin to add documentation and models to the serverless generated API Gateway
 watchers: 45

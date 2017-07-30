@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-lambda-dead-letter
+title: Plugin Lambda Dead Letter
 repo: gmetzker/serverless-plugin-lambda-dead-letter
 homepage: 'https://github.com/gmetzker/serverless-plugin-lambda-dead-letter'
-topics: aws,lambda,serverless-plugin,deadletter-queue,sqs-queue,cloud
-language: JavaScript
+topics: aws,cloud,deadletter-queue,lambda,serverless,serverless-plugin,sqs-queue
 license: 
 description: A Serverless plugin that can configure a lambda with a dead letter queue or topic
 watchers: 10

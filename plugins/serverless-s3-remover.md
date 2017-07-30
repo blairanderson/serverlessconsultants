@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-s3-remover
+title: S3 Remover
 repo: sinofseven/serverless-s3-remover
 homepage: 'https://github.com/sinofseven/serverless-s3-remover'
 topics: 
-language: JavaScript
 license: 
 description: A serverless plugin to make s3 buckets empty before deleting cloudformation stack when ```sls remove```
 watchers: 3

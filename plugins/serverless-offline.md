@@ -1,15 +1,14 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-offline
+title: Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
-topics: aws-lambda,aws-apigateway
-language: JavaScript
+topics: aws-apigateway,aws-lambda,serverless
 license: 
 description: Emulate AWS λ and API Gateway locally when developing your Serverless project
-watchers: 580
-stars: 580
+watchers: 582
+stars: 582
 stars_trend: 
 stars_diff: 0
 forks: 130

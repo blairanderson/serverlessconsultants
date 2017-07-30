@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-hooks-plugin
+title: Hooks Plugin
 repo: uswitch/serverless-hooks-plugin
 homepage: 'https://github.com/uswitch/serverless-hooks-plugin'
 topics: 
-language: JavaScript
 license: 
 description: Run arbitrary commands on any lifecycle event in serverless
 watchers: 6

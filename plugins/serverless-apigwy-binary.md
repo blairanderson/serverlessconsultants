@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-apigwy-binary
+title: Apigwy Binary
 repo: ryanmurakami/serverless-apigwy-binary
 homepage: 'https://github.com/ryanmurakami/serverless-apigwy-binary'
 topics: 
-language: JavaScript
 license: 
 description: Serverless plugin for configuring API Gateway to return binary responses
 watchers: 9

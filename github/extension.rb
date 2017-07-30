@@ -24,6 +24,6 @@ module Github
 
       app.github.manipulate_resource_list(plugins)
     end
-    
+
   end
 end

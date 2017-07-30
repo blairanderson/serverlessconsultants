@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-subscription-filter
+title: Plugin Subscription Filter
 repo: tsub/serverless-plugin-subscription-filter
 homepage: 'https://github.com/tsub/serverless-plugin-subscription-filter'
-topics: serverless-plugin,aws-lambda,aws,nodejs
-language: JavaScript
+topics: aws,aws-lambda,nodejs,serverless,serverless-plugin
 license: 
 description: A serverless plugin to register AWS CloudWatchLogs subscription filter
 watchers: 11

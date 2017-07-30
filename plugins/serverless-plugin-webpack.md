@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-webpack
+title: Plugin Webpack
 repo: goldwasserexchange/serverless-plugin-webpack
 homepage: 'https://github.com/goldwasserexchange/serverless-plugin-webpack'
-topics: webpack,webpack2,tree-shaking,optimization,plugin,aws,aws-lambda
-language: JavaScript
+topics: aws,aws-lambda,optimization,plugin,serverless,tree-shaking,webpack,webpack2
 license: 
 description: A serverless plugin to automatically bundle your functions individually with webpack
 watchers: 25

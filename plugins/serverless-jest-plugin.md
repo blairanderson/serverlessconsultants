@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-jest-plugin
+title: Jest Plugin
 repo: SC5/serverless-jest-plugin
 homepage: 'https://github.com/SC5/serverless-jest-plugin'
-topics: serverless-plugin,mocha,serverless-framework,test-driven-development
-language: JavaScript
+topics: mocha,serverless-framework,serverless-plugin,test-driven-development
 license: 
 description: A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Jest
 watchers: 25

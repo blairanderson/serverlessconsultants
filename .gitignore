@@ -4,5 +4,6 @@
 /.sass-cache
 .DS_Store
 .env
+_data/plugins.json
 .jekyll-metadata
 /docs

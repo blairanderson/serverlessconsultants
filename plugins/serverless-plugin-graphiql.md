@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-graphiql
+title: Plugin Graphiql
 repo: bencooling/serverless-plugin-graphiql
 homepage: 'https://github.com/bencooling/serverless-plugin-graphiql'
-topics: graphiql,graphql
-language: JavaScript
+topics: graphiql,graphql,serverless
 license: 
 description: A Serverless plugin to run a local http server for graphiql and your graphql handler
 watchers: 27

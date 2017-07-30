@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-run-function-plugin
+title: Run Function Plugin
 repo: lithin/serverless-run-function-plugin
 homepage: 'https://github.com/lithin/serverless-run-function-plugin'
 topics: 
-language: JavaScript
 license: 
 description: Run serverless function locally
 watchers: 13

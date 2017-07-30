@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-package-python-functions
+title: Package Python Functions
 repo: ubaniabalogun/serverless-package-python-functions
 homepage: 'https://github.com/ubaniabalogun/serverless-package-python-functions'
-topics: serverless-framework,serverless-plugin,requirements,python
-language: JavaScript
+topics: python,requirements,serverless,serverless-framework,serverless-plugin
 license: 
 description: Packaging Python Lambda functions with only the dependencies/requirements they need.
 watchers: 8

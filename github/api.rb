@@ -9,7 +9,7 @@ module Github
     }
     GIST_ID = ENV['GIST_ID']
     GITHUB_TOKEN = ENV['GITHUB_TOKEN']
-
+    LOCAL_ARCHIVE = "./_data/plugins.json"
     class << self
       attr_accessor :bulk_update
 
@@ -28,7 +28,7 @@ module Github
       def store_cache!
         return if cache["in_bulk"]
         return unless cache["archive"] && cache["updated"]
-        return puts "No Github token specified, cannot update archive gist" unless GITHUB_TOKEN
+        # return puts "No Github token specified, cannot update archive gist" unless ENV["GITHUB_TOKEN"]
 
         puts "Writing to gist cache"
         # api_request(archive_uri, :method => :patch, :body => {
@@ -36,8 +36,8 @@ module Github
         #     "data.json" => {"content" => JSON.generate(cache["archive"])}
         #   }
         # })
-        
-        File.open("./_data/plugins.json","w") do |f|
+
+        File.open(LOCAL_ARCHIVE,"w") do |f|
           f.write(JSON.pretty_generate(cache["archive"]))
         end
 
@@ -61,15 +61,16 @@ module Github
       end
 
       def repo_from_api(repo)
+        puts "Syncing: #{repo.inspect}"
         topics = JSON.parse(fetch_repo_topics(repo)).with_indifferent_access
-        puts "#{repo}: #{topics.to_json}"
         JSON.parse(fetch_repo(repo)).with_indifferent_access.tap do |data|
           unless repo_from_archive(repo)
             cache["archive"] ||= {}
             cache["archive"][repo] ||= {}
+            stopwords = %w(aws serverless plugin serverless-plugin serverless-framework serverless-architectures nodejs)
+            cache["archive"][repo]["topics"] = (topics["names"] || []) - stopwords
+            cache["archive"][repo]["language"] = data["language"]
             cache["archive"][repo][today.to_s] = {
-              "topics" => (topics["names"] || []) - ['serverless'],
-              "language" => data["language"],
               "size" => data["size"],
               "stargazers_count" => data["stargazers_count"],
               "watchers_count" => data["watchers_count"],
@@ -88,16 +89,18 @@ module Github
       end
 
       def fetch_archive
-        gist = JSON.parse(api_request(archive_uri)) rescue nil
-        # Temporary workaround
-        data = JSON.parse(gist["files"]["data.json"]["content"])
-        cache["archive"] = data
+        # gist = JSON.parse(api_request(archive_uri)) rescue nil
+        # # Temporary workaround
+        # data = JSON.parse(gist["files"]["data.json"]["content"])
+        # cache["archive"] = data
+        JSON.parse(File.read(LOCAL_ARCHIVE))
       rescue => e
         puts "Error fetching gist with archived data: #{e}"
       end
 
+      # not used with local cache
       def archive_uri
-        "https://api.github.com/gists/#{ENV["GIST_ID"] || GIST_ID}"
+        "https://api.github.com/gists/#{ENV["GIST_ID"]}"
       end
 
       def fetch_repo(repo)
@@ -111,7 +114,7 @@ module Github
       def api_request(url, options = {})
         uri = URI.parse(url)
         req = METHODS[options[:method] || :get].new(uri.path)
-        req['Authorization'] = "token #{GITHUB_TOKEN}" if GITHUB_TOKEN
+        req['Authorization'] = "token #{ENV['GITHUB_TOKEN']}" if ENV["GITHUB_TOKEN"]
         req['Accept'] = 'application/vnd.github.mercy-preview+json'
 
         if options[:body]

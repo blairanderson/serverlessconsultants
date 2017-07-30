@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-subscription-filter
+title: Subscription Filter
 repo: blackevil245/serverless-subscription-filter
 homepage: 'https://github.com/blackevil245/serverless-subscription-filter'
-topics: aws,serverless-plugin,cloudwatch
-language: JavaScript
+topics: aws,cloudwatch,serverless,serverless-plugin
 license: 
 description: Serverless plugin to register subscription filter for Lambda logs. Register and pipe the logs of one lambda to another to process.
 watchers: 4

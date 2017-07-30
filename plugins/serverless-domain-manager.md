@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-domain-manager
+title: Domain Manager
 repo: amplify-education/serverless-domain-manager
 homepage: 'https://github.com/amplify-education/serverless-domain-manager'
 topics: 
-language: JavaScript
 license: 
 description: Serverless plugin for managing custom domains with API Gateways.
 watchers: 19

@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-select
+title: Plugin Select
 repo: FidelLimited/serverless-plugin-select
 homepage: 'https://github.com/FidelLimited/serverless-plugin-select'
-topics: serverless-functions,aws-lambda,nodejs
-language: JavaScript
+topics: aws-lambda,nodejs,serverless,serverless-functions
 license: 
 description: Select which functions are to be deployed based on region and stage.
 watchers: 9

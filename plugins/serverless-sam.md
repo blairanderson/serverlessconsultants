@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-sam
+title: Sam
 repo: SAPessi/serverless-sam
 homepage: 'https://github.com/SAPessi/serverless-sam'
-topics: serverless-framework,aws,aws-sam,lambda,aws-lambda,aws-apigateway,plugin,nodejs
-language: JavaScript
+topics: aws,aws-apigateway,aws-lambda,aws-sam,lambda,nodejs,plugin,serverless,serverless-framework
 license: 
 description: Exports an AWS SAM template for a service created with the Serverless Framework.
 watchers: 18

@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-dotnet
+title: Dotnet
 repo: fruffin/serverless-dotnet
 homepage: 'https://github.com/fruffin/serverless-dotnet'
 topics: 
-language: JavaScript
 license: 
 description: A serverless plugin to run 'dotnet' commands as part of the deploy process
 watchers: 9

@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-pseudo-parameters
+title: Pseudo Parameters
 repo: svdgraaf/serverless-pseudo-parameters
 homepage: 'https://github.com/svdgraaf/serverless-pseudo-parameters'
 topics: 
-language: JavaScript
 license: 
 description: Use ${AWS::AccountId} and other cloudformation pseudo parameters in your serverless.yml values
 watchers: 8

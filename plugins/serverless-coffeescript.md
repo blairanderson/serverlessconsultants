@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-coffeescript
+title: Coffeescript
 repo: duanefields/serverless-coffeescript
 homepage: 'https://github.com/duanefields/serverless-coffeescript'
 topics: 
-language: JavaScript
 license: 
 description: A Serverless plugin to compile your CoffeeScript into JavaScript at deployment
 watchers: 4

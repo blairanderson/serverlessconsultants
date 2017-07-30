@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-bespoken
+title: Plugin Bespoken
 repo: bespoken/serverless-plugin-bespoken
 homepage: 'https://github.com/bespoken/serverless-plugin-bespoken'
 topics: 
-language: JavaScript
 license: 
 description: Creates a local server and a proxy so you don't have to deploy anytime you want to test your code
 watchers: 4

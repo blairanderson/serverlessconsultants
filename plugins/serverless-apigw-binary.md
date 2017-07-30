@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-apigw-binary
+title: Apigw Binary
 repo: maciejtreder/serverless-apigw-binary
 homepage: 'https://github.com/maciejtreder/serverless-apigw-binary'
 topics: 
-language: JavaScript
 license: 
 description: Plugin to enable binary support in AWS API Gateway.
 watchers: 9

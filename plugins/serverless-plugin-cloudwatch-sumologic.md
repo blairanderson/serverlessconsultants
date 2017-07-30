@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-cloudwatch-sumologic
+title: Plugin Cloudwatch Sumologic
 repo: ACloudGuru/serverless-plugin-cloudwatch-sumologic
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-cloudwatch-sumologic'
 topics: 
-language: JavaScript
 license: 
 description: Plugin which auto-subscribes a log delivery lambda function to lambda log groups created by serverless
 watchers: 3

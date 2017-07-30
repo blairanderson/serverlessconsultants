@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-cljs-plugin
+title: Cljs Plugin
 repo: nervous-systems/serverless-cljs-plugin
 homepage: 'https://github.com/nervous-systems/serverless-cljs-plugin'
-topics: clojurescript,aws-lambda,serverless-plugin,aws,clojure
-language: JavaScript
+topics: aws,aws-lambda,clojure,clojurescript,serverless,serverless-plugin
 license: 
 description: Enables Clojurescript as an implementation language for Lambda handlers
 watchers: 23

@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-parameters
+title: Parameters
 repo: svdgraaf/serverless-parameters
 homepage: 'https://github.com/svdgraaf/serverless-parameters'
 topics: 
-language: JavaScript
 license: 
 description: Add parameters to the generated cloudformation templates
 watchers: 3

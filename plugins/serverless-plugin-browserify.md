@@ -1,11 +1,10 @@
 ---
 # NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: serverless-plugin-browserify
+title: Plugin Browserify
 repo: doapp-ryanp/serverless-plugin-browserify
 homepage: 'https://github.com/doapp-ryanp/serverless-plugin-browserify'
 topics: 
-language: JavaScript
 license: 
 description: Speed up your node based lambda's
 watchers: 17
