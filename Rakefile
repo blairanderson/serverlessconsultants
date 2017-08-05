@@ -7,44 +7,53 @@ require 'dotenv'
 
 desc "fetch github repos and stuff"
 task :github do
-  puts 'syncing plugins'
+  #
+  puts 'FETCHES PLUGIN LIST FROM https://github.com/serverless/plugins'
   system "gulp sync:plugins"
-  puts 'plugins synced'
+  puts 'synced'
+
   app = OpenStruct.new
   extension = Github::Extension.new(app, Dotenv.load)
   extension.sync
-  # create projects
+
+  # IF FILE EXISTS, DO NOTHING
+  # IF FILE DOES NOT EXIST
+  # CREATE THE FILE AND FETCH THE README!
   extension.app.github.projects.each do |p|
-    folder = "plugins/"
+    filename = "plugins/#{p.name}.md"
     puts p.inspect
-    File.open("#{folder}#{p.name}.md", 'w+') do |post|
+    next if File.exist?(filename)
+    readme = Github::API.fetch_repo_readme(p.repo)
+    File.open(filename, 'w+') do |post|
       post.puts "---"
-      post.puts "# NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO"
       post.puts "layout: plugin"
-      post.puts "title: #{p.repo.split("/").last.gsub('serverless-', '').titleize}"
+      post.puts "title: #{p.repo.split("/").last.titleize}"
       post.puts "repo: #{p.repo}"
       post.puts "homepage: '#{p.homepage}'"
       post.puts "topics: #{p.topics.join(",")}"
-      %i[license description watchers stars stars_trend stars_diff forks forks_trend forks_diff issues issues_trend issues_diff].each do |attr|
+      %i[description].each do |attr|
         post.puts "#{attr}: #{p.send(attr)}"
       end
       post.puts "---"
+      post.puts ""
+      post.puts ""
+      post.puts readme
     end
   end
+
   # create topics
-  topics = extension.app.github.projects
-    .map(&:topics)
+  topics = Github::API.fetch_archive
+    .map{|repo, data| data["topics"] } # get all the topics
     .flatten
-    .inject(Hash.new(0)) { |h, e| h[e] += 1 ; h }
-    .select{|name, value| value > 0 }
+    .inject(Hash.new(0)) { |h, e| h[e] += 1 ; h } # group && count
     .each do |name,count|
-      folder = "plugins/topics/"
-      File.open("#{folder}#{name}.md", 'w+') do |post|
+      topic_filename = "plugins/topics/#{name}.md"
+      File.open(topic_filename, 'w+') do |post|
         post.puts "---"
         post.puts "# NOTE: THIS FILE IS GENERATED - DO NOT ATTEMPT TO CREATE A PULL REQUEST TO UPDATE THE DATA. "
         post.puts "layout: topic"
         post.puts "topic: #{name}"
-        post.puts "title: #{name} ServerLess Plugins"
+        post.puts "title: #{name} Serverless Plugins"
         post.puts "description: '#{count} #{name} ServerLess Plugins'"
         post.puts "count: #{count}"
         post.puts "---"

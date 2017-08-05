@@ -2,7 +2,7 @@
 # NOTE: THIS FILE IS GENERATED - DO NOT ATTEMPT TO CREATE A PULL REQUEST TO UPDATE THE DATA. 
 layout: topic
 topic: sync
-title: sync ServerLess Plugins
+title: sync Serverless Plugins
 description: '1 sync ServerLess Plugins'
 count: 1
 ---

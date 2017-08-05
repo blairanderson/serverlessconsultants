@@ -1,20 +1,30 @@
 ---
-# NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: Plugin Package Dotenv File
+title: Serverless Plugin Package Dotenv File
 repo: ACloudGuru/serverless-plugin-package-dotenv-file
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-package-dotenv-file'
 topics: 
-license: 
 description: A Serverless plugin to copy a .env file into the serverless package
-watchers: 8
-stars: 8
-stars_trend: 
-stars_diff: 0
-forks: 1
-forks_trend: 
-forks_diff: 0
-issues: 0
-issues_trend: 
-issues_diff: 0
 ---
+
+
+# Serverless Package Env Plugin [![Build Status](https://travis-ci.org/ACloudGuru/serverless-plugin-package-dotenv-file.svg?branch=master)](https://travis-ci.org/ACloudGuru/serverless-plugin-package-dotenv-file)
+
+A Serverless plugin to copy a .env file into the serverless package
+
+
+## Installation
+`npm i serverless-plugin-package-dotenv-file`
+
+## Usage
+
+```
+service: your-service
+...
+custom:
+  packageEnv:
+    fileName: .env-${env:ENVIRONMENT}
+
+plugins:
+  - serverless-plugin-package-dotenv-file
+```

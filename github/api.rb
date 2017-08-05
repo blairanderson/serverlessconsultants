@@ -67,7 +67,9 @@ module Github
           unless repo_from_archive(repo)
             cache["archive"] ||= {}
             cache["archive"][repo] ||= {}
+            
             stopwords = %w(aws serverless plugin serverless-plugin serverless-framework serverless-architectures nodejs)
+
             cache["archive"][repo]["topics"] = (topics["names"] || []) - stopwords
             cache["archive"][repo]["language"] = data["language"]
             cache["archive"][repo][today.to_s] = {
@@ -108,14 +110,25 @@ module Github
       end
 
       def fetch_repo_topics(repo)
-        api_request("https://api.github.com/repos/#{repo}/topics")
+        api_request("https://api.github.com/repos/#{repo}/topics", accept: 'application/vnd.github.mercy-preview+json')
+      end
+
+      def fetch_repo_readme_html(repo)
+        api_request("https://api.github.com/repos/#{repo}/readme", accept: 'application/vnd.github.v3.html')
+      end
+
+      def fetch_repo_readme(repo)
+        api_request("https://api.github.com/repos/#{repo}/readme", accept: 'application/vnd.github.v3.raw')
       end
 
       def api_request(url, options = {})
         uri = URI.parse(url)
         req = METHODS[options[:method] || :get].new(uri.path)
         req['Authorization'] = "token #{ENV['GITHUB_TOKEN']}" if ENV["GITHUB_TOKEN"]
-        req['Accept'] = 'application/vnd.github.mercy-preview+json'
+
+        if options[:accept]
+          req['Accept'] = options[:accept]
+        end
 
         if options[:body]
           req.body = JSON.generate(options[:body])

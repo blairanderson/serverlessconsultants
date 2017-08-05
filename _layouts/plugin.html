@@ -2,6 +2,10 @@
 layout: default
 ---
 
+{"topics"=>[], "language"=>"JavaScript", "17377"=>{"size"=>41, "stargazers_count"=>19, "watchers_count"=>19, "forks_count"=>7, "open_issues_count"=>3, "forks"=>7, "open_issues"=>3, "watchers"=>19, "network_count"=>7, "subscribers_count"=>7}}
+
+{% assign data = site.data.plugins[page.repo]%}
+{{data}}
 
 <div class="mw8 center">
   <h1 class="tc ma0">{{page.title}}</h1>
@@ -16,13 +20,19 @@ layout: default
       <a rel="nofollow noreferrer noopener" href="{{ github }}">{{ github }}</a>
     {% endunless %}
   </div>
+  <div>
+    {{ site.plugins }}
+  </div>
   <article class="ph3 ph5-ns">
-    <h3 class="f6 ma0 pa2 ttu tc tracked">Tracked</h3>
+    <h3 class="f6 ma0 pa0 ttu tc tracked">Tracked</h3>
     <div class="cf tc">
-      <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+      {{ data }}
+      {% if data["language"] %}
+      <dl class="fl fn-l w-60 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Language</dd>
-        <dd class="f3 fw6 ml0">{{page.language}}</dd>
+        <dd class="f3 fw6 ml0">{{ data["language"] }}</dd>
       </dl>
+      {% endif %}
       <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Issues</dd>
         <dd class="f3 fw6 ml0">{{page.issues}}</dd>

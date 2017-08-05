@@ -1,20 +1,43 @@
 ---
-# NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: Run Function Plugin
+title: Serverless Run Function Plugin
 repo: lithin/serverless-run-function-plugin
 homepage: 'https://github.com/lithin/serverless-run-function-plugin'
 topics: 
-license: 
 description: Run serverless function locally
-watchers: 13
-stars: 13
-stars_trend: 
-stars_diff: 0
-forks: 9
-forks_trend: 
-forks_diff: 0
-issues: 2
-issues_trend: 
-issues_diff: 0
 ---
+
+
+# Serverless Run Function Plugin
+
+Serverless plugin to run a lambda function locally.
+
+To use, add it to your `serverless.yml` under plugins:
+
+```
+functions:
+  hello:
+    handler: handler.hello
+
+plugins:
+  - serverless-run-function-plugin
+```
+
+Then run `sls run -f hello` to run the function.
+
+Functionality is the same as it used to be in core serverless v0.
+
+### Roadmap
+- Test that it actually works ;)
+- Each test case should have only one assertion
+- Add back eslint rule for default exports
+- Version checking for correct version of serverless
+
+### Goals
+- Replace v0.5 runFunction Plugin
+- Integrate plugin into core serverless
+
+### Contribution guidelines
+- Write TDD
+- Use Airbnb es linter
+- Write as functional code as possible

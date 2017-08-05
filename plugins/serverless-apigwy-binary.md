@@ -1,20 +1,50 @@
 ---
-# NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: Apigwy Binary
+title: Serverless Apigwy Binary
 repo: ryanmurakami/serverless-apigwy-binary
 homepage: 'https://github.com/ryanmurakami/serverless-apigwy-binary'
 topics: 
-license: 
 description: Serverless plugin for configuring API Gateway to return binary responses
-watchers: 9
-stars: 9
-stars_trend: 
-stars_diff: 0
-forks: 1
-forks_trend: 
-forks_diff: 0
-issues: 0
-issues_trend: 
-issues_diff: 0
 ---
+
+
+# serverless-apigwy-binary
+
+[Serverless framework](https://www.serverless.com) plugin to configure Binary responses in API Gateway
+
+Original code from [codebox](https://github.com/craftship/codebox-npm/blob/master/.serverless_plugins/content-handling/index.js)
+
+## Installation
+
+Install to your Serverless project via npm
+
+```bash
+$ npm install --save serverless-apigwy-binary
+```
+
+## Usage
+
+Add the plugin to your `serverless.yml`
+
+```yaml
+# serverless.yml
+
+plugins:
+  - serverless-apigwy-binary
+```
+
+Add the property `contentHandling: CONVERT_TO_BINARY` to an HTTP event
+
+```yaml
+# serverless.yml
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          integration: lambda
+          path: hello
+          method: get
+          contentHandling: CONVERT_TO_BINARY
+```

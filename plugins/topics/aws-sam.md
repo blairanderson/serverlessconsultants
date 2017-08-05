@@ -2,7 +2,7 @@
 # NOTE: THIS FILE IS GENERATED - DO NOT ATTEMPT TO CREATE A PULL REQUEST TO UPDATE THE DATA. 
 layout: topic
 topic: aws-sam
-title: aws-sam ServerLess Plugins
+title: aws-sam Serverless Plugins
 description: '1 aws-sam ServerLess Plugins'
 count: 1
 ---

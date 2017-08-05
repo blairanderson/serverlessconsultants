@@ -1,20 +1,51 @@
 ---
-# NOTE: THIS FILE IS GENERATED FROM YOUR GITHUB REPO
 layout: plugin
-title: Plugin Bespoken
+title: Serverless Plugin Bespoken
 repo: bespoken/serverless-plugin-bespoken
 homepage: 'https://github.com/bespoken/serverless-plugin-bespoken'
 topics: 
-license: 
 description: Creates a local server and a proxy so you don't have to deploy anytime you want to test your code
-watchers: 4
-stars: 4
-stars_trend: 
-stars_diff: 0
-forks: 0
-forks_trend: 
-forks_diff: 0
-issues: 2
-issues_trend: 
-issues_diff: 0
 ---
+
+
+# Bespoken Serverless Framework Plugin
+
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+
+A [serverless](http://www.serverless.com) plugin to test your work without deploying with [bespoken tools](https://bespoken.tools).
+
+If you have to deploy your work everytime you are making changes, this tool will help you reduce that time. We generate a local server
+that is a attached to a proxy online so that you can use that url to access the functionality that you have in your code in your laptop.
+# What Does This Do?
+The `bst proxy` service makes your local AWS Lambda available to debug and test via public URL. And though the URL is public, it is unique to you, and known only to you.
+
+It is great for developing and testing:
+* Webhooks
+* Callbacks
+* Anything where you want to try out your Lambda locally before deploying it
+
+It creates a unique public URL through which you can access it. Once installed, all you need to access it is:
+```bash
+sls proxy
+```
+
+You can now send and receive data to your locally running Lambda! Here is a demo of in action using Postman:
+
+[![serverless Plugin](/ServerlessPluginDemo.gif)](/ServerlessPluginDemo.gif)
+
+More detailed info on how the proxy works can be [found here](http://docs.bespoken.tools/en/latest/tutorials/tutorial_lambda_local/).
+# Install
+
+```
+npm install serverless-plugin-bespoken --save-dev
+```
+
+Add the plugin to your `serverless.yml` file:
+```yaml
+plugins:
+  - serverless-plugin-bespoken
+```
+
+You're set! The plugin will run by using `sls proxy`.
+
+Now you can use the generated url and access directly to your local server.

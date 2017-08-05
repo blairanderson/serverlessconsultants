@@ -10,7 +10,7 @@ bing_site_verification: "0C81C6A5BD3BAF86F4730D8C4A9BF223"
 baseurl:          ""
 
 # Build settings
-exclude:          [gulp*, README*, node_modules, sass-cache, _data,Gemfile*, yarn*,LICENSE,package.json,Rakefile,github]
+exclude:          [gulp*, README*, node_modules, sass-cache, Gemfile*, yarn*,LICENSE,package.json,Rakefile,github]
 
 # Dependencies
 markdown:         kramdown

@@ -1,0 +1,1702 @@
+{
+  "maciejtreder/serverless-apigw-binary": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 152,
+      "stargazers_count": 10,
+      "watchers_count": 10,
+      "forks_count": 4,
+      "open_issues_count": 2,
+      "forks": 4,
+      "open_issues": 2,
+      "watchers": 10,
+      "network_count": 4,
+      "subscribers_count": 2
+    }
+  },
+  "amplify-education/serverless-domain-manager": {
+    "topics": [
+      "certificate",
+      "lambda",
+      "amazon-certificate-manager",
+      "api-gateway",
+      "route53",
+      "cloudformation"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 44,
+      "stargazers_count": 19,
+      "watchers_count": 19,
+      "forks_count": 7,
+      "open_issues_count": 2,
+      "forks": 7,
+      "open_issues": 2,
+      "watchers": 19,
+      "network_count": 7,
+      "subscribers_count": 7
+    }
+  },
+  "amplify-education/serverless-log-forwarding": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 23,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 1,
+      "subscribers_count": 6
+    }
+  },
+  "silvermine/serverless-plugin-external-sns-events": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 14,
+      "stargazers_count": 14,
+      "watchers_count": 14,
+      "forks_count": 9,
+      "open_issues_count": 3,
+      "forks": 9,
+      "open_issues": 3,
+      "watchers": 14,
+      "network_count": 9,
+      "subscribers_count": 7
+    }
+  },
+  "silvermine/serverless-plugin-write-env-vars": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 8,
+      "stargazers_count": 28,
+      "watchers_count": 28,
+      "forks_count": 12,
+      "open_issues_count": 6,
+      "forks": 12,
+      "open_issues": 6,
+      "watchers": 28,
+      "network_count": 12,
+      "subscribers_count": 3
+    }
+  },
+  "rajington/serverless-alexa-plugin": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 327,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 13,
+      "network_count": 0,
+      "subscribers_count": 4
+    }
+  },
+  "nfour/serverless-build-plugin": {
+    "topics": [
+      "build"
+    ],
+    "language": "TypeScript",
+    "17383": {
+      "size": 557,
+      "stargazers_count": 27,
+      "watchers_count": 27,
+      "forks_count": 10,
+      "open_issues_count": 4,
+      "forks": 10,
+      "open_issues": 4,
+      "watchers": 27,
+      "network_count": 10,
+      "subscribers_count": 3
+    }
+  },
+  "rurri/serverless-resources-env": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 21,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 5,
+      "open_issues_count": 5,
+      "forks": 5,
+      "open_issues": 5,
+      "watchers": 11,
+      "network_count": 5,
+      "subscribers_count": 2
+    }
+  },
+  "dittto/serverless-event-constant-inputs": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 4,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 0,
+      "subscribers_count": 1
+    }
+  },
+  "SC5/serverless-kms-secrets": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 19,
+      "stargazers_count": 17,
+      "watchers_count": 17,
+      "forks_count": 4,
+      "open_issues_count": 1,
+      "forks": 4,
+      "open_issues": 1,
+      "watchers": 17,
+      "network_count": 4,
+      "subscribers_count": 3
+    }
+  },
+  "svdgraaf/serverless-plugin-stack-outputs": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 143,
+      "stargazers_count": 7,
+      "watchers_count": 7,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 7,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "svdgraaf/serverless-plugin-stage-variables": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 25,
+      "stargazers_count": 15,
+      "watchers_count": 15,
+      "forks_count": 11,
+      "open_issues_count": 1,
+      "forks": 11,
+      "open_issues": 1,
+      "watchers": 15,
+      "network_count": 11,
+      "subscribers_count": 4
+    }
+  },
+  "ACloudGuru/serverless-plugin-cloudwatch-sumologic": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 17,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 5,
+      "open_issues_count": 7,
+      "forks": 5,
+      "open_issues": 7,
+      "watchers": 3,
+      "network_count": 5,
+      "subscribers_count": 12
+    }
+  },
+  "ACloudGuru/serverless-plugin-aws-alerts": {
+    "topics": [
+      "aws-cloudwatch"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 119,
+      "stargazers_count": 38,
+      "watchers_count": 38,
+      "forks_count": 13,
+      "open_issues_count": 7,
+      "forks": 13,
+      "open_issues": 7,
+      "watchers": 38,
+      "network_count": 13,
+      "subscribers_count": 14
+    }
+  },
+  "ACloudGuru/serverless-plugin-package-dotenv-file": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 6,
+      "stargazers_count": 8,
+      "watchers_count": 8,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 8,
+      "network_count": 1,
+      "subscribers_count": 13
+    }
+  },
+  "horike37/serverless-command-line-event-args": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 10,
+      "stargazers_count": 12,
+      "watchers_count": 12,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 12,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "99xt/serverless-dynamodb-local": {
+    "topics": [
+      "dynamodb",
+      "dynamodb-local",
+      "serverless-offline"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 159,
+      "stargazers_count": 96,
+      "watchers_count": 96,
+      "forks_count": 43,
+      "open_issues_count": 25,
+      "forks": 43,
+      "open_issues": 25,
+      "watchers": 96,
+      "network_count": 43,
+      "subscribers_count": 13
+    }
+  },
+  "dherault/serverless-offline": {
+    "topics": [
+      "aws-lambda",
+      "aws-apigateway"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 900,
+      "stargazers_count": 597,
+      "watchers_count": 597,
+      "forks_count": 131,
+      "open_issues_count": 24,
+      "forks": 131,
+      "open_issues": 24,
+      "watchers": 597,
+      "network_count": 131,
+      "subscribers_count": 31
+    }
+  },
+  "gertjvr/serverless-plugin-simulate": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 20459,
+      "stargazers_count": 23,
+      "watchers_count": 23,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 23,
+      "network_count": 18,
+      "subscribers_count": 1
+    }
+  },
+  "FidelLimited/serverless-plugin-optimize": {
+    "topics": [
+      "uglify",
+      "minify",
+      "serverless-functions",
+      "babel",
+      "serverless-optimizer-plugin",
+      "browserify",
+      "aws-lambda"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 41,
+      "stargazers_count": 47,
+      "watchers_count": 47,
+      "forks_count": 4,
+      "open_issues_count": 4,
+      "forks": 4,
+      "open_issues": 4,
+      "watchers": 47,
+      "network_count": 4,
+      "subscribers_count": 2
+    }
+  },
+  "FidelLimited/serverless-plugin-select": {
+    "topics": [
+      "serverless-functions",
+      "aws-lambda"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 5,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 9,
+      "network_count": 0,
+      "subscribers_count": 2
+    }
+  },
+  "FidelLimited/serverless-plugin-warmup": {
+    "topics": [
+      "lambda",
+      "aws-lambda"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 27,
+      "stargazers_count": 45,
+      "watchers_count": 45,
+      "forks_count": 8,
+      "open_issues_count": 3,
+      "forks": 8,
+      "open_issues": 3,
+      "watchers": 45,
+      "network_count": 8,
+      "subscribers_count": 3
+    }
+  },
+  "doapp-ryanp/serverless-plugin-browserify": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 26,
+      "stargazers_count": 17,
+      "watchers_count": 17,
+      "forks_count": 4,
+      "open_issues_count": 8,
+      "forks": 4,
+      "open_issues": 8,
+      "watchers": 17,
+      "network_count": 4,
+      "subscribers_count": 1
+    }
+  },
+  "nicka/serverless-plugin-diff": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 62,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 2,
+      "open_issues_count": 1,
+      "forks": 2,
+      "open_issues": 1,
+      "watchers": 9,
+      "network_count": 2,
+      "subscribers_count": 1
+    }
+  },
+  "lithin/serverless-run-function-plugin": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 15,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 9,
+      "open_issues_count": 2,
+      "forks": 9,
+      "open_issues": 2,
+      "watchers": 13,
+      "network_count": 9,
+      "subscribers_count": 1
+    }
+  },
+  "weixu365/serverless-scriptable-plugin": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 25,
+      "stargazers_count": 16,
+      "watchers_count": 16,
+      "forks_count": 3,
+      "open_issues_count": 0,
+      "forks": 3,
+      "open_issues": 0,
+      "watchers": 16,
+      "network_count": 3,
+      "subscribers_count": 4
+    }
+  },
+  "blackevil245/serverless-subscription-filter": {
+    "topics": [
+      "cloudwatch"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 13,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 0,
+      "subscribers_count": 1
+    }
+  },
+  "elastic-coders/serverless-webpack": {
+    "topics": [
+      "webpack",
+      "babel",
+      "serverless-offline",
+      "webpack-configuration",
+      "webpack2",
+      "webpack3"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 282,
+      "stargazers_count": 317,
+      "watchers_count": 317,
+      "forks_count": 116,
+      "open_issues_count": 33,
+      "forks": 116,
+      "open_issues": 33,
+      "watchers": 317,
+      "network_count": 116,
+      "subscribers_count": 15
+    }
+  },
+  "logandk/serverless-wsgi": {
+    "topics": [
+      "wsgi",
+      "python",
+      "flask",
+      "aws-lambda"
+    ],
+    "language": "Python",
+    "17383": {
+      "size": 47,
+      "stargazers_count": 64,
+      "watchers_count": 64,
+      "forks_count": 8,
+      "open_issues_count": 3,
+      "forks": 8,
+      "open_issues": 3,
+      "watchers": 64,
+      "network_count": 8,
+      "subscribers_count": 4
+    }
+  },
+  "marcy-terui/serverless-crypt": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 18,
+      "stargazers_count": 36,
+      "watchers_count": 36,
+      "forks_count": 6,
+      "open_issues_count": 8,
+      "forks": 6,
+      "open_issues": 8,
+      "watchers": 36,
+      "network_count": 6,
+      "subscribers_count": 1
+    }
+  },
+  "silvermine/serverless-plugin-multiple-responses": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 13,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 13,
+      "network_count": 1,
+      "subscribers_count": 3
+    }
+  },
+  "dougmoscrop/serverless-plugin-include-dependencies": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 1081,
+      "stargazers_count": 38,
+      "watchers_count": 38,
+      "forks_count": 10,
+      "open_issues_count": 2,
+      "forks": 10,
+      "open_issues": 2,
+      "watchers": 38,
+      "network_count": 10,
+      "subscribers_count": 2
+    }
+  },
+  "SC5/serverless-mocha-plugin": {
+    "topics": [
+      "mocha",
+      "test-driven-development"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 147,
+      "stargazers_count": 62,
+      "watchers_count": 62,
+      "forks_count": 26,
+      "open_issues_count": 7,
+      "forks": 26,
+      "open_issues": 7,
+      "watchers": 62,
+      "network_count": 26,
+      "subscribers_count": 13
+    }
+  },
+  "SC5/serverless-jest-plugin": {
+    "topics": [
+      "mocha",
+      "test-driven-development"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 31,
+      "stargazers_count": 25,
+      "watchers_count": 25,
+      "forks_count": 5,
+      "open_issues_count": 2,
+      "forks": 5,
+      "open_issues": 2,
+      "watchers": 25,
+      "network_count": 5,
+      "subscribers_count": 2
+    }
+  },
+  "SC5/serverless-plugin-cfauthorizer": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 5,
+      "stargazers_count": 16,
+      "watchers_count": 16,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 16,
+      "network_count": 1,
+      "subscribers_count": 5
+    }
+  },
+  "9cookies/serverless-aws-documentation": {
+    "topics": [
+      "api-gateway",
+      "json-schema",
+      "documentation",
+      "documentation-generator",
+      "aws-apigateway"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 80,
+      "stargazers_count": 45,
+      "watchers_count": 45,
+      "forks_count": 21,
+      "open_issues_count": 8,
+      "forks": 21,
+      "open_issues": 8,
+      "watchers": 45,
+      "network_count": 21,
+      "subscribers_count": 10
+    }
+  },
+  "andrewcurioso/raml-serverless": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 13,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 2,
+      "open_issues_count": 8,
+      "forks": 2,
+      "open_issues": 8,
+      "watchers": 13,
+      "network_count": 2,
+      "subscribers_count": 4
+    }
+  },
+  "UnitedIncome/serverless-python-requirements": {
+    "topics": [
+      "aws-lambda",
+      "python",
+      "requirements",
+      "pip"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 72,
+      "stargazers_count": 59,
+      "watchers_count": 59,
+      "forks_count": 13,
+      "open_issues_count": 13,
+      "forks": 13,
+      "open_issues": 13,
+      "watchers": 59,
+      "network_count": 13,
+      "subscribers_count": 5
+    }
+  },
+  "fruffin/serverless-dotnet": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 9,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 3,
+      "open_issues_count": 0,
+      "forks": 3,
+      "open_issues": 0,
+      "watchers": 9,
+      "network_count": 3,
+      "subscribers_count": 2
+    }
+  },
+  "paulSambolin/serverless-enable-api-logs": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 5,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 3,
+      "open_issues_count": 5,
+      "forks": 3,
+      "open_issues": 5,
+      "watchers": 4,
+      "network_count": 3,
+      "subscribers_count": 2
+    }
+  },
+  "cfchou/serverless-python-individually": {
+    "topics": [
+      "aws-lambda"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 47,
+      "stargazers_count": 6,
+      "watchers_count": 6,
+      "forks_count": 7,
+      "open_issues_count": 0,
+      "forks": 7,
+      "open_issues": 0,
+      "watchers": 6,
+      "network_count": 7,
+      "subscribers_count": 1
+    }
+  },
+  "tsub/serverless-plugin-subscription-filter": {
+    "topics": [
+      "aws-lambda"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 81,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 11,
+      "network_count": 1,
+      "subscribers_count": 0
+    }
+  },
+  "horike37/serverless-step-functions": {
+    "topics": [
+      "step-functions"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 173,
+      "stargazers_count": 143,
+      "watchers_count": 143,
+      "forks_count": 18,
+      "open_issues_count": 8,
+      "forks": 18,
+      "open_issues": 8,
+      "watchers": 143,
+      "network_count": 18,
+      "subscribers_count": 13
+    }
+  },
+  "mvila/serverless-plugin-scripts": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 4,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 11,
+      "network_count": 0,
+      "subscribers_count": 1
+    }
+  },
+  "jacob-meacham/serverless-plugin-bind-deployment-id": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 61,
+      "stargazers_count": 8,
+      "watchers_count": 8,
+      "forks_count": 4,
+      "open_issues_count": 1,
+      "forks": 4,
+      "open_issues": 1,
+      "watchers": 8,
+      "network_count": 4,
+      "subscribers_count": 2
+    }
+  },
+  "jacob-meacham/serverless-plugin-git-variables": {
+    "topics": [
+
+    ],
+    "language": "Shell",
+    "17383": {
+      "size": 95,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 3,
+      "open_issues_count": 0,
+      "forks": 3,
+      "open_issues": 0,
+      "watchers": 9,
+      "network_count": 3,
+      "subscribers_count": 1
+    }
+  },
+  "bencooling/serverless-plugin-graphiql": {
+    "topics": [
+      "graphiql",
+      "graphql"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 18,
+      "stargazers_count": 27,
+      "watchers_count": 27,
+      "forks_count": 6,
+      "open_issues_count": 1,
+      "forks": 6,
+      "open_issues": 1,
+      "watchers": 27,
+      "network_count": 6,
+      "subscribers_count": 3
+    }
+  },
+  "duanefields/serverless-coffeescript": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 2,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 4,
+      "network_count": 0,
+      "subscribers_count": 1
+    }
+  },
+  "gmetzker/serverless-plugin-lambda-dead-letter": {
+    "topics": [
+      "lambda",
+      "deadletter-queue",
+      "sqs-queue",
+      "cloud"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 40,
+      "stargazers_count": 10,
+      "watchers_count": 10,
+      "forks_count": 1,
+      "open_issues_count": 4,
+      "forks": 1,
+      "open_issues": 4,
+      "watchers": 10,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "yonomi/serverless-plugin-encode-env-var-objects": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 5,
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 0,
+      "network_count": 0,
+      "subscribers_count": 3
+    }
+  },
+  "economysizegeek/serverless-dir-config-plugin": {
+    "topics": [
+      "serverless-deployments"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 9,
+      "stargazers_count": 2,
+      "watchers_count": 2,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 2,
+      "network_count": 0,
+      "subscribers_count": 1
+    }
+  },
+  "nervous-systems/serverless-cljs-plugin": {
+    "topics": [
+      "clojurescript",
+      "aws-lambda",
+      "clojure"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 5,
+      "stargazers_count": 23,
+      "watchers_count": 23,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 23,
+      "network_count": 1,
+      "subscribers_count": 2
+    }
+  },
+  "claygregory/serverless-prune-plugin": {
+    "topics": [
+      "aws-lambda"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 14,
+      "stargazers_count": 15,
+      "watchers_count": 15,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 15,
+      "network_count": 0,
+      "subscribers_count": 2
+    }
+  },
+  "ajmath/serverless-offline-scheduler": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 40,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 5,
+      "open_issues_count": 1,
+      "forks": 5,
+      "open_issues": 1,
+      "watchers": 11,
+      "network_count": 5,
+      "subscribers_count": 1
+    }
+  },
+  "HyperBrain/serverless-aws-alias": {
+    "topics": [
+      "aws-lambda",
+      "lambda-functions",
+      "api-gateway",
+      "alias-stacks",
+      "stage"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 161,
+      "stargazers_count": 27,
+      "watchers_count": 27,
+      "forks_count": 5,
+      "open_issues_count": 14,
+      "forks": 5,
+      "open_issues": 14,
+      "watchers": 27,
+      "network_count": 5,
+      "subscribers_count": 3
+    }
+  },
+  "goldwasserexchange/serverless-plugin-webpack": {
+    "topics": [
+      "webpack",
+      "webpack2",
+      "tree-shaking",
+      "optimization",
+      "aws-lambda"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 91,
+      "stargazers_count": 25,
+      "watchers_count": 25,
+      "forks_count": 9,
+      "open_issues_count": 3,
+      "forks": 9,
+      "open_issues": 3,
+      "watchers": 25,
+      "network_count": 9,
+      "subscribers_count": 5
+    }
+  },
+  "vortarian/serverless-sqs-fifo": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 9,
+      "stargazers_count": 2,
+      "watchers_count": 2,
+      "forks_count": 1,
+      "open_issues_count": 3,
+      "forks": 1,
+      "open_issues": 3,
+      "watchers": 2,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "sbstjn/serverless-sqs-alarms-plugin": {
+    "topics": [
+      "sqs",
+      "lambda",
+      "sns"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 60,
+      "stargazers_count": 10,
+      "watchers_count": 10,
+      "forks_count": 4,
+      "open_issues_count": 0,
+      "forks": 4,
+      "open_issues": 0,
+      "watchers": 10,
+      "network_count": 4,
+      "subscribers_count": 2
+    }
+  },
+  "Jimdo/serverless-dotenv": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 34,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 4
+    }
+  },
+  "uswitch/serverless-hooks-plugin": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 5,
+      "stargazers_count": 6,
+      "watchers_count": 6,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 6,
+      "network_count": 0,
+      "subscribers_count": 10
+    }
+  },
+  "sdd/serverless-dynalite": {
+    "topics": [
+      "dynamodb",
+      "dynalite",
+      "serverless-offline"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 8,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "sdd/serverless-apig-s3": {
+    "topics": [
+      "aws-lambda",
+      "aws-s3",
+      "aws-apigateway"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 22,
+      "stargazers_count": 5,
+      "watchers_count": 5,
+      "forks_count": 2,
+      "open_issues_count": 3,
+      "forks": 2,
+      "open_issues": 3,
+      "watchers": 5,
+      "network_count": 2,
+      "subscribers_count": 1
+    }
+  },
+  "graphcool/serverless-plugin-typescript": {
+    "topics": [
+      "typescript",
+      "aws-lambda",
+      "babel",
+      "webpack",
+      "rollup"
+    ],
+    "language": "TypeScript",
+    "17383": {
+      "size": 66,
+      "stargazers_count": 49,
+      "watchers_count": 49,
+      "forks_count": 10,
+      "open_issues_count": 8,
+      "forks": 10,
+      "open_issues": 8,
+      "watchers": 49,
+      "network_count": 10,
+      "subscribers_count": 6
+    }
+  },
+  "svdgraaf/serverless-parameters": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 3281,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 1,
+      "subscribers_count": 0
+    }
+  },
+  "svdgraaf/serverless-pseudo-parameters": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 472,
+      "stargazers_count": 8,
+      "watchers_count": 8,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 8,
+      "network_count": 0,
+      "subscribers_count": 0
+    }
+  },
+  "Jimdo/serverless-dynamodb-ttl": {
+    "topics": [
+      "dynamodb",
+      "cloudformation"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 55,
+      "stargazers_count": 6,
+      "watchers_count": 6,
+      "forks_count": 4,
+      "open_issues_count": 0,
+      "forks": 4,
+      "open_issues": 0,
+      "watchers": 6,
+      "network_count": 4,
+      "subscribers_count": 6
+    }
+  },
+  "leftclickben/serverless-api-stage": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 11,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 4,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "arabold/serverless-export-env": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 15,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 5,
+      "open_issues_count": 1,
+      "forks": 5,
+      "open_issues": 1,
+      "watchers": 3,
+      "network_count": 5,
+      "subscribers_count": 2
+    }
+  },
+  "ubaniabalogun/serverless-package-python-functions": {
+    "topics": [
+      "requirements",
+      "python"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 28,
+      "stargazers_count": 8,
+      "watchers_count": 8,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 8,
+      "network_count": 0,
+      "subscribers_count": 4
+    }
+  },
+  "iopipe/serverless-plugin-iopipe": {
+    "topics": [
+      "lambda",
+      "sls",
+      "agent",
+      "analytics",
+      "metrics",
+      "tracing",
+      "jscodeshift",
+      "codemod"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 242,
+      "stargazers_count": 2,
+      "watchers_count": 2,
+      "forks_count": 5,
+      "open_issues_count": 2,
+      "forks": 5,
+      "open_issues": 2,
+      "watchers": 2,
+      "network_count": 5,
+      "subscribers_count": 4
+    }
+  },
+  "SAPessi/serverless-sam": {
+    "topics": [
+      "aws-sam",
+      "lambda",
+      "aws-lambda",
+      "aws-apigateway"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 27,
+      "stargazers_count": 20,
+      "watchers_count": 20,
+      "forks_count": 4,
+      "open_issues_count": 0,
+      "forks": 4,
+      "open_issues": 0,
+      "watchers": 20,
+      "network_count": 4,
+      "subscribers_count": 2
+    }
+  },
+  "amplify-education/serverless-vpc-discovery": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 19,
+      "stargazers_count": 6,
+      "watchers_count": 6,
+      "forks_count": 2,
+      "open_issues_count": 0,
+      "forks": 2,
+      "open_issues": 0,
+      "watchers": 6,
+      "network_count": 2,
+      "subscribers_count": 6
+    }
+  },
+  "bitnami/kubeless-serverless": {
+    "topics": [
+
+    ],
+    "language": null,
+    "17383": {
+      "size": null,
+      "stargazers_count": null,
+      "watchers_count": null,
+      "forks_count": null,
+      "open_issues_count": null,
+      "forks": null,
+      "open_issues": null,
+      "watchers": null,
+      "network_count": null,
+      "subscribers_count": null
+    }
+  },
+  "ryanmurakami/serverless-apigwy-binary": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 2,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 9,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "digitalmaas/serverless-plugin-browserifier": {
+    "topics": [
+      "browserify",
+      "node-lambda",
+      "serverless-plugin-browserify",
+      "digitalmaas",
+      "aws-lambda",
+      "node-js"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 21,
+      "stargazers_count": 2,
+      "watchers_count": 2,
+      "forks_count": 2,
+      "open_issues_count": 0,
+      "forks": 2,
+      "open_issues": 0,
+      "watchers": 2,
+      "network_count": 2,
+      "subscribers_count": 1
+    }
+  },
+  "UnitedIncome/serverless-shell": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 21,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "sbstjn/serverless-stack-output": {
+    "topics": [
+      "cloudformation",
+      "stack",
+      "output",
+      "sls",
+      "lambda"
+    ],
+    "language": "TypeScript",
+    "17383": {
+      "size": 64,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "rhythminme/serverless-gulp": {
+    "topics": [
+      "gulp",
+      "gulp-tasks"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 11,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "arabold/serverless-sentry-plugin": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 46,
+      "stargazers_count": 20,
+      "watchers_count": 20,
+      "forks_count": 3,
+      "open_issues_count": 5,
+      "forks": 3,
+      "open_issues": 5,
+      "watchers": 20,
+      "network_count": 3,
+      "subscribers_count": 5
+    }
+  },
+  "DieProduktMacher/serverless-env-generator": {
+    "topics": [
+      "environment-variables",
+      "credentials",
+      "encryption",
+      "aws-kms"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 38,
+      "stargazers_count": 7,
+      "watchers_count": 7,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 7,
+      "network_count": 1,
+      "subscribers_count": 3
+    }
+  },
+  "DieProduktMacher/serverless-local-dev-server": {
+    "topics": [
+      "alexa",
+      "http",
+      "local",
+      "development",
+      "http-endpoint",
+      "aws-lambda",
+      "alexa-skill",
+      "facebook-messenger-bot"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 24,
+      "stargazers_count": 1,
+      "watchers_count": 1,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 1,
+      "network_count": 0,
+      "subscribers_count": 3
+    }
+  },
+  "rawphp/serverless-plugin-stack-config.git": {
+    "topics": [
+
+    ],
+    "language": null,
+    "17383": {
+      "size": null,
+      "stargazers_count": null,
+      "watchers_count": null,
+      "forks_count": null,
+      "open_issues_count": null,
+      "forks": null,
+      "open_issues": null,
+      "watchers": null,
+      "network_count": null,
+      "subscribers_count": null
+    }
+  },
+  "rawphp/serverless-plugin-elastic-beanstalk.git": {
+    "topics": [
+
+    ],
+    "language": null,
+    "17383": {
+      "size": null,
+      "stargazers_count": null,
+      "watchers_count": null,
+      "forks_count": null,
+      "open_issues_count": null,
+      "forks": null,
+      "open_issues": null,
+      "watchers": null,
+      "network_count": null,
+      "subscribers_count": null
+    }
+  },
+  "sinofseven/serverless-s3-remover": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 5,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 0,
+      "subscribers_count": 1
+    }
+  },
+  "sbstjn/serverless-dynamodb-autoscaling": {
+    "topics": [
+      "sls",
+      "dynamodb",
+      "scaling",
+      "capacity",
+      "amazon",
+      "cloudformation"
+    ],
+    "language": "TypeScript",
+    "17383": {
+      "size": 77,
+      "stargazers_count": 25,
+      "watchers_count": 25,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 25,
+      "network_count": 1,
+      "subscribers_count": 1
+    }
+  },
+  "bespoken/serverless-plugin-bespoken": {
+    "topics": [
+
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 1221,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 0,
+      "subscribers_count": 6
+    }
+  },
+  "sbstjn/serverless-s3bucket-sync": {
+    "topics": [
+      "s3",
+      "sync",
+      "bucket",
+      "assets"
+    ],
+    "language": "TypeScript",
+    "17383": {
+      "size": 49,
+      "stargazers_count": 7,
+      "watchers_count": 7,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 7,
+      "network_count": 1,
+      "subscribers_count": 0
+    }
+  },
+  "k1LoW/serverless-s3-sync": {
+    "topics": [
+      "s3"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 10,
+      "stargazers_count": 12,
+      "watchers_count": 12,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 12,
+      "network_count": 0,
+      "subscribers_count": 1
+    }
+  },
+  "jagdish-176/serverless-nested-stack": {
+    "topics": [
+      "serverless-nested-stack",
+      "cloudformation-200-resource-limit"
+    ],
+    "language": "JavaScript",
+    "17383": {
+      "size": 4,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 0,
+      "subscribers_count": 1
+    }
+  }
+}
