@@ -5,13 +5,20 @@ require 'pry'
 require 'fast_blank'
 require 'dotenv'
 
-desc "fetch github repos and stuff"
-task :github do
-  #
+desc "fetch github repos and create a bunch of files"
+task :plugins => [
+  :fetch_serverless_plugin_list,
+  :sync_github_projects,
+  :sync_github_topics
+]
+
+task :fetch_serverless_plugin_list do
   puts 'FETCHES PLUGIN LIST FROM https://github.com/serverless/plugins'
   system "gulp sync:plugins"
   puts 'synced'
+end
 
+task :sync_github_projects do
   app = OpenStruct.new
   extension = Github::Extension.new(app, Dotenv.load)
   extension.sync
@@ -22,7 +29,11 @@ task :github do
   extension.app.github.projects.each do |p|
     filename = "plugins/#{p.name}.md"
     puts p.inspect
-    next if File.exist?(filename)
+
+    # TODO: maybe just always update the file???
+    # next if File.exist?(filename)
+    topics = JSON.parse(Github::API.fetch_repo_topics(p.repo)).with_indifferent_access
+    stopwords = %w(aws serverless plugin serverless-plugin serverless-framework serverless-architectures nodejs)
     readme = Github::API.fetch_repo_readme(p.repo)
     File.open(filename, 'w+') do |post|
       post.puts "---"
@@ -30,8 +41,8 @@ task :github do
       post.puts "title: #{p.repo.split("/").last.titleize}"
       post.puts "repo: #{p.repo}"
       post.puts "homepage: '#{p.homepage}'"
-      post.puts "topics: #{p.topics.join(",")}"
-      %i[description].each do |attr|
+      post.puts "topics: #{((topics["names"] || []) - stopwords).join(",")}"
+      %i[description language].each do |attr|
         post.puts "#{attr}: #{p.send(attr)}"
       end
       post.puts "---"
@@ -40,13 +51,16 @@ task :github do
       post.puts readme
     end
   end
+end
 
+task :sync_github_topics do
   # create topics
   topics = Github::API.fetch_archive
     .map{|repo, data| data["topics"] } # get all the topics
     .flatten
     .inject(Hash.new(0)) { |h, e| h[e] += 1 ; h } # group && count
     .each do |name,count|
+      next if name.blank?
       topic_filename = "plugins/topics/#{name}.md"
       File.open(topic_filename, 'w+') do |post|
         post.puts "---"
@@ -58,7 +72,7 @@ task :github do
         post.puts "count: #{count}"
         post.puts "---"
       end
-  end
+    end
 end
 
 require "tmpdir"

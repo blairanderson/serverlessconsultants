@@ -5,6 +5,7 @@ repo: jacob-meacham/serverless-plugin-bind-deployment-id
 homepage: 'https://github.com/jacob-meacham/serverless-plugin-bind-deployment-id'
 topics: 
 description: A Serverless plugin to bind the randomly generated deployment resource to your custom resources
+language: JavaScript
 ---
 
 

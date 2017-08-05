@@ -5,6 +5,7 @@ repo: nicka/serverless-plugin-diff
 homepage: 'https://github.com/nicka/serverless-plugin-diff'
 topics: 
 description: Compares your local AWS CloudFormation templates against deployed ones.
+language: JavaScript
 ---
 
 

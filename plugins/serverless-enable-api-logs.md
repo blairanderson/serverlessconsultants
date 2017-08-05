@@ -5,6 +5,7 @@ repo: paulSambolin/serverless-enable-api-logs
 homepage: 'https://github.com/paulSambolin/serverless-enable-api-logs'
 topics: 
 description: Enables Coudwatch logging for API Gateway events
+language: JavaScript
 ---
 
 

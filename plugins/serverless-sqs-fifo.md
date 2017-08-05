@@ -5,6 +5,7 @@ repo: vortarian/serverless-sqs-fifo
 homepage: 'https://github.com/vortarian/serverless-sqs-fifo'
 topics: 
 description: A serverless plugin to handle creation of sqs fifo queue's in aws (stop-gap)
+language: JavaScript
 ---
 
 

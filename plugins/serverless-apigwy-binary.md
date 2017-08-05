@@ -5,6 +5,7 @@ repo: ryanmurakami/serverless-apigwy-binary
 homepage: 'https://github.com/ryanmurakami/serverless-apigwy-binary'
 topics: 
 description: Serverless plugin for configuring API Gateway to return binary responses
+language: JavaScript
 ---
 
 

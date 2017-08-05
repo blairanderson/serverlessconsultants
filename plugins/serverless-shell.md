@@ -5,6 +5,7 @@ repo: UnitedIncome/serverless-shell
 homepage: 'https://github.com/UnitedIncome/serverless-shell'
 topics: 
 description: Drop to a runtime shell with all the environment variables set that you'd have in lambda.
+language: JavaScript
 ---
 
 

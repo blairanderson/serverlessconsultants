@@ -5,6 +5,7 @@ repo: SC5/serverless-plugin-cfauthorizer
 homepage: 'https://github.com/SC5/serverless-plugin-cfauthorizer'
 topics: 
 description: This plugin allows you to define your own API Gateway Authorizers as the Serverless CloudFormation resources and apply them to HTTP endpoints.
+language: JavaScript
 ---
 
 

@@ -1,10 +1,6 @@
 {
   "maciejtreder/serverless-apigw-binary": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 152,
       "stargazers_count": 10,
       "watchers_count": 10,
@@ -18,16 +14,7 @@
     }
   },
   "amplify-education/serverless-domain-manager": {
-    "topics": [
-      "certificate",
-      "lambda",
-      "amazon-certificate-manager",
-      "api-gateway",
-      "route53",
-      "cloudformation"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 44,
       "stargazers_count": 19,
       "watchers_count": 19,
@@ -41,11 +28,7 @@
     }
   },
   "amplify-education/serverless-log-forwarding": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 23,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -59,11 +42,7 @@
     }
   },
   "silvermine/serverless-plugin-external-sns-events": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 14,
       "stargazers_count": 14,
       "watchers_count": 14,
@@ -77,11 +56,7 @@
     }
   },
   "silvermine/serverless-plugin-write-env-vars": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 8,
       "stargazers_count": 28,
       "watchers_count": 28,
@@ -95,11 +70,7 @@
     }
   },
   "rajington/serverless-alexa-plugin": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 327,
       "stargazers_count": 13,
       "watchers_count": 13,
@@ -113,11 +84,7 @@
     }
   },
   "nfour/serverless-build-plugin": {
-    "topics": [
-      "build"
-    ],
-    "language": "TypeScript",
-    "17383": {
+    "2017-08-05": {
       "size": 557,
       "stargazers_count": 27,
       "watchers_count": 27,
@@ -131,11 +98,7 @@
     }
   },
   "rurri/serverless-resources-env": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 21,
       "stargazers_count": 11,
       "watchers_count": 11,
@@ -149,11 +112,7 @@
     }
   },
   "dittto/serverless-event-constant-inputs": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 4,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -167,11 +126,7 @@
     }
   },
   "SC5/serverless-kms-secrets": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 19,
       "stargazers_count": 17,
       "watchers_count": 17,
@@ -185,11 +140,7 @@
     }
   },
   "svdgraaf/serverless-plugin-stack-outputs": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 143,
       "stargazers_count": 7,
       "watchers_count": 7,
@@ -203,11 +154,7 @@
     }
   },
   "svdgraaf/serverless-plugin-stage-variables": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 25,
       "stargazers_count": 15,
       "watchers_count": 15,
@@ -221,11 +168,7 @@
     }
   },
   "ACloudGuru/serverless-plugin-cloudwatch-sumologic": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 17,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -239,11 +182,7 @@
     }
   },
   "ACloudGuru/serverless-plugin-aws-alerts": {
-    "topics": [
-      "aws-cloudwatch"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 119,
       "stargazers_count": 38,
       "watchers_count": 38,
@@ -257,11 +196,7 @@
     }
   },
   "ACloudGuru/serverless-plugin-package-dotenv-file": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 6,
       "stargazers_count": 8,
       "watchers_count": 8,
@@ -275,11 +210,7 @@
     }
   },
   "horike37/serverless-command-line-event-args": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 10,
       "stargazers_count": 12,
       "watchers_count": 12,
@@ -293,13 +224,7 @@
     }
   },
   "99xt/serverless-dynamodb-local": {
-    "topics": [
-      "dynamodb",
-      "dynamodb-local",
-      "serverless-offline"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 159,
       "stargazers_count": 96,
       "watchers_count": 96,
@@ -313,12 +238,7 @@
     }
   },
   "dherault/serverless-offline": {
-    "topics": [
-      "aws-lambda",
-      "aws-apigateway"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 900,
       "stargazers_count": 597,
       "watchers_count": 597,
@@ -332,11 +252,7 @@
     }
   },
   "gertjvr/serverless-plugin-simulate": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 20459,
       "stargazers_count": 23,
       "watchers_count": 23,
@@ -350,17 +266,7 @@
     }
   },
   "FidelLimited/serverless-plugin-optimize": {
-    "topics": [
-      "uglify",
-      "minify",
-      "serverless-functions",
-      "babel",
-      "serverless-optimizer-plugin",
-      "browserify",
-      "aws-lambda"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 41,
       "stargazers_count": 47,
       "watchers_count": 47,
@@ -374,12 +280,7 @@
     }
   },
   "FidelLimited/serverless-plugin-select": {
-    "topics": [
-      "serverless-functions",
-      "aws-lambda"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 5,
       "stargazers_count": 9,
       "watchers_count": 9,
@@ -393,12 +294,7 @@
     }
   },
   "FidelLimited/serverless-plugin-warmup": {
-    "topics": [
-      "lambda",
-      "aws-lambda"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 27,
       "stargazers_count": 45,
       "watchers_count": 45,
@@ -412,11 +308,7 @@
     }
   },
   "doapp-ryanp/serverless-plugin-browserify": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 26,
       "stargazers_count": 17,
       "watchers_count": 17,
@@ -430,11 +322,7 @@
     }
   },
   "nicka/serverless-plugin-diff": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 62,
       "stargazers_count": 9,
       "watchers_count": 9,
@@ -448,11 +336,7 @@
     }
   },
   "lithin/serverless-run-function-plugin": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 15,
       "stargazers_count": 13,
       "watchers_count": 13,
@@ -466,11 +350,7 @@
     }
   },
   "weixu365/serverless-scriptable-plugin": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 25,
       "stargazers_count": 16,
       "watchers_count": 16,
@@ -484,11 +364,7 @@
     }
   },
   "blackevil245/serverless-subscription-filter": {
-    "topics": [
-      "cloudwatch"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 13,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -502,16 +378,7 @@
     }
   },
   "elastic-coders/serverless-webpack": {
-    "topics": [
-      "webpack",
-      "babel",
-      "serverless-offline",
-      "webpack-configuration",
-      "webpack2",
-      "webpack3"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 282,
       "stargazers_count": 317,
       "watchers_count": 317,
@@ -525,14 +392,7 @@
     }
   },
   "logandk/serverless-wsgi": {
-    "topics": [
-      "wsgi",
-      "python",
-      "flask",
-      "aws-lambda"
-    ],
-    "language": "Python",
-    "17383": {
+    "2017-08-05": {
       "size": 47,
       "stargazers_count": 64,
       "watchers_count": 64,
@@ -546,11 +406,7 @@
     }
   },
   "marcy-terui/serverless-crypt": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 18,
       "stargazers_count": 36,
       "watchers_count": 36,
@@ -564,11 +420,7 @@
     }
   },
   "silvermine/serverless-plugin-multiple-responses": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 13,
       "stargazers_count": 13,
       "watchers_count": 13,
@@ -582,11 +434,7 @@
     }
   },
   "dougmoscrop/serverless-plugin-include-dependencies": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 1081,
       "stargazers_count": 38,
       "watchers_count": 38,
@@ -600,12 +448,7 @@
     }
   },
   "SC5/serverless-mocha-plugin": {
-    "topics": [
-      "mocha",
-      "test-driven-development"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 147,
       "stargazers_count": 62,
       "watchers_count": 62,
@@ -619,12 +462,7 @@
     }
   },
   "SC5/serverless-jest-plugin": {
-    "topics": [
-      "mocha",
-      "test-driven-development"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 31,
       "stargazers_count": 25,
       "watchers_count": 25,
@@ -638,11 +476,7 @@
     }
   },
   "SC5/serverless-plugin-cfauthorizer": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 5,
       "stargazers_count": 16,
       "watchers_count": 16,
@@ -656,15 +490,7 @@
     }
   },
   "9cookies/serverless-aws-documentation": {
-    "topics": [
-      "api-gateway",
-      "json-schema",
-      "documentation",
-      "documentation-generator",
-      "aws-apigateway"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 80,
       "stargazers_count": 45,
       "watchers_count": 45,
@@ -678,11 +504,7 @@
     }
   },
   "andrewcurioso/raml-serverless": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 13,
       "stargazers_count": 13,
       "watchers_count": 13,
@@ -696,14 +518,7 @@
     }
   },
   "UnitedIncome/serverless-python-requirements": {
-    "topics": [
-      "aws-lambda",
-      "python",
-      "requirements",
-      "pip"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 72,
       "stargazers_count": 59,
       "watchers_count": 59,
@@ -717,11 +532,7 @@
     }
   },
   "fruffin/serverless-dotnet": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 9,
       "stargazers_count": 9,
       "watchers_count": 9,
@@ -735,11 +546,7 @@
     }
   },
   "paulSambolin/serverless-enable-api-logs": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 5,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -753,11 +560,7 @@
     }
   },
   "cfchou/serverless-python-individually": {
-    "topics": [
-      "aws-lambda"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 47,
       "stargazers_count": 6,
       "watchers_count": 6,
@@ -771,11 +574,7 @@
     }
   },
   "tsub/serverless-plugin-subscription-filter": {
-    "topics": [
-      "aws-lambda"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 81,
       "stargazers_count": 11,
       "watchers_count": 11,
@@ -789,11 +588,7 @@
     }
   },
   "horike37/serverless-step-functions": {
-    "topics": [
-      "step-functions"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 173,
       "stargazers_count": 143,
       "watchers_count": 143,
@@ -807,11 +602,7 @@
     }
   },
   "mvila/serverless-plugin-scripts": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 4,
       "stargazers_count": 11,
       "watchers_count": 11,
@@ -825,11 +616,7 @@
     }
   },
   "jacob-meacham/serverless-plugin-bind-deployment-id": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 61,
       "stargazers_count": 8,
       "watchers_count": 8,
@@ -843,11 +630,7 @@
     }
   },
   "jacob-meacham/serverless-plugin-git-variables": {
-    "topics": [
-
-    ],
-    "language": "Shell",
-    "17383": {
+    "2017-08-05": {
       "size": 95,
       "stargazers_count": 9,
       "watchers_count": 9,
@@ -861,12 +644,7 @@
     }
   },
   "bencooling/serverless-plugin-graphiql": {
-    "topics": [
-      "graphiql",
-      "graphql"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 18,
       "stargazers_count": 27,
       "watchers_count": 27,
@@ -880,11 +658,7 @@
     }
   },
   "duanefields/serverless-coffeescript": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 2,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -898,14 +672,7 @@
     }
   },
   "gmetzker/serverless-plugin-lambda-dead-letter": {
-    "topics": [
-      "lambda",
-      "deadletter-queue",
-      "sqs-queue",
-      "cloud"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 40,
       "stargazers_count": 10,
       "watchers_count": 10,
@@ -919,11 +686,7 @@
     }
   },
   "yonomi/serverless-plugin-encode-env-var-objects": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 5,
       "stargazers_count": 0,
       "watchers_count": 0,
@@ -937,11 +700,7 @@
     }
   },
   "economysizegeek/serverless-dir-config-plugin": {
-    "topics": [
-      "serverless-deployments"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 9,
       "stargazers_count": 2,
       "watchers_count": 2,
@@ -955,13 +714,7 @@
     }
   },
   "nervous-systems/serverless-cljs-plugin": {
-    "topics": [
-      "clojurescript",
-      "aws-lambda",
-      "clojure"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 5,
       "stargazers_count": 23,
       "watchers_count": 23,
@@ -975,11 +728,7 @@
     }
   },
   "claygregory/serverless-prune-plugin": {
-    "topics": [
-      "aws-lambda"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 14,
       "stargazers_count": 15,
       "watchers_count": 15,
@@ -993,11 +742,7 @@
     }
   },
   "ajmath/serverless-offline-scheduler": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 40,
       "stargazers_count": 11,
       "watchers_count": 11,
@@ -1011,15 +756,7 @@
     }
   },
   "HyperBrain/serverless-aws-alias": {
-    "topics": [
-      "aws-lambda",
-      "lambda-functions",
-      "api-gateway",
-      "alias-stacks",
-      "stage"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 161,
       "stargazers_count": 27,
       "watchers_count": 27,
@@ -1033,15 +770,7 @@
     }
   },
   "goldwasserexchange/serverless-plugin-webpack": {
-    "topics": [
-      "webpack",
-      "webpack2",
-      "tree-shaking",
-      "optimization",
-      "aws-lambda"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 91,
       "stargazers_count": 25,
       "watchers_count": 25,
@@ -1055,11 +784,7 @@
     }
   },
   "vortarian/serverless-sqs-fifo": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 9,
       "stargazers_count": 2,
       "watchers_count": 2,
@@ -1073,13 +798,7 @@
     }
   },
   "sbstjn/serverless-sqs-alarms-plugin": {
-    "topics": [
-      "sqs",
-      "lambda",
-      "sns"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 60,
       "stargazers_count": 10,
       "watchers_count": 10,
@@ -1093,11 +812,7 @@
     }
   },
   "Jimdo/serverless-dotenv": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 34,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -1111,11 +826,7 @@
     }
   },
   "uswitch/serverless-hooks-plugin": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 5,
       "stargazers_count": 6,
       "watchers_count": 6,
@@ -1129,13 +840,7 @@
     }
   },
   "sdd/serverless-dynalite": {
-    "topics": [
-      "dynamodb",
-      "dynalite",
-      "serverless-offline"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 8,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -1149,13 +854,7 @@
     }
   },
   "sdd/serverless-apig-s3": {
-    "topics": [
-      "aws-lambda",
-      "aws-s3",
-      "aws-apigateway"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 22,
       "stargazers_count": 5,
       "watchers_count": 5,
@@ -1169,15 +868,7 @@
     }
   },
   "graphcool/serverless-plugin-typescript": {
-    "topics": [
-      "typescript",
-      "aws-lambda",
-      "babel",
-      "webpack",
-      "rollup"
-    ],
-    "language": "TypeScript",
-    "17383": {
+    "2017-08-05": {
       "size": 66,
       "stargazers_count": 49,
       "watchers_count": 49,
@@ -1191,11 +882,7 @@
     }
   },
   "svdgraaf/serverless-parameters": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 3281,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -1209,11 +896,7 @@
     }
   },
   "svdgraaf/serverless-pseudo-parameters": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 472,
       "stargazers_count": 8,
       "watchers_count": 8,
@@ -1227,12 +910,7 @@
     }
   },
   "Jimdo/serverless-dynamodb-ttl": {
-    "topics": [
-      "dynamodb",
-      "cloudformation"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 55,
       "stargazers_count": 6,
       "watchers_count": 6,
@@ -1246,11 +924,7 @@
     }
   },
   "leftclickben/serverless-api-stage": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 11,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -1264,11 +938,7 @@
     }
   },
   "arabold/serverless-export-env": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 15,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -1282,12 +952,7 @@
     }
   },
   "ubaniabalogun/serverless-package-python-functions": {
-    "topics": [
-      "requirements",
-      "python"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 28,
       "stargazers_count": 8,
       "watchers_count": 8,
@@ -1301,18 +966,7 @@
     }
   },
   "iopipe/serverless-plugin-iopipe": {
-    "topics": [
-      "lambda",
-      "sls",
-      "agent",
-      "analytics",
-      "metrics",
-      "tracing",
-      "jscodeshift",
-      "codemod"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 242,
       "stargazers_count": 2,
       "watchers_count": 2,
@@ -1326,14 +980,7 @@
     }
   },
   "SAPessi/serverless-sam": {
-    "topics": [
-      "aws-sam",
-      "lambda",
-      "aws-lambda",
-      "aws-apigateway"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 27,
       "stargazers_count": 20,
       "watchers_count": 20,
@@ -1347,11 +994,7 @@
     }
   },
   "amplify-education/serverless-vpc-discovery": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 19,
       "stargazers_count": 6,
       "watchers_count": 6,
@@ -1365,11 +1008,7 @@
     }
   },
   "bitnami/kubeless-serverless": {
-    "topics": [
-
-    ],
-    "language": null,
-    "17383": {
+    "2017-08-05": {
       "size": null,
       "stargazers_count": null,
       "watchers_count": null,
@@ -1383,11 +1022,7 @@
     }
   },
   "ryanmurakami/serverless-apigwy-binary": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 2,
       "stargazers_count": 9,
       "watchers_count": 9,
@@ -1401,16 +1036,7 @@
     }
   },
   "digitalmaas/serverless-plugin-browserifier": {
-    "topics": [
-      "browserify",
-      "node-lambda",
-      "serverless-plugin-browserify",
-      "digitalmaas",
-      "aws-lambda",
-      "node-js"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 21,
       "stargazers_count": 2,
       "watchers_count": 2,
@@ -1424,11 +1050,7 @@
     }
   },
   "UnitedIncome/serverless-shell": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 21,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -1442,15 +1064,7 @@
     }
   },
   "sbstjn/serverless-stack-output": {
-    "topics": [
-      "cloudformation",
-      "stack",
-      "output",
-      "sls",
-      "lambda"
-    ],
-    "language": "TypeScript",
-    "17383": {
+    "2017-08-05": {
       "size": 64,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -1464,12 +1078,7 @@
     }
   },
   "rhythminme/serverless-gulp": {
-    "topics": [
-      "gulp",
-      "gulp-tasks"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 11,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -1483,11 +1092,7 @@
     }
   },
   "arabold/serverless-sentry-plugin": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 46,
       "stargazers_count": 20,
       "watchers_count": 20,
@@ -1501,14 +1106,7 @@
     }
   },
   "DieProduktMacher/serverless-env-generator": {
-    "topics": [
-      "environment-variables",
-      "credentials",
-      "encryption",
-      "aws-kms"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 38,
       "stargazers_count": 7,
       "watchers_count": 7,
@@ -1522,18 +1120,7 @@
     }
   },
   "DieProduktMacher/serverless-local-dev-server": {
-    "topics": [
-      "alexa",
-      "http",
-      "local",
-      "development",
-      "http-endpoint",
-      "aws-lambda",
-      "alexa-skill",
-      "facebook-messenger-bot"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 24,
       "stargazers_count": 1,
       "watchers_count": 1,
@@ -1547,11 +1134,7 @@
     }
   },
   "rawphp/serverless-plugin-stack-config.git": {
-    "topics": [
-
-    ],
-    "language": null,
-    "17383": {
+    "2017-08-05": {
       "size": null,
       "stargazers_count": null,
       "watchers_count": null,
@@ -1565,11 +1148,7 @@
     }
   },
   "rawphp/serverless-plugin-elastic-beanstalk.git": {
-    "topics": [
-
-    ],
-    "language": null,
-    "17383": {
+    "2017-08-05": {
       "size": null,
       "stargazers_count": null,
       "watchers_count": null,
@@ -1583,11 +1162,7 @@
     }
   },
   "sinofseven/serverless-s3-remover": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 5,
       "stargazers_count": 3,
       "watchers_count": 3,
@@ -1601,16 +1176,7 @@
     }
   },
   "sbstjn/serverless-dynamodb-autoscaling": {
-    "topics": [
-      "sls",
-      "dynamodb",
-      "scaling",
-      "capacity",
-      "amazon",
-      "cloudformation"
-    ],
-    "language": "TypeScript",
-    "17383": {
+    "2017-08-05": {
       "size": 77,
       "stargazers_count": 25,
       "watchers_count": 25,
@@ -1624,11 +1190,7 @@
     }
   },
   "bespoken/serverless-plugin-bespoken": {
-    "topics": [
-
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 1221,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -1642,14 +1204,7 @@
     }
   },
   "sbstjn/serverless-s3bucket-sync": {
-    "topics": [
-      "s3",
-      "sync",
-      "bucket",
-      "assets"
-    ],
-    "language": "TypeScript",
-    "17383": {
+    "2017-08-05": {
       "size": 49,
       "stargazers_count": 7,
       "watchers_count": 7,
@@ -1663,11 +1218,7 @@
     }
   },
   "k1LoW/serverless-s3-sync": {
-    "topics": [
-      "s3"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 10,
       "stargazers_count": 12,
       "watchers_count": 12,
@@ -1681,12 +1232,7 @@
     }
   },
   "jagdish-176/serverless-nested-stack": {
-    "topics": [
-      "serverless-nested-stack",
-      "cloudformation-200-resource-limit"
-    ],
-    "language": "JavaScript",
-    "17383": {
+    "2017-08-05": {
       "size": 4,
       "stargazers_count": 4,
       "watchers_count": 4,

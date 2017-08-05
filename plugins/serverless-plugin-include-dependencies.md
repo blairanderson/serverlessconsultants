@@ -5,6 +5,7 @@ repo: dougmoscrop/serverless-plugin-include-dependencies
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-include-dependencies'
 topics: 
 description: This is a Serverless plugin that should make your deployed functions smaller.
+language: JavaScript
 ---
 
 

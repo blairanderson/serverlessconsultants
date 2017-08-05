@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Jest Plugin
 repo: SC5/serverless-jest-plugin
 homepage: 'https://github.com/SC5/serverless-jest-plugin'
-topics: 
+topics: mocha,test-driven-development
 description: A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Jest
+language: JavaScript
 ---
 
 

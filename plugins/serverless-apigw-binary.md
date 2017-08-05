@@ -5,6 +5,7 @@ repo: maciejtreder/serverless-apigw-binary
 homepage: 'https://github.com/maciejtreder/serverless-apigw-binary'
 topics: 
 description: Plugin to enable binary support in AWS API Gateway.
+language: JavaScript
 ---
 
 

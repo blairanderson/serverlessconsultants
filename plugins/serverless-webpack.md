@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Webpack
 repo: elastic-coders/serverless-webpack
 homepage: 'https://github.com/elastic-coders/serverless-webpack'
-topics: 
+topics: webpack,babel,serverless-offline,webpack-configuration,webpack2,webpack3
 description: Serverless plugin to bundle your lambdas with Webpack
+language: JavaScript
 ---
 
 

@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
-topics: 
+topics: aws-lambda,aws-apigateway
 description: Emulate AWS λ and API Gateway locally when developing your Serverless project
+language: JavaScript
 ---
 
 

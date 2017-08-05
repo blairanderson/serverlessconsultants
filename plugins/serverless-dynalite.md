@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Dynalite
 repo: sdd/serverless-dynalite
 homepage: 'https://github.com/sdd/serverless-dynalite'
-topics: 
+topics: dynamodb,dynalite,serverless-offline
 description: Run dynalite locally (no JVM, all JS) to simulate DynamoDB. Watch serverless.yml for table config updates.
+language: JavaScript
 ---
 
 

@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Plugin Typescript
 repo: graphcool/serverless-plugin-typescript
 homepage: 'https://github.com/graphcool/serverless-plugin-typescript'
-topics: 
+topics: typescript,aws-lambda,babel,webpack,rollup
 description: Serverless plugin for zero-config Typescript support.
+language: TypeScript
 ---
 
 

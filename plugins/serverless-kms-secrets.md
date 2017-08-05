@@ -5,6 +5,7 @@ repo: SC5/serverless-kms-secrets
 homepage: 'https://github.com/SC5/serverless-kms-secrets'
 topics: 
 description: Allows to easily encrypt and decrypt secrets using KMS from the serverless CLI
+language: JavaScript
 ---
 
 

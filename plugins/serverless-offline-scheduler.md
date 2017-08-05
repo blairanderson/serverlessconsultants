@@ -5,6 +5,7 @@ repo: ajmath/serverless-offline-scheduler
 homepage: 'https://github.com/ajmath/serverless-offline-scheduler'
 topics: 
 description: Runs scheduled functions offline while integrating with serverless-offline
+language: JavaScript
 ---
 
 

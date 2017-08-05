@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Plugin Subscription Filter
 repo: tsub/serverless-plugin-subscription-filter
 homepage: 'https://github.com/tsub/serverless-plugin-subscription-filter'
-topics: 
+topics: aws-lambda
 description: A serverless plugin to register AWS CloudWatchLogs subscription filter
+language: JavaScript
 ---
 
 

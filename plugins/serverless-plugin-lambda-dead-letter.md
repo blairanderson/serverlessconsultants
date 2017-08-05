@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Plugin Lambda Dead Letter
 repo: gmetzker/serverless-plugin-lambda-dead-letter
 homepage: 'https://github.com/gmetzker/serverless-plugin-lambda-dead-letter'
-topics: 
+topics: lambda,deadletter-queue,sqs-queue,cloud
 description: A Serverless plugin that can configure a lambda with a dead letter queue or topic
+language: JavaScript
 ---
 
 

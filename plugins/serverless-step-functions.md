@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
-topics: 
+topics: step-functions
 description: AWS Step Functions with Serverless Framework.
+language: JavaScript
 ---
 
 

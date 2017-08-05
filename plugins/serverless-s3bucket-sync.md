@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless S3bucket Sync
 repo: sbstjn/serverless-s3bucket-sync
 homepage: 'https://github.com/sbstjn/serverless-s3bucket-sync'
-topics: 
+topics: s3,sync,bucket,assets
 description: Sync a local folder with a S3 bucket after sls deploy
+language: TypeScript
 ---
 
 

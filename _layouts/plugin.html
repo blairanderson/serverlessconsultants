@@ -2,10 +2,10 @@
 layout: default
 ---
 
-{"topics"=>[], "language"=>"JavaScript", "17377"=>{"size"=>41, "stargazers_count"=>19, "watchers_count"=>19, "forks_count"=>7, "open_issues_count"=>3, "forks"=>7, "open_issues"=>3, "watchers"=>19, "network_count"=>7, "subscribers_count"=>7}}
-
-{% assign data = site.data.plugins[page.repo]%}
-{{data}}
+{% capture github %}https://github.com/{{page.repo}}{% endcapture %}
+{% capture today %}{{ 'now' | date: "%Y-%m-%d" }}{% endcapture %}
+{% assign data = site.data.plugins[page.repo][{{today}}] %}
+{% assign topics = page.topics %}
 
 <div class="mw8 center">
   <h1 class="tc ma0">{{page.title}}</h1>
@@ -14,44 +14,42 @@ layout: default
       <img src="https://icon.now.sh/home" alt="homepage icon">
       {{ page.homepage }}
     </a>
-    {% capture github %}https://github.com/{{page.repo}}{% endcapture %}
     {% unless github == page.homepage %}
+      <!-- if github is different than homepage -->
       <span class="">|</span>
       <a rel="nofollow noreferrer noopener" href="{{ github }}">{{ github }}</a>
     {% endunless %}
   </div>
-  <div>
-    {{ site.plugins }}
-  </div>
   <article class="ph3 ph5-ns">
     <h3 class="f6 ma0 pa0 ttu tc tracked">Tracked</h3>
     <div class="cf tc">
-      {{ data }}
-      {% if data["language"] %}
-      <dl class="fl fn-l w-60 dib-l w-auto-l lh-title mr5-l">
+      {% if page.language %}
+      <dl title="Programming Language" class="fl fn-l w-60 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Language</dd>
-        <dd class="f3 fw6 ml0">{{ data["language"] }}</dd>
+        <dd class="f3 fw6 ml0">{{ page.language }}</dd>
       </dl>
       {% endif %}
-      <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+      <dl title="Open Issue Count" class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Issues</dd>
-        <dd class="f3 fw6 ml0">{{page.issues}}</dd>
+        <dd class="f3 fw6 ml0">{{data['open_issues_count']}}</dd>
       </dl>
-      <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+      <dl title="Stargazer Count" class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Stars</dd>
-        <dd class="f3 fw6 ml0">{{page.stars}}</dd>
+        <dd class="f3 fw6 ml0">{{ data['stargazers_count'] }}</dd>
       </dl>
-      <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+      <dl title="Forks Count" class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Forks</dd>
-        <dd class="f3 fw6 ml0">{{page.forks}}</dd>
+        <dd class="f3 fw6 ml0">{{ data["forks_count"] }}</dd>
       </dl>
-      <dl class="fl fn-l w-50 dib-l w-auto-l lh-title">
+      <dl title="Watchers Count" class="fl fn-l w-50 dib-l w-auto-l lh-title">
         <dd class="f6 fw4 ml0">Watchers</dd>
-        <dd class="f3 fw6 ml0">{{page.watchers}}</dd>
+        <dd class="f3 fw6 ml0">{{  data["watchers_count"] }}</dd>
       </dl>
     </div>
   </article>
 
 </div>
 <h3 class="tc">Repo README Contents:</h3>
-<section class="mw8 center ph3 pv2 overflow-x-scroll ba br3" id="readme-content"></section>
+<section class="mw8 center ph3 pv2 overflow-x-scroll ba br3" id="readme-content">
+  {{content}}
+</section>

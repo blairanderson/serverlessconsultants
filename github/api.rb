@@ -62,16 +62,11 @@ module Github
 
       def repo_from_api(repo)
         puts "Syncing: #{repo.inspect}"
-        topics = JSON.parse(fetch_repo_topics(repo)).with_indifferent_access
+
         JSON.parse(fetch_repo(repo)).with_indifferent_access.tap do |data|
           unless repo_from_archive(repo)
             cache["archive"] ||= {}
             cache["archive"][repo] ||= {}
-            
-            stopwords = %w(aws serverless plugin serverless-plugin serverless-framework serverless-architectures nodejs)
-
-            cache["archive"][repo]["topics"] = (topics["names"] || []) - stopwords
-            cache["archive"][repo]["language"] = data["language"]
             cache["archive"][repo][today.to_s] = {
               "size" => data["size"],
               "stargazers_count" => data["stargazers_count"],
@@ -151,7 +146,7 @@ module Github
       end
 
       def today
-        today = Time.now.to_i / DAY
+        Date.today.to_s
       end
     end
   end

@@ -5,6 +5,7 @@ repo: svdgraaf/serverless-parameters
 homepage: 'https://github.com/svdgraaf/serverless-parameters'
 topics: 
 description: Add parameters to the generated cloudformation templates
+language: JavaScript
 ---
 
 

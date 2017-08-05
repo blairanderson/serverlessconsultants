@@ -5,6 +5,7 @@ repo: fruffin/serverless-dotnet
 homepage: 'https://github.com/fruffin/serverless-dotnet'
 topics: 
 description: A serverless plugin to run 'dotnet' commands as part of the deploy process
+language: JavaScript
 ---
 
 

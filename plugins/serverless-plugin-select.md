@@ -3,8 +3,9 @@ layout: plugin
 title: Serverless Plugin Select
 repo: FidelLimited/serverless-plugin-select
 homepage: 'https://github.com/FidelLimited/serverless-plugin-select'
-topics: 
+topics: serverless-functions,aws-lambda
 description: Select which functions are to be deployed based on region and stage.
+language: JavaScript
 ---
 
 

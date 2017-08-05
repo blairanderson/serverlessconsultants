@@ -5,6 +5,7 @@ repo: ACloudGuru/serverless-plugin-package-dotenv-file
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-package-dotenv-file'
 topics: 
 description: A Serverless plugin to copy a .env file into the serverless package
+language: JavaScript
 ---
 
 

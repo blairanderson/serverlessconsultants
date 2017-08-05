@@ -5,6 +5,7 @@ repo: leftclickben/serverless-api-stage
 homepage: 'https://github.com/leftclickben/serverless-api-stage'
 topics: 
 description: Serverless API Stage plugin, enables stage variables and logging for AWS API Gateway.
+language: JavaScript
 ---
 
 
