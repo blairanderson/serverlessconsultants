@@ -47,6 +47,7 @@ module Github
       end
 
       def repo_data(repo)
+
         cache["repo/#{repo}"] ||= (repo_from_archive(repo) || repo_from_api(repo) || {})
       end
 
@@ -92,7 +93,7 @@ module Github
         # # Temporary workaround
         # data = JSON.parse(gist["files"]["data.json"]["content"])
         # cache["archive"] = data
-        JSON.parse(File.read(LOCAL_ARCHIVE))
+        cache["archive"] = JSON.parse(File.read(LOCAL_ARCHIVE))
       rescue => e
         puts "Error fetching gist with archived data: #{e}"
       end
