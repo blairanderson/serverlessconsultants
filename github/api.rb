@@ -67,6 +67,8 @@ module Github
           unless repo_from_archive(repo)
             cache["archive"] ||= {}
             cache["archive"][repo] ||= {}
+            cache["archive"][repo]["last"] = cache["archive"][repo]["current"]
+            cache["archive"][repo]["current"] = today.to_s
             cache["archive"][repo][today.to_s] = {
               "size" => data["size"],
               "stargazers_count" => data["stargazers_count"],

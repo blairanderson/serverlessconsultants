@@ -34,6 +34,7 @@ task :sync_github_projects do
     # next if File.exist?(filename)
     topics = JSON.parse(Github::API.fetch_repo_topics(p.repo)).with_indifferent_access
     stopwords = %w(aws serverless plugin serverless-plugin serverless-framework serverless-architectures nodejs)
+
     readme = Github::API.fetch_repo_readme(p.repo)
     File.open(filename, 'w+') do |post|
       post.puts "---"
