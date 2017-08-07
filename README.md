@@ -1,6 +1,6 @@
-# [Serverless Frameworks Directory](www.serverlessconsultants.com)
+# [Serverless Plugins Directory](https://www.serverlessconsultants.com/plugins/)
 
-A directory of resources and consultants for serverless technology. For more information please visit the website at [https://www.serverlessconsultants.com](www.serverlessconsultants.com).
+A directory of resources for serverless technology. For more information please visit the website at [https://www.serverlessconsultants.com](www.serverlessconsultants.com).
 
 - [ ] remove STOPWORDS
 - [ ] titleize the titles
