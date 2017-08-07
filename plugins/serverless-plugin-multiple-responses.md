@@ -7,11 +7,14 @@ topics:
 description: Enable multiple content-types for Response template 
 stars: 13
 stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
+forks_diff: 0
 watchers: 13
 issues: 2
 issues_trend: 
+issues_diff: 0
 ---
 
 

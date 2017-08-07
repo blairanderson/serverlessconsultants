@@ -7,11 +7,14 @@ topics: aws-lambda
 description: Deletes old versions of functions from AWS, preserving recent and aliased versions
 stars: 15
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 15
 issues: 1
 issues_trend: 
+issues_diff: 0
 ---
 
 

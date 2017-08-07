@@ -7,11 +7,14 @@ topics:
 description: A Serverless plugin to bind the randomly generated deployment resource to your custom resources
 stars: 8
 stars_trend: 
+stars_diff: 0
 forks: 4
 forks_trend: 
+forks_diff: 0
 watchers: 8
 issues: 1
 issues_trend: 
+issues_diff: 0
 ---
 
 

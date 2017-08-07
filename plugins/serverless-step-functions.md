@@ -7,11 +7,14 @@ topics: step-functions
 description: AWS Step Functions with Serverless Framework.
 stars: 143
 stars_trend: 
+stars_diff: 0
 forks: 18
 forks_trend: 
+forks_diff: 0
 watchers: 143
 issues: 8
 issues_trend: 
+issues_diff: 0
 ---
 
 

@@ -7,11 +7,14 @@ topics:
 description: Add scripting capabilities to the Serverless Framework
 stars: 11
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 11
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

@@ -7,11 +7,14 @@ topics: serverless-functions,aws-lambda
 description: Select which functions are to be deployed based on region and stage.
 stars: 9
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 9
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

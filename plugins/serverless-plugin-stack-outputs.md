@@ -7,11 +7,14 @@ topics:
 description: Displays stack outputs for your serverless stacks when `sls info` is ran
 stars: 7
 stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
+forks_diff: 0
 watchers: 7
 issues: 1
 issues_trend: 
+issues_diff: 0
 ---
 
 

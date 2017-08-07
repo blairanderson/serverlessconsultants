@@ -7,11 +7,14 @@ topics: alexa,http,local,development,http-endpoint,aws-lambda,alexa-skill,facebo
 description: Speeds up development of Alexa Skills, Chatbots and APIs by exposing your functions as local HTTP endpoints and mapping received events.
 stars: 1
 stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: up
+forks_diff: 1
 watchers: 1
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

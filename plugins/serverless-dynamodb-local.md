@@ -5,13 +5,16 @@ repo: 99xt/serverless-dynamodb-local
 homepage: 'https://github.com/99xt/serverless-dynamodb-local'
 topics: dynamodb,dynamodb-local,serverless-offline
 description: Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless
-stars: 96
-stars_trend: 
-forks: 43
-forks_trend: 
-watchers: 96
+stars: 97
+stars_trend: up
+stars_diff: 1
+forks: 44
+forks_trend: up
+forks_diff: 1
+watchers: 97
 issues: 25
 issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -82,6 +85,8 @@ custom:
       inMemory: true
       migrate: true
       seed: true
+    # Uncomment only if you already have a DynamoDB running locally
+    # noStart: true
 ```
 
 ##  Migrations: sls dynamodb migrate

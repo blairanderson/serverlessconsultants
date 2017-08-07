@@ -7,11 +7,14 @@ topics: certificate,lambda,amazon-certificate-manager,api-gateway,route53,cloudf
 description: Serverless plugin for managing custom domains with API Gateways.
 stars: 19
 stars_trend: 
+stars_diff: 0
 forks: 7
 forks_trend: 
+forks_diff: 0
 watchers: 19
 issues: 2
 issues_trend: 
+issues_diff: 0
 ---
 
 

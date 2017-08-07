@@ -7,11 +7,14 @@ topics: aws-lambda,aws-s3,aws-apigateway
 description: Serve static front-end content from S3 via the API Gatewy and deploy client bundle to S3.
 stars: 5
 stars_trend: 
+stars_diff: 0
 forks: 3
 forks_trend: up
+forks_diff: 1
 watchers: 5
 issues: 3
 issues_trend: 
+issues_diff: 0
 ---
 
 

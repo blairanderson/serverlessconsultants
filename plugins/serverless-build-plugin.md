@@ -7,11 +7,14 @@ topics: build
 description: A Node.js focused build plugin for serverless.
 stars: 27
 stars_trend: 
+stars_diff: 0
 forks: 11
 forks_trend: up
+forks_diff: 1
 watchers: 27
 issues: 4
 issues_trend: 
+issues_diff: 0
 ---
 
 

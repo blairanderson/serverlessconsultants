@@ -7,11 +7,14 @@ topics: typescript,aws-lambda,babel,webpack,rollup
 description: Serverless plugin for zero-config Typescript support.
 stars: 49
 stars_trend: 
+stars_diff: 0
 forks: 10
 forks_trend: 
+forks_diff: 0
 watchers: 49
 issues: 8
 issues_trend: 
+issues_diff: 0
 ---
 
 

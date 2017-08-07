@@ -7,11 +7,14 @@ topics: aws-sam,lambda,aws-lambda,aws-apigateway
 description: Exports an AWS SAM template for a service created with the Serverless Framework.
 stars: 20
 stars_trend: 
+stars_diff: 0
 forks: 4
 forks_trend: 
+forks_diff: 0
 watchers: 20
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

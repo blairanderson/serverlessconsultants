@@ -7,11 +7,14 @@ topics:
 description: Compares your local AWS CloudFormation templates against deployed ones.
 stars: 9
 stars_trend: 
+stars_diff: 0
 forks: 2
 forks_trend: 
+forks_diff: 0
 watchers: 9
 issues: 1
 issues_trend: 
+issues_diff: 0
 ---
 
 

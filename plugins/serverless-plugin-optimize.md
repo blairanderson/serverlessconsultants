@@ -7,11 +7,14 @@ topics: uglify,minify,serverless-functions,babel,serverless-optimizer-plugin,bro
 description: Bundle with Browserify, transpile with Babel to ES5 and minify with Uglify your Serverless functions.
 stars: 46
 stars_trend: down
+stars_diff: -1
 forks: 4
 forks_trend: 
+forks_diff: 0
 watchers: 46
 issues: 4
 issues_trend: 
+issues_diff: 0
 ---
 
 

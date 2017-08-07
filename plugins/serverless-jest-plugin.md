@@ -7,11 +7,14 @@ topics: mocha,test-driven-development
 description: A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Jest
 stars: 25
 stars_trend: 
-forks: 5
-forks_trend: 
+stars_diff: 0
+forks: 6
+forks_trend: up
+forks_diff: 1
 watchers: 25
-issues: 2
-issues_trend: 
+issues: 3
+issues_trend: up
+issues_diff: 1
 ---
 
 

@@ -7,11 +7,14 @@ topics: mocha,test-driven-development
 description: A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Mocha
 stars: 62
 stars_trend: 
+stars_diff: 0
 forks: 26
 forks_trend: 
+forks_diff: 0
 watchers: 62
 issues: 7
 issues_trend: 
+issues_diff: 0
 ---
 
 

@@ -7,11 +7,14 @@ topics: aws-lambda
 description: A serverless plugin to register AWS CloudWatchLogs subscription filter
 stars: 11
 stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
+forks_diff: 0
 watchers: 11
 issues: 1
 issues_trend: 
+issues_diff: 0
 ---
 
 

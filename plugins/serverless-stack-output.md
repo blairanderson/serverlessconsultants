@@ -7,11 +7,14 @@ topics: cloudformation,stack,output,sls,lambda
 description: Store output from your AWS CloudFormation Stack in JSON/YAML/TOML files, or to pass it to a JavaScript function for further processing.
 stars: 3
 stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
+forks_diff: 0
 watchers: 3
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

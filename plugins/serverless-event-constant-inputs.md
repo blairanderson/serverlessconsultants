@@ -7,11 +7,14 @@ topics:
 description: Allows you to add constant inputs to events in Serverless 1.0. For more info see [constant values in Cloudwatch](https://aws.amazon.com/blogs/compute/simply-serverless-use-constant-values-in-cloudwatch-event-triggered-lambda-functions/)
 stars: 3
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 3
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

@@ -7,11 +7,14 @@ topics: lambda,aws-lambda
 description: Keep your lambdas warm during Winter.
 stars: 45
 stars_trend: 
+stars_diff: 0
 forks: 8
 forks_trend: 
+forks_diff: 0
 watchers: 45
 issues: 3
 issues_trend: 
+issues_diff: 0
 ---
 
 

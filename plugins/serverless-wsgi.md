@@ -7,11 +7,14 @@ topics: wsgi,python,flask,aws-lambda
 description: Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages
 stars: 64
 stars_trend: 
+stars_diff: 0
 forks: 8
 forks_trend: 
+forks_diff: 0
 watchers: 64
 issues: 3
 issues_trend: 
+issues_diff: 0
 ---
 
 

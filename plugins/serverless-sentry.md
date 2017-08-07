@@ -7,11 +7,14 @@ topics:
 description: Automatic monitoring of memory usage, execution timeouts and forwarding of Lambda errors to Sentry (https://sentry.io).
 stars: 20
 stars_trend: 
+stars_diff: 0
 forks: 3
 forks_trend: 
+forks_diff: 0
 watchers: 20
 issues: 5
 issues_trend: 
+issues_diff: 0
 ---
 
 

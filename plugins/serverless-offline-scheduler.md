@@ -7,11 +7,14 @@ topics:
 description: Runs scheduled functions offline while integrating with serverless-offline
 stars: 11
 stars_trend: 
+stars_diff: 0
 forks: 6
 forks_trend: up
+forks_diff: 1
 watchers: 11
 issues: 1
 issues_trend: 
+issues_diff: 0
 ---
 
 

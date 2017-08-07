@@ -7,11 +7,14 @@ topics:
 description: Plugin which auto-subscribes a log delivery lambda function to lambda log groups created by serverless
 stars: 3
 stars_trend: 
+stars_diff: 0
 forks: 5
 forks_trend: 
+forks_diff: 0
 watchers: 3
 issues: 7
 issues_trend: 
+issues_diff: 0
 ---
 
 

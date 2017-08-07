@@ -7,11 +7,14 @@ topics: aws-lambda,lambda-functions,api-gateway,alias-stacks,stage
 description: This plugin enables use of AWS aliases on Lambda functions.
 stars: 27
 stars_trend: 
+stars_diff: 0
 forks: 5
 forks_trend: 
+forks_diff: 0
 watchers: 27
 issues: 14
 issues_trend: 
+issues_diff: 0
 ---
 
 

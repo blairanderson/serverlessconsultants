@@ -7,11 +7,14 @@ topics: environment-variables,credentials,encryption,aws-kms
 description: Manage environment variables with YAML and load them with dotenv. Supports variable encryption with KMS, multiple stages and custom profiles.
 stars: 7
 stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
+forks_diff: 0
 watchers: 7
 issues: 2
 issues_trend: 
+issues_diff: 0
 ---
 
 

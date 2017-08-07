@@ -7,11 +7,14 @@ topics: webpack,webpack2,tree-shaking,optimization,aws-lambda
 description: A serverless plugin to automatically bundle your functions individually with webpack
 stars: 25
 stars_trend: 
+stars_diff: 0
 forks: 9
 forks_trend: 
+forks_diff: 0
 watchers: 25
 issues: 3
 issues_trend: 
+issues_diff: 0
 ---
 
 

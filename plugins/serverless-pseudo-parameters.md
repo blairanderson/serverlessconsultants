@@ -7,11 +7,14 @@ topics:
 description: Use ${AWS::AccountId} and other cloudformation pseudo parameters in your serverless.yml values
 stars: 8
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 8
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

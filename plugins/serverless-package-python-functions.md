@@ -7,11 +7,14 @@ topics: requirements,python
 description: Packaging Python Lambda functions with only the dependencies/requirements they need.
 stars: 8
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 8
 issues: 1
 issues_trend: 
+issues_diff: 0
 ---
 
 

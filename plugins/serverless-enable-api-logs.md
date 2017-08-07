@@ -7,11 +7,14 @@ topics:
 description: Enables Coudwatch logging for API Gateway events
 stars: 4
 stars_trend: 
+stars_diff: 0
 forks: 3
 forks_trend: 
+forks_diff: 0
 watchers: 4
 issues: 5
 issues_trend: 
+issues_diff: 0
 ---
 
 

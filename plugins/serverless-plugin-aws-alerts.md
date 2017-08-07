@@ -7,11 +7,14 @@ topics: aws-cloudwatch
 description: A Serverless plugin to easily add CloudWatch alarms to functions
 stars: 38
 stars_trend: 
+stars_diff: 0
 forks: 13
 forks_trend: 
+forks_diff: 0
 watchers: 38
 issues: 7
 issues_trend: 
+issues_diff: 0
 ---
 
 

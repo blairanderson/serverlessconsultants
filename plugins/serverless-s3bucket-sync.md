@@ -7,11 +7,14 @@ topics: s3,sync,bucket,assets
 description: Sync a local folder with a S3 bucket after sls deploy
 stars: 7
 stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
+forks_diff: 0
 watchers: 7
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

@@ -7,11 +7,14 @@ topics: cloudwatch
 description: Serverless plugin to register subscription filter for Lambda logs. Register and pipe the logs of one lambda to another to process.
 stars: 4
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 4
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

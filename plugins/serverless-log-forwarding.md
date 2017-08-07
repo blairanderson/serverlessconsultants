@@ -7,11 +7,14 @@ topics:
 description: Serverless plugin for forwarding CloudWatch logs to another Lambda function.
 stars: 4
 stars_trend: 
+stars_diff: 0
 forks: 2
 forks_trend: up
+forks_diff: 1
 watchers: 4
-issues: 1
-issues_trend: up
+issues: 0
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -50,6 +53,8 @@ plugins:
 custom:
   logForwarding:
     destinationARN: '[ARN of Lambda Function to forward logs to]'
+    # optional:
+    filterPattern: `[filter pattern for logs that are sent to Lambda function]'
 ```
 
 ## Running Tests

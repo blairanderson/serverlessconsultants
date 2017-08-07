@@ -27,8 +27,8 @@
         <div class="fl w-33" title="GitHub Open Issues">
           <img src="https://icon.now.sh/bug_report" alt="bug icon" class="db center">
           <div class="tc f3 fw1">{{  plugin.issues }}</div>
-          <div class="tc {% if plugin.issues_trend == 'up' %}green{% endif %}" title="Difference since last week">
-            {{  plugin.issues_diff }}{% include caret.html trend=plugin.issues_trend %}
+          <div class="tc {% if plugin.issues_trend == 'down' %}green{% endif %}" title="Difference since last week">
+            {{  plugin.issues_diff }}
           </div>
         </div>
       </div>

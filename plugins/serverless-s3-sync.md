@@ -7,11 +7,14 @@ topics: s3
 description: A plugin to sync local directories and S3 prefixes for Serverless Framework,
 stars: 12
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 12
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

@@ -7,11 +7,14 @@ topics: serverless-nested-stack,cloudformation-200-resource-limit
 description: A plugin to Workaround for Cloudformation 200 resource limit
 stars: 4
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 4
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

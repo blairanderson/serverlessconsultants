@@ -7,11 +7,14 @@ topics:
 description: Serverless plugin for configuring API Gateway to return binary responses
 stars: 9
 stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
+forks_diff: 0
 watchers: 9
 issues: 0
 issues_trend: 
+issues_diff: 0
 ---
 
 

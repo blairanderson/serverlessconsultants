@@ -7,11 +7,14 @@ topics:
 description: Write environment variables out to a file that is compatible with dotenv
 stars: 28
 stars_trend: 
+stars_diff: 0
 forks: 12
 forks_trend: 
+forks_diff: 0
 watchers: 28
 issues: 6
 issues_trend: 
+issues_diff: 0
 ---
 
 

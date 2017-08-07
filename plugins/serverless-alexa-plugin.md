@@ -7,11 +7,14 @@ topics:
 description: Serverless plugin to support Alexa Lambda events
 stars: 13
 stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
+forks_diff: 0
 watchers: 13
 issues: 1
 issues_trend: 
+issues_diff: 0
 ---
 
 
