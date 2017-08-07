@@ -5,7 +5,13 @@ repo: yonomi/serverless-plugin-encode-env-var-objects
 homepage: 'https://github.com/yonomi/serverless-plugin-encode-env-var-objects'
 topics: 
 description: Serverless plugin to encode any environment variable objects.
-language: JavaScript
+stars: 0
+stars_trend: 
+forks: 0
+forks_trend: 
+watchers: 0
+issues: 0
+issues_trend: 
 ---
 
 

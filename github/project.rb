@@ -78,7 +78,18 @@ module Github
     end
 
     def last_week
-      days_ago(7)
+      oldest_data = nil
+      # return the first starting with the oldest
+      7.downto(0).each do |number|
+        oldest_data = days_ago(number)
+        break if oldest_data && (
+          (oldest_data.stars && oldest_data.stars > 0) ||
+            (oldest_data.forks && oldest_data.forks > 0) ||
+            (oldest_data.issues && oldest_data.issues > 0)
+        )
+      end
+
+      oldest_data
     end
 
     def week_history
@@ -95,7 +106,7 @@ module Github
 
     def days_ago(days)
       time = Date.today - days
-      point_in_time(time, repo_data(time) || {})
+      point_in_time(time, repo_data(time) || Hash.new(0))
     end
 
     def repo_data(day = nil)
@@ -106,9 +117,9 @@ module Github
       super(opts.merge(:layout => "project.erb"), locs, &block)
     end
 
-    def point_in_time(time, data)
-      data = data || {}
-      Struct.new(:timestamp, :stars, :forks, :issues).new(time, data[:stargazers_count], data[:forks], data[:open_issues])
+    def point_in_time(datestamp, data)
+      data = data || Hash.new(0)
+      Struct.new(:datestamp, :stars, :forks, :issues).new(datestamp, data[:stargazers_count], data[:forks], data[:open_issues])
     end
   end
 end

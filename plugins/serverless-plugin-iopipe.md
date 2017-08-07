@@ -5,7 +5,13 @@ repo: iopipe/serverless-plugin-iopipe
 homepage: 'https://github.com/iopipe/serverless-plugin-iopipe'
 topics: lambda,sls,agent,analytics,metrics,tracing,jscodeshift,codemod
 description: See inside your Lambda functions with high fidelity metrics and monitoring.
-language: JavaScript
+stars: 2
+stars_trend: 
+forks: 5
+forks_trend: 
+watchers: 2
+issues: 2
+issues_trend: 
 ---
 
 

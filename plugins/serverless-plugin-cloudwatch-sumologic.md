@@ -5,7 +5,13 @@ repo: ACloudGuru/serverless-plugin-cloudwatch-sumologic
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-cloudwatch-sumologic'
 topics: 
 description: Plugin which auto-subscribes a log delivery lambda function to lambda log groups created by serverless
-language: JavaScript
+stars: 3
+stars_trend: 
+forks: 5
+forks_trend: 
+watchers: 3
+issues: 7
+issues_trend: 
 ---
 
 

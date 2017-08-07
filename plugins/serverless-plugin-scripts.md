@@ -5,7 +5,13 @@ repo: mvila/serverless-plugin-scripts
 homepage: 'https://github.com/mvila/serverless-plugin-scripts'
 topics: 
 description: Add scripting capabilities to the Serverless Framework
-language: JavaScript
+stars: 11
+stars_trend: 
+forks: 0
+forks_trend: 
+watchers: 11
+issues: 0
+issues_trend: 
 ---
 
 

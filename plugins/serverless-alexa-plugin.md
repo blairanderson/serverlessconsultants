@@ -5,7 +5,13 @@ repo: rajington/serverless-alexa-plugin
 homepage: 'https://github.com/rajington/serverless-alexa-plugin'
 topics: 
 description: Serverless plugin to support Alexa Lambda events
-language: JavaScript
+stars: 13
+stars_trend: 
+forks: 0
+forks_trend: 
+watchers: 13
+issues: 1
+issues_trend: 
 ---
 
 

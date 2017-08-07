@@ -5,7 +5,13 @@ repo: svdgraaf/serverless-plugin-stack-outputs
 homepage: 'https://github.com/svdgraaf/serverless-plugin-stack-outputs'
 topics: 
 description: Displays stack outputs for your serverless stacks when `sls info` is ran
-language: JavaScript
+stars: 7
+stars_trend: 
+forks: 1
+forks_trend: 
+watchers: 7
+issues: 1
+issues_trend: 
 ---
 
 

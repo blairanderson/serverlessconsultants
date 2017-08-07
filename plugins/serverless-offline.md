@@ -5,7 +5,13 @@ repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 topics: aws-lambda,aws-apigateway
 description: Emulate AWS λ and API Gateway locally when developing your Serverless project
-language: JavaScript
+stars: 599
+stars_trend: 
+forks: 132
+forks_trend: up
+watchers: 599
+issues: 24
+issues_trend: 
 ---
 
 

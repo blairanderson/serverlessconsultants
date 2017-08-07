@@ -5,7 +5,13 @@ repo: Jimdo/serverless-dynamodb-ttl
 homepage: 'https://github.com/Jimdo/serverless-dynamodb-ttl'
 topics: dynamodb,cloudformation
 description: Configure DynamoDB TTL in serverless.yml (until CloudFormation supports this).
-language: JavaScript
+stars: 6
+stars_trend: 
+forks: 4
+forks_trend: 
+watchers: 6
+issues: 0
+issues_trend: 
 ---
 
 

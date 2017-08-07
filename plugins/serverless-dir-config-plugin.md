@@ -5,7 +5,13 @@ repo: economysizegeek/serverless-dir-config-plugin
 homepage: 'https://github.com/economysizegeek/serverless-dir-config-plugin'
 topics: serverless-deployments
 description: EXPERIMENTAL - Serverless plugin to load function and resource definitions from a directory.
-language: JavaScript
+stars: 2
+stars_trend: 
+forks: 0
+forks_trend: 
+watchers: 2
+issues: 0
+issues_trend: 
 ---
 
 

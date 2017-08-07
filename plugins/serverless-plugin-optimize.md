@@ -5,7 +5,13 @@ repo: FidelLimited/serverless-plugin-optimize
 homepage: 'https://github.com/FidelLimited/serverless-plugin-optimize'
 topics: uglify,minify,serverless-functions,babel,serverless-optimizer-plugin,browserify,aws-lambda
 description: Bundle with Browserify, transpile with Babel to ES5 and minify with Uglify your Serverless functions.
-language: JavaScript
+stars: 46
+stars_trend: down
+forks: 4
+forks_trend: 
+watchers: 46
+issues: 4
+issues_trend: 
 ---
 
 

@@ -5,7 +5,13 @@ repo: weixu365/serverless-scriptable-plugin
 homepage: 'https://github.com/weixu365/serverless-scriptable-plugin'
 topics: 
 description: Customize Serverless behavior without writing a plugin.
-language: JavaScript
+stars: 16
+stars_trend: 
+forks: 3
+forks_trend: 
+watchers: 16
+issues: 0
+issues_trend: 
 ---
 
 

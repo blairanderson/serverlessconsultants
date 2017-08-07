@@ -5,7 +5,13 @@ repo: claygregory/serverless-prune-plugin
 homepage: 'https://github.com/claygregory/serverless-prune-plugin'
 topics: aws-lambda
 description: Deletes old versions of functions from AWS, preserving recent and aliased versions
-language: JavaScript
+stars: 15
+stars_trend: 
+forks: 0
+forks_trend: 
+watchers: 15
+issues: 1
+issues_trend: 
 ---
 
 

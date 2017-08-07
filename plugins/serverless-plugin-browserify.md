@@ -5,7 +5,13 @@ repo: doapp-ryanp/serverless-plugin-browserify
 homepage: 'https://github.com/doapp-ryanp/serverless-plugin-browserify'
 topics: 
 description: Speed up your node based lambda's
-language: JavaScript
+stars: 17
+stars_trend: 
+forks: 4
+forks_trend: 
+watchers: 17
+issues: 8
+issues_trend: 
 ---
 
 

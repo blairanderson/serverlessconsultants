@@ -5,7 +5,13 @@ repo: amplify-education/serverless-log-forwarding
 homepage: 'https://github.com/amplify-education/serverless-log-forwarding'
 topics: 
 description: Serverless plugin for forwarding CloudWatch logs to another Lambda function.
-language: JavaScript
+stars: 4
+stars_trend: 
+forks: 2
+forks_trend: up
+watchers: 4
+issues: 1
+issues_trend: up
 ---
 
 

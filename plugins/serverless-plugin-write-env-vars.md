@@ -5,7 +5,13 @@ repo: silvermine/serverless-plugin-write-env-vars
 homepage: 'https://github.com/silvermine/serverless-plugin-write-env-vars'
 topics: 
 description: Write environment variables out to a file that is compatible with dotenv
-language: JavaScript
+stars: 28
+stars_trend: 
+forks: 12
+forks_trend: 
+watchers: 28
+issues: 6
+issues_trend: 
 ---
 
 

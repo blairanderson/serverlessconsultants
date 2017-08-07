@@ -5,7 +5,13 @@ repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 topics: aws-lambda,python,requirements,pip
 description: Serverless plugin to bundle Python packages
-language: JavaScript
+stars: 60
+stars_trend: up
+forks: 13
+forks_trend: 
+watchers: 60
+issues: 13
+issues_trend: 
 ---
 
 

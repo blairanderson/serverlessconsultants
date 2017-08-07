@@ -5,7 +5,13 @@ repo: gmetzker/serverless-plugin-lambda-dead-letter
 homepage: 'https://github.com/gmetzker/serverless-plugin-lambda-dead-letter'
 topics: lambda,deadletter-queue,sqs-queue,cloud
 description: A Serverless plugin that can configure a lambda with a dead letter queue or topic
-language: JavaScript
+stars: 10
+stars_trend: 
+forks: 1
+forks_trend: 
+watchers: 10
+issues: 4
+issues_trend: 
 ---
 
 

@@ -5,7 +5,13 @@ repo: Jimdo/serverless-dotenv
 homepage: 'https://github.com/Jimdo/serverless-dotenv'
 topics: 
 description: Fetch environment variables and write it to a .env file
-language: JavaScript
+stars: 3
+stars_trend: 
+forks: 2
+forks_trend: up
+watchers: 3
+issues: 1
+issues_trend: 
 ---
 
 

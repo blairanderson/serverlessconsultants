@@ -5,7 +5,13 @@ repo: silvermine/serverless-plugin-multiple-responses
 homepage: 'https://github.com/silvermine/serverless-plugin-multiple-responses'
 topics: 
 description: Enable multiple content-types for Response template 
-language: JavaScript
+stars: 13
+stars_trend: 
+forks: 1
+forks_trend: 
+watchers: 13
+issues: 2
+issues_trend: 
 ---
 
 

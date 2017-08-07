@@ -5,7 +5,13 @@ repo: 99xt/serverless-dynamodb-local
 homepage: 'https://github.com/99xt/serverless-dynamodb-local'
 topics: dynamodb,dynamodb-local,serverless-offline
 description: Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless
-language: JavaScript
+stars: 96
+stars_trend: 
+forks: 43
+forks_trend: 
+watchers: 96
+issues: 25
+issues_trend: 
 ---
 
 

@@ -5,7 +5,13 @@ repo: svdgraaf/serverless-plugin-stage-variables
 homepage: 'https://github.com/svdgraaf/serverless-plugin-stage-variables'
 topics: 
 description: Add stage variables for Serverless 1.x to ApiGateway, so you can use variables in your Lambda's
-language: JavaScript
+stars: 15
+stars_trend: 
+forks: 11
+forks_trend: 
+watchers: 15
+issues: 1
+issues_trend: 
 ---
 
 

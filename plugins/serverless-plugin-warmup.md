@@ -5,7 +5,13 @@ repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 topics: lambda,aws-lambda
 description: Keep your lambdas warm during Winter.
-language: JavaScript
+stars: 45
+stars_trend: 
+forks: 8
+forks_trend: 
+watchers: 45
+issues: 3
+issues_trend: 
 ---
 
 

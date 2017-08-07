@@ -5,7 +5,13 @@ repo: uswitch/serverless-hooks-plugin
 homepage: 'https://github.com/uswitch/serverless-hooks-plugin'
 topics: 
 description: Run arbitrary commands on any lifecycle event in serverless
-language: JavaScript
+stars: 6
+stars_trend: 
+forks: 0
+forks_trend: 
+watchers: 6
+issues: 0
+issues_trend: 
 ---
 
 

@@ -5,7 +5,13 @@ repo: DieProduktMacher/serverless-local-dev-server
 homepage: 'https://github.com/DieProduktMacher/serverless-local-dev-server'
 topics: alexa,http,local,development,http-endpoint,aws-lambda,alexa-skill,facebook-messenger-bot
 description: Speeds up development of Alexa Skills, Chatbots and APIs by exposing your functions as local HTTP endpoints and mapping received events.
-language: JavaScript
+stars: 1
+stars_trend: 
+forks: 1
+forks_trend: up
+watchers: 1
+issues: 0
+issues_trend: 
 ---
 
 

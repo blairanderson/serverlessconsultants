@@ -5,7 +5,13 @@ repo: nfour/serverless-build-plugin
 homepage: 'https://github.com/nfour/serverless-build-plugin'
 topics: build
 description: A Node.js focused build plugin for serverless.
-language: TypeScript
+stars: 27
+stars_trend: 
+forks: 11
+forks_trend: up
+watchers: 27
+issues: 4
+issues_trend: 
 ---
 
 

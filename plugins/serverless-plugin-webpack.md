@@ -5,7 +5,13 @@ repo: goldwasserexchange/serverless-plugin-webpack
 homepage: 'https://github.com/goldwasserexchange/serverless-plugin-webpack'
 topics: webpack,webpack2,tree-shaking,optimization,aws-lambda
 description: A serverless plugin to automatically bundle your functions individually with webpack
-language: JavaScript
+stars: 25
+stars_trend: 
+forks: 9
+forks_trend: 
+watchers: 25
+issues: 3
+issues_trend: 
 ---
 
 

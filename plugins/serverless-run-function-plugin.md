@@ -5,7 +5,13 @@ repo: lithin/serverless-run-function-plugin
 homepage: 'https://github.com/lithin/serverless-run-function-plugin'
 topics: 
 description: Run serverless function locally
-language: JavaScript
+stars: 13
+stars_trend: 
+forks: 9
+forks_trend: 
+watchers: 13
+issues: 2
+issues_trend: 
 ---
 
 
