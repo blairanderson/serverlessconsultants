@@ -94,8 +94,8 @@ module Github
     end
 
     def days_ago(days)
-      time = Time.now.to_i / API::DAY - days
-      point_in_time(time * API::DAY, repo_data(time) || {})
+      time = Date.today - days
+      point_in_time(time, repo_data(time) || {})
     end
 
     def repo_data(day = nil)

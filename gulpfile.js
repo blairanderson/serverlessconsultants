@@ -22,7 +22,9 @@ gulp.task('tachyons-main', function() {
     .pipe(gulp.dest('_sass/tachyons-sass'));
 });
 
-gulp.task('sync:plugins', function() {
+gulp.task('sync:plugins', ['sync:fetch-plugins', 'sync:plugin-repo-package']);
+
+gulp.task('sync:fetch-plugins', function() {
   return request(
     'https://raw.githubusercontent.com/serverless/plugins/master/plugins.json'
   ).pipe(fs.createWriteStream(SERVERLESS_PLUGINS));

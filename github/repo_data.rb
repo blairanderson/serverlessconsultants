@@ -11,7 +11,7 @@ module Github
     end
 
     def projects
-      @projects.sort_by {|project| [project.stars, project.topics.size] }
+      @projects.sort_by {|project| project.stars }
     end
 
     def languages

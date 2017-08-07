@@ -47,7 +47,6 @@ module Github
       end
 
       def repo_data(repo)
-
         cache["repo/#{repo}"] ||= (repo_from_archive(repo) || repo_from_api(repo) || {})
       end
 
@@ -80,11 +79,11 @@ module Github
               "network_count" => data["network_count"],
               "subscribers_count" => data["subscribers_count"]
             }
+
             if cache["archive"][repo]["current"] != today.to_s
               cache["archive"][repo]["last"] = cache["archive"][repo]["current"]
               cache["archive"][repo]["current"] = today.to_s
             end
-
 
 
             cache["updated"] = true
