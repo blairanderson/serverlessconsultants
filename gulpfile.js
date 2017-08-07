@@ -4,6 +4,8 @@ var data = require('gulp-data');
 var fs = require('fs');
 var request = require('request');
 var async = require('async');
+require('dotenv').config();
+var SERVERLESS_PLUGINS = '_data/serverless_plugins.json';
 
 // Copy Tachyons core files from node_modules to vendor directory
 gulp.task('default', ['tachyons-core', 'tachyons-main']);
@@ -23,7 +25,42 @@ gulp.task('tachyons-main', function() {
 gulp.task('sync:plugins', function() {
   return request(
     'https://raw.githubusercontent.com/serverless/plugins/master/plugins.json'
-  ).pipe(fs.createWriteStream('_data/serverless_plugins.json'));
+  ).pipe(fs.createWriteStream(SERVERLESS_PLUGINS));
+});
+
+gulp.task('sync:plugin-repo-package', function(done) {
+  var plugins = JSON.parse(fs.readFileSync(SERVERLESS_PLUGINS, 'utf8'));
+
+  async.map(
+    plugins,
+    function getInfo(plugin, callback) {
+      request(
+        `https://api.npmjs.org/downloads/point/last-month/${plugin.name}`,
+        function(err, resp, data) {
+          if (err) {
+            console.log(err);
+            callback(null, Object.assign(plugin, { 'last-month': 0 }));
+          } else {
+            console.log(data);
+            var downloads = JSON.parse(data).downloads || 0;
+            callback(null, Object.assign(plugin, { 'last-month': downloads }));
+          }
+        }
+      );
+    },
+    function(e, plugins) {
+      if (e) {
+        console.log(e);
+      } else {
+        fs.writeFile(
+          SERVERLESS_PLUGINS,
+          JSON.stringify(plugins, null, 2),
+          'utf8',
+          done
+        );
+      }
+    }
+  );
 });
 
 gulp.task('consultants', function() {
