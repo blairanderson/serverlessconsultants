@@ -1,34 +1,34 @@
-----
- -layout: default
- -title: ServerLess Plugin Topics
- -description: Browse all Serverless Plugin Topics - Directory of ServerLess Plugin Topics Sorted by Number of Assigned Plugins
- ----
- -
- -{% assign site_topics = site.pages | where: "layout", 'topic' | sort: 'count' | reverse %}
- -
- -<div class="bg-near-white">
- -  <div id="fuzzylist" class="pa2 pa4-ns mw8 center">
- -    <h3 class="tc near-black">Popular Serverless Plugin <abbr title="GitHub Repo Topics">Topics</abbr></h3>
- -    {% assign site_topics = site.pages | where: "layout", 'topic' | sort: "count" | reverse %}
- -    <div class="cf">
- -      <input class="fuzzy-search f6 f5-l center db input-reset ba b--black-20 black-80 bg-white pa3 lh-solid w-100 mw6 tc br2-ns"
- -        placeholder="Filter Topics"
- -        type="search" name="search">
- -    </div>
- -    <section class="cf pt4 pb2 mw8 center">
- -      <ul class="list f6 pl0 mt3 mb0 cf">
- -      {% for topic in site_topics %}
- -        <li class="dib fl w-50 w-33-ns pv2 tc">
- -          {% include topic-tag.html href=topic.url topic=topic.topic %}
- -          <a href="{{topic.url}}" class="db link black-60">{{topic.count}} plugins</a>
- -        </li>
- -      {% endfor %}
- -      </ul>
- -    </section>
- -  </div>
- -</div>
- -
- -<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
- -<script>
- -new List('fuzzylist', { valueNames: ['name'] });
- -</script>
+---
+layout: default
+title: Serverless Plugin Topics
+description: Browse Serverless Plugin Topics - Directory of Serverless Plugin Topics Sorted by Number of Assigned Plugins
+---
+
+{% assign site_topics = site.pages | where: "layout", 'topic' | sort: 'count' | reverse %}
+
+<div class="bg-near-white">
+  <div id="fuzzylist" class="pa2 pa4-ns mw8 center">
+    <h3 class="tc near-black">Popular Serverless Plugin <abbr title="GitHub Repo Topics">Topics</abbr></h3>
+    {% assign site_topics = site.pages | where: "layout", 'topic' | sort: "count" | reverse %}
+    <div class="cf">
+      <input class="fuzzy-search f6 f5-l center db input-reset ba b--black-20 black-80 bg-white pa3 lh-solid w-100 mw6 tc br2-ns"
+        placeholder="Filter Topics"
+        type="search" name="search">
+    </div>
+    <section class="cf pt4 pb2 mw8 center">
+      <ul class="list f6 pl0 mt3 mb0 cf">
+      {% for topic in site_topics %}
+        <li class="dib fl w-50 w-33-ns pv2 tc">
+          {% include topic-tag.html href=topic.url topic=topic.topic %}
+          <a href="{{topic.url}}" class="db link black-60">{{topic.count}} plugins</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script>
+new List('fuzzylist', { valueNames: ['name'] });
+</script>
