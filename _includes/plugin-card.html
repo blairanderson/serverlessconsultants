@@ -6,7 +6,7 @@
       <h3 class="tc fw1 f3 mv0 pv3 lh-title truncate">
         <a title="{{plugin.repo}}" class="link near-black dim" href="{{ href }}">{{  plugin.title | replace: "serverless-", '' }}</a>
       </h3>
-      <div class="cf bt bb tc pv2">
+      <div class="cf bt bb tc pv2" style="height: 5rem;">
         <div class="fl w-33" title="GitHub Stars">
           <img src="https://icon.now.sh/star" alt="star icon" class="db center">
           <div class="tc f3 fw1">{{  plugin.stars }}</div>
@@ -41,7 +41,7 @@
       {% assign topics = plugin.topics | split: ',' %}
       <div class="tc">
         {% for topic in topics limit: 5 %}
-          {% capture topichref %}/plugins/topics/{{topic}}/?from={{plugin.title}}{% endcapture %}
+          {% capture topichref %}/plugins/topics/{{topic}}/?from={{plugin.repo}}{% endcapture %}
           {% include topic-tag.html href=topichref topic=topic %}
         {% endfor %}
       </div>
