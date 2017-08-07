@@ -1,11 +1,13 @@
 {% assign plugin = include.plugin %}
 {% capture href %}{{plugin.url}}{% endcapture %}
-<div class="fl w-100 w-50-m w-33-l pa2">
+<div class="fl-ns w-100 w-50-m w-33-l pa2">
   <div class="ba br3 b--black-10 bg-white aspect-ratio aspect-ratio--1x1">
     <div class="aspect-ratio--object  overflow-hidden">
+
       <h3 class="tc fw1 f3 mv0 pv3 lh-title truncate">
         <a title="{{plugin.repo}}" class="link near-black dim" href="{{ href }}">{{  plugin.title | replace: "serverless-", '' }}</a>
       </h3>
+
       <div class="cf bt bb tc pv2" style="height: 5rem;">
         <div class="fl w-33" title="GitHub Stars">
           <img src="https://icon.now.sh/star" alt="star icon" class="db center">
@@ -13,7 +15,7 @@
           <div class="tc {% if plugin.stars_trend == 'up' %}green{% endif %}" title="Difference since last week">
             {{  plugin.stars_diff }}
             {% include caret.html trend=plugin.stars_trend %}
-        </div>
+          </div>
         </div>
         <div  class="fl w-33" title="GitHub Forks">
           <img src="https://icon.now.sh/share" alt="star icon" class="db center">
@@ -30,6 +32,7 @@
           </div>
         </div>
       </div>
+
       <a class="db link dim fw1 ma0 pa0 f6 tc" rel="nofollow noopener noreferrer" href="https://github.com/{{ plugin.repo }}"><small>-github-</small></a>
       <a class="link dim h3 overflow-hidden db pa2 tc near-black" href="{{  href }}">{{  plugin.description  | strip_html }}</a>
       <!-- <dl class="ph3"> -->
@@ -45,6 +48,7 @@
           {% include topic-tag.html href=topichref topic=topic %}
         {% endfor %}
       </div>
+
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 ---
 
 {% assign plugins = site.pages | where: "layout", 'plugin' | sort: "stars" | reverse %}
@@ -12,15 +12,23 @@ layout: page
   </h1>
   <h4 class="tc ma0 pa0">{{page.count}} Plugins Tagged with <em>'{{page.topic}}'</em></h4>
 
-  <div class="pa2 pa4-ns mw8 center">
-    <!--TODO: TRY AND MOVE THIS BELOW THE FIRST ROW OF PLUGINS  -->
+
+  <div class="cf pa2">
+    <div class="mw8 center">
+      {% for plugin in plugins %}
+        {% assign topics = plugin.topics | split: ',' %}
+        {% if topics contains page.topic %}
+          {% include plugin-card.html plugin=plugin %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="pv5">
     <h2 class="tc ma0 pa0">Want more Plugins?</h2>
-    <h3 class="tc ma0 pa0">
-      <a class="link fw1" href="/plugins/">Browse All Plugins</a>
-      <br>
-      <a class="link fw1" href="/plugins/topics/">Browse All Plugin Topics</a>
-    </h3>
-    <div class="tc">
+    <a class="db tc f4 link fw1" href="/plugins/">Browse All Plugins</a>
+    <a class="db tc f4 link fw1" href="/plugins/topics/">Browse All Plugin Topics</a>
+    <div class="cf tc mw6 center">
       {% for topic in site_topics limit: 10 %}
         {% unless topic.topic == page.topic %}
           {% capture href %}{{topic.url}}?from=topic-{{page.topic}}{% endcapture %}
@@ -28,18 +36,5 @@ layout: page
         {% endunless %}
       {% endfor %}
     </div>
-
-    <div class="cf pa2">
-      {% assign amount = 0 %}
-      {% capture amount %}{{ amount | plus:1 }}{% endcapture %}
-      {% if amount == 3 %}
-      {% endif %}
-      {% for plugin in plugins %}
-        {% assign topics = plugin.topics | split: ',' %}
-        {% if topics contains page.topic %}
-          {% include plugin-card.html plugin=plugin %}
-        {% endif %}
-      {% endfor %}
-    </ul>
   </div>
 </div>
