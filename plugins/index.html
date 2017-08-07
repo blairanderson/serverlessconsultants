@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ServerLess Plugin Directory
+title: Serverless Plugin Directory
 description: Browse All ServerLess Plugins - Directory of ServerLess Plugins Sorted by GitHub Stars
 ---
 
@@ -17,6 +17,7 @@ description: Browse All ServerLess Plugins - Directory of ServerLess Plugins Sor
               <input class="fuzzy-search f6 f5-l input-reset ba b--black-20 fl tc black-80 bg-white pa3 lh-solid w-100 br2" placeholder="Filter Topics"
                 type="search" name="search">
             </div>
+            <a class="f6 fw1 db center" href="/plugins/about/">FAQ</a>
             <div class="list cf">
               {% for topic in site_topics %}
                 {% if topic.count > 2 %}
@@ -25,7 +26,7 @@ description: Browse All ServerLess Plugins - Directory of ServerLess Plugins Sor
                 {% endif %}
               {% endfor %}
             </div>
-            <a class="f3 fw3 db center" href="/plugins/topics/">Browse All GitHub Topics</a>
+            <a class="f5 fw3 db center" href="/plugins/topics/">Browse All Topics</a>
           </div>
         </div>
       </div>
