@@ -22,48 +22,51 @@ gulp.task('tachyons-main', function() {
     .pipe(gulp.dest('_sass/tachyons-sass'));
 });
 
-gulp.task('sync:plugins', ['sync:fetch-plugins', 'sync:plugin-repo-package']);
-
-gulp.task('sync:fetch-plugins', function() {
-  return request(
-    'https://raw.githubusercontent.com/serverless/plugins/master/plugins.json'
-  ).pipe(fs.createWriteStream(SERVERLESS_PLUGINS));
+gulp.task('sync:plugins', function() {
+  request(
+    'https://raw.githubusercontent.com/serverless/plugins/master/plugins.json',
+    parseAndFetchRepoInfo
+  );
 });
 
-gulp.task('sync:plugin-repo-package', function(done) {
-  var plugins = JSON.parse(fs.readFileSync(SERVERLESS_PLUGINS, 'utf8'));
+function parseAndFetchRepoInfo(err, httpResponse, body) {
+  if (err) {
+    throw 'yolo';
+  } else {
+    async.map(JSON.parse(body), getRepoInfo, asyncDone);
+  }
+}
 
-  async.map(
-    plugins,
-    function getInfo(plugin, callback) {
-      request(
-        `https://api.npmjs.org/downloads/point/last-month/${plugin.name}`,
-        function(err, resp, data) {
-          if (err) {
-            console.log(err);
-            callback(null, Object.assign(plugin, { 'last-month': 0 }));
-          } else {
-            console.log(data);
-            var downloads = JSON.parse(data).downloads || 0;
-            callback(null, Object.assign(plugin, { 'last-month': downloads }));
-          }
-        }
-      );
-    },
-    function(e, plugins) {
-      if (e) {
-        console.log(e);
+function getRepoInfo(plugin, callback) {
+  request(
+    `https://api.npmjs.org/downloads/point/last-month/${plugin.name}`,
+    function(err, resp, data) {
+      if (err) {
+        console.log(err);
+        callback(null, Object.assign(plugin, { 'last-month': 0 }));
       } else {
-        fs.writeFile(
-          SERVERLESS_PLUGINS,
-          JSON.stringify(plugins, null, 2),
-          'utf8',
-          done
-        );
+        console.log(data);
+        var downloads = JSON.parse(data).downloads || 0;
+        callback(null, Object.assign(plugin, { 'last-month': downloads }));
       }
     }
   );
-});
+}
+
+function asyncDone(e, plugins) {
+  if (e) {
+    console.log(e);
+  } else {
+    fs.writeFile(
+      SERVERLESS_PLUGINS,
+      JSON.stringify(plugins, null, 2),
+      'utf8',
+      function() {
+        console.log('done');
+      }
+    );
+  }
+}
 
 gulp.task('consultants', function() {
   require('./_data/consultants.json').forEach(createFile);

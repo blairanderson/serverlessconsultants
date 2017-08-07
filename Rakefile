@@ -40,7 +40,7 @@ task :sync_github_projects do
       post.puts "repo: #{p.repo}"
       post.puts "homepage: '#{p.homepage}'"
       post.puts "topics: #{((topics["names"] || []) - stopwords).join(",")}"
-      %i[description stars stars_trend forks forks_trend watchers issues issues_trend].each do |attr|
+      %i[description stars stars_trend stars_diff forks forks_trend forks_diff watchers issues issues_trend issues_diff].each do |attr|
         post.puts "#{attr}: #{p.send(attr)}" if p.send(attr)
       end
       post.puts "---"
