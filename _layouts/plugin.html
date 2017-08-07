@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% capture github %}https://github.com/{{page.repo}}{% endcapture %}
+{% capture lastmonth %}{% for p in site.data.serverless_plugins %}{% if p["githubUrl"] == github %}{{p["last-month"]}}{% endif %}{% endfor %}{% endcapture %}
 {% capture today %}{{ 'now' | date: "%Y-%m-%d" }}{% endcapture %}
 {% assign data = site.data.plugins[page.repo][{{today}}] %}
 {% assign topics = page.topics %}
@@ -24,24 +25,30 @@ layout: default
     <h3 class="f6 ma0 pa0 ttu tc tracked">Tracked</h3>
     <div class="cf tc">
       {% if page.language %}
-      <dl title="Programming Language" class="fl fn-l w-60 dib-l w-auto-l lh-title mr5-l">
+      <dl title="Programming Language: {{ page.language }}" class="db tc mb0 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Language</dd>
         <dd class="f3 fw6 ml0">{{ page.language }}</dd>
       </dl>
       {% endif %}
-      <dl title="Open Issue Count" class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+      {% if lastmonth %}
+      <dl title="NPM Downloads Last Month: {{lastmonth}}" class="db tc mb0 dib-l w-auto-l lh-title mr5-l">
+        <dd class="f6 fw4 ml0">NPM Downloads Last Month</dd>
+        <dd class="f3 fw6 ml0">{{ lastmonth }}</dd>
+      </dl>
+      {% endif %}
+      <dl title="Open Issue Count: {{data['open_issues_count']}}" class="fl fn-l w-50  mb0 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Issues</dd>
         <dd class="f3 fw6 ml0">{{data['open_issues_count']}}</dd>
       </dl>
-      <dl title="Stargazer Count" class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+      <dl title="Stargazer Count: {{ data['stargazers_count'] }}" class="fl fn-l w-50 dib-l  mb0 w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Stars</dd>
         <dd class="f3 fw6 ml0">{{ data['stargazers_count'] }}</dd>
       </dl>
-      <dl title="Forks Count" class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+      <dl title="Forks Count: {{ data['forks_count'] }}" class="fl fn-l w-50 dib-l w-auto-l  mb0 lh-title mr5-l">
         <dd class="f6 fw4 ml0">Forks</dd>
         <dd class="f3 fw6 ml0">{{ data["forks_count"] }}</dd>
       </dl>
-      <dl title="Watchers Count" class="fl fn-l w-50 dib-l w-auto-l lh-title">
+      <dl title="Watchers Count: {{  data['watchers_count'] }}" class="fl fn-l w-50 dib-l w-auto-l  mb0 lh-title">
         <dd class="f6 fw4 ml0">Watchers</dd>
         <dd class="f3 fw6 ml0">{{  data["watchers_count"] }}</dd>
       </dl>
