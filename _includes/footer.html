@@ -12,9 +12,7 @@
   <div class="pb4 pt2 ph3 ph5-ns tc lh-copy">
     {% assign pages = site.pages | where: 'layout', 'default' %}
     {% for page in pages %}
-      {% if page.title %}
-      <a class="pv2 db ph3 dim" href="{{page.url}}">{{page.title}}</a>
-      {% endif %}
+      {% if page.title %}<a class="pv2 db ph3 dim" href="{{page.url}}">{{page.title}}</a>{% endif %}
     {% endfor %}
   </div>
 
