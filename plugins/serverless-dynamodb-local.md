@@ -8,9 +8,9 @@ description: Serverless Dynamodb Local Plugin - Allows to run dynamodb locally f
 stars: 97
 stars_trend: up
 stars_diff: 1
-forks: 44
+forks: 45
 forks_trend: up
-forks_diff: 1
+forks_diff: 2
 watchers: 97
 issues: 25
 issues_trend: 

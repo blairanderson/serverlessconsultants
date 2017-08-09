@@ -12,9 +12,9 @@ forks: 8
 forks_trend: 
 forks_diff: 0
 watchers: 64
-issues: 3
-issues_trend: 
-issues_diff: 0
+issues: 1
+issues_trend: down
+issues_diff: -2
 ---
 
 
@@ -108,6 +108,7 @@ functions:
   api:
     handler: wsgi.handler
     events:
+      - http: ANY /
       - http: ANY {proxy+}
 
 custom:
@@ -121,7 +122,7 @@ custom:
 Add Flask to the application bundle.
 
 ```
-Flask==0.11.1
+Flask==0.12.2
 ```
 
 
@@ -162,8 +163,8 @@ as long as you specify your required packages in a `requirements.txt` file in th
 of your Serverless service path:
 
 ```
-Flask==0.11.1
-requests==2.11.1
+Flask==0.12.2
+requests==2.18.3
 ```
 
 For more information, see [https://pip.readthedocs.io/en/1.1/requirements.html](https://pip.readthedocs.io/en/1.1/requirements.html).

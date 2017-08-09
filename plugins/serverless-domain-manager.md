@@ -5,13 +5,13 @@ repo: amplify-education/serverless-domain-manager
 homepage: 'https://github.com/amplify-education/serverless-domain-manager'
 topics: certificate,lambda,amazon-certificate-manager,api-gateway,route53,cloudformation
 description: Serverless plugin for managing custom domains with API Gateways.
-stars: 19
-stars_trend: 
-stars_diff: 0
+stars: 20
+stars_trend: up
+stars_diff: 1
 forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 19
+watchers: 20
 issues: 2
 issues_trend: 
 issues_diff: 0
