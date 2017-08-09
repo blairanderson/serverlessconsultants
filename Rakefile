@@ -28,10 +28,10 @@ task :sync_github_projects do
     filename = "plugins/#{p.name}.md"
     puts p.inspect
 
-    # TODO: maybe just always update the file???
-    # next if File.exist?(filename)
-    topics = JSON.parse(Github::API.fetch_repo_topics(p.repo)).with_indifferent_access
-    stopwords = %w(aws serverless plugin serverless-plugin serverless-framework serverless-architectures nodejs)
+    # TODO: also fetch keywords from package.json and marge/dedupe them
+    # https://github.com/npm/registry/blob/master/docs/responses/package-metadata.md
+    topics_resp = JSON.parse(Github::API.fetch_repo_topics(p.repo)).with_indifferent_access
+    topics = Array[topics_resp[:names]]
     readme = Github::API.fetch_repo_readme(p.repo)
     File.open(filename, 'w+') do |post|
       post.puts "---"
@@ -39,7 +39,7 @@ task :sync_github_projects do
       post.puts "title: #{p.repo.split("/").last.titleize}"
       post.puts "repo: #{p.repo}"
       post.puts "homepage: '#{p.homepage}'"
-      post.puts "topics: #{((topics["names"] || []) - stopwords).join(",")}"
+      post.puts "topics: #{topics.join(",")}"
       %i[description stars stars_trend stars_diff forks forks_trend forks_diff watchers issues issues_trend issues_diff].each do |attr|
         post.puts "#{attr}: #{p.send(attr)}" if p.send(attr)
       end
