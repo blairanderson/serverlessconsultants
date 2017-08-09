@@ -62,7 +62,7 @@ layout: default
   <div class="cf tc mw6 center dn">
     {% assign topics = page.topics | split: ',' %}
     {% for topic in topics %}
-      {% capture href %}/plugins/topics/{{topic}}/?from={{page.repo}}{% endcapture %}
+      {% capture href %}/plugins/topics/{{topic}}/{% endcapture %}
       {% include topic-tag.html href=href topic=topic %}
     {% endfor %}
   </div>

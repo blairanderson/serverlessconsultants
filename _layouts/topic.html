@@ -31,8 +31,7 @@ layout: default
     <div class="cf tc mw6 center">
       {% for topic in site_topics limit: 10 %}
         {% unless topic.topic == page.topic %}
-          {% capture href %}{{topic.url}}?from=topic-{{page.topic}}{% endcapture %}
-          {% include topic-tag.html href=href topic=topic.topic %}
+          {% include topic-tag.html href=topic.url topic=topic.topic %}
         {% endunless %}
       {% endfor %}
     </div>

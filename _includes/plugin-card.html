@@ -3,7 +3,6 @@
 <div class="fl-ns w-100 w-50-m w-33-l pa2">
   <div class="ba br3 b--black-10 bg-white aspect-ratio aspect-ratio--1x1">
     <div class="aspect-ratio--object  overflow-hidden">
-
       <h3 class="tc fw1 f3 mv0 pv3 lh-title truncate">
         <a title="{{plugin.repo}}" class="link near-black dim" href="{{ href }}">{{  plugin.title | replace: "serverless-", '' }}</a>
       </h3>
@@ -44,7 +43,7 @@
       {% assign topics = plugin.topics | split: ',' %}
       <div class="tc">
         {% for topic in topics limit: 5 %}
-          {% capture topichref %}/plugins/topics/{{topic}}/?from={{plugin.repo}}{% endcapture %}
+          {% capture topichref %}/plugins/topics/{{topic}}/{% endcapture %}
           {% include topic-tag.html href=topichref topic=topic %}
         {% endfor %}
       </div>

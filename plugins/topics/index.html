@@ -19,8 +19,7 @@ description: Browse Serverless Plugin Topics - Directory of Serverless Plugin To
       <ul class="list f6 pl0 mt3 mb0 cf">
       {% for topic in site_topics %}
         <li class="dib fl w-50 w-33-ns pv2 tc">
-          {% capture href %}{{topic.url}}?from=topic-index{% endcapture %}
-          {% include topic-tag.html href=href topic=topic.topic %}
+          {% include topic-tag.html href=topic.url topic=topic.topic %}
           <span class="db link black-60">{{topic.count}} plugins</span>
         </li>
       {% endfor %}
