@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Env Generator
 repo: DieProduktMacher/serverless-env-generator
 homepage: 'https://github.com/DieProduktMacher/serverless-env-generator'
-topics: environment-variables,credentials,encryption,aws-kms
+topics: serverless-plugin,environment-variables,credentials,encryption,aws,aws-kms
 description: Manage environment variables with YAML and load them with dotenv. Supports variable encryption with KMS, multiple stages and custom profiles.
 stars: 7
 stars_trend: 
@@ -12,9 +12,9 @@ forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 7
-issues: 2
-issues_trend: 
-issues_diff: 0
+issues: 1
+issues_trend: down
+issues_diff: -1
 ---
 
 

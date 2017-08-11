@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
-topics: aws-lambda,python,requirements,pip
+topics: serverless,aws,aws-lambda,python,serverless-plugin,requirements,pip
 description: Serverless plugin to bundle Python packages
 stars: 61
 stars_trend: up

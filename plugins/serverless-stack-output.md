@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Stack Output
 repo: sbstjn/serverless-stack-output
 homepage: 'https://github.com/sbstjn/serverless-stack-output'
-topics: cloudformation,stack,output,sls,lambda
+topics: serverless,plugin,aws,cloudformation,stack,output,sls,lambda
 description: Store output from your AWS CloudFormation Stack in JSON/YAML/TOML files, or to pass it to a JavaScript function for further processing.
 stars: 3
 stars_trend: 

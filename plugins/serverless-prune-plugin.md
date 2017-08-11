@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Prune Plugin
 repo: claygregory/serverless-prune-plugin
 homepage: 'https://github.com/claygregory/serverless-prune-plugin'
-topics: aws-lambda
+topics: serverless,serverless-framework,aws-lambda
 description: Deletes old versions of functions from AWS, preserving recent and aliased versions
 stars: 16
 stars_trend: up

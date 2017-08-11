@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Dotenv
 repo: Jimdo/serverless-dotenv
 homepage: 'https://github.com/Jimdo/serverless-dotenv'
-topics: 
+topics: serverless,aws,serverless-framework,serverless-plugin
 description: Fetch environment variables and write it to a .env file
 stars: 3
 stars_trend: 

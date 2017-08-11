@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Gulp
 repo: rhythminme/serverless-gulp
 homepage: 'https://github.com/rhythminme/serverless-gulp'
-topics: gulp,gulp-tasks
+topics: serverless,gulp,gulp-tasks,serverless-framework
 description: A thin task wrapper around @goserverless that allows you to automate build, test and deploy tasks using gulp
 stars: 3
 stars_trend: 

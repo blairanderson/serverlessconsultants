@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Aws Documentation
 repo: 9cookies/serverless-aws-documentation
 homepage: 'https://github.com/9cookies/serverless-aws-documentation'
-topics: api-gateway,json-schema,documentation,documentation-generator,aws-apigateway
+topics: serverless,api-gateway,json-schema,documentation,documentation-generator,aws,aws-apigateway
 description: Serverless plugin to add documentation and models to the serverless generated API Gateway
-stars: 47
+stars: 49
 stars_trend: up
-stars_diff: 2
+stars_diff: 4
 forks: 22
 forks_trend: up
 forks_diff: 1
-watchers: 47
+watchers: 49
 issues: 6
 issues_trend: down
 issues_diff: -2

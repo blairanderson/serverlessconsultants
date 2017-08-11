@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Apig S3
 repo: sdd/serverless-apig-s3
 homepage: 'https://github.com/sdd/serverless-apig-s3'
-topics: aws-lambda,aws-s3,aws-apigateway
+topics: serverless,serverless-plugin,aws,aws-lambda,aws-s3,aws-apigateway
 description: Serve static front-end content from S3 via the API Gatewy and deploy client bundle to S3.
 stars: 5
 stars_trend: 

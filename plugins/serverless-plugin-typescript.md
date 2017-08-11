@@ -3,18 +3,18 @@ layout: plugin
 title: Serverless Plugin Typescript
 repo: graphcool/serverless-plugin-typescript
 homepage: 'https://github.com/graphcool/serverless-plugin-typescript'
-topics: typescript,aws-lambda,babel,webpack,rollup
+topics: serverless,typescript,aws-lambda,babel,webpack,rollup,serverless-framework,serverless-plugin
 description: Serverless plugin for zero-config Typescript support.
-stars: 49
-stars_trend: 
-stars_diff: 0
-forks: 10
-forks_trend: 
-forks_diff: 0
-watchers: 49
-issues: 8
-issues_trend: 
-issues_diff: 0
+stars: 50
+stars_trend: up
+stars_diff: 1
+forks: 11
+forks_trend: up
+forks_diff: 1
+watchers: 50
+issues: 7
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -76,6 +76,27 @@ All files from `package/include` will be included in the final build file. See [
 
 
 ## Usage
+
+### Google Cloud Functions
+
+When using with Google Cloud Functions via the [serverless-google-cloudfunctions](https://github.com/serverless/serverless-google-cloudfunctions)
+plugin, you simply have to provide a `main` field in your `package.json`:
+
+```js
+{
+  // ...
+  "main": "handler.js",
+  // ..
+}
+```
+
+And this plugin will automatically compile your typescript correctly. Note
+that the field must refer to the compiled file name, namely, ending with a `.js`
+extension.
+
+If a `main` field was not found, then this plugin will use `index.js`. Before
+compilation begins, it will check to see that the file indicated exists with a
+`.ts` extension before actually trying to compile it.
 
 ### Automatic compilation
 

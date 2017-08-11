@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Plugin Bespoken
 repo: bespoken/serverless-plugin-bespoken
 homepage: 'https://github.com/bespoken/serverless-plugin-bespoken'
-topics: 
+topics: serverless-plugin,lambda,bespoken
 description: Creates a local server and a proxy so you don't have to deploy anytime you want to test your code
 stars: 4
 stars_trend: 

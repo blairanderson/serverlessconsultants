@@ -8,9 +8,9 @@ description: Serverless plugin for configuring API Gateway to return binary resp
 stars: 9
 stars_trend: 
 stars_diff: 0
-forks: 1
-forks_trend: 
-forks_diff: 0
+forks: 2
+forks_trend: up
+forks_diff: 1
 watchers: 9
 issues: 0
 issues_trend: 
