@@ -5,7 +5,11 @@ require 'pry'
 require 'fast_blank'
 require 'dotenv'
 
-LIST = [:fetch_serverless_plugin_list,:sync_github_projects,:sync_github_topics]
+LIST = [
+  :fetch_serverless_plugin_list,
+  :sync_github_projects,
+  :sync_github_topics
+]
 desc "fetch github repos and create a bunch of files"
 task :plugins => LIST
 task :github => LIST
@@ -89,7 +93,9 @@ task :generate do
 end
 
 desc "Generate and publish blog to gh-pages"
-task :publish => [:generate] do
+task :publish => [:deploy, :cleanup]
+
+task :deploy => [:generate] do
   message = "Site updated at #{Time.now.utc}"
   Dir.mktmpdir do |tmp|
     cp_r "docs/.", tmp
@@ -103,4 +109,8 @@ task :publish => [:generate] do
     system "git push origin master:refs/heads/gh-pages --force"
     Dir.chdir(pwd)
   end
+end
+
+task :cleanup do
+  FileUtils.rm_f(Dir.glob("docs/**/*"))
 end
