@@ -40,7 +40,7 @@
         <!-- <dt>Templates:</dt><dd>{{  plugin.templates }}</dd> -->
         <!-- <dt>License:</dt><dd>{{  plugin.license }}</dd> -->
       <!-- </dl> -->
-      {% assign topics = plugin.topics | split: ',' %}
+      {% assign topics = site.data.plugins[plugin.repo]["topics"] %}
       <div class="tc">
         {% for topic in topics limit: 5 %}
           {% capture topichref %}/plugins/topics/{{topic}}/{% endcapture %}
