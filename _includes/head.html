@@ -13,17 +13,10 @@ if (host == window.location.host && window.location.protocol != 'https:') {
     {% if site.bing_site_verification %}<meta name="msvalidate.01" content="{{site.bing_site_verification}}" />{% endif %}
     {% if site.google_site_verification %}<meta name="google-site-verification" content="{{site.google_site_verification}}">{% endif %}
     {% capture title %}{% if page.meta-title %}{{ page.meta-title }}{% else %}{{ page.title }}{% endif %} - Serverless Plugin Directory{% endcapture %}
-    {% capture description %}
-      {% if page.layout == 'plugin' %}
-        {% if lastmonth %}NPM Downloads Last Month: {{ lastmonth }}, {% endif %}Open Issue Count: {{ page.issues }}, Stargazer Count: {{ page.stars }}, Forks Count: {{ page.forks }}, Watchers Count: {{  page.watchers }}.
-      {% else %}
-        {% if page.meta-description %}
-          {{ page.meta-description }}
-        {% else %}
-          {{ page.description }}
-        {% endif %}
-      {% endif %}
-    {% endcapture %}
+    {% capture description %}{% if page.meta-description %}{{ page.meta-description }}{% else %}{{ page.description }}{% endif %}{% endcapture %}
+    {% if page.layout == 'plugin' %}
+      {% capture description %}{% if lastmonth %}NPM Downloads Last Month: {{ lastmonth }}, {% endif %}Open Issue Count: {{ page.issues }}, Stargazer Count: {{ page.stars }}, Forks Count: {{ page.forks }}, Watchers Count: {{  page.watchers }}.{% endcapture %}
+    {% endif %}
     <title>{{title}}</title>
     <!-- Google+ Authorship -->
     <link rel="author" href="{{site.author}}">
