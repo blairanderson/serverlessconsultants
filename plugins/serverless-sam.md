@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Sam
 repo: SAPessi/serverless-sam
 homepage: 'https://github.com/SAPessi/serverless-sam'
-topics: serverless,serverless-framework,aws,aws-sam,lambda,aws-lambda,aws-apigateway,plugin,nodejs
 description: Exports an AWS SAM template for a service created with the Serverless Framework.
 stars: 20
 stars_trend: 

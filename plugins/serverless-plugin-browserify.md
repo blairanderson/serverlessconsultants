@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Plugin Browserify
 repo: doapp-ryanp/serverless-plugin-browserify
 homepage: 'https://github.com/doapp-ryanp/serverless-plugin-browserify'
-topics: 
 description: Speed up your node based lambda's
 stars: 17
 stars_trend: 

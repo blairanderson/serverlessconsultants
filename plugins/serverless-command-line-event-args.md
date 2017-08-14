@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Command Line Event Args
 repo: horike37/serverless-command-line-event-args
 homepage: 'https://github.com/horike37/serverless-command-line-event-args'
-topics: 
 description: This module is Serverless Framework plugin. Event JSON passes to your Lambda function in commandline.
 stars: 12
 stars_trend: 

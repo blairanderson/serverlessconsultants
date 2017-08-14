@@ -3,7 +3,6 @@ layout: plugin
 title: Raml Serverless
 repo: andrewcurioso/raml-serverless
 homepage: 'https://github.com/andrewcurioso/raml-serverless'
-topics: 
 description: Serverless plugin to work with RAML API spec documents
 stars: 13
 stars_trend: 

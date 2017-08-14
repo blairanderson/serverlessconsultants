@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Dir Config Plugin
 repo: economysizegeek/serverless-dir-config-plugin
 homepage: 'https://github.com/economysizegeek/serverless-dir-config-plugin'
-topics: serverless-plugin,serverless,serverless-deployments
 description: EXPERIMENTAL - Serverless plugin to load function and resource definitions from a directory.
 stars: 2
 stars_trend: 

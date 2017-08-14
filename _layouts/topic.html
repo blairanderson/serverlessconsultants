@@ -2,9 +2,6 @@
 layout: default
 ---
 
-{% assign plugins = site.pages | where: "layout", 'plugin' | sort: "stars" | reverse %}
-{% assign site_topics = site.pages | where: "layout", 'topic' | sort: 'count' | reverse %}
-
 <div class="bg-near-white">
   <h1 class="tc ma0 pt4 pb2">
     <span class="ttu">{{page.topic}}</span>
@@ -15,8 +12,9 @@ layout: default
 
   <div class="cf pa2">
     <div class="mw8 center">
+      {% assign plugins = site.pages | where: "layout", 'plugin' | sort: "stars" | reverse %}
       {% for plugin in plugins %}
-        {% assign topics = plugin.topics | split: ',' %}
+        {% assign topics = site.data.plugins[plugin.repo]["topics"] %}
         {% if topics contains page.topic %}
           {% include plugin-card.html plugin=plugin %}
         {% endif %}
@@ -29,6 +27,7 @@ layout: default
     <a class="db tc f4 link fw1" href="/plugins/">Browse All Plugins</a>
     <a class="db tc f4 link fw1" href="/plugins/topics/">Browse All Plugin Topics</a>
     <div class="cf tc mw6 center">
+      {% assign site_topics = site.pages | where: "layout", 'topic' | sort: 'count' | reverse %}
       {% for topic in site_topics limit: 10 %}
         {% unless topic.topic == page.topic %}
           {% include topic-tag.html href=topic.url topic=topic.topic %}

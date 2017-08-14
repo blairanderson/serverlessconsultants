@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Plugin Lambda Dead Letter
 repo: gmetzker/serverless-plugin-lambda-dead-letter
 homepage: 'https://github.com/gmetzker/serverless-plugin-lambda-dead-letter'
-topics: aws,serverless,lambda,serverless-plugin,deadletter-queue,sqs-queue,cloud
 description: A Serverless plugin that can configure a lambda with a dead letter queue or topic
 stars: 10
 stars_trend: 

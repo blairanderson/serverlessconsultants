@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Python Individually
 repo: cfchou/serverless-python-individually
 homepage: 'https://github.com/cfchou/serverless-python-individually'
-topics: aws-lambda,serverless,serverless-plugin
 description: A serverless framework plugin to install multiple lambda functions written in python
 stars: 7
 stars_trend: up

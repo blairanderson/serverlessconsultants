@@ -3,15 +3,14 @@ layout: plugin
 title: Serverless Dynamodb Autoscaling
 repo: sbstjn/serverless-dynamodb-autoscaling
 homepage: 'https://github.com/sbstjn/serverless-dynamodb-autoscaling'
-topics: serverless,sls,dynamodb,aws,scaling,capacity,amazon,cloudformation
 description: Configure Amazon DynamoDB's native Auto Scaling for your table capacities.
-stars: 28
+stars: 29
 stars_trend: up
-stars_diff: 3
+stars_diff: 4
 forks: 3
 forks_trend: up
 forks_diff: 2
-watchers: 28
+watchers: 29
 issues: 0
 issues_trend: down
 issues_diff: -2

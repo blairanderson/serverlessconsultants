@@ -63,10 +63,15 @@ module Github
       def repo_from_api(repo)
         puts "Syncing: #{repo.inspect}"
 
+        topics_resp = JSON.parse(fetch_repo_topics(repo)).with_indifferent_access
+        topics_key = "topics".freeze
+        topics = topics_resp[:names]
+
         JSON.parse(fetch_repo(repo)).with_indifferent_access.tap do |data|
           unless repo_from_archive(repo)
             cache["archive"] ||= {}
             cache["archive"][repo] ||= {}
+            cache["archive"][repo][topics_key] = topics
             cache["archive"][repo][today.to_s] = {
               "size" => data["size"],
               "stargazers_count" => data["stargazers_count"],

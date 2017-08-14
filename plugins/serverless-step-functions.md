@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
-topics: serverless,serverless-plugin,serverless-framework,serverless-architectures,aws,step-functions
 description: AWS Step Functions with Serverless Framework.
 stars: 147
 stars_trend: up

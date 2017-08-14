@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Subscription Filter
 repo: blackevil245/serverless-subscription-filter
 homepage: 'https://github.com/blackevil245/serverless-subscription-filter'
-topics: serverless,aws,serverless-plugin,cloudwatch
 description: Serverless plugin to register subscription filter for Lambda logs. Register and pipe the logs of one lambda to another to process.
 stars: 4
 stars_trend: 

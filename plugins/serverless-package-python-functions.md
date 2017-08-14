@@ -3,18 +3,17 @@ layout: plugin
 title: Serverless Package Python Functions
 repo: ubaniabalogun/serverless-package-python-functions
 homepage: 'https://github.com/ubaniabalogun/serverless-package-python-functions'
-topics: serverless,serverless-framework,serverless-plugin,requirements,python
 description: Packaging Python Lambda functions with only the dependencies/requirements they need.
-stars: 8
-stars_trend: 
-stars_diff: 0
+stars: 9
+stars_trend: up
+stars_diff: 1
 forks: 1
 forks_trend: up
 forks_diff: 1
-watchers: 8
-issues: 2
+watchers: 9
+issues: 3
 issues_trend: up
-issues_diff: 1
+issues_diff: 2
 ---
 
 

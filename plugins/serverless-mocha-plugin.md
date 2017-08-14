@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Mocha Plugin
 repo: SC5/serverless-mocha-plugin
 homepage: 'https://github.com/SC5/serverless-mocha-plugin'
-topics: serverless-plugin,mocha,serverless-framework,test-driven-development
 description: A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Mocha
 stars: 62
 stars_trend: 
@@ -12,9 +11,9 @@ forks: 26
 forks_trend: 
 forks_diff: 0
 watchers: 62
-issues: 7
-issues_trend: 
-issues_diff: 0
+issues: 8
+issues_trend: up
+issues_diff: 1
 ---
 
 

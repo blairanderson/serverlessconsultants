@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Run Function Plugin
 repo: lithin/serverless-run-function-plugin
 homepage: 'https://github.com/lithin/serverless-run-function-plugin'
-topics: 
 description: Run serverless function locally
 stars: 13
 stars_trend: 

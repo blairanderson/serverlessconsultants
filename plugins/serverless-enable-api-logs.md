@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Enable Api Logs
 repo: paulSambolin/serverless-enable-api-logs
 homepage: 'https://github.com/paulSambolin/serverless-enable-api-logs'
-topics: 
 description: Enables Coudwatch logging for API Gateway events
 stars: 4
 stars_trend: 

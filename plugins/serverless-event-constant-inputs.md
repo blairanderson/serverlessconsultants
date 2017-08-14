@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Event Constant Inputs
 repo: dittto/serverless-event-constant-inputs
 homepage: 'https://github.com/dittto/serverless-event-constant-inputs'
-topics: 
 description: Allows you to add constant inputs to events in Serverless 1.0. For more info see [constant values in Cloudwatch](https://aws.amazon.com/blogs/compute/simply-serverless-use-constant-values-in-cloudwatch-event-triggered-lambda-functions/)
 stars: 3
 stars_trend: 

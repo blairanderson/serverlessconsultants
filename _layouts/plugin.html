@@ -6,7 +6,7 @@ layout: default
 {% capture lastmonth %}{% for p in site.data.serverless_plugins %}{% if p["githubUrl"] == github %}{{p["last-month"]}}{% endif %}{% endfor %}{% endcapture %}
 {% capture today %}{{ 'now' | date: "%Y-%m-%d" }}{% endcapture %}
 {% assign data = site.data.plugins[page.repo][{{today}}] %}
-{% assign topics = page.topics %}
+{% assign topics = site.data.plugins[page.repo]["topics"] %}
 
 <div class="mw8 center">
   <h1 class="tc ma0">{{page.title}}</h1>

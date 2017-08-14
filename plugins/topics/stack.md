@@ -3,6 +3,6 @@
 layout: topic
 topic: stack
 title: stack Serverless Plugins
-description: '1 stack ServerLess Plugins'
-count: 1
+description: '2 stack ServerLess Plugins'
+count: 2
 ---

@@ -3,7 +3,6 @@ layout: plugin
 title: Serverless Plugin Iopipe
 repo: iopipe/serverless-plugin-iopipe
 homepage: 'https://github.com/iopipe/serverless-plugin-iopipe'
-topics: lambda,serverless,sls,agent,analytics,metrics,tracing,jscodeshift,codemod,plugin,nodejs
 description: See inside your Lambda functions with high fidelity metrics and monitoring.
 stars: 2
 stars_trend: 
@@ -12,9 +11,9 @@ forks: 5
 forks_trend: 
 forks_diff: 0
 watchers: 2
-issues: 3
-issues_trend: up
-issues_diff: 1
+issues: 1
+issues_trend: down
+issues_diff: -1
 ---
 
 

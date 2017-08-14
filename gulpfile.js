@@ -37,6 +37,18 @@ function parseAndFetchRepoInfo(err, httpResponse, body) {
   }
 }
 
+// function fetchPluginTopics(error, plugins) {
+//   if (err) {
+//     throw 'yolo';
+//   } else {
+//     async.map(plugins, fetchRepoTopics, asyncDone);
+//   }
+// }
+//
+// function fetchRepoTopics(plugin, callback) {
+//   request(`https://api.github.com/repos/${plugin.repo}/topics`, headers: {"Accept": 'application/vnd.github.mercy-preview+json'});
+// }
+
 function getRepoInfo(plugin, callback) {
   request(
     `https://api.npmjs.org/downloads/point/last-month/${plugin.name}`,
@@ -46,8 +58,12 @@ function getRepoInfo(plugin, callback) {
         callback(null, Object.assign(plugin, { 'last-month': 0 }));
       } else {
         console.log(data);
-        var downloads = JSON.parse(data).downloads || 0;
-        callback(null, Object.assign(plugin, { 'last-month': downloads }));
+        callback(
+          null,
+          Object.assign(plugin, {
+            'last-month': JSON.parse(data).downloads || 0
+          })
+        );
       }
     }
   );
