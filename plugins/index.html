@@ -2,6 +2,10 @@
 layout: default
 title: Serverless Plugin Directory
 description: Browse All ServerLess Plugins - Directory of ServerLess Plugins Sorted by GitHub Stars
+redirect_from:
+  - /serverless/plugins/
+  - /serverless/plugins
+  - /serverless/consultants/
 ---
 
 {% assign plugins = site.pages | where: "layout", 'plugin' | sort: "stars" | reverse %}
@@ -44,20 +48,3 @@ description: Browse All ServerLess Plugins - Directory of ServerLess Plugins Sor
 <script>
 new List('fuzzylist', { valueNames: ['name'] });
 </script>
-
-
-<script>
-  window.store = {
-    {% for plugin in plugins %}
-      "{{ plugin.url | slugify }}": {
-        "title": "{{ plugin.title | xml_escape }}",
-        "category": "{{ plugin.topics | xml_escape }}",
-        "content": {{ plugin.content | strip_html | strip_newlines | jsonify }},
-        "url": "{{ plugin.url | xml_escape }}"
-      }
-      {% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  };
-</script>
-<script src="https://unpkg.com/lunr/lunr.js"></script>
-<!-- <script src="/js/search.js"></script> -->

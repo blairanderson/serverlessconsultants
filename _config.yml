@@ -31,6 +31,7 @@ port:             9001
 # Gems
 gems:
   - jekyll-paginate
+  - jekyll-redirect-from
   - rouge
 
 # Collections
