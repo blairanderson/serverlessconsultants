@@ -4,13 +4,13 @@ title: Serverless Kms Secrets
 repo: SC5/serverless-kms-secrets
 homepage: 'https://github.com/SC5/serverless-kms-secrets'
 description: Allows to easily encrypt and decrypt secrets using KMS from the serverless CLI
-stars: 18
+stars: 19
 stars_trend: up
 stars_diff: 1
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 18
+watchers: 19
 issues: 1
 issues_trend: 
 issues_diff: 0

@@ -7,13 +7,13 @@ description: Serverless plugin for deploying functions to Kubeless.
 stars: 26
 stars_trend: up
 stars_diff: 3
-forks: 3
-forks_trend: 
-forks_diff: 0
+forks: 4
+forks_trend: up
+forks_diff: 1
 watchers: 26
-issues: 5
-issues_trend: down
-issues_diff: -1
+issues: 6
+issues_trend: up
+issues_diff: 2
 ---
 
 

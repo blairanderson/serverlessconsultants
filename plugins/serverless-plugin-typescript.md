@@ -4,13 +4,13 @@ title: Serverless Plugin Typescript
 repo: graphcool/serverless-plugin-typescript
 homepage: 'https://github.com/graphcool/serverless-plugin-typescript'
 description: Serverless plugin for zero-config Typescript support.
-stars: 50
+stars: 51
 stars_trend: up
-stars_diff: 1
+stars_diff: 2
 forks: 11
 forks_trend: up
 forks_diff: 1
-watchers: 50
+watchers: 51
 issues: 7
 issues_trend: down
 issues_diff: -1

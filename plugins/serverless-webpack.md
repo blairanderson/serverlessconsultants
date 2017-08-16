@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: elastic-coders/serverless-webpack
 homepage: 'https://github.com/elastic-coders/serverless-webpack'
 description: Serverless plugin to bundle your lambdas with Webpack
-stars: 326
+stars: 332
 stars_trend: up
-stars_diff: 8
+stars_diff: 11
 forks: 116
-forks_trend: 
-forks_diff: 0
-watchers: 326
-issues: 27
+forks_trend: down
+forks_diff: -1
+watchers: 332
+issues: 29
 issues_trend: down
-issues_diff: -6
+issues_diff: -3
 ---
 
 

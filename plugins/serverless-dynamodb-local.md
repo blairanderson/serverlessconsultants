@@ -4,16 +4,16 @@ title: Serverless Dynamodb Local
 repo: 99xt/serverless-dynamodb-local
 homepage: 'https://github.com/99xt/serverless-dynamodb-local'
 description: Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless
-stars: 98
+stars: 101
 stars_trend: up
-stars_diff: 2
+stars_diff: 4
 forks: 45
-forks_trend: up
-forks_diff: 2
-watchers: 98
-issues: 23
+forks_trend: 
+forks_diff: 0
+watchers: 101
+issues: 21
 issues_trend: down
-issues_diff: -2
+issues_diff: -4
 ---
 
 
@@ -196,6 +196,17 @@ plugins:
 Make sure that `serverless-dynamodb-local` is above `serverless-offline` so it will be loaded earlier.
 
 Now your local DynamoDB database will be automatically started before running `serverless offline`.
+
+### Using with serverless-offline and serverless-webpack plugin
+Run `serverless offline start`. In comparison with `serverless offline`, the `start` command will fire an `init` and a `end` lifecycle hook which is needed for serverless-offline and serverless-dynamodb-local to switch off both ressources. 
+
+Add plugins to your `serverless.yml` file:
+```yaml
+plugins:
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline #serverless-offline needs to be last in the list
+```
 
 ## Reference Project
 * [serverless-react-boilerplate](https://github.com/99xt/serverless-react-boilerplate)
