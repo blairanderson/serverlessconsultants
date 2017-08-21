@@ -1,7 +1,7 @@
 {
   "maciejtreder/serverless-apigw-binary": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 152,
       "stargazers_count": 10,
@@ -88,11 +88,23 @@
       "watchers": 11,
       "network_count": 4,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 152,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 4,
+      "open_issues_count": 2,
+      "forks": 4,
+      "open_issues": 2,
+      "watchers": 11,
+      "network_count": 4,
+      "subscribers_count": 2
     }
   },
   "amplify-education/serverless-domain-manager": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 44,
       "stargazers_count": 19,
@@ -185,11 +197,23 @@
       "watchers": 20,
       "network_count": 7,
       "subscribers_count": 7
+    },
+    "2017-08-20": {
+      "size": 44,
+      "stargazers_count": 21,
+      "watchers_count": 21,
+      "forks_count": 8,
+      "open_issues_count": 3,
+      "forks": 8,
+      "open_issues": 3,
+      "watchers": 21,
+      "network_count": 8,
+      "subscribers_count": 7
     }
   },
   "amplify-education/serverless-log-forwarding": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 23,
       "stargazers_count": 4,
@@ -276,11 +300,23 @@
       "watchers": 5,
       "network_count": 2,
       "subscribers_count": 6
+    },
+    "2017-08-20": {
+      "size": 25,
+      "stargazers_count": 5,
+      "watchers_count": 5,
+      "forks_count": 3,
+      "open_issues_count": 2,
+      "forks": 3,
+      "open_issues": 2,
+      "watchers": 5,
+      "network_count": 3,
+      "subscribers_count": 6
     }
   },
   "silvermine/serverless-plugin-external-sns-events": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 14,
       "stargazers_count": 14,
@@ -357,6 +393,18 @@
       "subscribers_count": 7
     },
     "2017-08-16": {
+      "size": 14,
+      "stargazers_count": 14,
+      "watchers_count": 14,
+      "forks_count": 8,
+      "open_issues_count": 3,
+      "forks": 8,
+      "open_issues": 3,
+      "watchers": 14,
+      "network_count": 8,
+      "subscribers_count": 7
+    },
+    "2017-08-20": {
       "size": 14,
       "stargazers_count": 14,
       "watchers_count": 14,
@@ -370,8 +418,8 @@
     }
   },
   "silvermine/serverless-plugin-write-env-vars": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 8,
       "stargazers_count": 28,
@@ -448,6 +496,18 @@
       "subscribers_count": 3
     },
     "2017-08-16": {
+      "size": 8,
+      "stargazers_count": 28,
+      "watchers_count": 28,
+      "forks_count": 12,
+      "open_issues_count": 6,
+      "forks": 12,
+      "open_issues": 6,
+      "watchers": 28,
+      "network_count": 12,
+      "subscribers_count": 3
+    },
+    "2017-08-20": {
       "size": 8,
       "stargazers_count": 28,
       "watchers_count": 28,
@@ -461,8 +521,8 @@
     }
   },
   "rajington/serverless-alexa-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 327,
       "stargazers_count": 13,
@@ -549,11 +609,23 @@
       "watchers": 13,
       "network_count": 0,
       "subscribers_count": 4
+    },
+    "2017-08-20": {
+      "size": 327,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 13,
+      "network_count": 0,
+      "subscribers_count": 4
     }
   },
   "nfour/serverless-build-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 557,
       "stargazers_count": 27,
@@ -642,11 +714,23 @@
       "watchers": 27,
       "network_count": 11,
       "subscribers_count": 3
+    },
+    "2017-08-20": {
+      "size": 597,
+      "stargazers_count": 27,
+      "watchers_count": 27,
+      "forks_count": 11,
+      "open_issues_count": 6,
+      "forks": 11,
+      "open_issues": 6,
+      "watchers": 27,
+      "network_count": 11,
+      "subscribers_count": 3
     }
   },
   "rurri/serverless-resources-env": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 21,
       "stargazers_count": 11,
@@ -723,6 +807,18 @@
       "subscribers_count": 2
     },
     "2017-08-16": {
+      "size": 21,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 5,
+      "open_issues_count": 5,
+      "forks": 5,
+      "open_issues": 5,
+      "watchers": 11,
+      "network_count": 5,
+      "subscribers_count": 2
+    },
+    "2017-08-20": {
       "size": 21,
       "stargazers_count": 11,
       "watchers_count": 11,
@@ -736,8 +832,8 @@
     }
   },
   "dittto/serverless-event-constant-inputs": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 4,
       "stargazers_count": 3,
@@ -824,11 +920,23 @@
       "watchers": 3,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 4,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "SC5/serverless-kms-secrets": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 19,
       "stargazers_count": 17,
@@ -915,11 +1023,23 @@
       "watchers": 19,
       "network_count": 4,
       "subscribers_count": 3
+    },
+    "2017-08-20": {
+      "size": 19,
+      "stargazers_count": 19,
+      "watchers_count": 19,
+      "forks_count": 4,
+      "open_issues_count": 1,
+      "forks": 4,
+      "open_issues": 1,
+      "watchers": 19,
+      "network_count": 4,
+      "subscribers_count": 3
     }
   },
   "svdgraaf/serverless-plugin-stack-outputs": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 143,
       "stargazers_count": 7,
@@ -996,6 +1116,18 @@
       "subscribers_count": 1
     },
     "2017-08-16": {
+      "size": 143,
+      "stargazers_count": 7,
+      "watchers_count": 7,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 7,
+      "network_count": 1,
+      "subscribers_count": 1
+    },
+    "2017-08-20": {
       "size": 143,
       "stargazers_count": 7,
       "watchers_count": 7,
@@ -1009,8 +1141,8 @@
     }
   },
   "svdgraaf/serverless-plugin-stage-variables": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 25,
       "stargazers_count": 15,
@@ -1087,6 +1219,18 @@
       "subscribers_count": 4
     },
     "2017-08-16": {
+      "size": 25,
+      "stargazers_count": 15,
+      "watchers_count": 15,
+      "forks_count": 11,
+      "open_issues_count": 1,
+      "forks": 11,
+      "open_issues": 1,
+      "watchers": 15,
+      "network_count": 11,
+      "subscribers_count": 4
+    },
+    "2017-08-20": {
       "size": 25,
       "stargazers_count": 15,
       "watchers_count": 15,
@@ -1100,8 +1244,8 @@
     }
   },
   "ACloudGuru/serverless-plugin-cloudwatch-sumologic": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 17,
       "stargazers_count": 3,
@@ -1188,11 +1332,23 @@
       "watchers": 3,
       "network_count": 5,
       "subscribers_count": 13
+    },
+    "2017-08-20": {
+      "size": 17,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 5,
+      "open_issues_count": 7,
+      "forks": 5,
+      "open_issues": 7,
+      "watchers": 3,
+      "network_count": 5,
+      "subscribers_count": 13
     }
   },
   "ACloudGuru/serverless-plugin-aws-alerts": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 119,
       "stargazers_count": 38,
@@ -1282,11 +1438,23 @@
       "watchers": 38,
       "network_count": 14,
       "subscribers_count": 15
+    },
+    "2017-08-20": {
+      "size": 119,
+      "stargazers_count": 41,
+      "watchers_count": 41,
+      "forks_count": 14,
+      "open_issues_count": 7,
+      "forks": 14,
+      "open_issues": 7,
+      "watchers": 41,
+      "network_count": 14,
+      "subscribers_count": 15
     }
   },
   "ACloudGuru/serverless-plugin-package-dotenv-file": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 6,
       "stargazers_count": 8,
@@ -1363,6 +1531,18 @@
       "subscribers_count": 14
     },
     "2017-08-16": {
+      "size": 6,
+      "stargazers_count": 8,
+      "watchers_count": 8,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 8,
+      "network_count": 1,
+      "subscribers_count": 14
+    },
+    "2017-08-20": {
       "size": 6,
       "stargazers_count": 8,
       "watchers_count": 8,
@@ -1376,8 +1556,8 @@
     }
   },
   "horike37/serverless-command-line-event-args": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 10,
       "stargazers_count": 12,
@@ -1464,11 +1644,23 @@
       "watchers": 12,
       "network_count": 1,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 10,
+      "stargazers_count": 12,
+      "watchers_count": 12,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 12,
+      "network_count": 1,
+      "subscribers_count": 1
     }
   },
   "99xt/serverless-dynamodb-local": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 159,
       "stargazers_count": 96,
@@ -1559,11 +1751,23 @@
       "watchers": 101,
       "network_count": 45,
       "subscribers_count": 13
+    },
+    "2017-08-20": {
+      "size": 164,
+      "stargazers_count": 102,
+      "watchers_count": 102,
+      "forks_count": 46,
+      "open_issues_count": 23,
+      "forks": 46,
+      "open_issues": 23,
+      "watchers": 102,
+      "network_count": 46,
+      "subscribers_count": 13
     }
   },
   "dherault/serverless-offline": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 900,
       "stargazers_count": 599,
@@ -1652,11 +1856,23 @@
       "watchers": 619,
       "network_count": 135,
       "subscribers_count": 30
+    },
+    "2017-08-20": {
+      "size": 900,
+      "stargazers_count": 623,
+      "watchers_count": 623,
+      "forks_count": 135,
+      "open_issues_count": 32,
+      "forks": 135,
+      "open_issues": 32,
+      "watchers": 623,
+      "network_count": 135,
+      "subscribers_count": 29
     }
   },
   "gertjvr/serverless-plugin-simulate": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 20459,
       "stargazers_count": 23,
@@ -1743,11 +1959,23 @@
       "watchers": 23,
       "network_count": 18,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 20459,
+      "stargazers_count": 23,
+      "watchers_count": 23,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 23,
+      "network_count": 18,
+      "subscribers_count": 1
     }
   },
   "FidelLimited/serverless-plugin-optimize": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 41,
       "stargazers_count": 47,
@@ -1842,11 +2070,23 @@
       "watchers": 46,
       "network_count": 4,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 41,
+      "stargazers_count": 46,
+      "watchers_count": 46,
+      "forks_count": 4,
+      "open_issues_count": 4,
+      "forks": 4,
+      "open_issues": 4,
+      "watchers": 46,
+      "network_count": 4,
+      "subscribers_count": 2
     }
   },
   "FidelLimited/serverless-plugin-select": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 5,
       "stargazers_count": 9,
@@ -1936,11 +2176,23 @@
       "watchers": 9,
       "network_count": 0,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 5,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 9,
+      "network_count": 0,
+      "subscribers_count": 2
     }
   },
   "FidelLimited/serverless-plugin-warmup": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 27,
       "stargazers_count": 45,
@@ -2031,11 +2283,23 @@
       "watchers": 47,
       "network_count": 8,
       "subscribers_count": 3
+    },
+    "2017-08-20": {
+      "size": 27,
+      "stargazers_count": 47,
+      "watchers_count": 47,
+      "forks_count": 10,
+      "open_issues_count": 4,
+      "forks": 10,
+      "open_issues": 4,
+      "watchers": 47,
+      "network_count": 10,
+      "subscribers_count": 3
     }
   },
   "doapp-ryanp/serverless-plugin-browserify": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 26,
       "stargazers_count": 17,
@@ -2112,6 +2376,18 @@
       "subscribers_count": 1
     },
     "2017-08-16": {
+      "size": 26,
+      "stargazers_count": 17,
+      "watchers_count": 17,
+      "forks_count": 4,
+      "open_issues_count": 8,
+      "forks": 4,
+      "open_issues": 8,
+      "watchers": 17,
+      "network_count": 4,
+      "subscribers_count": 1
+    },
+    "2017-08-20": {
       "size": 26,
       "stargazers_count": 17,
       "watchers_count": 17,
@@ -2125,8 +2401,8 @@
     }
   },
   "nicka/serverless-plugin-diff": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 62,
       "stargazers_count": 9,
@@ -2203,6 +2479,18 @@
       "subscribers_count": 1
     },
     "2017-08-16": {
+      "size": 62,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 2,
+      "open_issues_count": 1,
+      "forks": 2,
+      "open_issues": 1,
+      "watchers": 9,
+      "network_count": 2,
+      "subscribers_count": 1
+    },
+    "2017-08-20": {
       "size": 62,
       "stargazers_count": 9,
       "watchers_count": 9,
@@ -2216,8 +2504,8 @@
     }
   },
   "lithin/serverless-run-function-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 15,
       "stargazers_count": 13,
@@ -2304,11 +2592,23 @@
       "watchers": 13,
       "network_count": 9,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 15,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 8,
+      "open_issues_count": 2,
+      "forks": 8,
+      "open_issues": 2,
+      "watchers": 13,
+      "network_count": 8,
+      "subscribers_count": 1
     }
   },
   "weixu365/serverless-scriptable-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 25,
       "stargazers_count": 16,
@@ -2395,11 +2695,23 @@
       "watchers": 16,
       "network_count": 3,
       "subscribers_count": 4
+    },
+    "2017-08-20": {
+      "size": 25,
+      "stargazers_count": 16,
+      "watchers_count": 16,
+      "forks_count": 3,
+      "open_issues_count": 0,
+      "forks": 3,
+      "open_issues": 0,
+      "watchers": 16,
+      "network_count": 3,
+      "subscribers_count": 4
     }
   },
   "blackevil245/serverless-subscription-filter": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 13,
       "stargazers_count": 4,
@@ -2489,11 +2801,23 @@
       "watchers": 4,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 13,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "elastic-coders/serverless-webpack": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 282,
       "stargazers_count": 317,
@@ -2587,11 +2911,23 @@
       "watchers": 332,
       "network_count": 116,
       "subscribers_count": 18
+    },
+    "2017-08-20": {
+      "size": 283,
+      "stargazers_count": 335,
+      "watchers_count": 335,
+      "forks_count": 117,
+      "open_issues_count": 24,
+      "forks": 117,
+      "open_issues": 24,
+      "watchers": 335,
+      "network_count": 117,
+      "subscribers_count": 18
     }
   },
   "logandk/serverless-wsgi": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 47,
       "stargazers_count": 64,
@@ -2682,11 +3018,23 @@
       "watchers": 64,
       "network_count": 8,
       "subscribers_count": 4
+    },
+    "2017-08-20": {
+      "size": 67,
+      "stargazers_count": 63,
+      "watchers_count": 63,
+      "forks_count": 8,
+      "open_issues_count": 2,
+      "forks": 8,
+      "open_issues": 2,
+      "watchers": 63,
+      "network_count": 8,
+      "subscribers_count": 4
     }
   },
   "marcy-terui/serverless-crypt": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 18,
       "stargazers_count": 36,
@@ -2773,11 +3121,23 @@
       "watchers": 36,
       "network_count": 7,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 18,
+      "stargazers_count": 38,
+      "watchers_count": 38,
+      "forks_count": 7,
+      "open_issues_count": 8,
+      "forks": 7,
+      "open_issues": 8,
+      "watchers": 38,
+      "network_count": 7,
+      "subscribers_count": 1
     }
   },
   "silvermine/serverless-plugin-multiple-responses": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 13,
       "stargazers_count": 13,
@@ -2854,6 +3214,18 @@
       "subscribers_count": 3
     },
     "2017-08-16": {
+      "size": 13,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 13,
+      "network_count": 1,
+      "subscribers_count": 3
+    },
+    "2017-08-20": {
       "size": 13,
       "stargazers_count": 13,
       "watchers_count": 13,
@@ -2867,8 +3239,8 @@
     }
   },
   "dougmoscrop/serverless-plugin-include-dependencies": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 1081,
       "stargazers_count": 38,
@@ -2955,11 +3327,23 @@
       "watchers": 39,
       "network_count": 10,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 1081,
+      "stargazers_count": 39,
+      "watchers_count": 39,
+      "forks_count": 10,
+      "open_issues_count": 1,
+      "forks": 10,
+      "open_issues": 1,
+      "watchers": 39,
+      "network_count": 10,
+      "subscribers_count": 2
     }
   },
   "SC5/serverless-mocha-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 147,
       "stargazers_count": 62,
@@ -3049,11 +3433,23 @@
       "watchers": 63,
       "network_count": 26,
       "subscribers_count": 13
+    },
+    "2017-08-20": {
+      "size": 147,
+      "stargazers_count": 64,
+      "watchers_count": 64,
+      "forks_count": 27,
+      "open_issues_count": 11,
+      "forks": 27,
+      "open_issues": 11,
+      "watchers": 64,
+      "network_count": 27,
+      "subscribers_count": 14
     }
   },
   "SC5/serverless-jest-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 31,
       "stargazers_count": 25,
@@ -3143,11 +3539,23 @@
       "watchers": 25,
       "network_count": 6,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 31,
+      "stargazers_count": 25,
+      "watchers_count": 25,
+      "forks_count": 8,
+      "open_issues_count": 4,
+      "forks": 8,
+      "open_issues": 4,
+      "watchers": 25,
+      "network_count": 8,
+      "subscribers_count": 2
     }
   },
   "SC5/serverless-plugin-cfauthorizer": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 5,
       "stargazers_count": 16,
@@ -3234,11 +3642,23 @@
       "watchers": 16,
       "network_count": 1,
       "subscribers_count": 5
+    },
+    "2017-08-20": {
+      "size": 5,
+      "stargazers_count": 16,
+      "watchers_count": 16,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 16,
+      "network_count": 1,
+      "subscribers_count": 5
     }
   },
   "9cookies/serverless-aws-documentation": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 80,
       "stargazers_count": 45,
@@ -3331,11 +3751,23 @@
       "watchers": 50,
       "network_count": 22,
       "subscribers_count": 11
+    },
+    "2017-08-20": {
+      "size": 91,
+      "stargazers_count": 52,
+      "watchers_count": 52,
+      "forks_count": 22,
+      "open_issues_count": 6,
+      "forks": 22,
+      "open_issues": 6,
+      "watchers": 52,
+      "network_count": 22,
+      "subscribers_count": 11
     }
   },
   "andrewcurioso/raml-serverless": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 13,
       "stargazers_count": 13,
@@ -3422,11 +3854,23 @@
       "watchers": 13,
       "network_count": 2,
       "subscribers_count": 4
+    },
+    "2017-08-20": {
+      "size": 13,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 2,
+      "open_issues_count": 8,
+      "forks": 2,
+      "open_issues": 8,
+      "watchers": 13,
+      "network_count": 2,
+      "subscribers_count": 4
     }
   },
   "UnitedIncome/serverless-python-requirements": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 72,
       "stargazers_count": 59,
@@ -3519,11 +3963,23 @@
       "watchers": 62,
       "network_count": 14,
       "subscribers_count": 5
+    },
+    "2017-08-20": {
+      "size": 72,
+      "stargazers_count": 64,
+      "watchers_count": 64,
+      "forks_count": 15,
+      "open_issues_count": 22,
+      "forks": 15,
+      "open_issues": 22,
+      "watchers": 64,
+      "network_count": 15,
+      "subscribers_count": 5
     }
   },
   "fruffin/serverless-dotnet": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 9,
       "stargazers_count": 9,
@@ -3600,6 +4056,18 @@
       "subscribers_count": 2
     },
     "2017-08-16": {
+      "size": 9,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 3,
+      "open_issues_count": 0,
+      "forks": 3,
+      "open_issues": 0,
+      "watchers": 9,
+      "network_count": 3,
+      "subscribers_count": 2
+    },
+    "2017-08-20": {
       "size": 9,
       "stargazers_count": 9,
       "watchers_count": 9,
@@ -3613,8 +4081,8 @@
     }
   },
   "paulSambolin/serverless-enable-api-logs": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 5,
       "stargazers_count": 4,
@@ -3701,11 +4169,23 @@
       "watchers": 4,
       "network_count": 3,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 5,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 3,
+      "open_issues_count": 5,
+      "forks": 3,
+      "open_issues": 5,
+      "watchers": 4,
+      "network_count": 3,
+      "subscribers_count": 2
     }
   },
   "cfchou/serverless-python-individually": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 47,
       "stargazers_count": 6,
@@ -3794,11 +4274,23 @@
       "watchers": 7,
       "network_count": 7,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 47,
+      "stargazers_count": 8,
+      "watchers_count": 8,
+      "forks_count": 7,
+      "open_issues_count": 2,
+      "forks": 7,
+      "open_issues": 2,
+      "watchers": 8,
+      "network_count": 7,
+      "subscribers_count": 1
     }
   },
   "tsub/serverless-plugin-subscription-filter": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 81,
       "stargazers_count": 11,
@@ -3889,11 +4381,23 @@
       "watchers": 11,
       "network_count": 1,
       "subscribers_count": 0
+    },
+    "2017-08-20": {
+      "size": 81,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 11,
+      "network_count": 1,
+      "subscribers_count": 0
     }
   },
   "horike37/serverless-step-functions": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 173,
       "stargazers_count": 143,
@@ -3985,11 +4489,23 @@
       "watchers": 149,
       "network_count": 18,
       "subscribers_count": 13
+    },
+    "2017-08-20": {
+      "size": 173,
+      "stargazers_count": 152,
+      "watchers_count": 152,
+      "forks_count": 18,
+      "open_issues_count": 9,
+      "forks": 18,
+      "open_issues": 9,
+      "watchers": 152,
+      "network_count": 18,
+      "subscribers_count": 14
     }
   },
   "mvila/serverless-plugin-scripts": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 4,
       "stargazers_count": 11,
@@ -4066,6 +4582,18 @@
       "subscribers_count": 1
     },
     "2017-08-16": {
+      "size": 4,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 11,
+      "network_count": 0,
+      "subscribers_count": 1
+    },
+    "2017-08-20": {
       "size": 4,
       "stargazers_count": 11,
       "watchers_count": 11,
@@ -4079,8 +4607,8 @@
     }
   },
   "jacob-meacham/serverless-plugin-bind-deployment-id": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 61,
       "stargazers_count": 8,
@@ -4167,11 +4695,23 @@
       "watchers": 10,
       "network_count": 4,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 61,
+      "stargazers_count": 10,
+      "watchers_count": 10,
+      "forks_count": 4,
+      "open_issues_count": 1,
+      "forks": 4,
+      "open_issues": 1,
+      "watchers": 10,
+      "network_count": 4,
+      "subscribers_count": 2
     }
   },
   "jacob-meacham/serverless-plugin-git-variables": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 95,
       "stargazers_count": 9,
@@ -4258,11 +4798,23 @@
       "watchers": 9,
       "network_count": 3,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 95,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 3,
+      "open_issues_count": 0,
+      "forks": 3,
+      "open_issues": 0,
+      "watchers": 9,
+      "network_count": 3,
+      "subscribers_count": 1
     }
   },
   "bencooling/serverless-plugin-graphiql": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 18,
       "stargazers_count": 27,
@@ -4351,11 +4903,23 @@
       "watchers": 28,
       "network_count": 6,
       "subscribers_count": 3
+    },
+    "2017-08-20": {
+      "size": 18,
+      "stargazers_count": 28,
+      "watchers_count": 28,
+      "forks_count": 6,
+      "open_issues_count": 1,
+      "forks": 6,
+      "open_issues": 1,
+      "watchers": 28,
+      "network_count": 6,
+      "subscribers_count": 3
     }
   },
   "duanefields/serverless-coffeescript": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 2,
       "stargazers_count": 4,
@@ -4442,11 +5006,23 @@
       "watchers": 4,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 2,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 4,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "gmetzker/serverless-plugin-lambda-dead-letter": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 40,
       "stargazers_count": 10,
@@ -4539,11 +5115,23 @@
       "watchers": 10,
       "network_count": 1,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 40,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 1,
+      "open_issues_count": 4,
+      "forks": 1,
+      "open_issues": 4,
+      "watchers": 11,
+      "network_count": 1,
+      "subscribers_count": 1
     }
   },
   "yonomi/serverless-plugin-encode-env-var-objects": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 5,
       "stargazers_count": 0,
@@ -4630,11 +5218,23 @@
       "watchers": 0,
       "network_count": 0,
       "subscribers_count": 3
+    },
+    "2017-08-20": {
+      "size": 5,
+      "stargazers_count": 0,
+      "watchers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 0,
+      "network_count": 0,
+      "subscribers_count": 3
     }
   },
   "economysizegeek/serverless-dir-config-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 9,
       "stargazers_count": 2,
@@ -4723,11 +5323,23 @@
       "watchers": 2,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 9,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "nervous-systems/serverless-cljs-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 5,
       "stargazers_count": 23,
@@ -4819,11 +5431,23 @@
       "watchers": 25,
       "network_count": 1,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 5,
+      "stargazers_count": 26,
+      "watchers_count": 26,
+      "forks_count": 2,
+      "open_issues_count": 5,
+      "forks": 2,
+      "open_issues": 5,
+      "watchers": 26,
+      "network_count": 2,
+      "subscribers_count": 2
     }
   },
   "claygregory/serverless-prune-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 14,
       "stargazers_count": 15,
@@ -4912,11 +5536,23 @@
       "watchers": 16,
       "network_count": 0,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 14,
+      "stargazers_count": 16,
+      "watchers_count": 16,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 16,
+      "network_count": 0,
+      "subscribers_count": 2
     }
   },
   "ajmath/serverless-offline-scheduler": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 40,
       "stargazers_count": 11,
@@ -5003,11 +5639,23 @@
       "watchers": 12,
       "network_count": 7,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 41,
+      "stargazers_count": 12,
+      "watchers_count": 12,
+      "forks_count": 7,
+      "open_issues_count": 1,
+      "forks": 7,
+      "open_issues": 1,
+      "watchers": 12,
+      "network_count": 7,
+      "subscribers_count": 1
     }
   },
   "HyperBrain/serverless-aws-alias": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 161,
       "stargazers_count": 27,
@@ -5101,11 +5749,23 @@
       "watchers": 28,
       "network_count": 5,
       "subscribers_count": 3
+    },
+    "2017-08-20": {
+      "size": 197,
+      "stargazers_count": 28,
+      "watchers_count": 28,
+      "forks_count": 5,
+      "open_issues_count": 13,
+      "forks": 5,
+      "open_issues": 13,
+      "watchers": 28,
+      "network_count": 5,
+      "subscribers_count": 3
     }
   },
   "goldwasserexchange/serverless-plugin-webpack": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 91,
       "stargazers_count": 25,
@@ -5199,11 +5859,23 @@
       "watchers": 27,
       "network_count": 9,
       "subscribers_count": 5
+    },
+    "2017-08-20": {
+      "size": 67,
+      "stargazers_count": 27,
+      "watchers_count": 27,
+      "forks_count": 9,
+      "open_issues_count": 3,
+      "forks": 9,
+      "open_issues": 3,
+      "watchers": 27,
+      "network_count": 9,
+      "subscribers_count": 5
     }
   },
   "vortarian/serverless-sqs-fifo": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 9,
       "stargazers_count": 2,
@@ -5290,11 +5962,23 @@
       "watchers": 2,
       "network_count": 1,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 9,
+      "stargazers_count": 2,
+      "watchers_count": 2,
+      "forks_count": 1,
+      "open_issues_count": 3,
+      "forks": 1,
+      "open_issues": 3,
+      "watchers": 2,
+      "network_count": 1,
+      "subscribers_count": 1
     }
   },
   "sbstjn/serverless-sqs-alarms-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 60,
       "stargazers_count": 10,
@@ -5386,11 +6070,23 @@
       "watchers": 10,
       "network_count": 4,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 60,
+      "stargazers_count": 10,
+      "watchers_count": 10,
+      "forks_count": 4,
+      "open_issues_count": 0,
+      "forks": 4,
+      "open_issues": 0,
+      "watchers": 10,
+      "network_count": 4,
+      "subscribers_count": 2
     }
   },
   "Jimdo/serverless-dotenv": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 34,
       "stargazers_count": 3,
@@ -5480,11 +6176,23 @@
       "watchers": 3,
       "network_count": 2,
       "subscribers_count": 4
+    },
+    "2017-08-20": {
+      "size": 34,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 2,
+      "open_issues_count": 1,
+      "forks": 2,
+      "open_issues": 1,
+      "watchers": 3,
+      "network_count": 2,
+      "subscribers_count": 4
     }
   },
   "uswitch/serverless-hooks-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 5,
       "stargazers_count": 6,
@@ -5571,11 +6279,23 @@
       "watchers": 6,
       "network_count": 0,
       "subscribers_count": 10
+    },
+    "2017-08-20": {
+      "size": 5,
+      "stargazers_count": 6,
+      "watchers_count": 6,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 6,
+      "network_count": 0,
+      "subscribers_count": 10
     }
   },
   "sdd/serverless-dynalite": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 8,
       "stargazers_count": 3,
@@ -5666,11 +6386,23 @@
       "watchers": 3,
       "network_count": 1,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 8,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 1
     }
   },
   "sdd/serverless-apig-s3": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 22,
       "stargazers_count": 5,
@@ -5762,11 +6494,23 @@
       "watchers": 5,
       "network_count": 3,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 22,
+      "stargazers_count": 5,
+      "watchers_count": 5,
+      "forks_count": 3,
+      "open_issues_count": 3,
+      "forks": 3,
+      "open_issues": 3,
+      "watchers": 5,
+      "network_count": 3,
+      "subscribers_count": 2
     }
   },
   "graphcool/serverless-plugin-typescript": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 66,
       "stargazers_count": 49,
@@ -5860,11 +6604,23 @@
       "watchers": 51,
       "network_count": 11,
       "subscribers_count": 6
+    },
+    "2017-08-20": {
+      "size": 76,
+      "stargazers_count": 54,
+      "watchers_count": 54,
+      "forks_count": 12,
+      "open_issues_count": 7,
+      "forks": 12,
+      "open_issues": 7,
+      "watchers": 54,
+      "network_count": 12,
+      "subscribers_count": 6
     }
   },
   "svdgraaf/serverless-parameters": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 3281,
       "stargazers_count": 4,
@@ -5941,6 +6697,18 @@
       "subscribers_count": 0
     },
     "2017-08-16": {
+      "size": 3281,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 1,
+      "subscribers_count": 0
+    },
+    "2017-08-20": {
       "size": 3281,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -5954,8 +6722,8 @@
     }
   },
   "svdgraaf/serverless-pseudo-parameters": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 472,
       "stargazers_count": 8,
@@ -6042,11 +6810,23 @@
       "watchers": 8,
       "network_count": 0,
       "subscribers_count": 0
+    },
+    "2017-08-20": {
+      "size": 472,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 9,
+      "network_count": 0,
+      "subscribers_count": 0
     }
   },
   "Jimdo/serverless-dynamodb-ttl": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 55,
       "stargazers_count": 6,
@@ -6138,11 +6918,23 @@
       "watchers": 6,
       "network_count": 4,
       "subscribers_count": 6
+    },
+    "2017-08-20": {
+      "size": 55,
+      "stargazers_count": 6,
+      "watchers_count": 6,
+      "forks_count": 4,
+      "open_issues_count": 0,
+      "forks": 4,
+      "open_issues": 0,
+      "watchers": 6,
+      "network_count": 4,
+      "subscribers_count": 6
     }
   },
   "leftclickben/serverless-api-stage": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 11,
       "stargazers_count": 4,
@@ -6219,6 +7011,18 @@
       "subscribers_count": 1
     },
     "2017-08-16": {
+      "size": 11,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 4,
+      "network_count": 1,
+      "subscribers_count": 1
+    },
+    "2017-08-20": {
       "size": 11,
       "stargazers_count": 4,
       "watchers_count": 4,
@@ -6232,8 +7036,8 @@
     }
   },
   "arabold/serverless-export-env": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 15,
       "stargazers_count": 3,
@@ -6295,7 +7099,11 @@
       "subscribers_count": 2
     },
     "topics": [
-
+      "serverless-plugin",
+      "dotenv",
+      "aws",
+      "aws-lambda",
+      "serverless"
     ],
     "2017-08-13": {
       "size": 15,
@@ -6320,11 +7128,23 @@
       "watchers": 3,
       "network_count": 5,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 15,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 5,
+      "open_issues_count": 1,
+      "forks": 5,
+      "open_issues": 1,
+      "watchers": 4,
+      "network_count": 5,
+      "subscribers_count": 2
     }
   },
   "ubaniabalogun/serverless-package-python-functions": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 28,
       "stargazers_count": 8,
@@ -6415,11 +7235,23 @@
       "watchers": 9,
       "network_count": 1,
       "subscribers_count": 4
+    },
+    "2017-08-20": {
+      "size": 19,
+      "stargazers_count": 9,
+      "watchers_count": 9,
+      "forks_count": 2,
+      "open_issues_count": 3,
+      "forks": 2,
+      "open_issues": 3,
+      "watchers": 9,
+      "network_count": 2,
+      "subscribers_count": 4
     }
   },
   "iopipe/serverless-plugin-iopipe": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 242,
       "stargazers_count": 2,
@@ -6516,11 +7348,23 @@
       "watchers": 2,
       "network_count": 5,
       "subscribers_count": 4
+    },
+    "2017-08-20": {
+      "size": 300,
+      "stargazers_count": 2,
+      "watchers_count": 2,
+      "forks_count": 5,
+      "open_issues_count": 1,
+      "forks": 5,
+      "open_issues": 1,
+      "watchers": 2,
+      "network_count": 5,
+      "subscribers_count": 4
     }
   },
   "SAPessi/serverless-sam": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 27,
       "stargazers_count": 20,
@@ -6615,11 +7459,23 @@
       "watchers": 21,
       "network_count": 5,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 27,
+      "stargazers_count": 22,
+      "watchers_count": 22,
+      "forks_count": 5,
+      "open_issues_count": 1,
+      "forks": 5,
+      "open_issues": 1,
+      "watchers": 22,
+      "network_count": 5,
+      "subscribers_count": 2
     }
   },
   "amplify-education/serverless-vpc-discovery": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 19,
       "stargazers_count": 6,
@@ -6706,6 +7562,18 @@
       "watchers": 6,
       "network_count": 2,
       "subscribers_count": 7
+    },
+    "2017-08-20": {
+      "size": 19,
+      "stargazers_count": 7,
+      "watchers_count": 7,
+      "forks_count": 2,
+      "open_issues_count": 0,
+      "forks": 2,
+      "open_issues": 0,
+      "watchers": 7,
+      "network_count": 2,
+      "subscribers_count": 7
     }
   },
   "bitnami/kubeless-serverless": {
@@ -6737,8 +7605,8 @@
     }
   },
   "ryanmurakami/serverless-apigwy-binary": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 2,
       "stargazers_count": 9,
@@ -6825,11 +7693,23 @@
       "watchers": 10,
       "network_count": 2,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 2,
+      "stargazers_count": 11,
+      "watchers_count": 11,
+      "forks_count": 2,
+      "open_issues_count": 1,
+      "forks": 2,
+      "open_issues": 1,
+      "watchers": 11,
+      "network_count": 2,
+      "subscribers_count": 1
     }
   },
   "digitalmaas/serverless-plugin-browserifier": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 21,
       "stargazers_count": 2,
@@ -6925,11 +7805,23 @@
       "watchers": 2,
       "network_count": 2,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 21,
+      "stargazers_count": 2,
+      "watchers_count": 2,
+      "forks_count": 2,
+      "open_issues_count": 0,
+      "forks": 2,
+      "open_issues": 0,
+      "watchers": 2,
+      "network_count": 2,
+      "subscribers_count": 1
     }
   },
   "UnitedIncome/serverless-shell": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 21,
       "stargazers_count": 3,
@@ -7016,11 +7908,23 @@
       "watchers": 3,
       "network_count": 1,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 21,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 1
     }
   },
   "sbstjn/serverless-stack-output": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 64,
       "stargazers_count": 3,
@@ -7114,11 +8018,23 @@
       "watchers": 3,
       "network_count": 1,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 64,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 1
     }
   },
   "rhythminme/serverless-gulp": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 11,
       "stargazers_count": 3,
@@ -7208,11 +8124,23 @@
       "watchers": 3,
       "network_count": 1,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 11,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 1,
+      "open_issues_count": 2,
+      "forks": 1,
+      "open_issues": 2,
+      "watchers": 3,
+      "network_count": 1,
+      "subscribers_count": 1
     }
   },
   "arabold/serverless-sentry-plugin": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 46,
       "stargazers_count": 20,
@@ -7274,7 +8202,13 @@
       "subscribers_count": 5
     },
     "topics": [
-
+      "sentry",
+      "serverless",
+      "serverless-framework",
+      "aws-lambda",
+      "raven",
+      "aws",
+      "serverless-plugin"
     ],
     "2017-08-13": {
       "size": 46,
@@ -7299,11 +8233,23 @@
       "watchers": 20,
       "network_count": 3,
       "subscribers_count": 5
+    },
+    "2017-08-20": {
+      "size": 46,
+      "stargazers_count": 22,
+      "watchers_count": 22,
+      "forks_count": 3,
+      "open_issues_count": 5,
+      "forks": 3,
+      "open_issues": 5,
+      "watchers": 22,
+      "network_count": 3,
+      "subscribers_count": 5
     }
   },
   "DieProduktMacher/serverless-env-generator": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 38,
       "stargazers_count": 7,
@@ -7395,11 +8341,23 @@
       "watchers": 8,
       "network_count": 1,
       "subscribers_count": 3
+    },
+    "2017-08-20": {
+      "size": 26,
+      "stargazers_count": 8,
+      "watchers_count": 8,
+      "forks_count": 1,
+      "open_issues_count": 1,
+      "forks": 1,
+      "open_issues": 1,
+      "watchers": 8,
+      "network_count": 1,
+      "subscribers_count": 3
     }
   },
   "DieProduktMacher/serverless-local-dev-server": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 24,
       "stargazers_count": 1,
@@ -7494,6 +8452,18 @@
       "watchers": 1,
       "network_count": 1,
       "subscribers_count": 3
+    },
+    "2017-08-20": {
+      "size": 15,
+      "stargazers_count": 1,
+      "watchers_count": 1,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 1,
+      "network_count": 1,
+      "subscribers_count": 3
     }
   },
   "rawphp/serverless-plugin-stack-config.git": {
@@ -7553,8 +8523,8 @@
     }
   },
   "sinofseven/serverless-s3-remover": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 5,
       "stargazers_count": 3,
@@ -7641,11 +8611,23 @@
       "watchers": 3,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 5,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "sbstjn/serverless-dynamodb-autoscaling": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 77,
       "stargazers_count": 25,
@@ -7739,11 +8721,23 @@
       "watchers": 30,
       "network_count": 4,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 88,
+      "stargazers_count": 31,
+      "watchers_count": 31,
+      "forks_count": 4,
+      "open_issues_count": 0,
+      "forks": 4,
+      "open_issues": 0,
+      "watchers": 31,
+      "network_count": 4,
+      "subscribers_count": 1
     }
   },
   "bespoken/serverless-plugin-bespoken": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 1221,
       "stargazers_count": 4,
@@ -7832,11 +8826,23 @@
       "watchers": 4,
       "network_count": 0,
       "subscribers_count": 6
+    },
+    "2017-08-20": {
+      "size": 1221,
+      "stargazers_count": 5,
+      "watchers_count": 5,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 5,
+      "network_count": 0,
+      "subscribers_count": 6
     }
   },
   "sbstjn/serverless-s3bucket-sync": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 49,
       "stargazers_count": 7,
@@ -7928,11 +8934,23 @@
       "watchers": 7,
       "network_count": 1,
       "subscribers_count": 0
+    },
+    "2017-08-20": {
+      "size": 49,
+      "stargazers_count": 7,
+      "watchers_count": 7,
+      "forks_count": 1,
+      "open_issues_count": 0,
+      "forks": 1,
+      "open_issues": 0,
+      "watchers": 7,
+      "network_count": 1,
+      "subscribers_count": 0
     }
   },
   "k1LoW/serverless-s3-sync": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 10,
       "stargazers_count": 12,
@@ -8021,11 +9039,23 @@
       "watchers": 12,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 10,
+      "stargazers_count": 13,
+      "watchers_count": 13,
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "forks": 0,
+      "open_issues": 1,
+      "watchers": 13,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "jagdish-176/serverless-nested-stack": {
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-05": {
       "size": 4,
       "stargazers_count": 4,
@@ -8113,6 +9143,18 @@
       "watchers": 4,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 5,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "serverless/serverless-kubeless": {
@@ -8128,8 +9170,8 @@
       "network_count": 3,
       "subscribers_count": 16
     },
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-09": {
       "size": 240,
       "stargazers_count": 23,
@@ -8180,6 +9222,18 @@
       "watchers": 26,
       "network_count": 4,
       "subscribers_count": 16
+    },
+    "2017-08-20": {
+      "size": 245,
+      "stargazers_count": 26,
+      "watchers_count": 26,
+      "forks_count": 4,
+      "open_issues_count": 6,
+      "forks": 4,
+      "open_issues": 6,
+      "watchers": 26,
+      "network_count": 4,
+      "subscribers_count": 17
     }
   },
   "rawphp/serverless-plugin-stack-config": {
@@ -8195,8 +9249,8 @@
       "network_count": 0,
       "subscribers_count": 1
     },
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-09": {
       "size": 97,
       "stargazers_count": 4,
@@ -8250,6 +9304,18 @@
       "watchers": 4,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 97,
+      "stargazers_count": 4,
+      "watchers_count": 4,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 4,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "rawphp/serverless-plugin-elastic-beanstalk": {
@@ -8265,8 +9331,8 @@
       "network_count": 0,
       "subscribers_count": 1
     },
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-09": {
       "size": 5955,
       "stargazers_count": 2,
@@ -8317,6 +9383,18 @@
       "watchers": 2,
       "network_count": 0,
       "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 5955,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 0,
+      "subscribers_count": 1
     }
   },
   "dougmoscrop/serverless-plugin-common-excludes": {
@@ -8335,9 +9413,21 @@
       "network_count": 0,
       "subscribers_count": 1
     },
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-16": {
+      "size": 3,
+      "stargazers_count": 2,
+      "watchers_count": 2,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 2,
+      "network_count": 0,
+      "subscribers_count": 1
+    },
+    "2017-08-20": {
       "size": 3,
       "stargazers_count": 2,
       "watchers_count": 2,
@@ -8366,8 +9456,8 @@
       "network_count": 4,
       "subscribers_count": 1
     },
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-16": {
       "size": 11,
       "stargazers_count": 13,
@@ -8377,6 +9467,18 @@
       "forks": 4,
       "open_issues": 2,
       "watchers": 13,
+      "network_count": 4,
+      "subscribers_count": 1
+    },
+    "2017-08-20": {
+      "size": 11,
+      "stargazers_count": 14,
+      "watchers_count": 14,
+      "forks_count": 4,
+      "open_issues_count": 2,
+      "forks": 4,
+      "open_issues": 2,
+      "watchers": 14,
       "network_count": 4,
       "subscribers_count": 1
     }
@@ -8397,9 +9499,21 @@
       "network_count": 0,
       "subscribers_count": 1
     },
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-16": {
+      "size": 21,
+      "stargazers_count": 8,
+      "watchers_count": 8,
+      "forks_count": 0,
+      "open_issues_count": 4,
+      "forks": 0,
+      "open_issues": 4,
+      "watchers": 8,
+      "network_count": 0,
+      "subscribers_count": 1
+    },
+    "2017-08-20": {
       "size": 21,
       "stargazers_count": 8,
       "watchers_count": 8,
@@ -8428,8 +9542,8 @@
       "network_count": 0,
       "subscribers_count": 2
     },
-    "last": "2017-08-13",
-    "current": "2017-08-16",
+    "last": "2017-08-16",
+    "current": "2017-08-20",
     "2017-08-16": {
       "size": 6,
       "stargazers_count": 3,
@@ -8441,6 +9555,35 @@
       "watchers": 3,
       "network_count": 0,
       "subscribers_count": 2
+    },
+    "2017-08-20": {
+      "size": 6,
+      "stargazers_count": 3,
+      "watchers_count": 3,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "forks": 0,
+      "open_issues": 0,
+      "watchers": 3,
+      "network_count": 0,
+      "subscribers_count": 2
     }
+  },
+  "https://gitlab.com/kabo/serverless-cf-vars": {
+    "topics": null,
+    "2017-08-20": {
+      "size": null,
+      "stargazers_count": null,
+      "watchers_count": null,
+      "forks_count": null,
+      "open_issues_count": null,
+      "forks": null,
+      "open_issues": null,
+      "watchers": null,
+      "network_count": null,
+      "subscribers_count": null
+    },
+    "last": null,
+    "current": "2017-08-20"
   }
 }

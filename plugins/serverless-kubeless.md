@@ -5,15 +5,15 @@ repo: serverless/serverless-kubeless
 homepage: 'https://github.com/serverless/serverless-kubeless'
 description: Serverless plugin for deploying functions to Kubeless.
 stars: 26
-stars_trend: up
-stars_diff: 3
+stars_trend: 
+stars_diff: 0
 forks: 4
 forks_trend: up
 forks_diff: 1
 watchers: 26
 issues: 6
 issues_trend: up
-issues_diff: 2
+issues_diff: 1
 ---
 
 

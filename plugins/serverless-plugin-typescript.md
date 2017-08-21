@@ -4,16 +4,16 @@ title: Serverless Plugin Typescript
 repo: graphcool/serverless-plugin-typescript
 homepage: 'https://github.com/graphcool/serverless-plugin-typescript'
 description: Serverless plugin for zero-config Typescript support.
-stars: 51
+stars: 54
 stars_trend: up
-stars_diff: 2
-forks: 11
+stars_diff: 4
+forks: 12
 forks_trend: up
 forks_diff: 1
-watchers: 51
+watchers: 54
 issues: 7
-issues_trend: down
-issues_diff: -1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -54,14 +54,16 @@ The default `tsconfig.json` file used by the plugin looks like this:
 
 ```json
 {
-  "preserveConstEnums": true,
-  "strictNullChecks": true,
-  "sourceMap": true,
-  "target": "es5",
-  "outDir": ".build",
-  "moduleResolution": "node",
-  "lib": ["es2015"],
-  "rootDir": "./"
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "target": "es5",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "lib": ["es2015"],
+    "rootDir": "./"
+  }
 }
 ```
 

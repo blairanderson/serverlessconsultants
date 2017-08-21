@@ -8,8 +8,8 @@ stars: 14
 stars_trend: 
 stars_diff: 0
 forks: 8
-forks_trend: down
-forks_diff: -1
+forks_trend: 
+forks_diff: 0
 watchers: 14
 issues: 3
 issues_trend: 

@@ -6,14 +6,14 @@ homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: Keep your lambdas warm during Winter.
 stars: 47
 stars_trend: up
-stars_diff: 2
-forks: 8
-forks_trend: 
-forks_diff: 0
+stars_diff: 1
+forks: 10
+forks_trend: up
+forks_diff: 2
 watchers: 47
-issues: 3
-issues_trend: 
-issues_diff: 0
+issues: 4
+issues_trend: up
+issues_diff: 1
 ---
 
 

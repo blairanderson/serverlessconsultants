@@ -5,15 +5,15 @@ repo: HyperBrain/serverless-aws-alias
 homepage: 'https://github.com/HyperBrain/serverless-aws-alias'
 description: This plugin enables use of AWS aliases on Lambda functions.
 stars: 28
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 5
 forks_trend: 
 forks_diff: 0
 watchers: 28
-issues: 14
-issues_trend: 
-issues_diff: 0
+issues: 13
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -58,6 +58,14 @@ read only in the AWS console, so it is guaranteed that the environment and
 function parameters (memory, etc.) cannot be changed for a deployed version
 by accident, as it can be done with the `$LATEST` qualifier.
 This adds an additional level of stability to your deployment process.
+
+## Deploy a single function
+
+The plugin supports `serverless deploy function` and moves the alias to the
+updated function version. However you must specify the `--force` switch on the
+commandline to enforce Serverless to deploy a new function ZIP regardless, if the
+code has changed or not. This is necessary to prevent setting the alias to a
+version of the function that has been deployed by another developer.
 
 ## Deploy an alias
 
@@ -478,6 +486,9 @@ and _serverless.service.provider.deployedAliasTemplates[]_.
   naturally. It might be possible to introduce some kind of per alias policy.
 
 ## Version history
+
+* 1.5.0
+  * Support `serverless deploy function` [#29](https://github.com/HyperBrain/serverless-aws-alias/issues/29)
 
 * 1.4.1
   * Fixed crash when using logs --tail

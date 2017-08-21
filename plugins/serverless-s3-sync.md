@@ -4,13 +4,13 @@ title: Serverless S3 Sync
 repo: k1LoW/serverless-s3-sync
 homepage: 'https://github.com/k1LoW/serverless-s3-sync'
 description: A plugin to sync local directories and S3 prefixes for Serverless Framework,
-stars: 12
-stars_trend: 
-stars_diff: 0
+stars: 13
+stars_trend: up
+stars_diff: 1
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 12
+watchers: 13
 issues: 1
 issues_trend: up
 issues_diff: 1

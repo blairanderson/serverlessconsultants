@@ -7,9 +7,9 @@ description: Run serverless function locally
 stars: 13
 stars_trend: 
 stars_diff: 0
-forks: 9
-forks_trend: 
-forks_diff: 0
+forks: 8
+forks_trend: down
+forks_diff: -1
 watchers: 13
 issues: 2
 issues_trend: 

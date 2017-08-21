@@ -4,13 +4,13 @@ title: Serverless Plugin Bespoken
 repo: bespoken/serverless-plugin-bespoken
 homepage: 'https://github.com/bespoken/serverless-plugin-bespoken'
 description: Creates a local server and a proxy so you don't have to deploy anytime you want to test your code
-stars: 4
-stars_trend: 
-stars_diff: 0
+stars: 5
+stars_trend: up
+stars_diff: 1
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 0
 issues_trend: 
 issues_diff: 0
