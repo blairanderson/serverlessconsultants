@@ -3,6 +3,6 @@
 layout: topic
 topic: cloudwatch
 title: cloudwatch Serverless Plugins
-description: '1 cloudwatch ServerLess Plugins'
-count: 1
+description: '2 cloudwatch ServerLess Plugins'
+count: 2
 ---

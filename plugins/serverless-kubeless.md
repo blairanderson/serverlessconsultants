@@ -4,16 +4,16 @@ title: Serverless Kubeless
 repo: serverless/serverless-kubeless
 homepage: 'https://github.com/serverless/serverless-kubeless'
 description: Serverless plugin for deploying functions to Kubeless.
-stars: 26
+stars: 28
 stars_trend: 
 stars_diff: 0
 forks: 4
-forks_trend: up
-forks_diff: 1
-watchers: 26
-issues: 6
-issues_trend: up
-issues_diff: 1
+forks_trend: 
+forks_diff: 0
+watchers: 28
+issues: 7
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -71,6 +71,8 @@ Deploy function.
 ```bash
 $ serverless deploy
 Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Deploying function hello...
 Serverless: Function hello succesfully deployed
 ```
 

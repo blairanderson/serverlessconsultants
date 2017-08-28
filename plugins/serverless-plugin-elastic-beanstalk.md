@@ -5,8 +5,8 @@ repo: rawphp/serverless-plugin-elastic-beanstalk
 homepage: 'https://github.com/rawphp/serverless-plugin-elastic-beanstalk'
 description: A serverless plugin to deploy applications to AWS ElasticBeanstalk.
 stars: 3
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
@@ -55,6 +55,9 @@ custom:
       applicationName: CartApplicationName
       environmentName: CartApplicationEvironmentName
     key: ${opt:key}
+    file:
+      prefix: bundles
+      name: bundle-latest.zip
     platform: nodejs
     script: scripts/configure.js
     build:

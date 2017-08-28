@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: elastic-coders/serverless-webpack
 homepage: 'https://github.com/elastic-coders/serverless-webpack'
 description: Serverless plugin to bundle your lambdas with Webpack
-stars: 335
-stars_trend: up
-stars_diff: 9
-forks: 117
-forks_trend: up
-forks_diff: 1
-watchers: 335
-issues: 24
-issues_trend: down
-issues_diff: -3
+stars: 342
+stars_trend: 
+stars_diff: 0
+forks: 118
+forks_trend: 
+forks_diff: 0
+watchers: 342
+issues: 18
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -389,6 +389,13 @@ Plugin commands are supported by the following providers. ⁇ indicates that com
   * Removed the `webpack serve` command in favor of [`serverless-offline`][link-serverless-offline] [#152][link-152]
   * Updated examples [#179][link-179]
   * Added missing unit tests to improve code stability
+  * Fixed unit tests to run on Windows [#145][link-145]
+
+* 2.2.2
+  * Reverted breaking change introduced in default output config [#202][link-202]
+
+* 2.2.1
+  * Restore functionality for Google provider [#193][link-193]
 
 * 2.2.0
   * Allow full dynamic configurations [#158][link-158]
@@ -451,12 +458,17 @@ Plugin commands are supported by the following providers. ⁇ indicates that com
 [link-158]: https://github.com/elastic-coders/serverless-webpack/issues/158
 [link-165]: https://github.com/elastic-coders/serverless-webpack/issues/165
 
+[link-193]: https://github.com/elastic-coders/serverless-webpack/issues/193
+
 [link-116]: https://github.com/elastic-coders/serverless-webpack/issues/116
 [link-117]: https://github.com/elastic-coders/serverless-webpack/issues/117
 [link-120]: https://github.com/elastic-coders/serverless-webpack/issues/120
+[link-145]: https://github.com/elastic-coders/serverless-webpack/issues/145
 [link-151]: https://github.com/elastic-coders/serverless-webpack/issues/151
 [link-152]: https://github.com/elastic-coders/serverless-webpack/issues/152
 [link-173]: https://github.com/elastic-coders/serverless-webpack/issues/173
 [link-179]: https://github.com/elastic-coders/serverless-webpack/pull/179
 [link-185]: https://github.com/elastic-coders/serverless-webpack/pull/185
 [link-186]: https://github.com/elastic-coders/serverless-webpack/pull/186
+
+[link-202]: https://github.com/elastic-coders/serverless-webpack/issues/202

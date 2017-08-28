@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: Serverless plugin to bundle Python packages
-stars: 64
-stars_trend: up
-stars_diff: 3
+stars: 67
+stars_trend: 
+stars_diff: 0
 forks: 15
-forks_trend: up
-forks_diff: 1
-watchers: 64
-issues: 22
-issues_trend: up
-issues_diff: 8
+forks_trend: 
+forks_diff: 0
+watchers: 67
+issues: 14
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -88,18 +88,21 @@ custom:
 ```
 
 ## Omitting Packages 
-You can omit a package from deployment by adding `#no-deploy` to the
-requirement's line in `requirements.txt`. For example, this will not install
-the AWS SDKs that are already installed on Lambda, but will install numpy:
-```
-numpy
-boto3 #no-deploy
-botocore #no-deploy
-docutils #no-deploy
-jmespath #no-deploy
-python-dateutil #no-deploy
-s3transfer #no-deploy
-six #no-deploy
+You can omit a package from deployment with the `noDeploy` option. Note that
+dependencies of omitted packages must explicitly be omitted too.
+For example, this will not install the AWS SDKs that are already installed on
+Lambda:
+```yaml
+custom:
+  pythonRequirements:
+    noDeploy:
+      - boto3
+      - botocore
+      - docutils
+      - jmespath
+      - python-dateutil
+      - s3transfer
+      - six
 ```
 
 ## extra pip arguments
@@ -111,6 +114,27 @@ custom:
       pipCmdExtraArgs:
           - --cache-dir
           - .requirements-cache
+```
+
+## Customize requirements file name
+[Some `pip` workflows involve using requirements files not named
+`requirements.txt`](https://www.kennethreitz.org/essays/a-better-pip-workflow).
+To support these, this plugin has the following option:
+
+```yaml
+custom:
+  pythonRequirements:
+    fileName: requirements-prod.txt
+```
+
+## Customize Python executable
+Sometimes your Python executable isn't available on your `$PATH` as `python2.7`
+or `python3.6` (for example, windows or using pyenv).
+To support this, this plugin has the following option:
+```yaml
+custom:
+  pythonRequirements:
+    pythonBin: /opt/python3.6/bin/python
 ```
 
 ## Manual invocations

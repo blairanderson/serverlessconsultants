@@ -5,8 +5,8 @@ repo: arabold/serverless-export-env
 homepage: 'https://github.com/arabold/serverless-export-env'
 description: Export environment variables into a .env file with automatic AWS CloudFormation reference resolution.
 stars: 4
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 5
 forks_trend: 
 forks_diff: 0

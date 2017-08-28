@@ -32,9 +32,13 @@ variables from `serverless.yml`.
 npm install --save serverless-shell
 ```
 
-Add the plugin to your `serverless.yml`:
+Add the plugin and set some env vars in your `serverless.yml`:
 
 ```yaml
+provider:
+  name: aws
+  environment:
+    SOME_VAR: foobar
 plugins:
   - serverless-shell
 ```
@@ -47,13 +51,16 @@ Serverless: Spawning python3.6...
 Python 3.6.1 (default, Mar 22 2017, 06:17:05) 
 [GCC 6.3.0 20170321] on linux
 Type "help", "copyright", "credits" or "license" for more information.
->>> 
+>>> import os
+>>> os.environ['SOME_VAR']
+'foobar'
 ```
 and in a NodeJS project:
 ```
 $ serverless shell
 Serverless: Spawning node...
->  
+> process.env.SHELL
+'foobar'
 ```
 
 ### Per function & stage specific env vars
@@ -66,7 +73,7 @@ $ serverless -s staging shell -f status
 ## Custom shell (babel) support
 If you want to launch a different shell than the runtime's default, you can
 specify that with in the `custom` section of your config. This can be used
-to for thing like using `babel-node` instead of `node` or even dropping to
+to for things like using `babel-node` instead of `node` or even dropping to
 `bash` with the right env vars set.
 
 Example:
@@ -77,5 +84,5 @@ Example:
 
 This feature can also be activated by a CLI switch:
 ```
-sls shell -S bash
+$ sls shell -S bash
 ```

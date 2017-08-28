@@ -3,6 +3,6 @@
 layout: topic
 topic: aws-lambda
 title: aws-lambda Serverless Plugins
-description: '19 aws-lambda ServerLess Plugins'
-count: 19
+description: '20 aws-lambda ServerLess Plugins'
+count: 20
 ---

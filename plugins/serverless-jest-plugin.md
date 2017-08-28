@@ -4,14 +4,14 @@ title: Serverless Jest Plugin
 repo: SC5/serverless-jest-plugin
 homepage: 'https://github.com/SC5/serverless-jest-plugin'
 description: A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Jest
-stars: 25
+stars: 26
 stars_trend: 
 stars_diff: 0
 forks: 8
-forks_trend: up
-forks_diff: 2
-watchers: 25
-issues: 4
+forks_trend: 
+forks_diff: 0
+watchers: 26
+issues: 5
 issues_trend: 
 issues_diff: 0
 ---
@@ -48,6 +48,12 @@ Add the plugin to `serverless.yml`:
 ```yml
 plugins:
   - serverless-jest-plugin
+custom:
+  jest:
+    # You can pass jest options here
+    # See details here: https://facebook.github.io/jest/docs/configuration.html
+    # For instance, uncomment next line to enable code coverage
+    # collectCoverage: true
 ```
 
 ## Usage

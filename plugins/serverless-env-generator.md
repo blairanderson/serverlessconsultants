@@ -5,8 +5,8 @@ repo: DieProduktMacher/serverless-env-generator
 homepage: 'https://github.com/DieProduktMacher/serverless-env-generator'
 description: Manage environment variables with YAML and load them with dotenv. Supports variable encryption with KMS, multiple stages and custom profiles.
 stars: 8
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
