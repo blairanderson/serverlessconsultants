@@ -4,16 +4,16 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: Keep your lambdas warm during Winter.
-stars: 52
-stars_trend: 
-stars_diff: 0
+stars: 54
+stars_trend: up
+stars_diff: 2
 forks: 10
 forks_trend: 
 forks_diff: 0
-watchers: 52
-issues: 4
-issues_trend: 
-issues_diff: 0
+watchers: 54
+issues: 3
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -91,6 +91,7 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 
 ## Options
 
+* **cleanFolder** (default `true`) 
 * **memorySize** (default `128`)
 * **name** (default `${service}-${stage}-warmup-plugin`)
 * **schedule** (default `rate(5 minutes)`) - More examples [here](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
@@ -100,6 +101,7 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 ```yml
 custom:
   warmup:
+    cleanFolder: false,
     memorySize: 256
     name: 'make-them-pop'
     schedule: 'cron(0/5 8-17 ? * MON-FRI *)' // Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
@@ -121,6 +123,10 @@ custom:
   }
 }
 ```
+
+## Artifact
+
+If you are doing your own [package artifact](https://serverless.com/framework/docs/providers/aws/guide/packaging#artifact) set option `cleanFolder` to `false` and run `serverless package`. This will allow you to extract the `warmup` NodeJS lambda file from the `_warmup` folder and add it in your custom artifact logic.
 
 ## Gotchas
 
