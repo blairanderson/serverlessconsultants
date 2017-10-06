@@ -1,0 +1,70 @@
+<!DOCTYPE html> <html> <head> <script type="text/javascript"> var host = 'www.serverlessconsultants.com'; if (host == window.location.host && window.location.protocol != 'https:') { window.location.protocol = 'https'; } </script> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="description" content=""> <meta name="author" content="Serverless Directory"> <meta name="msvalidate.01" content="0C81C6A5BD3BAF86F4730D8C4A9BF223" /> <meta name="google-site-verification" content=""> <title>Serverless Kubeless - Serverless Plugin Directory</title> <!-- Google+ Authorship --> <link rel="author" href="Serverless Directory"> <link rel="publisher" href="Serverless Directory"> <!-- Canonical --> <link rel="canonical" href="https://www.serverlessconsultants.com/plugins/serverless-kubeless/"> <!-- Fonts --> <link href='https://fonts.googleapis.com/css?family=Libre+Franklin:400,100,100italic,200,200italic,300,300italic,400italic,500,600,500italic,600italic,700,700italic,800,900,800italic,900italic' rel='stylesheet' type='text/css'> <link href='https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'> <link href='https://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'> <!-- Styles --> <link rel="stylesheet" href=" /css/main.css "> <!-- Feed --> <link rel="alternate" type="application/rss+xml" title="ServerLess Directory" href="https://www.serverlessconsultants.com /feed.xml "> <!-- Fav Icon and Apple Touch Icons --> <link rel="icon" type="image/png" href="/img/favicon.png" sizes="128x128" /> <meta name="application-name" content="ServerLess Directory" /> <!-- Open Graph --> <meta property="og:title" content="Serverless Kubeless - Serverless Plugin Directory"> <meta property="og:site_name" content="ServerLess Directory"> <meta property="og:type" content="website"> <meta property="og:description" content="Open Issue Count: 2, Stargazer Count: 46, Forks Count: 7, Watchers Count: 46."> </head> <script type="text/javascript"> (function(i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; (i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments); }), (i[r].l = 1 * new Date()); (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]); a.async = 1; a.src = g; m.parentNode.insertBefore(a, m); })( window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga' ); ga('create', 'UA-61052500-12', 'auto'); ga('send', 'pageview'); </script> <body> <!-- Navigation --> <header class="bg-white w-100 ph3 pv3 pv4-ns ph4-m ph5-l z-999 bb b--light-gray"> <nav class="tc"> <a class="dib no-underline v-mid tc bw1 ba b gold ph1 pv2 outline b--gold" href="/" rel="nofollow"> <div>SRVR</div> <div>LSS</div> </a> <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Serverless Directory">Serverless Directory</a> <a class="link dim gray f6 f5-ns dib mr3" href="/plugins/">Serverless Plugins</a> <a class="link dim gray f6 f5-ns dib mr3" href="/frameworks/">Serverless Frameworks</a> <!-- <a class="link dim gray f6 f5-ns dib mr3" href="/consultants/">Serverless Consultants</a> --> <!-- <a class="link dim gray f6 f5-ns dib mr3" href="/contact" title="Contact Serverless Frameworks Directory">Contact</a> --> </nav> </header> <div class="mw8 center"> <h1 class="tc ma0">Serverless Kubeless</h1> <div class="tc"> <a rel="nofollow noreferrer noopener" href="https://github.com/serverless/serverless-kubeless"> <img src="https://icon.now.sh/home" alt="homepage icon"> https://github.com/serverless/serverless-kubeless </a> </div> <article class="ph3 ph5-ns"> <h3 class="f6 ma0 pa0 ttu tc tracked">Tracked</h3> <div class="cf tc"> <dl title="NPM Downloads Last Month: 6366" class="db tc mb0 dib-l w-auto-l lh-title mr5-l"> <dd class="f6 fw4 ml0">NPM Downloads Last Month</dd> <dd class="f3 fw6 ml0">6366</dd> </dl> <dl title="Open Issue Count: 2" class="fl fn-l w-50 mb0 dib-l w-auto-l lh-title mr5-l"> <dd class="f6 fw4 ml0">Issues</dd> <dd class="f3 fw6 ml0">2</dd> </dl> <dl title="Stargazer Count: 46" class="fl fn-l w-50 dib-l mb0 w-auto-l lh-title mr5-l"> <dd class="f6 fw4 ml0">Stars</dd> <dd class="f3 fw6 ml0">46</dd> </dl> <dl title="Forks Count: 7" class="fl fn-l w-50 dib-l w-auto-l mb0 lh-title mr5-l"> <dd class="f6 fw4 ml0">Forks</dd> <dd class="f3 fw6 ml0">7</dd> </dl> <dl title="Watchers Count: 46" class="fl fn-l w-50 dib-l w-auto-l mb0 lh-title"> <dd class="f6 fw4 ml0">Watchers</dd> <dd class="f3 fw6 ml0">46</dd> </dl> </div> </article> <!-- TODO: FIX THIS --> <div class="cf tc mw6 center dn"> </div> </div> <h3 class="tc">Repo README Contents:</h3> <section class="mw8 center ph3 pv2 overflow-x-scroll ba br3" id="readme-content"> <h1 id="kubeless-serverless-plugin">Kubeless Serverless Plugin</h1> <p>This plugin brings <a href="https://github.com/kubeless/kubeless">Kubeless</a> support within the <a href="https://github.com/serverless">Serverless Framework</a>.</p> <p>Kubeless is a Kubernetes-native Serverless solution.</p> <h2 id="pre-requisites">Pre requisites</h2> <p>Make sure you have a kubernetes endpoint running and kubeless installed:</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>kubectl version
+<span class="gp">$ </span>brew install kubeless/tap/kubeless
+<span class="gp">$ </span><span class="nv">KUBELESS_VERSION</span><span class="o">=</span>0.2.1
+<span class="gp">$ </span>kubectl create ns kubeless
+<span class="gp">$ </span>kubectl create -f https://github.com/kubeless/kubeless/releases/download/v<span class="nv">$KUBELESS_VERSION</span>/kubeless-v<span class="nv">$KUBELESS_VERSION</span>.yaml
+</code></pre></div> <p>Then install serverless</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install serverless -g
+</code></pre></div> <h2 id="try-out-the-example">Try out the example</h2> <p>Clone this repo and check the example function</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/serverless/serverless-kubeless
+<span class="gp">$ </span><span class="nb">cd </span>examples/get-python
+<span class="gp">$ </span>cat serverless.yml
+service: hello
+
+provider:
+  name: kubeless
+  runtime: python2.7
+
+plugins:
+  - serverless-kubeless
+
+functions:
+  hello:
+    description: <span class="s1">'Hello function'</span>
+    handler: handler.hello
+</code></pre></div> <p>Download dependencies</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install
+</code></pre></div> <p>Deploy function.</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>serverless deploy
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Deploying <span class="k">function </span>hello...
+Serverless: Function hello successfully deployed
+</code></pre></div> <p>The function will be deployed to k8s via kubeless.</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>kubectl get <span class="k">function
+</span>NAME      KIND
+hello     Function.v1.k8s.io
+
+<span class="gp">$ </span>kubectl get po
+NAME                     READY     STATUS    RESTARTS   AGE
+hello-1815473417-1ttt7   1/1       Running   0          1m
+</code></pre></div> <p>Now you will be able to call the function:</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>serverless invoke -f hello -l
+Serverless: Calling <span class="k">function</span>: hello...
+--------------------------------------------------------------------
+hello world
+</code></pre></div> <p>You can also check the logs for the function:</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>serverless logs -f hello
+172.17.0.1 - - <span class="o">[</span>12/Jul/2017:09:47:18 +0000] <span class="s2">"GET /healthz HTTP/1.1"</span> 200 2 <span class="s2">""</span> <span class="s2">"Go-http-client/1.1"</span> 0/118
+172.17.0.1 - - <span class="o">[</span>12/Jul/2017:09:47:21 +0000] <span class="s2">"GET /healthz HTTP/1.1"</span> 200 2 <span class="s2">""</span> <span class="s2">"Go-http-client/1.1"</span> 0/93
+172.17.0.1 - - <span class="o">[</span>12/Jul/2017:09:47:24 +0000] <span class="s2">"GET /healthz HTTP/1.1"</span> 200 2 <span class="s2">""</span> <span class="s2">"Go-http-client/1.1"</span> 0/108
+172.17.0.1 - - <span class="o">[</span>12/Jul/2017:09:47:25 +0000] <span class="s2">"GET / HTTP/1.1"</span> 200 11 <span class="s2">""</span> <span class="s2">""</span> 0/316
+</code></pre></div> <p>Or you can obtain the function information:</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>serverless info
+Service Information <span class="s2">"hello"</span>
+Cluster IP:  10.0.0.51
+Type:  NodePort
+Ports:
+  Protocol:  TCP
+  Port:  8080
+  Target Port:  8080
+  Node Port:  30018
+Function Info
+Description: Hello <span class="k">function
+</span>Handler:  handler.hello
+Runtime:  python2.7
+Trigger: HTTP
+Dependencies:
+</code></pre></div> <p>If you are using minikube you can call directly the function through HTTP and the Node Port in which the function is running:</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl  http://192.168.99.100:30018
+hello world
+</code></pre></div> <p>You can access the function through its HTTP interface as well using <code class="highlighter-rouge">kubectl proxy</code> and accessing:</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl http://127.0.0.1:8001/api/v1/namespaces/default/services/hello/proxy/
+hello world
+</code></pre></div> <p>If you have a change in your function and you want to redeploy it you can run:</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>serverless deploy <span class="k">function</span> -f hello
+Serverless: Redeploying hello...
+Serverless: Function hello successfully deployed
+</code></pre></div> <p>Finally you can remove the function.</p> <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>serverless remove
+Serverless: Removing <span class="k">function</span>: hello...
+Serverless: Function hello successfully deleted
+</code></pre></div> </section> <footer class="cf w-100"> <div class="cover bg-left bg-center-l pv5" style="background-image: url(/img/bg.png)"> <form action="//tachyonstemplates.us16.list-manage.com/subscribe/post?u=3ff847fac68c99ba4cbf378be&amp;id=8eb026def6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="center pa3" target="_blank" novalidate> <div> <h3 class="pa0 f3 f2-ns mb3 mt0 white tc">Want more Serverless?</h3> <h5 class="pa0 f4 f3-ns mb3 white tc">Subscribe to our mailing list to receive an update when new items arrive!</h5> <div class="cf mw7 center"> <label class="clip" for="email-address">Email Address</label> <input placeholder="Your Email Address" type="email" name="EMAIL" class="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns"> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3ff847fac68c99ba4cbf378be_8eb026def6" tabindex="-1" value=""></div> <input class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" name="subscribe" type="submit" value="Subscribe"> </div> </div> </form> </div> <div class="pb4 pt2 ph3 ph5-ns tc lh-copy"> <a class="pv2 db ph3 dim" href="/">Serverless Directory - Plugins, Frameworks, Consultants</a> <a class="pv2 db ph3 dim" href="/frameworks/">Serverless Frameworks Directory</a> <a class="pv2 db ph3 dim" href="/plugins/">Serverless Plugin Directory</a> <a class="pv2 db ph3 dim" href="/plugins/topics/">Serverless Plugin Topics</a> </div> </footer> <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> <!-- keeping this here for prosperity --> </body> </html>
