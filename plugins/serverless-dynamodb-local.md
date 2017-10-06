@@ -4,14 +4,14 @@ title: Serverless Dynamodb Local
 repo: 99xt/serverless-dynamodb-local
 homepage: 'https://github.com/99xt/serverless-dynamodb-local'
 description: Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless
-stars: 104
+stars: 112
 stars_trend: 
 stars_diff: 0
-forks: 50
+forks: 54
 forks_trend: 
 forks_diff: 0
-watchers: 104
-issues: 26
+watchers: 112
+issues: 28
 issues_trend: 
 issues_diff: 0
 ---
@@ -115,6 +115,9 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
 ```
+
+**Note:**
+DynamoDB local doesn't support TTL specification, therefore plugin will simply ignore ttl configuration from Cloudformation template.
 
 ## Seeding: sls dynamodb seed
 ### Configuration

@@ -4,14 +4,14 @@ title: Serverless Env Generator
 repo: DieProduktMacher/serverless-env-generator
 homepage: 'https://github.com/DieProduktMacher/serverless-env-generator'
 description: Manage environment variables with YAML and load them with dotenv. Supports variable encryption with KMS, multiple stages and custom profiles.
-stars: 8
+stars: 11
 stars_trend: 
 stars_diff: 0
-forks: 0
-forks_trend: down
-forks_diff: -1
-watchers: 8
-issues: 1
+forks: 2
+forks_trend: 
+forks_diff: 0
+watchers: 11
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -97,7 +97,7 @@ custom:
   envFiles: #YAML files used to create .env file
     - environment.yml
   envEncryptionKeyId: #KMS Key used for encrypting values
-    development: ${env:AWS_KMS_KEYID} #Key used for development-stage
+    dev: ${env:AWS_KMS_KEYID} #Key used for development-stage
 ```
 
 ### 4. Add the .env file to your .gitignore
@@ -239,7 +239,7 @@ which are then merged into a .env file on deployment.
 File example:
 
 ```yaml
-development: #stage
+dev: #stage
     foo: bar #cleartext variable
     bla: crypted:bc89hwnch8hncoaiwjnd... #encrypted variable
 

@@ -10,9 +10,12 @@ LIST = [
   :sync_github_projects,
   :sync_github_topics
 ]
+
 desc "fetch github repos and create a bunch of files"
 task :plugins => LIST
 task :github => LIST
+task :refresh => LIST
+task :sync => LIST
 
 task :fetch_serverless_plugin_list do
   puts 'FETCHES PLUGIN LIST FROM https://github.com/serverless/plugins'

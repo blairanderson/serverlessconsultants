@@ -4,16 +4,16 @@ title: Serverless Prune Plugin
 repo: claygregory/serverless-prune-plugin
 homepage: 'https://github.com/claygregory/serverless-prune-plugin'
 description: Deletes old versions of functions from AWS, preserving recent and aliased versions
-stars: 17
+stars: 27
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 17
+watchers: 27
 issues: 0
-issues_trend: down
-issues_diff: -1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -69,6 +69,13 @@ custom:
 To run automatically, the `automatic` property of `prune` must be set to `true` and the `number` of versions to keep must be specified.
 
 
+### Dry Run
+
+A dry-run will preview the deletion candidates, without actually performing the pruning operations:
+```
+sls prune -n <number of version to keep> --dryRun
+```
+
 ### Additional Help
 
 See:
@@ -78,7 +85,7 @@ sls prune --help
 
 ## See Also
 
-The [Serverless Autoprune Plugin](https://github.com/arabold/serverless-autoprune-plugin) by [arabold](https://github.com/arabold) performs a similar role, but only targets Serverless 0.5.x projects.
+The [Serverless Autoprune Plugin](https://github.com/arabold/serverless-autoprune-plugin) by [arabold](https://github.com/arabold) performs a similar role, but targets Serverless 0.5.x projects.
 
 ## License
 

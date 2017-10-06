@@ -4,13 +4,13 @@ title: Serverless Plugin Aws Alerts
 repo: ACloudGuru/serverless-plugin-aws-alerts
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-aws-alerts'
 description: A Serverless plugin to easily add CloudWatch alarms to functions
-stars: 45
-stars_trend: up
-stars_diff: 1
-forks: 14
+stars: 49
+stars_trend: 
+stars_diff: 0
+forks: 15
 forks_trend: 
 forks_diff: 0
-watchers: 45
+watchers: 49
 issues: 7
 issues_trend: 
 issues_diff: 0
@@ -42,7 +42,7 @@ custom:
       - producton
       - staging
 
-    dashboards: true # Experimental
+    dashboards: true
 
     topics:
       ok: ${self:service}-${opt:stage}-alerts-ok
@@ -74,7 +74,7 @@ functions:
     handler: foo.handler
     alarms: # merged with function alarms
       - customAlarm
-      - name: fooAlarm
+      - name: fooAlarm # creates new alarm or overwrites some properties of the alarm (with the same name) from definitions
         namespace: 'AWS/Lambda'
         metric: errors # define custom metrics here
         threshold: 1

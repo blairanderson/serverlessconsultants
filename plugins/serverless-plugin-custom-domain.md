@@ -4,14 +4,14 @@ title: Serverless Plugin Custom Domain
 repo: dougmoscrop/serverless-plugin-custom-domain
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-custom-domain'
 description: Reliably sets a BasePathMapping to an API Gateway Custom Domain
-stars: 16
+stars: 22
 stars_trend: 
 stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 16
-issues: 2
+watchers: 22
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -20,6 +20,14 @@ issues_diff: 0
 # serverless-plugin-custom-domain
 
 This is a plugin for Serverless that injects a [CloudFormation Custom Resource](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html) in your deployed stack that sets up a base path mapping between the `ApiGateway::Deployment` that Serverless creates, and an [API Gateway Custom Domain](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html).
+
+## Upgrading from 1.x
+
+A bug in 1.x caused an extra, unused LogGroup to be created, called `/aws/lambdaservice-stage-CustomBasePathMa--` instead of `/aws/lambda/service-stage-CustomBasePathMa--`. However, AWS automatically creates a LogGroup for your functions with the correct name. This means that any deployments using 1.x have two LogGroups. After upgrading to 2.x+, deployments *may* fail due to a CloudFormation error that "the log group already exists". Sorry about this! It doesn't always happen, but thankfully, the fix is pretty straightforward if it does and it should only happen the one time.
+
+- **delete** the log group (it's the 'correctly' named one, e.g. `/aws/lambda/service-stage-CustomBasePathMa--`)
+- redeploy!
+- feel free to delete the other, incorrectly named log group, it was never used too
 
 ## Usage
 
@@ -33,6 +41,13 @@ plugins:
 custom:
   domain: "${opt:region}.myservice.foo.com"
 ```
+
+## Advanced Usage
+
+`custom.domain` can also be an object, with the following propeties:
+
+- `name`: the domain name, same as the above string e.g. `${opt:region}.myservice.foo.com`
+- `basePath:` a custom base path, instead of the default `(none)` - a base path is a prefix e.g. `/v1`
 
 ## Notes
 

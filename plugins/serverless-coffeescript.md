@@ -7,11 +7,11 @@ description: A Serverless plugin to compile your CoffeeScript into JavaScript at
 stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 4
-issues: 1
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---

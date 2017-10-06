@@ -4,16 +4,16 @@ title: Serverless Domain Manager
 repo: amplify-education/serverless-domain-manager
 homepage: 'https://github.com/amplify-education/serverless-domain-manager'
 description: Serverless plugin for managing custom domains with API Gateways.
-stars: 26
-stars_trend: up
-stars_diff: 3
-forks: 8
+stars: 43
+stars_trend: 
+stars_diff: 0
+forks: 11
 forks_trend: 
 forks_diff: 0
-watchers: 26
-issues: 0
-issues_trend: down
-issues_diff: -2
+watchers: 43
+issues: 5
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -23,6 +23,7 @@ issues_diff: -2
 [![npm version](https://badge.fury.io/js/serverless-domain-manager.svg)](https://badge.fury.io/js/serverless-domain-manager)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/amplify-education/serverless-domain-manager/master/LICENSE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/235fe249b8354a3db0cc5926dba47899)](https://www.codacy.com/app/CFER/serverless-domain-manager?utm_source=github.com&utm_medium=referral&utm_content=amplify-education/serverless-domain-manager&utm_campaign=badger)
+[![npm downloads](https://img.shields.io/npm/dt/serverless-domain-manager.svg?style=flat)](https://www.npmjs.com/package/serverless-domain-manager)
 
 Create custom domain names that your lambda can deploy to with serverless. Allows for base path mapping when deploying and deletion of domain names.
 

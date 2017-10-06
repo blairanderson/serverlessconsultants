@@ -4,13 +4,13 @@ title: Serverless Hooks Plugin
 repo: uswitch/serverless-hooks-plugin
 homepage: 'https://github.com/uswitch/serverless-hooks-plugin'
 description: Run arbitrary commands on any lifecycle event in serverless
-stars: 6
+stars: 8
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 6
+watchers: 8
 issues: 0
 issues_trend: 
 issues_diff: 0

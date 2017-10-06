@@ -11,13 +11,15 @@ forks: 8
 forks_trend: 
 forks_diff: 0
 watchers: 13
-issues: 2
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
 
 
 # Serverless Run Function Plugin
+
+**This plugin is deprecated since it is possible to run functions natively in the framework: https://serverless.com/framework/docs/providers/aws/cli-reference/invoke-local/**
 
 Serverless plugin to run a lambda function locally.
 

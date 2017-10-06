@@ -7,11 +7,11 @@ description: Enable multiple content-types for Response template
 stars: 13
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
 watchers: 13
-issues: 2
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -27,11 +27,14 @@ issues_diff: 0
 
 ## What is it?
 
-This is a plugin for the Serverless framework intended to address the issues outlined
-at https://github.com/serverless/serverless/issues/2046 (and in my - jthomerson -
-comments there).
+**This plugin is now deprecated and no longer supported.** It was originally a plugin for
+the early versions of the Serverless framework intended to address the issues outlined at
+https://github.com/serverless/serverless/issues/2046 (and in my - jthomerson - comments
+there).
 
-Once that feature is supported in SLS this plugin will no longer be needed or maintained.
+**Since you can now use the API Gateway proxy integration and have full control over
+response headers and status codes, you should no longer need this plugin. See
+https://github.com/serverless/serverless/issues/2174 for more information.**
 
 ## How do I use it?
 

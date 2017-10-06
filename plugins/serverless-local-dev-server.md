@@ -4,14 +4,14 @@ title: Serverless Local Dev Server
 repo: DieProduktMacher/serverless-local-dev-server
 homepage: 'https://github.com/DieProduktMacher/serverless-local-dev-server'
 description: Speeds up development of Alexa Skills, Chatbots and APIs by exposing your functions as local HTTP endpoints and mapping received events.
-stars: 1
+stars: 3
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 1
-issues: 0
+watchers: 3
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -61,7 +61,13 @@ functions:
 # Add serverless-local-dev-server to your plugins:
 plugins:
   - serverless-local-dev-server
+
+# if needed add folder for serving static files if necessary (relative to service path)
+custom:
+  localDevStaticFolder: path/to/static/files
 ```
+
+
 
 ### 3. Start the server
 

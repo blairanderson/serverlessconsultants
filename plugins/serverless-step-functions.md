@@ -4,14 +4,14 @@ title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
 description: AWS Step Functions with Serverless Framework.
-stars: 152
+stars: 171
 stars_trend: 
 stars_diff: 0
 forks: 18
 forks_trend: 
 forks_diff: 0
-watchers: 152
-issues: 12
+watchers: 171
+issues: 8
 issues_trend: 
 issues_diff: 0
 ---
@@ -51,6 +51,14 @@ stepFunctions:
         - http:
             path: gofunction
             method: GET
+        - schedule:
+            rate: rate(10 minutes)
+            enabled: true
+            input:
+              key1: value1
+              key2: value2
+              stageParams:
+                stage: dev
       name: myStateMachine
       definition:
         Comment: "A Hello World example of the Amazon States Language using an AWS Lambda Function"
@@ -178,6 +186,56 @@ You can input an value as json in request body, the value is passed as the input
 
 ```
 $ curl -XPOST https://xxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/posts/create -d '{"foo":"bar"}'
+```
+### Schedule
+The following config will attach a schedule event and causes the stateMachine `crawl` to be called every 2 hours. The configuration allows you to attach multiple schedules to the same stateMachine. You can either use the `rate` or `cron` syntax. Take a look at the [AWS schedule syntax documentation](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html) for more details.
+
+```yaml
+stepFunctions:
+  stateMachines:
+    crawl:
+      events:
+        - schedule: rate(2 hours)
+        - schedule: cron(0 12 * * ? *)
+      definition:
+```
+
+## Enabling / Disabling
+
+**Note:** `schedule` events are enabled by default.
+
+This will create and attach a schedule event for the `aggregate` stateMachine which is disabled. If enabled it will call
+the `aggregate` stateMachine every 10 minutes.
+
+```yaml
+stepFunctions:
+  stateMachines:
+    aggregate:
+      events:
+        - schedule:
+            rate: rate(10 minutes)
+            enabled: false
+            input:
+              key1: value1
+              key2: value2
+              stageParams:
+                stage: dev
+        - schedule:
+            rate: cron(0 12 * * ? *)
+            enabled: false
+            inputPath: '$.stageVariables'
+```
+
+## Specify Name and Description
+
+Name and Description can be specified for a schedule event. These are not required properties.
+
+```yaml
+events:
+  - schedule:
+      name: your-scheduled-rate-event-name
+      description: 'your scheduled rate event description'
+      rate: rate(2 hours)
 ```
 
 ## Command

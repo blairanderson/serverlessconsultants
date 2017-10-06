@@ -4,14 +4,14 @@ title: Serverless Plugin Log Subscription
 repo: dougmoscrop/serverless-plugin-log-subscription
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-log-subscription'
 description: Adds a CloudWatch LogSubscription for functions
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 1
-forks_trend: up
-forks_diff: 1
-watchers: 3
-issues: 0
+forks: 2
+forks_trend: 
+forks_diff: 0
+watchers: 4
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -31,6 +31,8 @@ Configuration happens both 'globally' (via custom.logSubscription) and also at t
 
 `destinationArn` (required) - the arn of the CloudWatch Destination (you create this resource yourself)
 
+`roleArn` (optional) - the arn of the IAM role granting logs permission to put to Destination (you create this resource yourself)
+
 `filterPattern` (optional) if specified, it will only forward logs matching this pattern. You can do simple token matching, or JSON matching (e.g. `{ $.level >= 30 }` to match a bunyan level)
 
 ### Examples
@@ -41,6 +43,7 @@ The most basic:
 custom:
   logSubscription:
     destinationArn: 'some-arn'
+    roleArn: 'some-arn'
 
 functions:
   myFunction:
@@ -67,6 +70,7 @@ custom:
   logSubscription:
     enabled: true
     destinationArn: 'some-arn'
+    roleArn: 'some-arn'
 
 functions:
   myFunction:

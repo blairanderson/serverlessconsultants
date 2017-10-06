@@ -4,14 +4,14 @@ title: Serverless Apigw Binary
 repo: maciejtreder/serverless-apigw-binary
 homepage: 'https://github.com/maciejtreder/serverless-apigw-binary'
 description: Plugin to enable binary support in AWS API Gateway.
-stars: 12
+stars: 21
 stars_trend: 
 stars_diff: 0
 forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 12
-issues: 5
+watchers: 21
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---
@@ -53,8 +53,8 @@ serverless deploy    # Plugin runs within serverless deploy hook
 
 ### Examples
 
-* [Angular Universal + AWS Lambda + API Gateway - binary support example](https://github.com/maciejtreder/angular-universal-serverless) ; [ AWS Lambda + API Gateway - live demo](https://www.angular-universal-serverless.maciejtreder.com)
-* [Node.js + AWS Lambda + API Gateway - binary support example](https://github.com/maciejtreder/serverless-apigw-binary/tree/master/examples/express)
+* [Angular Universal + AWS Lambda + API Gateway - binary support example](https://github.com/maciejtreder/angular-universal-serverless) : [ AWS Lambda + API Gateway - live demo](https://www.angular-universal-serverless.maciejtreder.com)
+* [Node.js + AWS Lambda + API Gateway - binary support example](https://github.com/maciejtreder/serverless-apigw-binary/tree/master/examples/express) : [Node.js + AWS Lambda + API Gateway - binary support live demo](https://serverless-apigw.maciejtreder.com)
 
 
 Something missing? More documentation? All PRs welcome at https://github.com/maciejtreder/serverless-apigw-binary

@@ -4,13 +4,13 @@ title: Serverless Dynamodb Ttl
 repo: Jimdo/serverless-dynamodb-ttl
 homepage: 'https://github.com/Jimdo/serverless-dynamodb-ttl'
 description: Configure DynamoDB TTL in serverless.yml (until CloudFormation supports this).
-stars: 6
+stars: 9
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 6
+watchers: 9
 issues: 0
 issues_trend: 
 issues_diff: 0

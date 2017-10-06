@@ -4,13 +4,13 @@ title: Serverless Plugin Bespoken
 repo: bespoken/serverless-plugin-bespoken
 homepage: 'https://github.com/bespoken/serverless-plugin-bespoken'
 description: Creates a local server and a proxy so you don't have to deploy anytime you want to test your code
-stars: 5
+stars: 7
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 7
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -21,7 +21,7 @@ issues_diff: 0
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
-A [serverless](http://www.serverless.com) plugin to test your work without deploying with [bespoken tools](https://bespoken.tools).
+A [serverless](http://www.serverless.com) plugin using [bespoken](https://bespoken.io) proxy to test your work without deploying.
 
 If you have to deploy your work everytime you are making changes, this tool will help you reduce that time. We generate a local server
 that is a attached to a proxy online so that you can use that url to access the functionality that you have in your code in your laptop.
@@ -42,7 +42,7 @@ You can now send and receive data to your locally running Lambda! Here is a demo
 
 [![serverless Plugin](/ServerlessPluginDemo.gif)](/ServerlessPluginDemo.gif)
 
-More detailed info on how the proxy works can be [found here](http://docs.bespoken.tools/en/latest/tutorials/tutorial_lambda_local/).
+More detailed info on how the proxy works can be [found here](http://docs.bespoken.io/en/latest/tutorials/tutorial_lambda_local/).
 # Install
 
 ```

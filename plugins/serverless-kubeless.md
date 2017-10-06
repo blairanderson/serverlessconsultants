@@ -4,16 +4,16 @@ title: Serverless Kubeless
 repo: serverless/serverless-kubeless
 homepage: 'https://github.com/serverless/serverless-kubeless'
 description: Serverless plugin for deploying functions to Kubeless.
-stars: 30
-stars_trend: up
-stars_diff: 2
-forks: 5
-forks_trend: up
-forks_diff: 1
-watchers: 30
-issues: 8
-issues_trend: up
-issues_diff: 1
+stars: 46
+stars_trend: 
+stars_diff: 0
+forks: 7
+forks_trend: 
+forks_diff: 0
+watchers: 46
+issues: 2
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -30,9 +30,9 @@ Make sure you have a kubernetes endpoint running and kubeless installed:
 ```bash
 $ kubectl version
 $ brew install kubeless/tap/kubeless
-$ KUBELESS_VERSION=0.1.0
+$ KUBELESS_VERSION=0.2.1
 $ kubectl create ns kubeless
-$ curl -sL https://github.com/kubeless/kubeless/releases/download/v$KUBELESS_VERSION/kubeless-v$KUBELESS_VERSION.yaml | kubectl create -f -
+$ kubectl create -f https://github.com/kubeless/kubeless/releases/download/v$KUBELESS_VERSION/kubeless-v$KUBELESS_VERSION.yaml
 ```
 
 Then install serverless
@@ -73,7 +73,7 @@ $ serverless deploy
 Serverless: Packaging service...
 Serverless: Excluding development dependencies...
 Serverless: Deploying function hello...
-Serverless: Function hello succesfully deployed
+Serverless: Function hello successfully deployed
 ```
 
 The function will be deployed to k8s via kubeless.
@@ -139,12 +139,12 @@ If you have a change in your function and you want to redeploy it you can run:
 ```bash
 $ serverless deploy function -f hello
 Serverless: Redeploying hello...
-Serverless: Function hello succesfully deployed
+Serverless: Function hello successfully deployed
 ```
 
 Finally you can remove the function.
 ```bash
 $ serverless remove
 Serverless: Removing function: hello...
-Serverless: Function hello succesfully deleted
+Serverless: Function hello successfully deleted
 ```

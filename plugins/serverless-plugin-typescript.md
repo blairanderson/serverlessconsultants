@@ -4,22 +4,21 @@ title: Serverless Plugin Typescript
 repo: graphcool/serverless-plugin-typescript
 homepage: 'https://github.com/graphcool/serverless-plugin-typescript'
 description: Serverless plugin for zero-config Typescript support.
-stars: 60
-stars_trend: up
-stars_diff: 2
-forks: 15
-forks_trend: up
-forks_diff: 2
-watchers: 60
-issues: 7
+stars: 85
+stars_trend: 
+stars_diff: 0
+forks: 20
+forks_trend: 
+forks_diff: 0
+watchers: 85
+issues: 8
 issues_trend: 
 issues_diff: 0
 ---
 
 
 # serverless-plugin-typescript
-
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![npm version](https://badge.fury.io/js/serverless-plugin-typescript.svg)](https://badge.fury.io/js/serverless-plugin-typescript) [![CircleCI](https://circleci.com/gh/graphcool/serverless-plugin-typescript.svg?style=svg)](https://circleci.com/gh/graphcool/serverless-plugin-typescript)
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![npm version](https://badge.fury.io/js/serverless-plugin-typescript.svg)](https://badge.fury.io/js/serverless-plugin-typescript) [![CircleCI](https://circleci.com/gh/graphcool/serverless-plugin-typescript.svg?style=shield)](https://circleci.com/gh/graphcool/serverless-plugin-typescript) [![Greenkeeper badge](https://badges.greenkeeper.io/graphcool/serverless-plugin-typescript.svg)](https://greenkeeper.io/)
 
 Serverless plugin for zero-config Typescript support
 
@@ -159,6 +158,19 @@ Options are:
 - `--watch` - recompile and run a function locally on source changes
 - `--path` or `-p` (optional) path to JSON or YAML file holding input data
 - `--data` or `-d` (optional) input data
+
+### Enabling source-maps
+
+You can easily enable support for source-maps (making stacktraces easier to read) by installing and using the following plugin:
+
+```sh
+yarn add --dev source-map-support
+```
+
+```ts
+// inside of your function
+import 'source-map-support/register'
+```
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 

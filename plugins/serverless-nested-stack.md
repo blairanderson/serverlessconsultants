@@ -4,16 +4,16 @@ title: Serverless Nested Stack
 repo: jagdish-176/serverless-nested-stack
 homepage: 'https://github.com/jagdish-176/serverless-nested-stack'
 description: A plugin to Workaround for Cloudformation 200 resource limit
-stars: 5
+stars: 6
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 6
 issues: 1
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -24,7 +24,7 @@ Serverless plugin to Workaround for Cloudformation 200 resource limit
 
 Run `npm install` in your Serverless project.
 
-    $ npm install --save-dev https://github.com/jagdish-176/serverless-nested-stack#0.0.0
+    $ npm install --save-dev https://github.com/jagdish-176/serverless-nested-stack#0.0.4
 
 Add the plugin to your serverless.yml file
 

@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: Serverless plugin to bundle Python packages
-stars: 68
-stars_trend: up
-stars_diff: 1
-forks: 17
-forks_trend: up
-forks_diff: 2
-watchers: 68
-issues: 15
-issues_trend: up
-issues_diff: 1
+stars: 84
+stars_trend: 
+stars_diff: 0
+forks: 25
+forks_trend: 
+forks_diff: 0
+watchers: 84
+issues: 18
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -31,14 +31,7 @@ A Serverless v1.x plugin to automatically bundle dependencies from
 ## Install
 
 ```
-npm install --save serverless-python-requirements
-```
-
-Add the plugin to your `serverless.yml`:
-
-```yaml
-plugins:
-  - serverless-python-requirements
+sls plugin install -n serverless-python-requirements
 ```
 
 
@@ -60,6 +53,12 @@ custom:
 ```
 This must be the full image name and tag to use, including the runtime specific tag if applicable.
 
+## Experimental Pipenv support :sparkles::cake::sparkles:
+If you include a `Pipfile` and have `pipenv` installed instead of a
+`requirements.txt` this will use `pipenv` to install your requirements and link
+them. It doesn't currently work with either the `zip` or `dockerizePip`
+options.
+
 
 ## Dealing with Lambda's size limitations
 To help deal with potentially large dependencies (for example: `numpy`, `scipy`
@@ -74,38 +73,26 @@ custom:
 
 and add this to your handler module before any code that imports your deps:
 ```python
-import unzip_requirements
-```
-
-If you want to be able to use `sls invoke local` and don't have a check for
-lambda or a `try`/`except ImportError` around that import, you can use the
-following option to make this plugin not delete the `unzip_requirements`
-helper:
-```yaml
-custom:
-  pythonRequirements:
-    cleanupZipHelper: false
+try:
+  import unzip_requirements
+except ImportError:
+  pass
 ```
 
 ## Omitting Packages 
 You can omit a package from deployment with the `noDeploy` option. Note that
 dependencies of omitted packages must explicitly be omitted too.
-For example, this will not install the AWS SDKs that are already installed on
-Lambda:
+By default, this will not install the AWS SDKs that are already installed on
+Lambda. This example makes it instead omit pytest:
 ```yaml
 custom:
   pythonRequirements:
     noDeploy:
-      - boto3
-      - botocore
-      - docutils
-      - jmespath
-      - python-dateutil
-      - s3transfer
-      - six
+      - pytest
 ```
 
-## extra pip arguments
+## Extra Config Options
+### extra pip arguments
 You can specify extra arguments to be passed to pip like this:
 ```yaml
 custom:
@@ -116,7 +103,7 @@ custom:
           - .requirements-cache
 ```
 
-## Customize requirements file name
+### Customize requirements file name
 [Some `pip` workflows involve using requirements files not named
 `requirements.txt`](https://www.kennethreitz.org/essays/a-better-pip-workflow).
 To support these, this plugin has the following option:
@@ -127,7 +114,7 @@ custom:
     fileName: requirements-prod.txt
 ```
 
-## Customize Python executable
+### Customize Python executable
 Sometimes your Python executable isn't available on your `$PATH` as `python2.7`
 or `python3.6` (for example, windows or using pyenv).
 To support this, this plugin has the following option:
@@ -156,22 +143,13 @@ custom:
     invalidateCaches: true
 ```
 
-## Updating to python 3.6
-
-This requires an update to your serverless.yml:
-
-```
-provider:
-  name: aws
-  runtime: python3.6
-```
-
-And be sure to clean up `.requirements` or `requirements.zip` if they exist as
-python2.7 and python3.6 code can't coexist.
-
-
-## Credit
-This plugin is influenced by
-[serverless-wsgi](https://github.com/logandk/serverless-wsgi) from
-[@logandk](https://github.com/logandk). I however wanted a simpler pip install
-process. It now also supports bundling packages without the wsgi handler.
+## Contributors
+ * [@dschep](https://github.com/dschep) - Lead developer & maintainer
+ * [@azurelogic](https://github.com/azurelogic) - logging & documentation fixes
+ * [@abetomo](https://github.com/abetomo) - style & linting
+ * [@angstwad](https://github.com/angstwad) - `deploy --function` support
+ * [@mather](https://github.com/mather) - the cache invalidation option
+ * [@rmax](https://github.com/rmax) - the extra pip args option
+ * [@bsamuel-ui](https://github.com/bsamuel-ui) - Python 3 support
+ * [@suxor42](https://github.com/suxor42) - fixing permission issues with Docker on Linux
+ * [@mbeltran213](https://github.com/mbeltran213) - fixing docker linux -u option bug

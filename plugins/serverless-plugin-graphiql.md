@@ -7,7 +7,7 @@ description: A Serverless plugin to run a local http server for graphiql and you
 stars: 29
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 7
 forks_trend: 
 forks_diff: 0
 watchers: 29

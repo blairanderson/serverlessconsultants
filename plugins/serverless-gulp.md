@@ -4,16 +4,16 @@ title: Serverless Gulp
 repo: rhythminme/serverless-gulp
 homepage: 'https://github.com/rhythminme/serverless-gulp'
 description: A thin task wrapper around @goserverless that allows you to automate build, test and deploy tasks using gulp
-stars: 4
+stars: 5
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 1
-issues_trend: down
-issues_diff: -1
+issues_trend: 
+issues_diff: 0
 ---
 
 

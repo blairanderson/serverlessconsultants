@@ -4,16 +4,16 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: Keep your lambdas warm during Winter.
-stars: 54
-stars_trend: up
-stars_diff: 2
+stars: 69
+stars_trend: 
+stars_diff: 0
 forks: 10
 forks_trend: 
 forks_diff: 0
-watchers: 54
-issues: 3
-issues_trend: down
-issues_diff: -1
+watchers: 69
+issues: 4
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -48,7 +48,9 @@ plugins:
   - serverless-plugin-warmup
 ```
 
-* Add `warmup: true` property to all functions you want to be warm:
+* Add a `warmup` property to all functions you want to be warm.
+
+You can enable WarmUp in general:
 
 ```yml
 functions:
@@ -56,6 +58,23 @@ functions:
     warmup: true
 ```
 
+For a specific stage:
+
+```yml
+functions:
+  hello:
+    warmup: production
+```
+
+For several stages:
+
+```yml
+functions:
+  hello:
+    warmup:
+      - production
+      - staging
+```
 * WarmUP to be able to `invoke` lambdas requires the following Policy Statement in `iamRoleStatements`:
 
 ```yaml

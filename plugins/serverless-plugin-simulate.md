@@ -4,13 +4,13 @@ title: Serverless Plugin Simulate
 repo: gertjvr/serverless-plugin-simulate
 homepage: 'https://github.com/gertjvr/serverless-plugin-simulate'
 description: Simulate AWS Lambda and API Gateway locally using Docker
-stars: 23
-stars_trend: down
-stars_diff: -1
-forks: 2
-forks_trend: up
-forks_diff: 1
-watchers: 23
+stars: 24
+stars_trend: 
+stars_diff: 0
+forks: 3
+forks_trend: 
+forks_diff: 0
+watchers: 24
 issues: 0
 issues_trend: 
 issues_diff: 0

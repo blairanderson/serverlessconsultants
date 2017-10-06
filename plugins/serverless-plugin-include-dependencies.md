@@ -4,20 +4,18 @@ title: Serverless Plugin Include Dependencies
 repo: dougmoscrop/serverless-plugin-include-dependencies
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-include-dependencies'
 description: This is a Serverless plugin that should make your deployed functions smaller.
-stars: 39
+stars: 42
 stars_trend: 
 stars_diff: 0
 forks: 11
 forks_trend: 
 forks_diff: 0
-watchers: 39
+watchers: 42
 issues: 1
 issues_trend: 
 issues_diff: 0
 ---
 
-
-> NOTE: This plugin could cause a `maximum call stack size exceeded` error (see https://github.com/serverless/serverless/pull/3349 for fix in Serverless)
 
 # serverless-plugin-include-dependencies
 
