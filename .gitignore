@@ -6,5 +6,3 @@
 .env
 .jekyll-metadata
 /docs
-_data/plugins.json
-/plugins
