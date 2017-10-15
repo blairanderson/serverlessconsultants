@@ -4,13 +4,13 @@ title: Serverless Dynamodb Autoscaling
 repo: sbstjn/serverless-dynamodb-autoscaling
 homepage: 'https://github.com/sbstjn/serverless-dynamodb-autoscaling'
 description: Configure Amazon DynamoDB's native Auto Scaling for your table capacities.
-stars: 56
+stars: 60
 stars_trend: 
 stars_diff: 0
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 56
+watchers: 60
 issues: 4
 issues_trend: 
 issues_diff: 0

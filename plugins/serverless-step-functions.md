@@ -4,13 +4,13 @@ title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
 description: AWS Step Functions with Serverless Framework.
-stars: 171
+stars: 175
 stars_trend: 
 stars_diff: 0
-forks: 18
+forks: 19
 forks_trend: 
 forks_diff: 0
-watchers: 171
+watchers: 175
 issues: 8
 issues_trend: 
 issues_diff: 0
@@ -19,7 +19,7 @@ issues_diff: 0
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![Build Status](https://travis-ci.org/horike37/serverless-step-functions.svg?branch=master)](https://travis-ci.org/horike37/serverless-step-functions) [![npm version](https://badge.fury.io/js/serverless-step-functions.svg)](https://badge.fury.io/js/serverless-step-functions) [![Coverage Status](https://coveralls.io/repos/github/horike37/serverless-step-functions/badge.svg?branch=master)](https://coveralls.io/github/horike37/serverless-step-functions?branch=master) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 # Serverless Step Functions
-Serverless plugin for AWS Step Functions.
+This is the Serverless Framework plugin for AWS Step Functions.
 
 ## Install
 Run `npm install` in your Serverless project.
@@ -35,11 +35,9 @@ plugins:
 
 ## Setup
 Specifies your statemachine definition using Amazon States Language in a `definition` statement in serverless.yml.
+We recommend to use [serverless-pseudo-parameters](https://www.npmjs.com/package/serverless-pseudo-parameters) plugin together so that it makes it easy to set up `Resource` section under `definition`.
 
 ```yml
-custom:
-  accountId: xxxxxxxx
-
 functions:
   hellofunc:
     handler: handler.hello
@@ -66,7 +64,7 @@ stepFunctions:
         States:
           HelloWorld1:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-hello
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello
             End: true
     hellostepfunc2:
       definition:
@@ -74,11 +72,15 @@ stepFunctions:
         States:
           HelloWorld2:
             Type: Task
-            Resource: arn:aws:states:${opt:region}:${self:custom.accountId}:activity:myTask
+            Resource: arn:aws:states:#{AWS::Region}:#{AWS::AccountId}:activity:myTask
             End: true
   activities:
     - myTask
     - yourTask
+
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
 ```
 
 ### Adding a custom name for a stateMachine
@@ -103,8 +105,30 @@ plugins:
   - serverless-step-functions
 ```
 
-Please note, that during normalization some characters will be changed to adhere to CloudFormation templates.
-You can get the real statemachine name using `{ "Fn::GetAtt": ["MyStateMachine", "Name"] }`.
+#### Current Gotcha
+Please keep this gotcha in mind if you want to reference the `name` from the `resources` section. To generate Logical ID for CloudFormation, the plugin transforms the specified name in serverless.yml based on the following scheme.
+
+- Transform a leading character into uppercase
+- Transform `-` into Dash
+- Transform `_` into Underscore
+
+If you want to use variables system in name statement, you can't put the variables as a prefix like this:`${self:service}-${opt:stage}-myStateMachine` since the variables are transformed within Output section, as a result, the reference will be broken.
+
+The correct sample is here.
+
+```yaml
+stepFunctions:
+  stateMachines:
+    myStateMachine:
+      name: myStateMachine-${self:service}-${opt:stage}
+...
+
+resources:
+  Outputs:
+    myStateMachine:
+      Value:
+        Ref: MyStateMachineDash${self:service}Dash${opt:stage}
+```
 
 ## Events
 ### API Gateway
@@ -299,9 +323,6 @@ plugins:
 ## Sample statemachines setting in serverless.yml
 ### Wait State
 ``` yaml
-custom:
-  accountId: <Here is your accountId>
-
 functions:
   hello:
     handler: handler.hello
@@ -315,7 +336,7 @@ stepFunctions:
         States:
           FirstState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-hello
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello
             Next: wait_using_seconds
           wait_using_seconds:
             Type: Wait
@@ -335,15 +356,15 @@ stepFunctions:
             Next: FinalState
           FinalState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-hello
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello
             End: true
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
 ```
 
 ### Retry Failture
 ``` yaml
-custom:
-  accountId: <Here is your accountId>
-
 functions:
   hello:
     handler: handler.hello
@@ -357,7 +378,7 @@ stepFunctions:
         States:
           HelloWorld:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-hello
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello
             Retry:
             - ErrorEquals:
               - HandledError
@@ -375,14 +396,14 @@ stepFunctions:
               MaxAttempts: 5
               BackoffRate: 2
             End: true
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
 ```
 
 ### Parallel
 
 ```yaml
-custom:
-  accountId: <Here is your accountId>
-
 functions:
   hello:
     handler: handler.hello
@@ -416,14 +437,14 @@ stepFunctions:
           Final State:
             Type: Pass
             End: true
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
 ```
 
 ### Catch Failure
 
 ```yaml
-custom:
-  accountId: <Here is your accountId>
-
 functions:
   hello:
     handler: handler.hello
@@ -437,7 +458,7 @@ stepFunctions:
         States:
           HelloWorld:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-hello
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello
             Catch:
             - ErrorEquals:
               - HandledError
@@ -461,14 +482,14 @@ stepFunctions:
             Type: Pass
             Result: "This is a fallback from a reserved error code"
             End: true
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
 ```
 
 ### Choice
 
 ```yaml
-custom:
-  accountId: <Here is your account Id>
-
 functions:
   hello1:
     handler: handler.hello1
@@ -502,17 +523,20 @@ stepFunctions:
             Default: DefaultState
           FirstMatchState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-hello2
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello2
             Next: NextState
           SecondMatchState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-hello3
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello3
             Next: NextState
           DefaultState:
             Type: Fail
             Cause: "No Matches!"
           NextState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-hello4
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello4
             End: true
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
 ```

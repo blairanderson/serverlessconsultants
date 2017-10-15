@@ -4,18 +4,20 @@ title: Serverless Plugin Split Stacks
 repo: dougmoscrop/serverless-plugin-split-stacks
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-split-stacks'
 description: Migrate certain resources to nested stacks
-stars: 13
+stars: 14
 stars_trend: 
 stars_diff: 0
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 13
+watchers: 14
 issues: 3
 issues_trend: 
 issues_diff: 0
 ---
 
+
+[![CircleCI](https://circleci.com/gh/dougmoscrop/serverless-plugin-split-stacks.svg?style=svg)](https://circleci.com/gh/dougmoscrop/serverless-plugin-split-stacks)
 
 Be advised: This plugin currently migrates the `RestApi` resource to a nested stack, which causes your URL to change.
 

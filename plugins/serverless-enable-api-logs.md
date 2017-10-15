@@ -7,11 +7,11 @@ description: Enables Coudwatch logging for API Gateway events
 stars: 5
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 5
-issues: 5
+issues: 6
 issues_trend: 
 issues_diff: 0
 ---

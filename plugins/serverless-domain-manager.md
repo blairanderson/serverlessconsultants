@@ -4,14 +4,14 @@ title: Serverless Domain Manager
 repo: amplify-education/serverless-domain-manager
 homepage: 'https://github.com/amplify-education/serverless-domain-manager'
 description: Serverless plugin for managing custom domains with API Gateways.
-stars: 43
+stars: 49
 stars_trend: 
 stars_diff: 0
-forks: 11
+forks: 12
 forks_trend: 
 forks_diff: 0
-watchers: 43
-issues: 5
+watchers: 49
+issues: 7
 issues_trend: 
 issues_diff: 0
 ---
@@ -42,12 +42,20 @@ Make sure you have the following installed before starting:
 
 The IAM role that is deploying the lambda will need the following permissions:
 ```
-acm: ListCertificate
-apigateway: GET
-apigateway: POST
-route53: ListHostedZones
-route53: ChangeResourceRecordSets
+acm:ListCertificates                *
+apigateway:GET                      /domainnames/* 
+apigateway:DELETE                   /domainnames/*
+apigateway:POST                     /domainnames
+cloudfront:UpdateDistribution       *
+route53:ListHostedZones             *
+route53:ChangeResourceRecordSets    hostedzone/{HostedZoneId}
+route53:GetHostedZone               hostedzone/{HostedZoneId}
+route53:ListResourceRecordSets      hostedzone/{HostedZoneId}
 ```
+### CloudFormation
+Alternatively you can generate an least privileged IAM Managed Policy for deployment with this:
+
+[deployment policy cloudformation template](scripts/cloudformation/serverless-domain-manager-deploy-policy.yaml)
 
 ## Installing
 ```

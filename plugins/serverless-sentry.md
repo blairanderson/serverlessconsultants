@@ -4,14 +4,14 @@ title: Serverless Sentry Plugin
 repo: arabold/serverless-sentry-plugin
 homepage: 'https://github.com/arabold/serverless-sentry-plugin'
 description: Automatic monitoring of memory usage, execution timeouts and forwarding of Lambda errors to Sentry (https://sentry.io).
-stars: 30
+stars: 32
 stars_trend: 
 stars_diff: 0
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 30
-issues: 8
+watchers: 32
+issues: 6
 issues_trend: 
 issues_diff: 0
 ---
@@ -393,6 +393,11 @@ Sentry projects with meaningless errors of local code changes.
 
 
 ## Version History
+
+### 1.0.0
+* Version falls back to git hash if no tag is set for current head (#15).
+* Fixed reporting bugs in local environment despite config telling otherwise (#17).
+  This requires an update of `serverless-sentry-lib` as well!
 
 ### 1.0.0-rc.4
 * Fixed an issue with creating random version numbers

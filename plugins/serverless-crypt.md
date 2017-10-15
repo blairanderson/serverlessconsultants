@@ -7,11 +7,11 @@ description: Securing the secrets on Serverless Framework by AWS KMS encryption.
 stars: 42
 stars_trend: 
 stars_diff: 0
-forks: 8
+forks: 7
 forks_trend: 
 forks_diff: 0
 watchers: 42
-issues: 11
+issues: 8
 issues_trend: 
 issues_diff: 0
 ---

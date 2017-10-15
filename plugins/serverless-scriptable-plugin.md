@@ -4,13 +4,13 @@ title: Serverless Scriptable Plugin
 repo: weixu365/serverless-scriptable-plugin
 homepage: 'https://github.com/weixu365/serverless-scriptable-plugin'
 description: Customize Serverless behavior without writing a plugin.
-stars: 17
+stars: 18
 stars_trend: 
 stars_diff: 0
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 17
+watchers: 18
 issues: 0
 issues_trend: 
 issues_diff: 0

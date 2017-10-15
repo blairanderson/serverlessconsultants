@@ -4,14 +4,14 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: Serverless plugin to bundle Python packages
-stars: 84
+stars: 86
 stars_trend: 
 stars_diff: 0
-forks: 25
+forks: 26
 forks_trend: 
 forks_diff: 0
-watchers: 84
-issues: 18
+watchers: 86
+issues: 20
 issues_trend: 
 issues_diff: 0
 ---
@@ -45,6 +45,10 @@ custom:
   pythonRequirements:
     dockerizePip: true
 ```
+The dockerizePip option supports a special case in addition to booleans of `'non-linux'` which makes
+it dockerize only on non-linux environments.
+
+
 To utilize your own Docker container instead of the default, add the following to your `serverless.yml`:
 ```yaml
 custom:
@@ -53,11 +57,15 @@ custom:
 ```
 This must be the full image name and tag to use, including the runtime specific tag if applicable.
 
-## Experimental Pipenv support :sparkles::cake::sparkles:
-If you include a `Pipfile` and have `pipenv` installed instead of a
-`requirements.txt` this will use `pipenv` to install your requirements and link
-them. It doesn't currently work with either the `zip` or `dockerizePip`
-options.
+## Pipenv support :sparkles::cake::sparkles:
+If you include a `Pipfile` and have `pipenv` installed instead of a `requirements.txt` this will use
+`pipenv lock --r` to generate them. It is fully compatible with all options such as `zip` and
+`dockerizePip`. If you don't want this plugin to generate it for you, set the following option:
+```yaml
+custom:
+  pythonRequirements:
+    usePipenv: false
+```
 
 
 ## Dealing with Lambda's size limitations
@@ -153,3 +161,4 @@ custom:
  * [@bsamuel-ui](https://github.com/bsamuel-ui) - Python 3 support
  * [@suxor42](https://github.com/suxor42) - fixing permission issues with Docker on Linux
  * [@mbeltran213](https://github.com/mbeltran213) - fixing docker linux -u option bug
+ * [@Tethik](https://github.com/Tethik) - adding usePipenv option
