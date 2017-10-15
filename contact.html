@@ -10,25 +10,27 @@ meta-description: "Contact Serverless Frameworks Directory - Serverless Framewor
   <h2><i class="fa fa-comments-o"></i> Feedback &amp; Suggestions</h2>
   <p>If you have general feedback, or if you have an idea for a template you would like to see on Serverless Frameworks Directory, please email us at:</p>
   <p><strong><a href="mailto:feedback@serverlessconsultants.com">feedback@serverlessconsultants.com</a></strong></p>
-</div>
-
-
-<div class="cover bg-left bg-center-l" style="background-image: url(/img/bg.png)">
-  <form class="center pa3" action="https://formspree.io/feedback@serverlessconsultants.com" method="POST">
-    <fieldset class="cf bn ma0 pa4">
-      <h3 class="pa0 f3 f2-ns mb3 white tc">Want more Serverless?</h3>
-      <h5 class="pa0 f4 f3-ns mb3 white tc">Subscribe to our mailing list to receive an update when new items arrive!</h5>
-      <div class="cf mw7 center">
-        <label class="clip" for="email-address">Email Address</label>
-        <input placeholder="Your Email Address"
-               type="email"
-               name="_replyto"
-               class="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns">
-        <input
-                class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns"
-                type="submit"
-                value="Subscribe">
+  <div class="cf">
+    {% capture inputClassNames %}pa2 f4 tc input-reset ba bg-transparent w-100{% endcapture %}
+    <form id="contact-form" method="POST" action="https://formspree.io/blair@andersonassociates.net">
+      <div>
+        <label class="db fw4 lh-copy f5" for="email">Your Email(optional)</label>
+        <input class="{{inputClassNames}}"
+          type="email" name="email" id="email"
+          autocomplete="email" placeholder="elon@tesla.com(only if you want a response)">
       </div>
-    </fieldset>
-  </form>
+
+      <div class="mt3">
+        <label class="db fw4 lh-copy f5" for="message">Your Message</label>
+        <textarea class="{{inputClassNames}} tl tl-ns" name="message" required placeholder="Your Message / Feedback"></textarea>
+      </div>
+
+      <div class="mt3">
+        <input
+          class="f6 f5-l button-reset pv3 w-100  tc bn bg-animate bg-black hover-bg-black-70 white pointer w-100"
+          type="submit" value="Send Message">
+      </div>
+    </form>
+  </div>
+  <hr class="mv5">
 </div>
