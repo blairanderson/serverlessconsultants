@@ -11,15 +11,19 @@ LIST = [
   :sync_github_topics
 ]
 
+# BUNCH OF ALIASES
 desc "fetch github repos and create a bunch of files"
 task :plugins => LIST
+desc "fetch github repos and create a bunch of files"
 task :github => LIST
+desc "fetch github repos and create a bunch of files"
 task :refresh => LIST
+desc "fetch github repos and create a bunch of files"
 task :sync => LIST
 
 task :fetch_serverless_plugin_list do
   puts 'FETCHES PLUGIN LIST FROM https://github.com/serverless/plugins'
-  system "gulp sync:plugins"
+  system "node sync.js"
   puts 'synced'
 end
 

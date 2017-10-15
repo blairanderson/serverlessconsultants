@@ -3,6 +3,6 @@
 layout: topic
 topic: babel
 title: babel Serverless Plugins
-description: '2 babel ServerLess Plugins'
-count: 2
+description: '3 babel ServerLess Plugins'
+count: 3
 ---
