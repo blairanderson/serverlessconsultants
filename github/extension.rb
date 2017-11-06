@@ -15,12 +15,13 @@ module Github
     def sync
       app.github = RepoData.new(app, self)
 
-      plugins = JSON.parse(File.read('./_data/serverless_plugins.json')).map do |plug|
-        plugin = OpenStruct.new(plug)
+      plugins = JSON.parse(File.read('./_data/serverless_plugins.json')).map do |datum|
+        plugin = OpenStruct.new(datum)
+        next if plugin.githubUrl.include?("gitlab.com")
         plugin.homepage = plugin.githubUrl
         plugin.repo = plugin.githubUrl.split("github.com/").last
         plugin
-      end
+      end.compact
 
       app.github.manipulate_resource_list(plugins)
     end

@@ -4,14 +4,14 @@ title: Serverless Plugin Typescript
 repo: graphcool/serverless-plugin-typescript
 homepage: 'https://github.com/graphcool/serverless-plugin-typescript'
 description: Serverless plugin for zero-config Typescript support.
-stars: 89
+stars: 105
 stars_trend: 
 stars_diff: 0
-forks: 20
+forks: 24
 forks_trend: 
 forks_diff: 0
-watchers: 89
-issues: 9
+watchers: 105
+issues: 13
 issues_trend: 
 issues_diff: 0
 ---
@@ -108,7 +108,7 @@ The normal Serverless deploy procedure will automatically compile with Typescrip
 
 ### Usage with serverless-offline
 
-The plugin integrates very well with [serverless-offline][https://github.com/dherault/serverless-offline] to
+The plugin integrates very well with [serverless-offline](https://github.com/dherault/serverless-offline) to
 simulate AWS Lambda and AWS API Gateway locally.
 
 Add the plugins to your `serverless.yml` file and make sure that `serverless-plugin-typescript`
@@ -170,6 +170,16 @@ yarn add --dev source-map-support
 ```ts
 // inside of your function
 import 'source-map-support/register'
+```
+
+If you are using webpack (most likely). Add `devtool: 'source-map'` to `webpack.config.js`:
+```js
+module.exports = {
+  .... snip ....
+  devtool: 'source-map',
+  .... snip ....
+
+}
 ```
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)

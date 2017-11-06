@@ -4,13 +4,13 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: Keep your lambdas warm during Winter.
-stars: 72
+stars: 85
 stars_trend: 
 stars_diff: 0
-forks: 10
+forks: 14
 forks_trend: 
 forks_diff: 0
-watchers: 72
+watchers: 85
 issues: 6
 issues_trend: 
 issues_diff: 0
@@ -19,7 +19,7 @@ issues_diff: 0
 
 Serverless WarmUP Plugin ♨
 =============================
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) 
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![npm version](https://badge.fury.io/js/serverless-plugin-warmup.svg)](https://badge.fury.io/js/serverless-plugin-warmup)
 [![npm downloads](https://img.shields.io/npm/dm/serverless-plugin-warmup.svg)](https://www.npmjs.com/package/serverless-plugin-warmup)
 [![license](https://img.shields.io/npm/l/serverless-plugin-warmup.svg)](https://raw.githubusercontent.com/FidelLimited/serverless-plugin-warmup/master/LICENSE)
@@ -32,7 +32,7 @@ Keep your lambdas warm during Winter.
 
 ## How it works
 
-WarmUP solves *cold starts* by creating one schedule event lambda that invokes all the service lambdas you select in a configured time interval (default: 5 minutes) or a specific time, forcing your containers to stay alive. 
+WarmUP solves *cold starts* by creating one schedule event lambda that invokes all the service lambdas you select in a configured time interval (default: 5 minutes) or a specific time, forcing your containers to stay alive.
 
 ## Setup
 
@@ -101,7 +101,7 @@ module.exports.lambdaToWarm = function(event, context, callback) {
     console.log('WarmUP - Lambda is warm!')
     return callback(null, 'Lambda is warm!')
   }
-  
+
   ... add lambda logic after
 }
 ```
@@ -110,12 +110,13 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 
 ## Options
 
-* **cleanFolder** (default `true`) 
+* **cleanFolder** (default `true`)
 * **memorySize** (default `128`)
 * **name** (default `${service}-${stage}-warmup-plugin`)
 * **schedule** (default `rate(5 minutes)`) - More examples [here](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
 * **timeout** (default `10` seconds)
 * **prewarm** (default `false`)
+* **folderName** (default `_warmup`)
 
 ```yml
 custom:
@@ -126,6 +127,7 @@ custom:
     schedule: 'cron(0/5 8-17 ? * MON-FRI *)' // Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
     timeout: 20
     prewarm: true // Run WarmUp immediately after a deployment
+    folderName: '_warmup' // Name of the folder created for the generated warmup lambda
 ```
 
 **Options should be tweaked depending on:**

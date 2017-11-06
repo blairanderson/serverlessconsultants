@@ -7,11 +7,11 @@ description: Run dynalite locally (no JVM, all JS) to simulate DynamoDB. Watch s
 stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 4
-issues: 2
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -39,5 +39,6 @@ to listen for changes to the serverless.yml file and add tables accordingly
 ## Options:
 
 * -p `port` to specify the port (optional, defaults to 4567)
+* -d `dir` to create a dynalite db file instead of using the in-memory store (optional)
 
 Something missing? More documentation? All PRs welcome at https://github.com/sdd/serverless-dynalite

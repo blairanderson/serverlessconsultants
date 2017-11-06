@@ -4,14 +4,14 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: Serverless plugin to bundle your lambdas with Webpack
-stars: 389
+stars: 425
 stars_trend: 
 stars_diff: 0
-forks: 127
+forks: 136
 forks_trend: 
 forks_diff: 0
-watchers: 389
-issues: 17
+watchers: 425
+issues: 13
 issues_trend: 
 issues_diff: 0
 ---
@@ -43,13 +43,10 @@ individually, resulting in smaller Lambda packages that contain only the code an
 dependencies needed to run the function. This allows the plugin to fully utilize
 WebPack's [Tree-Shaking][link-webpack-tree] optimization.
 
-## Recent improvements
+## Recent improvements and important changes
 
-* Support for individual packaging and optimization
-* Integrate with `serverless invoke local` (including watch mode)
-* Stabilized package handling
-* Improved compatibility with other plugins
-* Updated examples
+* Improved extensibility for plugin authors (see _For Developers_ section)
+* Serverless 1.12+ is now required
 
 For the complete release notes see the end of this document.
 
@@ -155,17 +152,36 @@ for best compatibility with external dependencies:
 
 ```js
 // webpack.config.js
+const path = require('path');
 
 module.exports = {
   // ...
   output: {
     libraryTarget: 'commonjs',
-    path: '.webpack',
-    filename: 'handler.js', // this should match the first part of function handler in `serverless.yml`
+    path: path.resolve(__dirname, '.webpack'),
+    filename: '[name].js',
   },
   // ...
 };
 ```
+
+### Stats
+
+By default, the plugin will print a quite verbose bundle information to your console. However, if
+you are not satisfy with the current output info, you can overwrite it in your `webpack.config.js`
+
+```js
+// webpack.config.js
+
+module.export = {
+  // ...
+  stats: 'minimal'
+  // ...
+}
+```
+
+All the stats config can be found in [webpack's documentation](https://webpack.js.org/configuration/stats/)
+
 
 ### Node modules / externals
 
@@ -211,6 +227,7 @@ custom:
 ```
 > Note that only relative path is supported at the moment.
 
+#### Forced inclusion
 
 Sometimes it might happen that you use dynamic requires in your code, i.e. you
 require modules that are only known at runtime. Webpack is not able to detect
@@ -228,6 +245,26 @@ custom:
       - module2
 ```
 
+#### Forced exclusion
+
+You can forcefully exclude detected external modules, e.g. if you have a module
+in your dependencies that is already installed at your provider's environment.
+
+Just add them to the `forceExclude` array property and they will not be packaged.
+
+```yaml
+# serverless.yml
+custom:
+  webpackIncludeModules:
+    forceExclude:
+      - module1
+      - module2
+```
+
+If you specify a module in both arrays, `forceInclude` and `forceExclude`, the
+exclude wins and the module will not be packaged.
+
+#### Examples
 
 You can find an example setups in the [`examples`][link-examples] folder.
 
@@ -404,7 +441,69 @@ Plugin commands are supported by the following providers. ⁇ indicates that com
 | invoke local          |      ✔︎     |         ✔︎        |        ⁇        |            ⁇           |
 | invoke local --watch  |      ✔︎     |         ✔︎        |        ⁇        |            ⁇           |
 
+## For developers
+
+The plugin exposes a complete lifecycle model that can be hooked by other plugins to extend
+the functionality of the plugin or add additional actions.
+
+### The event lifecycles and their hookable events (H)
+
+All events (H) can be hooked by a plugin.
+
+```
+-> webpack:validate
+   -> webpack:validate:validate (H)
+-> webpack:compile
+   -> webpack:compile:compile (H)
+-> webpack:package
+   -> webpack:package:packExternalModules (H)
+   -> webpack:package:packageModules (H)
+```
+
+### Integration of the lifecycles into the command invocations and hooks
+
+The following list shows all lifecycles that are invoked/started by the
+plugin when running a command or invoked by a hook.
+
+```
+-> before:package:createDeploymentArtifacts
+   -> webpack:validate
+   -> webpack:compile
+   -> webpack:package
+
+-> before:deploy:function:packageFunction
+   -> webpack:validate
+   -> webpack:compile
+   -> webpack:package
+
+-> before:invoke:local:invoke
+   -> webpack:validate
+   -> webpack:compile
+
+-> webpack
+   -> webpack:validate
+   -> webpack:compile
+   -> webpack:package
+
+-> before:offline:start
+   -> webpack:validate
+   -> webpack:compile
+
+-> before:offline:start:init
+   -> webpack:validate
+   -> webpack:compile
+```
+
 ## Release Notes
+
+* 4.0.0
+  * BREAKING: Expose lifecycle events for plugin authors [#254][link-254]
+  * Fixed deprecated hook warning [#126][link-126]
+  * Support forceExclude option for external modules [#247][link-247]
+  * Support stats output configuration in webpack config [#260][link-260]
+  * Google: Only integrate package.json but not node modules into artifact [#264][link-264]
+  * Documentation fixes and updates [#265][link-265]
+  * Updated examples [#250][link-250]
 
 * 3.1.2
   * Fix issue where dependencies with dots in their names would not be installed [#251][link-251]
@@ -528,3 +627,11 @@ Plugin commands are supported by the following providers. ⁇ indicates that com
 [link-245]: https://github.com/serverless-heaven/serverless-webpack/issues/245
 
 [link-251]: https://github.com/serverless-heaven/serverless-webpack/issues/251
+
+[link-126]: https://github.com/serverless-heaven/serverless-webpack/issues/126
+[link-247]: https://github.com/serverless-heaven/serverless-webpack/issues/247
+[link-250]: https://github.com/serverless-heaven/serverless-webpack/issues/250
+[link-254]: https://github.com/serverless-heaven/serverless-webpack/pull/254
+[link-260]: https://github.com/serverless-heaven/serverless-webpack/issues/260
+[link-264]: https://github.com/serverless-heaven/serverless-webpack/pull/264
+[link-265]: https://github.com/serverless-heaven/serverless-webpack/pull/265

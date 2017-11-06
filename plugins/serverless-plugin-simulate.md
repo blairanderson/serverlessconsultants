@@ -7,7 +7,7 @@ description: Simulate AWS Lambda and API Gateway locally using Docker
 stars: 26
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 26

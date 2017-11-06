@@ -4,14 +4,14 @@ title: Serverless Stack Output
 repo: sbstjn/serverless-stack-output
 homepage: 'https://github.com/sbstjn/serverless-stack-output'
 description: Store output from your AWS CloudFormation Stack in JSON/YAML/TOML files, or to pass it to a JavaScript function for further processing.
-stars: 8
+stars: 9
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 8
-issues: 0
+watchers: 9
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

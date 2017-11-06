@@ -7,7 +7,7 @@ description: A Serverless plugin to expose git variables (branch name, HEAD desc
 stars: 12
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 5
 forks_trend: 
 forks_diff: 0
 watchers: 12

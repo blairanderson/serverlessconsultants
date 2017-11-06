@@ -4,13 +4,13 @@ title: Serverless Offline Sns
 repo: mj1618/serverless-offline-sns
 homepage: 'https://github.com/mj1618/serverless-offline-sns'
 description: Serverless plugin to run a local SNS server and call serverless SNS handlers with events notifications.
-stars: 4
+stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 8
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -55,14 +55,18 @@ plugins:
   - serverless-offline-sns
 ```
 
-Configure the plugin with your offline SNS endpoint and a free port the plugin can use.
+Configure the plugin with your offline SNS endpoint, host to listen on, and a free port the plugin can use.
+
 ```YAML
 custom:
   serverless-offline-sns:
     port: 4002 # a free port for the sns server to run on
     debug: false
+    # host: 0.0.0.0 # Optional, defaults to 127.0.0.1 if not provided to serverless-offline
     # sns-endpoint: http://127.0.0.1:4567 # Optional. Only if you want to use a custom endpoint
 ```
+
+In normal operation, the plugin will use the same *--host* option as provided to serverless-offline. The *host* parameter as shown above overrides this setting.
 
 If you are using the [serverless-offline](https://github.com/dherault/serverless-offline) plugin serverless-offline-sns will start automatically. If you are not using this plugin you can run the following command instead:
 ```bash

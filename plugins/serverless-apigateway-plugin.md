@@ -1,18 +1,18 @@
 ---
 layout: plugin
-title: "Serverless Apigateway Plugin"
-repo: "GFG/serverless-apigateway-plugin"
-homepage: "https://github.com/GFG/serverless-apigateway-plugin"
-description: "Configure the AWS api gateway: Binary support, Headers and Body template mappings"
-stars: 2
-stars_trend:
+title: Serverless Apigateway Plugin
+repo: GFG/serverless-apigateway-plugin
+homepage: 'https://github.com/GFG/serverless-apigateway-plugin'
+description: Configure the AWS api gateway: Binary support, Headers and Body template mappings
+stars: 3
+stars_trend: 
 stars_diff: 0
 forks: 2
-forks_trend:
+forks_trend: 
 forks_diff: 0
-watchers: 2
-issues: 1
-issues_trend:
+watchers: 3
+issues: 0
+issues_trend: 
 issues_diff: 0
 ---
 
@@ -32,7 +32,7 @@ Currently it is used in GFG(Global Fashion Group) internal projects.
 Install the plugin from npm
 
 ```bash
-$ npm install --save serverless-apigw-plugin
+$ npm install --save serverless-apigateway-plugin
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ Add the plugin to your `serverless.yml`
 # serverless.yml
 
 plugins:
-  - serverless-apigw-plugin
+  - serverless-apigateway-plugin
 ```
 
 Add the config to your custom tag of serverless.yml,

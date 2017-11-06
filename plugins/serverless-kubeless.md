@@ -4,14 +4,14 @@ title: Serverless Kubeless
 repo: serverless/serverless-kubeless
 homepage: 'https://github.com/serverless/serverless-kubeless'
 description: Serverless plugin for deploying functions to Kubeless.
-stars: 50
+stars: 52
 stars_trend: 
 stars_diff: 0
 forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 50
-issues: 1
+watchers: 52
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -30,7 +30,7 @@ Make sure you have a kubernetes endpoint running and kubeless installed:
 ```bash
 $ kubectl version
 $ brew install kubeless/tap/kubeless
-$ KUBELESS_VERSION=0.2.1
+$ KUBELESS_VERSION=0.2.3
 $ kubectl create ns kubeless
 $ kubectl create -f https://github.com/kubeless/kubeless/releases/download/v$KUBELESS_VERSION/kubeless-v$KUBELESS_VERSION.yaml
 ```

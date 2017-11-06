@@ -4,14 +4,14 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: Serverless plugin to bundle Python packages
-stars: 86
+stars: 102
 stars_trend: 
 stars_diff: 0
-forks: 26
+forks: 29
 forks_trend: 
 forks_diff: 0
-watchers: 86
-issues: 20
+watchers: 102
+issues: 24
 issues_trend: 
 issues_diff: 0
 ---
@@ -162,3 +162,5 @@ custom:
  * [@suxor42](https://github.com/suxor42) - fixing permission issues with Docker on Linux
  * [@mbeltran213](https://github.com/mbeltran213) - fixing docker linux -u option bug
  * [@Tethik](https://github.com/Tethik) - adding usePipenv option
+ * [@miketheman](https://github.com/miketheman) - fixing bug with includes when using zip option
+ * [@wattdave](https://github.com/wattdave) - fixing bug when using `deploymentBucket`
