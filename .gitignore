@@ -1,8 +1,6 @@
-/_site
 /.idea
 /node_modules
 /.sass-cache
 .DS_Store
 .env
 .jekyll-metadata
-/docs
