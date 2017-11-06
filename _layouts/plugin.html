@@ -3,7 +3,13 @@ layout: default
 ---
 
 {% capture github %}https://github.com/{{page.repo}}{% endcapture %}
-{% capture lastmonth %}{% for p in site.data.serverless_plugins %}{% if p["githubUrl"] == github %}{{p["last-month"]}}{% endif %}{% endfor %}{% endcapture %}
+{% capture lastmonth %}
+  {% for p in site.data.serverless_plugins %}
+    {% if p["githubUrl"] == github %}
+    {{p["last-month"]}}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
 {% capture today %}{{ 'now' | date: "%Y-%m-%d" }}{% endcapture %}
 {% assign data = site.data.plugins[page.repo][{{today}}] %}
 {% assign topics = site.data.plugins[page.repo]["topics"] %}
