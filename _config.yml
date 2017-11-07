@@ -22,9 +22,8 @@ highlighter:      rouge
 permalink:        pretty
 
 # Server
-url:              http://www.serverlessconsultants.com
+url:              https://www.serverlessconsultants.com
 enforce_ssl:      false
-#enforce_ssl:      http://www.serverlessconsultants.com
 encoding:         UTF-8
 host:             0.0.0.0
 port:             9001
