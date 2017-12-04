@@ -3,6 +3,6 @@
 layout: topic
 topic: alexa
 title: alexa Serverless Plugins
-description: '1 alexa ServerLess Plugins'
-count: 1
+description: '2 alexa ServerLess Plugins'
+count: 2
 ---

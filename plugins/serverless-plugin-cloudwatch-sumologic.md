@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Plugin Cloudwatch Sumologic
 repo: ACloudGuru/serverless-plugin-cloudwatch-sumologic
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-cloudwatch-sumologic'
-description: Plugin which auto-subscribes a log delivery lambda function to lambda log groups created by serverless
+description: 'Plugin which auto-subscribes a log delivery lambda function to lambda log groups created by serverless'
 stars: 3
 stars_trend: 
 stars_diff: 0

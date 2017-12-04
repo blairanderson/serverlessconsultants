@@ -20,6 +20,7 @@ desc "fetch github repos and create a bunch of files"
 task :refresh => LIST
 desc "fetch github repos and create a bunch of files"
 task :sync => LIST
+task 'default' => LIST
 
 task :fetch_serverless_plugin_list do
   puts 'FETCHES PLUGIN LIST FROM https://github.com/serverless/plugins'

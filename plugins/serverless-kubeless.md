@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Kubeless
 repo: serverless/serverless-kubeless
 homepage: 'https://github.com/serverless/serverless-kubeless'
-description: Serverless plugin for deploying functions to Kubeless.
-stars: 52
+description: 'Serverless plugin for deploying functions to Kubeless.'
+stars: 63
 stars_trend: 
 stars_diff: 0
-forks: 7
+forks: 10
 forks_trend: 
 forks_diff: 0
-watchers: 52
-issues: 2
+watchers: 63
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---
@@ -25,17 +25,9 @@ Kubeless is a Kubernetes-native Serverless solution.
 
 ## Pre requisites
 
-Make sure you have a kubernetes endpoint running and kubeless installed:
+Make sure you have a kubernetes endpoint running and kubeless installed. You can find the installation intructions [here](https://github.com/kubeless/kubeless#installation).
 
-```bash
-$ kubectl version
-$ brew install kubeless/tap/kubeless
-$ KUBELESS_VERSION=0.2.3
-$ kubectl create ns kubeless
-$ kubectl create -f https://github.com/kubeless/kubeless/releases/download/v$KUBELESS_VERSION/kubeless-v$KUBELESS_VERSION.yaml
-```
-
-Then install serverless
+Once you have Kubeless running in your cluster you can install serverless
 ```bash
 $ npm install serverless -g
 ```

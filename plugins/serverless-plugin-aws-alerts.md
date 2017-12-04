@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Plugin Aws Alerts
 repo: ACloudGuru/serverless-plugin-aws-alerts
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-aws-alerts'
-description: A Serverless plugin to easily add CloudWatch alarms to functions
-stars: 55
+description: 'A Serverless plugin to easily add CloudWatch alarms to functions'
+stars: 62
 stars_trend: 
 stars_diff: 0
-forks: 20
+forks: 22
 forks_trend: 
 forks_diff: 0
-watchers: 55
-issues: 9
+watchers: 62
+issues: 8
 issues_trend: 
 issues_diff: 0
 ---
@@ -39,7 +39,7 @@ provider:
 custom:
   alerts:
     stages: # Optionally - select which stages to deploy alarms to
-      - producton
+      - production
       - staging
 
     dashboards: true

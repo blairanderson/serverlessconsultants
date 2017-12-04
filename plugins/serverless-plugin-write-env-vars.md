@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Plugin Write Env Vars
 repo: silvermine/serverless-plugin-write-env-vars
 homepage: 'https://github.com/silvermine/serverless-plugin-write-env-vars'
-description: Write environment variables out to a file that is compatible with dotenv
+description: 'Write environment variables out to a file that is compatible with dotenv'
 stars: 28
 stars_trend: 
 stars_diff: 0

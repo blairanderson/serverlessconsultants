@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Wsgi
 repo: logandk/serverless-wsgi
 homepage: 'https://github.com/logandk/serverless-wsgi'
-description: Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages
-stars: 80
+description: 'Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages'
+stars: 89
 stars_trend: 
 stars_diff: 0
 forks: 15
 forks_trend: 
 forks_diff: 0
-watchers: 80
-issues: 8
+watchers: 89
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -295,6 +295,18 @@ custom:
     stage: ${opt:stage}
     createRoute53Record: true
 ```
+
+### File uploads
+
+In order to accept file uploads from HTML forms, make sure to add `multipart/form-data` to
+the list of content types with *Binary Support* in your API Gateway API. The
+[serverless-apigw-binary](https://github.com/maciejtreder/serverless-apigw-binary)
+Serverless plugin can be used to automate this process.
+
+Keep in mind that, when building Serverless applications, uploading
+[directly to S3](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html)
+from the browser is usually the preferred approach.
+
 
 # Thanks
 

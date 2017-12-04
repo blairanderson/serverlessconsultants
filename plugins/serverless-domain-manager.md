@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Domain Manager
 repo: amplify-education/serverless-domain-manager
 homepage: 'https://github.com/amplify-education/serverless-domain-manager'
-description: Serverless plugin for managing custom domains with API Gateways.
-stars: 63
+description: 'Serverless plugin for managing custom domains with API Gateways.'
+stars: 70
 stars_trend: 
 stars_diff: 0
-forks: 15
+forks: 18
 forks_trend: 
 forks_diff: 0
-watchers: 63
-issues: 8
+watchers: 70
+issues: 22
 issues_trend: 
 issues_diff: 0
 ---
@@ -90,6 +90,9 @@ custom:
 If certificateName is not provided, the certificate will be chosen using the domain name.
 If certificateName is blank, an error will be thrown.
 If createRoute53Record is blank or not provided, it defaults to true.
+Stage is optional, and if not specified will default to the user-provided stage option, or the
+stage specified in the provider section of serverless.yaml (Serverless defaults to 'dev' if this
+is unset).
 
 ## Running
 

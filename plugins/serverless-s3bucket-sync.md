@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless S3bucket Sync
 repo: sbstjn/serverless-s3bucket-sync
 homepage: 'https://github.com/sbstjn/serverless-s3bucket-sync'
-description: Sync a local folder with a S3 bucket after sls deploy
+description: 'Sync a local folder with a S3 bucket after sls deploy'
 stars: 9
 stars_trend: 
 stars_diff: 0

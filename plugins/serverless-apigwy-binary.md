@@ -3,14 +3,14 @@ layout: plugin
 title: Serverless Apigwy Binary
 repo: ryanmurakami/serverless-apigwy-binary
 homepage: 'https://github.com/ryanmurakami/serverless-apigwy-binary'
-description: Serverless plugin for configuring API Gateway to return binary responses
-stars: 13
+description: 'Serverless plugin for configuring API Gateway to return binary responses'
+stars: 14
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 13
+watchers: 14
 issues: 1
 issues_trend: 
 issues_diff: 0

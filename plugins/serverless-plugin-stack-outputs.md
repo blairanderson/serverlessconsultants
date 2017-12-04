@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Plugin Stack Outputs
 repo: svdgraaf/serverless-plugin-stack-outputs
 homepage: 'https://github.com/svdgraaf/serverless-plugin-stack-outputs'
-description: Displays stack outputs for your serverless stacks when `sls info` is ran
+description: 'Displays stack outputs for your serverless stacks when `sls info` is ran'
 stars: 7
 stars_trend: 
 stars_diff: 0

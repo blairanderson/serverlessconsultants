@@ -3,14 +3,14 @@ layout: plugin
 title: Serverless Sentry Plugin
 repo: arabold/serverless-sentry-plugin
 homepage: 'https://github.com/arabold/serverless-sentry-plugin'
-description: Automatic monitoring of memory usage, execution timeouts and forwarding of Lambda errors to Sentry (https://sentry.io).
-stars: 36
+description: 'Automatic monitoring of memory usage, execution timeouts and forwarding of Lambda errors to Sentry (https://sentry.io).'
+stars: 40
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 36
+watchers: 40
 issues: 6
 issues_trend: 
 issues_diff: 0
@@ -176,7 +176,7 @@ def handler(event, context):
 **New Lambda Handler Code With RavenLambdaWrapper For Sentry Reporting**
 ```python
 from raven import Client # Offical `raven` module
-from raven-python-lambda import RavenLambdaWrapper
+from raven_python_lambda import RavenLambdaWrapper
 
 @RavenLambdaWrapper()
 def handler(event, context):

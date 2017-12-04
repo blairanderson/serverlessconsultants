@@ -3,14 +3,14 @@ layout: plugin
 title: Serverless Cljs Plugin
 repo: nervous-systems/serverless-cljs-plugin
 homepage: 'https://github.com/nervous-systems/serverless-cljs-plugin'
-description: Enables Clojurescript as an implementation language for Lambda handlers
-stars: 30
+description: 'Enables Clojurescript as an implementation language for Lambda handlers'
+stars: 35
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 30
+watchers: 35
 issues: 6
 issues_trend: 
 issues_diff: 0

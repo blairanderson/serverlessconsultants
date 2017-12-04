@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Plugin Multiple Responses
 repo: silvermine/serverless-plugin-multiple-responses
 homepage: 'https://github.com/silvermine/serverless-plugin-multiple-responses'
-description: Enable multiple content-types for Response template 
+description: 'Enable multiple content-types for Response template '
 stars: 14
 stars_trend: 
 stars_diff: 0

@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Offline Sns
 repo: mj1618/serverless-offline-sns
 homepage: 'https://github.com/mj1618/serverless-offline-sns'
-description: Serverless plugin to run a local SNS server and call serverless SNS handlers with events notifications.
-stars: 8
+description: 'Serverless plugin to run a local SNS server and call serverless SNS handlers with events notifications.'
+stars: 10
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 8
-issues: 0
+watchers: 10
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -25,6 +25,7 @@ A serverless plugin to listen to offline SNS and call lambda fns with events.
 [![npm version](https://badge.fury.io/js/serverless-offline-sns.svg)](https://badge.fury.io/js/serverless-offline-sns)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 
 
 ## Docs
@@ -94,7 +95,7 @@ functions:
     handler: handler.pong
     events:
       - sns:
-        arn: "arn:aws:sns:us-east-1:123456789012:test-topic"
+         arn: "arn:aws:sns:us-east-1:123456789012:test-topic"
 ```
 
 Here's a demo of some code that will trigger this handler:
@@ -114,6 +115,8 @@ sns.publish({
 });
 ```
 
+Note the region that offline-sns will listen on is what is configured in your serverless.yml provider.
+
 ## Usage
 
 If you use [serverless-offline](https://github.com/dherault/serverless-offline) this plugin will start automatically.
@@ -123,6 +126,15 @@ However if you don't use serverless-offline you can start this plugin manually w
 serverless offline-sns start
 ```
 
-## Contributions and Issues
+## Contributors
 
 Happy to accept contributions, [feature requests](https://github.com/mj1618/serverless-offline-sns/issues) and [issues](https://github.com/mj1618/serverless-offline-sns/issues).
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars0.githubusercontent.com/u/6138817?v=4" width="100px;"/><br /><sub><b>Matthew James</b></sub>](https://github.com/mj1618)<br />[💬](#question-mj1618 "Answering Questions") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=mj1618 "Code") [🎨](#design-mj1618 "Design") [📖](https://github.com/mj1618/serverless-offline-sns/commits?author=mj1618 "Documentation") [💡](#example-mj1618 "Examples") | [<img src="https://avatars0.githubusercontent.com/u/517620?v=4" width="100px;"/><br /><sub><b>darbio</b></sub>](https://github.com/darbio)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Adarbio "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=darbio "Code") | [<img src="https://avatars2.githubusercontent.com/u/5116271?v=4" width="100px;"/><br /><sub><b>TiVoMaker</b></sub>](https://github.com/TiVoMaker)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ATiVoMaker "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=TiVoMaker "Code") [🎨](#design-TiVoMaker "Design") [📖](https://github.com/mj1618/serverless-offline-sns/commits?author=TiVoMaker "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/32281536?v=4" width="100px;"/><br /><sub><b>Jade Hwang</b></sub>](https://github.com/jadehwangsonos)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Ajadehwangsonos "Bug reports") |
+| :---: | :---: | :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

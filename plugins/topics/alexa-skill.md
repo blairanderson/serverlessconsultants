@@ -3,6 +3,6 @@
 layout: topic
 topic: alexa-skill
 title: alexa-skill Serverless Plugins
-description: '1 alexa-skill ServerLess Plugins'
-count: 1
+description: '2 alexa-skill ServerLess Plugins'
+count: 2
 ---

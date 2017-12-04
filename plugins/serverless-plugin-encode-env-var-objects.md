@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Plugin Encode Env Var Objects
 repo: yonomi/serverless-plugin-encode-env-var-objects
 homepage: 'https://github.com/yonomi/serverless-plugin-encode-env-var-objects'
-description: Serverless plugin to encode any environment variable objects.
+description: 'Serverless plugin to encode any environment variable objects.'
 stars: 0
 stars_trend: 
 stars_diff: 0

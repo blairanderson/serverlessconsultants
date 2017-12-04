@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Sqs Alarms Plugin
 repo: sbstjn/serverless-sqs-alarms-plugin
 homepage: 'https://github.com/sbstjn/serverless-sqs-alarms-plugin'
-description: Wrapper to setup CloudWatch Alarms on SQS queue length
+description: 'Wrapper to setup CloudWatch Alarms on SQS queue length'
 stars: 12
 stars_trend: 
 stars_diff: 0

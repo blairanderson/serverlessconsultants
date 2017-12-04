@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Stack Output
 repo: sbstjn/serverless-stack-output
 homepage: 'https://github.com/sbstjn/serverless-stack-output'
-description: Store output from your AWS CloudFormation Stack in JSON/YAML/TOML files, or to pass it to a JavaScript function for further processing.
-stars: 9
+description: 'Store output from your AWS CloudFormation Stack in JSON/YAML/TOML files, or to pass it to a JavaScript function for further processing.'
+stars: 10
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 9
-issues: 1
+watchers: 10
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -55,7 +55,7 @@ custom:
 Based on the configuration above the plugin will search for a file `scripts/output.js` with the following content:
 
 ```js
-function handler (data) {
+function handler (data, serverless, options) {
   console.log('Received Stack Output', data)
 }
 

@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Plugin Deploy Environment
 repo: DopplerLabs/serverless-plugin-deploy-environment
 homepage: 'https://github.com/DopplerLabs/serverless-plugin-deploy-environment'
-description: Plugin to manage deployment environment across stages
-stars: 1
+description: 'Plugin to manage deployment environment across stages'
+stars: 2
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 1
-issues: 0
+watchers: 2
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -102,5 +102,11 @@ custom:
 Please note that because these are resolved at build time, the plain-text passwords WILL be viewable in Cloudformation and on the Lambda dashboard.
 
 # Version History
+* 1.0.3
+  - Fix packaging issue
+* 1.0.2
+  - Bump version of credstash to deal with change in API (Thanks @concon121)
+* 1.0.1
+  - Fix publishing issue
 * 1.0.0
   - Initial release

@@ -3,15 +3,15 @@ layout: plugin
 title: Serverless Crypt
 repo: marcy-terui/serverless-crypt
 homepage: 'https://github.com/marcy-terui/serverless-crypt'
-description: Securing the secrets on Serverless Framework by AWS KMS encryption.
-stars: 44
+description: 'Securing the secrets on Serverless Framework by AWS KMS encryption.'
+stars: 47
 stars_trend: 
 stars_diff: 0
-forks: 8
+forks: 9
 forks_trend: 
 forks_diff: 0
-watchers: 44
-issues: 8
+watchers: 47
+issues: 9
 issues_trend: 
 issues_diff: 0
 ---

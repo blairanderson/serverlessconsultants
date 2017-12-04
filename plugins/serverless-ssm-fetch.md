@@ -3,14 +3,14 @@ layout: plugin
 title: Serverless Ssm Fetch
 repo: gozup/serverless-ssm-fetch
 homepage: 'https://github.com/gozup/serverless-ssm-fetch'
-description: Sets "AWS Systems Manager Parameter Store (SSM)" parameters into functions' environment variables.
-stars: 7
+description: 'Sets "AWS Systems Manager Parameter Store (SSM)" parameters into functions' environment variables.'
+stars: 6
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 7
+watchers: 6
 issues: 0
 issues_trend: 
 issues_diff: 0
