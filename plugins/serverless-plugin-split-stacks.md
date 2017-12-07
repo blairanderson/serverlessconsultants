@@ -7,13 +7,13 @@ description: 'Migrate certain resources to nested stacks'
 stars: 18
 stars_trend: 
 stars_diff: 0
-forks: 5
-forks_trend: 
-forks_diff: 0
+forks: 6
+forks_trend: up
+forks_diff: 1
 watchers: 18
-issues: 6
-issues_trend: 
-issues_diff: 0
+issues: 7
+issues_trend: up
+issues_diff: 1
 ---
 
 
