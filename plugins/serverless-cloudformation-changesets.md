@@ -4,16 +4,16 @@ title: Serverless Cloudformation Changesets
 repo: trek10inc/serverless-cloudformation-changesets
 homepage: 'https://github.com/trek10inc/serverless-cloudformation-changesets'
 description: 'Natively deploy to CloudFormation via Change sets, instead of directly. Allowing you to queue changes, and safely require escalated roles for final deployment.'
-stars: 2
-stars_trend: 
-stars_diff: 0
+stars: 4
+stars_trend: up
+stars_diff: 2
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 2
-issues: 0
-issues_trend: 
-issues_diff: 0
+watchers: 4
+issues: 1
+issues_trend: up
+issues_diff: 1
 ---
 
 
@@ -48,4 +48,4 @@ $ sls deploy --changeset --stage dev --region us-east-1
 $ sls deploy --changeset your-changeset-name --stage dev --region us-east-1
 ```
 
-If CloudFormation Stack doesn't exist, this plugin will create a new one (without template, resources). The stack will be in the `REVIEW_IN_PROGRESS` state.
+If CloudFormation Stack doesn't exist and custom `provider.deploymentBucket` was specified, this plugin will create a new stack without template, resources. The stack will be in the `REVIEW_IN_PROGRESS` state.

@@ -4,13 +4,13 @@ title: Serverless Plugin Custom Domain
 repo: dougmoscrop/serverless-plugin-custom-domain
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-custom-domain'
 description: 'Reliably sets a BasePathMapping to an API Gateway Custom Domain'
-stars: 25
-stars_trend: 
-stars_diff: 0
-forks: 4
-forks_trend: 
-forks_diff: 0
-watchers: 25
+stars: 26
+stars_trend: up
+stars_diff: 1
+forks: 5
+forks_trend: up
+forks_diff: 1
+watchers: 26
 issues: 0
 issues_trend: 
 issues_diff: 0

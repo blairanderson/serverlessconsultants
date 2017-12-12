@@ -4,16 +4,16 @@ title: Serverless Plugin Split Stacks
 repo: dougmoscrop/serverless-plugin-split-stacks
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-split-stacks'
 description: 'Migrate certain resources to nested stacks'
-stars: 18
-stars_trend: 
-stars_diff: 0
-forks: 6
+stars: 19
+stars_trend: up
+stars_diff: 1
+forks: 7
 forks_trend: up
 forks_diff: 1
-watchers: 18
+watchers: 19
 issues: 7
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -55,19 +55,7 @@ ServerlessPluginSplitStacks.resolveMigration = function (resource, logicalId, se
 };
 ```
 
-e.g. in following example we distribute one of the `AWS::IAM::Role` resources into `Dynamodb` nested stacks
-
-```javascript
-stacksMap['AWS::IAM::Role'] = {
-	destination: (resourceName, resource) => {
-    if (resourceName === 'DynamodbAutoscalingRole') return 'Dynamodb';
-    return null;
-  },
-};
-
-```
-
-__Be careful when introducing any customizations to default config. Many kind of resources (as e.g. DynamoDB tables) cannot be freely moved between CloudFormation stacks__
+__Be careful when introducing any customizations to default config. Many kind of resources (as e.g. DynamoDB tables) cannot be freely moved between CloudFormation stacks (that can only be achieved via full removal and recreation of the stage)__
 
 ## Limitations
 
