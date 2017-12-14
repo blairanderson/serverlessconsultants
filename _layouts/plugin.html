@@ -2,6 +2,10 @@
 layout: default
 ---
 
+{% assign spliter = page.repo | split: "/" %}
+{% assign user = spliter[0] %}
+{% assign reponame = spliter[1] %}
+
 {% capture github %}https://github.com/{{page.repo}}{% endcapture %}
 {% capture lastmonth %}
   {% for p in site.data.serverless_plugins %}
@@ -15,8 +19,8 @@ layout: default
 {% assign topics = site.data.plugins[page.repo]["topics"] %}
 
 <div class="mw8 center">
-  <h1 class="tc ma0">{{page.title}}</h1>
-  <div class="tc">
+  <h1 class="tc ma0 pa1">{{page.title}}</h1>
+  <div class="tc pa1">
     <a rel="nofollow noreferrer noopener"  href="{{page.homepage}}">
       <img src="https://icon.now.sh/home" alt="homepage icon">
       {{ page.homepage }}
@@ -27,10 +31,13 @@ layout: default
       <a rel="nofollow noreferrer noopener" href="{{ github }}">{{ github }}</a>
     {% endunless %}
   </div>
-  <article class="ph3 ph5-ns">
+
+  <div class="tc pa1">
+    <a class="github-button" href="https://github.com/{{user}}" aria-label="Follow @{{user}} on GitHub">Follow @{{user}}</a>
+  </div>
+  <article class="pa3 ph5-ns">
     <h3 class="f6 ma0 pa0 ttu tc tracked">Tracked</h3>
     <div class="cf tc">
-
       {% if page.language %}
       <dl title="Programming Language: {{ page.language }}" class="db tc mb0 dib-l w-auto-l lh-title mr5-l">
         <dd class="f6 fw4 ml0">Language</dd>
@@ -64,6 +71,35 @@ layout: default
       </dl>
     </div>
   </article>
+  <div class="pa3 center mw8 tc">
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/{{page.repo}}/subscription" data-icon="octicon-eye" aria-label="Watch {{page.repo}} on GitHub">Watch</a>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/{{page.repo}}" data-icon="octicon-star" aria-label="Star {{page.repo}} on GitHub">Star</a>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/{{page.repo}}/fork" data-icon="octicon-repo-forked" aria-label="Fork {{page.repo}} on GitHub">Fork</a>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/{{page.repo}}/issues" data-icon="octicon-issue-opened" aria-label="Issue {{page.repo}} on GitHub">Issue</a>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/{{page.repo}}/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download {{page.repo}} on GitHub">Download</a>
+    
+    <a href="{{github}}/blob/master/LICENSE">
+      <img src="https://img.shields.io/github/license/serverless-heaven/serverless-webpack.svg" alt="License">
+    </a>
+    <a href="https://www.npmjs.com/package/{{reponame}}">
+      <img src="https://img.shields.io/npm/v/serverless-webpack.svg" alt="NPM">
+    </a>
+    <a href="https://travis-ci.org/{{page.repo}}">
+      <img src="https://travis-ci.org/{{page.repo}}.svg?branch=master" alt="Build Status">
+    </a>
+    <a href="https://coveralls.io/github/{{page.repo}}?branch=master">
+      <img src="https://coveralls.io/repos/github/{{page.repo}}/badge.svg?branch=master" alt="Coverage Status">
+    </a>
+    <a href="https://github.com/{{page.repo}}/graphs/contributors">
+      <img src="https://img.shields.io/github/contributors/{{page.repo}}.svg" alt="Contributors">
+    </a>
+  </div>
+
   <!-- TODO: FIX THIS -->
   <div class="cf tc mw6 center dn">
     {% assign topics = page.topics | split: ',' %}

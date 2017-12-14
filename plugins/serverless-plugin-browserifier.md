@@ -2,8 +2,8 @@
 layout: plugin
 title: Serverless Plugin Browserifier
 repo: digitalmaas/serverless-plugin-browserifier
-homepage: 'https://github.com/digitalmaas/serverless-plugin-browserifier'
-description: 'Reduce the size and speed up your Node.js based lambda's using browserify.'
+homepage: "https://github.com/digitalmaas/serverless-plugin-browserifier"
+description: "Reduce the size and speed up your Node.js based lambda's using browserify."
 stars: 6
 stars_trend: 
 stars_diff: 0
@@ -16,9 +16,7 @@ issues_trend:
 issues_diff: 0
 ---
 
-
-Serverless Browserifier Plugin
-==============================
+# Serverless Browserifier Plugin
 
 [![serverless][serverless-badge]][serverless-url]
 [![NPM version][version-badge]][npm-url]
@@ -28,7 +26,7 @@ Serverless Browserifier Plugin
 
 A [Serverless](https://serverless.com) v1 plugin that uses [Browserify][browserify-url] to bundle your Node.js Lambda functions.
 
-This project has been forked from the original [serverless-plugin-browserify][original-plugin] by *Ryan Pendergast* and published under a different name.
+This project has been forked from the original [serverless-plugin-browserify][original-plugin] by _Ryan Pendergast_ and published under a different name.
 
 ## Motivation
 
@@ -47,13 +45,14 @@ This plugin with 2 lines of configuration produces a zip file that is **400 KB!*
     "rxjs": "^5.0.0-rc.1"
   },
 ...
-```  
+```
 
 ```javascript
 const Rx      = require('rxjs/Rx');
 const request = require('request');
 ...
 ```
+
 Even if you choose to manually prepare your packages with `package[include|exclude]`, you will still have to take care of that for each single function individually, and manually. This is specially hard after `npm` 3, due to dependency tree flattening.
 
 Also, AWS Lambda has an account-wide [deployment package size limit](http://docs.aws.amazon.com/lambda/latest/dg/limits.html).
@@ -63,6 +62,7 @@ Mind that [aws-sdk-js](https://github.com/aws/aws-sdk-js) now officially [suppor
 ## Installation
 
 From your target serverless project, run:
+
 ```
 npm install serverless-plugin-browserifier --save-dev
 ```
@@ -82,9 +82,9 @@ The property `package.individually` must be set because it makes configuration m
 
 For most use cases you should **NOT** need to do any configuration. You can, however, introduce custom configuration.
 
-The base config for browserify is read from the `custom.browserify` section of `serverless.yml`.  All [browserify options][browserify-options] are supported (most are auto configured by this plugin).  This plugin adds one special option `disable` which if `true` will bypass this plugin.
+The base config for browserify is read from the `custom.browserify` section of `serverless.yml`. All [browserify options][browserify-options] are supported (most are auto configured by this plugin). This plugin adds one special option `disable` which if `true` will bypass this plugin.
 
-The base config can be overridden on a function-by-function basis.  Again, `custom.browserify` is not required and should not even need to be defined in most cases.
+The base config can be overridden on a function-by-function basis. Again, `custom.browserify` is not required and should not even need to be defined in most cases.
 
 ```yaml
 custom:
@@ -95,19 +95,20 @@ functions:
     usersGet:
       name: ${self:provider.stage}-${self:service}-pageGet
       description: get user
-      handler: users/handler.hello      
+      handler: users/handler.hello
       browserify:
         noParse:
-          - ./someBig.json  #browserify can't optimize json, will take long time to parse for nothing      
+          - ./someBig.json  #browserify can't optimize json, will take long time to parse for nothing
 ```
 
-If you find a package that is not supported or does not behave well with browserify, you can still use function level `package.include` to include extra modules and files to your package. That said, you are encouraged to verify if you specific case can be dealt with by leveraging all available [browserify options](https://github.com/substack/node-browserify#browserifyfiles--opts) in your `serverless.yml` custom `browserify` section. 
+If you find a package that is not supported or does not behave well with browserify, you can still use function level `package.include` to include extra modules and files to your package. That said, you are encouraged to verify if you specific case can be dealt with by leveraging all available [browserify options](https://github.com/substack/node-browserify#browserifyfiles--opts) in your `serverless.yml` custom `browserify` section.
 
 ## Usage
 
 When this plugin is enabled, and `package.individually` is `true`, running `serverless deploy` and `serverless deploy -f <funcName>` will automatically browserify your Node.js lambda code.
 
-If you want to see more information about the process, simply set `SLS_DEBUG=*`. Example: 
+If you want to see more information about the process, simply set `SLS_DEBUG=*`. Example:
+
 ```
 $ export SLS_DEBUG=*
 $ sls deploy function -v -f usersGet
@@ -115,21 +116,21 @@ $ sls deploy function -v -f usersGet
 
 ## FAQ
 
-__Should I use Webpack instead of this plugin?__
+**Should I use Webpack instead of this plugin?**
 
 Browserify, in general, supports more modules, optimises better (generates smaller bundles), and requires less configuration. [Webpack][webpack-github] is an amazing tool, but it comes with several extras that are not really needed within a pure Node.js environment.
 
-__What about uglification?__
+**What about uglification?**
 
 You should be able to use [`uglify-es`][uglify-url] through [`uglifyify`][uglifyify-url].
 
-__And what about babel?__
+**And what about babel?**
 
 I believe that [`babelify`][babelify-url] should do the trick, although I don't see any reason for it. AWS Lambda already supports Node.js 6.10, with enough ES-next goodies that allows us to avoid transpilers.
 
 ## License
 
-MIT License.    
+MIT License.  
 For the complete information, please refer to the [license](./LICENSE) file.
 
 [serverless-badge]: https://img.shields.io/badge/serverless-%E2%9A%A1-yellow.svg?colorB=555555&style=flat-square

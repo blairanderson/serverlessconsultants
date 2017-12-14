@@ -1,21 +1,20 @@
 ---
 layout: plugin
-title: Serverless Dotnet
-repo: fruffin/serverless-dotnet
-homepage: 'https://github.com/fruffin/serverless-dotnet'
-description: 'A serverless plugin to run 'dotnet' commands as part of the deploy process'
+title: "Serverless Dotnet"
+repo: "fruffin/serverless-dotnet"
+homepage: "https://github.com/fruffin/serverless-dotnet"
+description: "A serverless plugin to run 'dotnet' commands as part of the deploy process"
 stars: 12
-stars_trend: 
+stars_trend:
 stars_diff: 0
 forks: 4
-forks_trend: 
+forks_trend:
 forks_diff: 0
 watchers: 12
 issues: 0
-issues_trend: 
+issues_trend:
 issues_diff: 0
 ---
-
 
 # Serverless DotNet
 
@@ -43,7 +42,9 @@ plugins:
 And that's all there is to it. From this point, `dotnet restore` and `dotnet publish` will run as part of each `serverless deploy` run and the output will be zipped into the `.serverless` folder of your service, as it would for other runtimes.
 
 ## Note
+
 If you are using the `aws-csharp` service template, you will need to remove the following line from your `serverless.yml` file as these are not needed any more:
+
 ```
 package:
  artifact: bin/Release/netcoreapp1.0/publish/deploy-package.zip

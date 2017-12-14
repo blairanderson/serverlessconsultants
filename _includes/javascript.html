@@ -7,11 +7,9 @@
 function success(data, status, xhr) {
   $('#readme-content').html(data);
 }
-
 function error(data, status, xhr) {
   $('#readme-content').remove();
 }
-
 $.ajax({
   dataType: 'text',
   url: 'https://api.github.com/repos/{{page.repo}}/readme',
@@ -21,3 +19,6 @@ $.ajax({
 });
 </script>
 {% endif %}
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
