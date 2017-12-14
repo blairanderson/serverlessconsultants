@@ -11,9 +11,9 @@ forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 11
-issues: 7
-issues_trend: 
-issues_diff: 0
+issues: 2
+issues_trend: down
+issues_diff: -5
 ---
 
 
@@ -28,8 +28,10 @@ as AWS Lambda with [serverless framework](http://serverless.com/). Serverless an
 ## Prerequisite
 
 - [Serverless framework](https://serverless.com/framework/docs/getting-started/)
-- NodeJS ^8.4.0
+- [NodeJS](https://nodejs.org/en/download/) >= 8.4.0
 - [Docker](https://docs.docker.com/engine/installation/) - used to build and local-run Lambda on any OS
+- Build tools (``build-essentials`` package on Ubuntu)
+- SSL dev files (``libssl-dev`` package on Ubuntu)
 
 ## Getting Started
 

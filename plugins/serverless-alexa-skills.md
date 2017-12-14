@@ -4,13 +4,13 @@ title: Serverless Alexa Skills
 repo: marcy-terui/serverless-alexa-skills
 homepage: 'https://github.com/marcy-terui/serverless-alexa-skills'
 description: 'Manage your Alexa Skills with Serverless Framework.'
-stars: 12
-stars_trend: 
-stars_diff: 0
+stars: 13
+stars_trend: up
+stars_diff: 1
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 12
+watchers: 13
 issues: 1
 issues_trend: 
 issues_diff: 0
@@ -21,6 +21,7 @@ Serverless Alexa Skills Plugin
 =======
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![Build Status](https://travis-ci.org/marcy-terui/serverless-alexa-skills.svg?branch=master)](https://travis-ci.org/marcy-terui/serverless-alexa-skills)
 
 # Description
 
@@ -33,7 +34,13 @@ Manage your Alexa Skills with Serverless Framework.
 # Installation
 
 ```sh
-npm install serverless-alexa-skills --save
+serverless plugin install serverless-alexa-skills
+```
+
+or
+
+```sh
+npm install serverless-alexa-skills
 ```
 
 # Setup

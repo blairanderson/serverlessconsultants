@@ -11,9 +11,9 @@ forks: 4
 forks_trend: up
 forks_diff: 1
 watchers: 19
-issues: 2
+issues: 1
 issues_trend: up
-issues_diff: 2
+issues_diff: 1
 ---
 
 
@@ -151,6 +151,8 @@ Example
 
 Change Log
 -------------
+- Version 0.7.0
+  - [Feature] Return promise object to let serverless to wait until script is finished
 - Version 0.6.0
   - [Feature] Supported execute multiple script/command for the same serverless event
 - Version 0.5.0

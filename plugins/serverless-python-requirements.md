@@ -7,13 +7,13 @@ description: 'Serverless plugin to bundle Python packages'
 stars: 117
 stars_trend: up
 stars_diff: 2
-forks: 31
-forks_trend: 
-forks_diff: 0
+forks: 33
+forks_trend: up
+forks_diff: 2
 watchers: 117
-issues: 28
-issues_trend: 
-issues_diff: 0
+issues: 27
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -151,6 +151,28 @@ custom:
     invalidateCaches: true
 ```
 
+## Mac Brew installed Python notes
+[Brew wilfully breaks the `--target` option with no seeming intention to fix it](https://github.com/Homebrew/brew/pull/821)
+which causes issues since this uses that option. There are a few easy workarounds for this:
+* Install Python from [python.org](https://wwwpython.org/downloads/) and specify it with the
+[`pythonBin` option](#customize-python-executable).
+
+OR
+
+* Create a virtualenv and activate it while using serverless.
+
+OR
+
+* [Install Docker](https://docs.docker.com/docker-for-mac/install/) and use the [`dockerizePip` option](#cross-compiling).
+
+
+## Windows `dockerizePip` notes
+For usage of `dockerizePip` on Windows do Step 1 only if running serverless on windows, or do both Step 1 & 2 if running serverless inside WSL.
+
+1. [Enabling shared volume in Windows Docker Taskbar settings](https://forums.docker.com/t/docker-data-volumes-and-windows-mounts/31499/2)
+1. [Installing the Docker client on Windows Subsystem for Linux (Ubuntu)](https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4)
+
+
 ## Contributors
  * [@dschep](https://github.com/dschep) - Lead developer & maintainer
  * [@azurelogic](https://github.com/azurelogic) - logging & documentation fixes
@@ -164,3 +186,4 @@ custom:
  * [@Tethik](https://github.com/Tethik) - adding usePipenv option
  * [@miketheman](https://github.com/miketheman) - fixing bug with includes when using zip option
  * [@wattdave](https://github.com/wattdave) - fixing bug when using `deploymentBucket`
+ * [@heri16](https://github.com/heri16) - fixing Docker support in Windows.

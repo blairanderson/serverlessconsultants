@@ -4,13 +4,13 @@ title: Serverless Plugin Webpack
 repo: goldwasserexchange/serverless-plugin-webpack
 homepage: 'https://github.com/goldwasserexchange/serverless-plugin-webpack'
 description: 'A serverless plugin to automatically bundle your functions individually with webpack'
-stars: 37
+stars: 38
 stars_trend: up
-stars_diff: 2
+stars_diff: 3
 forks: 11
 forks_trend: up
 forks_diff: 1
-watchers: 37
+watchers: 38
 issues: 9
 issues_trend: up
 issues_diff: 3
