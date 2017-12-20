@@ -5,15 +5,15 @@ repo: sinofseven/serverless-s3-remover
 homepage: 'https://github.com/sinofseven/serverless-s3-remover'
 description: 'A serverless plugin to make s3 buckets empty before deleting cloudformation stack when ```sls remove```'
 stars: 7
-stars_trend: up
-stars_diff: 1
-forks: 1
-forks_trend: 
-forks_diff: 0
+stars_trend: 
+stars_diff: 0
+forks: 2
+forks_trend: up
+forks_diff: 1
 watchers: 7
 issues: 2
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -52,3 +52,17 @@ When removing serverless stack, this plugin automatically make buckets empty  be
 ```sh
 $ sls remove
 ```
+
+# Using Prompt
+You can use prompt before deleting bucket.
+
+```yaml
+custom:
+  remover:
+    prompt: true # default value is `false`
+    buckets:
+      - remover-bucket-a
+      - remover-bucket-b
+```
+
+![terminal.png](https://user-images.githubusercontent.com/57114/31264298-0896f1ec-aaa3-11e7-9a8e-86e3c3f34e23.png)

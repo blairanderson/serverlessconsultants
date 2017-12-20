@@ -3,10 +3,10 @@ layout: plugin
 title: Serverless Dynamodb Autoscaling
 repo: sbstjn/serverless-dynamodb-autoscaling
 homepage: 'https://github.com/sbstjn/serverless-dynamodb-autoscaling'
-description: "Configure Amazon DynamoDB's native Auto Scaling for your table capacities."
+description: 'Configure Amazon DynamoDB's native Auto Scaling for your table capacities.'
 stars: 73
-stars_trend: up
-stars_diff: 2
+stars_trend: 
+stars_diff: 0
 forks: 8
 forks_trend: 
 forks_diff: 0
@@ -15,6 +15,7 @@ issues: 9
 issues_trend: 
 issues_diff: 0
 ---
+
 
 # ⚡️ Serverless Plugin for DynamoDB Auto Scaling
 
@@ -46,7 +47,7 @@ plugins:
 
 ## Configuration
 
-Configure DynamoDB Auto Scaling in `serverless.yml` with references to your DynamoDB CloudFormation resources for the `table` property. The `index` configuration is optional to apply Auto Scaling _Global Secondary Index_.
+Configure DynamoDB Auto Scaling in `serverless.yml` with references to your DynamoDB CloudFormation resources for the `table` property. The `index` configuration is optional to apply Auto Scaling *Global Secondary Index*.
 
 ```yaml
 custom:
@@ -64,7 +65,7 @@ custom:
         usage: 0.5        # Targeted usage percentage
 ```
 
-That's it! With the next deployment, [serverless](https://serverless.com) will add a CloudFormation configuration to enable Auto Scaling for the DynamoDB resources `CustomTable` and its _Global Secondary Index_ called `custom-index-name`.
+That's it! With the next deployment, [serverless](https://serverless.com) will add a CloudFormation configuration to enable Auto Scaling for the DynamoDB resources `CustomTable` and its *Global Secondary Index* called `custom-index-name`. 
 
 You must provide at least a configuration for `read` or `write` to enable Auto Scaling!
 
@@ -82,16 +83,16 @@ If you only want to enable Auto Scaling for the index, use `indexOnly: true` to 
 
 ### API Throtteling
 
-CloudWatch has very strict [API rate limits](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_limits.html)! If you plan to configure Auto Scaling for multiple DynamoDB tables or _Global Secondary Indexes_, request an increase of the rate limits first! Otherwise, you might run into an error like this:
+CloudWatch has very strict [API rate limits](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_limits.html)! If you plan to configure Auto Scaling for multiple DynamoDB tables or *Global Secondary Indexes*, request an increase of the rate limits first! Otherwise, you might run into an error like this:
 
 ```
-An error occurred while provisioning your stack: XYZ - Unable to create alarms for scaling policy XYZ due to reason:
+An error occurred while provisioning your stack: XYZ - Unable to create alarms for scaling policy XYZ due to reason: 
 Rate exceeded (Service: AmazonCloudWatch; Status Code: 400; Error Code: Throttling; Request ID: XYZ).
 ```
 
 ### Breaking Changes
 
-_There have been multiple breaking changes regarding CloudFormation resource names in the past. If you end up with an error, that your CloudFormation Stack cannot be updated, try to remove the `custom > capacities` configuration from your `serverless.yml` file and deploy the service without any Auto Scaling configuration. After that, just re-add your previous configuration and deploy your service again._
+*There have been multiple breaking changes regarding CloudFormation resource names in the past. If you end up with an error, that your CloudFormation Stack cannot be updated, try to remove the `custom > capacities` configuration from your `serverless.yml` file and deploy the service without any Auto Scaling configuration. After that, just re-add your previous configuration and deploy your service again.*
 
 ## DynamoDB
 
@@ -131,12 +132,12 @@ Feel free to use the code, it's released using the [MIT license](LICENSE.md).
 
 ## Thanks
 
-* [TrentBartlem](https://github.com/TrentBartlem)'s [Gist](https://gist.github.com/TrentBartlem/292be37d496361d551fff6659d87fb0e)
-* [daniel](https://forums.aws.amazon.com/message.jspa?messageID=789667#jive-message-792127)'s post in the AWS Developer Forums
+- [TrentBartlem](https://github.com/TrentBartlem)'s [Gist](https://gist.github.com/TrentBartlem/292be37d496361d551fff6659d87fb0e) 
+- [daniel](https://forums.aws.amazon.com/message.jspa?messageID=789667#jive-message-792127)'s post in the AWS Developer Forums
 
 ## Contribution
 
-You are welcome to contribute to this project! 😘
+You are welcome to contribute to this project! 😘 
 
 To make sure you have a pleasant experience, please read the [code of conduct](CODE_OF_CONDUCT.md). It outlines core values and beliefs and will make working together a happier experience.
 

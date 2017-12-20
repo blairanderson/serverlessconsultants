@@ -5,8 +5,8 @@ repo: DopplerLabs/serverless-plugin-deploy-environment
 homepage: 'https://github.com/DopplerLabs/serverless-plugin-deploy-environment'
 description: 'Plugin to manage deployment environment across stages'
 stars: 4
-stars_trend: up
-stars_diff: 2
+stars_trend: 
+stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0

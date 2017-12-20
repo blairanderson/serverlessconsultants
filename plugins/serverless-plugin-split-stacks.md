@@ -5,11 +5,11 @@ repo: dougmoscrop/serverless-plugin-split-stacks
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-split-stacks'
 description: 'Migrate certain resources to nested stacks'
 stars: 19
-stars_trend: up
-stars_diff: 1
-forks: 7
-forks_trend: up
-forks_diff: 1
+stars_trend: 
+stars_diff: 0
+forks: 6
+forks_trend: down
+forks_diff: -1
 watchers: 19
 issues: 7
 issues_trend: 

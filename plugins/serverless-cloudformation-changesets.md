@@ -4,16 +4,16 @@ title: Serverless Cloudformation Changesets
 repo: trek10inc/serverless-cloudformation-changesets
 homepage: 'https://github.com/trek10inc/serverless-cloudformation-changesets'
 description: 'Natively deploy to CloudFormation via Change sets, instead of directly. Allowing you to queue changes, and safely require escalated roles for final deployment.'
-stars: 7
+stars: 8
 stars_trend: up
-stars_diff: 5
+stars_diff: 1
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 7
-issues: 1
-issues_trend: up
-issues_diff: 1
+watchers: 8
+issues: 0
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -39,7 +39,8 @@ plugins:
 ```
 
 ## Usage
-Add `--changeset` option to the sls deployment command, ex:
+#### CLI options
+Add `--changeset` option to the sls deployment command, e.g.:
 ```bash
 $ sls deploy --changeset --stage dev --region us-east-1
 ```
@@ -48,4 +49,14 @@ $ sls deploy --changeset --stage dev --region us-east-1
 $ sls deploy --changeset your-changeset-name --stage dev --region us-east-1
 ```
 
+#### YAML settings
+```yaml
+custom:
+  cf-changesets:
+    changeSetName: whatever # optional
+    requireChangeSet: boolean # optional defaults to false
+```
+`requireChangeSet` - if true, ChangeSets will be created without providing `--changeset` option to the `sls deploy` command.
+
+## Notice
 If CloudFormation Stack doesn't exist and custom `provider.deploymentBucket` was specified, this plugin will create a new stack without template, resources. The stack will be in the `REVIEW_IN_PROGRESS` state.

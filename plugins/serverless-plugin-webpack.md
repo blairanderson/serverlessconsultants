@@ -5,15 +5,15 @@ repo: goldwasserexchange/serverless-plugin-webpack
 homepage: 'https://github.com/goldwasserexchange/serverless-plugin-webpack'
 description: 'A serverless plugin to automatically bundle your functions individually with webpack'
 stars: 38
-stars_trend: up
-stars_diff: 3
+stars_trend: 
+stars_diff: 0
 forks: 11
-forks_trend: up
-forks_diff: 1
+forks_trend: 
+forks_diff: 0
 watchers: 38
-issues: 9
-issues_trend: up
-issues_diff: 3
+issues: 4
+issues_trend: down
+issues_diff: -5
 ---
 
 

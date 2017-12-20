@@ -4,13 +4,13 @@ title: Serverless S3bucket Sync
 repo: sbstjn/serverless-s3bucket-sync
 homepage: 'https://github.com/sbstjn/serverless-s3bucket-sync'
 description: 'Sync a local folder with a S3 bucket after sls deploy'
-stars: 9
-stars_trend: 
-stars_diff: 0
+stars: 10
+stars_trend: up
+stars_diff: 1
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 9
+watchers: 10
 issues: 1
 issues_trend: 
 issues_diff: 0

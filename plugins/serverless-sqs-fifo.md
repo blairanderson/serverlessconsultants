@@ -3,28 +3,27 @@ layout: plugin
 title: Serverless Sqs Fifo
 repo: vortarian/serverless-sqs-fifo
 homepage: 'https://github.com/vortarian/serverless-sqs-fifo'
-description: "A serverless plugin to handle creation of sqs fifo queue's in aws (stop-gap)"
+description: 'A serverless plugin to handle creation of sqs fifo queue's in aws (stop-gap)'
 stars: 4
-stars_trend:
+stars_trend: 
 stars_diff: 0
 forks: 1
-forks_trend:
+forks_trend: 
 forks_diff: 0
 watchers: 4
 issues: 3
-issues_trend:
+issues_trend: 
 issues_diff: 0
 ---
+
 
 # serverless-sqs-fifo
 
 ## Summary
-
-Setups up SQS fifo queues - at the time of this writing cloud formation does not support them, so serverless does not support them. This is considered a stop gap until cloudformation provides support.
+Setups up SQS fifo queues - at the time of this writing cloud formation does not support them, so serverless does not support them.  This is considered a stop gap until cloudformation provides support.
 
 ## Usage
-
-Add the yaml to create the queues in custom.sqs.queues, then reference the queue arn & url via the <logical_name>.<url|arn>, as below with `custom.sqs.queues.deaLetterQueue.arn`, `custom.sqs.queues.deaLetterQueue.url`, `custom.sqs.queues.applicationQueue.arn`, `custom.sqs.queues.applicationQueue.url`. The queue's are created in the order they are specified and deleted in the reverse order they are specified. This is important for depdenencies. The below example includes a modified s3 crypt mod from github.com/vortarian/serverless-crypt
+Add the yaml to create the queues in custom.sqs.queues, then reference the queue arn & url via the <logical_name>.<url|arn>, as below with `custom.sqs.queues.deaLetterQueue.arn`, `custom.sqs.queues.deaLetterQueue.url`, `custom.sqs.queues.applicationQueue.arn`, `custom.sqs.queues.applicationQueue.url`.  The queue's are created in the order they are specified and deleted in the reverse order they are specified.  This is important for depdenencies.  The below example includes a modified s3 crypt mod from github.com/vortarian/serverless-crypt
 
 ```
 plugins:
@@ -88,7 +87,7 @@ provider:
          - 's3:Get*'
        Resource:
          - "arn:aws:s3:::${self:provider.deploymentBucket}/crypt/${self:provider.stage}/serverless-crypt.json"
-    -
+    - 
       Effect: "Allow"
       Action:
         - "sqs:ChangeMessageVisibility"
@@ -113,7 +112,7 @@ functions:
     environment: # Function level environment variables
       SANDBOX: 1
       QUEUE_URL: custom.sqs.queues.applicationQueue.url
-    events:
+    events: 
       - schedule:
           rate: rate(1 minute) # Keep this frequent cause we want lambdas to be around to deal with failures
         enabled: true
@@ -121,4 +120,6 @@ functions:
           topicName: "R${env:STAGE}TriggerProcessQueue"
           displayName: "trigger"
         enabled: true
+
+
 ```

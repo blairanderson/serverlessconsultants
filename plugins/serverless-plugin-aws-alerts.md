@@ -7,9 +7,9 @@ description: 'A Serverless plugin to easily add CloudWatch alarms to functions'
 stars: 63
 stars_trend: 
 stars_diff: 0
-forks: 22
-forks_trend: 
-forks_diff: 0
+forks: 23
+forks_trend: up
+forks_diff: 1
 watchers: 63
 issues: 8
 issues_trend: 

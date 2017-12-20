@@ -3,26 +3,27 @@ layout: plugin
 title: Serverless Plugin Stage Variables
 repo: svdgraaf/serverless-plugin-stage-variables
 homepage: 'https://github.com/svdgraaf/serverless-plugin-stage-variables'
-description: "Add stage variables for Serverless 1.x to ApiGateway, so you can use variables in your Lambda's"
+description: 'Add stage variables for Serverless 1.x to ApiGateway, so you can use variables in your Lambda's'
 stars: 17
-stars_trend:
+stars_trend: 
 stars_diff: 0
-forks: 12
-forks_trend:
-forks_diff: 0
+forks: 11
+forks_trend: down
+forks_diff: -1
 watchers: 17
 issues: 1
-issues_trend:
+issues_trend: 
 issues_diff: 0
 ---
 
-# serverless-plugin-stage-variables
 
+# serverless-plugin-stage-variables
 Add stage variables for Serverless 1.x to ApiGateway, so you can use variables (and CloudFormation references!) in your Lambda's.
 
-# Usage
 
+# Usage
 ```yaml
+
 custom:
   stageVariables:
     bucket_name: ${env.BUCKET_NAME}
@@ -40,5 +41,5 @@ module.exports.foobar = (event, context, cb) => {
   // event.stageVariables.bucket_name
   // event.stageVariables.endpoint
   // event.stageVariables.foo
-};
+}
 ```

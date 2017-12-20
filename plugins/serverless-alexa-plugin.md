@@ -1,20 +1,21 @@
 ---
-layout: "plugin"
-title: "Serverless Alexa Plugin"
-repo: "rajington/serverless-alexa-plugin"
-homepage: "https://github.com/rajington/serverless-alexa-plugin"
-description: "Serverless plugin to support Alexa Lambda events"
+layout: plugin
+title: Serverless Alexa Plugin
+repo: rajington/serverless-alexa-plugin
+homepage: 'https://github.com/rajington/serverless-alexa-plugin'
+description: 'Serverless plugin to support Alexa Lambda events'
 stars: 15
-stars_trend:
+stars_trend: 
 stars_diff: 0
 forks: 0
-forks_trend:
+forks_trend: 
 forks_diff: 0
 watchers: 15
 issues: 1
-issues_trend:
+issues_trend: 
 issues_diff: 0
 ---
+
 
 ## [Serverless Framework now supports Alexa Events directly, without this plugin!](https://serverless.com/framework/docs/providers/aws/events/alexa-skill/)
 
