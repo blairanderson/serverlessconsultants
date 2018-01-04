@@ -7,13 +7,13 @@ description: 'A serverless framework plugin to install multiple lambda functions
 stars: 10
 stars_trend: 
 stars_diff: 0
-forks: 9
-forks_trend: up
-forks_diff: 1
+forks: 10
+forks_trend: 
+forks_diff: 0
 watchers: 10
 issues: 2
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 

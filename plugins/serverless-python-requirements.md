@@ -4,23 +4,24 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 120
-stars_trend: up
-stars_diff: 3
-forks: 36
-forks_trend: up
-forks_diff: 3
-watchers: 120
-issues: 33
-issues_trend: up
-issues_diff: 6
+stars: 128
+stars_trend: 
+stars_diff: 0
+forks: 37
+forks_trend: 
+forks_diff: 0
+watchers: 128
+issues: 26
+issues_trend: 
+issues_diff: 0
 ---
 
 
 # Serverless Python Requirements
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![circleci](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser/master.svg)](https://circleci.com/gh/UnitedIncome/serverless-python-requirements)
+[![CircleCI](https://circleci.com/gh/UnitedIncome/serverless-python-requirements.svg?style=svg)](https://circleci.com/gh/UnitedIncome/serverless-python-requirements)
+[![appveyor](https://ci.appveyor.com/api/projects/status/biel93xc535nxvi2?svg=true)](https://ci.appveyor.com/project/dschep/serverless-python-requirements)
 [![npm](https://nodei.co/npm/serverless-python-requirements.png?mini=true)](https://www.npmjs.com/package/serverless-python-requirements)
 
 A Serverless v1.x plugin to automatically bundle dependencies from
@@ -189,4 +190,5 @@ For usage of `dockerizePip` on Windows do Step 1 only if running serverless on w
  * [@Tethik](https://github.com/Tethik) - adding usePipenv option
  * [@miketheman](https://github.com/miketheman) - fixing bug with includes when using zip option
  * [@wattdave](https://github.com/wattdave) - fixing bug when using `deploymentBucket`
- * [@heri16](https://github.com/heri16) - fixing Docker support in Windows.
+ * [@heri16](https://github.com/heri16) - fixing Docker support in Windows
+ * [@ryansb](https://github.com/ryansb) - package individually support

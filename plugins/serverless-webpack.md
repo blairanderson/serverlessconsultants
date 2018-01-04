@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 476
-stars_trend: up
-stars_diff: 10
-forks: 143
-forks_trend: up
-forks_diff: 2
-watchers: 476
-issues: 22
-issues_trend: up
-issues_diff: 1
+stars: 489
+stars_trend: 
+stars_diff: 0
+forks: 144
+forks_trend: 
+forks_diff: 0
+watchers: 489
+issues: 19
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -48,6 +48,7 @@ WebPack's [Tree-Shaking][link-webpack-tree] optimization.
 
 * Improved extensibility for plugin authors (see _For Developers_ section)
 * Serverless 1.12+ is now required
+* Support of local `file:...` module references in package.json
 
 For the complete release notes see the end of this document.
 
@@ -264,6 +265,13 @@ custom:
 
 If you specify a module in both arrays, `forceInclude` and `forceExclude`, the
 exclude wins and the module will not be packaged.
+
+#### Local modules
+
+You can use `file:` version references in your `package.json` to use a node module
+from a local folder (e.g. `"mymodule": "file:../../myOtherProject/mymodule"`).
+With that you can do test deployments from the local machine with different
+module versions or modules before they are published officially.
 
 #### Examples
 
@@ -519,6 +527,10 @@ plugin when running a command or invoked by a hook.
 
 ## Release Notes
 
+* 4.2.0
+  * Support local file references in package.json [#263][link-263]
+  * Updated used tools (dev dependencies)
+
 * 4.1.0
   * Prohibit manual entry configuration with individual packaging [#272][link-272]
   * Fixed bug with stats in webpack config for individual packaging [#278][link-278]
@@ -671,3 +683,5 @@ plugin when running a command or invoked by a hook.
 [link-279]: https://github.com/serverless-heaven/serverless-webpack/issues/279
 [link-276]: https://github.com/serverless-heaven/serverless-webpack/issues/276
 [link-269]: https://github.com/serverless-heaven/serverless-webpack/issues/269
+
+[link-263]: https://github.com/serverless-heaven/serverless-webpack/issues/263

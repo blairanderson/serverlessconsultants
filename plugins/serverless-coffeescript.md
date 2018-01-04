@@ -4,13 +4,13 @@ title: Serverless Coffeescript
 repo: duanefields/serverless-coffeescript
 homepage: 'https://github.com/duanefields/serverless-coffeescript'
 description: 'A Serverless plugin to compile your CoffeeScript into JavaScript at deployment'
-stars: 4
+stars: 5
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 3
 issues_trend: 
 issues_diff: 0

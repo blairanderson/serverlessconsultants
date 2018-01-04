@@ -3,6 +3,6 @@
 layout: topic
 topic: mocha
 title: mocha Serverless Plugins
-description: '2 mocha ServerLess Plugins'
-count: 2
+description: '1 mocha ServerLess Plugins'
+count: 1
 ---

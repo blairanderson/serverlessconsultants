@@ -3,6 +3,6 @@
 layout: topic
 topic: aws
 title: aws Serverless Plugins
-description: '31 aws ServerLess Plugins'
-count: 31
+description: '28 aws ServerLess Plugins'
+count: 28
 ---

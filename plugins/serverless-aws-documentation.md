@@ -4,13 +4,13 @@ title: Serverless Aws Documentation
 repo: 9cookies/serverless-aws-documentation
 homepage: 'https://github.com/9cookies/serverless-aws-documentation'
 description: 'Serverless plugin to add documentation and models to the serverless generated API Gateway'
-stars: 76
-stars_trend: up
-stars_diff: 2
-forks: 34
-forks_trend: up
-forks_diff: 1
-watchers: 76
+stars: 79
+stars_trend: 
+stars_diff: 0
+forks: 35
+forks_trend: 
+forks_diff: 0
+watchers: 79
 issues: 8
 issues_trend: 
 issues_diff: 0
@@ -161,6 +161,34 @@ custom:
         description: "Model for creating something"
         contentType: "application/json"
         schema: ${file(models/create_request.json)}
+```
+
+Within the schema, you can reference and nest any of your models with the `$ref` keyword, its value should be something like `{{model: YourModelName}}`. For example:
+
+```YAML
+custom:
+  documentation:
+    models:
+      -
+        name: "Address"
+        description: "This is an address"
+        contentType: "application/json"
+        schema:
+          type: "object"
+          properties:
+            street:
+              type: "string"
+      -
+        name: "Customer"
+        description: "This is a customer"
+        contentType: "application/json"
+        schema:
+          type: "object"
+          properties:
+            name:
+              type: "string"
+            address:
+              $ref: "{{model: Address}}"
 ```
 
 ### Function specific documentation

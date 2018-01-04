@@ -4,13 +4,13 @@ title: Serverless Dotnet
 repo: fruffin/serverless-dotnet
 homepage: 'https://github.com/fruffin/serverless-dotnet'
 description: 'A serverless plugin to run 'dotnet' commands as part of the deploy process'
-stars: 12
+stars: 14
 stars_trend: 
 stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 12
+watchers: 14
 issues: 0
 issues_trend: 
 issues_diff: 0

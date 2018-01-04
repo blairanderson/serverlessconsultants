@@ -7,7 +7,7 @@ description: 'Bundle with Browserify, transpile with Babel to ES5 and minify wit
 stars: 52
 stars_trend: 
 stars_diff: 0
-forks: 7
+forks: 9
 forks_trend: 
 forks_diff: 0
 watchers: 52

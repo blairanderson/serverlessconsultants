@@ -4,21 +4,21 @@ title: Serverless Plugin Typescript
 repo: graphcool/serverless-plugin-typescript
 homepage: 'https://github.com/graphcool/serverless-plugin-typescript'
 description: 'Serverless plugin for zero-config Typescript support.'
-stars: 127
-stars_trend: up
-stars_diff: 4
-forks: 27
-forks_trend: up
-forks_diff: 2
-watchers: 127
+stars: 129
+stars_trend: 
+stars_diff: 0
+forks: 29
+forks_trend: 
+forks_diff: 0
+watchers: 129
 issues: 16
-issues_trend: down
-issues_diff: -1
+issues_trend: 
+issues_diff: 0
 ---
 
 
 # serverless-plugin-typescript
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![npm version](https://badge.fury.io/js/serverless-plugin-typescript.svg)](https://badge.fury.io/js/serverless-plugin-typescript) [![CircleCI](https://circleci.com/gh/graphcool/serverless-plugin-typescript.svg?style=shield)](https://circleci.com/gh/graphcool/serverless-plugin-typescript) [![Greenkeeper badge](https://badges.greenkeeper.io/graphcool/serverless-plugin-typescript.svg)](https://greenkeeper.io/)
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![npm version](https://badge.fury.io/js/serverless-plugin-typescript.svg)](https://badge.fury.io/js/serverless-plugin-typescript) [![Build Status](https://travis-ci.org/graphcool/serverless-plugin-typescript.svg?branch=master)](https://travis-ci.org/graphcool/serverless-plugin-typescript)
 
 Serverless plugin for zero-config Typescript support
 

@@ -4,13 +4,13 @@ title: Serverless Plugin Elastic Beanstalk
 repo: rawphp/serverless-plugin-elastic-beanstalk
 homepage: 'https://github.com/rawphp/serverless-plugin-elastic-beanstalk'
 description: 'A serverless plugin to deploy applications to AWS ElasticBeanstalk.'
-stars: 6
+stars: 7
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 6
+watchers: 7
 issues: 1
 issues_trend: 
 issues_diff: 0
