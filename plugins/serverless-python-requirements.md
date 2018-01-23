@@ -4,14 +4,14 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 128
+stars: 148
 stars_trend: 
 stars_diff: 0
-forks: 37
+forks: 43
 forks_trend: 
 forks_diff: 0
-watchers: 128
-issues: 26
+watchers: 148
+issues: 21
 issues_trend: 
 issues_diff: 0
 ---
@@ -20,9 +20,9 @@ issues_diff: 0
 # Serverless Python Requirements
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![CircleCI](https://circleci.com/gh/UnitedIncome/serverless-python-requirements.svg?style=svg)](https://circleci.com/gh/UnitedIncome/serverless-python-requirements)
+[![CircleCI](https://circleci.com/gh/UnitedIncome/serverless-python-requirements.svg?style=shield)](https://circleci.com/gh/UnitedIncome/serverless-python-requirements)
 [![appveyor](https://ci.appveyor.com/api/projects/status/biel93xc535nxvi2?svg=true)](https://ci.appveyor.com/project/dschep/serverless-python-requirements)
-[![npm](https://nodei.co/npm/serverless-python-requirements.png?mini=true)](https://www.npmjs.com/package/serverless-python-requirements)
+[![npm](https://img.shields.io/npm/v/serverless-python-requirements.svg)](https://www.npmjs.com/package/serverless-python-requirements)
 
 A Serverless v1.x plugin to automatically bundle dependencies from
 `requirements.txt` and make them available in your `PYTHONPATH`.
@@ -58,6 +58,29 @@ custom:
     dockerImage: <image name>:tag
 ```
 This must be the full image name and tag to use, including the runtime specific tag if applicable.
+
+Alternatively, you can define your Docker image in your own Dockerfile and add the following to your `serverless.yml`:
+```yaml
+custom:
+  pythonRequirements:
+    dockerFile: ./path/to/Dockerfile
+```
+With `Dockerfile` the path to the Dockerfile that must be in the current folder (or a subfolder).
+Please note the `dockerImage` and the `dockerFile` are mutually exclusive.
+
+To install requirements from private git repositories, add the following to your `serverless.yml`:
+```yaml
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    dockerSsh: true
+```
+The `dockerSsh` option will mount your `$HOME/.ssh/id_rsa` and `$HOME/.ssh/known_hosts` as a
+volume in the docker container. If your SSH key is password protected, you can use `ssh-agent`
+because `$SSH_AUTH_SOCK` is also mounted & the env var set.
+It is important that the host of your private repositories has already been added in your
+`$HOME/.ssh/known_hosts` file, as the install process will fail otherwise due to host authenticity
+failure.
 
 [:checkered_flag: Windows notes](#checkered_flag-windows-dockerizepip-notes)
 
@@ -169,6 +192,8 @@ OR
 
 * [Install Docker](https://docs.docker.com/docker-for-mac/install/) and use the [`dockerizePip` option](#cross-compiling).
 
+Also, [brew seems to cause issues with pipenv](https://github.com/dschep/lambda-decorators/issues/4#event-1418928080),
+so make sure you install pipenv using pip.
 
 ## :checkered_flag: Windows `dockerizePip` notes
 For usage of `dockerizePip` on Windows do Step 1 only if running serverless on windows, or do both Step 1 & 2 if running serverless inside WSL.
@@ -192,3 +217,5 @@ For usage of `dockerizePip` on Windows do Step 1 only if running serverless on w
  * [@wattdave](https://github.com/wattdave) - fixing bug when using `deploymentBucket`
  * [@heri16](https://github.com/heri16) - fixing Docker support in Windows
  * [@ryansb](https://github.com/ryansb) - package individually support
+ * [@cgrimal](https://github.com/cgrimal) - Private SSH Repo access in Docker & `dockerFile` option
+  to build a custom docker image.

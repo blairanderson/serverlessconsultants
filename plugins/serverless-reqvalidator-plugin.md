@@ -4,13 +4,13 @@ title: Serverless Reqvalidator Plugin
 repo: RafPe/serverless-reqvalidator-plugin
 homepage: 'https://github.com/RafPe/serverless-reqvalidator-plugin'
 description: 'Serverless plugin to add request validator to API Gateway methods'
-stars: 6
+stars: 8
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 6
+watchers: 8
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -20,16 +20,24 @@ issues_diff: 0
 # serverless-reqvalidator-plugin
 Serverless plugin to set specific validator request on method
 
-# Installation 
+## Installation 
 ```
 npm install serverless-reqvalidator-plugin
 ```
 
-# Using plugin
+## Requirements
+This require you to have documentation plugin installed
+```
+serverless-aws-documentation
+```
+
+
+## Using plugin
 Specify plugin 
 ```
 plugins:
-    - serverless-reqvalidator-plugin
+  - serverless-reqvalidator-plugin
+  - serverless-aws-documentation
 ```
 
 

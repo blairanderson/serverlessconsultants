@@ -4,13 +4,13 @@ title: Serverless Plugin Scripts
 repo: mvila/serverless-plugin-scripts
 homepage: 'https://github.com/mvila/serverless-plugin-scripts'
 description: 'Add scripting capabilities to the Serverless Framework'
-stars: 21
+stars: 23
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 21
+watchers: 23
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -64,7 +64,7 @@ custom:
 
 The next time you run `serverless deploy`, your script will be automatically invoked during the `deploy:createDeploymentArtifacts` lifecycle event.
 
-To find out all existing lifecycle events, check out the [Serverless Framework documentation](https://serverless.com/framework/docs/).
+To find out about existing lifecycle events, check out [this page](https://gist.github.com/HyperBrain/50d38027a8f57778d5b0f135d80ea406).
 
 ## Author
 

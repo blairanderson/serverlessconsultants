@@ -7,7 +7,7 @@ description: 'A serverless plugin to run 'dotnet' commands as part of the deploy
 stars: 14
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 6
 forks_trend: 
 forks_diff: 0
 watchers: 14

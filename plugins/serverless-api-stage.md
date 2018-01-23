@@ -7,11 +7,11 @@ description: 'Serverless API Stage plugin, enables stage variables and logging f
 stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
 watchers: 8
-issues: 3
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---

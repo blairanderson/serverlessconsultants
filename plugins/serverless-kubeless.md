@@ -4,14 +4,14 @@ title: Serverless Kubeless
 repo: serverless/serverless-kubeless
 homepage: 'https://github.com/serverless/serverless-kubeless'
 description: 'Serverless plugin for deploying functions to Kubeless.'
-stars: 76
+stars: 80
 stars_trend: 
 stars_diff: 0
-forks: 13
+forks: 14
 forks_trend: 
 forks_diff: 0
-watchers: 76
-issues: 12
+watchers: 80
+issues: 6
 issues_trend: 
 issues_diff: 0
 ---

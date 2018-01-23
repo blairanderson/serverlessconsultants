@@ -4,13 +4,13 @@ title: Serverless Plugin Nested Stacks
 repo: concon121/serverless-plugin-nested-stacks
 homepage: 'https://github.com/concon121/serverless-plugin-nested-stacks'
 description: 'Yet another AWS nested stack plugin!'
-stars: 1
+stars: 2
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 2
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -21,6 +21,11 @@ issues_diff: 0
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 Nested stacks for the Serverless Framework!
+
+## Installation
+Run `npm install` in your Serverless project.
+
+    $ npm install serverless-aws-nested-stacks --save-dev
 
 ## Intro
 
@@ -40,6 +45,7 @@ custom:
     stacks:
       - id: MyGroovyNestedStack                  # Logical ID (Required)
         template: nested-template.yml            # Template file name (Required)
+        enabled: true                            # optional flag for enabled/disabling substack
         timeout: 60                              # Minutes before stack creation times out.
         parameters:                              # Stack parameters as key value pairs
           - InstanceType: t1.micro

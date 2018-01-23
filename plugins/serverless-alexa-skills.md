@@ -4,13 +4,13 @@ title: Serverless Alexa Skills
 repo: marcy-terui/serverless-alexa-skills
 homepage: 'https://github.com/marcy-terui/serverless-alexa-skills'
 description: 'Manage your Alexa Skills with Serverless Framework.'
-stars: 15
+stars: 20
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 15
+watchers: 20
 issues: 1
 issues_trend: 
 issues_diff: 0
@@ -48,6 +48,8 @@ npm install serverless-alexa-skills
 #### First, you need to create a ["Security Profile"](https://developer.amazon.com/docs/login-with-amazon/security-profile.html) and configure ["Login with Amazon"](https://developer.amazon.com/ja/docs/login-with-amazon/web-docs.html).
 
 #### Next, Check your Client ID, Client Secret and [Vendor ID](https://developer.amazon.com/mycid.html) at [Amazon developer console](https://developer.amazon.com/home.html).
+
+See: [the step-by-step guide](https://github.com/marcy-terui/serverless-alexa-skills/wiki/How-to-get-your-%22Login-with-Amazon%22-credentials)
 
 # Configuration
 
@@ -170,6 +172,9 @@ Plugin: AlexaSkills
 alexa build ................... Update and buid your Alexa Interaction Models
     --dryRun / -d ...................... Dry run (Only output the diff)
 ```
+
+# How to use
+See: [the post of Serverless Blog](https://serverless.com/blog/how-to-manage-your-alexa-skills-with-serverless/)
 
 
 Development

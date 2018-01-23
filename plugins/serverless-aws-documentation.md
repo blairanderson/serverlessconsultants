@@ -4,14 +4,14 @@ title: Serverless Aws Documentation
 repo: 9cookies/serverless-aws-documentation
 homepage: 'https://github.com/9cookies/serverless-aws-documentation'
 description: 'Serverless plugin to add documentation and models to the serverless generated API Gateway'
-stars: 79
+stars: 83
 stars_trend: 
 stars_diff: 0
 forks: 35
 forks_trend: 
 forks_diff: 0
-watchers: 79
-issues: 8
+watchers: 83
+issues: 9
 issues_trend: 
 issues_diff: 0
 ---
@@ -27,7 +27,7 @@ documentation for API documentation).
 
 ## What is AWS API Gateway documentation?
 
-Amazon introduced a new documentation feature for it's API Gateway on AWS on December 1st. With this you can add manually written documentation to all parts of API Gateway such as resources, requests, responses or single path or query parameters. When exporting Swagger from API Gateway these documentation is added to the other information to create a more human understandable documentation.
+Amazon introduced a new documentation feature for it's API Gateway on AWS at the end of 2016. With this you can add manually written documentation to all parts of API Gateway such as resources, requests, responses or single path or query parameters. When exporting Swagger from API Gateway these documentation is added to the other information to create a more human understandable documentation.
 
 In addition to this documentation this plugin also adds support to add models to API Gateway and use it with the serverless functions. Models are JSON Schemas that define the structure of request or response bodies. This includes property structure, their types and their validation. More about this you'll find here: https://spacetelescope.github.io/understanding-json-schema/
 

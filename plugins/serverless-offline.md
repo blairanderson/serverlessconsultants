@@ -4,14 +4,14 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 927
+stars: 971
 stars_trend: 
 stars_diff: 0
-forks: 185
+forks: 197
 forks_trend: 
 forks_diff: 0
-watchers: 927
-issues: 74
+watchers: 971
+issues: 72
 issues_trend: 
 issues_diff: 0
 ---
@@ -110,7 +110,7 @@ All CLI options are optional:
 --corsAllowOrigin           Used as default Access-Control-Allow-Origin header value for responses. Delimit multiple values with commas. Default: '*'
 --corsAllowHeaders          Used as default Access-Control-Allow-Headers header value for responses. Delimit multiple values with commas. Default: 'accept,content-type,x-api-key'
 --corsDisallowCredentials   When provided, the default Access-Control-Allow-Credentials header value will be passed as 'false'. Default: true
---exec "<script>"           When provided, a shell script is executed when the server starts up, and the server will shut domn after handling this command.
+--exec "<script>"           When provided, a shell script is executed when the server starts up, and the server will shut down after handling this command.
 --noAuth                    Turns off all authorizers
 ```
 

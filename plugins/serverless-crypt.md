@@ -4,13 +4,13 @@ title: Serverless Crypt
 repo: marcy-terui/serverless-crypt
 homepage: 'https://github.com/marcy-terui/serverless-crypt'
 description: 'Securing the secrets on Serverless Framework by AWS KMS encryption.'
-stars: 51
+stars: 55
 stars_trend: 
 stars_diff: 0
-forks: 10
+forks: 11
 forks_trend: 
 forks_diff: 0
-watchers: 51
+watchers: 55
 issues: 9
 issues_trend: 
 issues_diff: 0
@@ -36,6 +36,10 @@ Securing the secrets on Serverless Framework by AWS KMS encryption.
 
 ```sh
 npm install serverless-crypt --save
+```
+For now ([issue to track](https://github.com/marcy-terui/serverless-crypt/issues/2)), you also need to install serverless locally:
+```sh
+npm install serverless --save
 ```
 
 # Configuration

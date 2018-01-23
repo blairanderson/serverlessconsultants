@@ -7,7 +7,7 @@ description: 'A plugin to sync local directories and S3 prefixes for Serverless 
 stars: 21
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 5
 forks_trend: 
 forks_diff: 0
 watchers: 21

@@ -7,7 +7,7 @@ description: 'Plugin which auto-subscribes a log delivery lambda function to lam
 stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 7
 forks_trend: 
 forks_diff: 0
 watchers: 4
