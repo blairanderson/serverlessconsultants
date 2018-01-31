@@ -7,7 +7,7 @@ description: 'Serverless plugin to run a local SNS server and call serverless SN
 stars: 19
 stars_trend: 
 stars_diff: 0
-forks: 9
+forks: 10
 forks_trend: 
 forks_diff: 0
 watchers: 19

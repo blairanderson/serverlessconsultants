@@ -7,7 +7,7 @@ description: 'Plugin to enable binary support in AWS API Gateway.'
 stars: 42
 stars_trend: 
 stars_diff: 0
-forks: 10
+forks: 11
 forks_trend: 
 forks_diff: 0
 watchers: 42

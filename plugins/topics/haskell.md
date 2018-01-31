@@ -1,8 +1,8 @@
 ---
 # NOTE: THIS FILE IS GENERATED - DO NOT ATTEMPT TO CREATE A PULL REQUEST TO UPDATE THE DATA. 
 layout: topic
-topic: aws-lambda
-title: aws-lambda Serverless Plugins
-description: '24 aws-lambda ServerLess Plugins'
-count: 24
+topic: haskell
+title: haskell Serverless Plugins
+description: '1 haskell ServerLess Plugins'
+count: 1
 ---

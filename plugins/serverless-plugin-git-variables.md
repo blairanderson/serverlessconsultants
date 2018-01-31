@@ -4,13 +4,13 @@ title: Serverless Plugin Git Variables
 repo: jacob-meacham/serverless-plugin-git-variables
 homepage: 'https://github.com/jacob-meacham/serverless-plugin-git-variables'
 description: 'A Serverless plugin to expose git variables (branch name, HEAD description, full commit hash) to your serverless services'
-stars: 15
+stars: 16
 stars_trend: 
 stars_diff: 0
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 15
+watchers: 16
 issues: 1
 issues_trend: 
 issues_diff: 0

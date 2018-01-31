@@ -11,7 +11,7 @@ forks: 3
 forks_trend: 
 forks_diff: 0
 watchers: 38
-issues: 8
+issues: 6
 issues_trend: 
 issues_diff: 0
 ---
@@ -30,6 +30,7 @@ written in [Clojurescript](https://clojurescript.org/).
 
 ``` shell
 $ lein new serverless-cljs example
+example$ lein deps
 ```
 
 Will generate an `example` directory containing a minimal `serverless.yml` and
