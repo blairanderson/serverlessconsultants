@@ -4,14 +4,14 @@ title: Serverless Api Stage
 repo: leftclickben/serverless-api-stage
 homepage: 'https://github.com/leftclickben/serverless-api-stage'
 description: 'Serverless API Stage plugin, enables stage variables and logging for AWS API Gateway.'
-stars: 8
+stars: 9
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 8
-issues: 4
+watchers: 9
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -76,3 +76,8 @@ raising an [issue](https://github.com/leftclickben/serverless-api-stage/issues).
 
 Code changes or additions should include corresponding unit test changes or additions.  Tests can be run locally using 
 `npm test`.  This requires global installation of `jshint` and `mocha` (`npm install -g jshint mocha`).
+
+Please don't update the `version` attribute in `package.json`, as multiple changes might be bundled into a single 
+release.  Version bumps will be done in separate pull requests at the time of creating the release and publishing
+to npm.
+

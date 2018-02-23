@@ -4,14 +4,14 @@ title: Serverless Offline Sns
 repo: mj1618/serverless-offline-sns
 homepage: 'https://github.com/mj1618/serverless-offline-sns'
 description: 'Serverless plugin to run a local SNS server and call serverless SNS handlers with events notifications.'
-stars: 19
+stars: 20
 stars_trend: 
 stars_diff: 0
 forks: 10
 forks_trend: 
 forks_diff: 0
-watchers: 19
-issues: 0
+watchers: 20
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -55,6 +55,8 @@ Let serverless know about the plugin
 plugins:
   - serverless-offline-sns
 ```
+
+Note that ordering matters when used with serverless-offline and serverless-webpack. serverless-webpack must be specified at the start of the list of plugins. 
 
 Configure the plugin with your offline SNS endpoint, host to listen on, and a free port the plugin can use.
 

@@ -7,7 +7,7 @@ description: 'A Serverless plugin to copy a .env file into the serverless packag
 stars: 10
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 3
 forks_trend: 
 forks_diff: 0
 watchers: 10

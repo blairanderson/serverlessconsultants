@@ -4,14 +4,14 @@ title: Serverless Api Cloudfront
 repo: Droplr/serverless-api-cloudfront
 homepage: 'https://github.com/Droplr/serverless-api-cloudfront'
 description: 'Plugin that adds CloudFront distribution in front of your API Gateway for custom domain, CDN caching and access log.'
-stars: 33
+stars: 36
 stars_trend: 
 stars_diff: 0
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 33
-issues: 4
+watchers: 36
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---
@@ -68,4 +68,14 @@ custom:
     logging:
       bucket: my-bucket.s3.amazonaws.com
       prefix: my-prefix
+```
+
+### Notes
+
+* `domain` can be list, so if you want to add more domains, instead string you list multiple ones:
+
+```
+domain:
+  - my-custom-domain.com
+  - secondary-custom-domain.com
 ```

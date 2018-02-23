@@ -4,14 +4,14 @@ title: Serverless Haskell
 repo: seek-oss/serverless-haskell
 homepage: 'https://github.com/seek-oss/serverless-haskell'
 description: 'Deploying Haskell applications to AWS Lambda with Serverless'
-stars: 46
+stars: 56
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 46
-issues: 1
+watchers: 56
+issues: 7
 issues_trend: 
 issues_diff: 0
 ---
@@ -115,7 +115,8 @@ for documentation, including additional options to control the deployment.
 Integration tests are not run automatically due to the need for an AWS account.
 To run them manually:
 
-* Ensure you have the required dependencies: `curl`, [jq], [NPM] and [Stack].
+* Ensure you have the required dependencies: `curl`, [jq], [NPM], `pwgen` and
+  [Stack].
 * Get an AWS account and add the access credentials into your shell environment.
 * Run `./integration-test/run.sh`. The exit code indicates success.
 

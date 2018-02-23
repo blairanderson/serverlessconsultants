@@ -4,14 +4,14 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 529
+stars: 570
 stars_trend: 
 stars_diff: 0
-forks: 149
+forks: 155
 forks_trend: 
 forks_diff: 0
-watchers: 529
-issues: 23
+watchers: 570
+issues: 22
 issues_trend: 
 issues_diff: 0
 ---
@@ -75,7 +75,7 @@ custom:
   webpack: ./folder/my-webpack.config.js
 ```
 
-An base Webpack configuration might look like this:
+A base Webpack configuration might look like this:
 
 ```js
 // webpack.config.js
@@ -228,6 +228,12 @@ custom:
     packagePath: '../package.json' # relative path to custom package.json file.
 ```
 > Note that only relative path is supported at the moment.
+
+#### Usage with yarn
+
+Note that if auto-packing is enabled, the plugin will call `npm install`. If you are using yarn your `yarn.lock` file will be not be honored, which might lead to unexpected results as your dependencies will most likely not match (or be missing, as npm does not install packages in the same way as yarn).
+
+Yarn support is planned [#286][link-286]. Until then we recommend using npm when using auto-packing.
 
 #### Forced inclusion
 
@@ -486,6 +492,7 @@ All events (H) can be hooked by a plugin.
    -> webpack:validate:validate (H)
 -> webpack:compile
    -> webpack:compile:compile (H)
+   -> webpack:compile:watch:compile (H)
 -> webpack:package
    -> webpack:package:packExternalModules (H)
    -> webpack:package:packageModules (H)
@@ -526,6 +533,12 @@ plugin when running a command or invoked by a hook.
 ```
 
 ## Release Notes
+
+* 4.3.0
+  * Add new `webpack:compile:watch:compile` event [#315][link-315]
+  * Added note to README about using yarn [#316][link-316]
+  * Made babel dynamic example the default babel example [#253][link-253]
+  * Documentation fixes [#317][link-317] [#321][link-321]
 
 * 4.2.0
   * Support local file references in package.json [#263][link-263]
@@ -615,7 +628,7 @@ plugin when running a command or invoked by a hook.
 [link-webpack]: https://webpack.github.io/
 [link-babel]: https://babeljs.io/
 [link-webpack-loaders]: https://webpack.github.io/docs/loaders.html
-[link-webpack-libtarget]: https://webpack.github.io/docs/configuration.html#output-librarytarget
+[link-webpack-libtarget]: https://webpack.js.org/configuration/output/#output-librarytarget
 [link-webpack-tree]: https://webpack.js.org/guides/tree-shaking/
 [link-webpack-externals]: https://webpack.github.io/docs/configuration.html#externals
 [link-examples]: ./examples
@@ -685,3 +698,11 @@ plugin when running a command or invoked by a hook.
 [link-269]: https://github.com/serverless-heaven/serverless-webpack/issues/269
 
 [link-263]: https://github.com/serverless-heaven/serverless-webpack/issues/263
+
+[link-286]: https://github.com/serverless-heaven/serverless-webpack/issues/286
+
+[link-315]: https://github.com/serverless-heaven/serverless-webpack/issues/315
+[link-316]: https://github.com/serverless-heaven/serverless-webpack/issues/316
+[link-253]: https://github.com/serverless-heaven/serverless-webpack/issues/253
+[link-317]: https://github.com/serverless-heaven/serverless-webpack/pull/317
+[link-321]: https://github.com/serverless-heaven/serverless-webpack/pull/321

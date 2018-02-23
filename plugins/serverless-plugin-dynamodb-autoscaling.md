@@ -4,21 +4,21 @@ title: Serverless Plugin Dynamodb Autoscaling
 repo: medikoo/serverless-plugin-dynamodb-autoscaling
 homepage: 'https://github.com/medikoo/serverless-plugin-dynamodb-autoscaling'
 description: 'Auto generate auto scaling configuration for configured DynamoDB tables'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 4
 issues: 0
 issues_trend: 
 issues_diff: 0
 ---
 
 
-[![Build status][circleci-image]][circleci-url]
-[![Build status][appveyor-image]][appveyor-url]
+[![Build status][semaphore-image]][semaphore-url]
+[![Windows status][appveyor-image]][appveyor-url]
 [![Tests coverage][codecov-image]][codecov-url]
 ![Transpilation status][transpilation-image]
 [![npm version][npm-image]][npm-url]
@@ -156,8 +156,8 @@ custom:
 npm test
 ```
 
-[circleci-image]: https://img.shields.io/circleci/project/github/medikoo/serverless-plugin-dynamodb-autoscaling.svg
-[circleci-url]: https://circleci.com/gh/medikoo/serverless-plugin-dynamodb-autoscaling
+[semaphore-image]: https://semaphoreci.com/api/v1/medikoo/serverless-plugin-dynamodb-autoscaling/branches/master/badge.svg
+[semaphore-url]: https://semaphoreci.com/medikoo/serverless-plugin-dynamodb-autoscaling
 [appveyor-image]: https://img.shields.io/appveyor/ci/medikoo/serverless-plugin-dynamodb-autoscaling.svg
 [appveyor-url]: https://ci.appveyor.com/project/medikoo/serverless-plugin-dynamodb-autoscaling
 [codecov-image]: https://img.shields.io/codecov/c/github/medikoo/serverless-plugin-dynamodb-autoscaling.svg

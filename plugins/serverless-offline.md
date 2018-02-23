@@ -4,14 +4,14 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 999
+stars: 1071
 stars_trend: 
 stars_diff: 0
-forks: 199
+forks: 207
 forks_trend: 
 forks_diff: 0
-watchers: 999
-issues: 73
+watchers: 1071
+issues: 66
 issues_trend: 
 issues_diff: 0
 ---
@@ -151,6 +151,40 @@ custom:
 
 Here is the full list of [babel-register options](https://babeljs.io/docs/usage/require/)
 
+## Usage with Flow
+
+If you're using [Flow](https://flow.org/en/) in your service, you'll need to update your `babelOptions` as mentioned [above](#usage-with-babel).
+
+Ensure that `babel-preset-flow` and `transform-flow-strip-types` are installed and properly configured in your project.
+
+```
+yarn add -D babel-preset-env babel-preset-flow babel-plugin-transform-runtime babel-plugin-transform-flow-strip-types
+```
+
+Then, in your `.babelrc`:
+```
+{
+  "presets": [
+    "env",
+    "flow"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-flow-strip-types"
+  ]
+}
+```
+
+See the [docs](https://flow.org/en/docs/install/) for additional details on setting up Flow.
+
+Finally, add the `"flow"` preset to your `babelOptions`:
+
+```yml
+custom:
+  serverless-offline:
+    babelOptions:
+      presets: ["env", "flow"]
+```
 
 ## Token Authorizers
 

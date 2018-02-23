@@ -4,13 +4,13 @@ title: Serverless Apigateway Plugin
 repo: GFG/serverless-apigateway-plugin
 homepage: 'https://github.com/GFG/serverless-apigateway-plugin'
 description: 'Configure the AWS api gateway: Binary support, Headers and Body template mappings'
-stars: 5
+stars: 7
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 7
 issues: 1
 issues_trend: 
 issues_diff: 0
