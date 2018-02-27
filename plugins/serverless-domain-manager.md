@@ -7,13 +7,13 @@ description: 'Serverless plugin for managing custom domains with API Gateways.'
 stars: 118
 stars_trend: 
 stars_diff: 0
-forks: 35
-forks_trend: 
-forks_diff: 0
+forks: 36
+forks_trend: up
+forks_diff: 1
 watchers: 118
-issues: 17
-issues_trend: 
-issues_diff: 0
+issues: 18
+issues_trend: up
+issues_diff: 1
 ---
 
 

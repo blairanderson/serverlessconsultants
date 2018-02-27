@@ -7,9 +7,9 @@ description: 'Serverless plugin to add documentation and models to the serverles
 stars: 95
 stars_trend: 
 stars_diff: 0
-forks: 38
-forks_trend: 
-forks_diff: 0
+forks: 39
+forks_trend: up
+forks_diff: 1
 watchers: 95
 issues: 13
 issues_trend: 

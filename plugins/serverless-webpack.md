@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 570
-stars_trend: 
-stars_diff: 0
-forks: 155
-forks_trend: 
-forks_diff: 0
-watchers: 570
-issues: 22
-issues_trend: 
-issues_diff: 0
+stars: 576
+stars_trend: up
+stars_diff: 6
+forks: 156
+forks_trend: up
+forks_diff: 1
+watchers: 576
+issues: 24
+issues_trend: up
+issues_diff: 2
 ---
 
 
@@ -182,7 +182,7 @@ module.export = {
 }
 ```
 
-All the stats config can be found in [webpack's documentation](https://webpack.js.org/configuration/stats/)
+All the stats config can be found in [webpack's documentation][link-webpack-stats]
 
 
 ### Node modules / externals
@@ -627,10 +627,11 @@ plugin when running a command or invoked by a hook.
 
 [link-webpack]: https://webpack.github.io/
 [link-babel]: https://babeljs.io/
-[link-webpack-loaders]: https://webpack.github.io/docs/loaders.html
+[link-webpack-stats]: https://webpack.js.org/configuration/stats/
+[link-webpack-loaders]: https://webpack.js.org/concepts/loaders/
 [link-webpack-libtarget]: https://webpack.js.org/configuration/output/#output-librarytarget
 [link-webpack-tree]: https://webpack.js.org/guides/tree-shaking/
-[link-webpack-externals]: https://webpack.github.io/docs/configuration.html#externals
+[link-webpack-externals]: https://webpack.js.org/configuration/externals/
 [link-examples]: ./examples
 [link-serverless-offline]: https://www.npmjs.com/package/serverless-offline
 [link-serverless-dynamodb-local]: https://www.npmjs.com/package/serverless-dynamodb-local

@@ -7,9 +7,9 @@ description: 'Plugin to help manage multiple micro services under one main servi
 stars: 15
 stars_trend: 
 stars_diff: 0
-forks: 3
-forks_trend: 
-forks_diff: 0
+forks: 4
+forks_trend: up
+forks_diff: 1
 watchers: 15
 issues: 4
 issues_trend: 

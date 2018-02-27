@@ -11,9 +11,9 @@ forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 56
-issues: 7
-issues_trend: 
-issues_diff: 0
+issues: 6
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -55,6 +55,8 @@ Deploying Haskell code onto [AWS Lambda] using [Serverless].
 * Create `serverless.yml` with the following contents:
 
   ```yaml
+  service: myservice
+
   provider:
     name: aws
     runtime: nodejs6.10

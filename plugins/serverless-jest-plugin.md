@@ -7,9 +7,9 @@ description: 'A Serverless Plugin for the Serverless Framework which adds suppor
 stars: 45
 stars_trend: 
 stars_diff: 0
-forks: 13
-forks_trend: 
-forks_diff: 0
+forks: 14
+forks_trend: up
+forks_diff: 1
 watchers: 45
 issues: 12
 issues_trend: 

@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 162
-stars_trend: 
-stars_diff: 0
-forks: 45
-forks_trend: 
-forks_diff: 0
-watchers: 162
-issues: 22
-issues_trend: 
-issues_diff: 0
+stars: 164
+stars_trend: up
+stars_diff: 2
+forks: 47
+forks_trend: up
+forks_diff: 2
+watchers: 164
+issues: 23
+issues_trend: up
+issues_diff: 1
 ---
 
 
@@ -149,7 +149,7 @@ custom:
     fileName: requirements-prod.txt
 ```
 
-### Per-function requirements
+### Per-function requirements
 If you have different python functions, with different sets of requirements, you can avoid
 including all the unecessary dependencies of your functions by using the following structure:
 ```

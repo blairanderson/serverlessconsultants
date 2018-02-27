@@ -7,13 +7,13 @@ description: 'Exports an AWS SAM template for a service created with the Serverl
 stars: 43
 stars_trend: 
 stars_diff: 0
-forks: 12
-forks_trend: 
-forks_diff: 0
+forks: 13
+forks_trend: up
+forks_diff: 1
 watchers: 43
-issues: 7
-issues_trend: 
-issues_diff: 0
+issues: 9
+issues_trend: up
+issues_diff: 2
 ---
 
 
