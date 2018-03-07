@@ -4,13 +4,13 @@ title: Serverless Reqvalidator Plugin
 repo: RafPe/serverless-reqvalidator-plugin
 homepage: 'https://github.com/RafPe/serverless-reqvalidator-plugin'
 description: 'Serverless plugin to add request validator to API Gateway methods'
-stars: 10
+stars: 12
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 10
+watchers: 12
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -69,4 +69,55 @@ For every function you wish to use the validator set property `reqValidatorName:
           reqValidatorName: 'xMyRequestValidator'
 ```
 
+### Use Validator specified in different Stack
+The serverless framework allows us to share resources among several stacks. Therefore a CloudFormation Output has to be specified in one stack. This Output can be imported in another stack to make use of it. For more information see
+[here](https://serverless.com/framework/docs/providers/aws/guide/variables/#reference-cloudformation-outputs).
 
+Specify a request validator in a different stack:
+
+```
+plugins:
+  - serverless-reqvalidator-plugin
+service: my-service-a
+functions:
+  hello:
+    handler: handler.myHandler
+    events:
+      - http:
+          path: hello
+          reqValidatorName: 'myReqValidator'
+
+resources:
+  Resource:
+    xMyRequestValidator:
+      Type: "AWS::ApiGateway::RequestValidator"
+      Properties:
+        Name: 'my-req-validator'
+        RestApiId: 
+          Ref: ApiGatewayRestApi
+        ValidateRequestBody: true
+        ValidateRequestParameters: false
+  Outputs:
+    xMyRequestValidator:
+      Value:
+        Ref: my-req-validator
+      Export:
+        Name: myReqValidator
+
+
+```
+
+Make use of the exported request validator in stack b:
+```
+plugins:
+  - serverless-reqvalidator-plugin
+service: my-service-b
+functions:
+  hello:
+    handler: handler.myHandler
+    events:
+      - http:
+          path: hello
+          reqValidatorName:
+            Fn::ImportValue: 'myReqValidator'
+```

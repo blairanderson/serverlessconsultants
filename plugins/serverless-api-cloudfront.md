@@ -7,11 +7,11 @@ description: 'Plugin that adds CloudFront distribution in front of your API Gate
 stars: 36
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 36
-issues: 3
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---

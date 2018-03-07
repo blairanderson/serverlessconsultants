@@ -4,13 +4,13 @@ title: Serverless Jest Plugin
 repo: SC5/serverless-jest-plugin
 homepage: 'https://github.com/SC5/serverless-jest-plugin'
 description: 'A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Jest'
-stars: 45
+stars: 46
 stars_trend: 
 stars_diff: 0
-forks: 14
-forks_trend: up
-forks_diff: 1
-watchers: 45
+forks: 17
+forks_trend: 
+forks_diff: 0
+watchers: 46
 issues: 12
 issues_trend: 
 issues_diff: 0

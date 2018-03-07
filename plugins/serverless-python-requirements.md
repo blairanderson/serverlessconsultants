@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 164
-stars_trend: up
-stars_diff: 2
-forks: 47
-forks_trend: up
-forks_diff: 2
-watchers: 164
-issues: 23
-issues_trend: up
-issues_diff: 1
+stars: 173
+stars_trend: 
+stars_diff: 0
+forks: 46
+forks_trend: 
+forks_diff: 0
+watchers: 173
+issues: 28
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -136,6 +136,14 @@ custom:
       pipCmdExtraArgs:
           - --cache-dir
           - .requirements-cache
+```
+
+When using `--cache-dir` don't forget to also exclude it from the package.
+
+```yaml
+package:
+  exclude:
+    - .requirements-cache/**
 ```
 
 ### Customize requirements file name

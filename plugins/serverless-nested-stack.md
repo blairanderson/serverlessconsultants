@@ -7,7 +7,7 @@ description: 'A plugin to Workaround for Cloudformation 200 resource limit'
 stars: 12
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 12

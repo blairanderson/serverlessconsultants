@@ -4,14 +4,14 @@ title: Serverless Aws Documentation
 repo: 9cookies/serverless-aws-documentation
 homepage: 'https://github.com/9cookies/serverless-aws-documentation'
 description: 'Serverless plugin to add documentation and models to the serverless generated API Gateway'
-stars: 95
+stars: 97
 stars_trend: 
 stars_diff: 0
-forks: 39
-forks_trend: up
-forks_diff: 1
-watchers: 95
-issues: 13
+forks: 40
+forks_trend: 
+forks_diff: 0
+watchers: 97
+issues: 10
 issues_trend: 
 issues_diff: 0
 ---
@@ -300,7 +300,7 @@ methodResponses:
 ```
 
 In the full example above you also can see the definition of the `requestModels` and `responseModels`
-in a the context of the documenatation.
+in a the context of the documentation.
 
 ### Deploy the documentation
 

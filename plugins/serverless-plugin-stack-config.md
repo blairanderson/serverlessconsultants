@@ -4,13 +4,13 @@ title: Serverless Plugin Stack Config
 repo: rawphp/serverless-plugin-stack-config
 homepage: 'https://github.com/rawphp/serverless-plugin-stack-config'
 description: 'A serverless plugin to manage configurations for a stack across micro-services.'
-stars: 5
+stars: 6
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 6
 issues: 0
 issues_trend: 
 issues_diff: 0

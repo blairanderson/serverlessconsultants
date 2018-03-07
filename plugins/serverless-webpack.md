@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 576
-stars_trend: up
-stars_diff: 6
-forks: 156
-forks_trend: up
-forks_diff: 1
-watchers: 576
-issues: 24
-issues_trend: up
-issues_diff: 2
+stars: 583
+stars_trend: 
+stars_diff: 0
+forks: 157
+forks_trend: 
+forks_diff: 0
+watchers: 583
+issues: 23
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -46,9 +46,9 @@ WebPack's [Tree-Shaking][link-webpack-tree] optimization.
 
 ## Recent improvements and important changes
 
-* Improved extensibility for plugin authors (see _For Developers_ section)
-* Serverless 1.12+ is now required
-* Support of local `file:...` module references in package.json
+* Restrict webpack peer dependency version to `< 4`. Compatibility with webpack 4 will be
+added with the next major release (5.0.0).
+* Support for [serverless-step-functions-offline][link-step-functions-offline]
 
 For the complete release notes see the end of this document.
 
@@ -478,6 +478,14 @@ Plugin commands are supported by the following providers. ⁇ indicates that com
 | invoke local          |      ✔︎     |         ✔︎        |        ⁇        |            ⁇           |
 | invoke local --watch  |      ✔︎     |         ✔︎        |        ⁇        |            ⁇           |
 
+## Plugin support
+
+The following serverless plugins are explicitly supported with `serverless-webpack`
+
+| Plugin                            | NPM |
+|-----------------------------------|-----|
+| serverless-step-functions-offline | [![NPM][ico-step-functions-offline]][link-step-functions-offline] |
+
 ## For developers
 
 The plugin exposes a complete lifecycle model that can be hooked by other plugins to extend
@@ -533,6 +541,11 @@ plugin when running a command or invoked by a hook.
 ```
 
 ## Release Notes
+
+* 4.4.0
+  * Support serverless-step-functions-offline [#313][link-313]
+  * Fixed webpack documentation links [#326][link-326]
+  * Abstracted packager interface [#329][link-329]
 
 * 4.3.0
   * Add new `webpack:compile:watch:compile` event [#315][link-315]
@@ -635,6 +648,8 @@ plugin when running a command or invoked by a hook.
 [link-examples]: ./examples
 [link-serverless-offline]: https://www.npmjs.com/package/serverless-offline
 [link-serverless-dynamodb-local]: https://www.npmjs.com/package/serverless-dynamodb-local
+[link-step-functions-offline]: https://www.npmjs.com/package/serverless-step-functions-offline
+[ico-step-functions-offline]: https://img.shields.io/npm/v/serverless-step-functions-offline.svg
 
 [comment]: # (Referenced issues)
 
@@ -707,3 +722,7 @@ plugin when running a command or invoked by a hook.
 [link-253]: https://github.com/serverless-heaven/serverless-webpack/issues/253
 [link-317]: https://github.com/serverless-heaven/serverless-webpack/pull/317
 [link-321]: https://github.com/serverless-heaven/serverless-webpack/pull/321
+
+[link-313]: https://github.com/serverless-heaven/serverless-webpack/pull/313
+[link-326]: https://github.com/serverless-heaven/serverless-webpack/pull/326
+[link-329]: https://github.com/serverless-heaven/serverless-webpack/issues/329

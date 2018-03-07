@@ -4,13 +4,13 @@ title: Serverless Sentry Plugin
 repo: arabold/serverless-sentry-plugin
 homepage: 'https://github.com/arabold/serverless-sentry-plugin'
 description: 'Automatic monitoring of memory usage, execution timeouts and forwarding of Lambda errors to Sentry (https://sentry.io).'
-stars: 53
-stars_trend: up
-stars_diff: 2
-forks: 6
-forks_trend: up
-forks_diff: 2
-watchers: 53
+stars: 56
+stars_trend: 
+stars_diff: 0
+forks: 8
+forks_trend: 
+forks_diff: 0
+watchers: 56
 issues: 6
 issues_trend: 
 issues_diff: 0
@@ -110,7 +110,7 @@ service: my-serverless-project
 provider:
   # ...
 plugins:
-  serverless-sentry
+  - serverless-sentry
 custom:
   sentry:
     dsn: https://xxxx:yyyy@sentry.io/zzzz # URL provided by Sentry
@@ -315,7 +315,7 @@ service: my-serverless-project
 provider:
   # ...
 plugins:
-  serverless-sentry
+  - serverless-sentry
 custom:
   sentry:
     dsn: https://xxxx:yyyy@sentry.io/zzzz # URL provided by Sentry
@@ -348,7 +348,7 @@ Also make sure to add the plugin to your plugins list in the `serverless.yml`:
 
 ```yaml
 plugins:
-  serverless-sentry
+  - serverless-sentry
 custom:
   sentry:
     dsn: https://xxxx:yyyy@sentry.io/zzzz # URL provided by Sentry
@@ -361,7 +361,7 @@ the example below:
 
 ```yaml
 plugins:
-  serverless-sentry
+  - serverless-sentry
 custom:
   sentry:
     dsn: https://xxxx:yyyy@sentry.io/zzzz # URL provided by Sentry

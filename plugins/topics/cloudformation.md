@@ -3,6 +3,6 @@
 layout: topic
 topic: cloudformation
 title: cloudformation Serverless Plugins
-description: '5 cloudformation ServerLess Plugins'
-count: 5
+description: '6 cloudformation ServerLess Plugins'
+count: 6
 ---

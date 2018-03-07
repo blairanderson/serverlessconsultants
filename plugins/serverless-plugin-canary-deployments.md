@@ -4,18 +4,20 @@ title: Serverless Plugin Canary Deployments
 repo: davidgf/serverless-plugin-canary-deployments
 homepage: 'https://github.com/davidgf/serverless-plugin-canary-deployments'
 description: 'A Serverless plugin to implement canary deployments of Lambda functions'
-stars: 11
+stars: 28
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 11
-issues: 0
+watchers: 28
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
 
+
+[![npm version](https://badge.fury.io/js/serverless-plugin-canary-deployments.svg)](https://badge.fury.io/js/serverless-plugin-canary-deployments)
 
 # Serverless Plugin Canary Deployments
 
@@ -62,6 +64,8 @@ functions:
   postHook:
     handler: hooks.post
 ```
+
+You can see a working example in the [example folder](./example/).
 
 ## Configuration
 

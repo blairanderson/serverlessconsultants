@@ -3,6 +3,6 @@
 layout: topic
 topic: build
 title: build Serverless Plugins
-description: '1 build ServerLess Plugins'
-count: 1
+description: '2 build ServerLess Plugins'
+count: 2
 ---
