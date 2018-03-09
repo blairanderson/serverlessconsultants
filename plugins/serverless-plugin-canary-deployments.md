@@ -4,16 +4,16 @@ title: Serverless Plugin Canary Deployments
 repo: davidgf/serverless-plugin-canary-deployments
 homepage: 'https://github.com/davidgf/serverless-plugin-canary-deployments'
 description: 'A Serverless plugin to implement canary deployments of Lambda functions'
-stars: 28
-stars_trend: 
-stars_diff: 0
+stars: 29
+stars_trend: up
+stars_diff: 1
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 28
-issues: 2
-issues_trend: 
-issues_diff: 0
+watchers: 29
+issues: 3
+issues_trend: up
+issues_diff: 1
 ---
 
 
@@ -93,7 +93,7 @@ The plugin relies on the [AWS Lambda traffic shifting feature](https://docs.aws.
 
 ## Limitations
 
-For now, the plugin only works with Lambda functions invoked by API Gateway. More events will be added soon.
+For now, the plugin only works with Lambda functions invoked by API Gateway or Stream based events (such as the triggered by Kinesis or DynamoDB Streams). More events will be added soon.
 
 ## License
 

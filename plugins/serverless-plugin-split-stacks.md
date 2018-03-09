@@ -4,16 +4,16 @@ title: Serverless Plugin Split Stacks
 repo: dougmoscrop/serverless-plugin-split-stacks
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-split-stacks'
 description: 'Migrate certain resources to nested stacks'
-stars: 31
-stars_trend: 
-stars_diff: 0
-forks: 10
-forks_trend: 
-forks_diff: 0
-watchers: 31
-issues: 6
-issues_trend: 
-issues_diff: 0
+stars: 33
+stars_trend: up
+stars_diff: 2
+forks: 11
+forks_trend: up
+forks_diff: 1
+watchers: 33
+issues: 8
+issues_trend: up
+issues_diff: 2
 ---
 
 

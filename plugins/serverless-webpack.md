@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 583
-stars_trend: 
-stars_diff: 0
+stars: 587
+stars_trend: up
+stars_diff: 4
 forks: 157
 forks_trend: 
 forks_diff: 0
-watchers: 583
-issues: 23
-issues_trend: 
-issues_diff: 0
+watchers: 587
+issues: 25
+issues_trend: up
+issues_diff: 2
 ---
 
 
@@ -43,12 +43,13 @@ and much more!
 individually, resulting in smaller Lambda packages that contain only the code and
 dependencies needed to run the function. This allows the plugin to fully utilize
 WebPack's [Tree-Shaking][link-webpack-tree] optimization.
+* Webpack version 3 and 4 support
 
 ## Recent improvements and important changes
 
-* Restrict webpack peer dependency version to `< 4`. Compatibility with webpack 4 will be
-added with the next major release (5.0.0).
-* Support for [serverless-step-functions-offline][link-step-functions-offline]
+* Support Webpack 4
+* Drop Webpack 2 support
+* Cleaned up configuration. You should now use a `custom.webpack` object to configure everything relevant for the plugin. The old configuration still works but will be removed in the next major release. For details see below.
 
 For the complete release notes see the end of this document.
 
@@ -67,12 +68,27 @@ plugins:
 
 ## Configure
 
-By default the plugin will look for a `webpack.config.js` in the service directory.
-Alternatively, you can specify a different file or configuration in `serverless.yml`:
+The configuration of the plugin is done by defining a `custom: webpack` object in your `serverless.yml` with your specific configuration. All settings are optional and will be set to reasonable defaults if missing.
+
+See the sections below for detailed descriptions of the settings. The defaults are:
 
 ```yaml
 custom:
-  webpack: ./folder/my-webpack.config.js
+  webpack:
+    webpackConfig: 'webpack.config.js'   # Name of webpack configuration file
+    includeModules: false   # Node modules configuration for packaging
+    packager: 'npm'   # Reserved for future use. Any other values will not work right now.
+    packExternalModulesMaxBuffer: 200 * 1024   # Size of stdio buffers for spawned child processes
+```
+
+### Webpack configuration file
+
+By default the plugin will look for a `webpack.config.js` in the service directory. Alternatively, you can specify a different file or configuration in `serverless.yml`.
+
+```yaml
+custom:
+  webpack:
+    webpackConfig: ./folder/my-webpack.config.js
 ```
 
 A base Webpack configuration might look like this:
@@ -145,6 +161,24 @@ as that will modify the running framework and leads to unpredictable behavior!
 If you have cool use cases with the full customization, we might add your solution
 to the plugin examples as showcase.
 
+#### Invocation state
+
+`lib.webpack` contains state variables that can be used to configure the build
+dynamically on a specific plugin state.
+
+##### isLocal
+
+`lib.webpack.isLocal` is a boolean property that is set to true, if any known
+mechanism is used in the current Serverless invocation that runs code locally.
+
+This allows to set properties in the webpack configuration differently depending
+if the lambda code is run on the local machine or deployed.
+
+A sample is to set the compile mode with Webpack 4:
+```
+mode: slsw.lib.webpack.isLocal ? "development" : "production"
+```
+
 ### Output
 
 Note that, if the `output` configuration is not set, it will automatically be
@@ -193,7 +227,7 @@ builtin package (ie: `aws-sdk`) and handling webpack-incompatible modules.
 
 In this case you might add external modules in
 [Webpack's `externals` configuration][link-webpack-externals].
-Those modules can be included in the Serverless bundle with the `webpackIncludeModules`
+Those modules can be included in the Serverless bundle with the `custom: webpack: includeModules`
 option in `serverless.yml`:
 
 ```js
@@ -210,7 +244,8 @@ module.exports = {
 ```yaml
 # serverless.yml
 custom:
-  webpackIncludeModules: true # enable auto-packing of external modules
+  webpack:
+    includeModules: true # enable auto-packing of external modules
 ```
 
 
@@ -224,8 +259,9 @@ use a different package file, set `packagePath` to your custom `package.json`:
 ```yaml
 # serverless.yml
 custom:
-  webpackIncludeModules:
-    packagePath: '../package.json' # relative path to custom package.json file.
+  webpack:
+    includeModules:
+      packagePath: '../package.json' # relative path to custom package.json file.
 ```
 > Note that only relative path is supported at the moment.
 
@@ -247,10 +283,11 @@ your service's production dependencies in `package.json`.
 ```yaml
 # serverless.yml
 custom:
-  webpackIncludeModules:
-    forceInclude:
-      - module1
-      - module2
+  webpack:
+    includeModules:
+      forceInclude:
+        - module1
+        - module2
 ```
 
 #### Forced exclusion
@@ -263,10 +300,11 @@ Just add them to the `forceExclude` array property and they will not be packaged
 ```yaml
 # serverless.yml
 custom:
-  webpackIncludeModules:
-    forceExclude:
-      - module1
-      - module2
+  webpack:
+    includeModules:
+      forceExclude:
+        - module1
+        - module2
 ```
 
 If you specify a module in both arrays, `forceInclude` and `forceExclude`, the
@@ -484,6 +522,7 @@ The following serverless plugins are explicitly supported with `serverless-webpa
 
 | Plugin                            | NPM |
 |-----------------------------------|-----|
+| serverless-offline | [![NPM][ico-serverless-offline]][link-serverless-offline] |
 | serverless-step-functions-offline | [![NPM][ico-step-functions-offline]][link-step-functions-offline] |
 
 ## For developers
@@ -540,7 +579,19 @@ plugin when running a command or invoked by a hook.
    -> webpack:compile
 ```
 
+## Thanks
+
+Special thanks go to the initial author of serverless-webpack, Nicola Peduzzi (https://github.com/thenikso), who allowed
+me to take it over and continue working on the project. That helped to revive it and lead it to new horizons.
+
 ## Release Notes
+
+* 5.0.0
+  * Support Webpack 4 [#331][link-331] [#328][link-328]
+  * BREAKING: Drop support for Webpack 2
+  * Allow to check for local invocation in the webpack configuration [#232][link-232]
+  * New centralized configuration with fallback to the old one [#336][link-336]
+  * Improved unit tests and actual coverage calculation [#337][link-337]
 
 * 4.4.0
   * Support serverless-step-functions-offline [#313][link-313]
@@ -647,6 +698,7 @@ plugin when running a command or invoked by a hook.
 [link-webpack-externals]: https://webpack.js.org/configuration/externals/
 [link-examples]: ./examples
 [link-serverless-offline]: https://www.npmjs.com/package/serverless-offline
+[ico-serverless-offline]: https://img.shields.io/npm/v/serverless-offline.svg
 [link-serverless-dynamodb-local]: https://www.npmjs.com/package/serverless-dynamodb-local
 [link-step-functions-offline]: https://www.npmjs.com/package/serverless-step-functions-offline
 [ico-step-functions-offline]: https://img.shields.io/npm/v/serverless-step-functions-offline.svg
@@ -726,3 +778,9 @@ plugin when running a command or invoked by a hook.
 [link-313]: https://github.com/serverless-heaven/serverless-webpack/pull/313
 [link-326]: https://github.com/serverless-heaven/serverless-webpack/pull/326
 [link-329]: https://github.com/serverless-heaven/serverless-webpack/issues/329
+
+[link-232]: https://github.com/serverless-heaven/serverless-webpack/issues/232
+[link-331]: https://github.com/serverless-heaven/serverless-webpack/issues/331
+[link-328]: https://github.com/serverless-heaven/serverless-webpack/pull/328
+[link-336]: https://github.com/serverless-heaven/serverless-webpack/pull/336
+[link-337]: https://github.com/serverless-heaven/serverless-webpack/pull/337

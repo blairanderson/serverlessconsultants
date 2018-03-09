@@ -4,13 +4,13 @@ title: Serverless Nested Stack
 repo: jagdish-176/serverless-nested-stack
 homepage: 'https://github.com/jagdish-176/serverless-nested-stack'
 description: 'A plugin to Workaround for Cloudformation 200 resource limit'
-stars: 12
-stars_trend: 
-stars_diff: 0
+stars: 13
+stars_trend: up
+stars_diff: 1
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 12
+watchers: 13
 issues: 3
 issues_trend: 
 issues_diff: 0

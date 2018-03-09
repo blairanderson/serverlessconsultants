@@ -19,11 +19,11 @@ module Github
     end
 
     def forks
-      repo_data[:forks]
+      repo_data[:forks] || 0
     end
 
     def watchers
-      repo_data[:watchers_count]
+      repo_data[:watchers_count] || 0
     end
 
     def topics
@@ -31,7 +31,7 @@ module Github
     end
 
     def issues
-      repo_data[:open_issues]
+      repo_data[:open_issues] || 0
     end
 
     def stars_last_week
