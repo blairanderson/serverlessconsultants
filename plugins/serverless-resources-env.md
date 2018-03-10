@@ -3,7 +3,7 @@ layout: plugin
 title: Serverless Resources Env
 repo: rurri/serverless-resources-env
 homepage: 'https://github.com/rurri/serverless-resources-env'
-description: 'After Deploy, this plugin fetches cloudformation resource identifiers and sets them on AWS lambdas, and creates local .<state>-env file'
+description: 'After Deploy, this plugin fetches cloudformation resource identifiers and sets them on AWS lambdas, and creates local .&lt;state&gt;-env file'
 stars: 14
 stars_trend: 
 stars_diff: 0

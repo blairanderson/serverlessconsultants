@@ -597,7 +597,7 @@
     "name": "serverless-plugin-common-excludes",
     "description": "Adds commonly excluded files to package.excludes",
     "githubUrl": "https://github.com/dougmoscrop/serverless-plugin-common-excludes",
-    "last-month": 0
+    "last-month": 587
   },
   {
     "name": "serverless-plugin-custom-domain",
