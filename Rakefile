@@ -49,7 +49,7 @@ task :sync_github_projects do
       post.puts "title: #{p.repo.split("/").last.titleize}"
       post.puts "repo: #{p.repo}"
       post.puts "homepage: '#{p.homepage}'"
-      post.puts "description: '#{p.description}'"
+      post.puts "description: '#{CGI::escapeHTML(p.description)}'"
       %i[stars stars_trend stars_diff forks forks_trend forks_diff watchers issues issues_trend issues_diff].each do |attr|
         post.puts "#{attr}: #{p.send(attr)}" if p.send(attr)
       end

@@ -18,18 +18,6 @@ function parseAndFetchRepoInfo(err, httpResponse, body) {
   }
 }
 
-// function fetchPluginTopics(error, plugins) {
-//   if (err) {
-//     throw 'yolo';
-//   } else {
-//     async.map(plugins, fetchRepoTopics, asyncDone);
-//   }
-// }
-//
-// function fetchRepoTopics(plugin, callback) {
-//   request(`https://api.github.com/repos/${plugin.repo}/topics`, headers: {"Accept": 'application/vnd.github.mercy-preview+json'});
-// }
-
 function getRepoInfo(plugin, callback) {
   request(
     `https://api.npmjs.org/downloads/point/last-month/${plugin.name}`,
@@ -77,7 +65,11 @@ function createFile(filedat) {
 
   const filename = `./_consultants/${coname}.md`;
 
-  const data = `---\ntitle: ${filedat.title}\nlayout: redirect\nnote: THIS FILE IS GENERATED AUTOMATICALLY, EDIT _data/consultants.json instead \nredirect_to:\n  - ${filedat.url} \n---`;
+  const data = `---\ntitle: ${
+    filedat.title
+  }\nlayout: redirect\nnote: THIS FILE IS GENERATED AUTOMATICALLY, EDIT _data/consultants.json instead \nredirect_to:\n  - ${
+    filedat.url
+  } \n---`;
 
   fs.unlinkSync(filename);
   fs.open(filename, 'r', function(err, fd) {
