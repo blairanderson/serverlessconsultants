@@ -5,34 +5,48 @@ var async = require('async');
 require('dotenv').config();
 var SERVERLESS_PLUGINS = '_data/serverless_plugins.json';
 
+// WE START HERE AND GIT A BUNCH OF CALLBACKS
 request(
   'https://raw.githubusercontent.com/serverless/plugins/master/plugins.json',
   parseAndFetchRepoInfo
 );
 
 function parseAndFetchRepoInfo(err, httpResponse, body) {
-  if (err) {
-    throw 'yolo';
-  } else {
-    async.map(JSON.parse(body), getRepoInfo, asyncDone);
-  }
+  return async.map(JSON.parse(body), getRepoInfo, asyncDone);
 }
 
 function getRepoInfo(plugin, callback) {
   request(
     `https://api.npmjs.org/downloads/point/last-month/${plugin.name}`,
-    function(err, resp, data) {
+    function(err, resp, last_month_data) {
       if (err) {
         console.log(err);
         callback(null, Object.assign(plugin, { 'last-month': 0 }));
       } else {
-        console.log(data);
-        callback(
-          null,
-          Object.assign(plugin, {
-            'last-month': JSON.parse(data).downloads || 0
-          })
-        );
+        var newDat = Object.assign(plugin, {
+          'last-month': JSON.parse(last_month_data).downloads || 0
+        });
+
+        if (plugin.created) {
+          console.log(last_month_data);
+          callback(null, newDat);
+        } else {
+          request(`https://registry.npmjs.org/${plugin.name}`, function(
+            err,
+            resp,
+            raw_d
+          ) {
+            var registry_data = JSON.parse(raw_d);
+            console.log(registry_data);
+            callback(
+              null,
+              Object.assign(newDat, {
+                created:
+                  (registry_data.time && registry_data.time.created) || null
+              })
+            );
+          });
+        }
       }
     }
   );

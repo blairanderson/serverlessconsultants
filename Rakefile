@@ -1,9 +1,13 @@
 require './github/extension'
+require 'active_support/core_ext/date'
+require 'active_support/core_ext/time'
 require 'active_support/core_ext/hash'
 require 'active_support/core_ext/string'
 require 'pry'
 require 'fast_blank'
 require 'dotenv'
+require "tmpdir"
+require "jekyll"
 
 LIST = [
   :fetch_serverless_plugin_list,
@@ -83,9 +87,6 @@ task :sync_github_topics do
     end
 end
 
-require "tmpdir"
-require "jekyll"
-
 # Change your GitHub reponame
 GITHUB_REPONAME = "blairanderson/serverlessconsultants"
 
@@ -119,4 +120,15 @@ end
 
 task :cleanup do
   FileUtils.rm_f(Dir.glob("docs/**/*"))
+end
+
+task :newsletter do
+  data_hash = JSON.parse(File.read('_data/serverless_plugins.json'))
+  puts data_hash.length
+  last_month = (Date.today - 1.month)
+  this_month = data_hash.select do |plugin|
+    plugin['created'] && Time.parse(plugin['created']).between?(last_month.beginning_of_month, last_month.end_of_month)
+  end
+  puts this_month.length
+  puts this_month
 end
