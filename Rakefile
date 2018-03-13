@@ -130,5 +130,6 @@ task :newsletter do
     plugin['created'] && Time.parse(plugin['created']).between?(last_month.beginning_of_month, last_month.end_of_month)
   end
   puts this_month.length
-  puts this_month
+  puts this_month.sort_by{|a| -a['last-month'] }
+  puts data_hash.sort_by{|a| -a['last-month'] }.first(10)
 end
