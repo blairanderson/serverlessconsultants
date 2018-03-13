@@ -4,16 +4,16 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: 'Keep your lambdas warm during Winter.'
-stars: 154
+stars: 157
 stars_trend: up
-stars_diff: 1
+stars_diff: 4
 forks: 23
 forks_trend: 
 forks_diff: 0
-watchers: 154
-issues: 15
-issues_trend: up
-issues_diff: 1
+watchers: 157
+issues: 13
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -80,15 +80,17 @@ functions:
 ```yaml
 custom:
   warmup:
-    folderName: '_warmup' // Name of the folder created for the generated warmup 
+    folderName: '_warmup' # Name of the folder created for the generated warmup 
     cleanFolder: false
     memorySize: 256
     name: 'make-them-pop'
     role:  myCustRole0
-    schedule: 'cron(0/5 8-17 ? * MON-FRI *)' // Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
+    schedule: 'cron(0/5 8-17 ? * MON-FRI *)' # Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
     timeout: 20
-    prewarm: true // Run WarmUp immediately after a deployment
-    lambda
+    prewarm: true # Run WarmUp immediately after a deployment
+    tags:
+      Project: foo
+      Owner: bar
 
 .....
 
@@ -144,20 +146,23 @@ resources:
                       - function:${self:service}-${opt:stage, self:provider.stage}-*
 ```
 
-The permissions can also be added to all lambdas using `iamRoleStatements`:
+The permissions can also be added to all lambdas using `iamRoleStatements` under `provider` (see https://serverless.com/framework/docs/providers/aws/guide/functions/#permissions):
 
 ```yaml
-iamRoleStatements:
-  - Effect: 'Allow'
-    Action:
-      - 'lambda:InvokeFunction'
-    Resource:
-    - Fn::Join:
-      - ':'
-      - - arn:aws:lambda
-        - Ref: AWS::Region
-        - Ref: AWS::AccountId
-        - function:${self:service}-${opt:stage, self:provider.stage}-*
+provider:
+  name: aws
+  runtime: nodejs6.10
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'lambda:InvokeFunction'
+      Resource:
+      - Fn::Join:
+        - ':'
+        - - arn:aws:lambda
+          - Ref: AWS::Region
+          - Ref: AWS::AccountId
+          - function:${self:service}-${opt:stage, self:provider.stage}-*
 ```
 If using pre-warm, the deployment user also needs a similar policy so it can run the WarmUp lambda.
 
@@ -187,6 +192,7 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 * **schedule** (default `rate(5 minutes)`) - More examples [here](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
 * **timeout** (default `10` seconds)
 * **prewarm** (default `false`)
+* **tags** (default to serverless default tags)
 
 ```yml
 custom:
@@ -199,6 +205,9 @@ custom:
     schedule: 'cron(0/5 8-17 ? * MON-FRI *)' // Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
     timeout: 20
     prewarm: true // Run WarmUp immediately after a deploymentlambda
+    tags:
+      Project: foo
+      Owner: bar    
 ```
 
 **Options should be tweaked depending on:**

@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 587
+stars: 594
 stars_trend: up
-stars_diff: 4
+stars_diff: 11
 forks: 157
 forks_trend: 
 forks_diff: 0
-watchers: 587
-issues: 25
-issues_trend: up
-issues_diff: 2
+watchers: 594
+issues: 21
+issues_trend: down
+issues_diff: -2
 ---
 
 
@@ -265,11 +265,65 @@ custom:
 ```
 > Note that only relative path is supported at the moment.
 
-#### Usage with yarn
+#### Packagers
 
-Note that if auto-packing is enabled, the plugin will call `npm install`. If you are using yarn your `yarn.lock` file will be not be honored, which might lead to unexpected results as your dependencies will most likely not match (or be missing, as npm does not install packages in the same way as yarn).
+You can select the packager that will be used to package your external modules.
+The packager can be set with the packager configuration. Currently it can be 'npm'
+or 'yarn' and defaults to using npm when not set.
 
-Yarn support is planned [#286][link-286]. Until then we recommend using npm when using auto-packing.
+```yaml
+# serverless.yml
+custom:
+  webpack:
+    packager: 'yarn'      # Defaults to npm
+    packagerOptions: {}   # Optional, depending on the selected packager
+```
+
+You should select the packager, that you use to develop your projects, because only
+then locked versions will be handled correctly, i.e. the plugin uses the generated 
+(and usually committed) package lock file that is created by your favorite packager.
+
+Each packager might support specific options that can be set in the `packagerOptions`
+configuration setting. For details see below.
+
+##### NPM
+
+By default, the plugin uses NPM to package the external modules. However, if you use npm,
+you should use any version `<5.5 >=5.7.1` as the versions in-between have some nasty bugs.
+
+Right now there are no `packagerOptions` that can be set with NPM.
+
+##### Yarn
+
+Using yarn will switch the whole packaging pipeline to use yarn, so does it use a `yarn.lock` file.
+
+The yarn packager supports the following `packagerOptions`:
+
+| Option        | Type | Default | Description |
+|---------------|------|---------|-------------|
+| ignoreScripts | bool | true    | Do not execute package.json hook scripts on install |
+
+##### Common packager options
+
+There are some settings that are common to all packagers and affect the packaging itself.
+
+###### Custom scripts
+
+You can specify custom scripts that are executed after the installation of the function/service packages
+has been finished. These are standard packager scripts as they can be used in any `package.json`.
+
+Warning: The use cases for them are very rare and specific and you should investigate first,
+if your use case can be covered with webpack plugins first. They should never access files 
+outside of their current working directory which is the compiled function folder, if any.
+A valid use case would be to start anything available as binary from `node_modules`.
+
+```yaml
+custom:
+  webpack:
+    packagerOptions:
+      scripts:
+        - npm rebuild grpc --target=6.1.0 --target_arch=x64 --target_platform=linux --target_libc=glibc
+```
 
 #### Forced inclusion
 
