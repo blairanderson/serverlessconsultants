@@ -6,7 +6,7 @@ homepage: 'https://github.com/serverless/serverless-kubeless'
 description: 'Serverless plugin for deploying functions to Kubeless.'
 stars: 96
 stars_trend: up
-stars_diff: 4
+stars_diff: 2
 forks: 19
 forks_trend: up
 forks_diff: 2

@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 594
+stars: 601
 stars_trend: up
-stars_diff: 11
+stars_diff: 14
 forks: 157
 forks_trend: 
 forks_diff: 0
-watchers: 594
-issues: 21
+watchers: 601
+issues: 19
 issues_trend: down
-issues_diff: -2
+issues_diff: -6
 ---
 
 
@@ -44,9 +44,11 @@ individually, resulting in smaller Lambda packages that contain only the code an
 dependencies needed to run the function. This allows the plugin to fully utilize
 WebPack's [Tree-Shaking][link-webpack-tree] optimization.
 * Webpack version 3 and 4 support
+* Support NPM and Yarn for packaging
 
 ## Recent improvements and important changes
 
+* Support Yarn
 * Support Webpack 4
 * Drop Webpack 2 support
 * Cleaned up configuration. You should now use a `custom.webpack` object to configure everything relevant for the plugin. The old configuration still works but will be removed in the next major release. For details see below.
@@ -441,6 +443,19 @@ All options that are supported by invoke local can be used as usual:
 
 > :exclamation: The old `webpack invoke` command has been disabled.
 
+#### Run a function with an existing compiled output (--no-build)
+
+On CI systems it is likely that you'll run multiple integration tests with `invoke local`
+sequentially. To improve this, you can do one compile and run multiple invokes on the
+compiled output -  it is not necessary to compile again before each and every invoke.
+
+```bash
+$ serverless webpack
+$ serverless invoke local --function <function-name-1> --no-build
+$ serverless invoke local --function <function-name-2> --no-build
+...
+```
+
 ### Run a function locally on source changes
 
 Or to run a function every time the source files change use the `--watch` option
@@ -640,6 +655,11 @@ me to take it over and continue working on the project. That helped to revive it
 
 ## Release Notes
 
+* 5.1.0
+  * Support Yarn [#286][link-286]
+  * Allow local invoke to use existing compiled output [#341][link-341] [#275][link-275]
+  * Support custom packager scripts [#343][link-343] [#342][link-342]
+
 * 5.0.0
   * Support Webpack 4 [#331][link-331] [#328][link-328]
   * BREAKING: Drop support for Webpack 2
@@ -838,3 +858,9 @@ me to take it over and continue working on the project. That helped to revive it
 [link-328]: https://github.com/serverless-heaven/serverless-webpack/pull/328
 [link-336]: https://github.com/serverless-heaven/serverless-webpack/pull/336
 [link-337]: https://github.com/serverless-heaven/serverless-webpack/pull/337
+
+[link-275]: https://github.com/serverless-heaven/serverless-webpack/issues/275
+[link-286]: https://github.com/serverless-heaven/serverless-webpack/issues/286
+[link-341]: https://github.com/serverless-heaven/serverless-webpack/issues/341
+[link-342]: https://github.com/serverless-heaven/serverless-webpack/issues/342
+[link-343]: https://github.com/serverless-heaven/serverless-webpack/issues/343

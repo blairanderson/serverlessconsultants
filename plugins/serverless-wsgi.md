@@ -6,14 +6,14 @@ homepage: 'https://github.com/logandk/serverless-wsgi'
 description: 'Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages'
 stars: 116
 stars_trend: up
-stars_diff: 2
+stars_diff: 1
 forks: 23
 forks_trend: 
 forks_diff: 0
 watchers: 116
-issues: 0
-issues_trend: down
-issues_diff: -1
+issues: 2
+issues_trend: up
+issues_diff: 1
 ---
 
 

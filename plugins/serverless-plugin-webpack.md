@@ -6,7 +6,7 @@ homepage: 'https://github.com/goldwasserexchange/serverless-plugin-webpack'
 description: 'A serverless plugin to automatically bundle your functions individually with webpack'
 stars: 54
 stars_trend: up
-stars_diff: 2
+stars_diff: 1
 forks: 14
 forks_trend: 
 forks_diff: 0

@@ -6,14 +6,14 @@ homepage: 'https://github.com/HyperBrain/serverless-aws-alias'
 description: 'This plugin enables use of AWS aliases on Lambda functions.'
 stars: 66
 stars_trend: up
-stars_diff: 2
+stars_diff: 1
 forks: 12
 forks_trend: 
 forks_diff: 0
 watchers: 66
-issues: 28
-issues_trend: down
-issues_diff: -2
+issues: 30
+issues_trend: 
+issues_diff: 0
 ---
 
 
