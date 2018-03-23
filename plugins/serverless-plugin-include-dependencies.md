@@ -4,14 +4,14 @@ title: Serverless Plugin Include Dependencies
 repo: dougmoscrop/serverless-plugin-include-dependencies
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-include-dependencies'
 description: 'This is a Serverless plugin that should make your deployed functions smaller.'
-stars: 55
-stars_trend: up
-stars_diff: 1
-forks: 11
+stars: 57
+stars_trend: 
+stars_diff: 0
+forks: 12
 forks_trend: 
 forks_diff: 0
-watchers: 55
-issues: 2
+watchers: 57
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -22,6 +22,21 @@ issues_diff: 0
 This is a Serverless plugin that should make your deployed functions smaller.
 
 It does this by enabling you to add your `node_modules` folder to the `exclude` list, then it individually adds each module that your handler depends on.
+
+## Installation
+
+First install the plugin via NPM.
+
+```
+npm install serverless-plugin-include-dependencies --save-dev
+```
+
+Then include the plugin within your serverless.yml config.
+
+```yml
+plugins:
+  - serverless-plugin-include-dependencies
+```
 
 ## Usage Example
 
@@ -35,6 +50,11 @@ package:
 
 plugins:
   - serverless-plugin-include-dependencies
+
+custom:
+  includeDependencies:
+    always:
+      - 'src/lib/**' # (optional) always include these globs and their dependencies
 
 functions:
   foo:

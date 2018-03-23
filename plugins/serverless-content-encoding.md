@@ -4,14 +4,14 @@ title: Serverless Content Encoding
 repo: xeno-dohai/serverless-content-encoding
 homepage: 'https://github.com/xeno-dohai/serverless-content-encoding'
 description: 'Enable Content Encoding in AWS API Gateway during deployment'
-stars: 6
+stars: 7
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 6
-issues: 0
+watchers: 7
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

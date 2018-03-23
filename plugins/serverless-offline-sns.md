@@ -4,14 +4,14 @@ title: Serverless Offline Sns
 repo: mj1618/serverless-offline-sns
 homepage: 'https://github.com/mj1618/serverless-offline-sns'
 description: 'Serverless plugin to run a local SNS server and call serverless SNS handlers with events notifications.'
-stars: 21
+stars: 23
 stars_trend: 
 stars_diff: 0
-forks: 10
+forks: 11
 forks_trend: 
 forks_diff: 0
-watchers: 21
-issues: 0
+watchers: 23
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

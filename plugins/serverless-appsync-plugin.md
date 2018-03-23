@@ -4,13 +4,13 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 60
-stars_trend: up
-stars_diff: 7
-forks: 4
+stars: 70
+stars_trend: 
+stars_diff: 0
+forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 60
+watchers: 70
 issues: 4
 issues_trend: 
 issues_diff: 0
@@ -27,6 +27,11 @@ Tired of 🚀 **deploying**, ✏️ **updating**, and ❌ **deleting** your AppS
 
 <div align="center">Find AppSync examples in the <a href="https://github.com/serverless/serverless-graphql/tree/master/app-backend/appsync" target="_blank"> Serverless-GraphQL</a> Repo 👈</div>
 
+# Introduction
+
+> *Part 1:* [Running a scalable & reliable GraphQL endpoint with Serverless](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)  
+> *Part 2:* [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)  
+> *Part 3:* [AppSync Frontend: AWS Managed GraphQL Service](https://hackernoon.com/running-a-scalable-reliable-graphql-endpoint-with-serverless-db16e42dc266)  
 
 ![appsync architecture](https://user-images.githubusercontent.com/1587005/36063617-fe8d4e5e-0e33-11e8-855b-447513ba7084.png)
 

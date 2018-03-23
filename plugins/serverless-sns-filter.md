@@ -4,14 +4,14 @@ title: Serverless Sns Filter
 repo: MechanicalRock/serverless-sns-filter
 homepage: 'https://github.com/MechanicalRock/serverless-sns-filter'
 description: 'Serverless plugin to add SNS Subscription Filters to events'
-stars: 6
+stars: 8
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 6
-issues: 1
+watchers: 8
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

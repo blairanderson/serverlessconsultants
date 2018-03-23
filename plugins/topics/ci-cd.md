@@ -1,8 +1,8 @@
 ---
 # NOTE: THIS FILE IS GENERATED - DO NOT ATTEMPT TO CREATE A PULL REQUEST TO UPDATE THE DATA. 
 layout: topic
-topic: aws-lambda
-title: aws-lambda Serverless Plugins
-description: '27 aws-lambda ServerLess Plugins'
-count: 27
+topic: ci-cd
+title: ci-cd Serverless Plugins
+description: '1 ci-cd ServerLess Plugins'
+count: 1
 ---

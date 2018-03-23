@@ -7,7 +7,7 @@ description: 'Sets &quot;AWS Systems Manager Parameter Store (SSM)&quot; paramet
 stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 3
 forks_trend: 
 forks_diff: 0
 watchers: 8

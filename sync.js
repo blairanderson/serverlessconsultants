@@ -16,6 +16,9 @@ function parseAndFetchRepoInfo(err, httpResponse, body) {
 }
 
 function getRepoInfo(plugin, callback) {
+  console.log(
+    `https://api.npmjs.org/downloads/point/last-month/${plugin.name}`
+  );
   request(
     `https://api.npmjs.org/downloads/point/last-month/${plugin.name}`,
     function(err, resp, last_month_data) {
@@ -31,6 +34,7 @@ function getRepoInfo(plugin, callback) {
           console.log(last_month_data);
           callback(null, newDat);
         } else {
+          console.log('REGISTRY', `https://registry.npmjs.org/${plugin.name}`);
           request(`https://registry.npmjs.org/${plugin.name}`, function(
             err,
             resp,

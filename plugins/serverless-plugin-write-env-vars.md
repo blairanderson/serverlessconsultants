@@ -7,7 +7,7 @@ description: 'Write environment variables out to a file that is compatible with 
 stars: 28
 stars_trend: 
 stars_diff: 0
-forks: 12
+forks: 13
 forks_trend: 
 forks_diff: 0
 watchers: 28

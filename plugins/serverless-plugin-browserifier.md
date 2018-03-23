@@ -7,7 +7,7 @@ description: 'Reduce the size and speed up your Node.js based lambda&#39;s using
 stars: 9
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 9

@@ -5,13 +5,13 @@ repo: HyperBrain/serverless-aws-alias
 homepage: 'https://github.com/HyperBrain/serverless-aws-alias'
 description: 'This plugin enables use of AWS aliases on Lambda functions.'
 stars: 66
-stars_trend: up
-stars_diff: 1
-forks: 12
+stars_trend: 
+stars_diff: 0
+forks: 14
 forks_trend: 
 forks_diff: 0
 watchers: 66
-issues: 30
+issues: 29
 issues_trend: 
 issues_diff: 0
 ---
@@ -486,6 +486,11 @@ and _serverless.service.provider.deployedAliasTemplates[]_.
   naturally. It might be possible to introduce some kind of per alias policy.
 
 ## Version history
+
+* 1.6.1
+ * Fixed custom authorizer references [#102](https://github.com/HyperBrain/serverless-aws-alias/pull/102)
+ * Fixed broken DynamoDB stream deployments [#85](https://github.com/HyperBrain/serverless-aws-alias/issues/85)
+ * Security: Updated moment
 
 * 1.6.0
  * Fixed issue with request authorizers [#96](https://github.com/HyperBrain/serverless-aws-alias/issues/96)

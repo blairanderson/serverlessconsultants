@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 180
-stars_trend: up
-stars_diff: 5
-forks: 47
-forks_trend: up
-forks_diff: 1
-watchers: 180
-issues: 32
-issues_trend: up
-issues_diff: 1
+stars: 188
+stars_trend: 
+stars_diff: 0
+forks: 48
+forks_trend: 
+forks_diff: 0
+watchers: 188
+issues: 30
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -201,6 +201,25 @@ custom:
     pythonBin: /opt/python3.6/bin/python
 ```
 
+### Vendor library directory
+For certain libraries, default packaging produces too large an installation,
+even when zipping. In those cases it may be necessary to tailor make a version
+of the module. In that case you can store them in a directory and use the
+`vendor` option, and the plugin will copy them along with all the other
+dependencies to install:
+```yaml
+custom:
+  pythonRequirements:
+    vendor: ./vendored-libraries
+functions:
+  hello:
+    handler: hello.handler
+    vendor: ./hello-vendor # The option is also available at the function level
+```
+
+
+
+
 ## Manual invocations
 
 The `.requirements` and `requirements.zip`(if using zip support) files are left
@@ -259,5 +278,9 @@ For usage of `dockerizePip` on Windows do Step 1 only if running serverless on w
  * [@wattdave](https://github.com/wattdave) - fixing bug when using `deploymentBucket`
  * [@heri16](https://github.com/heri16) - fixing Docker support in Windows
  * [@ryansb](https://github.com/ryansb) - package individually support
- * [@cgrimal](https://github.com/cgrimal) - Private SSH Repo access in Docker & `dockerFile` option
-  to build a custom docker image.
+ * [@cgrimal](https://github.com/cgrimal) - Private SSH Repo access in Docker, `dockerFile` option
+  to build a custom docker image, real per-function requirements, and the
+  `vendor` option
+ * [@kichik](https://github.com/kichik) - Imposed windows & `noDeploy` support,
+   switched to adding files straight to zip instead of creating symlinks, and
+   improved pip chache support when using docker.

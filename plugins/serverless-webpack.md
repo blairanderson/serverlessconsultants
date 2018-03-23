@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 601
-stars_trend: up
-stars_diff: 14
+stars: 608
+stars_trend: 
+stars_diff: 0
 forks: 157
 forks_trend: 
 forks_diff: 0
-watchers: 601
-issues: 19
-issues_trend: down
-issues_diff: -6
+watchers: 608
+issues: 17
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -79,7 +79,7 @@ custom:
   webpack:
     webpackConfig: 'webpack.config.js'   # Name of webpack configuration file
     includeModules: false   # Node modules configuration for packaging
-    packager: 'npm'   # Reserved for future use. Any other values will not work right now.
+    packager: 'npm'   # Packager that will be used to package your external modules
     packExternalModulesMaxBuffer: 200 * 1024   # Size of stdio buffers for spawned child processes
 ```
 
@@ -655,6 +655,11 @@ me to take it over and continue working on the project. That helped to revive it
 
 ## Release Notes
 
+* 5.1.1
+  * Fixed local invoke watch mode not executing changed files [#349][link-349]
+  * Added Webpack 4 example [#355][link-355]
+  * Documentation updates [#354][link-354]
+
 * 5.1.0
   * Support Yarn [#286][link-286]
   * Allow local invoke to use existing compiled output [#341][link-341] [#275][link-275]
@@ -864,3 +869,7 @@ me to take it over and continue working on the project. That helped to revive it
 [link-341]: https://github.com/serverless-heaven/serverless-webpack/issues/341
 [link-342]: https://github.com/serverless-heaven/serverless-webpack/issues/342
 [link-343]: https://github.com/serverless-heaven/serverless-webpack/issues/343
+
+[link-349]: https://github.com/serverless-heaven/serverless-webpack/issues/349
+[link-354]: https://github.com/serverless-heaven/serverless-webpack/pull/354
+[link-355]: https://github.com/serverless-heaven/serverless-webpack/pull/355
