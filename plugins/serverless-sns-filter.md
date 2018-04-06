@@ -7,7 +7,7 @@ description: 'Serverless plugin to add SNS Subscription Filters to events'
 stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 3
 forks_trend: 
 forks_diff: 0
 watchers: 8

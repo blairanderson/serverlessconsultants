@@ -4,13 +4,13 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 608
+stars: 627
 stars_trend: 
 stars_diff: 0
-forks: 157
+forks: 161
 forks_trend: 
 forks_diff: 0
-watchers: 608
+watchers: 627
 issues: 17
 issues_trend: 
 issues_diff: 0
@@ -567,6 +567,11 @@ Options are:
 :exclamation: The serve command has been removed. See above how to achieve the
 same functionality with the [`serverless-offline`][link-serverless-offline] plugin.
 
+### vscode debugging
+
+To debug your functions using `serverless invoke local` or `serverless-offline`
+check this [`.vscode/launch.json example`][link-examples-babel-webpack-4-vscode-launch].
+
 ## Example with Babel
 
 In the [`examples`][link-examples] folder there is a Serverless project using this
@@ -776,6 +781,7 @@ me to take it over and continue working on the project. That helped to revive it
 [link-webpack-tree]: https://webpack.js.org/guides/tree-shaking/
 [link-webpack-externals]: https://webpack.js.org/configuration/externals/
 [link-examples]: ./examples
+[link-examples-babel-webpack-4-vscode-launch]: ./examples/babel-webpack-4/.vscode/launch.json
 [link-serverless-offline]: https://www.npmjs.com/package/serverless-offline
 [ico-serverless-offline]: https://img.shields.io/npm/v/serverless-offline.svg
 [link-serverless-dynamodb-local]: https://www.npmjs.com/package/serverless-dynamodb-local

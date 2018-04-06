@@ -4,13 +4,13 @@ title: Serverless Plugin Common Excludes
 repo: dougmoscrop/serverless-plugin-common-excludes
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-common-excludes'
 description: 'Adds commonly excluded files to package.excludes'
-stars: 8
+stars: 9
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 8
+watchers: 9
 issues: 0
 issues_trend: 
 issues_diff: 0

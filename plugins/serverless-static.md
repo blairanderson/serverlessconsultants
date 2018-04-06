@@ -4,13 +4,13 @@ title: Serverless Static
 repo: iliasbhal/serverless-static
 homepage: 'https://github.com/iliasbhal/serverless-static'
 description: 'Easily serve files from a folder while developing on localhost with the serverless-offline plugin'
-stars: 4
+stars: 5
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 0
 issues_trend: 
 issues_diff: 0

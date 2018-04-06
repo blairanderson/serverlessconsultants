@@ -29,31 +29,27 @@ function getRepoInfo(plugin, callback) {
         var newDat = Object.assign(plugin, {
           'last-month': JSON.parse(last_month_data).downloads || 0
         });
-
-        if (plugin.created) {
-          console.log(last_month_data);
-          callback(null, newDat);
-        } else {
-          console.log('REGISTRY', `https://registry.npmjs.org/${plugin.name}`);
-          request(`https://registry.npmjs.org/${plugin.name}`, function(
-            err,
-            resp,
-            raw_d
-          ) {
-            var registry_data = JSON.parse(raw_d);
-            console.log(registry_data);
-            callback(
-              null,
-              Object.assign(newDat, {
-                created:
-                  (registry_data.time && registry_data.time.created) || null
-              })
-            );
-          });
-        }
+        return callback(null, newDat);
       }
     }
   );
+}
+
+function getRepoStart(plugin, callback) {
+  request(`https://registry.npmjs.org/${plugin.name}`, function(
+    err,
+    resp,
+    raw_d
+  ) {
+    var registry_data = JSON.parse(raw_d);
+    console.log(registry_data);
+    callback(
+      null,
+      Object.assign(plugin, {
+        created: (registry_data.time && registry_data.time.created) || null
+      })
+    );
+  });
 }
 
 function asyncDone(e, plugins) {
