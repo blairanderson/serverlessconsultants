@@ -5,8 +5,8 @@ repo: FidelLimited/serverless-plugin-optimize
 homepage: 'https://github.com/FidelLimited/serverless-plugin-optimize'
 description: 'Bundle with Browserify, transpile with Babel to ES5 and minify with Uglify your Serverless functions.'
 stars: 65
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 10
 forks_trend: 
 forks_diff: 0

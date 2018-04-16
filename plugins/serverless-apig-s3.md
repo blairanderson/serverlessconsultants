@@ -4,13 +4,13 @@ title: Serverless Apig S3
 repo: sdd/serverless-apig-s3
 homepage: 'https://github.com/sdd/serverless-apig-s3'
 description: 'Serve static front-end content from S3 via the API Gateway and deploy client bundle to S3.'
-stars: 19
+stars: 20
 stars_trend: up
 stars_diff: 1
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 19
+watchers: 20
 issues: 4
 issues_trend: 
 issues_diff: 0

@@ -4,13 +4,13 @@ title: Serverless Python Individually
 repo: cfchou/serverless-python-individually
 homepage: 'https://github.com/cfchou/serverless-python-individually'
 description: 'A serverless framework plugin to install multiple lambda functions written in python'
-stars: 15
-stars_trend: 
-stars_diff: 0
+stars: 16
+stars_trend: up
+stars_diff: 1
 forks: 12
 forks_trend: 
 forks_diff: 0
-watchers: 15
+watchers: 16
 issues: 2
 issues_trend: 
 issues_diff: 0

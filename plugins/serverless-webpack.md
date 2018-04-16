@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 634
+stars: 637
 stars_trend: up
-stars_diff: 7
+stars_diff: 3
 forks: 162
-forks_trend: up
-forks_diff: 1
-watchers: 634
-issues: 17
-issues_trend: 
-issues_diff: 0
+forks_trend: 
+forks_diff: 0
+watchers: 637
+issues: 19
+issues_trend: up
+issues_diff: 2
 ---
 
 

@@ -4,16 +4,16 @@ title: Serverless Plugin Iopipe
 repo: iopipe/serverless-plugin-iopipe
 homepage: 'https://github.com/iopipe/serverless-plugin-iopipe'
 description: 'See inside your Lambda functions with high fidelity metrics and monitoring.'
-stars: 17
-stars_trend: 
-stars_diff: 0
+stars: 19
+stars_trend: up
+stars_diff: 2
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 17
-issues: 4
-issues_trend: 
-issues_diff: 0
+watchers: 19
+issues: 6
+issues_trend: up
+issues_diff: 2
 ---
 
 
@@ -67,7 +67,10 @@ You're set! The plugin will run during an `sls deploy` or during `sls invoke loc
 Check out an [example here](https://github.com/iopipe/serverless-plugin-iopipe/blob/master/example/serverless.yml).
 
 # How Does it Work?
-`serverless-plugin-iopipe` outputs a file that imports and wraps the function handlers defined in `serverless.yml` with IOpipe so you don't have to. It allows you to deploy and upgrade multiple functions simultaneously.
+`serverless-plugin-iopipe` outputs files that import and wrap the function handlers defined in `serverless.yml` with IOpipe so you don't have to. It allows you to deploy and upgrade multiple functions simultaneously.
+
+# Commands
+- `sls iopipe clean` This command cleans up your project folder of extraneous `*-iopipe.js` files if needed. This can be useful when using the [serverless-offline](https://github.com/dherault/serverless-offline) plugin.
 
 # Options
 Beyond the required $IOPIPE_TOKEN environment variable, some options can be set [in the "custom" config](https://serverless.com/framework/docs/providers/aws/guide/plugins#installing-plugins) in `serverless.yml`. [See Example](https://github.com/iopipe/serverless-plugin-iopipe/blob/master/example/serverless.yml)
@@ -104,8 +107,10 @@ By default, the plugin sends _anonymized_, non-identifying usage statistics to G
     - serverless-plugin-iopipe
     - serverless-webpack
   ```
+- Does this work with [serverless-offline](https://github.com/dherault/serverless-offline)?
+  - Yes, list `serverless-plugin-iopipe` first before any other plugins in `serverless.yml`.
 - Can I use IOpipe plugins?
-  - Yes, you can specify iopipe plugins through your [package.json file, or an iopipe.rc file](https://github.com/iopipe/iopipe-js-core#packagejson-configuration). You will have to make sure those plugins are installed into node_modules.
+  - Yes, you can specify iopipe plugins through your [package.json file, or an iopipe.rc file](https://github.com/iopipe/iopipe-js-core#packagejson-configuration). Ensure those plugins are installed into your node_modules folder (yarn or npm).
 
 ## Known Issues
 - If you have lambda functions that are already wrapped by iopipe via code, you may experience unexpected results. Remove the iopipe wrapping code from those handlers.

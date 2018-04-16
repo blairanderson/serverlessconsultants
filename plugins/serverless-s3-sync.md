@@ -7,13 +7,13 @@ description: 'A plugin to sync local directories and S3 prefixes for Serverless 
 stars: 27
 stars_trend: 
 stars_diff: 0
-forks: 8
-forks_trend: 
-forks_diff: 0
+forks: 10
+forks_trend: up
+forks_diff: 2
 watchers: 27
-issues: 2
-issues_trend: 
-issues_diff: 0
+issues: 4
+issues_trend: up
+issues_diff: 2
 ---
 
 
@@ -51,6 +51,8 @@ custom:
       localDir: dist/assets # required
     - bucketName: my-other-site
       localDir: path/to/other-site
+      acl: public-read # optional
+      followSymlinks: true # optional
 
 resources:
   Resources:

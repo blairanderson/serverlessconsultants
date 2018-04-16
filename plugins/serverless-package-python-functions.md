@@ -4,13 +4,13 @@ title: Serverless Package Python Functions
 repo: ubaniabalogun/serverless-package-python-functions
 homepage: 'https://github.com/ubaniabalogun/serverless-package-python-functions'
 description: 'Packaging Python Lambda functions with only the dependencies/requirements they need.'
-stars: 39
-stars_trend: 
-stars_diff: 0
+stars: 41
+stars_trend: up
+stars_diff: 2
 forks: 15
 forks_trend: 
 forks_diff: 0
-watchers: 39
+watchers: 41
 issues: 13
 issues_trend: 
 issues_diff: 0
