@@ -4,13 +4,13 @@ title: Serverless Plugin Canary Deployments
 repo: davidgf/serverless-plugin-canary-deployments
 homepage: 'https://github.com/davidgf/serverless-plugin-canary-deployments'
 description: 'A Serverless plugin to implement canary deployments of Lambda functions'
-stars: 52
-stars_trend: 
-stars_diff: 0
+stars: 58
+stars_trend: up
+stars_diff: 6
 forks: 8
 forks_trend: 
 forks_diff: 0
-watchers: 52
+watchers: 58
 issues: 2
 issues_trend: 
 issues_diff: 0
@@ -82,6 +82,27 @@ You can see a working example in the [example folder](./example/).
 * `preTrafficHook`: (optional) validation Lambda function that runs before traffic shifting. It must use te CodeDeploy SDK to notify about this step's success or failure (more info [here](https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html)).
 * `postTrafficHook`: (optional) validation Lambda function that runs after traffic shifting. It must use te CodeDeploy SDK to notify about this step's success or failure (more info [here](https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html))
 * `alarms`: (optional) list of CloudWatch alarms. If any of them is triggered duringt the deployment, the associated Lambda function will automatically roll back to the previous version.
+
+### Default configurations
+
+You can set default values for all functions in a top-level custom deploymentSettings section.  E.g.:
+
+```yaml
+custom:
+  deploymentSettings:
+    codeDeployRole: some_arn_value
+    stages:
+      - dev
+      - prod
+
+functions:
+  ...
+```
+
+Some values are only available as top-level configurations.  They are:
+
+* `codeDeployRole`: (optional) an ARN specifying an existing IAM role for CodeDeploy.  If absent, one will be created for you.  See the [codeDeploy policy](./example-code-deploy-policy.json) for an example of what is needed.
+* `stages`: (optional) list of stages where you want to deploy your functions gradually. If not present, it assumes that are all of them.
 
 ## How it works
 

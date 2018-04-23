@@ -4,13 +4,13 @@ title: Serverless Plugin Select
 repo: FidelLimited/serverless-plugin-select
 homepage: 'https://github.com/FidelLimited/serverless-plugin-select'
 description: 'Select which functions are to be deployed based on region and stage.'
-stars: 16
-stars_trend: 
-stars_diff: 0
+stars: 18
+stars_trend: up
+stars_diff: 2
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 16
+watchers: 18
 issues: 0
 issues_trend: 
 issues_diff: 0

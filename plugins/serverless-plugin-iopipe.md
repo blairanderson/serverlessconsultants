@@ -4,16 +4,16 @@ title: Serverless Plugin Iopipe
 repo: iopipe/serverless-plugin-iopipe
 homepage: 'https://github.com/iopipe/serverless-plugin-iopipe'
 description: 'See inside your Lambda functions with high fidelity metrics and monitoring.'
-stars: 19
+stars: 23
 stars_trend: up
-stars_diff: 2
+stars_diff: 4
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 19
-issues: 6
-issues_trend: up
-issues_diff: 2
+watchers: 23
+issues: 4
+issues_trend: down
+issues_diff: -2
 ---
 
 
@@ -99,6 +99,12 @@ Exclude certain lambda functions from being wrapped by the plugin. Comma separat
 
 By default, the plugin sends _anonymized_, non-identifying usage statistics to Google Analytics. IOpipe will use this info to prioritize updates and enhancements to the plugin. If you'd like to opt out of this, just set this option.
 
+#### `iopipeHandlerDir` (optional)
+
+Change the directory that the IOpipe handler files will be generated in. Defaults to `iopipe_handlers`. Note, watch out using directories beginning with a `.` character due to current bugs within Serverless framework and serverless-offline:
+- [serverless/issues/4633](https://github.com/serverless/serverless/issues/4633)
+- [serverless-offline/pull/346](https://github.com/dherault/serverless-offline/pull/346)
+
 ## FAQ
 - Does this work with webpack?
   - Yes, you can use this plugin with webpack or serverless plugins utilizing webpack. For best results, make sure this plugin is specified _before_ the webpack plugins in serverless.yml, i.e.
@@ -109,6 +115,7 @@ By default, the plugin sends _anonymized_, non-identifying usage statistics to G
   ```
 - Does this work with [serverless-offline](https://github.com/dherault/serverless-offline)?
   - Yes, list `serverless-plugin-iopipe` first before any other plugins in `serverless.yml`.
+  - You will likely need to use the `iopipeHandlerDir` option to change where the IOpipe handler files are generated until [this PR is merged](https://github.com/dherault/serverless-offline/pull/346).
 - Can I use IOpipe plugins?
   - Yes, you can specify iopipe plugins through your [package.json file, or an iopipe.rc file](https://github.com/iopipe/iopipe-js-core#packagejson-configuration). Ensure those plugins are installed into your node_modules folder (yarn or npm).
 

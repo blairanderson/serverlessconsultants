@@ -4,16 +4,16 @@ title: Serverless Export Env
 repo: arabold/serverless-export-env
 homepage: 'https://github.com/arabold/serverless-export-env'
 description: 'Export environment variables into a .env file with automatic AWS CloudFormation reference resolution.'
-stars: 12
-stars_trend: 
-stars_diff: 0
+stars: 14
+stars_trend: up
+stars_diff: 2
 forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 12
-issues: 4
-issues_trend: 
-issues_diff: 0
+watchers: 14
+issues: 3
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -149,6 +149,9 @@ your project root folder.
 
 
 ## Releases
+
+### 1.2.0
+* Use operating system-specific end-of-line when creating `.env` file
 
 ### 1.1.3
 * Fixed an issue with `AWS::AccountId` being resolved as `[Object Promise]`

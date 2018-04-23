@@ -8,12 +8,12 @@ stars: 27
 stars_trend: 
 stars_diff: 0
 forks: 10
-forks_trend: up
-forks_diff: 2
+forks_trend: 
+forks_diff: 0
 watchers: 27
 issues: 4
-issues_trend: up
-issues_diff: 2
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -53,6 +53,11 @@ custom:
       localDir: path/to/other-site
       acl: public-read # optional
       followSymlinks: true # optional
+      params: # optional
+        - index.html:
+            CacheControl: 'no-cache'
+        - "*.js":
+            CacheControl: 'public, max-age=31536000'
 
 resources:
   Resources:

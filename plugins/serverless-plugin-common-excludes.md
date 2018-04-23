@@ -5,8 +5,8 @@ repo: dougmoscrop/serverless-plugin-common-excludes
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-common-excludes'
 description: 'Adds commonly excluded files to package.excludes'
 stars: 10
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 3
 forks_trend: 
 forks_diff: 0

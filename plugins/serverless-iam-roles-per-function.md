@@ -5,8 +5,8 @@ repo: functionalone/serverless-iam-roles-per-function
 homepage: 'https://github.com/functionalone/serverless-iam-roles-per-function'
 description: 'Serverless Plugin for easily defining IAM roles per function via the use of iamRoleStatements at the function level.'
 stars: 44
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0

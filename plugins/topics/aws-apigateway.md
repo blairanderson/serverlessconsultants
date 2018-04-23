@@ -3,6 +3,6 @@
 layout: topic
 topic: aws-apigateway
 title: aws-apigateway Serverless Plugins
-description: '4 aws-apigateway ServerLess Plugins'
-count: 4
+description: '3 aws-apigateway ServerLess Plugins'
+count: 3
 ---

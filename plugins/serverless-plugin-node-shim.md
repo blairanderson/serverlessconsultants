@@ -4,13 +4,13 @@ title: Serverless Plugin Node Shim
 repo: jzimmek/serverless-plugin-node-shim
 homepage: 'https://github.com/jzimmek/serverless-plugin-node-shim'
 description: 'Serverless plugin to run your functions in nodejs version (8 LTS, 9+) on aws lambda'
-stars: 8
-stars_trend: 
-stars_diff: 0
+stars: 10
+stars_trend: up
+stars_diff: 2
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 8
+watchers: 10
 issues: 0
 issues_trend: 
 issues_diff: 0

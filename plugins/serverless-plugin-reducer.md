@@ -4,13 +4,13 @@ title: Serverless Plugin Reducer
 repo: medikoo/serverless-plugin-reducer
 homepage: 'https://github.com/medikoo/serverless-plugin-reducer'
 description: 'Reduce Node.js lambda package so it contains only lambda dependencies'
-stars: 4
-stars_trend: 
-stars_diff: 0
+stars: 5
+stars_trend: up
+stars_diff: 1
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 2
 issues_trend: 
 issues_diff: 0

@@ -4,16 +4,16 @@ title: Serverless Aliyun Function Compute
 repo: aliyun/serverless-aliyun-function-compute
 homepage: 'https://github.com/aliyun/serverless-aliyun-function-compute'
 description: 'Serverless Alibaba Cloud Function Compute Plugin'
-stars: 23
-stars_trend: 
-stars_diff: 0
+stars: 24
+stars_trend: up
+stars_diff: 1
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 23
-issues: 12
-issues_trend: 
-issues_diff: 0
+watchers: 24
+issues: 11
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -47,6 +47,8 @@ The structure of the project should look something like this:
 ├── package.json
 └── serverless.yml
 ```
+
+Install `serverless-aliyun-function-compute` plugin for your service.
 
 ```yaml
 $ serverless plugin install --name serverless-aliyun-function-compute
@@ -88,10 +90,7 @@ functions:
   "version": "0.1.0",
   "description": "Hello World example for aliyun provider with Serverless Framework.",
   "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "serverless-aliyun-function-compute": "^1.0.0"
-  }
+  "license": "MIT"
 }
 ```
 

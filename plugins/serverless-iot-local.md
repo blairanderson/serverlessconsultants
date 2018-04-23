@@ -7,9 +7,9 @@ description: 'AWS Iot events with serverless-offline'
 stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 2
-forks_trend: 
-forks_diff: 0
+forks: 3
+forks_trend: up
+forks_diff: 1
 watchers: 8
 issues: 0
 issues_trend: 

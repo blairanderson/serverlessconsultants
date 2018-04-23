@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 204
+stars: 212
 stars_trend: up
-stars_diff: 3
-forks: 49
+stars_diff: 8
+forks: 50
 forks_trend: up
-forks_diff: 2
-watchers: 204
+forks_diff: 1
+watchers: 212
 issues: 35
-issues_trend: up
-issues_diff: 3
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -23,6 +23,7 @@ issues_diff: 3
 [![CircleCI](https://circleci.com/gh/UnitedIncome/serverless-python-requirements.svg?style=shield)](https://circleci.com/gh/UnitedIncome/serverless-python-requirements)
 [![appveyor](https://ci.appveyor.com/api/projects/status/biel93xc535nxvi2?svg=true)](https://ci.appveyor.com/project/dschep/serverless-python-requirements)
 [![npm](https://img.shields.io/npm/v/serverless-python-requirements.svg)](https://www.npmjs.com/package/serverless-python-requirements)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 A Serverless v1.x plugin to automatically bundle dependencies from
 `requirements.txt` and make them available in your `PYTHONPATH`.
@@ -86,7 +87,7 @@ failure.
 
 ## Pipenv support :sparkles::cake::sparkles:
 If you include a `Pipfile` and have `pipenv` installed instead of a `requirements.txt` this will use
-`pipenv lock --r` to generate them. It is fully compatible with all options such as `zip` and
+`pipenv lock -r` to generate them. It is fully compatible with all options such as `zip` and
 `dockerizePip`. If you don't want this plugin to generate it for you, set the following option:
 ```yaml
 custom:

@@ -4,13 +4,13 @@ title: Serverless Tag Sqs
 repo: gfragoso/serverless-tag-sqs
 homepage: 'https://github.com/gfragoso/serverless-tag-sqs'
 description: 'Serverless plugin to tag SQS - Simple Queue Service'
-stars: 1
-stars_trend: 
-stars_diff: 0
+stars: 2
+stars_trend: up
+stars_diff: 1
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 2
 issues: 0
 issues_trend: 
 issues_diff: 0
