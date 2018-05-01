@@ -7,9 +7,9 @@ description: 'A Node.js focused build plugin for serverless.'
 stars: 31
 stars_trend: 
 stars_diff: 0
-forks: 12
-forks_trend: 
-forks_diff: 0
+forks: 11
+forks_trend: down
+forks_diff: -1
 watchers: 31
 issues: 5
 issues_trend: 

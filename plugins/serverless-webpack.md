@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 655
+stars: 661
 stars_trend: up
-stars_diff: 18
+stars_diff: 6
 forks: 161
-forks_trend: down
-forks_diff: -1
-watchers: 655
+forks_trend: 
+forks_diff: 0
+watchers: 661
 issues: 18
-issues_trend: down
-issues_diff: -1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -80,7 +80,6 @@ custom:
     webpackConfig: 'webpack.config.js'   # Name of webpack configuration file
     includeModules: false   # Node modules configuration for packaging
     packager: 'npm'   # Packager that will be used to package your external modules
-    packExternalModulesMaxBuffer: 200 * 1024   # Size of stdio buffers for spawned child processes
 ```
 
 ### Webpack configuration file
@@ -660,6 +659,13 @@ me to take it over and continue working on the project. That helped to revive it
 
 ## Release Notes
 
+* 5.1.3
+  * Fixed issue with Yarn and file references as dependencies [#370][link-370]
+
+* 5.1.2
+  * Fixed issue that leads to `Unexpected end of JSON` in projects with lots of dependencies [#309][link-309][#373][link-373]
+  * Update webpack-4 example with VSCode debugging configuration [#365][link-365]
+
 * 5.1.1
   * Fixed local invoke watch mode not executing changed files [#349][link-349]
   * Added Webpack 4 example [#355][link-355]
@@ -879,3 +885,9 @@ me to take it over and continue working on the project. That helped to revive it
 [link-349]: https://github.com/serverless-heaven/serverless-webpack/issues/349
 [link-354]: https://github.com/serverless-heaven/serverless-webpack/pull/354
 [link-355]: https://github.com/serverless-heaven/serverless-webpack/pull/355
+
+[link-309]: https://github.com/serverless-heaven/serverless-webpack/issues/309
+[link-365]: https://github.com/serverless-heaven/serverless-webpack/pull/365
+[link-373]: https://github.com/serverless-heaven/serverless-webpack/pull/373
+
+[link-370]: https://github.com/serverless-heaven/serverless-webpack/issues/370

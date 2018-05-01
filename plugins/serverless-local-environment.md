@@ -5,8 +5,8 @@ repo: piercus/serverless-local-environment
 homepage: 'https://github.com/piercus/serverless-local-environment'
 description: 'Serverless plugin to set local environment variables and remote environment variable to different values'
 stars: 4
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0

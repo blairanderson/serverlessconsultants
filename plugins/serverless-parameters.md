@@ -7,9 +7,9 @@ description: 'Add parameters to the generated cloudformation templates'
 stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 3
-forks_trend: 
-forks_diff: 0
+forks: 2
+forks_trend: down
+forks_diff: -1
 watchers: 8
 issues: 1
 issues_trend: 

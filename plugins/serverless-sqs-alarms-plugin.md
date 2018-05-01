@@ -7,9 +7,9 @@ description: 'Wrapper to setup CloudWatch Alarms on SQS queue length'
 stars: 16
 stars_trend: 
 stars_diff: 0
-forks: 6
-forks_trend: 
-forks_diff: 0
+forks: 7
+forks_trend: up
+forks_diff: 1
 watchers: 16
 issues: 2
 issues_trend: 

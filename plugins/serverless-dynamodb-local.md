@@ -4,16 +4,16 @@ title: Serverless Dynamodb Local
 repo: 99xt/serverless-dynamodb-local
 homepage: 'https://github.com/99xt/serverless-dynamodb-local'
 description: 'Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless'
-stars: 180
+stars: 184
 stars_trend: up
 stars_diff: 4
-forks: 69
-forks_trend: 
-forks_diff: 0
-watchers: 180
-issues: 44
-issues_trend: 
-issues_diff: 0
+forks: 72
+forks_trend: up
+forks_diff: 3
+watchers: 184
+issues: 43
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -126,6 +126,8 @@ In `serverless.yml` seeding categories are defined under `dynamodb.seed`.
 
 If `dynamodb.start.seed` is true, then seeding is performed after table migrations.
 
+If you wish to use raw AWS AttributeValues to specify your seed data instead of Javascript types then simply change the variable of any such json files from `sources:` to `rawsources:`.
+
 ```yml
 dynamodb:
   start:
@@ -141,7 +143,7 @@ dynamodb:
     test:
       sources:
         - table: users
-          sources: [./fake-test-users.json]
+          rawsources: [./fake-test-users.json]
         - table: subscriptions
           sources: [./fake-test-subscriptions.json]
 ```

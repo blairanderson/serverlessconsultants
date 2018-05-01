@@ -5,8 +5,8 @@ repo: gfragoso/serverless-tag-cloud-watch-logs
 homepage: 'https://github.com/gfragoso/serverless-tag-cloud-watch-logs'
 description: 'Serverless plugin to tag CloudWatchLogs'
 stars: 2
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0

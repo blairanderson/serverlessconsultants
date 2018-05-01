@@ -4,16 +4,16 @@ title: Serverless Package Python Functions
 repo: ubaniabalogun/serverless-package-python-functions
 homepage: 'https://github.com/ubaniabalogun/serverless-package-python-functions'
 description: 'Packaging Python Lambda functions with only the dependencies/requirements they need.'
-stars: 41
-stars_trend: 
-stars_diff: 0
+stars: 42
+stars_trend: up
+stars_diff: 1
 forks: 15
 forks_trend: 
 forks_diff: 0
-watchers: 41
-issues: 14
-issues_trend: up
-issues_diff: 1
+watchers: 42
+issues: 13
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -102,11 +102,14 @@ When `serverless deploy` is run, the plugin will:
 The Serverless framework will then pickup each zip file and upload it to your provider.
 
 Here's a simple `serverless.yml` configuration for this plugin, assuming the project structure above
-one of the fuctions we add `-${opt:stage}` to the name in order to append the stage to the function name
+one of the functions we add `-${opt:stage}` to the name in order to append the stage to the function name
 
 ```
 service: your-awesome-project
 
+package:
+    individually: true
+    
 plugins:
   - serverless-package-python-functions
 
@@ -154,6 +157,9 @@ At the function level, you:
 - Specify `name` to give your function a name. The plugin uses the function's name as the name of the zip artifact
 - Use `include` to specify what function-level files you want to include in your artifact. Simply specifying the path to the function's folder will include every file in the folder in the function's zip artifact
 - Use `artifact` to tell Serverless where to find the zip artifact. The plugin creates the zip artifact for the function at `buildDir`/`name`.zip, so using `${self:custom.pkgPyFuncs.buildDir}/[function-name-here].zip` is advised.
+
+At the package level, you may need to:
+- Specify the `individually` parameter as `true` to ensure that zip artifacts are generated properly. You may need this if you are getting file not found errors about your zip artifact.
 
 Now, you may be wondering, doesn't the [Serverless documentation say](https://serverless.com/framework/docs/providers/aws/guide/packaging#artifact):
 > Serverless won't zip your service if [artifact] is configured and therefore exclude and include will be ignored. Either you use artifact or include / exclude.

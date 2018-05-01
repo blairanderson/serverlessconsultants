@@ -5,8 +5,8 @@ repo: loanmarket/serverless-plugin-provider-groups
 homepage: 'https://github.com/loanmarket/serverless-plugin-provider-groups'
 description: 'A plugin to allow management of grouped settings within large serverless projects.'
 stars: 2
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0

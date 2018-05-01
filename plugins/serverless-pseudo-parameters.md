@@ -4,16 +4,16 @@ title: Serverless Pseudo Parameters
 repo: svdgraaf/serverless-pseudo-parameters
 homepage: 'https://github.com/svdgraaf/serverless-pseudo-parameters'
 description: 'Use ${AWS::AccountId} and other cloudformation pseudo parameters in your serverless.yml values'
-stars: 39
-stars_trend: 
-stars_diff: 0
+stars: 40
+stars_trend: up
+stars_diff: 1
 forks: 11
-forks_trend: up
-forks_diff: 2
-watchers: 39
-issues: 3
-issues_trend: 
-issues_diff: 0
+forks_trend: 
+forks_diff: 0
+watchers: 40
+issues: 4
+issues_trend: up
+issues_diff: 1
 ---
 
 
@@ -99,3 +99,18 @@ custom:
     pseudoParameters:
         skipRegionReplace: true
 ```
+
+Reference other resources
+-------------------------
+You can also ref other resources within your template, for this, set the `allowReferences` variable:
+
+```yaml
+custom:
+  pseudoParameters:
+    allowReferences: true
+```
+
+Which enables:
+
+- using `#{MyResource}` to be rewritten to `${MyResource}`, which is roughly equivalent to `{"Ref": "MyResource"}`
+- using `#{MyResource.Arn}` to be rewritten to `${MyResource.Arn}`, which is roughly equivalent to `{"Fn::GetAtt": ["MyResource", "Arn"]}`.

@@ -5,15 +5,15 @@ repo: Droplr/serverless-api-cloudfront
 homepage: 'https://github.com/Droplr/serverless-api-cloudfront'
 description: 'Plugin that adds CloudFront distribution in front of your API Gateway for custom domain, CDN caching and access log.'
 stars: 44
-stars_trend: up
-stars_diff: 1
-forks: 5
-forks_trend: 
-forks_diff: 0
+stars_trend: 
+stars_diff: 0
+forks: 6
+forks_trend: up
+forks_diff: 1
 watchers: 44
-issues: 4
+issues: 7
 issues_trend: up
-issues_diff: 1
+issues_diff: 3
 ---
 
 

@@ -4,16 +4,16 @@ title: Serverless Plugin Write Env Vars
 repo: silvermine/serverless-plugin-write-env-vars
 homepage: 'https://github.com/silvermine/serverless-plugin-write-env-vars'
 description: 'Write environment variables out to a file that is compatible with dotenv'
-stars: 29
-stars_trend: 
-stars_diff: 0
+stars: 28
+stars_trend: down
+stars_diff: -1
 forks: 13
 forks_trend: 
 forks_diff: 0
-watchers: 29
-issues: 6
-issues_trend: 
-issues_diff: 0
+watchers: 28
+issues: 1
+issues_trend: down
+issues_diff: -5
 ---
 
 
@@ -43,7 +43,7 @@ and bundled into the root of your code bundle. Then you can rely on the
 make those variables accessible to your running Lambda functions.
 
 This makes it simple to take advantage of the powerful [variables
-capabilities](https://github.com/serverless/serverless/blob/master/docs/01-guide/08-serverless-variables.md)
+capabilities](https://serverless.com/framework/docs/providers/aws/guide/variables)
 that are built into Serverless.
 
 For example:
