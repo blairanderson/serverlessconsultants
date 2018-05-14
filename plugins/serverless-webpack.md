@@ -4,14 +4,14 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 661
-stars_trend: up
-stars_diff: 6
-forks: 161
+stars: 685
+stars_trend: 
+stars_diff: 0
+forks: 163
 forks_trend: 
 forks_diff: 0
-watchers: 661
-issues: 18
+watchers: 685
+issues: 24
 issues_trend: 
 issues_diff: 0
 ---
@@ -205,7 +205,7 @@ module.exports = {
 ### Stats
 
 By default, the plugin will print a quite verbose bundle information to your console. However, if
-you are not satisfy with the current output info, you can overwrite it in your `webpack.config.js`
+you are not satisfied with the current output info, you can overwrite it in your `webpack.config.js`
 
 ```js
 // webpack.config.js
@@ -659,6 +659,14 @@ me to take it over and continue working on the project. That helped to revive it
 
 ## Release Notes
 
+* 5.1.5
+  * Re-publish of 5.1.4 without yarn.lock
+
+* 5.1.4
+  * Fix support for Yarn resolutions definitions [#379][link-379]
+  * Better debugging for "Unable to import module ..." errors: Detect runtime dependencies that are only declared as devDependencies [#384][link-384]
+  * Documentation updates [#382][link-382]
+
 * 5.1.3
   * Fixed issue with Yarn and file references as dependencies [#370][link-370]
 
@@ -891,3 +899,7 @@ me to take it over and continue working on the project. That helped to revive it
 [link-373]: https://github.com/serverless-heaven/serverless-webpack/pull/373
 
 [link-370]: https://github.com/serverless-heaven/serverless-webpack/issues/370
+
+[link-379]: https://github.com/serverless-heaven/serverless-webpack/issues/379
+[link-382]: https://github.com/serverless-heaven/serverless-webpack/pull/382
+[link-384]: https://github.com/serverless-heaven/serverless-webpack/pull/384

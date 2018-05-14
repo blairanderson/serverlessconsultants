@@ -5,8 +5,8 @@ repo: loanmarket/serverless-plugin-inject-dependencies
 homepage: 'https://github.com/loanmarket/serverless-plugin-inject-dependencies'
 description: 'Painlessly deploy serverless projects with only the required dependencies.'
 stars: 4
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0

@@ -7,13 +7,13 @@ description: 'AWS Iot events with serverless-offline'
 stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 4
-forks_trend: up
-forks_diff: 1
+forks: 3
+forks_trend: 
+forks_diff: 0
 watchers: 8
-issues: 1
-issues_trend: up
-issues_diff: 1
+issues: 0
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -66,6 +66,10 @@ custom:
       port: 1884
     # Uncomment only if you already have an MQTT server running locally
     # noStart: true
+    redis:
+      host: 'localhost'
+      port: 6379
+      db: 12
 ```
 
 ### Using with serverless-offline plugin

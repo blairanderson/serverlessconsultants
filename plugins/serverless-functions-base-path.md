@@ -4,13 +4,13 @@ title: Serverless Functions Base Path
 repo: kevinrambaud/serverless-functions-base-path
 homepage: 'https://github.com/kevinrambaud/serverless-functions-base-path'
 description: 'Easily define a base path where your serverless functions are located.'
-stars: 7
+stars: 8
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 7
+watchers: 8
 issues: 0
 issues_trend: 
 issues_diff: 0

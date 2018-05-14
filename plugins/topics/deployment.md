@@ -1,8 +1,8 @@
 ---
 # NOTE: THIS FILE IS GENERATED - DO NOT ATTEMPT TO CREATE A PULL REQUEST TO UPDATE THE DATA. 
 layout: topic
-topic: serverless
-title: serverless Serverless Plugins
-description: '64 serverless ServerLess Plugins'
-count: 64
+topic: deployment
+title: deployment Serverless Plugins
+description: '1 deployment ServerLess Plugins'
+count: 1
 ---

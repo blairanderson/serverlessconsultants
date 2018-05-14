@@ -4,16 +4,16 @@ title: Serverless Offline Sns
 repo: mj1618/serverless-offline-sns
 homepage: 'https://github.com/mj1618/serverless-offline-sns'
 description: 'Serverless plugin to run a local SNS server and call serverless SNS handlers with events notifications.'
-stars: 25
+stars: 31
 stars_trend: 
 stars_diff: 0
-forks: 14
-forks_trend: down
-forks_diff: -1
-watchers: 25
-issues: 3
-issues_trend: down
-issues_diff: -1
+forks: 15
+forks_trend: 
+forks_diff: 0
+watchers: 31
+issues: 4
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -25,7 +25,7 @@ A serverless plugin to listen to offline SNS and call lambda fns with events.
 [![npm version](https://badge.fury.io/js/serverless-offline-sns.svg)](https://badge.fury.io/js/serverless-offline-sns)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors)
 
 
 ## Docs
@@ -56,7 +56,7 @@ plugins:
   - serverless-offline-sns
 ```
 
-Note that ordering matters when used with serverless-offline and serverless-webpack. serverless-webpack must be specified at the start of the list of plugins. 
+Note that ordering matters when used with serverless-offline and serverless-webpack. serverless-webpack must be specified at the start of the list of plugins.
 
 Configure the plugin with your offline SNS endpoint, host to listen on, and a free port the plugin can use.
 
@@ -129,6 +129,24 @@ However if you don't use serverless-offline you can start this plugin manually w
 serverless offline-sns start
 ```
 
+### Subscribing
+
+`serverless-offline-sns` supports `http`, `https`, and `sqs` subscriptions. `email`, `email-json`,
+`sms`, `application`, and `lambda` protocols are not supported at this time.
+
+When using `sqs` the `Endpoint` for the subscription must be the full `QueueUrl` returned from
+the SQS service when creating the queue or listing with `ListQueues`:
+
+```javascript
+// async
+const queue = await sqs.createQueue({ QueueName: 'my-queue' }).promise();
+const subscription = await sns.subscribe({
+    TopicArn: myTopicArn,
+    Protocol: 'sqs',
+    Endpoint: queue.QueueUrl,
+}).promise();
+```
+
 ## Contributors
 
 Happy to accept contributions, [feature requests](https://github.com/mj1618/serverless-offline-sns/issues) and [issues](https://github.com/mj1618/serverless-offline-sns/issues).
@@ -136,9 +154,11 @@ Happy to accept contributions, [feature requests](https://github.com/mj1618/serv
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
 | [<img src="https://avatars0.githubusercontent.com/u/6138817?v=4" width="100px;"/><br /><sub><b>Matthew James</b></sub>](https://github.com/mj1618)<br />[💬](#question-mj1618 "Answering Questions") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=mj1618 "Code") [🎨](#design-mj1618 "Design") [📖](https://github.com/mj1618/serverless-offline-sns/commits?author=mj1618 "Documentation") [💡](#example-mj1618 "Examples") | [<img src="https://avatars0.githubusercontent.com/u/517620?v=4" width="100px;"/><br /><sub><b>darbio</b></sub>](https://github.com/darbio)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Adarbio "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=darbio "Code") | [<img src="https://avatars2.githubusercontent.com/u/5116271?v=4" width="100px;"/><br /><sub><b>TiVoMaker</b></sub>](https://github.com/TiVoMaker)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ATiVoMaker "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=TiVoMaker "Code") [🎨](#design-TiVoMaker "Design") [📖](https://github.com/mj1618/serverless-offline-sns/commits?author=TiVoMaker "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/32281536?v=4" width="100px;"/><br /><sub><b>Jade Hwang</b></sub>](https://github.com/jadehwangsonos)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Ajadehwangsonos "Bug reports") | [<img src="https://avatars1.githubusercontent.com/u/933251?v=4" width="100px;"/><br /><sub><b>Bennett Rogers</b></sub>](https://github.com/bennettrogers)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Abennettrogers "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=bennettrogers "Code") | [<img src="https://avatars2.githubusercontent.com/u/9253219?v=4" width="100px;"/><br /><sub><b>Julius Breckel</b></sub>](https://github.com/jbreckel)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=jbreckel "Code") [💡](#example-jbreckel "Examples") [⚠️](https://github.com/mj1618/serverless-offline-sns/commits?author=jbreckel "Tests") | [<img src="https://avatars1.githubusercontent.com/u/29059474?v=4" width="100px;"/><br /><sub><b>RainaWLK</b></sub>](https://github.com/RainaWLK)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ARainaWLK "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=RainaWLK "Code") |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [<img src="https://avatars2.githubusercontent.com/u/33498?v=4" width="100px;"/><br /><sub><b>Jamie Learmonth</b></sub>](http://www.boxlightmedia.com)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Ajamiel "Bug reports") | [<img src="https://avatars2.githubusercontent.com/u/2598355?v=4" width="100px;"/><br /><sub><b>Gevorg A. Galstyan</b></sub>](https://github.com/gevorggalstyan)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Agevorggalstyan "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=gevorggalstyan "Code") | [<img src="https://avatars3.githubusercontent.com/u/412382?v=4" width="100px;"/><br /><sub><b>Ivan Montiel</b></sub>](https://idmontie.github.io)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Aidmontie "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=idmontie "Code") [⚠️](https://github.com/mj1618/serverless-offline-sns/commits?author=idmontie "Tests") | [<img src="https://avatars0.githubusercontent.com/u/205515?v=4" width="100px;"/><br /><sub><b>Matt Ledom</b></sub>](https://github.com/mledom)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=mledom "Code") [🎨](#design-mledom "Design") | [<img src="https://avatars3.githubusercontent.com/u/2430033?v=4" width="100px;"/><br /><sub><b>Keith Kirk</b></sub>](http://kmfk.io)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=kmfk "Code") [🎨](#design-kmfk "Design") | [<img src="https://avatars1.githubusercontent.com/u/679761?v=4" width="100px;"/><br /><sub><b>Kobi Meirson</b></sub>](https://github.com/kobim)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=kobim "Code") | [<img src="https://avatars2.githubusercontent.com/u/2048655?v=4" width="100px;"/><br /><sub><b>Steve Green</b></sub>](https://github.com/lagnat)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=lagnat "Code") |
+| [<img src="https://avatars1.githubusercontent.com/u/334487?v=4" width="100px;"/><br /><sub><b>Daniel</b></sub>](http://dandoes.net)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ADanielSchaffer "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=DanielSchaffer "Code") [🎨](#design-DanielSchaffer "Design") |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

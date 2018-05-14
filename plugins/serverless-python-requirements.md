@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 221
-stars_trend: up
-stars_diff: 9
-forks: 53
-forks_trend: up
-forks_diff: 3
-watchers: 221
-issues: 34
-issues_trend: down
-issues_diff: -1
+stars: 231
+stars_trend: 
+stars_diff: 0
+forks: 57
+forks_trend: 
+forks_diff: 0
+watchers: 231
+issues: 36
+issues_trend: 
+issues_diff: 0
 ---
 
 

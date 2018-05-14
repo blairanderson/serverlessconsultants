@@ -3,6 +3,6 @@
 layout: topic
 topic: lambda
 title: lambda Serverless Plugins
-description: '15 lambda ServerLess Plugins'
-count: 15
+description: '16 lambda ServerLess Plugins'
+count: 16
 ---

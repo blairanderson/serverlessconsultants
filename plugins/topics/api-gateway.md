@@ -3,6 +3,6 @@
 layout: topic
 topic: api-gateway
 title: api-gateway Serverless Plugins
-description: '2 api-gateway ServerLess Plugins'
-count: 2
+description: '3 api-gateway ServerLess Plugins'
+count: 3
 ---

@@ -4,16 +4,16 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 1257
-stars_trend: up
-stars_diff: 20
-forks: 231
-forks_trend: up
-forks_diff: 1
-watchers: 1257
+stars: 1290
+stars_trend: 
+stars_diff: 0
+forks: 238
+forks_trend: 
+forks_diff: 0
+watchers: 1290
 issues: 77
-issues_trend: down
-issues_diff: -1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -23,16 +23,6 @@ issues_diff: -1
 [![npm version](https://badge.fury.io/js/serverless-offline.svg)](https://badge.fury.io/js/serverless-offline)
 [![Build Status](https://travis-ci.org/dherault/serverless-offline.svg?branch=master)](https://travis-ci.org/dherault/serverless-offline)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
-
-# :sparkles: Announcement :sparkles:
-
-Dear users and contributors,
-
-Thank you for all your support. In the upcomming days my availability on this project should decline. This is why I'm **looking for maintainers**: anyone that pushed a successful PR and is willing to manage the upcomming ones is welcome to apply. To do so just comment on [this issue](https://github.com/dherault/serverless-offline/issues/304).
-
-Thanks you for your attention. :)
-
-:wavy_dash::wavy_dash::wavy_dash:
 
 This [Serverless](https://github.com/serverless/serverless) plugin emulates AWS λ and API Gateway on your local machine to speed up your development cycles.
 To do so, it starts an HTTP server that handles the request's lifecycle like APIG does and invokes your handlers.
@@ -44,7 +34,7 @@ To do so, it starts an HTTP server that handles the request's lifecycle like API
 * Lazy loading of your files with require cache invalidation: no need for a reloading tool like Nodemon.
 * And more: integrations, authorizers, proxies, timeouts, responseParameters, HTTPS, Babel runtime, CORS, etc...
 
-This plugin is updated by its users, I just do maintenance and ensure that PRs are relevant to the community. In other words, if you [find a bug or want a new feature](https://github.com/dherault/serverless-offline/issues), please help us by becoming one of the [contributors](https://github.com/dherault/serverless-offline/graphs/contributors) :v: ! See the [contributing section](#contributing).
+This plugin is updated by its users, I just do maintenance and ensure that PRs are relevant to the community. In other words, if you [find a bug or want a new feature](https://github.com/dherault/serverless-offline/issues), please help us by becoming one of the [contributors](https://github.com/dherault/serverless-offline/graphs/contributors) :v: ! See the [contributing section](#contributing). We are looking for maintainers, see [this issue](https://github.com/dherault/serverless-offline/issues/304).
 
 ## Documentation
 
@@ -115,6 +105,7 @@ All CLI options are optional:
 --corsDisallowCredentials   When provided, the default Access-Control-Allow-Credentials header value will be passed as 'false'. Default: true
 --exec "<script>"           When provided, a shell script is executed when the server starts up, and the server will shut down after handling this command.
 --noAuth                    Turns off all authorizers
+--preserveTrailingSlash     Used to keep trailing slashes on the request path
 ```
 
 Any of the CLI options can be added to your `serverless.yml`. For example:
