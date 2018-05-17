@@ -4,13 +4,13 @@ title: Serverless Ssm Fetch
 repo: gozup/serverless-ssm-fetch
 homepage: 'https://github.com/gozup/serverless-ssm-fetch'
 description: 'Sets &quot;AWS Systems Manager Parameter Store (SSM)&quot; parameters into functions&#39; environment variables.'
-stars: 9
-stars_trend: 
-stars_diff: 0
+stars: 10
+stars_trend: up
+stars_diff: 1
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 9
+watchers: 10
 issues: 0
 issues_trend: 
 issues_diff: 0

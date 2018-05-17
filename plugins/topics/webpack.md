@@ -3,6 +3,6 @@
 layout: topic
 topic: webpack
 title: webpack Serverless Plugins
-description: '3 webpack ServerLess Plugins'
-count: 3
+description: '2 webpack ServerLess Plugins'
+count: 2
 ---

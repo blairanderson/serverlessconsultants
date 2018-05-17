@@ -4,13 +4,13 @@ title: Serverless Attach Managed Policy
 repo: Nordstrom/serverless-attach-managed-policy
 homepage: 'https://github.com/Nordstrom/serverless-attach-managed-policy'
 description: 'A Serverless plugin to automatically attach an AWS Managed IAM Policy (or Policies) to all IAM Roles created by the Service.'
-stars: 5
-stars_trend: 
-stars_diff: 0
+stars: 6
+stars_trend: up
+stars_diff: 1
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 6
 issues: 0
 issues_trend: 
 issues_diff: 0

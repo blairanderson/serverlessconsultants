@@ -4,13 +4,13 @@ title: Serverless Iam Roles Per Function
 repo: functionalone/serverless-iam-roles-per-function
 homepage: 'https://github.com/functionalone/serverless-iam-roles-per-function'
 description: 'Serverless Plugin for easily defining IAM roles per function via the use of iamRoleStatements at the function level.'
-stars: 47
-stars_trend: 
-stars_diff: 0
+stars: 48
+stars_trend: up
+stars_diff: 1
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 47
+watchers: 48
 issues: 1
 issues_trend: 
 issues_diff: 0
@@ -18,7 +18,11 @@ issues_diff: 0
 
 
 # Serverless IAM Roles Per Function Plugin
-[![serverless][sls-image]][sls-url] [![npm package][npm-image]][npm-url]
+
+[![serverless][sls-image]][sls-url] 
+[![npm package][npm-image]][npm-url] 
+[![Build Status][travis-image]][travis-url] 
+[![dependencies Status][david-image]][david-url]
 
 A Serverless plugin to easily define IAM roles per function via the use of `iamRoleStatements` at the function definition block. 
 
@@ -103,7 +107,11 @@ custom:
 
 **Note**: Serverless Framework provides support for defining custom IAM roles on a per function level through the use of the `role` property and creating CloudFormation resources, as documented [here](https://serverless.com/framework/docs/providers/aws/guide/iam#custom-iam-roles). This plugin doesn't support defining both the `role` property and `iamRoleStatements` at the function level.
 
-[npm-image]:https://badge.fury.io/js/serverless-iam-roles-per-function.svg
+[npm-image]:https://img.shields.io/npm/v/serverless-iam-roles-per-function.svg
 [npm-url]:http://npmjs.org/package/serverless-iam-roles-per-function
 [sls-image]:http://public.serverless.com/badges/v3.svg
 [sls-url]:http://www.serverless.com
+[travis-image]:https://travis-ci.org/functionalone/serverless-iam-roles-per-function.svg?branch=master
+[travis-url]:https://travis-ci.org/functionalone/serverless-iam-roles-per-function
+[david-image]:https://david-dm.org/functionalone/serverless-iam-roles-per-function/status.svg
+[david-url]:https://david-dm.org/functionalone/serverless-iam-roles-per-function
