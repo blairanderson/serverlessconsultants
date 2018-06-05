@@ -4,13 +4,13 @@ title: Serverless Parameters
 repo: svdgraaf/serverless-parameters
 homepage: 'https://github.com/svdgraaf/serverless-parameters'
 description: 'Add parameters to the generated cloudformation templates'
-stars: 8
+stars: 9
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 8
+watchers: 9
 issues: 1
 issues_trend: 
 issues_diff: 0

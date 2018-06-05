@@ -4,13 +4,13 @@ title: Serverless Iam Roles Per Function
 repo: functionalone/serverless-iam-roles-per-function
 homepage: 'https://github.com/functionalone/serverless-iam-roles-per-function'
 description: 'Serverless Plugin for easily defining IAM roles per function via the use of iamRoleStatements at the function level.'
-stars: 48
-stars_trend: up
-stars_diff: 1
-forks: 0
+stars: 55
+stars_trend: 
+stars_diff: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 48
+watchers: 55
 issues: 1
 issues_trend: 
 issues_diff: 0
@@ -22,7 +22,8 @@ issues_diff: 0
 [![serverless][sls-image]][sls-url] 
 [![npm package][npm-image]][npm-url] 
 [![Build Status][travis-image]][travis-url] 
-[![dependencies Status][david-image]][david-url]
+[![Coverage Status][coveralls-image]][coveralls-url] 
+[![Dependencies Status][david-image]][david-url]
 
 A Serverless plugin to easily define IAM roles per function via the use of `iamRoleStatements` at the function definition block. 
 
@@ -65,7 +66,22 @@ functions:
     ...
 ```
 
-The plugin will create a dedicated role for each function that has an `iamRoleStatements` definition. It will include the permissions for create and write to CloudWatch logs and if VPC is defined: `AWSLambdaVPCAccessExecutionRole` will be included (as is done when using `iamRoleStatements` at the provider level).
+The plugin will create a dedicated role for each function that has an `iamRoleStatements` definition. It will include the permissions for create and write to CloudWatch logs, stream events and if VPC is defined: `AWSLambdaVPCAccessExecutionRole` will be included (as is done when using `iamRoleStatements` at the provider level).
+
+if `iamRoleStatements` are not defined at the function level default behavior is maintained and the function will receive the global iam role. It is possible to define an empty `iamRoleStatements` for a function and then the function will receive a dedicated role with only the permissions needed for CloudWatch and (if needed) stream events and VPC. Example of defining a function with empty `iamRoleStatements` and configured VPC. The function will receive a custom role with CloudWatch logs permissions and the policy `AWSLambdaVPCAccessExecutionRole`:
+
+```yaml
+functions:
+  func1:
+    handler: handler.get    
+    iamRoleStatements: []
+    vpc:
+      securityGroupIds:
+        - sg-xxxxxx
+      subnetIds:
+        - subnet-xxxx
+        - subnet-xxxxx
+```
 
 By default, function level `iamRoleStatements` override the provider level definition. It is also possible to inherit the provider level definition by specifying the option `iamRoleStatementsInherit: true`:
 
@@ -115,3 +131,5 @@ custom:
 [travis-url]:https://travis-ci.org/functionalone/serverless-iam-roles-per-function
 [david-image]:https://david-dm.org/functionalone/serverless-iam-roles-per-function/status.svg
 [david-url]:https://david-dm.org/functionalone/serverless-iam-roles-per-function
+[coveralls-image]:https://coveralls.io/repos/github/functionalone/serverless-iam-roles-per-function/badge.svg?branch=master
+[coveralls-url]:https://coveralls.io/github/functionalone/serverless-iam-roles-per-function?branch=master

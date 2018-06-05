@@ -4,16 +4,16 @@ title: Serverless Plugin Split Stacks
 repo: dougmoscrop/serverless-plugin-split-stacks
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-split-stacks'
 description: 'Migrate certain resources to nested stacks'
-stars: 43
+stars: 44
 stars_trend: 
 stars_diff: 0
-forks: 12
+forks: 13
 forks_trend: 
 forks_diff: 0
-watchers: 43
-issues: 10
-issues_trend: up
-issues_diff: 1
+watchers: 44
+issues: 5
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -50,7 +50,7 @@ This plugin is not a substitute for fine-grained services - try to limit the siz
 
 If you create a file in the root of your Serverless project called `stacks-map.js` this plugin will load it.
 
-This file can customize a few things. 
+This file can customize a few things.
 
 ```javascript
 module.exports = {

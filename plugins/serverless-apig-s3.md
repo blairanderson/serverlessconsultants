@@ -7,11 +7,11 @@ description: 'Serve static front-end content from S3 via the API Gateway and dep
 stars: 22
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 7
 forks_trend: 
 forks_diff: 0
 watchers: 22
-issues: 4
+issues: 6
 issues_trend: 
 issues_diff: 0
 ---

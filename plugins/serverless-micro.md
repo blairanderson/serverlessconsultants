@@ -5,11 +5,11 @@ repo: barstoolsports/serverless-micro
 homepage: 'https://github.com/barstoolsports/serverless-micro'
 description: 'Plugin to help manage multiple micro services under one main service.'
 stars: 19
-stars_trend: up
-stars_diff: 2
+stars_trend: 
+stars_diff: 0
 forks: 5
-forks_trend: up
-forks_diff: 1
+forks_trend: 
+forks_diff: 0
 watchers: 19
 issues: 4
 issues_trend: 

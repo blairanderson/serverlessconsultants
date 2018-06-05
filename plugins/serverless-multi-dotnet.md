@@ -4,13 +4,13 @@ title: Serverless Multi Dotnet
 repo: tsibelman/serverless-multi-dotnet
 homepage: 'https://github.com/tsibelman/serverless-multi-dotnet'
 description: 'A serverless plugin to pack C# lambdas functions that are spread to multiple CS projects.'
-stars: 0
+stars: 1
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 0
+watchers: 1
 issues: 0
 issues_trend: 
 issues_diff: 0

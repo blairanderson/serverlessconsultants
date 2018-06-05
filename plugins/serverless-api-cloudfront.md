@@ -4,14 +4,14 @@ title: Serverless Api Cloudfront
 repo: Droplr/serverless-api-cloudfront
 homepage: 'https://github.com/Droplr/serverless-api-cloudfront'
 description: 'Plugin that adds CloudFront distribution in front of your API Gateway for custom domain, CDN caching and access log.'
-stars: 48
+stars: 52
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 8
 forks_trend: 
 forks_diff: 0
-watchers: 48
-issues: 7
+watchers: 52
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -65,9 +65,16 @@ custom:
     domain: my-custom-domain.com
     certificate: arn:aws:acm:us-east-1:000000000000:certificate/00000000-1111-2222-3333-444444444444
     waf: 00000000-0000-0000-0000-000000000000
+    compress: true
     logging:
       bucket: my-bucket.s3.amazonaws.com
       prefix: my-prefix
+    cookies: none
+    headers:
+      - x-api-key
+    querystring:
+      - page
+      - per_page
 ```
 
 ### Notes
@@ -78,4 +85,23 @@ custom:
 domain:
   - my-custom-domain.com
   - secondary-custom-domain.com
+```
+
+* `cookies` can be *all* (default), *none* or a list that lists the cookies to whitelist
+```
+cookies:
+  - FirstCookieName
+  - SecondCookieName
+```
+
+* `headers` can be *all*, *none* (default) or a list:
+
+```
+headers: all
+```
+
+* `querystring` can be *all* (default), *none* or a list, in which case all querystring parameters are forwarded, but cache is based on the list:
+
+```
+querystring: all
 ```

@@ -4,16 +4,16 @@ title: Serverless Domain Manager
 repo: amplify-education/serverless-domain-manager
 homepage: 'https://github.com/amplify-education/serverless-domain-manager'
 description: 'Serverless plugin for managing custom domains with API Gateways.'
-stars: 176
+stars: 183
 stars_trend: 
 stars_diff: 0
-forks: 49
-forks_trend: up
-forks_diff: 1
-watchers: 176
-issues: 25
-issues_trend: up
-issues_diff: 1
+forks: 51
+forks_trend: 
+forks_diff: 0
+watchers: 183
+issues: 24
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -106,7 +106,7 @@ serverless create_domain
 
 To deploy with the custom domain:
 ```
-severless deploy
+serverless deploy
 ```
 
 To remove the created custom domain:

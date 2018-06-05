@@ -1,8 +1,8 @@
 ---
 # NOTE: THIS FILE IS GENERATED - DO NOT ATTEMPT TO CREATE A PULL REQUEST TO UPDATE THE DATA. 
 layout: topic
-topic: aws
-title: aws Serverless Plugins
-description: '37 aws ServerLess Plugins'
-count: 37
+topic: dependson
+title: dependson Serverless Plugins
+description: '1 dependson ServerLess Plugins'
+count: 1
 ---

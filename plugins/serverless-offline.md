@@ -4,16 +4,16 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 1300
-stars_trend: up
-stars_diff: 10
-forks: 238
+stars: 1355
+stars_trend: 
+stars_diff: 0
+forks: 252
 forks_trend: 
 forks_diff: 0
-watchers: 1300
-issues: 62
-issues_trend: down
-issues_diff: -15
+watchers: 1355
+issues: 54
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -394,7 +394,7 @@ Specifically, Lambda currently runs on Node v4.3.2 and v6.10.0, whereas _Offline
 
 ## Usage with serverless-offline and serverless-webpack plugin
 
-Run `serverless offline start`. In comparison with `serverless offline`, the `start` command will fire an `init` and a `end` lifecycle hook which is needed for serverless-offline and serverless-dynamodb-local to switch off ressources.
+Run `serverless offline start`. In comparison with `serverless offline`, the `start` command will fire an `init` and a `end` lifecycle hook which is needed for serverless-offline and serverless-dynamodb-local to switch off resources.
 
 Add plugins to your `serverless.yml` file:
 

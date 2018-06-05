@@ -4,14 +4,14 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 236
-stars_trend: up
-stars_diff: 5
-forks: 57
+stars: 245
+stars_trend: 
+stars_diff: 0
+forks: 60
 forks_trend: 
 forks_diff: 0
-watchers: 236
-issues: 36
+watchers: 245
+issues: 37
 issues_trend: 
 issues_diff: 0
 ---
@@ -243,7 +243,7 @@ custom:
 ## :apple::beer::snake: Mac Brew installed Python notes
 [Brew wilfully breaks the `--target` option with no seeming intention to fix it](https://github.com/Homebrew/brew/pull/821)
 which causes issues since this uses that option. There are a few easy workarounds for this:
-* Install Python from [python.org](https://wwwpython.org/downloads/) and specify it with the
+* Install Python from [python.org](https://www.python.org/downloads/) and specify it with the
 [`pythonBin` option](#customize-python-executable).
 
 OR

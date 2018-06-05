@@ -7,7 +7,7 @@ description: 'Manage your Alexa Skills with Serverless Framework.'
 stars: 24
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 24

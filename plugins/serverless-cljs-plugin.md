@@ -4,13 +4,13 @@ title: Serverless Cljs Plugin
 repo: nervous-systems/serverless-cljs-plugin
 homepage: 'https://github.com/nervous-systems/serverless-cljs-plugin'
 description: 'Enables Clojurescript as an implementation language for Lambda handlers'
-stars: 45
+stars: 48
 stars_trend: 
 stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 45
+watchers: 48
 issues: 7
 issues_trend: 
 issues_diff: 0
@@ -26,7 +26,7 @@ uses lein/[cljs-lambda](https://github.com/nervous-systems/cljs-lambda) (or,
 optionally [Lumo](https://github.com/anmonteiro/lumo)) to package services
 written in [Clojurescript](https://clojurescript.org/).
 
-## JVM Template
+## Leiningen Template
 
 ``` shell
 $ lein new serverless-cljs example
@@ -36,7 +36,7 @@ example$ lein deps
 Will generate an `example` directory containing a minimal `serverless.yml` and
 `project.clj` demonstrating this plugin's functionality.
 
-### [Guide to using the plugin on the JVM.](https://nervous.io/clojurescript/lambda/2017/02/06/serverless-cljs/)
+### [Guide to using the plugin via Lein/JVM compilation.](https://nervous.io/clojurescript/lambda/2017/02/06/serverless-cljs/)
 
 ## Usage
 

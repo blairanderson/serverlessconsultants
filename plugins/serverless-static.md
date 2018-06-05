@@ -17,8 +17,11 @@ issues_diff: 0
 ---
 
 
-# :package: :sparkles:  Serverless Static Plugin
+# :package: :sparkles: Serverless Static Plugin
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+
+## Note
+Deploy functionality is in active development, it soon will be available
 
 ## 1.install the plugin
 First, add Serverless Static to your project, be sure that you already have the [serverless-offline](https://github.com/dherault/serverless-offline) plugin already installed
@@ -45,8 +48,8 @@ plugins:
 ## 3. customize behavior (optional)
 ```YAML
 custom:
-  static-serve:
-    directory: ./public # select the folder you want to serve
+  static:
+    path: ./public # select the folder you want to serve
     port: 8000 # select a specific port 
 
 # this will overide default behavior
@@ -55,8 +58,8 @@ custom:
 ```
 
 
-## Todo
+<!-- ## Todo
 
 - [ ] support for serving multiple directories
-- [ ] deploy / sync folder and bucket
+- [ ] deploy / sync folder and bucket -->
 

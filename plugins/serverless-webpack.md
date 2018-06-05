@@ -4,16 +4,16 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 690
-stars_trend: up
-stars_diff: 5
-forks: 164
-forks_trend: up
-forks_diff: 1
-watchers: 690
-issues: 26
-issues_trend: up
-issues_diff: 2
+stars: 717
+stars_trend: 
+stars_diff: 0
+forks: 166
+forks_trend: 
+forks_diff: 0
+watchers: 717
+issues: 30
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -265,6 +265,31 @@ custom:
       packagePath: '../package.json' # relative path to custom package.json file.
 ```
 > Note that only relative path is supported at the moment.
+
+#### Runtime dependencies
+
+If a runtime dependency is detected that is found in the `devDependencies` section and
+so would not be packaged, the plugin will error until you explicitly exclude it (see `forceExclude` below) 
+or move it to the `dependencies` section.
+
+#### AWS-SDK
+
+An exception for the runtime dependency error is the AWS-SDK. All projects using the AWS-SDK normally
+have it listed in `devDependencies` because AWS provides it already in their Lambda environment. In this case 
+the aws-sdk is automatically excluded and only an informational message is printed (in `--verbose` mode).
+
+The main reason for the warning is, that silently ignoring anything contradicts the declarative nature
+of Serverless' service definition. So the correct way to define the handling for the aws-sdk is, as 
+you would do for all other excluded modules (see `forceExclude` below).
+
+```yaml
+# serverless.yml
+custom:
+  webpack:
+    includeModules:
+      forceExclude:
+        - aws-sdk
+```
 
 #### Packagers
 

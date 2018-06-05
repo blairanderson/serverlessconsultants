@@ -4,14 +4,14 @@ title: Serverless Plugin Log Subscription
 repo: dougmoscrop/serverless-plugin-log-subscription
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-log-subscription'
 description: 'Adds a CloudWatch LogSubscription for functions'
-stars: 7
+stars: 8
 stars_trend: 
 stars_diff: 0
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 7
-issues: 0
+watchers: 8
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
