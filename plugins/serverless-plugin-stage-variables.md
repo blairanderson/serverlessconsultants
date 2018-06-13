@@ -7,11 +7,11 @@ description: 'Add stage variables for Serverless 1.x to ApiGateway, so you can u
 stars: 22
 stars_trend: 
 stars_diff: 0
-forks: 14
+forks: 15
 forks_trend: 
 forks_diff: 0
 watchers: 22
-issues: 0
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

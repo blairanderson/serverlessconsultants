@@ -4,13 +4,13 @@ title: Serverless Plugin Aws Alerts
 repo: ACloudGuru/serverless-plugin-aws-alerts
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-aws-alerts'
 description: 'A Serverless plugin to easily add CloudWatch alarms to functions'
-stars: 129
+stars: 134
 stars_trend: 
 stars_diff: 0
-forks: 32
+forks: 33
 forks_trend: 
 forks_diff: 0
-watchers: 129
+watchers: 134
 issues: 17
 issues_trend: 
 issues_diff: 0

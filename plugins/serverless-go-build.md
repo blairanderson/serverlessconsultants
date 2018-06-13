@@ -7,7 +7,7 @@ description: 'Build go source files (or public functions) using yml definition f
 stars: 15
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
 watchers: 15

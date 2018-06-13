@@ -4,13 +4,13 @@ title: Serverless Domain Manager
 repo: amplify-education/serverless-domain-manager
 homepage: 'https://github.com/amplify-education/serverless-domain-manager'
 description: 'Serverless plugin for managing custom domains with API Gateways.'
-stars: 183
+stars: 191
 stars_trend: 
 stars_diff: 0
-forks: 51
+forks: 52
 forks_trend: 
 forks_diff: 0
-watchers: 183
+watchers: 191
 issues: 24
 issues_trend: 
 issues_diff: 0

@@ -4,14 +4,14 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 150
+stars: 162
 stars_trend: 
 stars_diff: 0
-forks: 25
+forks: 30
 forks_trend: 
 forks_diff: 0
-watchers: 150
-issues: 20
+watchers: 162
+issues: 22
 issues_trend: 
 issues_diff: 0
 ---
@@ -83,12 +83,22 @@ custom:
   appSync:
     name:  # defaults to api
     # apiKey # only required for update-appsync/delete-appsync
-    authenticationType: AMAZON_COGNITO_USER_POOLS
+    authenticationType: API_KEY or AMAZON_COGNITO_USER_POOLS or OPENID_CONNECT
+    # if AMAZON_COGNITO_USER_POOLS
     userPoolConfig:
       awsRegion: # required # region
       defaultAction: # ALLOW
       userPoolId: # required # user pool ID
       region: # defaults to provider region
+    # if OPENID_CONNECT
+    openIdConnectConfig:
+      issuer: 
+      clientId: 
+      iatTTL: 
+      authTTL: 
+    logConfig:
+      loggingRoleArn: { Fn::GetAtt: [AppSyncLoggingServiceRole, Arn] } # Where AppSyncLoggingServiceRole is a role with CloudWatch Logs write access
+      level: ERROR # Logging Level: NONE | ERROR | ALL
     mappingTemplatesLocation: # defaults to mapping-templates
     mappingTemplates:
       - dataSource: # data source name

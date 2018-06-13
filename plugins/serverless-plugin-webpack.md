@@ -7,11 +7,11 @@ description: 'A serverless plugin to automatically bundle your functions individ
 stars: 62
 stars_trend: 
 stars_diff: 0
-forks: 14
+forks: 13
 forks_trend: 
 forks_diff: 0
 watchers: 62
-issues: 8
+issues: 7
 issues_trend: 
 issues_diff: 0
 ---

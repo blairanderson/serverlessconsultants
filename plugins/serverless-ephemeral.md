@@ -4,14 +4,14 @@ title: Serverless Ephemeral
 repo: Accenture/serverless-ephemeral
 homepage: 'https://github.com/Accenture/serverless-ephemeral'
 description: 'Build and include custom stateless libraries for any language'
-stars: 36
+stars: 37
 stars_trend: 
 stars_diff: 0
 forks: 8
 forks_trend: 
 forks_diff: 0
-watchers: 36
-issues: 3
+watchers: 37
+issues: 5
 issues_trend: 
 issues_diff: 0
 ---

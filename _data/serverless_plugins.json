@@ -3,163 +3,163 @@
     "name": "fullstack-serverless",
     "description": "A Serverless plugin to create an AWS CloudFront distribution that serves static web content from S3 and routes API traffic to API Gateway.",
     "githubUrl": "https://github.com/MadSkills-io/fullstack-serverless",
-    "last-month": 76
+    "last-month": 111
   },
   {
     "name": "serverless-finch",
     "description": "A Serverless plugin to deploy static website assets to AWS S3.",
     "githubUrl": "https://github.com/fernando-mc/serverless-finch",
-    "last-month": 4325
+    "last-month": 5613
   },
   {
     "name": "serverless-appsync-plugin",
     "description": "Serverless Plugin to deploy AppSync GraphQL API",
     "githubUrl": "https://github.com/sid88in/serverless-appsync-plugin",
-    "last-month": 1055
+    "last-month": 1198
   },
   {
     "name": "serverless-cloudformation-parameter-setter",
     "description": "Set CloudFormation parameters when deploying.",
     "githubUrl": "https://github.com/trek10inc/serverless-cloudformation-parameter-setter",
-    "last-month": 149
+    "last-month": 123
   },
   {
     "name": "serverless-alexa-skills",
     "description": "Manage your Alexa Skills with Serverless Framework.",
     "githubUrl": "https://github.com/marcy-terui/serverless-alexa-skills",
-    "last-month": 82
+    "last-month": 51
   },
   {
     "name": "serverless-plugin-chrome",
     "description": "Plugin which bundles and ensures that Headless Chrome/Chromium is running when your AWS Lambda function handler is invoked.",
     "githubUrl": "https://github.com/adieuadieu/serverless-chrome/tree/master/packages/serverless-plugin",
-    "last-month": 1242
+    "last-month": 1170
   },
   {
     "name": "serverless-ssm-fetch",
     "description": "Sets \"AWS Systems Manager Parameter Store (SSM)\" parameters into functions' environment variables.",
     "githubUrl": "https://github.com/gozup/serverless-ssm-fetch",
-    "last-month": 242
+    "last-month": 254
   },
   {
     "name": "serverless-custom-packaging-plugin",
     "description": "Plugin to package your sourcecode using a custom target path inside the zip.",
     "githubUrl": "https://github.com/hypoport/serverless-custom-packaging-plugin",
-    "last-month": 33
+    "last-month": 29
   },
   {
     "name": "serverless-apigw-binary",
     "description": "Plugin to enable binary support in AWS API Gateway.",
     "githubUrl": "https://github.com/maciejtreder/serverless-apigw-binary",
-    "last-month": 7861
+    "last-month": 10729
   },
   {
     "name": "serverless-domain-manager",
     "description": "Serverless plugin for managing custom domains with API Gateways.",
     "githubUrl": "https://github.com/amplify-education/serverless-domain-manager",
-    "last-month": 35175
+    "last-month": 44319
   },
   {
     "name": "serverless-log-forwarding",
     "description": "Serverless plugin for forwarding CloudWatch logs to another Lambda function.",
     "githubUrl": "https://github.com/amplify-education/serverless-log-forwarding",
-    "last-month": 3427
+    "last-month": 4976
   },
   {
     "name": "serverless-plugin-external-sns-events",
     "description": "Add ability for functions to use existing or external SNS topics as an event source",
     "githubUrl": "https://github.com/silvermine/serverless-plugin-external-sns-events",
-    "last-month": 631
+    "last-month": 733
   },
   {
     "name": "serverless-plugin-write-env-vars",
     "description": "Write environment variables out to a file that is compatible with dotenv",
     "githubUrl": "https://github.com/silvermine/serverless-plugin-write-env-vars",
-    "last-month": 452
+    "last-month": 539
   },
   {
     "name": "serverless-alexa-plugin",
     "description": "Serverless plugin to support Alexa Lambda events",
     "githubUrl": "https://github.com/rajington/serverless-alexa-plugin",
-    "last-month": 26
+    "last-month": 22
   },
   {
     "name": "serverless-build-plugin",
     "description": "A Node.js focused build plugin for serverless.",
     "githubUrl": "https://github.com/nfour/serverless-build-plugin",
-    "last-month": 3989
+    "last-month": 4884
   },
   {
     "name": "serverless-resources-env",
     "description": "After Deploy, this plugin fetches cloudformation resource identifiers and sets them on AWS lambdas, and creates local .<state>-env file",
     "githubUrl": "https://github.com/rurri/serverless-resources-env",
-    "last-month": 81
+    "last-month": 115
   },
   {
     "name": "serverless-event-constant-inputs",
     "description": "Allows you to add constant inputs to events in Serverless 1.0. For more info see [constant values in Cloudwatch](https://aws.amazon.com/blogs/compute/simply-serverless-use-constant-values-in-cloudwatch-event-triggered-lambda-functions/)",
     "githubUrl": "https://github.com/dittto/serverless-event-constant-inputs",
-    "last-month": 7
+    "last-month": 8
   },
   {
     "name": "serverless-kms-secrets",
     "description": "Allows to easily encrypt and decrypt secrets using KMS from the serverless CLI",
     "githubUrl": "https://github.com/SC5/serverless-kms-secrets",
-    "last-month": 1671
+    "last-month": 1993
   },
   {
     "name": "serverless-plugin-stack-outputs",
     "description": "Displays stack outputs for your serverless stacks when `sls info` is ran",
     "githubUrl": "https://github.com/svdgraaf/serverless-plugin-stack-outputs",
-    "last-month": 236
+    "last-month": 292
   },
   {
     "name": "serverless-plugin-stage-variables",
     "description": "Add stage variables for Serverless 1.x to ApiGateway, so you can use variables in your Lambda's",
     "githubUrl": "https://github.com/svdgraaf/serverless-plugin-stage-variables",
-    "last-month": 2376
+    "last-month": 2718
   },
   {
     "name": "serverless-plugin-cloudwatch-sumologic",
     "description": "Plugin which auto-subscribes a log delivery lambda function to lambda log groups created by serverless",
     "githubUrl": "https://github.com/ACloudGuru/serverless-plugin-cloudwatch-sumologic",
-    "last-month": 182
+    "last-month": 327
   },
   {
     "name": "serverless-plugin-aws-alerts",
     "description": "A Serverless plugin to easily add CloudWatch alarms to functions",
     "githubUrl": "https://github.com/ACloudGuru/serverless-plugin-aws-alerts",
-    "last-month": 9758
+    "last-month": 12701
   },
   {
     "name": "serverless-plugin-package-dotenv-file",
     "description": "A Serverless plugin to copy a .env file into the serverless package",
     "githubUrl": "https://github.com/ACloudGuru/serverless-plugin-package-dotenv-file",
-    "last-month": 386
+    "last-month": 704
   },
   {
     "name": "serverless-command-line-event-args",
     "description": "This module is Serverless Framework plugin. Event JSON passes to your Lambda function in commandline.",
     "githubUrl": "https://github.com/horike37/serverless-command-line-event-args",
-    "last-month": 43
+    "last-month": 23
   },
   {
     "name": "serverless-dynamodb-local",
     "description": "Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless",
     "githubUrl": "https://github.com/99xt/serverless-dynamodb-local",
-    "last-month": 12469
+    "last-month": 13896
   },
   {
     "name": "serverless-offline",
     "description": "Emulate AWS λ and API Gateway locally when developing your Serverless project",
     "githubUrl": "https://github.com/dherault/serverless-offline",
-    "last-month": 307864
+    "last-month": 261386
   },
   {
     "name": "serverless-offline-ssm",
     "description": "Read SSM parameters from a .env file instead of AWS",
     "githubUrl": "https://github.com/janders223/serverless-offline-ssm",
-    "last-month": 219
+    "last-month": 243
   },
   {
     "name": "serverless-offline-direct-lambda",
@@ -171,241 +171,241 @@
     "name": "serverless-plugin-simulate",
     "description": "Simulate AWS Lambda and API Gateway locally using Docker",
     "githubUrl": "https://github.com/gertjvr/serverless-plugin-simulate",
-    "last-month": 1607
+    "last-month": 1863
   },
   {
     "name": "serverless-plugin-optimize",
     "description": "Bundle with Browserify, transpile with Babel to ES5 and minify with Uglify your Serverless functions.",
     "githubUrl": "https://github.com/FidelLimited/serverless-plugin-optimize",
-    "last-month": 2048
+    "last-month": 2254
   },
   {
     "name": "serverless-plugin-select",
     "description": "Select which functions are to be deployed based on region and stage.",
     "githubUrl": "https://github.com/FidelLimited/serverless-plugin-select",
-    "last-month": 348
+    "last-month": 345
   },
   {
     "name": "serverless-plugin-warmup",
     "description": "Keep your lambdas warm during Winter.",
     "githubUrl": "https://github.com/FidelLimited/serverless-plugin-warmup",
-    "last-month": 8950
+    "last-month": 10960
   },
   {
     "name": "serverless-plugin-browserify",
     "description": "Speed up your node based lambda's",
     "githubUrl": "https://github.com/doapp-ryanp/serverless-plugin-browserify",
-    "last-month": 229
+    "last-month": 375
   },
   {
     "name": "serverless-plugin-diff",
     "description": "Compares your local AWS CloudFormation templates against deployed ones.",
     "githubUrl": "https://github.com/nicka/serverless-plugin-diff",
-    "last-month": 76
+    "last-month": 84
   },
   {
     "name": "serverless-run-function-plugin",
     "description": "Run serverless function locally",
     "githubUrl": "https://github.com/lithin/serverless-run-function-plugin",
-    "last-month": 130
+    "last-month": 108
   },
   {
     "name": "serverless-scriptable-plugin",
     "description": "Customize Serverless behavior without writing a plugin.",
     "githubUrl": "https://github.com/weixu365/serverless-scriptable-plugin",
-    "last-month": 1342
+    "last-month": 1817
   },
   {
     "name": "serverless-subscription-filter",
     "description": "Serverless plugin to register subscription filter for Lambda logs. Register and pipe the logs of one lambda to another to process.",
     "githubUrl": "https://github.com/blackevil245/serverless-subscription-filter",
-    "last-month": 45
+    "last-month": 23
   },
   {
     "name": "serverless-webpack",
     "description": "Serverless plugin to bundle your lambdas with Webpack",
     "githubUrl": "https://github.com/serverless-heaven/serverless-webpack",
-    "last-month": 58741
+    "last-month": 70113
   },
   {
     "name": "serverless-wsgi",
     "description": "Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages",
     "githubUrl": "https://github.com/logandk/serverless-wsgi",
-    "last-month": 1679
+    "last-month": 2215
   },
   {
     "name": "serverless-crypt",
     "description": "Securing the secrets on Serverless Framework by AWS KMS encryption.",
     "githubUrl": "https://github.com/marcy-terui/serverless-crypt",
-    "last-month": 1004
+    "last-month": 1427
   },
   {
     "name": "serverless-plugin-multiple-responses",
     "description": "Enable multiple content-types for Response template ",
     "githubUrl": "https://github.com/silvermine/serverless-plugin-multiple-responses",
-    "last-month": 45
+    "last-month": 50
   },
   {
     "name": "serverless-plugin-include-dependencies",
     "description": "This is a Serverless plugin that should make your deployed functions smaller.",
     "githubUrl": "https://github.com/dougmoscrop/serverless-plugin-include-dependencies",
-    "last-month": 6127
+    "last-month": 8492
   },
   {
     "name": "serverless-mocha-plugin",
     "description": "A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Mocha",
     "githubUrl": "https://github.com/SC5/serverless-mocha-plugin",
-    "last-month": 5786
+    "last-month": 6836
   },
   {
     "name": "serverless-jest-plugin",
     "description": "A Serverless Plugin for the Serverless Framework which adds support for test-driven development using Jest",
     "githubUrl": "https://github.com/SC5/serverless-jest-plugin",
-    "last-month": 2030
+    "last-month": 2203
   },
   {
     "name": "serverless-plugin-cfauthorizer",
     "description": "This plugin allows you to define your own API Gateway Authorizers as the Serverless CloudFormation resources and apply them to HTTP endpoints.",
     "githubUrl": "https://github.com/SC5/serverless-plugin-cfauthorizer",
-    "last-month": 580
+    "last-month": 640
   },
   {
     "name": "serverless-cloudformation-changesets",
     "description": "Natively deploy to CloudFormation via Change sets, instead of directly. Allowing you to queue changes, and safely require escalated roles for final deployment.",
     "githubUrl": "https://github.com/trek10inc/serverless-cloudformation-changesets",
-    "last-month": 59
+    "last-month": 66
   },
   {
     "name": "serverless-aws-documentation",
     "description": "Serverless plugin to add documentation and models to the serverless generated API Gateway",
     "githubUrl": "https://github.com/9cookies/serverless-aws-documentation",
-    "last-month": 11976
+    "last-month": 14516
   },
   {
     "name": "raml-serverless",
     "description": "Serverless plugin to work with RAML API spec documents",
     "githubUrl": "https://github.com/andrewcurioso/raml-serverless",
-    "last-month": 15
+    "last-month": 16
   },
   {
     "name": "serverless-python-requirements",
     "description": "Serverless plugin to bundle Python packages",
     "githubUrl": "https://github.com/UnitedIncome/serverless-python-requirements",
-    "last-month": 12965
+    "last-month": 16189
   },
   {
     "name": "serverless-multi-dotnet",
     "description": "A serverless plugin to pack C# lambdas functions that are spread to multiple CS projects.",
     "githubUrl": "https://github.com/tsibelman/serverless-multi-dotnet",
-    "last-month": 45
+    "last-month": 27
   },
   {
     "name": "serverless-dotnet",
     "description": "A serverless plugin to run 'dotnet' commands as part of the deploy process",
     "githubUrl": "https://github.com/fruffin/serverless-dotnet",
-    "last-month": 262
+    "last-month": 237
   },
   {
     "name": "serverless-enable-api-logs",
     "description": "Enables Coudwatch logging for API Gateway events",
     "githubUrl": "https://github.com/paulSambolin/serverless-enable-api-logs",
-    "last-month": 2549
+    "last-month": 3670
   },
   {
     "name": "serverless-python-individually",
     "description": "A serverless framework plugin to install multiple lambda functions written in python",
     "githubUrl": "https://github.com/cfchou/serverless-python-individually",
-    "last-month": 89
+    "last-month": 211
   },
   {
     "name": "serverless-plugin-subscription-filter",
     "description": "A serverless plugin to register AWS CloudWatchLogs subscription filter",
     "githubUrl": "https://github.com/tsub/serverless-plugin-subscription-filter",
-    "last-month": 179
+    "last-month": 153
   },
   {
     "name": "serverless-step-functions",
     "description": "AWS Step Functions with Serverless Framework.",
     "githubUrl": "https://github.com/horike37/serverless-step-functions",
-    "last-month": 7801
+    "last-month": 10070
   },
   {
     "name": "serverless-plugin-scripts",
     "description": "Add scripting capabilities to the Serverless Framework",
     "githubUrl": "https://github.com/mvila/serverless-plugin-scripts",
-    "last-month": 3881
+    "last-month": 4266
   },
   {
     "name": "serverless-plugin-bind-deployment-id",
     "description": "A Serverless plugin to bind the randomly generated deployment resource to your custom resources",
     "githubUrl": "https://github.com/jacob-meacham/serverless-plugin-bind-deployment-id",
-    "last-month": 3418
+    "last-month": 3531
   },
   {
     "name": "serverless-plugin-git-variables",
     "description": "A Serverless plugin to expose git variables (branch name, HEAD description, full commit hash) to your serverless services",
     "githubUrl": "https://github.com/jacob-meacham/serverless-plugin-git-variables",
-    "last-month": 1842
+    "last-month": 2285
   },
   {
     "name": "serverless-plugin-graphiql",
     "description": "A Serverless plugin to run a local http server for graphiql and your graphql handler",
     "githubUrl": "https://github.com/bencooling/serverless-plugin-graphiql",
-    "last-month": 35
+    "last-month": 32
   },
   {
     "name": "serverless-coffeescript",
     "description": "A Serverless plugin to compile your CoffeeScript into JavaScript at deployment",
     "githubUrl": "https://github.com/duanefields/serverless-coffeescript",
-    "last-month": 11
+    "last-month": 9
   },
   {
     "name": "serverless-plugin-lambda-dead-letter",
     "description": "A Serverless plugin that can configure a lambda with a dead letter queue or topic",
     "githubUrl": "https://github.com/gmetzker/serverless-plugin-lambda-dead-letter",
-    "last-month": 5155
+    "last-month": 5388
   },
   {
     "name": "serverless-plugin-encode-env-var-objects",
     "description": "Serverless plugin to encode any environment variable objects.",
     "githubUrl": "https://github.com/yonomi/serverless-plugin-encode-env-var-objects",
-    "last-month": 45
+    "last-month": 19
   },
   {
     "name": "serverless-dir-config-plugin",
     "description": "EXPERIMENTAL - Serverless plugin to load function and resource definitions from a directory.",
     "githubUrl": "https://github.com/economysizegeek/serverless-dir-config-plugin",
-    "last-month": 25
+    "last-month": 28
   },
   {
     "name": "serverless-cljs-plugin",
     "description": "Enables Clojurescript as an implementation language for Lambda handlers",
     "githubUrl": "https://github.com/nervous-systems/serverless-cljs-plugin",
-    "last-month": 84
+    "last-month": 51
   },
   {
     "name": "serverless-prune-plugin",
     "description": "Deletes old versions of functions from AWS, preserving recent and aliased versions",
     "githubUrl": "https://github.com/claygregory/serverless-prune-plugin",
-    "last-month": 14655
+    "last-month": 18205
   },
   {
     "name": "serverless-offline-scheduler",
     "description": "Runs scheduled functions offline while integrating with serverless-offline",
     "githubUrl": "https://github.com/ajmath/serverless-offline-scheduler",
-    "last-month": 1462
+    "last-month": 1980
   },
   {
     "name": "serverless-aws-alias",
     "description": "This plugin enables use of AWS aliases on Lambda functions.",
     "githubUrl": "https://github.com/HyperBrain/serverless-aws-alias",
-    "last-month": 4713
+    "last-month": 5722
   },
   {
     "name": "serverless-plugin-webpack",
     "description": "A serverless plugin to automatically bundle your functions individually with webpack",
     "githubUrl": "https://github.com/goldwasserexchange/serverless-plugin-webpack",
-    "last-month": 1930
+    "last-month": 3535
   },
   {
     "name": "serverless-sqs-fifo",
@@ -417,415 +417,415 @@
     "name": "serverless-sqs-alarms-plugin",
     "description": "Wrapper to setup CloudWatch Alarms on SQS queue length",
     "githubUrl": "https://github.com/sbstjn/serverless-sqs-alarms-plugin",
-    "last-month": 852
+    "last-month": 839
   },
   {
     "name": "serverless-dotenv",
     "description": "Fetch environment variables and write it to a .env file",
     "githubUrl": "https://github.com/Jimdo/serverless-dotenv",
-    "last-month": 38
+    "last-month": 36
   },
   {
     "name": "serverless-haskell",
     "description": "Deploying Haskell applications to AWS Lambda with Serverless",
     "githubUrl": "https://github.com/seek-oss/serverless-haskell",
-    "last-month": 148
+    "last-month": 250
   },
   {
     "name": "serverless-hooks-plugin",
     "description": "Run arbitrary commands on any lifecycle event in serverless",
     "githubUrl": "https://github.com/uswitch/serverless-hooks-plugin",
-    "last-month": 773
+    "last-month": 863
   },
   {
     "name": "serverless-dynalite",
     "description": "Run dynalite locally (no JVM, all JS) to simulate DynamoDB. Watch serverless.yml for table config updates.",
     "githubUrl": "https://github.com/sdd/serverless-dynalite",
-    "last-month": 192
+    "last-month": 199
   },
   {
     "name": "serverless-apig-s3",
     "description": "Serve static front-end content from S3 via the API Gateway and deploy client bundle to S3.",
     "githubUrl": "https://github.com/sdd/serverless-apig-s3",
-    "last-month": 235
+    "last-month": 255
   },
   {
     "name": "serverless-plugin-typescript",
     "description": "Serverless plugin for zero-config Typescript support.",
     "githubUrl": "https://github.com/graphcool/serverless-plugin-typescript",
-    "last-month": 8591
+    "last-month": 10172
   },
   {
     "name": "serverless-parameters",
     "description": "Add parameters to the generated cloudformation templates",
     "githubUrl": "https://github.com/svdgraaf/serverless-parameters",
-    "last-month": 259
+    "last-month": 293
   },
   {
     "name": "serverless-pseudo-parameters",
     "description": "Use ${AWS::AccountId} and other cloudformation pseudo parameters in your serverless.yml values",
     "githubUrl": "https://github.com/svdgraaf/serverless-pseudo-parameters",
-    "last-month": 15719
+    "last-month": 19701
   },
   {
     "name": "serverless-dynamodb-ttl",
     "description": "Configure DynamoDB TTL in serverless.yml (until CloudFormation supports this).",
     "githubUrl": "https://github.com/Jimdo/serverless-dynamodb-ttl",
-    "last-month": 107
+    "last-month": 90
   },
   {
     "name": "serverless-api-stage",
     "description": "Serverless API Stage plugin, enables stage variables and logging for AWS API Gateway.",
     "githubUrl": "https://github.com/leftclickben/serverless-api-stage",
-    "last-month": 444
+    "last-month": 869
   },
   {
     "name": "serverless-export-env",
     "description": "Export environment variables into a .env file with automatic AWS CloudFormation reference resolution.",
     "githubUrl": "https://github.com/arabold/serverless-export-env",
-    "last-month": 449
+    "last-month": 657
   },
   {
     "name": "serverless-package-python-functions",
     "description": "Packaging Python Lambda functions with only the dependencies/requirements they need.",
     "githubUrl": "https://github.com/ubaniabalogun/serverless-package-python-functions",
-    "last-month": 700
+    "last-month": 950
   },
   {
     "name": "serverless-plugin-iopipe",
     "description": "See inside your Lambda functions with high fidelity metrics and monitoring.",
     "githubUrl": "https://github.com/iopipe/serverless-plugin-iopipe",
-    "last-month": 340
+    "last-month": 352
   },
   {
     "name": "serverless-plugin-metric",
     "description": "Creates dynamically AWS metric-filter resources with custom patterns",
     "githubUrl": "https://github.com/alex20465/serverless-plugin-metric",
-    "last-month": 31
+    "last-month": 26
   },
   {
     "name": "serverless-sam",
     "description": "Exports an AWS SAM template for a service created with the Serverless Framework.",
     "githubUrl": "https://github.com/SAPessi/serverless-sam",
-    "last-month": 2025
+    "last-month": 2353
   },
   {
     "name": "serverless-vpc-discovery",
     "description": "Serverless plugin for discovering VPC / Subnet / Security Group configuration by name.",
     "githubUrl": "https://github.com/amplify-education/serverless-vpc-discovery",
-    "last-month": 695
+    "last-month": 1164
   },
   {
     "name": "serverless-kubeless",
     "description": "Serverless plugin for deploying functions to Kubeless.",
     "githubUrl": "https://github.com/serverless/serverless-kubeless",
-    "last-month": 2441
+    "last-month": 2631
   },
   {
     "name": "serverless-apigwy-binary",
     "description": "Serverless plugin for configuring API Gateway to return binary responses",
     "githubUrl": "https://github.com/ryanmurakami/serverless-apigwy-binary",
-    "last-month": 1369
+    "last-month": 1973
   },
   {
     "name": "serverless-plugin-browserifier",
     "description": "Reduce the size and speed up your Node.js based lambda's using browserify.",
     "githubUrl": "https://github.com/digitalmaas/serverless-plugin-browserifier",
-    "last-month": 650
+    "last-month": 682
   },
   {
     "name": "serverless-shell",
     "description": "Drop to a runtime shell with all the environment variables set that you'd have in lambda.",
     "githubUrl": "https://github.com/UnitedIncome/serverless-shell",
-    "last-month": 832
+    "last-month": 831
   },
   {
     "name": "serverless-stack-output",
     "description": "Store output from your AWS CloudFormation Stack in JSON/YAML/TOML files, or to pass it to a JavaScript function for further processing.",
     "githubUrl": "https://github.com/sbstjn/serverless-stack-output",
-    "last-month": 2928
+    "last-month": 3423
   },
   {
     "name": "serverless-gulp",
     "description": "A thin task wrapper around @goserverless that allows you to automate build, test and deploy tasks using gulp",
     "githubUrl": "https://github.com/rhythminme/serverless-gulp",
-    "last-month": 249
+    "last-month": 183
   },
   {
     "name": "serverless-sentry",
     "description": "Automatic monitoring of memory usage, execution timeouts and forwarding of Lambda errors to Sentry (https://sentry.io).",
     "githubUrl": "https://github.com/arabold/serverless-sentry-plugin",
-    "last-month": 1859
+    "last-month": 2164
   },
   {
     "name": "serverless-env-generator",
     "description": "Manage environment variables with YAML and load them with dotenv. Supports variable encryption with KMS, multiple stages and custom profiles.",
     "githubUrl": "https://github.com/DieProduktMacher/serverless-env-generator",
-    "last-month": 273
+    "last-month": 371
   },
   {
     "name": "serverless-local-dev-server",
     "description": "Speeds up development of Alexa Skills, Chatbots and APIs by exposing your functions as local HTTP endpoints and mapping received events.",
     "githubUrl": "https://github.com/DieProduktMacher/serverless-local-dev-server",
-    "last-month": 700
+    "last-month": 684
   },
   {
     "name": "serverless-plugin-stack-config",
     "description": "A serverless plugin to manage configurations for a stack across micro-services.",
     "githubUrl": "https://github.com/rawphp/serverless-plugin-stack-config",
-    "last-month": 108
+    "last-month": 98
   },
   {
     "name": "serverless-plugin-elastic-beanstalk",
     "description": "A serverless plugin to deploy applications to AWS ElasticBeanstalk.",
     "githubUrl": "https://github.com/rawphp/serverless-plugin-elastic-beanstalk",
-    "last-month": 262
+    "last-month": 233
   },
   {
     "name": "serverless-s3-remover",
     "description": "A serverless plugin to make s3 buckets empty before deleting cloudformation stack when ```sls remove```",
     "githubUrl": "https://github.com/sinofseven/serverless-s3-remover",
-    "last-month": 1826
+    "last-month": 2901
   },
   {
     "name": "serverless-dynamodb-autoscaling",
     "description": "Configure Amazon DynamoDB's native Auto Scaling for your table capacities.",
     "githubUrl": "https://github.com/sbstjn/serverless-dynamodb-autoscaling",
-    "last-month": 8764
+    "last-month": 11595
   },
   {
     "name": "serverless-plugin-bespoken",
     "description": "Creates a local server and a proxy so you don't have to deploy anytime you want to test your code",
     "githubUrl": "https://github.com/bespoken/serverless-plugin-bespoken",
-    "last-month": 78
+    "last-month": 177
   },
   {
     "name": "serverless-s3bucket-sync",
     "description": "Sync a local folder with a S3 bucket after sls deploy",
     "githubUrl": "https://github.com/sbstjn/serverless-s3bucket-sync",
-    "last-month": 250
+    "last-month": 267
   },
   {
     "name": "serverless-s3-sync",
     "description": "A plugin to sync local directories and S3 prefixes for Serverless Framework,",
     "githubUrl": "https://github.com/k1LoW/serverless-s3-sync",
-    "last-month": 1689
+    "last-month": 2333
   },
   {
     "name": "serverless-nested-stack",
     "description": "A plugin to Workaround for Cloudformation 200 resource limit",
     "githubUrl": "https://github.com/jagdish-176/serverless-nested-stack",
-    "last-month": 432
+    "last-month": 606
   },
   {
     "name": "serverless-plugin-common-excludes",
     "description": "Adds commonly excluded files to package.excludes",
     "githubUrl": "https://github.com/dougmoscrop/serverless-plugin-common-excludes",
-    "last-month": 1444
+    "last-month": 1937
   },
   {
     "name": "serverless-plugin-custom-domain",
     "description": "Reliably sets a BasePathMapping to an API Gateway Custom Domain",
     "githubUrl": "https://github.com/dougmoscrop/serverless-plugin-custom-domain",
-    "last-month": 483
+    "last-month": 438
   },
   {
     "name": "serverless-plugin-split-stacks",
     "description": "Migrate certain resources to nested stacks",
     "githubUrl": "https://github.com/dougmoscrop/serverless-plugin-split-stacks",
-    "last-month": 6212
+    "last-month": 8308
   },
   {
     "name": "serverless-plugin-log-subscription",
     "description": "Adds a CloudWatch LogSubscription for functions",
     "githubUrl": "https://github.com/dougmoscrop/serverless-plugin-log-subscription",
-    "last-month": 704
+    "last-month": 771
   },
   {
     "name": "serverless-cf-vars",
     "description": "Enables use of AWS pseudo functions and Fn::Sub string substitution",
     "githubUrl": "https://gitlab.com/kabo/serverless-cf-vars",
-    "last-month": 1270
+    "last-month": 1168
   },
   {
     "name": "serverless-apigateway-plugin",
     "description": "Configure the AWS api gateway: Binary support, Headers and Body template mappings",
     "githubUrl": "https://github.com/GFG/serverless-apigateway-plugin",
-    "last-month": 539
+    "last-month": 543
   },
   {
     "name": "serverless-plugin-deploy-environment",
     "description": "Plugin to manage deployment environment across stages",
     "githubUrl": "https://github.com/DopplerLabs/serverless-plugin-deploy-environment",
-    "last-month": 99
+    "last-month": 270
   },
   {
     "name": "serverless-plugin-aws-resolvers",
     "description": "Resolves variables from ESS, RDS, or Kinesis for serverless services",
     "githubUrl": "https://github.com/DopplerLabs/serverless-plugin-aws-resolvers",
-    "last-month": 170
+    "last-month": 207
   },
   {
     "name": "serverless-plugin-offline-kinesis-events",
     "description": "Plugin that works with serverless-offline to allow offline testing of serverless functions that are triggered by Kinesis events.",
     "githubUrl": "https://github.com/DopplerLabs/serverless-plugin-offline-kinesis-events",
-    "last-month": 88
+    "last-month": 160
   },
   {
     "name": "serverless-micro",
     "description": "Plugin to help manage multiple micro services under one main service.",
     "githubUrl": "https://github.com/barstoolsports/serverless-micro",
-    "last-month": 49
+    "last-month": 31
   },
   {
     "name": "serverless-api-cloudfront",
     "description": "Plugin that adds CloudFront distribution in front of your API Gateway for custom domain, CDN caching and access log.",
     "githubUrl": "https://github.com/Droplr/serverless-api-cloudfront",
-    "last-month": 143
+    "last-month": 391
   },
   {
     "name": "serverless-offline-sns",
     "description": "Serverless plugin to run a local SNS server and call serverless SNS handlers with events notifications.",
     "githubUrl": "https://github.com/mj1618/serverless-offline-sns",
-    "last-month": 2681
+    "last-month": 2555
   },
   {
     "name": "serverless-stage-manager",
     "description": "Super simple Serverless plugin for validating stage names before deployment",
     "githubUrl": "https://github.com/jeremydaly/serverless-stage-manager",
-    "last-month": 60
+    "last-month": 65
   },
   {
     "name": "serverless-spa",
     "description": "Serverless plugin to deploy your website to AWS S3 using Webpack to bundle it.",
     "githubUrl": "https://github.com/gilmarsquinelato/serverless-spa",
-    "last-month": 82
+    "last-month": 109
   },
   {
     "name": "serverless-aws-nested-stacks",
     "description": "Yet another AWS nested stack plugin!",
     "githubUrl": "https://github.com/concon121/serverless-plugin-nested-stacks",
-    "last-month": 123
+    "last-month": 148
   },
   {
     "name": "serverless-aws-resource-names",
     "description": "Serverless plugin to alter the default naming conventions for sls resources via a simple mapping file.",
     "githubUrl": "https://github.com/concon121/serverless-plugin-aws-resource-names",
-    "last-month": 150
+    "last-month": 144
   },
   {
     "name": "serverless-attach-managed-policy",
     "description": "A Serverless plugin to automatically attach an AWS Managed IAM Policy (or Policies) to all IAM Roles created by the Service.",
     "githubUrl": "https://github.com/Nordstrom/serverless-attach-managed-policy",
-    "last-month": 293
+    "last-month": 428
   },
   {
     "name": "serverless-plugin-reducer",
     "description": "Reduce Node.js lambda package so it contains only lambda dependencies",
     "githubUrl": "https://github.com/medikoo/serverless-plugin-reducer",
-    "last-month": 161
+    "last-month": 481
   },
   {
     "name": "serverless-plugin-transpiler",
     "description": "Transpile lambda files during packaging step",
     "githubUrl": "https://github.com/medikoo/serverless-plugin-transpiler",
-    "last-month": 11
+    "last-month": 8
   },
   {
     "name": "serverless-plugin-dynamodb-autoscaling",
     "description": "Auto generate auto scaling configuration for configured DynamoDB tables",
     "githubUrl": "https://github.com/medikoo/serverless-plugin-dynamodb-autoscaling",
-    "last-month": 493
+    "last-month": 632
   },
   {
     "name": "serverless-plugin-vpc-eni-cleanup",
     "description": "Automatic cleanup of VPC network interfaces on stage removal",
     "githubUrl": "https://github.com/medikoo/serverless-plugin-vpc-eni-cleanup",
-    "last-month": 778
+    "last-month": 1377
   },
   {
     "name": "serverless-plugin-tracer",
     "description": "Trace serverless hooks as they execute",
     "githubUrl": "https://github.com/enykeev/serverless-plugin-tracer/",
-    "last-month": 154
+    "last-month": 196
   },
   {
     "name": "serverless-plugin-stackstorm",
     "description": "Reusable Functions from StackStorm Exchange",
     "githubUrl": "https://github.com/StackStorm/serverless-plugin-stackstorm",
-    "last-month": 130
+    "last-month": 51
   },
   {
     "name": "serverless-iot-local",
     "description": "AWS Iot events with serverless-offline",
     "githubUrl": "https://github.com/tradle/serverless-iot-local",
-    "last-month": 171
+    "last-month": 202
   },
   {
     "name": "serverless-sns-filter",
     "description": "Serverless plugin to add SNS Subscription Filters to events",
     "githubUrl": "https://github.com/MechanicalRock/serverless-sns-filter",
-    "last-month": 716
+    "last-month": 792
   },
   {
     "name": "serverless-reqvalidator-plugin",
     "description": "Serverless plugin to add request validator to API Gateway methods",
     "githubUrl": "https://github.com/RafPe/serverless-reqvalidator-plugin",
-    "last-month": 1339
+    "last-month": 1740
   },
   {
     "name": "serverless-ephemeral",
     "description": "Build and include custom stateless libraries for any language",
     "githubUrl": "https://github.com/Accenture/serverless-ephemeral",
-    "last-month": 78
+    "last-month": 70
   },
   {
     "name": "serverless-content-encoding",
     "description": "Enable Content Encoding in AWS API Gateway during deployment",
     "githubUrl": "https://github.com/dong-dohai/serverless-content-encoding",
-    "last-month": 2467
+    "last-month": 3321
   },
   {
     "name": "serverless-s3-encryption",
     "description": "Set or remove the encryption settings on your s3 buckets",
     "githubUrl": "https://github.com/tradle/serverless-s3-encryption",
-    "last-month": 41
+    "last-month": 83
   },
   {
     "name": "serverless-plugin-inject-dependencies",
     "description": "Painlessly deploy serverless projects with only the required dependencies.",
     "githubUrl": "https://github.com/loanmarket/serverless-plugin-inject-dependencies",
-    "last-month": 128
+    "last-month": 189
   },
   {
     "name": "serverless-plugin-provider-groups",
     "description": "A plugin to allow management of grouped settings within large serverless projects.",
     "githubUrl": "https://github.com/loanmarket/serverless-plugin-provider-groups",
-    "last-month": 113
+    "last-month": 175
   },
   {
     "name": "serverless-cloudformation-resource-counter",
     "description": "A plugin to count the resources generated in the AWS CloudFormation stack after deployment.",
     "githubUrl": "https://github.com/drexler/serverless-cloudformation-resource-counter",
-    "last-month": 3954
+    "last-month": 5481
   },
   {
     "name": "serverless-iam-roles-per-function",
     "description": "Serverless Plugin for easily defining IAM roles per function via the use of iamRoleStatements at the function level.",
     "githubUrl": "https://github.com/functionalone/serverless-iam-roles-per-function",
-    "last-month": 1519
+    "last-month": 2392
   },
   {
     "name": "serverless-functions-base-path",
     "description": "Easily define a base path where your serverless functions are located.",
     "githubUrl": "https://github.com/kevinrambaud/serverless-functions-base-path",
-    "last-month": 1665
+    "last-month": 957
   },
   {
     "name": "serverless-static",
     "description": "Easily serve files from a folder while developing on localhost with the serverless-offline plugin",
     "githubUrl": "https://github.com/iliasbhal/serverless-static",
-    "last-month": 21
+    "last-month": 36
   },
   {
     "name": "serverless-plugin-node-shim",
@@ -837,37 +837,37 @@
     "name": "serverless-local-environment",
     "description": "Serverless plugin to set local environment variables and remote environment variable to different values",
     "githubUrl": "https://github.com/piercus/serverless-local-environment",
-    "last-month": 16
+    "last-month": 13
   },
   {
     "name": "serverless-cloudformation-sub-variables",
     "description": "Serverless framework plugin for easily supporting AWS CloudFormation Sub function variables",
     "githubUrl": "https://github.com/santiagocardenas/serverless-cloudformation-sub-variables",
-    "last-month": 471
+    "last-month": 411
   },
   {
     "name": "serverless-sthree-env",
     "description": "Serverless plugin to get config from a json formatted file in S3 and copy them to environment variable",
     "githubUrl": "https://github.com/StyleTributeIT/serverless-sthree-env",
-    "last-month": 26
+    "last-month": 24
   },
   {
     "name": "serverless-plugin-canary-deployments",
     "description": "A Serverless plugin to implement canary deployments of Lambda functions",
     "githubUrl": "https://github.com/davidgf/serverless-plugin-canary-deployments",
-    "last-month": 537
+    "last-month": 570
   },
   {
     "name": "serverless-go-build",
     "description": "Build go source files (or public functions) using yml definition file",
     "githubUrl": "https://github.com/sean9keenan/serverless-go-build",
-    "last-month": 41
+    "last-month": 36
   },
   {
     "name": "serverless-local-schedule",
     "description": "Schedule AWS CloudWatch Event based invocations in local time(with DST support!)",
     "githubUrl": "https://github.com/UnitedIncome/serverless-local-schedule",
-    "last-month": 325
+    "last-month": 339
   },
   {
     "name": "go-serverless",
@@ -879,96 +879,96 @@
     "name": "serverless-tag-sqs",
     "description": "Serverless plugin to tag SQS - Simple Queue Service",
     "githubUrl": "https://github.com/gfragoso/serverless-tag-sqs",
-    "last-month": 11
+    "last-month": 13
   },
   {
     "name": "serverless-express",
     "description": "Making express app development compatible with serverless framework.",
     "githubUrl": "https://github.com/mikestaub/serverless-express",
-    "last-month": 271
+    "last-month": 430
   },
   {
     "name": "serverless-aliyun-function-compute",
     "description": "Serverless Alibaba Cloud Function Compute Plugin",
     "githubUrl": "https://github.com/aliyun/serverless-aliyun-function-compute",
-    "last-month": 46
+    "last-month": 44
   },
   {
     "name": "serverless-apib-validator",
     "description": "Validate that an API Blueprint has full coverage over a Serverless config",
     "githubUrl": "https://github.com/onlicar/serverless-apib-validator",
-    "last-month": 28
+    "last-month": 24
   },
   {
     "name": "serverless-package-common",
     "description": "Deploy microservice Python Serverless services with common code",
     "githubUrl": "https://github.com/onlicar/serverless-package-common",
-    "last-month": 21
+    "last-month": 17
   },
   {
     "name": "serverless-tag-api-gateway",
     "description": "Serverless plugin to tag API Gateway",
     "githubUrl": "https://github.com/gfragoso/serverless-tag-api-gateway",
-    "last-month": 181
+    "last-month": 132
   },
   {
     "name": "serverless-tag-cloud-watch-logs",
     "description": "Serverless plugin to tag CloudWatchLogs",
     "githubUrl": "https://github.com/gfragoso/serverless-tag-cloud-watch-logs",
-    "last-month": 135
+    "last-month": 156
   },
   {
     "name": "serverless-create-global-dynamodb-table",
     "description": "Serverless plugin to create dynamodb global tables",
     "githubUrl": "https://github.com/rrahul963/serverless-create-global-dynamodb-table",
-    "last-month": 67
+    "last-month": 73
   },
   {
     "name": "serverless-ding",
     "description": "Serverless plugin to audibly alert user after deployment",
     "githubUrl": "https://github.com/sidgonuts/serverless-ding",
-    "last-month": 92
+    "last-month": 19
   },
   {
     "name": "serverless-ignore",
     "description": "Serverless plugin to ignore files (.slsignore)",
     "githubUrl": "https://github.com/nya1/serverless-ignore",
-    "last-month": 75
+    "last-month": 36
   },
   {
     "name": "serverless-puresec-cli",
     "description": "Serverless Plugin for magically creating IAM roles that are least privileged per function.",
     "githubUrl": "https://github.com/puresec/serverless-puresec-cli",
-    "last-month": 177
+    "last-month": 225
   },
   {
     "name": "serverless-dependson-plugin",
     "description": "Serverless plugin that automatically generates DependsOn references for AWS Lambdas to prevent AWS RequestLimitExceeded errors.",
     "githubUrl": "https://github.com/bwinant/serverless-dependson-plugin",
-    "last-month": 554
+    "last-month": 611
   },
   {
     "name": "serverless-plugin-colocate",
     "description": "Serverless Plugin to keep your configuration next to your code.",
     "githubUrl": "https://github.com/aronim/serverless-plugin-colocate",
-    "last-month": 164
+    "last-month": 184
   },
   {
     "name": "serverless-plugin-offline-dynamodb-stream",
     "description": "Serverless Plugin for emulating dynamodb stream triggering lambda functions offline",
     "githubUrl": "https://github.com/orchestrated-io/serverless-plugin-offline-dynamodb-stream",
-    "last-month": 222
+    "last-month": 297
   },
   {
     "name": "serverless-basic-authentication",
     "description": "Serverless Plugin for adding Basic Authentication to your api",
     "githubUrl": "https://github.com/svdgraaf/serverless-basic-authentication",
-    "last-month": 13
+    "last-month": 90
   },
   {
     "name": "serverless-rust",
     "description": "Deploy Rustlang applications to AWS Lambda",
     "githubUrl": "https://github.com/softprops/serverless-rust",
-    "last-month": 0
+    "last-month": 160
   }
 ]

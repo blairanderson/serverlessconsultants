@@ -4,14 +4,14 @@ title: Serverless Rust
 repo: softprops/serverless-rust
 homepage: 'https://github.com/softprops/serverless-rust'
 description: 'Deploy Rustlang applications to AWS Lambda'
-stars: 2
+stars: 15
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 2
-issues: 0
+watchers: 15
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -27,7 +27,7 @@ issues_diff: 0
 Install the plugin with npm
 
 ```bash
-$ npm install serverless-rust@0.1.1
+$ npm install serverless-rust@0.1.2
 ```
 
 💡 This serverless plugin assumes you are building Rustlang lambdas using the [lando](https://github.com/softprops/lando) or [crowbar](https://github.com/ilianaw/rust-crowbar) rustlang crates.
@@ -54,7 +54,7 @@ functions:
   test:
     # liblambda.handler is the default function name when
     # you follow lando/crowbar conventions
-    handler: liblamda.handler
+    handler: liblambda.handler
     # the following limits the function packaging
     # to just the resulting binary
     package:

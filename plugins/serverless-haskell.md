@@ -4,14 +4,14 @@ title: Serverless Haskell
 repo: seek-oss/serverless-haskell
 homepage: 'https://github.com/seek-oss/serverless-haskell'
 description: 'Deploying Haskell applications to AWS Lambda with Serverless'
-stars: 80
+stars: 81
 stars_trend: 
 stars_diff: 0
-forks: 9
+forks: 10
 forks_trend: 
 forks_diff: 0
-watchers: 80
-issues: 8
+watchers: 81
+issues: 7
 issues_trend: 
 issues_diff: 0
 ---
@@ -42,8 +42,7 @@ Deploying Haskell code onto [AWS Lambda] using [Serverless].
   ```
 
   LTS 9, 10 and 11 are supported, older versions are likely to work too but
-  untested. For LTS 11, add the Amazonka 1.6.0 dependency manually - see
-  [stack.yaml](stack.yaml#L9-L12).
+  untested.
 
 * Initialise a Serverless project inside the Stack package directory and install
   the `serverless-haskell` plugin:

@@ -7,11 +7,11 @@ description: 'A serverless plugin to run &#39;dotnet&#39; commands as part of th
 stars: 15
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 7
 forks_trend: 
 forks_diff: 0
 watchers: 15
-issues: 0
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
