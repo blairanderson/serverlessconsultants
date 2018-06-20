@@ -4,13 +4,13 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 162
-stars_trend: 
-stars_diff: 0
-forks: 30
-forks_trend: 
-forks_diff: 0
-watchers: 162
+stars: 171
+stars_trend: up
+stars_diff: 9
+forks: 32
+forks_trend: up
+forks_diff: 2
+watchers: 171
 issues: 22
 issues_trend: 
 issues_diff: 0
@@ -83,7 +83,7 @@ custom:
   appSync:
     name:  # defaults to api
     # apiKey # only required for update-appsync/delete-appsync
-    authenticationType: API_KEY or AMAZON_COGNITO_USER_POOLS or OPENID_CONNECT
+    authenticationType: API_KEY or AWS_IAM or AMAZON_COGNITO_USER_POOLS or OPENID_CONNECT
     # if AMAZON_COGNITO_USER_POOLS
     userPoolConfig:
       awsRegion: # required # region

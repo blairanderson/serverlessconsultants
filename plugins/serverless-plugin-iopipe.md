@@ -4,13 +4,13 @@ title: Serverless Plugin Iopipe
 repo: iopipe/serverless-plugin-iopipe
 homepage: 'https://github.com/iopipe/serverless-plugin-iopipe'
 description: 'See inside your Lambda functions with high fidelity metrics and monitoring.'
-stars: 27
-stars_trend: 
-stars_diff: 0
+stars: 28
+stars_trend: up
+stars_diff: 1
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 27
+watchers: 28
 issues: 7
 issues_trend: 
 issues_diff: 0

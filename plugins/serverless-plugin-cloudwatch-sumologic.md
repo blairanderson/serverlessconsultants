@@ -11,9 +11,9 @@ forks: 9
 forks_trend: 
 forks_diff: 0
 watchers: 5
-issues: 5
-issues_trend: 
-issues_diff: 0
+issues: 4
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -28,6 +28,9 @@ Plugin which auto-subscribes a log delivery lambda function to lambda log groups
 2. Add the following custom variables to your `serverless.yml` file.
 
 ```yaml
+plugins:
+  - serverless-plugin-cloudwatch-sumologic
+  
 custom:
     shipLogs:
         # Required
@@ -48,16 +51,22 @@ Upon running `sls deploy` it will...
 1. if no existing cloudwatch function is specified
     1. Create a temporary function in the root of your serverless project
     2. Add that function to the in-memory CloudFormation script created by the serverless framework
-3. Iterate through all the functions (except for the sumologic one) and generate:
-    1. CloudFormation Subscription Filter resources linking the log groups created by serverless framework to the sumologic lambda function.
-4. Wait for the stack creation/update to complete and then delete the temporarily created function source directory.
+2. Iterate through all the functions (except for the sumologic one) and generate:
+    1. CloudFormation Subscription Filter Resource linking the log groups created by serverless framework to the sumologic lambda function.
+    2. Permissions to Invoke the logging function, as a Resource.
+3. Wait for the stack creation/update to complete and then delete the temporarily created function source directory.
 
 # Caveats
-You must be running serverless 1.6.0 or higher.
+You must be running serverless 1.25.0 or higher.
 
 # Contribute
 Please fork this repo to make changes and then issue a pull request back to this repo.
 No unit tests are included at this time. Unit tests will be added before this goes into version 1.0.0
+
+# Testing
+Tests are written using Mocha, Sinon, Chai, using Rewire
+
+Run with `npm test`
 
 # Contributors
 [Daniel Parker (@rlgod)](https://github.com/rlgod)

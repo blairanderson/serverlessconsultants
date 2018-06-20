@@ -4,13 +4,13 @@ title: Serverless Plugin Package Dotenv File
 repo: ACloudGuru/serverless-plugin-package-dotenv-file
 homepage: 'https://github.com/ACloudGuru/serverless-plugin-package-dotenv-file'
 description: 'A Serverless plugin to copy a .env file into the serverless package'
-stars: 10
-stars_trend: 
-stars_diff: 0
-forks: 3
-forks_trend: 
-forks_diff: 0
-watchers: 10
+stars: 12
+stars_trend: up
+stars_diff: 2
+forks: 4
+forks_trend: up
+forks_diff: 1
+watchers: 12
 issues: 0
 issues_trend: 
 issues_diff: 0

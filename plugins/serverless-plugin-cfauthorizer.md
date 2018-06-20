@@ -7,9 +7,9 @@ description: 'This plugin allows you to define your own API Gateway Authorizers 
 stars: 16
 stars_trend: 
 stars_diff: 0
-forks: 1
-forks_trend: 
-forks_diff: 0
+forks: 2
+forks_trend: up
+forks_diff: 1
 watchers: 16
 issues: 0
 issues_trend: 

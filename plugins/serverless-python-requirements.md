@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 252
-stars_trend: 
-stars_diff: 0
-forks: 62
-forks_trend: 
-forks_diff: 0
-watchers: 252
-issues: 41
-issues_trend: 
-issues_diff: 0
+stars: 255
+stars_trend: up
+stars_diff: 3
+forks: 63
+forks_trend: up
+forks_diff: 1
+watchers: 255
+issues: 47
+issues_trend: up
+issues_diff: 6
 ---
 
 
@@ -114,7 +114,28 @@ try:
 except ImportError:
   pass
 ```
-
+### Slim Package
+_Works on non 'win32' environments: Docker, WSL are included_  
+To remove the tests, information and caches from the installed packages, 
+enable the `slim` option. This will: `strip` the `.so` files, remove `__pycache__` 
+directories and `dist-info` directories.  
+```yaml
+custom:
+  pythonRequirements:
+    slim: true
+```  
+#### Custom Removal Patterns  
+To specify additional directories to remove from the installed packages, 
+define the patterns using regex as a `slimPatterns` option in serverless config:  
+```yaml
+custom:
+  pythonRequirements:
+    slim: true
+    slimPatterns:
+      - "*.egg-info*"
+```  
+This will remove all folders within the installed requirements that match 
+the names in `slimPatterns`  
 ## Omitting Packages 
 You can omit a package from deployment with the `noDeploy` option. Note that
 dependencies of omitted packages must explicitly be omitted too.
@@ -285,3 +306,5 @@ For usage of `dockerizePip` on Windows do Step 1 only if running serverless on w
  * [@kichik](https://github.com/kichik) - Imposed windows & `noDeploy` support,
    switched to adding files straight to zip instead of creating symlinks, and
    improved pip chache support when using docker.
+ * [@dee-me-tree-or-love](https://github.com/dee-me-tree-or-love) - the `slim` package option
+
