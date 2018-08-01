@@ -4,14 +4,14 @@ title: Serverless Pseudo Parameters
 repo: svdgraaf/serverless-pseudo-parameters
 homepage: 'https://github.com/svdgraaf/serverless-pseudo-parameters'
 description: 'Use ${AWS::AccountId} and other cloudformation pseudo parameters in your serverless.yml values'
-stars: 46
+stars: 57
 stars_trend: 
 stars_diff: 0
 forks: 11
 forks_trend: 
 forks_diff: 0
-watchers: 46
-issues: 4
+watchers: 57
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---
@@ -26,6 +26,8 @@ This plugin fixes that.
 
 You can now use `#{AWS::AccountId}`, `#{AWS::Region}`, etc. in any of your config strings, and this plugin replaces those values with the proper pseudo parameter `Fn::Sub` CloudFormation function.
 
+You can also use any other CloudFormation resource id as a reference, eg `#{myAwesomeResource}`, will replace it with a reference to that resource. `#{myAwesomeResource.property}` works as well.
+
 Installation
 -----
 Install the package with npm: `npm install serverless-pseudo-parameters`, and add it to your `serverless.yml` plugins list:
@@ -38,6 +40,9 @@ plugins:
 Usage
 -----
 Add one of the pseudo parameters to any resource parameter, and it will be replaced during deployment. Mind you to replace the default `${}` with a `#{}`. So `${AWS::AccountId}`, becomes: `#{AWS::AccountId}` etc.
+
+- using `#{MyResource}` to be rewritten to `${MyResource}`, which is roughly equivalent to `{"Ref": "MyResource"}`
+- using `#{MyResource.Arn}` to be rewritten to `${MyResource.Arn}`, which is roughly equivalent to `{"Fn::GetAtt": ["MyResource", "Arn"]}`.
 
 For example, this configuration will create a bucket with your account id appended to the bucket name:
 
@@ -92,25 +97,22 @@ stepFunctions:
             End: true
 ```
 
-The plugin also automatically replace _hardcoded_ region in `serverless.yml`. This feature can be disabled using:
-
-```yaml
-custom:
-    pseudoParameters:
-        skipRegionReplace: true
-```
-
-Reference other resources
--------------------------
-You can also ref other resources within your template, for this, set the `allowReferences` variable:
+Properties
+==========
+The plugin used to automatically replace _hardcoded_ regions in `serverless.yml` in previous releases. This not done anymore by default. This behaviour can enabled again by using:
 
 ```yaml
 custom:
   pseudoParameters:
-    allowReferences: true
+    skipRegionReplace: false
 ```
 
-Which enables:
+Disable referencing other resources
+-----------------------------------
+You can also disable the referencing of internal resources:
 
-- using `#{MyResource}` to be rewritten to `${MyResource}`, which is roughly equivalent to `{"Ref": "MyResource"}`
-- using `#{MyResource.Arn}` to be rewritten to `${MyResource.Arn}`, which is roughly equivalent to `{"Fn::GetAtt": ["MyResource", "Arn"]}`.
+```yaml
+custom:
+  pseudoParameters:
+    allowReferences: false
+```

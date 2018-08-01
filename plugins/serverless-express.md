@@ -4,13 +4,13 @@ title: Serverless Express
 repo: mikestaub/serverless-express
 homepage: 'https://github.com/mikestaub/serverless-express'
 description: 'Making express app development compatible with serverless framework.'
-stars: 19
-stars_trend: up
-stars_diff: 1
-forks: 3
+stars: 42
+stars_trend: 
+stars_diff: 0
+forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 19
+watchers: 42
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -32,7 +32,7 @@ Works with provider :
   - [x] **Google Cloud Platform - Cloud functions**
   - [ ] Microsoft Azure - Cloud functions | *in development*
 
-## Installation
+## Download
 Type this command inside your terminal
 ```
 npm install --save serverless-express
@@ -43,7 +43,7 @@ or for yarn users
 yarn add serverless-express
 ```
 
-## Usage
+## Installation
 
 ### 1 - Add it to your serverless.yml
 
@@ -114,4 +114,42 @@ exports.handler = handler(app)
 ### 4 - Finished !
 
 Now that everything is done, you can get back to work and enjoy serverless and express in the same time ;)
+
+## Usage
+Make sure that you register an HTTP event for each endpoint of your express app.
+For example, if you register an endpoint like this one: 
+```js
+  app.get( '/users' , showUsers )
+```
+
+You will need to make sure that your cloud provider routes the HTTP call to your app. In order to do so, you will need to update your serverless.yml like so :
+```yml
+# like this 
+functions:
+  app: 
+    handler: handler.handler  #assuming your handler file is handler.js
+    events: 
+      - http:
+          path: GET
+          method: /users
+
+# or like this
+# be careful, this will route every HTTP event to your function.
+functions:
+  app:
+    handler: handler.handler 
+    events: 
+      - http:
+          path: /{proxy+}
+          method: ANY
+```
+
+
+
+
+
+
+### Todo 
+
+- [ ] create "serverless express yaml" command that updates the serverless.yml file with all the endpoints of the express app
 

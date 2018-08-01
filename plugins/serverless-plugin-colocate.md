@@ -4,16 +4,16 @@ title: Serverless Plugin Colocate
 repo: aronim/serverless-plugin-colocate
 homepage: 'https://github.com/aronim/serverless-plugin-colocate'
 description: 'Serverless Plugin to keep your configuration next to your code.'
-stars: 3
-stars_trend: up
-stars_diff: 2
+stars: 4
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 4
 issues: 1
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -47,6 +47,20 @@ npm install serverless-plugin-colocate --save-dev
 ```yml
 plugins:
   - serverless-plugin-colocate
+```
+
+### Configuration Options
+```yml
+custom:
+  colocate:
+    defaultInclude:         # Optional: For very edge cases where these includes don't meet your needs
+      - "**/*.yml"
+      - "**/*.yaml"
+    defaultExclude:         # Optional: For very edge cases where these includes don't meet your needs
+      - "serverless.yml"
+      - "node_modules/**"
+    exclude:                # Optional: Exclude additional patterns from fragment search
+      - "**/goodbye.yml"
 ```
 
 ### Example 

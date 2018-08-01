@@ -4,13 +4,13 @@ title: Fullstack Serverless
 repo: MadSkills-io/fullstack-serverless
 homepage: 'https://github.com/MadSkills-io/fullstack-serverless'
 description: 'A Serverless plugin to create an AWS CloudFront distribution that serves static web content from S3 and routes API traffic to API Gateway.'
-stars: 12
+stars: 18
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 12
+watchers: 18
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -25,7 +25,9 @@ issues_diff: 0
 [![npm downloads](https://img.shields.io/npm/dt/fullstack-serverless.svg?style=flat)](https://www.npmjs.com/package/fullstack-serverless)
 
 A [serverless](http://www.serverless.com) plugin that automatically creates an AWS CloudFront distribution that serves static web content from S3 and optionally routes API traffic
-to API Gateway.
+to API Gateway.  
+
+Home page - https://www.madskills.io/fullstack-serverless/
 
 **:zap: Pros**
 
@@ -33,7 +35,7 @@ to API Gateway.
 - Free SSL using AWS CertificateManager
 - No CORS needed
 - Enables CDN caching of resources - so you don't waste Lambda invocations or API Gateway traffic
-  for serving static files (just set proper Cache-Control in API responses)
+  for serving static files (just [set Cache-Control headers](https://serverless.com/framework/docs/providers/aws/events/apigateway/#custom-response-headers) in API responses)
 - Much more CloudWatch statistics of API usage (like bandwidth metrics)
 - Real world [access log](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) - out of the box, API Gateway currently does not provide any kind of real "apache-like" access logs for your invocations
 - [Web Application Firewall](https://aws.amazon.com/waf/) support - enable AWS WAF to protect your API from security threats
@@ -391,7 +393,10 @@ Use this parameter if you do not want a confirmation prompt to interrupt automat
 ## Maintainers
 - Andy Hahn - [andrewphahn](https://github.com/andrewphahn) from [_MadSkills.io_](http://madskills.io)
 
+## Contributors
+- [jlaramie](https://github.com/jlaramie)
 
+## Credits
 Forked from the [**serverless-api-cloudfront**](https://github.com/Droplr/serverless-api-cloudfront/)  
 Borrowed heavily from the [**serverless-finch**](https://github.com/fernando-mc/serverless-finch/)  
 Initial CloudFormation template from [**Full Stack Serverless Web Apps with AWS**](https://medium.com/99xtechnology/full-stack-serverless-web-apps-with-aws-189d87da024a/)  

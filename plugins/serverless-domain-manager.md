@@ -4,16 +4,16 @@ title: Serverless Domain Manager
 repo: amplify-education/serverless-domain-manager
 homepage: 'https://github.com/amplify-education/serverless-domain-manager'
 description: 'Serverless plugin for managing custom domains with API Gateways.'
-stars: 195
-stars_trend: up
-stars_diff: 4
-forks: 52
+stars: 232
+stars_trend: 
+stars_diff: 0
+forks: 60
 forks_trend: 
 forks_diff: 0
-watchers: 195
-issues: 26
-issues_trend: up
-issues_diff: 2
+watchers: 232
+issues: 18
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -81,7 +81,7 @@ custom:
     domainName: serverless.foo.com
     stage: ci
     basePath: api
-    certificateName: *.foo.com
+    certificateName: '*.foo.com'
     createRoute53Record: true
     endpointType: 'regional'
 ```
@@ -92,9 +92,11 @@ custom:
 | basePath | `(none)` | The base path that will prepend all API endpoints. |
 | stage | Value of `--stage`, or `provider.stage` (serverless will default to `dev` if unset) | The stage to create the domain name for. This parameter allows you to specify a different stage for the domain name than the stage specified for the serverless deployment. |
 | certificateName | Closest match | The name of a specific certificate from Certificate Manager to use with this API. If not specified, the closest match will be used (i.e. for a given domain name `api.example.com`, a certificate for `api.example.com` will take precedence over a `*.example.com` certificate). <br><br> Note: Edge-optimized endpoints require that the certificate be located in `us-east-1` to be used with the CloudFront distribution. |
+| certificateArn | `(none)` | The arn of a specific certificate from Certificate Manager to use with this API. |
 | createRoute53Record | `true` | Toggles whether or not the plugin will create a CNAME record in Route53 mapping the `domainName` to the generated distribution domain name. |
 | endpointType | edge | Defines the endpoint type, accepts `regional` or `edge`. |
-| hostedZoneId | | If hostedZoneId is set the route53 record set will be created in the matching zone, otherwise the hosted zone will be figured out from the domainName (hosted zone with matching domain). Setting this parameter is specially useful if you have multiple hosted zones with the same domain name (e.g. a public and a private one) |
+| hostedZoneId | | If hostedZoneId is set the route53 record set will be created in the matching zone, otherwise the hosted zone will be figured out from the domainName (hosted zone with matching domain). |
+| hostedZonePrivate | | If hostedZonePrivate is set to `true` then only private hosted zones will be used for route 53 records. If it is set to `false` then only public hosted zones will be used for route53 records. Setting this parameter is specially useful if you have multiple hosted zones with the same domain name (e.g. a public and a private one) |
 | enabled | true | Sometimes there are stages for which is not desired to have custom domain names. This flag allows the developer to disable the plugin for such cases. Accepts only `boolean` values and defaults to `true` for backwards compatibility. |
 
 ## Running

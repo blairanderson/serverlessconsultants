@@ -4,14 +4,14 @@ title: Serverless Plugin Offline Dynamodb Stream
 repo: orchestrated-io/serverless-plugin-offline-dynamodb-stream
 homepage: 'https://github.com/orchestrated-io/serverless-plugin-offline-dynamodb-stream'
 description: 'Serverless Plugin for emulating dynamodb stream triggering lambda functions offline'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 2
+watchers: 4
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---
@@ -89,6 +89,16 @@ $ npm install
 | Running unit tests                       | `npm run jest`      |
 | Running code coverage                    | `npm run coverage`  |
 | Running lint + tests                     | `npm test`          |
+
+# Demo
+
+```
+> cd demo
+> docker-compose up --build
+```
+
+* open [dynamodb admin](http://localhost:8001/tables/items/items) in browser.
+* adding new item on items table will result event detail printed out in console.
 
 # Author
 

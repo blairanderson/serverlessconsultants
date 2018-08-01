@@ -7,13 +7,13 @@ description: 'Serverless Plugin for adding Basic Authentication to your api'
 stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 4
 issues: 1
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 

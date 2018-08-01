@@ -4,13 +4,13 @@ title: Serverless Apigw Binary
 repo: maciejtreder/serverless-apigw-binary
 homepage: 'https://github.com/maciejtreder/serverless-apigw-binary'
 description: 'Plugin to enable binary support in AWS API Gateway.'
-stars: 71
-stars_trend: up
-stars_diff: 2
-forks: 12
+stars: 74
+stars_trend: 
+stars_diff: 0
+forks: 14
 forks_trend: 
 forks_diff: 0
-watchers: 71
+watchers: 74
 issues: 7
 issues_trend: 
 issues_diff: 0

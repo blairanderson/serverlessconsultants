@@ -4,14 +4,14 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 171
-stars_trend: up
-stars_diff: 9
-forks: 32
-forks_trend: up
-forks_diff: 2
-watchers: 171
-issues: 22
+stars: 213
+stars_trend: 
+stars_diff: 0
+forks: 41
+forks_trend: 
+forks_diff: 0
+watchers: 213
+issues: 31
 issues_trend: 
 issues_diff: 0
 ---
@@ -115,6 +115,7 @@ custom:
         config:
           tableName: { Ref: MyTable } # Where MyTable is a dynamodb table defined in Resources
           serviceRoleArn: { Fn::GetAtt: [AppSyncDynamoDBServiceRole, Arn] } # Where AppSyncDynamoDBServiceRole is an IAM role defined in Resources
+          region: # Overwrite default region for this data source
       - type: AMAZON_ELASTICSEARCH
         name: # data source name
         description: 'ElasticSearch'
@@ -135,7 +136,7 @@ custom:
 
 ### `serverless deploy`
 
-This command will all AppSync resources in the same cloudformation template used by the other serverless resources
+This command will deploy all AppSync resources in the same CloudFormation template used by the other serverless resources.
 
 ## 📝 Notes
 

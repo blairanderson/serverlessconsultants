@@ -4,14 +4,14 @@ title: Serverless Log Forwarding
 repo: amplify-education/serverless-log-forwarding
 homepage: 'https://github.com/amplify-education/serverless-log-forwarding'
 description: 'Serverless plugin for forwarding CloudWatch logs to another Lambda function.'
-stars: 15
+stars: 17
 stars_trend: 
 stars_diff: 0
-forks: 9
+forks: 11
 forks_trend: 
 forks_diff: 0
-watchers: 15
-issues: 3
+watchers: 17
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -55,6 +55,7 @@ custom:
     destinationARN: '[ARN of Lambda Function to forward logs to]'
     # optional:
     filterPattern: '[filter pattern for logs that are sent to Lambda function]'
+    normalizedFilterID: true # whether to use normalized function name as filter ID
     stages:
       - '[name of the stage to apply log forwarding]'
       - '[another stage name to filter]'

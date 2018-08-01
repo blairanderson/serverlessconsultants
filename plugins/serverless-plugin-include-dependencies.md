@@ -4,16 +4,16 @@ title: Serverless Plugin Include Dependencies
 repo: dougmoscrop/serverless-plugin-include-dependencies
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-include-dependencies'
 description: 'This is a Serverless plugin that should make your deployed functions smaller.'
-stars: 68
+stars: 73
 stars_trend: 
 stars_diff: 0
 forks: 13
-forks_trend: up
-forks_diff: 1
-watchers: 68
+forks_trend: 
+forks_diff: 0
+watchers: 73
 issues: 4
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 

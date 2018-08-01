@@ -4,13 +4,13 @@ title: Serverless Alexa Skills
 repo: marcy-terui/serverless-alexa-skills
 homepage: 'https://github.com/marcy-terui/serverless-alexa-skills'
 description: 'Manage your Alexa Skills with Serverless Framework.'
-stars: 25
-stars_trend: up
-stars_diff: 1
-forks: 4
+stars: 33
+stars_trend: 
+stars_diff: 0
+forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 25
+watchers: 33
 issues: 3
 issues_trend: 
 issues_diff: 0

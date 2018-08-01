@@ -7,7 +7,7 @@ description: 'Manage environment variables with YAML and load them with dotenv. 
 stars: 18
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 5
 forks_trend: 
 forks_diff: 0
 watchers: 18

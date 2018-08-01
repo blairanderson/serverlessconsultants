@@ -4,13 +4,13 @@ title: Serverless Sentry Plugin
 repo: arabold/serverless-sentry-plugin
 homepage: 'https://github.com/arabold/serverless-sentry-plugin'
 description: 'Automatic monitoring of memory usage, execution timeouts and forwarding of Lambda errors to Sentry (https://sentry.io).'
-stars: 70
-stars_trend: down
-stars_diff: -1
+stars: 83
+stars_trend: 
+stars_diff: 0
 forks: 9
 forks_trend: 
 forks_diff: 0
-watchers: 70
+watchers: 83
 issues: 7
 issues_trend: 
 issues_diff: 0
@@ -29,7 +29,7 @@ issues_diff: 0
 This Serverless plugin simplifies integration of [Sentry](https://sentry.io)
 with the popular [Serverless Framework](https://serverless.com) and AWS Lambda.
 
-Currently we support **Node.js 4.3.2**, **Node.js 6.10.2** as well as
+Currently we support **Node.js 6.10**, **Node.js 8.10** as well as
 **Python** running on AWS Lambda. Other platforms can be added by
 providing a respective integration library. Pull Requests are welcome!
 
@@ -138,7 +138,8 @@ Passing in your own client is necessary to ensure that the wrapper uses
 the same environment as the rest of your code. In the rare circumstances that
 this isn't desired, you can pass in `null` instead.
 
-**Original Lambda Handler Code Before Adding RavenLambdaWrapper**:
+
+**ES2015: Original Lambda Handler Code Before Adding RavenLambdaWrapper**:
 ```js
 "use strict";
 
@@ -147,15 +148,34 @@ module.exports.hello = function(event, context, callback) {
 };
 ```
 
-**New Lambda Handler Code With RavenLambdaWrapper For Sentry Reporting**
+**ES2015: New Lambda Handler Code With RavenLambdaWrapper For Sentry Reporting**
 ```js
 "use strict";
 
 const Raven = require("raven"); // Official `raven` module
-const RavenLambdaWrapper = require("serverless-sentry-lib");
+const RavenLambdaWrapper = require("serverless-sentry-lib"); // This helper library
 
 module.exports.hello = RavenLambdaWrapper.handler(Raven, (event, context, callback) => {
+  // Here follows your original Lambda handler code...
   callback(null, { message: 'Go Serverless! Your function executed successfully!', event });
+});
+```
+
+**ES2017: Original Lambda Handler Code Before Adding RavenLambdaWrapper**:
+```js
+exports.handler = async (event, context) => {
+  return { message: 'Go Serverless! Your function executed successfully!', event };
+};
+```
+
+**ES2017: New Lambda Handler Code With RavenLambdaWrapper For Sentry Reporting**
+```js
+const Raven = require("raven"); // Official `raven` module
+const RavenLambdaWrapper = require("serverless-sentry-lib"); // This helper library
+
+exports.handler = RavenLambdaWrapper.handler(Raven, async (event, context) => {
+  // Here follows your original Lambda handler code...
+  return { message: 'Go Serverless! Your function executed successfully!', event };
 });
 ```
 
@@ -394,7 +414,22 @@ Sentry projects with meaningless errors of local code changes.
 
 ## Version History
 
+### 1.2.0
+
+* Fixed a compatibility issue with Serverless 1.28.0.
+
+### 1.1.1
+
+* Support for `sls invoke local`. Thanks to [sifrenette](https://github.com/sifrenette)
+  for his contribution.
+
+### 1.1.0
+
+* ⚠️ Dropped support for Node 4.3. AWS deprecates Node 4.3 starting July 31, 2018.
+* Pair with `serverless-sentry-lib` v1.1.x.
+
 ### 1.0.0
+
 * Version falls back to git hash if no tag is set for current head (#15).
 * Fixed reporting bugs in local environment despite config telling otherwise (#17).
   This requires an update of `serverless-sentry-lib` as well!

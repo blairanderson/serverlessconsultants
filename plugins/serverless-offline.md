@@ -4,16 +4,16 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 1409
-stars_trend: up
-stars_diff: 24
-forks: 255
-forks_trend: up
-forks_diff: 2
-watchers: 1409
-issues: 59
-issues_trend: up
-issues_diff: 4
+stars: 1531
+stars_trend: 
+stars_diff: 0
+forks: 263
+forks_trend: 
+forks_diff: 0
+watchers: 1531
+issues: 69
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -29,7 +29,7 @@ To do so, it starts an HTTP server that handles the request's lifecycle like API
 
 **Features:**
 
-* Nodejs λ only.
+* Node.js λ only.
 * Velocity templates support.
 * Lazy loading of your files with require cache invalidation: no need for a reloading tool like Nodemon.
 * And more: integrations, authorizers, proxies, timeouts, responseParameters, HTTPS, Babel runtime, CORS, etc...
@@ -183,7 +183,7 @@ custom:
       presets: ["env", "flow"]
 ```
 
-## Token Authorizers
+## Token authorizers
 
 As defined in the [Serverless Documentation](https://serverless.com/framework/docs/providers/aws/events/apigateway/#setting-api-keys-for-your-rest-api) you can use API Keys as a simple authentication method.
 
@@ -390,7 +390,8 @@ Serverless offline plugin can invoke shell scripts when a simulated server has b
 ## Simulation quality
 
 This plugin simulates API Gateway for many practical purposes, good enough for development - but is not a perfect simulator.
-Specifically, Lambda currently runs on Node v4.3.2 and v6.10.0, whereas _Offline_ runs on your own runtime where no memory limits are enforced.
+Specifically, Lambda currently runs on Node v6.10.0 and v8.10.0 ([AWS Docs](https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html)), whereas _Offline_ runs on your own runtime where no memory limits are enforced.
+
 
 ## Usage with serverless-offline and serverless-webpack plugin
 

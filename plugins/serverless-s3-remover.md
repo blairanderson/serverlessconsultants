@@ -4,16 +4,16 @@ title: Serverless S3 Remover
 repo: sinofseven/serverless-s3-remover
 homepage: 'https://github.com/sinofseven/serverless-s3-remover'
 description: 'A serverless plugin to make s3 buckets empty before deleting cloudformation stack when ```sls remove```'
-stars: 14
-stars_trend: up
-stars_diff: 1
-forks: 4
-forks_trend: up
-forks_diff: 1
-watchers: 14
+stars: 17
+stars_trend: 
+stars_diff: 0
+forks: 5
+forks_trend: 
+forks_diff: 0
+watchers: 17
 issues: 4
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -66,3 +66,15 @@ custom:
 ```
 
 ![terminal.png](https://user-images.githubusercontent.com/57114/31264298-0896f1ec-aaa3-11e7-9a8e-86e3c3f34e23.png)
+
+# Populating the configuration object before using it
+```yaml
+custom:
+  boolean:
+    true: true
+    false: false
+  remover:
+    prompt: ${self:custom.boolean.${opt:s3-remover-prompt, 'true'}}
+```
+
+ I can use the command line argument ```--s3-remover-prompt false``` to disable the prompt feature.

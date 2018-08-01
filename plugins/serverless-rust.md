@@ -4,16 +4,16 @@ title: Serverless Rust
 repo: softprops/serverless-rust
 homepage: 'https://github.com/softprops/serverless-rust'
 description: 'Deploy Rustlang applications to AWS Lambda'
-stars: 16
-stars_trend: up
-stars_diff: 1
-forks: 0
+stars: 19
+stars_trend: 
+stars_diff: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 16
+watchers: 19
 issues: 2
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -27,7 +27,7 @@ issues_diff: 1
 Install the plugin with npm
 
 ```bash
-$ npm install serverless-rust@0.1.2
+$ npm install serverless-rust@0.1.5
 ```
 
 💡 This serverless plugin assumes you are building Rustlang lambdas using the [lando](https://github.com/softprops/lando) or [crowbar](https://github.com/ilianaw/rust-crowbar) rustlang crates.
@@ -64,7 +64,6 @@ functions:
       - http:
           path: /test
           method: GET
-
 ```
 
 
@@ -85,7 +84,36 @@ custom:
     dockerTag: 'some-custom-tag'
 ```
 
+### 🎨 Per function customization
+
+If your serverless project contains multiple functions, you may sometimes
+need to customize the options above at the function level. You can do this
+by defining a `rust` key with the same options inline in your function
+specficiation.
+
+```yaml
+functions:
+  test:
+    rust:
+      # function specific flags passed to cargo
+      cargoFlags: '--features ...'
+    # liblambda.handler is the default function name when
+    # you follow lando/crowbar conventions
+    handler: liblambda.handler
+    # the following limits the function packaging
+    # to just the resulting binary
+    package:
+      include:
+        - liblambda.so
+    events:
+      - http:
+          path: /test
+          method: GET
+```
+
+
 ## 🏗️ serverless templates
 
 * lando api gateway application - https://github.com/softprops/serverless-lando
+* multi function lando api gateway application - https://github.com/softprops/serverless-multi-lando
 * crowbar cloudwatch scheduled lambda application - https://github.com/softprops/serverless-crowbar

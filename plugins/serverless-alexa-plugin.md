@@ -4,13 +4,13 @@ title: Serverless Alexa Plugin
 repo: rajington/serverless-alexa-plugin
 homepage: 'https://github.com/rajington/serverless-alexa-plugin'
 description: 'Serverless plugin to support Alexa Lambda events'
-stars: 16
+stars: 17
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 16
+watchers: 17
 issues: 1
 issues_trend: 
 issues_diff: 0

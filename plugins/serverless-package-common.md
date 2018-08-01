@@ -4,13 +4,13 @@ title: Serverless Package Common
 repo: onlicar/serverless-package-common
 homepage: 'https://github.com/onlicar/serverless-package-common'
 description: 'Deploy microservice Python Serverless services with common code'
-stars: 0
+stars: 2
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 0
+watchers: 2
 issues: 0
 issues_trend: 
 issues_diff: 0

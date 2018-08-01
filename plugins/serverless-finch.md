@@ -4,16 +4,16 @@ title: Serverless Finch
 repo: fernando-mc/serverless-finch
 homepage: 'https://github.com/fernando-mc/serverless-finch'
 description: 'A Serverless plugin to deploy static website assets to AWS S3.'
-stars: 135
-stars_trend: up
-stars_diff: 3
-forks: 30
-forks_trend: up
-forks_diff: 1
-watchers: 135
-issues: 7
-issues_trend: up
-issues_diff: 1
+stars: 152
+stars_trend: 
+stars_diff: 0
+forks: 33
+forks_trend: 
+forks_diff: 0
+watchers: 152
+issues: 9
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -143,6 +143,20 @@ The name of your error document inside your `distributionFolder`. This is the fi
 
 ---
 
+**bucketPolicyFile**
+
+```yaml
+custom:
+  client:
+    ...
+    bucketPolicyFile: [path/to/policy.json]
+    ...
+```
+
+Use this parameter to specify the path to a custom policy file. If not set, it defaults to a config for a basic static website. Currently, only JSON is supported. In your policy, make sure that your resource has the correct bucket name specified above: `"Resource": "arn:aws:s3:::BUCKET_NAME/*",`
+
+---
+
 **objectHeaders** 
 
 _optional_, no default
@@ -153,6 +167,10 @@ custom:
     ...
     objectHeaders:
       ALL_OBJECTS:
+        - name: [header-name]
+          value: [header-value]
+        ...
+      'someGlobPattern/*.html':
         - name: [header-name]
           value: [header-value]
         ...
@@ -355,6 +373,9 @@ For guidelines on contributing to the project, please refer to our [Contributing
 - Linus Marco - [linusmarco](https://github.com/linusmarco)
 
 ## Contributors
+- [WarWithinMe](https://github.com/WarWithinMe)
+- [tahir-mm](https://github.com/tahir-mm)
+- [jsphweid](https://github.com/jsphweid)
 - [redroot](https://github.com/redroot)
 - [amsross](https://github.com/amsross)
 - [pradel](https://github.com/pradel)

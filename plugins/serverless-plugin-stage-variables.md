@@ -4,13 +4,13 @@ title: Serverless Plugin Stage Variables
 repo: svdgraaf/serverless-plugin-stage-variables
 homepage: 'https://github.com/svdgraaf/serverless-plugin-stage-variables'
 description: 'Add stage variables for Serverless 1.x to ApiGateway, so you can use variables in your Lambda&#39;s'
-stars: 22
+stars: 23
 stars_trend: 
 stars_diff: 0
 forks: 15
 forks_trend: 
 forks_diff: 0
-watchers: 22
+watchers: 23
 issues: 1
 issues_trend: 
 issues_diff: 0
