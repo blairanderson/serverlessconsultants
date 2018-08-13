@@ -17,16 +17,10 @@ author-github:	blairanderson
 
 Welcome! Thank you for visiting Serverless Frameworks Directory!
 
-My name is Blair Anderson, owner and founder of Serverless Consultants in Seattle.
+My name is Blair Anderson, founder of Serverless Consultants in Seattle.
 
-I’d like to take the opportunity to share a little bit about the origins of this resource for Tachyons.
+I’d like to take the opportunity to share a little bit about the origins of this resource for Serverless.
 
-After first learning Tachyons I knew that it would be a significant player in the front-end framework because its philosphy is timeless. The idea that you should write as little CSS as possible and then change markup to build components.
+After first learning about HEROKU, i knew it would be a significant player in the web developement world. The reason being that it automated a huge job that typically required human knowledge and expertise.
 
-I was also inspired by bootstrap, because there are an endless amount of bootstrap resources and am positive that template communities are responsible for making it possible.
-
-The response was pretty huge by our standards, which lead me to believe that I had something of value to share with the world. One thing led to another, and Serverless Frameworks Directory was born!
-
-I hope you enjoy these templates, and I encourage you to share them with the world if you like them!
-
-Thank you for viewing our website, and keep an eye out for more templates soon!
+Serverless has continued on to extract more and more, down to AWS lambda and Google Cloud offering functions-as-a-service.
