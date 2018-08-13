@@ -9,8 +9,8 @@ meta-title:		"Introducing Serverless Frameworks Directory"
 
 author:			"Blair Anderson"
 author-slug:	blair-anderson
-author-desc:	"Blair Anderson is the creator of Serverless Frameworks Directory and owner of Serverless Consultants. He is a Full Stack web designer and developer working out of sunny Orlando, Florida."
-author-url:		http://blairanderson.co
+author-desc:	"Blair Anderson is the creator of Serverless Frameworks Directory."
+author-url:		https://blairanderson.co
 author-twitter:	blairanderson
 author-github:	blairanderson
 ---

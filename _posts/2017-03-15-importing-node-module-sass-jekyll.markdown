@@ -10,7 +10,7 @@ meta-title:		"Import SCSS files from node_modules using Jekyll"
 author:			"Blair Anderson"
 author-slug:	blair-anderson
 author-desc:	"Blair Anderson is the creator of Serverless Frameworks Directory and owner of Serverless Consultants."
-author-url:		http://blairanderson.co
+author-url:		https://blairanderson.co
 author-twitter:	blairanderson
 author-github:	blairanderson
 ---
@@ -19,11 +19,9 @@ I love using jekyll and OSS to build badass web projects.
 
 This site obviously uses tachyons.io and is built with jekyll.
 
-
 First, using NPM download tachyons.
 
 `npm install tachyons-sass --save`
-
 
 Make sure you have a main SCSS file.
 
@@ -37,9 +35,7 @@ That scss file should have frontmatter.
 ---
 @charset "utf-8";
 ... the rest of your styles here
-
 ```
-
 
 Now since you have imported tachyons from node, you can add it from the import.
 
@@ -50,5 +46,4 @@ Now since you have imported tachyons from node, you can add it from the import.
 @charset "utf-8";
 
 @import "../node_modules/tachyons-sass/tachyons.scss";
-
 ```
