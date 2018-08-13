@@ -7,7 +7,7 @@ description: 'Serverless Plugin for emulating dynamodb stream triggering lambda 
 stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 4

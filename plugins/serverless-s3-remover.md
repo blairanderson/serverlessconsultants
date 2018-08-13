@@ -7,11 +7,11 @@ description: 'A serverless plugin to make s3 buckets empty before deleting cloud
 stars: 17
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 17
-issues: 4
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---

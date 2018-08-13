@@ -3,6 +3,6 @@
 layout: topic
 topic: serverless
 title: serverless Serverless Plugins
-description: '66 serverless ServerLess Plugins'
-count: 66
+description: '68 serverless ServerLess Plugins'
+count: 68
 ---

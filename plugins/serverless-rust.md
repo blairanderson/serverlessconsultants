@@ -7,7 +7,7 @@ description: 'Deploy Rustlang applications to AWS Lambda'
 stars: 19
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
 watchers: 19
@@ -27,7 +27,7 @@ issues_diff: 0
 Install the plugin with npm
 
 ```bash
-$ npm install serverless-rust@0.1.5
+$ npm install serverless-rust@0.1.6
 ```
 
 💡 This serverless plugin assumes you are building Rustlang lambdas using the [lando](https://github.com/softprops/lando) or [crowbar](https://github.com/ilianaw/rust-crowbar) rustlang crates.

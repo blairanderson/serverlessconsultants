@@ -4,14 +4,14 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 213
+stars: 228
 stars_trend: 
 stars_diff: 0
-forks: 41
+forks: 49
 forks_trend: 
 forks_diff: 0
-watchers: 213
-issues: 31
+watchers: 228
+issues: 33
 issues_trend: 
 issues_diff: 0
 ---
@@ -128,6 +128,15 @@ custom:
         config:
           lambdaFunctionArn: { Fn::GetAtt: [GraphqlLambdaFunction, Arn] } # Where GraphqlLambdaFunction is the lambda function cloudformation resource created by serverless for the serverless function named graphql
           serviceRoleArn: { Fn::GetAtt: [AppSyncLambdaServiceRole, Arn] } # Where AppSyncLambdaServiceRole is an IAM role defined in Resources
+      - type: HTTP
+        name: # data source name
+        description: 'Http endpoint'
+        config:
+          endpoint: # required # "https://{DOMAIN}/{PATH}"
+    substitutions: # allows to pass variables from here to velocity templates
+      # ${exampleVar1} will be replaced with given value in all mapping templates
+      exampleVar1: "${self:service.name}"
+      exampleVar2: {'Fn::ImportValue': 'Some-external-stuff'}
 ```
 
 > Be sure to replace all variables that have been commented out, or have an empty value.

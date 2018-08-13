@@ -4,14 +4,14 @@ title: Serverless Kubeless
 repo: serverless/serverless-kubeless
 homepage: 'https://github.com/serverless/serverless-kubeless'
 description: 'Serverless plugin for deploying functions to Kubeless.'
-stars: 134
+stars: 139
 stars_trend: 
 stars_diff: 0
-forks: 31
+forks: 32
 forks_trend: 
 forks_diff: 0
-watchers: 134
-issues: 17
+watchers: 139
+issues: 15
 issues_trend: 
 issues_diff: 0
 ---
@@ -140,3 +140,4 @@ $ serverless remove
 Serverless: Removing function: hello...
 Serverless: Function hello successfully deleted
 ```
+

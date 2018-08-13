@@ -4,13 +4,13 @@ title: Serverless Plugin Ifelse
 repo: anantab/serverless-plugin-ifelse
 homepage: 'https://github.com/anantab/serverless-plugin-ifelse'
 description: 'A Serverless Plugin to write If Else conditions in serverless YAML file'
-stars: 0
+stars: 2
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 0
+watchers: 2
 issues: 0
 issues_trend: 
 issues_diff: 0

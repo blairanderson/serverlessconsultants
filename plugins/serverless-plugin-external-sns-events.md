@@ -4,13 +4,13 @@ title: Serverless Plugin External Sns Events
 repo: silvermine/serverless-plugin-external-sns-events
 homepage: 'https://github.com/silvermine/serverless-plugin-external-sns-events'
 description: 'Add ability for functions to use existing or external SNS topics as an event source'
-stars: 23
+stars: 24
 stars_trend: 
 stars_diff: 0
 forks: 9
 forks_trend: 
 forks_diff: 0
-watchers: 23
+watchers: 24
 issues: 3
 issues_trend: 
 issues_diff: 0

@@ -7,11 +7,11 @@ description: 'Speeds up development of Alexa Skills, Chatbots and APIs by exposi
 stars: 16
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 6
 forks_trend: 
 forks_diff: 0
 watchers: 16
-issues: 0
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---
