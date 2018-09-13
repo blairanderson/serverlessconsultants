@@ -7,7 +7,7 @@ description: 'Set CloudFormation parameters when deploying.'
 stars: 11
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 11

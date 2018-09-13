@@ -4,14 +4,14 @@ title: Serverless Dynamodb Local
 repo: 99xt/serverless-dynamodb-local
 homepage: 'https://github.com/99xt/serverless-dynamodb-local'
 description: 'Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless'
-stars: 223
+stars: 238
 stars_trend: 
 stars_diff: 0
-forks: 87
+forks: 92
 forks_trend: 
 forks_diff: 0
-watchers: 223
-issues: 56
+watchers: 238
+issues: 44
 issues_trend: 
 issues_diff: 0
 ---
@@ -72,6 +72,7 @@ All CLI options are optional:
 --optimizeDbBeforeStartup -o  Optimizes the underlying database tables before starting up DynamoDB on your computer. You must also specify -dbPath when you use this parameter.
 --migrate                 -m  After starting DynamoDB local, create DynamoDB tables from the Serverless configuration.
 --seed                    -s  After starting and migrating dynamodb local, injects seed data into your tables. The --seed option determines which data categories to onload.
+--convertEmptyValues      -e  Set to true if you would like the document client to convert empty values (0-length strings, binary buffers, and sets) to be converted to NULL types when persisting to DynamoDB.
 ```
 
 All the above options can be added to serverless.yml to set default configuration: e.g.
@@ -79,11 +80,15 @@ All the above options can be added to serverless.yml to set default configuratio
 ```yml
 custom:
   dynamodb:
+  # If you only want to use DynamoDB Local in some stages, declare them here
+    stages:
+      - dev
     start:
       port: 8000
       inMemory: true
       migrate: true
       seed: true
+      convertEmptyValues: true
     # Uncomment only if you already have a DynamoDB running locally
     # noStart: true
 ```

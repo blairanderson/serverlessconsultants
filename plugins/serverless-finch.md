@@ -4,14 +4,14 @@ title: Serverless Finch
 repo: fernando-mc/serverless-finch
 homepage: 'https://github.com/fernando-mc/serverless-finch'
 description: 'A Serverless plugin to deploy static website assets to AWS S3.'
-stars: 164
+stars: 178
 stars_trend: 
 stars_diff: 0
-forks: 33
+forks: 34
 forks_trend: 
 forks_diff: 0
-watchers: 164
-issues: 9
+watchers: 178
+issues: 6
 issues_trend: 
 issues_diff: 0
 ---
@@ -257,6 +257,24 @@ _If `condition` is not specified, then all requests will be redirected in accord
 
 ---
 
+**uploadOrder**
+
+_optional_, no default
+
+```yaml
+custom:
+  client:
+    ...
+    uploadOrder:
+      - .*
+      - .*/assets/.*
+      - service-worker\.js
+      - index\.html
+    ...
+```
+
+The `uploadOrder` option can be used for ordering the files uploaded to the bucket.  When combined with `--no-delete-contents` this helps with 0 downtime, as we can make sure we upload any assets before serving the html files which need them.
+
 ### Command-line Parameters
 
 **--region**
@@ -343,6 +361,8 @@ For guidelines on contributing to the project, please refer to our [Contributing
 ## Release Notes
 
 ### v2.0.\* 
+- Added ability to deploy files in a specific order to maximize uptime - [Issue 63](https://github.com/fernando-mc/serverless-finch/issues/63) - [stefan-lz](https://github.com/stefan-lz)
+- Added Python tests of functionality to speed up development - [fernando-mc](https://github.com/fernando-mc)
 - Major refactor of entire codebase to move towards modularity and testability
 - Added the ability to set HTTP headers for objects in bucket ([Issue 24](https://github.com/fernando-mc/serverless-finch/issues/24))
 - Added the ability to set redirect and routing options for the website (Initially implemented in [Pull 23](https://github.com/fernando-mc/serverless-finch/pull/23))
@@ -373,6 +393,7 @@ For guidelines on contributing to the project, please refer to our [Contributing
 - Linus Marco - [linusmarco](https://github.com/linusmarco)
 
 ## Contributors
+- [stefan-lz](https://github.com/stefan-lz)
 - [WarWithinMe](https://github.com/WarWithinMe)
 - [tahir-mm](https://github.com/tahir-mm)
 - [jsphweid](https://github.com/jsphweid)

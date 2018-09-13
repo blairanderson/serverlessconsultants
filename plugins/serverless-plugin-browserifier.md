@@ -4,14 +4,14 @@ title: Serverless Plugin Browserifier
 repo: digitalmaas/serverless-plugin-browserifier
 homepage: 'https://github.com/digitalmaas/serverless-plugin-browserifier'
 description: 'Reduce the size and speed up your Node.js based lambda&#39;s using browserify.'
-stars: 16
+stars: 17
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 16
-issues: 0
+watchers: 17
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

@@ -4,14 +4,14 @@ title: Serverless Es Logs
 repo: daniel-cottone/serverless-es-logs
 homepage: 'https://github.com/daniel-cottone/serverless-es-logs'
 description: 'A Serverless plugin to transport logs to ElasticSearch'
-stars: 3
+stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 1
+watchers: 6
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

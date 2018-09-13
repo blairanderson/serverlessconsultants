@@ -4,18 +4,20 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 228
+stars: 268
 stars_trend: 
 stars_diff: 0
-forks: 49
+forks: 59
 forks_trend: 
 forks_diff: 0
-watchers: 228
-issues: 33
+watchers: 268
+issues: 28
 issues_trend: 
 issues_diff: 0
 ---
 
+
+[![Build Status](https://travis-ci.org/sid88in/serverless-appsync-plugin.svg?branch=master)](https://travis-ci.org/sid88in/serverless-appsync-plugin)
 
 <h1 align="center">
   Serverless-AppSync-Plugin 👌
@@ -30,8 +32,12 @@ Tired of 🚀 **deploying**, ✏️ **updating**, and ❌ **deleting** your AppS
 # Introduction
 
 > *Part 1:* [Running a scalable & reliable GraphQL endpoint with Serverless](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)
+
 > *Part 2:* [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)
+
 > *Part 3:* [AppSync Frontend: AWS Managed GraphQL Service](https://hackernoon.com/running-a-scalable-reliable-graphql-endpoint-with-serverless-db16e42dc266)
+
+> *AWS Mobile Blog* [How to deploy a GraphQL API on AWS using the Serverless Framework](https://read.acloud.guru/deploy-a-graphql-service-on-aws-with-the-serverless-framework-7af8fc22a01d)
 
 ![appsync architecture](https://user-images.githubusercontent.com/1587005/36063617-fe8d4e5e-0e33-11e8-855b-447513ba7084.png)
 
@@ -89,6 +95,7 @@ custom:
       awsRegion: # required # region
       defaultAction: # ALLOW
       userPoolId: # required # user pool ID
+      appIdClientRegex: # optional
       region: # defaults to provider region
     # if OPENID_CONNECT
     openIdConnectConfig:
@@ -102,12 +109,11 @@ custom:
     mappingTemplatesLocation: # defaults to mapping-templates
     mappingTemplates:
       - dataSource: # data source name
-        type: # Query, Mutation, Subscription
+        type: # type name in schema (e.g. Query, Mutation, Subscription)
         field: getUserInfo
         request: # request mapping template name
         response: # response mapping template name
     schema: # defaults schema.graphql
-    serviceRole: "AppSyncServiceRole" # AppSyncServiceRole is a role defined by amazon and available in all accounts
     dataSources:
       - type: AMAZON_DYNAMODB
         name: # data source name
@@ -115,6 +121,14 @@ custom:
         config:
           tableName: { Ref: MyTable } # Where MyTable is a dynamodb table defined in Resources
           serviceRoleArn: { Fn::GetAtt: [AppSyncDynamoDBServiceRole, Arn] } # Where AppSyncDynamoDBServiceRole is an IAM role defined in Resources
+          iamRoleStatements: # custom IAM Role statements for this DataSource. Ignored if `serviceRoleArn` is present. Auto-generated if both `serviceRoleArn` and `iamRoleStatements` are omitted
+            - Effect: "Allow"
+              Action:
+                - "dynamodb:GetItem"
+              Resource:
+                - "arn:aws:dynamodb:{REGION}:{ACCOUNT_ID}:myTable"
+                - "arn:aws:dynamodb:{REGION}:{ACCOUNT_ID}:myTable/*"
+              
           region: # Overwrite default region for this data source
       - type: AMAZON_ELASTICSEARCH
         name: # data source name
@@ -122,12 +136,25 @@ custom:
         config:
           endpoint: # required # "https://{DOMAIN}.{REGION}.es.amazonaws.com"
           serviceRoleArn: { Fn::GetAtt: [AppSyncESServiceRole, Arn] } # Where AppSyncESServiceRole is an IAM role defined in Resources
+          iamRoleStatements: # custom IAM Role statements for this DataSource. Ignored if `serviceRoleArn` is present. Auto-generated if both `serviceRoleArn` and `iamRoleStatements` are omitted
+            - Effect: "Allow"
+              Action:
+                - "es:ESHttpGet"
+              Resource:
+                - "arn:aws:es:{REGION}:{ACCOUNT_ID}:{DOMAIN}"
       - type: AWS_LAMBDA
         name: # data source name
         description: 'Lambda DataSource'
         config:
           lambdaFunctionArn: { Fn::GetAtt: [GraphqlLambdaFunction, Arn] } # Where GraphqlLambdaFunction is the lambda function cloudformation resource created by serverless for the serverless function named graphql
           serviceRoleArn: { Fn::GetAtt: [AppSyncLambdaServiceRole, Arn] } # Where AppSyncLambdaServiceRole is an IAM role defined in Resources
+          iamRoleStatements: # custom IAM Role statements for this DataSource. Ignored if `serviceRoleArn` is present. Auto-generated if both `serviceRoleArn` and `iamRoleStatements` are omitted
+            - Effect: "Allow"
+              Action:
+                - "lambda:invokeFunction"
+              Resource:
+                - "arn:aws:lambda:{REGION}:{ACCOUNT_ID}:myFunction"
+                - "arn:aws:lambda:{REGION}:{ACCOUNT_ID}:myFunction:*"
       - type: HTTP
         name: # data source name
         description: 'Http endpoint'
@@ -147,9 +174,54 @@ custom:
 
 This command will deploy all AppSync resources in the same CloudFormation template used by the other serverless resources.
 
+### `serverless graphql-playground`
+
+This command will start a local graphql-playground server which is connected to your AppSync endpoint. The required options for the command are different depending on your AppSync authenticationType.
+
+For API_KEY, either the GraphQLApiKeyDefault output or the --apiKey option is required
+
+For AMAZON_COGNITO_USER_POOLS, the -u/--username and -p/--password arguments are required. The cognito user pool client id can be provided with the --clientId option or directly in the yaml file (```custom.appSync.userPoolConfig.playgroundClientId```)
+
+For OPENID_CONNECT, the --jwtToken option is required.
+
+The AWS_IAM authenticationType is not currently supported.
+
 ## 📝 Notes
 
 * If you are planning on using <a target="_blank" href="https://aws.amazon.com/elasticsearch-service">AWS Elastic Search</a>, you will need to create an Elastic Search domain/endpoint on AWS and set it as the ```endpoint``` option in  ```serverless.yml``` **before** deploying.
+
+## Offline support
+
+You can use [serverless-appsync-offline](https://github.com/aheissenberger/serverless-appsync-offline) to autostart an [AppSync Emulator](https://github.com/ConduitVC/aws-utils/tree/appsync/packages/appsync-emulator-serverless) which depends on [Serverless-AppSync-Plugin](https://github.com/sid88in/serverless-appsync-plugin) with DynamoDB and Lambda resolver support:
+### Install Plugin
+`npm install --save serverless-appsync-offline`
+### Minimal Options (serverless.yml)
+```yml
+custom:
+  appsync-offline:
+    port: 62222
+    dynamodb:
+      server:
+        port: 8000
+```
+### Start local enviroment
+
+If you use `serverless-offline`:
+
+`sls offline start`
+
+otherwise:
+
+`sls appsync-offline start`
+
+the result is:
+
+```
+Serverless: dynamoDB started: http://localhost:8000/
+Serverless: AppSync started: http://localhost:62222/graphql
+```
+
+Go to [serverless-appsync-offline](https://github.com/aheissenberger/serverless-appsync-offline) to get further configuration options.
 
 ## 🎁 Contributing
 
@@ -178,6 +250,10 @@ you're using an api key, this will also need updated*
 to cleanup the old resources
 4. Remove the `apiId` line from `custom.appSync` in `serverless.yml`
 5. 🍹
+
+## Youtube Video by Foo Bar :)
+
+[![Building an AppSync + Serverless Framework Backend | FooBar](https://www.youtube.com/watch?v=eTUYqI_LCQ4)](https://www.youtube.com/watch?v=eTUYqI_LCQ4)
 
 ## ❤️ Credits
 

@@ -3,6 +3,6 @@
 layout: topic
 topic: elasticsearch
 title: elasticsearch Serverless Plugins
-description: '1 elasticsearch ServerLess Plugins'
-count: 1
+description: '2 elasticsearch ServerLess Plugins'
+count: 2
 ---

@@ -4,13 +4,13 @@ title: Serverless Offline Direct Lambda
 repo: civicteam/serverless-offline-direct-lambda
 homepage: 'https://github.com/civicteam/serverless-offline-direct-lambda'
 description: 'Allow offline direct lambda-to-lambda interactions by exposing lambdas with no API Gateway event via HTTP.'
-stars: 5
+stars: 6
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 6
 issues: 1
 issues_trend: 
 issues_diff: 0

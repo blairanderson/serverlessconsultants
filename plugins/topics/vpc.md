@@ -3,6 +3,6 @@
 layout: topic
 topic: vpc
 title: vpc Serverless Plugins
-description: '1 vpc ServerLess Plugins'
-count: 1
+description: '2 vpc ServerLess Plugins'
+count: 2
 ---

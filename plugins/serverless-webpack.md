@@ -4,14 +4,14 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 787
+stars: 817
 stars_trend: 
 stars_diff: 0
-forks: 182
+forks: 186
 forks_trend: 
 forks_diff: 0
-watchers: 787
-issues: 37
+watchers: 817
+issues: 46
 issues_trend: 
 issues_diff: 0
 ---
@@ -303,8 +303,8 @@ custom:
 
 
 All modules stated in `externals` will be excluded from bundled files. If an excluded module
-is stated as `dependencies` in `package.json`, it will be packed into the Serverless
-artifact under the `node_modules` directory.
+is stated as `dependencies` in `package.json` and it is used by the webpack chunk, it will be
+packed into the Serverless artifact under the `node_modules` directory.
 
 By default, the plugin will use the `package.json` file in working directory, If you want to
 use a different package file, set `packagePath` to your custom `package.json`:

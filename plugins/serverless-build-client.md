@@ -7,7 +7,7 @@ description: 'Build your static website with environment variables defined in se
 stars: 2
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 2

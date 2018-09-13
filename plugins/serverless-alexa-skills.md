@@ -4,14 +4,14 @@ title: Serverless Alexa Skills
 repo: marcy-terui/serverless-alexa-skills
 homepage: 'https://github.com/marcy-terui/serverless-alexa-skills'
 description: 'Manage your Alexa Skills with Serverless Framework.'
-stars: 33
+stars: 39
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 33
-issues: 3
+watchers: 39
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -45,10 +45,6 @@ npm install serverless-alexa-skills
 
 # Setup
 
-#### First, you need to create a ["Security Profile"](https://developer.amazon.com/docs/login-with-amazon/security-profile.html) and configure ["Login with Amazon"](https://developer.amazon.com/ja/docs/login-with-amazon/web-docs.html).
-
-#### Next, Check your Client ID, Client Secret and [Vendor ID](https://developer.amazon.com/mycid.html) at [Amazon developer console](https://developer.amazon.com/home.html).
-
 See: [the step-by-step guide](https://github.com/marcy-terui/serverless-alexa-skills/wiki/How-to-get-your-%22Login-with-Amazon%22-credentials)
 
 # Configuration
@@ -65,9 +61,6 @@ plugins:
 
 custom:
   alexa:
-    vendorId: ${env:YOUR_AMAZON_VENDOR_ID}
-    clientId: ${env:YOUR_AMAZON_CLIENT_ID}
-    clientSecret: ${env:YOUR_AMAZON_CLIENT_SECRET}
     skills:
       - id: ${env:YOUR_ALEXA_SKILL_ID}
         skillManifest:
@@ -103,9 +96,9 @@ custom:
 ## alexa auth
 Authenticate with Amazon OAuth2.
 
-### Caution
-- **The security token expires in `1 hour`. If an authentication error occurs, please execute this command again.**
-- This command creates a local web server to receive OAuth2 authentication redirects. The default port is `3000`. If you want to change the port, please change `custom.alexa.localServerPort` setting.
+- This command creates a local web server to receive OAuth2 authentication redirects. The default port is `9090`. If you want to change the port, please change `custom.alexa.localServerPort` setting.
+
+**Note: You must use the 9090 port if use the default security profile. If you want to use another port number, you have to create a custom security profile with "http://127.0.0.0:$YOUR_PORT_NUMBER/cb" as Allow Return URLs.**
 
 ```shell
 $ serverless alexa auth -h
