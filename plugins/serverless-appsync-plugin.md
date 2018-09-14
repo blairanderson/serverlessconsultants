@@ -11,9 +11,9 @@ forks: 59
 forks_trend: 
 forks_diff: 0
 watchers: 268
-issues: 28
-issues_trend: 
-issues_diff: 0
+issues: 29
+issues_trend: up
+issues_diff: 1
 ---
 
 

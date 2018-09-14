@@ -4,13 +4,13 @@ title: Serverless Sam
 repo: SAPessi/serverless-sam
 homepage: 'https://github.com/SAPessi/serverless-sam'
 description: 'Exports an AWS SAM template for a service created with the Serverless Framework.'
-stars: 79
-stars_trend: 
-stars_diff: 0
+stars: 80
+stars_trend: up
+stars_diff: 1
 forks: 16
 forks_trend: 
 forks_diff: 0
-watchers: 79
+watchers: 80
 issues: 10
 issues_trend: 
 issues_diff: 0

@@ -4,13 +4,13 @@ title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
 description: 'AWS Step Functions with Serverless Framework.'
-stars: 345
-stars_trend: 
-stars_diff: 0
+stars: 346
+stars_trend: up
+stars_diff: 1
 forks: 51
 forks_trend: 
 forks_diff: 0
-watchers: 345
+watchers: 346
 issues: 35
 issues_trend: 
 issues_diff: 0
