@@ -4,16 +4,16 @@ title: Serverless Kubeless
 repo: serverless/serverless-kubeless
 homepage: 'https://github.com/serverless/serverless-kubeless'
 description: 'Serverless plugin for deploying functions to Kubeless.'
-stars: 150
-stars_trend: 
-stars_diff: 0
+stars: 151
+stars_trend: up
+stars_diff: 1
 forks: 33
 forks_trend: 
 forks_diff: 0
-watchers: 150
-issues: 16
-issues_trend: 
-issues_diff: 0
+watchers: 151
+issues: 18
+issues_trend: up
+issues_diff: 2
 ---
 
 
@@ -101,24 +101,18 @@ Or you can obtain the function information:
 $ serverless info
 Service Information "hello"
 Cluster IP:  10.0.0.51
-Type:  NodePort
+Type:  ClusterIP
 Ports:
+  Name:  http-function-port
   Protocol:  TCP
   Port:  8080
   Target Port:  8080
-  Node Port:  30018
 Function Info
 Description: Hello function
 Handler:  handler.hello
 Runtime:  python2.7
 Trigger: HTTP
 Dependencies:
-```
-
-If you are using minikube you can call directly the function through HTTP and the Node Port in which the function is running:
-```bash
-$ curl  http://192.168.99.100:30018
-hello world
 ```
 
 You can access the function through its HTTP interface as well using `kubectl proxy` and accessing:

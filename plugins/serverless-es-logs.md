@@ -11,9 +11,9 @@ forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 6
-issues: 2
-issues_trend: up
-issues_diff: 2
+issues: 0
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -69,6 +69,19 @@ Your logs will now be transported to the specified elasticsearch instance using 
 custom:
   esLogs:
     endpoint: some-elasticsearch-endpoint.us-east-1.es.amazonaws.com
+```
+
+#### filterPattern
+
+(Optional) The filter pattern that the Cloudwatch subscription should use for your lambda
+functions. Default is `[timestamp=*Z, request_id="*-*", event]`. See
+[Cloudwatch filter pattern syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html)
+for more info.
+
+```yaml
+custom:
+  esLogs:
+    filterPattern: '[timestamp=*Z, request_id="*-*", event]'
 ```
 
 #### includeApiGWLogs
