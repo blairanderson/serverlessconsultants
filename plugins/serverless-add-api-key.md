@@ -5,15 +5,15 @@ repo: rrahul963/serverless-add-api-key
 homepage: 'https://github.com/rrahul963/serverless-add-api-key'
 description: 'Serverless plugin to add same api key for multiple serverless services i.e. to re-use apikey across multiple api gateway apis.'
 stars: 2
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 3
-forks_trend: up
-forks_diff: 1
+forks_trend: 
+forks_diff: 0
 watchers: 2
 issues: 1
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 

@@ -5,8 +5,8 @@ repo: MadSkills-io/fullstack-serverless
 homepage: 'https://github.com/MadSkills-io/fullstack-serverless'
 description: 'A Serverless plugin to create an AWS CloudFront distribution that serves static web content from S3 and routes API traffic to API Gateway.'
 stars: 24
-stars_trend: up
-stars_diff: 2
+stars_trend: 
+stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0

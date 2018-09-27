@@ -5,8 +5,8 @@ repo: thepauleh/goserverless
 homepage: 'https://github.com/thepauleh/goserverless'
 description: 'GoFormation for Serverless. Create serverless configs with Go Structs.'
 stars: 5
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0

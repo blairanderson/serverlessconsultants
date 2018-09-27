@@ -5,11 +5,11 @@ repo: seek-oss/serverless-haskell
 homepage: 'https://github.com/seek-oss/serverless-haskell'
 description: 'Deploying Haskell applications to AWS Lambda with Serverless'
 stars: 107
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 12
-forks_trend: up
-forks_diff: 1
+forks_trend: 
+forks_diff: 0
 watchers: 107
 issues: 8
 issues_trend: 

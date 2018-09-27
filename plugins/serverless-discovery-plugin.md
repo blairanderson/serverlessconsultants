@@ -4,13 +4,13 @@ title: Serverless Discovery Plugin
 repo: aregier/serverless-discovery-plugin
 homepage: 'https://github.com/aregier/serverless-discovery-plugin'
 description: 'A serverless plugin to register AWS micro-service endpoints with a discovery service at serverless deploy or serverless remove time.'
-stars: 2
-stars_trend: 
-stars_diff: 0
+stars: 3
+stars_trend: up
+stars_diff: 1
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 3
 issues: 1
 issues_trend: 
 issues_diff: 0

@@ -5,13 +5,13 @@ repo: GetWala/serverless-cognito-add-custom-attributes
 homepage: 'https://github.com/GetWala/serverless-cognito-add-custom-attributes'
 description: 'Serverless Plugin for adding custom attributes to an existing CloudFormation-managed CognitoUserPool and CognitoUserPoolClient without losing all your users'
 stars: 6
-stars_trend: up
-stars_diff: 1
-forks: 2
+stars_trend: 
+stars_diff: 0
+forks: 3
 forks_trend: up
 forks_diff: 1
 watchers: 6
-issues: 1
+issues: 2
 issues_trend: up
 issues_diff: 1
 ---

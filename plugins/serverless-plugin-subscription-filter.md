@@ -5,8 +5,8 @@ repo: tsub/serverless-plugin-subscription-filter
 homepage: 'https://github.com/tsub/serverless-plugin-subscription-filter'
 description: 'A serverless plugin to register AWS CloudWatchLogs subscription filter'
 stars: 17
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0

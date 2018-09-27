@@ -7,9 +7,9 @@ description: 'Keep your lambdas warm during Winter.'
 stars: 263
 stars_trend: 
 stars_diff: 0
-forks: 34
-forks_trend: 
-forks_diff: 0
+forks: 35
+forks_trend: up
+forks_diff: 1
 watchers: 263
 issues: 9
 issues_trend: 

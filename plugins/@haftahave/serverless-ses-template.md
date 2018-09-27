@@ -5,8 +5,8 @@ repo: haftahave/serverless-ses-template
 homepage: 'https://github.com/haftahave/serverless-ses-template'
 description: 'A serveless plugin that allows automatically creating, updating and removing AWS SES Templates using a configuration file and keeps your AWS SES Templates synced with your configuration file.'
 stars: 3
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
@@ -74,10 +74,10 @@ Run `sls ses-template deploy` in order to sync your email templates.
 
 Optional CLI options:
 ```
---keep-missed   -k  Set this flag in order to keep templates thouse are not present in your configuration file. [OPTIONAL]
---stage         -s  The stage used to populate your templates. Default: the first stage found in your project. [OPTIONAL]
---region        -r  The region used to populate your templates. Default: the first region for the first stage found. [OPTIONAL]
---alias         -a  Template alias, works only with sesTemplatesAddStageAlias option enabled. [OPTIONAL]
+--remove-missed   Set this flag in order to remove templates those are not present in your configuration file. [OPTIONAL]
+--stage           The stage used to populate your templates. Default: the first stage found in your project. [OPTIONAL]
+--region          The region used to populate your templates. Default: the first region for the first stage found. [OPTIONAL]
+--alias           Template alias, works only with sesTemplatesAddStageAlias option enabled. [OPTIONAL]
 ```
 ---
 
@@ -86,10 +86,10 @@ Run `sls ses-template delete --template template_name_goes_here` in order to del
 CLI options:
 
 ```
---template      -t  The template name you are going to delete [REQUIRED]
---stage         -s  The stage used to populate your templates. Default: the first stage found in your project. [OPTIONAL]
---region        -r  The region used to populate your templates. Default: the first region for the first stage found. [OPTIONAL]
---alias         -a  Template alias, works only with sesTemplatesAddStageAlias option enabled. [OPTIONAL]
+--template      The template name you are going to delete [REQUIRED]
+--stage         The stage used to populate your templates. Default: the first stage found in your project. [OPTIONAL]
+--region        The region used to populate your templates. Default: the first region for the first stage found. [OPTIONAL]
+--alias         Template alias, works only with sesTemplatesAddStageAlias option enabled. [OPTIONAL]
 ```
 
 ## Links

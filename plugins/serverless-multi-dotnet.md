@@ -8,12 +8,12 @@ stars: 1
 stars_trend: 
 stars_diff: 0
 forks: 1
-forks_trend: up
-forks_diff: 1
+forks_trend: 
+forks_diff: 0
 watchers: 1
-issues: 1
-issues_trend: up
-issues_diff: 1
+issues: 0
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -38,6 +38,18 @@ package:
 It equivalent to going into functionproject-folder and executing dotnet lambda package -o publish/deploy-package.zip
 
 If you want to execute serverless deploy with no repacking of C# projects, you should add --nopack option
+
+As of version 0.9, the plugin now supports supplying a projectFolder setting for scenarios when a more complex folder structure is needed. 
+
+The projectFolder value must be a parent folder of the artifact location.
+
+E.g.
+
+```
+package:
+ artifact: src/app/functionproject-folder/publish/deploy-package.zip
+ projectFolder: src/app/functionproject-folder 
+```
 
 ## Install
 

@@ -5,8 +5,8 @@ repo: svdgraaf/serverless-basic-authentication
 homepage: 'https://github.com/svdgraaf/serverless-basic-authentication'
 description: 'Serverless Plugin for adding Basic Authentication to your api'
 stars: 6
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0

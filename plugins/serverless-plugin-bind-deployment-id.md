@@ -4,13 +4,13 @@ title: Serverless Plugin Bind Deployment
 repo: jacob-meacham/serverless-plugin-bind-deployment-id
 homepage: 'https://github.com/jacob-meacham/serverless-plugin-bind-deployment-id'
 description: 'A Serverless plugin to bind the randomly generated deployment resource to your custom resources'
-stars: 20
-stars_trend: 
-stars_diff: 0
+stars: 21
+stars_trend: up
+stars_diff: 1
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 20
+watchers: 21
 issues: 3
 issues_trend: 
 issues_diff: 0

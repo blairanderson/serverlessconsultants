@@ -4,16 +4,16 @@ title: Serverless Dotenv
 repo: Jimdo/serverless-dotenv
 homepage: 'https://github.com/Jimdo/serverless-dotenv'
 description: 'Fetch environment variables and write it to a .env file'
-stars: 4
-stars_trend: 
-stars_diff: 0
+stars: 5
+stars_trend: up
+stars_diff: 1
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 2
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 

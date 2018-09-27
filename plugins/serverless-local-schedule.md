@@ -4,13 +4,13 @@ title: Serverless Local Schedule
 repo: UnitedIncome/serverless-local-schedule
 homepage: 'https://github.com/UnitedIncome/serverless-local-schedule'
 description: 'Schedule AWS CloudWatch Event based invocations in local time(with DST support!)'
-stars: 16
+stars: 17
 stars_trend: up
 stars_diff: 1
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 16
+watchers: 17
 issues: 1
 issues_trend: 
 issues_diff: 0
