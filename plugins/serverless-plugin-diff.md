@@ -4,13 +4,13 @@ title: Serverless Plugin Diff
 repo: nicka/serverless-plugin-diff
 homepage: 'https://github.com/nicka/serverless-plugin-diff'
 description: 'Compares your local AWS CloudFormation templates against deployed ones.'
-stars: 17
-stars_trend: 
-stars_diff: 0
+stars: 18
+stars_trend: up
+stars_diff: 1
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 17
+watchers: 18
 issues: 1
 issues_trend: 
 issues_diff: 0

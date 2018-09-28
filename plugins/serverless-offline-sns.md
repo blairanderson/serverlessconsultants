@@ -8,12 +8,12 @@ stars: 43
 stars_trend: 
 stars_diff: 0
 forks: 19
-forks_trend: up
-forks_diff: 1
+forks_trend: 
+forks_diff: 0
 watchers: 43
 issues: 8
-issues_trend: up
-issues_diff: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 

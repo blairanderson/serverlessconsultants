@@ -4,13 +4,13 @@ title: Serverless Webpack
 repo: serverless-heaven/serverless-webpack
 homepage: 'https://github.com/serverless-heaven/serverless-webpack'
 description: 'Serverless plugin to bundle your lambdas with Webpack'
-stars: 824
+stars: 829
 stars_trend: up
-stars_diff: 2
-forks: 190
+stars_diff: 5
+forks: 191
 forks_trend: up
-forks_diff: 3
-watchers: 824
+forks_diff: 1
+watchers: 829
 issues: 49
 issues_trend: 
 issues_diff: 0
@@ -262,7 +262,7 @@ you are not satisfied with the current output info, you can overwrite it in your
 ```js
 // webpack.config.js
 
-module.export = {
+module.exports = {
   // ...
   stats: 'minimal'
   // ...

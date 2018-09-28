@@ -5,8 +5,8 @@ repo: tradle/serverless-iot-local
 homepage: 'https://github.com/tradle/serverless-iot-local'
 description: 'AWS Iot events with serverless-offline'
 stars: 12
-stars_trend: down
-stars_diff: -1
+stars_trend: 
+stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0

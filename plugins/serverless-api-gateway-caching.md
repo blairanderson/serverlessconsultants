@@ -5,8 +5,8 @@ repo: DianaIonita/serverless-api-gateway-caching
 homepage: 'https://github.com/DianaIonita/serverless-api-gateway-caching'
 description: 'Serverless plugin which configures API Gateway caching'
 stars: 5
-stars_trend: up
-stars_diff: 3
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0

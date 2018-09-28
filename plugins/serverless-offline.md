@@ -4,16 +4,16 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 1700
+stars: 1706
 stars_trend: up
-stars_diff: 9
-forks: 273
+stars_diff: 6
+forks: 277
 forks_trend: up
-forks_diff: 2
-watchers: 1700
-issues: 63
-issues_trend: down
-issues_diff: -9
+forks_diff: 4
+watchers: 1706
+issues: 65
+issues_trend: up
+issues_diff: 2
 ---
 
 
@@ -132,22 +132,7 @@ By default you can send your requests to `http://localhost:3000/`. Please note t
 
 ## Usage with Babel
 
-You can use Offline with [Serverless-runtime-babel](https://github.com/serverless/serverless-runtime-babel).
-To do so you need to install (at least) the es2015 preset in your project folder (`npm i babel-preset-es2015 --save-dev`).
-
-~ Or ~
-
-Your λ handlers can be required with `babel-register`.
-To do so, in your `serverless.yml` file, set options to be passed to babel-register like this:
-
-```yml
-custom:
-  serverless-offline:
-    babelOptions:
-      presets: ["es2015", "stage-2"]
-```
-
-Here is the full list of [babel-register options](https://babeljs.io/docs/usage/require/)
+Use [serverless-webpack](https://github.com/serverless-heaven/serverless-webpack) to compile and bundle your ES-next code
 
 ## Usage with Flow
 

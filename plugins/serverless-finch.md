@@ -5,8 +5,8 @@ repo: fernando-mc/serverless-finch
 homepage: 'https://github.com/fernando-mc/serverless-finch'
 description: 'A Serverless plugin to deploy static website assets to AWS S3.'
 stars: 183
-stars_trend: up
-stars_diff: 4
+stars_trend: 
+stars_diff: 0
 forks: 34
 forks_trend: 
 forks_diff: 0

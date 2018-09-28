@@ -5,8 +5,8 @@ repo: anantab/serverless-plugin-ifelse
 homepage: 'https://github.com/anantab/serverless-plugin-ifelse'
 description: 'A Serverless Plugin to write If Else conditions in serverless YAML file'
 stars: 3
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
