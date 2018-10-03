@@ -7,13 +7,13 @@ description: 'Creates dynamically AWS metric-filter resources with custom patter
 stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 1
-forks_trend: 
-forks_diff: 0
+forks: 2
+forks_trend: up
+forks_diff: 1
 watchers: 6
-issues: 1
-issues_trend: 
-issues_diff: 0
+issues: 2
+issues_trend: up
+issues_diff: 1
 ---
 
 

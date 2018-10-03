@@ -4,13 +4,13 @@ title: Serverless Plugin Vpc Eni Cleanup
 repo: medikoo/serverless-plugin-vpc-eni-cleanup
 homepage: 'https://github.com/medikoo/serverless-plugin-vpc-eni-cleanup'
 description: 'Automatic cleanup of VPC network interfaces on stage removal'
-stars: 3
-stars_trend: 
-stars_diff: 0
+stars: 4
+stars_trend: up
+stars_diff: 1
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 4
 issues: 2
 issues_trend: 
 issues_diff: 0

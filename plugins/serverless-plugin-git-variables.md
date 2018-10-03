@@ -8,12 +8,12 @@ stars: 28
 stars_trend: 
 stars_diff: 0
 forks: 16
-forks_trend: up
-forks_diff: 2
+forks_trend: 
+forks_diff: 0
 watchers: 28
-issues: 5
-issues_trend: up
-issues_diff: 2
+issues: 4
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -43,6 +43,12 @@ functions:
 
 plugins:
   - serverless-plugin-git-variables
+
+resources:
+  Description: >
+    ${self:service} ${git:branch}:${git:sha1}
+    https://github.com/jacob-meacham/serverless-plugin-git-variables
+    ${git:message}
 ```
 
 ## describe and describeLight

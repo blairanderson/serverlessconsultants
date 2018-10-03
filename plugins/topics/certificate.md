@@ -3,6 +3,6 @@
 layout: topic
 topic: certificate
 title: certificate Serverless Plugins
-description: '1 certificate ServerLess Plugins'
-count: 1
+description: '2 certificate ServerLess Plugins'
+count: 2
 ---
