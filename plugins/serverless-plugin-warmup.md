@@ -4,16 +4,16 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: 'Keep your lambdas warm during Winter.'
-stars: 267
-stars_trend: up
-stars_diff: 2
-forks: 36
+stars: 287
+stars_trend: 
+stars_diff: 0
+forks: 40
 forks_trend: 
 forks_diff: 0
-watchers: 267
-issues: 10
-issues_trend: up
-issues_diff: 1
+watchers: 287
+issues: 9
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -48,9 +48,37 @@ plugins:
   - serverless-plugin-warmup
 ```
 
-* Add a `warmup` property to all functions you want to be warm.
+* Add a `warmup.default` property to custom set the default configuration for all the functions
 
-You can enable WarmUp in general:
+Enable WarmUp in general:
+
+```yml
+custom:
+  warmup:
+    default: true
+```
+
+For a specific stage:
+
+```yml
+custom:
+  warmup:
+    default: production
+```
+
+For several stages:
+
+```yml
+custom:
+  warmup:
+    default: 
+      - production
+      - staging
+```
+
+* You can override the default `warmup` property on any function.
+
+Enable WarmUp for a specific function
 
 ```yml
 functions:
@@ -75,6 +103,20 @@ functions:
       - production
       - staging
 ```
+
+Do not warm-up a function if `default` is set to true:
+ ```yml
+custom:
+  warmup:
+    default: true
+
+...
+
+functions:
+  hello:
+    warmup: false
+```
+
 * WarmUP requires some permissions to be able to `invoke` lambdas.
 
 ```yaml
@@ -184,6 +226,7 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 
 ## Options
 
+* **default** (default `false`)
 * **folderName** (default `_warmup`)
 * **cleanFolder** (default `true`)
 * **memorySize** (default `128`)
@@ -197,6 +240,7 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 ```yml
 custom:
   warmup:
+    default: true // Whether to warm up functions by default or not
     folderName: '_warmup' // Name of the folder created for the generated warmup 
     cleanFolder: false
     memorySize: 256

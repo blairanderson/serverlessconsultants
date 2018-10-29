@@ -7,7 +7,7 @@ description: 'Reliably sets a BasePathMapping to an API Gateway Custom Domain'
 stars: 33
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 5
 forks_trend: 
 forks_diff: 0
 watchers: 33

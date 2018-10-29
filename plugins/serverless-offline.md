@@ -4,20 +4,20 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 1719
-stars_trend: up
-stars_diff: 14
-forks: 283
-forks_trend: up
-forks_diff: 6
-watchers: 1719
-issues: 65
-issues_trend: down
-issues_diff: -2
+stars: 1791
+stars_trend: 
+stars_diff: 0
+forks: 299
+forks_trend: 
+forks_diff: 0
+watchers: 1791
+issues: 58
+issues_trend: 
+issues_diff: 0
 ---
 
 
-# Serverless Offline Plugin
+# Serverless Offline
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![npm version](https://badge.fury.io/js/serverless-offline.svg)](https://badge.fury.io/js/serverless-offline)
@@ -44,6 +44,7 @@ This plugin is updated by its users, I just do maintenance and ensure that PRs a
 * [Token authorizers](#token-authorizers)
 * [Custom authorizers](#custom-authorizers)
 * [Remote authorizers](#remote-authorizers)
+* [Custom headers](#custom-headers)
 * [AWS API Gateway features](#aws-api-gateway-features)
 * [Velocity nuances](#velocity-nuances)
 * [Debug process](#debug-process)
@@ -101,6 +102,7 @@ All CLI options are optional:
 --dontPrintOutput           Turns off logging of your lambda outputs in the terminal.
 --httpsProtocol         -H  To enable HTTPS, specify directory (relative to your cwd, typically your project dir) for both cert.pem and key.pem files.
 --skipCacheInvalidation -c  Tells the plugin to skip require cache invalidation. A script reloading tool like Nodemon might then be needed.
+--cacheInvalidationRegex    Provide the plugin with a regexp to use for ignoring cache invalidation. Default: 'node_modules'
 --useSeparateProcesses      Run handlers in separate Node processes
 --corsAllowOrigin           Used as default Access-Control-Allow-Origin header value for responses. Delimit multiple values with commas. Default: '*'
 --corsAllowHeaders          Used as default Access-Control-Allow-Headers header value for responses. Delimit multiple values with commas. Default: 'accept,content-type,x-api-key'
@@ -109,6 +111,7 @@ All CLI options are optional:
 --exec "<script>"           When provided, a shell script is executed when the server starts up, and the server will shut down after handling this command.
 --noAuth                    Turns off all authorizers
 --preserveTrailingSlash     Used to keep trailing slashes on the request path
+--disableCookieValidation   Used to disable cookie-validation on hapi.js-server
 ```
 
 Any of the CLI options can be added to your `serverless.yml`. For example:
@@ -208,6 +211,16 @@ Example:
 > Unix: `export AUTHORIZER='{"principalId": "123"}'`
 
 > Windows: `SET AUTHORIZER='{"principalId": "123"}'`
+
+## Custom headers
+You are able to use some custom headers in your request to gain more control over the requestContext object.
+
+| Header | Event key |
+|--------|-----------|
+| cognito-identity-id | event.requestContext.identity.cognitoIdentityId |
+| cognito-authentication-provider | event.requestContext.identity.cognitoAuthenticationProvider |
+
+By doing this you are now able to change those values using a custom header. This can help you with easier authentication or retrieving the userId from a `cognitoAuthenticationProvider` value.
 
 ## AWS API Gateway Features
 
@@ -387,7 +400,7 @@ This plugin simulates API Gateway for many practical purposes, good enough for d
 Specifically, Lambda currently runs on Node v6.10.0 and v8.10.0 ([AWS Docs](https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html)), whereas _Offline_ runs on your own runtime where no memory limits are enforced.
 
 
-## Usage with serverless-offline and serverless-webpack plugin
+## Usage with serverless-dynamodb-local and serverless-webpack plugin
 
 Run `serverless offline start`. In comparison with `serverless offline`, the `start` command will fire an `init` and a `end` lifecycle hook which is needed for serverless-offline and serverless-dynamodb-local to switch off resources.
 

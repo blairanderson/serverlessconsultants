@@ -4,13 +4,13 @@ title: Serverless Plugin Monorepo
 repo: Butterwire/serverless-plugin-monorepo
 homepage: 'https://github.com/Butterwire/serverless-plugin-monorepo'
 description: 'A serverless plugin that allows use of serverless in a mono repo. Avoids needing to use nohoist by automatic symlinking of all dependencies.'
-stars: 2
+stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 6
 issues: 0
 issues_trend: 
 issues_diff: 0

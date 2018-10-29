@@ -4,14 +4,14 @@ title: Serverless Plugin Canary Deployments
 repo: davidgf/serverless-plugin-canary-deployments
 homepage: 'https://github.com/davidgf/serverless-plugin-canary-deployments'
 description: 'A Serverless plugin to implement canary deployments of Lambda functions'
-stars: 90
+stars: 97
 stars_trend: 
 stars_diff: 0
 forks: 15
-forks_trend: up
-forks_diff: 1
-watchers: 90
-issues: 3
+forks_trend: 
+forks_diff: 0
+watchers: 97
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -57,8 +57,9 @@ functions:
       preTrafficHook: preHook
       postTrafficHook: postHook
       alarms:
-        - FooAlarm
-        - BarAlarm
+        - FooAlarm          # When a string is provided, it expects the alarm Logical ID
+        - name: BarAlarm    # When an object is provided, it expects the alarm name in the name property
+
   preHook:
     handler: hooks.pre
   postHook:

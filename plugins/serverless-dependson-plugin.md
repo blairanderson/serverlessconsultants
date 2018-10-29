@@ -4,13 +4,13 @@ title: Serverless Dependson Plugin
 repo: bwinant/serverless-dependson-plugin
 homepage: 'https://github.com/bwinant/serverless-dependson-plugin'
 description: 'Serverless plugin that automatically generates DependsOn references for AWS Lambdas to prevent AWS RequestLimitExceeded errors.'
-stars: 1
+stars: 2
 stars_trend: 
 stars_diff: 0
 forks: 1
-forks_trend: up
-forks_diff: 1
-watchers: 1
+forks_trend: 
+forks_diff: 0
+watchers: 2
 issues: 0
 issues_trend: 
 issues_diff: 0

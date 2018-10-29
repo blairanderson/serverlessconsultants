@@ -3,6 +3,6 @@
 layout: topic
 topic: dynamodb
 title: dynamodb Serverless Plugins
-description: '6 dynamodb ServerLess Plugins'
-count: 6
+description: '7 dynamodb ServerLess Plugins'
+count: 7
 ---

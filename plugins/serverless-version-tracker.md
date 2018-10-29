@@ -4,13 +4,13 @@ title: Serverless Version Tracker
 repo: danepowell/serverless-version-tracker
 homepage: 'https://github.com/danepowell/serverless-version-tracker'
 description: 'A serverless plugin for tracking deployed versions of your code.'
-stars: 0
+stars: 1
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 0
+watchers: 1
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -21,6 +21,8 @@ issues_diff: 0
 A serverless plugin for tracking deployed versions of your code.
 
 This plugin has a super simple function: after you run `serverless deploy`, it will create a local git tag based on the version of the Lambda function that you just deployed. For instance, if your function is named `foo-production-index` and a deploy creates Lambda version 56, this plugin will automatically create a local git tag `foo-production-index-56`.
+
+This guarantees that you always know exactly what version of your source code is actually running in the cloud.
 
 ## Installation
 

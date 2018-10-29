@@ -4,13 +4,13 @@ title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
 description: 'AWS Step Functions with Serverless Framework.'
-stars: 353
-stars_trend: up
-stars_diff: 2
-forks: 53
-forks_trend: down
-forks_diff: -1
-watchers: 353
+stars: 369
+stars_trend: 
+stars_diff: 0
+forks: 52
+forks_trend: 
+forks_diff: 0
+watchers: 369
 issues: 38
 issues_trend: 
 issues_diff: 0
@@ -493,6 +493,139 @@ events:
       description: 'your scheduled rate event description'
       rate: rate(2 hours)
 ```
+
+### CloudWatch Event
+## Simple event definition
+
+This will enable your Statemachine to be called by an EC2 event rule.
+Please check the page of [Event Types for CloudWatch Events](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html).
+
+```yml
+stepFunctions:
+  stateMachines:
+    first:
+      events:
+        - cloudwatchEvent:
+            event:
+              source:
+                - "aws.ec2"
+              detail-type:
+                - "EC2 Instance State-change Notification"
+              detail:
+                state:
+                  - pending
+      definition:
+        ...
+```
+
+## Enabling / Disabling
+
+**Note:** `cloudwatchEvent` events are enabled by default.
+
+This will create and attach a disabled `cloudwatchEvent` event for the `myCloudWatch` statemachine.
+
+```yml
+stepFunctions:
+  stateMachines:
+    cloudwatchEvent:
+      events:
+        - cloudwatchEvent:
+            event:
+              source:
+                - "aws.ec2"
+              detail-type:
+                - "EC2 Instance State-change Notification"
+              detail:
+                state:
+                  - pending
+            enabled: false
+      definition:
+        ...
+```
+
+## Specify Input or Inputpath
+
+You can specify input values ​​to the Lambda function.
+
+```yml
+stepFunctions:
+  stateMachines:
+    cloudwatchEvent:
+      events:
+        - cloudwatchEvent:
+            event:
+              source:
+                - "aws.ec2"
+              detail-type:
+                - "EC2 Instance State-change Notification"
+              detail:
+                state:
+                  - pending
+            input:
+              key1: value1
+              key2: value2
+              stageParams:
+                stage: dev
+        - cloudwatchEvent:
+            event:
+              source:
+                - "aws.ec2"
+              detail-type:
+                - "EC2 Instance State-change Notification"
+              detail:
+                state:
+                  - pending
+            inputPath: '$.stageVariables'
+      definition:
+        ...
+```
+
+## Specifying a Description
+
+You can also specify a CloudWatch Event description.
+
+```yml
+stepFunctions:
+  stateMachines:
+    cloudwatchEvent:
+      events:
+        - cloudwatchEvent:
+            description: 'CloudWatch Event triggered on EC2 Instance pending state'
+            event:
+              source:
+                - "aws.ec2"
+              detail-type:
+                - "EC2 Instance State-change Notification"
+              detail:
+                state:
+                  - pending
+      definition:
+        ...   
+```
+
+## Specifying a Name
+
+You can also specify a CloudWatch Event name. Keep in mind that the name must begin with a letter; contain only ASCII letters, digits, and hyphens; and not end with a hyphen or contain two consecutive hyphens. More infomation [here](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html).
+
+```yml
+stepFunctions:
+  stateMachines:
+    cloudwatchEvent:
+      events:
+        - cloudwatchEvent:
+            name: 'my-cloudwatch-event-name'
+            event:
+              source:
+                - "aws.ec2"
+              detail-type:
+                - "EC2 Instance State-change Notification"
+              detail:
+                state:
+                  - pending
+      definition:
+        ...
+```
+
 
 ## Command
 ### deploy

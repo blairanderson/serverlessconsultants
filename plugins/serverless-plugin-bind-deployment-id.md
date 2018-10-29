@@ -7,7 +7,7 @@ description: 'A Serverless plugin to bind the randomly generated deployment reso
 stars: 21
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 6
 forks_trend: 
 forks_diff: 0
 watchers: 21
@@ -105,6 +105,7 @@ __deployment__:
 ```
 
 ## Release Notes
+* 1.0.2 - Update lodash to fix known security issue (thanks [@brownjava](https://github.com/brownjava))
 * 1.0.1 - Fix peer dependency
 * 1.0.0 - Fix an incompatibility with serverless 1.12
 * 0.1.0 - Initial release

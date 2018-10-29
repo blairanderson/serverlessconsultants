@@ -4,13 +4,13 @@ title: Serverless Offline Ssm
 repo: janders223/serverless-offline-ssm
 homepage: 'https://github.com/janders223/serverless-offline-ssm'
 description: 'Read SSM parameters from a .env file instead of AWS'
-stars: 14
+stars: 15
 stars_trend: 
 stars_diff: 0
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 14
+watchers: 15
 issues: 2
 issues_trend: 
 issues_diff: 0

@@ -4,13 +4,13 @@ title: Serverless Pseudo Parameters
 repo: svdgraaf/serverless-pseudo-parameters
 homepage: 'https://github.com/svdgraaf/serverless-pseudo-parameters'
 description: 'Use ${AWS::AccountId} and other cloudformation pseudo parameters in your serverless.yml values'
-stars: 70
-stars_trend: up
-stars_diff: 1
+stars: 76
+stars_trend: 
+stars_diff: 0
 forks: 13
 forks_trend: 
 forks_diff: 0
-watchers: 70
+watchers: 76
 issues: 4
 issues_trend: 
 issues_diff: 0

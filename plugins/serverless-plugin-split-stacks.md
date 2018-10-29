@@ -4,16 +4,16 @@ title: Serverless Plugin Split Stacks
 repo: dougmoscrop/serverless-plugin-split-stacks
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-split-stacks'
 description: 'Migrate certain resources to nested stacks'
-stars: 53
+stars: 57
 stars_trend: 
 stars_diff: 0
-forks: 15
+forks: 16
 forks_trend: 
 forks_diff: 0
-watchers: 53
-issues: 9
-issues_trend: up
-issues_diff: 1
+watchers: 57
+issues: 12
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -23,7 +23,7 @@ issues_diff: 1
 
 This plugin migrates CloudFormation resources in to nested stacks in order to work around the 200 resource limit.
 
-There are built-in migration strategies that can be turned on or off as well as defining your own custom migrations. You configure this in your `serverless.yml` (defaults shown):
+There are built-in migration strategies that can be turned on or off as well as defining your own custom migrations. It is a good idea to select the best strategy for your needs from the start because the only reliable method of changing strategy later on is to recreate the deployment from scratch. You configure this in your `serverless.yml` (defaults shown):
 
 ```yaml
 custom:

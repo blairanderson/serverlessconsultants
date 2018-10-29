@@ -4,16 +4,16 @@ title: Serverless Api Cloudfront
 repo: Droplr/serverless-api-cloudfront
 homepage: 'https://github.com/Droplr/serverless-api-cloudfront'
 description: 'Plugin that adds CloudFront distribution in front of your API Gateway for custom domain, CDN caching and access log.'
-stars: 71
+stars: 81
 stars_trend: 
 stars_diff: 0
-forks: 15
-forks_trend: up
-forks_diff: 1
-watchers: 71
-issues: 6
-issues_trend: up
-issues_diff: 2
+forks: 16
+forks_trend: 
+forks_diff: 0
+watchers: 81
+issues: 5
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -75,6 +75,7 @@ custom:
     querystring:
       - page
       - per_page
+    priceClass: PriceClass_100
 ```
 
 ### Notes
@@ -105,3 +106,12 @@ headers: all
 ```
 querystring: all
 ```
+
+* [`priceClass`][price-class] can be `PriceClass_All` (default), `PriceClass_100` or `PriceClass_200`:
+
+
+```
+priceClass: PriceClass_All
+```
+
+[price-class]: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html#cloudfront-GetDistributionConfig-response-PriceClass

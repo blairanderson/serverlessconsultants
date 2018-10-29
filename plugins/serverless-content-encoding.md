@@ -4,13 +4,13 @@ title: Serverless Content Encoding
 repo: dong-dohai/serverless-content-encoding
 homepage: 'https://github.com/dong-dohai/serverless-content-encoding'
 description: 'Enable Content Encoding in AWS API Gateway during deployment'
-stars: 11
+stars: 12
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 11
+watchers: 12
 issues: 0
 issues_trend: 
 issues_diff: 0

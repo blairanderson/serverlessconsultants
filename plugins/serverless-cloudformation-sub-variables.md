@@ -7,7 +7,7 @@ description: 'Serverless framework plugin for easily supporting AWS CloudFormati
 stars: 7
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 7

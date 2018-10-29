@@ -4,16 +4,16 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 283
-stars_trend: up
-stars_diff: 8
-forks: 63
-forks_trend: up
-forks_diff: 1
-watchers: 283
-issues: 29
-issues_trend: up
-issues_diff: 1
+stars: 304
+stars_trend: 
+stars_diff: 0
+forks: 69
+forks_trend: 
+forks_diff: 0
+watchers: 304
+issues: 34
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -85,7 +85,6 @@ Add the following example config to the custom section of ```serverless.yml```
 
 ```yaml
 custom:
-  accountId: abc # found here https://console.aws.amazon.com/billing/home?#/account
   appSync:
     name:  # defaults to api
     # apiKey # only required for update-appsync/delete-appsync

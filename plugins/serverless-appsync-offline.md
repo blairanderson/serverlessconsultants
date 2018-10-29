@@ -4,16 +4,16 @@ title: Serverless Appsync Offline
 repo: aheissenberger/serverless-appsync-offline
 homepage: 'https://github.com/aheissenberger/serverless-appsync-offline'
 description: 'Serverless Plugin to run AWS AppSync GraphQL API localy with dynamoDB and lambda resolvers'
-stars: 11
-stars_trend: up
-stars_diff: 1
-forks: 1
+stars: 15
+stars_trend: 
+stars_diff: 0
+forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 11
+watchers: 15
 issues: 0
-issues_trend: down
-issues_diff: -1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -27,7 +27,6 @@ This is a wrapper for the excelent [AppSync Emulator](https://github.com/Conduit
 
 ## This Plugin Requires
 * serverless@v1-rc.1
-* Java Runtime Engine (JRE) version 6.x or newer
 
 ## Features
 * Emulate Appsync with [AppSync Emulator](https://github.com/ConduitVC/aws-utils/tree/appsync/packages/appsync-emulator-serverless) and depends on [Serverless-AppSync-Plugin](https://github.com/sid88in/serverless-appsync-plugin)

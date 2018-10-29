@@ -3,6 +3,6 @@
 layout: topic
 topic: tracing
 title: tracing Serverless Plugins
-description: '1 tracing ServerLess Plugins'
-count: 1
+description: '2 tracing ServerLess Plugins'
+count: 2
 ---

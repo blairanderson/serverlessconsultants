@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 340
-stars_trend: up
-stars_diff: 7
-forks: 76
-forks_trend: up
-forks_diff: 1
-watchers: 340
-issues: 58
-issues_trend: up
-issues_diff: 4
+stars: 350
+stars_trend: 
+stars_diff: 0
+forks: 80
+forks_trend: 
+forks_diff: 0
+watchers: 350
+issues: 64
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -134,7 +134,7 @@ custom:
 ```  
 #### Custom Removal Patterns  
 To specify additional directories to remove from the installed packages, 
-define a list of of patterns int he serverless config using the `slimPatterns`
+define a list of patterns in the serverless config using the `slimPatterns`
 option and glob syntax. Note, it matches against whole paths, so to match a file in any
 directory, start your pattern with `**/`.
 ```yaml

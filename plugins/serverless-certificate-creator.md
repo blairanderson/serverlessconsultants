@@ -4,14 +4,14 @@ title: Serverless Certificate Creator
 repo: schwamster/serverless-certificate-creator
 homepage: 'https://github.com/schwamster/serverless-certificate-creator'
 description: 'This serverless plugin creates certificates that you need for your custom domains in API Gateway.'
-stars: 1
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
-issues: 0
+watchers: 4
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

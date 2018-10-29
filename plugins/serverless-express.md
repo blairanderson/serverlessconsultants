@@ -4,16 +4,16 @@ title: Serverless Express
 repo: mikestaub/serverless-express
 homepage: 'https://github.com/mikestaub/serverless-express'
 description: 'Making express app development compatible with serverless framework.'
-stars: 52
-stars_trend: up
-stars_diff: 1
+stars: 55
+stars_trend: 
+stars_diff: 0
 forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 52
-issues: 1
-issues_trend: up
-issues_diff: 1
+watchers: 55
+issues: 0
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -30,7 +30,7 @@ Ensure compatibility with serverless-offline plugin.
 Works with provider :
   - [x] **Amazon Web Service - Lambda**
   - [x] **Google Cloud Platform - Cloud functions**
-  - [ ] Microsoft Azure - Cloud functions | *in development*
+  - [x] **Microsoft Azure - Cloud functions**
 
 ## Download
 Type this command inside your terminal
@@ -107,7 +107,7 @@ const handler = require('serverless-express/handler')
 const app = require('path/to/your/express/app')
 
 
-exports.handler = handler(app)
+exports.api = handler(app)
 // that's it ;)
 ```
 
