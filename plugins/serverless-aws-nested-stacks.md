@@ -11,14 +11,15 @@ forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 5
-issues: 4
-issues_trend: 
-issues_diff: 0
+issues: 3
+issues_trend: down
+issues_diff: -1
 ---
 
 
 # serverless-plugin-nested-stacks
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![npm](https://img.shields.io/npm/v/serverless-aws-nested-stacks.svg)](https://www.npmjs.com/package/serverless-aws-nested-stacks)
 
 Nested stacks for the Serverless Framework!
 
@@ -39,6 +40,9 @@ This plugin handles:
 ## Configuration Reference
 
 ```
+plugins:
+  - serverless-aws-nested-stacks
+
 custom:
   nested-stacks:
     location: nested-stacks                      # Where do you keep your nested stacks?
