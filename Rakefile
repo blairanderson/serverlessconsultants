@@ -102,20 +102,11 @@ end
 desc "Generate and publish blog to gh-pages"
 task :publish => [:deploy, :cleanup]
 
-task :deploy => [:generate] do
+task :deploy do
   message = "Site updated at #{Time.now.utc}"
-  Dir.mktmpdir do |tmp|
-    cp_r "docs/.", tmp
-
-    pwd = Dir.pwd
-    Dir.chdir(tmp)
-    system "git init"
-    system "git add ."
-    system "git commit -m #{message.inspect}"
-    system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
-    system "git push origin master:refs/heads/gh-pages --force"
-    Dir.chdir(pwd)
-  end
+  system "git add ."
+  system "git commit -m #{message.inspect}"
+  system "git push origin master"
 end
 
 task :cleanup do
