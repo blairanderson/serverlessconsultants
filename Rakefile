@@ -24,7 +24,7 @@ desc "fetch github repos and create a bunch of files"
 task :refresh => LIST
 desc "fetch github repos and create a bunch of files"
 task :sync => LIST
-task 'default' => LIST
+task 'default' => LIST + [:deploy]
 
 task :fetch_serverless_plugin_list do
   puts 'FETCHES PLUGIN LIST FROM https://github.com/serverless/plugins'
@@ -98,9 +98,6 @@ task :generate do
     "destination" => "docs"
   })).process
 end
-
-desc "Generate and publish blog to gh-pages"
-task :publish => [:deploy, :cleanup]
 
 task :deploy do
   message = "Site updated at #{Time.now.utc}"
