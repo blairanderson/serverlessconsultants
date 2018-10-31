@@ -7,13 +7,13 @@ description: 'Schedule AWS CloudWatch Event based invocations in local time(with
 stars: 18
 stars_trend: 
 stars_diff: 0
-forks: 1
-forks_trend: 
-forks_diff: 0
+forks: 2
+forks_trend: up
+forks_diff: 1
 watchers: 18
-issues: 1
-issues_trend: 
-issues_diff: 0
+issues: 3
+issues_trend: up
+issues_diff: 2
 ---
 
 

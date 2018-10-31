@@ -4,13 +4,13 @@ title: Serverless Plugin Dynamodb Autoscaling
 repo: medikoo/serverless-plugin-dynamodb-autoscaling
 homepage: 'https://github.com/medikoo/serverless-plugin-dynamodb-autoscaling'
 description: 'Auto generate auto scaling configuration for configured DynamoDB tables'
-stars: 11
-stars_trend: 
-stars_diff: 0
+stars: 12
+stars_trend: up
+stars_diff: 1
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 11
+watchers: 12
 issues: 1
 issues_trend: 
 issues_diff: 0
@@ -57,51 +57,51 @@ Still, we can exclude individual tables or tweak their configuration via configu
 ```yaml
 resources:
   Resources:
-    Table1:
+    SomeTable1:
       Properties:
-        TableName: tableName1
-    Table2:
+        TableName: foo
+    SomeTable2:
       Properties:
-        TableName: tableName2
-    Table3:
+        TableName: bar
+    SomeTable3:
       Properties:
-        TableName: 
-          Fn::Sub: ${AWS::Region}-table
+        TableName:
+          Fn::Sub: ${AWS::Region}-test
 custom:
   dynamodbAutoscaling:
     tablesConfig:
-      # Disable autoscaling for Table1 table entirely
-      Table1: false
+      # Disable autoscaling for table referenced by "SomeTable1" resource name
+      SomeTable1: false
 
-      # Disable autoscaling just for indexes of Table2 table
-      Table2:
+      # Disable autoscaling just for indexes of "SomeTable2" table
+      SomeTable2:
         indexes: false
 
-      # Tweak minCapacity setting for all tables that start with Table
+      # Tweak minCapacity setting for all tables of which resource names start with SomeTable
       # (glob patterns can be used)
-      Table*:
+      SomeTable*:
         minCapacity: 10
 
-      Table4:
-        # Tweak maxCapacity setting for Table4 (just table)
+      SomeTable4:
+        # Tweak maxCapacity setting for table referenced by "SomeTable4" (just table)
         table:
           maxCapacity: 300
-        # Tweak targetUsage setting for Table4 indexes
+        # Tweak targetUsage setting for SomeTable4 indexes
         indexes:
           targetUsage: 0.5
 
-      Table5:
+      SomeTable5:
         indexes:
           # Do not autoscale index 'foo'
           foo: false
 
-      Table6:
+      SomeTable6:
         indexes:
-          # Do not autoscale any indexes but 'foo' and 'bar'
+          # Do not autoscale any indexes but 'someIndex1' and 'someIndex2'
           "*": false
-          foo: true
-          bar:
-            # Tweaking one of the configuration option will also whitelist the index
+          someIndex1: true
+          someIndex2:
+            # Tweaking any of the configuration option will also whitelist the index
             minCapacity: 100
 ```
 
@@ -116,8 +116,8 @@ custom:
       # Disable autoscaling for all
       "*": false
 
-      # but enable for Table1
-      Table1: true
+      # but enable for table referenced by resource name "SomeTable1"
+      SomeTable1: true
 ```
 
 ##### Configurable settings:

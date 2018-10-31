@@ -4,13 +4,13 @@ title: Serverless Puresec Cli
 repo: puresec/serverless-puresec-cli
 homepage: 'https://github.com/puresec/serverless-puresec-cli'
 description: 'Serverless Plugin for magically creating IAM roles that are least privileged per function.'
-stars: 85
+stars: 86
 stars_trend: up
-stars_diff: 1
+stars_diff: 2
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 85
+watchers: 86
 issues: 2
 issues_trend: 
 issues_diff: 0
