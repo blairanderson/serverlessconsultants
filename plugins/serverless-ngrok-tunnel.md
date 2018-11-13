@@ -7,7 +7,7 @@ description: 'Serverless plugin that creates ngrok public tunnel on localhost'
 stars: 1
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 1

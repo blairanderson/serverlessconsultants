@@ -4,13 +4,13 @@ title: Serverless Cloudformation Changesets
 repo: trek10inc/serverless-cloudformation-changesets
 homepage: 'https://github.com/trek10inc/serverless-cloudformation-changesets'
 description: 'Natively deploy to CloudFormation via Change sets, instead of directly. Allowing you to queue changes, and safely require escalated roles for final deployment.'
-stars: 25
+stars: 26
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 25
+watchers: 26
 issues: 2
 issues_trend: 
 issues_diff: 0

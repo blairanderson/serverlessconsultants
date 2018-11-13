@@ -4,13 +4,13 @@ title: Serverless Wsgi
 repo: logandk/serverless-wsgi
 homepage: 'https://github.com/logandk/serverless-wsgi'
 description: 'Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages'
-stars: 173
+stars: 176
 stars_trend: 
 stars_diff: 0
 forks: 31
 forks_trend: 
 forks_diff: 0
-watchers: 173
+watchers: 176
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -41,15 +41,10 @@ http://wsgi.readthedocs.io/en/latest/frameworks.html.
 ## Install
 
 ```
-npm install --save serverless-wsgi
+sls plugin install -n serverless-wsgi
 ```
 
-Add the plugin to your `serverless.yml` file and set the WSGI application:
-
-```yaml
-plugins:
-  - serverless-wsgi
-```
+This will automatically add the plugin to `package.json` and the plugins section of `serverless.yml`.
 
 ## Flask configuration example
 
@@ -341,8 +336,8 @@ custom:
   wsgi:
     app: api.app
     textMimeTypes:
-    - application/custom+json
-    - application/vnd.company+json
+      - application/custom+json
+      - application/vnd.company+json
 ```
 
 ## Usage without Serverless

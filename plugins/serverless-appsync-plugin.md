@@ -4,14 +4,14 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 308
-stars_trend: up
-stars_diff: 4
-forks: 69
+stars: 319
+stars_trend: 
+stars_diff: 0
+forks: 72
 forks_trend: 
 forks_diff: 0
-watchers: 308
-issues: 34
+watchers: 319
+issues: 37
 issues_trend: 
 issues_diff: 0
 ---
@@ -47,6 +47,9 @@ Tired of 🚀 **deploying**, ✏️ **updating**, and ❌ **deleting** your AppS
 * [Getting Started](#-getting-started)
 * [Installation](#-installation)
 * [Usage](#️-usage)
+* [Notes](#-notes)
+    * [Offline Support](#offline-support)
+    * [Split Stacks Plugin](#split-stacks-plugin)
 * [Contributing](#-contributing)
 * [Credits](#️-credits)
 </details>
@@ -98,10 +101,10 @@ custom:
       region: # defaults to provider region
     # if OPENID_CONNECT
     openIdConnectConfig:
-      issuer: 
-      clientId: 
-      iatTTL: 
-      authTTL: 
+      issuer:
+      clientId:
+      iatTTL:
+      authTTL:
     logConfig:
       loggingRoleArn: { Fn::GetAtt: [AppSyncLoggingServiceRole, Arn] } # Where AppSyncLoggingServiceRole is a role with CloudWatch Logs write access
       level: ERROR # Logging Level: NONE | ERROR | ALL
@@ -127,7 +130,7 @@ custom:
               Resource:
                 - "arn:aws:dynamodb:{REGION}:{ACCOUNT_ID}:myTable"
                 - "arn:aws:dynamodb:{REGION}:{ACCOUNT_ID}:myTable/*"
-              
+
           region: # Overwrite default region for this data source
       - type: AMAZON_ELASTICSEARCH
         name: # data source name
@@ -167,6 +170,37 @@ custom:
 
 > Be sure to replace all variables that have been commented out, or have an empty value.
 
+#### Multiple APIs
+
+If you have multiple APIs and do not want to split this up into another CloudFormation stack, simply change the `appSync` configuration property from an object into an array of objects:
+
+```yaml
+custom:
+  appSync:
+    - name: private-appsync-endpoint
+      schema: AppSync/schema.graphql # or something like AppSync/private/schema.graphql
+      authenticationType: OPENID_CONNECT
+      openIdConnectConfig:
+      ...
+      serviceRole: AuthenticatedAppSyncServiceRole
+      dataSources:
+      ...
+      mappingTemplatesLocation: ...
+      mappingTemplates:
+      ...
+    - name: public-appsync-endpoint
+      schema: AppSync/schema.graphql # or something like AppSync/public/schema.graphql
+      authenticationType: NONE # or API_KEY, you get the idea
+      serviceRole: PublicAppSyncServiceRole
+      dataSources:
+      ...
+      mappingTemplatesLocation: ...
+      mappingTemplates:
+      ...
+```
+
+> Note: CloudFormation stack outputs and logical IDs will be changed from the defaults to api name prefixed. This allows you to differentiate the APIs on your stack if you want to work with multiple APIs.
+
 ## ▶️ Usage
 
 ### `serverless deploy`
@@ -189,12 +223,12 @@ The AWS_IAM authenticationType is not currently supported.
 
 * If you are planning on using <a target="_blank" href="https://aws.amazon.com/elasticsearch-service">AWS Elastic Search</a>, you will need to create an Elastic Search domain/endpoint on AWS and set it as the ```endpoint``` option in  ```serverless.yml``` **before** deploying.
 
-## Offline support
+### Offline support
 
 You can use [serverless-appsync-offline](https://github.com/aheissenberger/serverless-appsync-offline) to autostart an [AppSync Emulator](https://github.com/ConduitVC/aws-utils/tree/appsync/packages/appsync-emulator-serverless) which depends on [Serverless-AppSync-Plugin](https://github.com/sid88in/serverless-appsync-plugin) with DynamoDB and Lambda resolver support:
-### Install Plugin
+#### Install Plugin
 `npm install --save serverless-appsync-offline`
-### Minimal Options (serverless.yml)
+#### Minimal Options (serverless.yml)
 ```yml
 custom:
   appsync-offline:
@@ -203,7 +237,7 @@ custom:
       server:
         port: 8000
 ```
-### Start local enviroment
+#### Start local enviroment
 
 If you use `serverless-offline`:
 
@@ -221,6 +255,42 @@ Serverless: AppSync started: http://localhost:62222/graphql
 ```
 
 Go to [serverless-appsync-offline](https://github.com/aheissenberger/serverless-appsync-offline) to get further configuration options.
+
+### Split Stacks Plugin
+
+You can use [serverless-plugin-split-stacks](https://github.com/dougmoscrop/serverless-plugin-split-stacks) to migrate AppSync resources in nested stacks in order to work around the 200 resource limit.
+
+1. Install [serverless-plugin-split-stacks](https://github.com/dougmoscrop/serverless-plugin-split-stacks)
+
+```
+yarn add --dev serverless-plugin-split-stacks
+# or
+npm install --save-dev serverless-plugin-split-stacks
+```
+
+2. Follow the `serverless-plugin-split-stacks` installation instructions
+
+3. Place `serverless-plugin-split-stacks` after `serverless-appsync-plugin`
+
+```yml
+plugins:
+  - serverless-appsync-plugin
+  - serverless-plugin-split-stacks
+```
+
+4. Create `stacks-map.js` in the root folder
+
+```js
+module.exports = {
+  'AWS::AppSync::ApiKey': { destination: 'AppSync', allowSuffix: true },
+  'AWS::AppSync::DataSource': { destination: 'AppSync', allowSuffix: true },
+  'AWS::AppSync::GraphQLApi': { destination: 'AppSync', allowSuffix: true },
+  'AWS::AppSync::GraphQLSchema': { destination: 'AppSync', allowSuffix: true },
+  'AWS::AppSync::Resolver': { destination: 'AppSync', allowSuffix: true }
+}
+```
+
+5. Enjoy :beers:
 
 ## 🎁 Contributing
 

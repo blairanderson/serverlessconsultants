@@ -4,13 +4,13 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 351
-stars_trend: up
-stars_diff: 1
-forks: 80
+stars: 363
+stars_trend: 
+stars_diff: 0
+forks: 81
 forks_trend: 
 forks_diff: 0
-watchers: 351
+watchers: 363
 issues: 64
 issues_trend: 
 issues_diff: 0
@@ -90,6 +90,15 @@ because `$SSH_AUTH_SOCK` is also mounted & the env var set.
 It is important that the host of your private repositories has already been added in your
 `$HOME/.ssh/known_hosts` file, as the install process will fail otherwise due to host authenticity
 failure.
+
+You can also pass environment variables to docker by specifying them in `dockerEnv`
+option:
+```yaml
+custom:
+  pythonRequirements:
+    dockerEnv:
+      - https_proxy
+```
 
 [:checkered_flag: Windows notes](#checkered_flag-windows-dockerizepip-notes)
 

@@ -4,14 +4,14 @@ title: Aws Amplify Serverless Plugin
 repo: awslabs/aws-amplify-serverless-plugin
 homepage: 'https://github.com/awslabs/aws-amplify-serverless-plugin'
 description: 'Generate client-side configuration files for the AWS Amplify library based on your deployed Serverless backend'
-stars: 15
+stars: 20
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 15
-issues: 11
+watchers: 20
+issues: 5
 issues_trend: 
 issues_diff: 0
 ---
@@ -157,8 +157,12 @@ The following resources are supported:
 
 * AWS AppSync (either via `resources` or the [serverless-appsync-plugin](https://github.com/sid88in/serverless-appsync-plugin)).
 * Amazon Cognito federated identities.
+  * Amazon Cognito User Pools
+  * Google Signin
+  * Facebook Signin
+  * Login with Amazon
 * Amazon Cognito user pools.
-* S3 buckets for user file storage.
+* Amazon S3 buckets for user file storage.
 
 ## Questions, Issues, Feature Requests
 

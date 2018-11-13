@@ -5,8 +5,8 @@ repo: medikoo/serverless-plugin-dynamodb-autoscaling
 homepage: 'https://github.com/medikoo/serverless-plugin-dynamodb-autoscaling'
 description: 'Auto generate auto scaling configuration for configured DynamoDB tables'
 stars: 12
-stars_trend: up
-stars_diff: 1
+stars_trend: 
+stars_diff: 0
 forks: 6
 forks_trend: 
 forks_diff: 0

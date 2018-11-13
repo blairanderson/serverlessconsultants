@@ -4,13 +4,13 @@ title: Serverless Plugin Graphiql
 repo: bencooling/serverless-plugin-graphiql
 homepage: 'https://github.com/bencooling/serverless-plugin-graphiql'
 description: 'A Serverless plugin to run a local http server for graphiql and your graphql handler'
-stars: 48
+stars: 49
 stars_trend: 
 stars_diff: 0
 forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 48
+watchers: 49
 issues: 1
 issues_trend: 
 issues_diff: 0

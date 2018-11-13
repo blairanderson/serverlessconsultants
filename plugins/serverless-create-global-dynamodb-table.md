@@ -4,13 +4,13 @@ title: Serverless Create Global Dynamodb Table
 repo: rrahul963/serverless-create-global-dynamodb-table
 homepage: 'https://github.com/rrahul963/serverless-create-global-dynamodb-table'
 description: 'Serverless plugin to create dynamodb global tables'
-stars: 4
+stars: 5
 stars_trend: 
 stars_diff: 0
 forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 3
 issues_trend: 
 issues_diff: 0

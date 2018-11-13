@@ -29,7 +29,7 @@ issues_diff: 0
 ### Install Epsagon's Library
 For [Node.js functions](https://www.npmjs.com/package/epsagon):
 ```
-npm install epsagon
+npm install --save-dev epsagon
 ```
 
 For [Python functions](https://pypi.org/project/epsagon):
@@ -44,13 +44,15 @@ sls plugin install --name serverless-plugin-epsagon
 
 Or using NPM:
 ```
-npm install --save-dev serverless-plugin-epsgon
+npm install --save-dev serverless-plugin-epsagon
 ```
 When installing with NPM, add the plugin to your `serverless.yml` file:
 ```yaml
 plugins:
   - serveless-plugin-epsagon
 ```
+For the best results, make sure this is the first plugin specified in your
+plugins list.
 
 ### Configure The Plugin
 To get started with the plugin, all you have to do is configure your
@@ -74,6 +76,9 @@ left after deployment (when you break in the middle of a deployment for example)
 These options are defined at the service level, under the `custom.epsagon` member
 of your `serverless.yml` file. Any function level option will override options
 defined here. Available options:
+* `token` - Epsagon's token to use, get your token from the
+[dashboard](https://dashboard.epsagon.com).
+* `appName` - Optional application name to use.
 * `disable` - When set to true, disables Epsagon for the entire service. When
 this option is active wrapping your functions with Epsagon will be skipped.
 * `metadataOnly` - When set to true, will cause Epsagon to report only the
@@ -98,3 +103,15 @@ defaults to Epsagon's regular lambda wrapper. available wrappers:
         * `stepLambdaWrapper` - Used to wrap step functions
         * `nodeWrapper` - Used to wrap regular
         Node functions (doesn't have to run on Lambda)
+        
+## FAQ
+* Does this plugin work with webpack?
+    * Yes! you can use webpack or any serverless plugins utilizing webpack with
+      this plugin. Just make sure to specify this plugin before any other
+      plugin in your `serverless.yml`:
+      ```yaml
+      plugins:
+        - serverless-plugin-epsagon
+        - serverless-webpack
+        - any-other-plugin
+      ```

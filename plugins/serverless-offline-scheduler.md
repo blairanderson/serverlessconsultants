@@ -4,13 +4,13 @@ title: Serverless Offline Scheduler
 repo: ajmath/serverless-offline-scheduler
 homepage: 'https://github.com/ajmath/serverless-offline-scheduler'
 description: 'Runs scheduled functions offline while integrating with serverless-offline'
-stars: 44
-stars_trend: up
-stars_diff: 1
+stars: 47
+stars_trend: 
+stars_diff: 0
 forks: 15
 forks_trend: 
 forks_diff: 0
-watchers: 44
+watchers: 47
 issues: 3
 issues_trend: 
 issues_diff: 0

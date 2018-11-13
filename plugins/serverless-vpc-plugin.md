@@ -4,13 +4,13 @@ title: Serverless Vpc Plugin
 repo: smoketurner/serverless-vpc-plugin
 homepage: 'https://github.com/smoketurner/serverless-vpc-plugin'
 description: 'Serverless plugin to create a VPC'
-stars: 1
+stars: 2
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 2
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -68,7 +68,7 @@ to make it easier to create these resources across all of the availability zones
 ## Installation
 
 ```
-$ npm install --save-dev serverless-vpc-plugin
+$ npx sls plugin install -n serverless-vpc-plugin
 ```
 
 ## Configuration
@@ -105,6 +105,7 @@ custom:
   vpcConfig:
     cidrBlock: '10.0.0.0/16'
     useNatGateway: true # optionally add NatGateway instances in the App subnets
+    skipDbCreation: false # whether to skip creating the DBSubnet's
     zones: # optionally specify AZs (defaults to auto-discover all availabile AZs)
       - us-east-1a
       - us-east-1b

@@ -4,13 +4,13 @@ title: Serverless Package External
 repo: epsagon/serverless-package-external
 homepage: 'https://github.com/epsagon/serverless-package-external'
 description: 'A Serverless plugin to add external folders to the deploy package'
-stars: 8
+stars: 9
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 8
+watchers: 9
 issues: 0
 issues_trend: 
 issues_diff: 0

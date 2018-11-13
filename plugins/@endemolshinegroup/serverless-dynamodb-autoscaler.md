@@ -11,13 +11,13 @@ forks: 0
 forks_trend: 
 forks_diff: 0
 watchers: 0
-issues: 0
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---
 
 
-# @endemolshinegroup/serverless-dynamodb-autoscaler
+![Banner][icon-banner]
 
 [![MIT Licensed][icon-license]][link-license]
 [![NPM Version][icon-npm]][link-npm]
@@ -33,7 +33,7 @@ issues_diff: 0
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Prettier][icon-prettier]][link-prettier]
 
-Serverless Plugin for Amazon DynamoDB Auto Scaling
+Autoscale DynamoDB resources with a single AWS AutoScalingPlan
 
 ## Installation
 
@@ -49,6 +49,30 @@ Add the plugin to your `serverless.yml`:
 plugins:
   - @endemolshinegroup/serverless-dynamodb-autoscaler
 ```
+
+## Configuration
+
+Add a `capacities` property to your `serverless.yml`:
+
+```yaml
+custom:
+  capacities:
+    - table: CustomTable  # DynamoDB Resource
+      index:              # List or single index name
+        - custom-index-name
+      read:
+        minimum: 5        # Minimum read capacity
+        maximum: 1000     # Maximum read capacity
+        usage: 0.75       # Targeted usage percentage
+      write:
+        minimum: 40       # Minimum write capacity
+        maximum: 200      # Maximum write capacity
+        usage: 0.5        # Targeted usage percentage
+```
+
+Finish by running `sls deploy` and you're good to go!
+
+[icon-banner]: docs/assets/banner.png
 
 [icon-license]: https://img.shields.io/github/license/EndemolShineGroup/serverless-dynamodb-autoscaler.svg?longCache=true&style=flat-square
 [link-license]: LICENSE
