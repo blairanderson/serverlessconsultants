@@ -4,16 +4,16 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 319
-stars_trend: 
-stars_diff: 0
+stars: 320
+stars_trend: up
+stars_diff: 1
 forks: 72
 forks_trend: 
 forks_diff: 0
-watchers: 319
-issues: 37
-issues_trend: 
-issues_diff: 0
+watchers: 320
+issues: 36
+issues_trend: down
+issues_diff: -1
 ---
 
 
