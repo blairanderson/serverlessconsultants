@@ -4,13 +4,13 @@ title: Serverless Consul Variables
 repo: zephrax/serverless-consul-variables
 homepage: 'https://github.com/zephrax/serverless-consul-variables'
 description: 'Retrieve serverless variables from Consul kv'
-stars: 4
+stars: 5
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 1
 issues_trend: 
 issues_diff: 0

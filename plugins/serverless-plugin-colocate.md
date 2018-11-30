@@ -4,13 +4,13 @@ title: Serverless Plugin Colocate
 repo: aronim/serverless-plugin-colocate
 homepage: 'https://github.com/aronim/serverless-plugin-colocate'
 description: 'Serverless Plugin to keep your configuration next to your code.'
-stars: 4
+stars: 5
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 1
 issues_trend: 
 issues_diff: 0

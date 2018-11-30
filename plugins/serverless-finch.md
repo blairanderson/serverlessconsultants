@@ -4,14 +4,14 @@ title: Serverless Finch
 repo: fernando-mc/serverless-finch
 homepage: 'https://github.com/fernando-mc/serverless-finch'
 description: 'A Serverless plugin to deploy static website assets to AWS S3.'
-stars: 201
+stars: 202
 stars_trend: 
 stars_diff: 0
-forks: 38
+forks: 39
 forks_trend: 
 forks_diff: 0
-watchers: 201
-issues: 11
+watchers: 202
+issues: 10
 issues_trend: 
 issues_diff: 0
 ---
@@ -41,7 +41,7 @@ plugins:
 
 custom:
   client:
-    bucketName: [unique-s3-bucketname] # (see Configuration Parameters below)
+    bucketName: unique-s3-bucketname # (see Configuration Parameters below)
     # [other configuration parameters] (see Configuration Parameters below)
 ```
 
@@ -88,7 +88,7 @@ _required_
 ```yaml
 custom:
   client:
-    bucketName: [unique-s3-bucketname]
+    bucketName: unique-s3-bucketname
 ```
 
 Use this parameter to specify a unique name for the S3 bucket that your files will be uploaded to.
@@ -103,7 +103,7 @@ _optional_, default: `client/dist`
 custom:
   client:
     ...
-    distributionFolder: [path/to/files]
+    distributionFolder: path/to/files
     ...
 ```
 
@@ -119,7 +119,7 @@ _optional_, default: `index.html`
 custom:
   client:
     ...
-    indexDocument: [file-name.ext]
+    indexDocument: file-name.ext
     ...
 ```
 
@@ -135,7 +135,7 @@ _optional_, default: `error.html`
 custom:
   client:
     ...
-    errorDocument: [file-name.ext]
+    errorDocument: file-name.ext
     ...
 ```
 
@@ -149,11 +149,31 @@ The name of your error document inside your `distributionFolder`. This is the fi
 custom:
   client:
     ...
-    bucketPolicyFile: [path/to/policy.json]
+    bucketPolicyFile: path/to/policy.json
     ...
 ```
 
-Use this parameter to specify the path to a custom policy file. If not set, it defaults to a config for a basic static website. Currently, only JSON is supported. In your policy, make sure that your resource has the correct bucket name specified above: `"Resource": "arn:aws:s3:::BUCKET_NAME/*",`
+Use this parameter to specify the path to a _single_ custom policy file. If not set, it defaults to a config for a basic static website. Currently, only JSON is supported. In your policy, make sure that your resource has the correct bucket name specified above: `"Resource": "arn:aws:s3:::BUCKET_NAME/*",`
+
+_Note: You can also use `${env:PWD}` if you want to dynamically specify the policy within your repo. for example:_ 
+
+```yaml
+custom:
+  client:
+    ...
+    bucketPolicyFile: "${env:PWD}/path/to/policy.json"
+    ...
+```
+
+_Additionally, you will want to specify different policies depending on your stage using `${self:provider.stage}` to ensure your `BUCKET_NAME` corosponds to the stage._
+
+```yaml
+custom:
+  client:
+    ...
+    bucketPolicyFile: "/path/to/policy-${self:provider.stage}.json"
+    ...
+```
 
 ---
 
@@ -167,22 +187,22 @@ custom:
     ...
     objectHeaders:
       ALL_OBJECTS:
-        - name: [header-name]
-          value: [header-value]
+        - name: header-name
+          value: header-value
         ...
       'someGlobPattern/*.html':
-        - name: [header-name]
-          value: [header-value]
+        - name: header-name
+          value: header-value
         ...
       specific-directory/:
-        - name: [header-name]
-          value: [header-value]
+        - name: header-name
+          value: header-value
         ...
       specific-file.ext:
-        - name: [header-name]
-          value: [header-value]
+        - name: header-name
+          value: header-value
         ...
-      ... [more file- or folder-specific rules]
+      ... # more file- or folder-specific rules
     ...
 ```
 
@@ -203,8 +223,8 @@ custom:
   client:
     ...
     redirectAllRequestsTo:
-      hostName: [hostName]
-      protocol: [http|https]
+      hostName: hostName
+      protocol: protocol # "http" or "https"
     ...
 ```
 
@@ -224,15 +244,15 @@ custom:
     ...
     routingRules:
       - redirect:
-          hostName: [hostName]
-          httpRedirectCode: [CODE]
-          protocol: [http|https]
-          replaceKeyPrefixWith: [prefix]
+          hostName: hostName
+          httpRedirectCode: httpCode
+          protocol: protocol # "http" or "https"
+          replaceKeyPrefixWith: prefix
           replaceKeyWith: [object]
         condition:
-          keyPrefixEquals: [prefix]
-          httpErrorCodeReturnedEquals: [CODE]
-      - [more-rules...]
+          keyPrefixEquals: prefix
+          httpErrorCodeReturnedEquals: httpCOde
+      - ...
     ...
 ```
 

@@ -4,16 +4,16 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 320
-stars_trend: up
-stars_diff: 1
-forks: 72
+stars: 334
+stars_trend: 
+stars_diff: 0
+forks: 74
 forks_trend: 
 forks_diff: 0
-watchers: 320
-issues: 36
-issues_trend: down
-issues_diff: -1
+watchers: 334
+issues: 30
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -94,11 +94,10 @@ custom:
     authenticationType: API_KEY or AWS_IAM or AMAZON_COGNITO_USER_POOLS or OPENID_CONNECT
     # if AMAZON_COGNITO_USER_POOLS
     userPoolConfig:
-      awsRegion: # required # region
+      awsRegion: # defaults to provider region
       defaultAction: # ALLOW
       userPoolId: # required # user pool ID
       appIdClientRegex: # optional
-      region: # defaults to provider region
     # if OPENID_CONNECT
     openIdConnectConfig:
       issuer:
@@ -115,6 +114,7 @@ custom:
         field: getUserInfo
         request: # request mapping template name
         response: # response mapping template name
+      - ${file({fileLocation}.yml)} # link to a file with arrays of mapping templates
     schema: # defaults schema.graphql
     dataSources:
       - type: AMAZON_DYNAMODB
@@ -200,6 +200,41 @@ custom:
 ```
 
 > Note: CloudFormation stack outputs and logical IDs will be changed from the defaults to api name prefixed. This allows you to differentiate the APIs on your stack if you want to work with multiple APIs.
+
+#### Pipeline Resolvers
+
+Amazon recently released the new pipeline resolvers:
+https://aws.amazon.com/blogs/mobile/aws-appsync-releases-pipeline-resolvers-aurora-serverless-support-delta-sync/
+
+These changes allow you to perform more than one mapping template in sequence, so you can do multiple queries to multiple sources.
+These queries are called function configurations ('AWS::AppSync::FunctionConfiguration') and are children of a resolver.
+
+Here is an example of how to configure a resolver with function configurations.
+The key here is to provide a 'kind' of 'PIPELINE' to the mapping template of the parent resolver.
+Then provide the names of the functions in the mappingTemplate to match the names of the functionConfigurations.
+
+```
+custom:
+  appSync: 
+    mappingTemplates:
+      - type: Query
+        field: testPipelineQuery
+        request: 'start.vtl'
+        response: 'common-response.vtl'
+        kind: PIPELINE
+        functions:
+          - authorizeFunction 
+          - fetchDataFunction
+    functionConfigurations:
+      - dataSource: graphqlLambda
+        name: 'authorizeFunction'
+        request: './mapping-templates/authorize-request.vtl'
+        response: './mapping-templates/common-response.vtl'
+      - dataSource: dataTable
+        name: 'fetchDataFunction'
+        request: './mapping-templates/fetchData.vtl'
+        response: './mapping-templates/common-response.vtl'
+```
 
 ## ▶️ Usage
 

@@ -4,13 +4,13 @@ title: Serverless Google Cloudfunctions
 repo: serverless/serverless-google-cloudfunctions
 homepage: 'https://github.com/serverless/serverless-google-cloudfunctions'
 description: 'This plugin enables support for Google Cloud Functions within the Serverless Framework.'
-stars: 176
+stars: 177
 stars_trend: 
 stars_diff: 0
-forks: 35
+forks: 39
 forks_trend: 
 forks_diff: 0
-watchers: 176
+watchers: 177
 issues: 32
 issues_trend: 
 issues_diff: 0

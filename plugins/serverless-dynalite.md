@@ -7,11 +7,11 @@ description: 'Run dynalite locally (no JVM, all JS) to simulate DynamoDB. Watch 
 stars: 10
 stars_trend: 
 stars_diff: 0
-forks: 8
+forks: 9
 forks_trend: 
 forks_diff: 0
 watchers: 10
-issues: 3
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---

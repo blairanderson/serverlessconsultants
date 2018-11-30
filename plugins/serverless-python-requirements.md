@@ -4,16 +4,16 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 363
+stars: 374
 stars_trend: 
 stars_diff: 0
-forks: 81
+forks: 85
 forks_trend: 
 forks_diff: 0
-watchers: 363
-issues: 65
-issues_trend: up
-issues_diff: 1
+watchers: 374
+issues: 57
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -40,7 +40,7 @@ This will automatically add the plugin to your project's `package.json` and the 
 `serverless.yml`. That's all that's needed for basic use! The plugin will now bundle your python
 dependencies specified in your `requirements.txt` or `Pipfile` when you run `sls deploy`.
 
-For a more in depth introduction on how to user this plugin, check out 
+For a more in depth introduction on how to user this plugin, check out
 [this post on the Serverless Blog](https://serverless.com/blog/serverless-python-packaging/)
 
 If you're on a mac, check out [these notes](#applebeersnake-mac-brew-installed-python-notes) about using python installed by brew.
@@ -132,19 +132,20 @@ except ImportError:
   pass
 ```
 ### Slim Package
-_Works on non 'win32' environments: Docker, WSL are included_  
-To remove the tests, information and caches from the installed packages, 
-enable the `slim` option. This will: `strip` the `.so` files, remove `__pycache__` 
-directories and `dist-info` directories.  
+_Works on non 'win32' environments: Docker, WSL are included_
+To remove the tests, information and caches from the installed packages,
+enable the `slim` option. This will: `strip` the `.so` files, remove `__pycache__`
+and `dist-info` directories as well as `.pyc` and `.pyo` files.
 ```yaml
 custom:
   pythonRequirements:
     slim: true
-```  
-#### Custom Removal Patterns  
-To specify additional directories to remove from the installed packages, 
+```
+#### Custom Removal Patterns
+To specify additional directories to remove from the installed packages,
 define a list of patterns in the serverless config using the `slimPatterns`
-option and glob syntax. Note, it matches against whole paths, so to match a file in any
+option and glob syntax. These paterns will be added to the default ones (`**/*.py[c|o]`, `**/__pycache__*`, `**/*.dist-info*`).
+Note, the glob syntax matches against whole paths, so to match a file in any
 directory, start your pattern with `**/`.
 ```yaml
 custom:
@@ -152,19 +153,47 @@ custom:
     slim: true
     slimPatterns:
       - "**/*.egg-info*"
-```  
-This will remove all folders within the installed requirements that match 
-the names in `slimPatterns`  
-## Omitting Packages 
+```
+To overwrite the default patterns set the option `slimPatternsAppendDefaults` to `false` (`true` by default).
+```yaml
+custom:
+  pythonRequirements:
+    slim: true
+    slimPatternsAppendDefaults: false
+    slimPatterns:
+      - "**/*.egg-info*"
+```
+This will remove all folders within the installed requirements that match
+the names in `slimPatterns`
+## Omitting Packages
 You can omit a package from deployment with the `noDeploy` option. Note that
-dependencies of omitted packages must explicitly be omitted too.
-By default, this will not install the AWS SDKs that are already installed on
-Lambda. This example makes it instead omit pytest:
+dependencies of omitted packages must explicitly be omitted too. By default,
+the following packages are omitted as they are already installed on Lambda:
+
+ * boto3
+ * botocore
+ * docutils
+ * jmespath
+ * pip
+ * python-dateutil
+ * s3transfer
+ * setuptools
+ * six
+
+This example makes it instead omit pytest:
 ```yaml
 custom:
   pythonRequirements:
     noDeploy:
       - pytest
+```
+
+To include the default omitted packages, set the `noDeploy` option to an empty
+list:
+```yaml
+custom:
+  pythonRequirements:
+    noDeploy: []
 ```
 
 ## Extra Config Options
@@ -189,7 +218,7 @@ custom:
     useDownloadCache: true
     cacheLocation: '/home/user/.my_cache_goes_here'
     staticCacheMaxVersions: 10
-      
+
 ```
 
 ### Extra pip arguments
@@ -394,3 +423,4 @@ zipinfo .serverless/xxx.zip
  * [@dee-me-tree-or-love](https://github.com/dee-me-tree-or-love) - the `slim` package option
  * [@alexjurkiewicz](https://github.com/alexjurkiewicz) - [docs about docker workflows](#native-code-dependencies-during-build)
  * [@andrewfarley](https://github.com/andrewfarley) - Implemented download caching and static caching
+ * [@bweigel](https://github.com/bweigel) - adding the `slimPatternsAppendDefaults` option & fixing per-function packaging when some functions don't have requirements

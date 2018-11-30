@@ -7,7 +7,7 @@ description: 'Serverless plugin for configuring API Gateway to return binary res
 stars: 22
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 7
 forks_trend: 
 forks_diff: 0
 watchers: 22

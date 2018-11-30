@@ -4,16 +4,16 @@ title: Serverless Plugin Epsagon
 repo: epsagon/serverless-plugin-epsagon
 homepage: 'https://github.com/epsagon/serverless-plugin-epsagon'
 description: 'Distributed tracing that helps you monitor and troubleshoot your serverless applications.'
-stars: 16
+stars: 19
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 16
-issues: 2
-issues_trend: up
-issues_diff: 1
+watchers: 19
+issues: 0
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -29,7 +29,7 @@ issues_diff: 1
 ### Install Epsagon's Library
 For [Node.js functions](https://www.npmjs.com/package/epsagon):
 ```
-npm install --save-dev epsagon
+npm install --save epsagon
 ```
 
 For [Python functions](https://pypi.org/project/epsagon):
@@ -49,7 +49,7 @@ npm install --save-dev serverless-plugin-epsagon
 When installing with NPM, add the plugin to your `serverless.yml` file:
 ```yaml
 plugins:
-  - serveless-plugin-epsagon
+  - serverless-plugin-epsagon
 ```
 For the best results, make sure this is the first plugin specified in your
 plugins list.

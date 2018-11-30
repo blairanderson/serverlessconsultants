@@ -7,11 +7,11 @@ description: 'This plugin enables use of AWS aliases on Lambda functions.'
 stars: 99
 stars_trend: 
 stars_diff: 0
-forks: 19
+forks: 21
 forks_trend: 
 forks_diff: 0
 watchers: 99
-issues: 51
+issues: 53
 issues_trend: 
 issues_diff: 0
 ---

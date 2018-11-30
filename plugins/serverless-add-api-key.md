@@ -4,13 +4,13 @@ title: Serverless Add Api Key
 repo: rrahul963/serverless-add-api-key
 homepage: 'https://github.com/rrahul963/serverless-add-api-key'
 description: 'Serverless plugin to add same api key for multiple serverless services i.e. to re-use apikey across multiple api gateway apis.'
-stars: 2
+stars: 3
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 3
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -41,4 +41,16 @@ custom:
   apiKeys: [<api key name>]
 ```
 Code automatically creates a usage plan called `<api-key-name>-usage-plan`.
+
+### Specifying key values
+
+```yaml
+custom:
+  apiKeys:
+    - name: SomeKey
+      value: your-api-key-that-is-at-least-20-characters-long
+    - name: KeyFromSlsVariables
+      value: ${env:MyKey}
+    - SomeOtherKeyThatAssignsRandomValue
+```
 

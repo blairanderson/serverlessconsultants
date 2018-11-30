@@ -4,14 +4,14 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: 'Keep your lambdas warm during Winter.'
-stars: 303
+stars: 319
 stars_trend: 
 stars_diff: 0
-forks: 42
+forks: 43
 forks_trend: 
 forks_diff: 0
-watchers: 303
-issues: 11
+watchers: 319
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---
@@ -221,6 +221,20 @@ module.exports.lambdaToWarm = function(event, context, callback) {
   ... add lambda logic after
 }
 ```
+You can also check for the warmp event using the `context` variable. This could be useful if you are handling the raw input and output streams:
+
+```javascript
+...
+
+if(context.custom.source === 'serverless-plugin-warmup'){
+  console.log('WarmUP - Lambda is warm!')
+  return callback(null, 'Lambda is warm!')
+}
+
+...
+```
+
+
 
 * All done! WarmUP will run on SLS `deploy` and `package` commands
 
@@ -235,6 +249,8 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 * **schedule** (default `rate(5 minutes)`) - More examples [here](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
 * **timeout** (default `10` seconds)
 * **prewarm** (default `false`)
+* **source** (default `{ "source": "serverless-plugin-warmup" }`)
+* **sourceRaw** (default `false`)
 * **tags** (default to serverless default tags)
 
 ```yml
@@ -249,6 +265,8 @@ custom:
     schedule: 'cron(0/5 8-17 ? * MON-FRI *)' // Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
     timeout: 20
     prewarm: true // Run WarmUp immediately after a deploymentlambda
+    source: '{ "source": "my-custom-payload" }'
+    sourceRaw: true // Won't JSON.stringify() the source, may be necessary for Go/AppSync deployments
     tags:
       Project: foo
       Owner: bar    
@@ -259,7 +277,7 @@ custom:
 * Day cold periods
 * Desire to avoid cold lambdas after a deployment
 
-**Lambdas invoked by WarmUP will have event source `serverless-plugin-warmup`:**
+**Lambdas invoked by WarmUP will have event source `serverless-plugin-warmup` (unless otherwise specified above):**
 
 ```json
 {

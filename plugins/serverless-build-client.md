@@ -4,13 +4,13 @@ title: Serverless Build Client
 repo: tgfischer/serverless-build-client
 homepage: 'https://github.com/tgfischer/serverless-build-client'
 description: 'Build your static website with environment variables defined in serverless.yml'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 4
 issues: 0
 issues_trend: 
 issues_diff: 0

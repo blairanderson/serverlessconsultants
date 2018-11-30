@@ -4,13 +4,13 @@ title: Serverless Vpc Discovery
 repo: amplify-education/serverless-vpc-discovery
 homepage: 'https://github.com/amplify-education/serverless-vpc-discovery'
 description: 'Serverless plugin for discovering VPC / Subnet / Security Group configuration by name.'
-stars: 15
+stars: 16
 stars_trend: 
 stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 15
+watchers: 16
 issues: 2
 issues_trend: 
 issues_diff: 0

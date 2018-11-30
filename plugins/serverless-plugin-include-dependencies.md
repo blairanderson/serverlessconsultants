@@ -7,11 +7,11 @@ description: 'This is a Serverless plugin that should make your deployed functio
 stars: 87
 stars_trend: 
 stars_diff: 0
-forks: 12
+forks: 13
 forks_trend: 
 forks_diff: 0
 watchers: 87
-issues: 4
+issues: 5
 issues_trend: 
 issues_diff: 0
 ---

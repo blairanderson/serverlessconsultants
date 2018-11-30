@@ -4,13 +4,13 @@ title: Serverless Sentry Plugin
 repo: arabold/serverless-sentry-plugin
 homepage: 'https://github.com/arabold/serverless-sentry-plugin'
 description: 'Automatic monitoring of memory usage, execution timeouts and forwarding of Lambda errors to Sentry (https://sentry.io).'
-stars: 96
+stars: 97
 stars_trend: 
 stars_diff: 0
 forks: 11
 forks_trend: 
 forks_diff: 0
-watchers: 96
+watchers: 97
 issues: 11
 issues_trend: 
 issues_diff: 0

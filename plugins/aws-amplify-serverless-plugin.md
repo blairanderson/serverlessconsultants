@@ -4,14 +4,14 @@ title: Aws Amplify Serverless Plugin
 repo: awslabs/aws-amplify-serverless-plugin
 homepage: 'https://github.com/awslabs/aws-amplify-serverless-plugin'
 description: 'Generate client-side configuration files for the AWS Amplify library based on your deployed Serverless backend'
-stars: 20
+stars: 27
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 20
-issues: 5
+watchers: 27
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---
@@ -163,6 +163,7 @@ The following resources are supported:
   * Login with Amazon
 * Amazon Cognito user pools.
 * Amazon S3 buckets for user file storage.
+* Amazon API Gateway (multiple API gateways can be defined).
 
 ## Questions, Issues, Feature Requests
 

@@ -4,14 +4,14 @@ title: Serverless Plugin Nested Stacks
 repo: concon121/serverless-plugin-nested-stacks
 homepage: 'https://github.com/concon121/serverless-plugin-nested-stacks'
 description: 'Yet another AWS nested stack plugin!'
-stars: 5
+stars: 6
 stars_trend: 
 stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 5
-issues: 3
+watchers: 6
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---
@@ -20,7 +20,7 @@ issues_diff: 0
 # serverless-plugin-nested-stacks
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![npm](https://img.shields.io/npm/v/serverless-aws-nested-stacks.svg)](https://www.npmjs.com/package/serverless-aws-nested-stacks)
-[![Build Status](https://travis-ci.com/concon121/serverless-plugin-nested-stacks.svg?branch=master)](https://travis-ci.com/concon121/serverless-plugin-nested-stacks)
+[![Build Status](https://travis-ci.org/concon121/serverless-plugin-nested-stacks.svg?branch=master)](https://travis-ci.org/concon121/serverless-plugin-nested-stacks)
 [![codecov](https://codecov.io/gh/concon121/serverless-plugin-nested-stacks/branch/master/graph/badge.svg)](https://codecov.io/gh/concon121/serverless-plugin-nested-stacks)
 
 
