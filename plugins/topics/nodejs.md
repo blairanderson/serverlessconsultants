@@ -3,6 +3,6 @@
 layout: topic
 topic: nodejs
 title: nodejs Serverless Plugins
-description: '8 nodejs ServerLess Plugins'
-count: 8
+description: '9 nodejs ServerLess Plugins'
+count: 9
 ---

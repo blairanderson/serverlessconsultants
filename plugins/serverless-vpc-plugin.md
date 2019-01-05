@@ -4,13 +4,13 @@ title: Serverless Vpc Plugin
 repo: smoketurner/serverless-vpc-plugin
 homepage: 'https://github.com/smoketurner/serverless-vpc-plugin'
 description: 'Serverless plugin to create a VPC'
-stars: 2
+stars: 3
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 3
 issues: 1
 issues_trend: 
 issues_diff: 0

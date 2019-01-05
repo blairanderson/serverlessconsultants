@@ -3,6 +3,6 @@
 layout: topic
 topic: graphql
 title: graphql Serverless Plugins
-description: '2 graphql ServerLess Plugins'
-count: 2
+description: '1 graphql ServerLess Plugins'
+count: 1
 ---

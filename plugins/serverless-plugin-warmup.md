@@ -4,14 +4,14 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: 'Keep your lambdas warm during Winter.'
-stars: 319
+stars: 349
 stars_trend: 
 stars_diff: 0
-forks: 43
+forks: 49
 forks_trend: 
 forks_diff: 0
-watchers: 319
-issues: 4
+watchers: 349
+issues: 8
 issues_trend: 
 issues_diff: 0
 ---
@@ -27,7 +27,7 @@ Serverless WarmUP Plugin ♨
 Keep your lambdas warm during Winter.
 
 **Requirements:**
-* Serverless *v1.12.x* or higher.
+* Serverless *v1.12.x* or higher (Recommended *v1.33.x* or higher because of [this](https://github.com/FidelLimited/serverless-plugin-warmup/pull/69)).
 * AWS provider
 
 ## How it works
@@ -36,26 +36,32 @@ WarmUP solves *cold starts* by creating one schedule event lambda that invokes a
 
 ## Setup
 
- Install via npm in the root of your Serverless service:
-```
+
+### Installation
+
+Install via npm in the root of your Serverless service:
+
+```sh
 npm install serverless-plugin-warmup --save-dev
 ```
 
-* Add the plugin to the `plugins` array in your Serverless `serverless.yml`:
+Add the plugin to the `plugins` array in your Serverless `serverless.yml`:
 
 ```yml
 plugins:
   - serverless-plugin-warmup
 ```
 
-* Add a `warmup.default` property to custom set the default configuration for all the functions
+### Global configuration
+
+Add a `warmup.enabled` property to custom to enable/disable the warm up process by default for all the functions
 
 Enable WarmUp in general:
 
 ```yml
 custom:
   warmup:
-    default: true
+    enabled: true
 ```
 
 For a specific stage:
@@ -63,7 +69,7 @@ For a specific stage:
 ```yml
 custom:
   warmup:
-    default: production
+    enabled: production
 ```
 
 For several stages:
@@ -71,19 +77,22 @@ For several stages:
 ```yml
 custom:
   warmup:
-    default: 
+    enabled: 
       - production
       - staging
 ```
 
-* You can override the default `warmup` property on any function.
+#### Function-specific configuration
+
+You can override the global `enabled` configuration on any function.
 
 Enable WarmUp for a specific function
 
 ```yml
 functions:
   hello:
-    warmup: true
+    warmup:
+      enabled: true
 ```
 
 For a specific stage:
@@ -91,7 +100,8 @@ For a specific stage:
 ```yml
 functions:
   hello:
-    warmup: production
+    warmup:
+      enabled: production
 ```
 
 For several stages:
@@ -100,24 +110,84 @@ For several stages:
 functions:
   hello:
     warmup:
-      - production
-      - staging
+      enabled:
+        - production
+        - staging
 ```
 
-Do not warm-up a function if `default` is set to true:
+Do not warm-up a function if `enabled` is set to false:
  ```yml
 custom:
   warmup:
-    default: true
+    enabled: true
 
 ...
 
 functions:
   hello:
-    warmup: false
+    warmup:
+      enabled: false
 ```
 
-* WarmUP requires some permissions to be able to `invoke` lambdas.
+### Other Options
+
+#### Global options
+
+* **folderName** (default `_warmup`)
+* **cleanFolder** (default `true`)
+* **name** (default `${service}-${stage}-warmup-plugin`)
+* **role** (default to role in the provider)
+* **tags** (default to serverless default tags)
+* **schedule** (default `rate(5 minutes)`) - More examples [here](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
+* **memorySize** (default `128`)
+* **timeout** (default `10` seconds)
+* **prewarm** (default `false`)
+
+#### Options that can be overridden per function
+
+* **enabled** (default `false`)
+* **source** (default `{ "source": "serverless-plugin-warmup" }`)
+* **sourceRaw** (default `false`)
+* **concurrency** (default `1`)
+
+```yml
+custom:
+  warmup:
+    enabled: true // Whether to warm up functions by default or not
+    folderName: '_warmup' // Name of the folder created for the generated warmup 
+    cleanFolder: false
+    memorySize: 256
+    name: 'make-them-pop'
+    role: myCustRole0
+    tags:
+      Project: foo
+      Owner: bar 
+    schedule: 'cron(0/5 8-17 ? * MON-FRI *)' // Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
+    timeout: 20
+    prewarm: true // Run WarmUp immediately after a deploymentlambda
+    source: '{ "source": "my-custom-payload" }'
+    sourceRaw: true // Won't JSON.stringify() the source, may be necessary for Go/AppSync deployments
+    concurrency: 5 // Warm up 5 concurrent instances
+```
+
+**Options should be tweaked depending on:**
+* Number of lambdas to warm up
+* Day cold periods
+* Desire to avoid cold lambdas after a deployment
+
+**Lambdas invoked by WarmUP will have event source `serverless-plugin-warmup` (unless otherwise specified above):**
+
+```json
+{
+  "Event": {
+    "source": "serverless-plugin-warmup"
+  }
+}
+```
+
+### Permissions
+
+WarmUP requires some permissions to be able to `invoke` lambdas.
 
 ```yaml
 custom:
@@ -156,7 +226,7 @@ resources:
             PolicyDocument:
               Version: '2017'
               Statement:
-                - Effect: Allow
+                - Effect: Allow # WarmUp lamda to send logs to CloudWatch
                   Action:
                     - logs:CreateLogGroup
                     - logs:CreateLogStream
@@ -169,14 +239,14 @@ resources:
                         - Ref: 'AWS::Region'
                         - Ref: 'AWS::AccountId'
                         - 'log-group:/aws/lambda/*:*:*'
-                - Effect: Allow
+                - Effect: Allow # WarmUp lamda to manage ENIS (only needed if deploying to VPC, https://docs.aws.amazon.com/lambda/latest/dg/vpc.html)
                   Action:
                     - ec2:CreateNetworkInterface
                     - ec2:DescribeNetworkInterfaces
                     - ec2:DetachNetworkInterface
                     - ec2:DeleteNetworkInterface
                   Resource: "*"
-                - Effect: 'Allow'
+                - Effect: 'Allow' # WarmUp lamda to invoke the functions to be warmed
                   Action:
                     - 'lambda:InvokeFunction'
                   Resource:
@@ -208,7 +278,10 @@ provider:
 ```
 If using pre-warm, the deployment user also needs a similar policy so it can run the WarmUp lambda.
 
-* Add an early callback call when the event source is `serverless-plugin-warmup`. You should do this early exit before running your code logic, it will save your execution duration and cost:
+
+#### On the function side
+
+Add an early callback call when the event source is `serverless-plugin-warmup`. You should do this early exit before running your code logic, it will save your execution duration and cost:
 
 ```javascript
 module.exports.lambdaToWarm = function(event, context, callback) {
@@ -233,63 +306,37 @@ if(context.custom.source === 'serverless-plugin-warmup'){
 
 ...
 ```
+If you're using the `concurrency` option you might consider adding a slight delay before returning when warming up to ensure your function doesn't return before all concurrent requests have been started:
 
-
-
-* All done! WarmUP will run on SLS `deploy` and `package` commands
-
-## Options
-
-* **default** (default `false`)
-* **folderName** (default `_warmup`)
-* **cleanFolder** (default `true`)
-* **memorySize** (default `128`)
-* **name** (default `${service}-${stage}-warmup-plugin`)
-* **role** (default to role in the provider)
-* **schedule** (default `rate(5 minutes)`) - More examples [here](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
-* **timeout** (default `10` seconds)
-* **prewarm** (default `false`)
-* **source** (default `{ "source": "serverless-plugin-warmup" }`)
-* **sourceRaw** (default `false`)
-* **tags** (default to serverless default tags)
-
-```yml
-custom:
-  warmup:
-    default: true // Whether to warm up functions by default or not
-    folderName: '_warmup' // Name of the folder created for the generated warmup 
-    cleanFolder: false
-    memorySize: 256
-    name: 'make-them-pop'
-    role: myCustRole0
-    schedule: 'cron(0/5 8-17 ? * MON-FRI *)' // Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
-    timeout: 20
-    prewarm: true // Run WarmUp immediately after a deploymentlambda
-    source: '{ "source": "my-custom-payload" }'
-    sourceRaw: true // Won't JSON.stringify() the source, may be necessary for Go/AppSync deployments
-    tags:
-      Project: foo
-      Owner: bar    
-```
-
-**Options should be tweaked depending on:**
-* Number of lambdas to warm up
-* Day cold periods
-* Desire to avoid cold lambdas after a deployment
-
-**Lambdas invoked by WarmUP will have event source `serverless-plugin-warmup` (unless otherwise specified above):**
-
-```json
-{
-  "Event": {
-    "source": "serverless-plugin-warmup"
+```javascript
+module.exports.lambdaToWarm = async (event) => {
+  if (event.source === 'serverless-plugin-warmup') {
+    /** Slightly delayed (25ms) response for WarmUP plugin to ensure concurrent invocation */
+    await new Promise(r => setTimeout(r, 25))
+    console.log('WarmUP - Lambda is warm!')
+    return
   }
+
+  ... add lambda logic after
 }
 ```
+## Deployment
 
-## Artifact
+Once everything is configured WarmUP will run on SLS `deploy`.
 
-If you are doing your own [package artifact](https://serverless.com/framework/docs/providers/aws/guide/packaging#artifact) set option `cleanFolder` to `false` and run `serverless package`. This will allow you to extract the `warmup` NodeJS lambda file from the `_warmup` folder and add it in your custom artifact logic.
+```sh
+serverless deploy
+```
+
+## Packaging
+WarmUp also runs on SLS `package`.
+
+If you are doing your own [package artifact](https://serverless.com/framework/docs/providers/aws/guide/packaging#artifact) set the `cleanFolder` option to `false` and run
+```sh
+serverless package
+```
+
+This will allow you to extract the `warmup` NodeJS lambda file from the `_warmup` folder and add it in your custom artifact logic.
 
 ## Gotchas
 

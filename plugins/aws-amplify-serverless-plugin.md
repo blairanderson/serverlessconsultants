@@ -4,13 +4,13 @@ title: Aws Amplify Serverless Plugin
 repo: awslabs/aws-amplify-serverless-plugin
 homepage: 'https://github.com/awslabs/aws-amplify-serverless-plugin'
 description: 'Generate client-side configuration files for the AWS Amplify library based on your deployed Serverless backend'
-stars: 27
+stars: 42
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 27
+watchers: 42
 issues: 4
 issues_trend: 
 issues_diff: 0
@@ -63,6 +63,7 @@ Each entry in the `amplify` section must consist of two parts, with two optional
 * `type` is one of the following:
     * `native` (an `awsconfiguration.json` type file),
     * `javascript` (an `aws-exports.js` type file),
+    * `typescript` (identical to JavaScript, but with TypeScript interfaces),
     * `schema.json` (the AWS AppSync schema in JSON format),
     * `graphql` (a sample GraphQL operations file for codegen),
     * `appsync` (generated code for AppSync - the format is based on the extension)

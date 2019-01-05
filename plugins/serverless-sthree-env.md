@@ -4,13 +4,13 @@ title: Serverless Sthree Env
 repo: StyleTributeIT/serverless-sthree-env
 homepage: 'https://github.com/StyleTributeIT/serverless-sthree-env'
 description: 'Serverless plugin to get config from a json formatted file in S3 and copy them to environment variable'
-stars: 1
+stars: 2
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 2
 issues: 0
 issues_trend: 
 issues_diff: 0

@@ -4,20 +4,20 @@ title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
 description: 'AWS Step Functions with Serverless Framework.'
-stars: 373
+stars: 385
 stars_trend: 
 stars_diff: 0
-forks: 52
+forks: 56
 forks_trend: 
 forks_diff: 0
-watchers: 373
-issues: 39
+watchers: 385
+issues: 35
 issues_trend: 
 issues_diff: 0
 ---
 
 
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![Build Status](https://travis-ci.org/horike37/serverless-step-functions.svg?branch=master)](https://travis-ci.org/horike37/serverless-step-functions) [![npm version](https://badge.fury.io/js/serverless-step-functions.svg)](https://badge.fury.io/js/serverless-step-functions) [![Coverage Status](https://coveralls.io/repos/github/horike37/serverless-step-functions/badge.svg?branch=master)](https://coveralls.io/github/horike37/serverless-step-functions?branch=master) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![Build Status](https://travis-ci.org/horike37/serverless-step-functions.svg?branch=master)](https://travis-ci.org/horike37/serverless-step-functions) [![npm version](https://badge.fury.io/js/serverless-step-functions.svg)](https://badge.fury.io/js/serverless-step-functions) [![Coverage Status](https://coveralls.io/repos/github/horike37/serverless-step-functions/badge.svg?branch=master)](https://coveralls.io/github/horike37/serverless-step-functions?branch=master) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) [![serverless-step-functions Dev Token](https://badge.devtoken.rocks/serverless-step-functions)](https://devtoken.rocks/package/serverless-step-functions)
 # Serverless Step Functions
 This is the Serverless Framework plugin for AWS Step Functions.
 
@@ -645,6 +645,7 @@ $ sls invoke stepf --name <stepfunctionname> --data '{"foo":"bar"}'
 - --path or -p The path to a json file with input data to be passed to the invoked step function.
 
 ## IAM Role
+
 The IAM roles required to run Statemachine are automatically generated. It is also possible to specify ARN directly.
 
 Here's an example:
@@ -656,6 +657,28 @@ stepFunctions:
       role: arn:aws:iam::xxxxxxxx:role/yourRole
       definition:
 ```
+
+It is also possible to use the [CloudFormation intrinsic functions](https://docs.aws.amazon.com/en_en/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html) to reference resources from elsewhere:
+
+```yml
+stepFunctions:
+  stateMachines:
+    hello:
+      role:
+        Ref: StateMachineRole
+      definition:
+        ...
+
+resources:
+  Resources:
+    StateMachineRole:
+      Type: AWS::IAM::Role
+      Properties: 
+        ...
+```
+
+The short form of the intrinsic functions (i.e. `!Sub`, `!Ref`) is not supported at the moment.
+
 ## Tips
 ### How to specify the stateMachine ARN to environment variables
 Here is serverless.yml sample to specify the stateMachine ARN to environment variables.

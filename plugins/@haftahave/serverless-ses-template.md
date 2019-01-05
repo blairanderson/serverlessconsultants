@@ -4,14 +4,14 @@ title: Serverless Ses Template
 repo: haftahave/serverless-ses-template
 homepage: 'https://github.com/haftahave/serverless-ses-template'
 description: 'A serveless plugin that allows automatically creating, updating and removing AWS SES Templates using a configuration file and keeps your AWS SES Templates synced with your configuration file.'
-stars: 4
+stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 4
-issues: 0
+watchers: 6
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

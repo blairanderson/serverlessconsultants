@@ -4,14 +4,14 @@ title: Serverless Plugin Canary Deployments
 repo: davidgf/serverless-plugin-canary-deployments
 homepage: 'https://github.com/davidgf/serverless-plugin-canary-deployments'
 description: 'A Serverless plugin to implement canary deployments of Lambda functions'
-stars: 105
+stars: 121
 stars_trend: 
 stars_diff: 0
-forks: 16
+forks: 19
 forks_trend: 
 forks_diff: 0
-watchers: 105
-issues: 3
+watchers: 121
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---
@@ -78,7 +78,7 @@ You can see a working example in the [example folder](./example/).
   - `Linear10PercentEvery1Minute`: shifts 10 percent of traffic every minute until all traffic is shifted.
   - `Linear10PercentEvery2Minutes`: shifts 10 percent of traffic every two minutes until all traffic is shifted.
   - `Linear10PercentEvery3Minutes`: shifts 10 percent of traffic every three minutes until all traffic is shifted.
-  - `Linear10PercentEvery10Minutes`: shifts 10 percent of traffic every 30 minutes until all traffic is shifted.
+  - `Linear10PercentEvery10Minutes`: shifts 10 percent of traffic every 10 minutes until all traffic is shifted.
 * `alias`: (required) name that will be used to create the Lambda function alias.
 * `preTrafficHook`: (optional) validation Lambda function that runs before traffic shifting. It must use te CodeDeploy SDK to notify about this step's success or failure (more info [here](https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html)).
 * `postTrafficHook`: (optional) validation Lambda function that runs after traffic shifting. It must use te CodeDeploy SDK to notify about this step's success or failure (more info [here](https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html))

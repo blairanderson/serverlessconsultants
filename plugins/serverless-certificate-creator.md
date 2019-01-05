@@ -11,7 +11,7 @@ forks: 0
 forks_trend: 
 forks_diff: 0
 watchers: 6
-issues: 1
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -45,6 +45,7 @@ open serverless.yml and add the following:
                 idempotencyToken: 'abcsomedomainio' //optional
                 hostedZoneName: 'somedomain.io.' //required if hostedZoneId is not set
                 hostedZoneId: 'XXXXXXXXX' //required if hostedZoneName is not set
+                writeCertInfoToFile: false // optional default is false. if you set it to true you will get a new file called cert-info.yml (after executing serverless create-cert), that contains certificate info that you can use in your deploy pipeline
                 region: eu-west-1 // optional - default is us-east-1 which is required for custom api gateway domains of Type Edge (default)
 
 

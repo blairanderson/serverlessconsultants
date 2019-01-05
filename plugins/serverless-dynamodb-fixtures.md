@@ -4,14 +4,14 @@ title: Serverless Dynamodb Fixtures
 repo: chechu/serverless-dynamodb-fixtures
 homepage: 'https://github.com/chechu/serverless-dynamodb-fixtures'
 description: 'Serverless Dynamodb Fixtures - Allows to load data on DynamoDB tables'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 1
+watchers: 4
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---

@@ -7,7 +7,7 @@ description: 'A Serverless plugin to transport logs to ElasticSearch'
 stars: 7
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 6
 forks_trend: 
 forks_diff: 0
 watchers: 7
@@ -112,6 +112,18 @@ custom:
 custom:
   esLogs:
     retentionInDays: 7
+```
+
+#### tags
+
+(Optional) Custom tags that should be applied to every log message processed by this plugin and sent to elasticsearch as fields.
+
+```yaml
+custom:
+  esLogs:
+    tags:
+      some_tag: something
+      some_other_tag: something_else
 ```
 
 [sls-image]:http://public.serverless.com/badges/v3.svg

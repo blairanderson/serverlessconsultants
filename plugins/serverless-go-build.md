@@ -4,13 +4,13 @@ title: Serverless Go Build
 repo: sean9keenan/serverless-go-build
 homepage: 'https://github.com/sean9keenan/serverless-go-build'
 description: 'Build go source files (or public functions) using yml definition file'
-stars: 19
+stars: 20
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 19
+watchers: 20
 issues: 0
 issues_trend: 
 issues_diff: 0

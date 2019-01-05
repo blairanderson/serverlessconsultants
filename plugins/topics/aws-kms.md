@@ -3,6 +3,6 @@
 layout: topic
 topic: aws-kms
 title: aws-kms Serverless Plugins
-description: '1 aws-kms ServerLess Plugins'
-count: 1
+description: '2 aws-kms ServerLess Plugins'
+count: 2
 ---

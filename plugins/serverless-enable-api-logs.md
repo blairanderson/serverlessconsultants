@@ -4,21 +4,21 @@ title: Serverless Enable Api Logs
 repo: paulSambolin/serverless-enable-api-logs
 homepage: 'https://github.com/paulSambolin/serverless-enable-api-logs'
 description: 'Enables Coudwatch logging for API Gateway events'
-stars: 11
+stars: 12
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 11
-issues: 6
+watchers: 12
+issues: 5
 issues_trend: 
 issues_diff: 0
 ---
 
 
 # serverless-enable-api-logs
-Enables Coudwatch logging for API Gateway events
+Enables Cloudwatch logging for API Gateway events
 
 # Resources
 - [Github](https://github.com/paulSambolin/serverless-enable-api-logs)

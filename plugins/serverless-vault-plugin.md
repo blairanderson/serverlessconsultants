@@ -4,14 +4,14 @@ title: Serverless Vault Plugin
 repo: Rondineli/serverless-vault-plugin
 homepage: 'https://github.com/Rondineli/serverless-vault-plugin'
 description: 'A Serverless plugin to retrieve passwords from vault and encrypt to kms'
-stars: 6
+stars: 10
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 6
-issues: 2
+watchers: 10
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -49,6 +49,7 @@ custom:
     url: "https://vault:8200"
     secret: "secret/path"
     ssl_check: false
+    version: "v1"
   kms:
     keyId: ${env:KEY_KMS_ID}
 ```
@@ -64,16 +65,64 @@ custom:
     url: "https://vault:8200"
     secret: "secret/path"
     ssl_check: false
+    version: "v1"
   kms:
     keyId: ${env:KEY_KMS_ID}
 ```
 
+### Using single path secrets with multiples passwords
+```
+custom:
+  config: ${file(env/${opt:stage}.yml)}
 
-### Add your env var as a list
+  vault:
+    method: "Userpass"
+    user: "my vault user"
+    password: "my user password"
+    url: "https://vault:8200"
+    secret: "secret/path"
+    ssl_check: false
+    version: "v1"
+  kms:
+    keyId: ${env:KEY_KMS_ID}
+```
+
+Then add your env var as a list
 ```
 environment:
   - VAR_FOO
   - VAR_BAR
 ```
+
+It needs a structure at vault like, `vault write secret/path VAR_FOO=foo VAR_BAR=bar`
+
+
+### Using multiple paths secrets with multiples or single password
+```
+custom:
+  config: ${file(env/${opt:stage}.yml)}
+
+  vault:
+    method: "Userpass"
+    user: "my vault user"
+    password: "my user password"
+    url: "https://vault:8200"
+    secret: "secret"
+    ssl_check: false
+    version: "v1"
+  kms:
+    keyId: ${env:KEY_KMS_ID}
+```
+
+Then add your env var as a list
+```
+environment:
+  - path_foo
+  - path_bar
+```
+
+It needs a structure at vault like, `vault write secret/path_foo ANY_FOO=foo && vault write secret/path_bar ANY_BAR=bar`
+
+It will fetch all passwords under those paths.
 
 Once you run `sls deploy -s <stage>`, it will fetch the vault and will try to find `VAR_FOOR`, `VAR_BAR` (using your secret path). It will then encrypt it on KMS and set the environment variables to your deployment runtime.

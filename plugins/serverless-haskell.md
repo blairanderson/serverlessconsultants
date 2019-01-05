@@ -4,14 +4,14 @@ title: Serverless Haskell
 repo: seek-oss/serverless-haskell
 homepage: 'https://github.com/seek-oss/serverless-haskell'
 description: 'Deploying Haskell applications to AWS Lambda with Serverless'
-stars: 126
+stars: 128
 stars_trend: 
 stars_diff: 0
-forks: 14
+forks: 15
 forks_trend: 
 forks_diff: 0
-watchers: 126
-issues: 5
+watchers: 128
+issues: 6
 issues_trend: 
 issues_diff: 0
 ---
@@ -45,7 +45,7 @@ In either case, you will want to have [Serverless] installed, eg. `npm install -
 * Create a [Stack] package for your code:
 
   ```shell
-  stack new mypackage https://raw.githubusercontent.com/seek-oss/serverless-haskell/v0.8.4/serverless-haskell.hsfiles
+  stack new mypackage https://raw.githubusercontent.com/seek-oss/serverless-haskell/master/serverless-haskell.hsfiles
   ```
 
 * Update the resolver in the `stack.yaml` file. This is hardcoded as the resolver number is not known at template interpolation time. You should pick either the latest resolver, or one you have used before and have thus prebuilt many of the core packages for.
@@ -69,7 +69,7 @@ In either case, you will want to have [Serverless] installed, eg. `npm install -
   stack new mypackage
   ```
 
-  LTS 9-12 are supported, older versions are likely to work too but untested.
+  LTS 9-13 are supported, older versions are likely to work too but untested.
 
 * Initialise a Serverless project inside the Stack package directory and install
   the `serverless-haskell` plugin:
@@ -180,7 +180,7 @@ an AWS account. To run manually:
 * Run `./integration-test/run.sh`. The exit code indicates success.
 * To verify just the packaging, without deployment, run
   `./integration-test/run.sh --dry-run`.
-* By default, the integration test is run with LTS 12. To specify a different
+* By default, the integration test is run with LTS 13. To specify a different
   series, use `RESOLVER_SERIES=lts-9`.
 * To avoid creating a temporary directory for every run, specify
   `--no-clean-dir`. This can speed up repeated test runs, but does not guarantee

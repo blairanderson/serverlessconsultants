@@ -7,7 +7,7 @@ description: 'Serverless Plugin for adding custom attributes to an existing Clou
 stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 3
 forks_trend: 
 forks_diff: 0
 watchers: 6

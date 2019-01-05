@@ -4,26 +4,28 @@ title: Serverless Wsgi
 repo: logandk/serverless-wsgi
 homepage: 'https://github.com/logandk/serverless-wsgi'
 description: 'Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages'
-stars: 182
+stars: 207
 stars_trend: 
 stars_diff: 0
-forks: 32
+forks: 33
 forks_trend: 
 forks_diff: 0
-watchers: 182
-issues: 3
+watchers: 207
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
 
 
-# Serverless WSGI
+<p align="center">
+  <img src="https://logandk.github.io/serverless-wsgi/assets/header.svg">
+</p>
 
 [![npm package](https://nodei.co/npm/serverless-wsgi.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/serverless-wsgi/)
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![Build Status](https://travis-ci.org/logandk/serverless-wsgi.png?branch=master)](https://travis-ci.org/logandk/serverless-wsgi)
-[![Coverage Status](https://coveralls.io/repos/github/logandk/serverless-wsgi/badge.svg?branch=master)](https://coveralls.io/github/logandk/serverless-wsgi?branch=master)
+[![Coverage Status](https://codecov.io/gh/logandk/serverless-wsgi/branch/master/graph/badge.svg)](https://codecov.io/gh/logandk/serverless-wsgi)
 [![Dependency Status](https://david-dm.org/logandk/serverless-wsgi.png)](https://david-dm.org/logandk/serverless-wsgi)
 [![Dev Dependency Status](https://david-dm.org/logandk/serverless-wsgi/dev-status.png)](https://david-dm.org/logandk/serverless-wsgi?type=dev)
 
@@ -33,10 +35,11 @@ http://wsgi.readthedocs.io/en/latest/frameworks.html.
 
 ### Features
 
-- Transparently converts API Gateway requests to and from standard WSGI requests
+- Transparently converts API Gateway and ALB requests to and from standard WSGI requests
 - Supports anything you'd expect from WSGI such as redirects, cookies, file uploads etc.
 - Automatically downloads Python packages that you specify in `requirements.txt` and deploys them along with your application
 - Convenient `wsgi serve` command for serving your application locally during development
+- Includes CLI commands for remote execution of Python code (`wsgi exec`), shell commands (`wsgi command`) and Django management commands (`wsgi manage`)
 
 ## Install
 
@@ -47,6 +50,10 @@ sls plugin install -n serverless-wsgi
 This will automatically add the plugin to `package.json` and the plugins section of `serverless.yml`.
 
 ## Flask configuration example
+
+<p align="center">
+  <img src="https://logandk.github.io/serverless-wsgi/assets/hello-world.svg">
+</p>
 
 This example assumes that you have intialized your application as `app` inside `api.py`.
 
@@ -91,7 +98,7 @@ service: example
 
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.6
 
 plugins:
   - serverless-wsgi
@@ -113,7 +120,7 @@ custom:
 Add Flask to the application bundle.
 
 ```
-Flask==0.12.2
+Flask==1.0.2
 ```
 
 ## Deployment
@@ -122,15 +129,20 @@ Simply run the serverless deploy command as usual:
 
 ```
 $ sls deploy
+Serverless: Using Python specified in "runtime": python3.6
 Serverless: Packaging Python WSGI handler...
 Serverless: Packaging required Python packages...
+Serverless: Linking required Python packages...
 Serverless: Packaging service...
-Serverless: Removing old service versions...
+Serverless: Excluding development dependencies...
+Serverless: Unlinking required Python packages...
 Serverless: Uploading CloudFormation file to S3...
-Serverless: Uploading service .zip file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service .zip file to S3 (864.57 KB)...
+Serverless: Validating template...
 Serverless: Updating Stack...
 Serverless: Checking Stack update progress...
-..........
+..............
 Serverless: Stack update finished...
 ```
 
@@ -151,11 +163,11 @@ as long as you specify your required packages in a `requirements.txt` file in th
 of your Serverless service path:
 
 ```
-Flask==0.12.2
-requests==2.18.3
+Flask==1.0.2
+requests==2.21.0
 ```
 
-For more information, see https://pip.readthedocs.io/en/1.1/requirements.html.
+For more information, see https://pip.pypa.io/en/latest/user_guide/#requirements-files.
 
 You can use the requirement packaging functionality of _serverless-wsgi_ without the WSGI
 handler itself by including the plugin in your `serverless.yml` configuration, without specifying
@@ -171,7 +183,19 @@ custom:
     packRequirements: false
 ```
 
+In order to pass additional arguments to `pip` when installing requirements, the `pipArgs` configuration
+option is available:
+
+```yaml
+custom:
+  wsgi:
+    app: api.app
+    pipArgs: --no-deps
+```
+
 For a more advanced approach to packaging requirements, consider using https://github.com/UnitedIncome/serverless-python-requirements.
+When the `serverless-python-requirements` is added to `serverless.yml`, the `packRequirements` option
+is set to `false` by default.
 
 ### Python version
 
@@ -188,6 +212,10 @@ custom:
 ```
 
 ### Local server
+
+<p align="center">
+  <img src="https://logandk.github.io/serverless-wsgi/assets/serve.svg">
+</p>
 
 For convenience, a `sls wsgi serve` command is provided to run your WSGI application
 locally. This command requires the `werkzeug` Python package to be installed,
@@ -211,8 +239,57 @@ $ sls wsgi serve -p 8000
  * Debugger is active!
 ```
 
-When running locally, an environment variable named `IS_OFFLINE` will be set to `"True"`.
+When running locally, an environment variable named `IS_OFFLINE` will be set to `True`.
 So, if you want to know when the application is running locally, check `os.environ["IS_OFFLINE"]`.
+
+### Remote command execution
+
+<p align="center">
+  <img src="https://logandk.github.io/serverless-wsgi/assets/command.svg">
+</p>
+
+The `wsgi exec` command lets you execute Python code remotely:
+
+```
+$ sls wsgi exec -c "import math; print((1 + math.sqrt(5)) / 2)"
+1.618033988749895
+
+$ cat count.py
+for i in range(3):
+    print(i)
+
+$ sls wsgi exec -f count.py
+0
+1
+2
+```
+
+The `wsgi command` command lets you execute shell commands remotely:
+
+```
+$ sls wsgi command -c "pwd"
+/var/task
+
+$ cat script.sh
+#!/bin/bash
+echo "dlrow olleh" | rev
+
+$ sls wsgi command -f script.sh
+hello world
+```
+
+The `wsgi manage` command lets you execute Django management commands remotely:
+
+```
+$ sls wsgi manage -c "check --list-tags"
+admin
+caches
+database
+models
+staticfiles
+templates
+urls
+```
 
 ### Explicit routes
 
@@ -224,7 +301,7 @@ service: example
 
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.6
 
 plugins:
   - serverless-wsgi
@@ -250,9 +327,8 @@ custom:
 ### Custom domain names
 
 If you use custom domain names with API Gateway, you might have a base path that is
-at the beginning of your path, such as the stage (`/dev`, `/stage`, `/prod`). You
-can pass in an `API_GATEWAY_BASE_PATH` environment variable so your WSGI app can
-handle it correctly.
+at the beginning of your path, such as the stage (`/dev`, `/stage`, `/prod`). In this case, set
+the `API_GATEWAY_BASE_PATH` environment variable to let `serverless-wsgi` know.
 
 The example below uses the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager)
 plugin to handle custom domains in API Gateway:
@@ -262,7 +338,7 @@ service: example
 
 provider:
   name: aws
-  runtime: python2.7
+  runtime: python3.6
   environment:
     API_GATEWAY_BASE_PATH: ${self:custom.customDomain.basePath}
 
@@ -310,8 +386,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    print(request.environ['context'])
-    print(request.environ['event'])
+    print(request.environ['serverless.context'])
+    print(request.environ['serverless.event'])
 ```
 
 ### Text MIME types
@@ -319,7 +395,8 @@ def index():
 By default, all MIME types starting with `text/` and the following whitelist are sent
 through API Gateway in plain text. All other MIME types will have their response body
 base64 encoded (and the `isBase64Encoded` API Gateway flag set) in order to be
-delivered by API Gateway as binary data.
+delivered by API Gateway as binary data (remember to add any binary MIME types that
+you're using to the _Binary Support_ list in API Gateway).
 
 This is the default whitelist of plain text MIME types:
 
@@ -327,6 +404,7 @@ This is the default whitelist of plain text MIME types:
 - `application/javascript`
 - `application/xml`
 - `application/vnd.api+json`
+- `image/svg+xml`
 
 In order to add additional plain text MIME types to this whitelist, use the
 `textMimeTypes` configuration option:
@@ -364,7 +442,7 @@ import serverless_wsgi
 #
 # serverless_wsgi.TEXT_MIME_TYPES.append("application/custom+json")
 
-def handle(event, context):
+def handler(event, context):
     return serverless_wsgi.handle_request(app.app, event, context)
 ```
 

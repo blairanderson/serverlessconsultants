@@ -4,13 +4,13 @@ title: Serverless Version Tracker
 repo: danepowell/serverless-version-tracker
 homepage: 'https://github.com/danepowell/serverless-version-tracker'
 description: 'A serverless plugin for tracking deployed versions of your code.'
-stars: 1
+stars: 3
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 3
 issues: 0
 issues_trend: 
 issues_diff: 0

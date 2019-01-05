@@ -4,13 +4,13 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 374
+stars: 393
 stars_trend: 
 stars_diff: 0
-forks: 85
+forks: 86
 forks_trend: 
 forks_diff: 0
-watchers: 374
+watchers: 393
 issues: 57
 issues_trend: 
 issues_diff: 0
@@ -423,4 +423,4 @@ zipinfo .serverless/xxx.zip
  * [@dee-me-tree-or-love](https://github.com/dee-me-tree-or-love) - the `slim` package option
  * [@alexjurkiewicz](https://github.com/alexjurkiewicz) - [docs about docker workflows](#native-code-dependencies-during-build)
  * [@andrewfarley](https://github.com/andrewfarley) - Implemented download caching and static caching
- * [@bweigel](https://github.com/bweigel) - adding the `slimPatternsAppendDefaults` option & fixing per-function packaging when some functions don't have requirements
+ * [@bweigel](https://github.com/bweigel) - adding the `slimPatternsAppendDefaults` option & fixing per-function packaging when some functions don't have requirements & Porting tests from bats to js!

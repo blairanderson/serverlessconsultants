@@ -4,13 +4,13 @@ title: Serverless Apib Validator
 repo: onlicar/serverless-apib-validator
 homepage: 'https://github.com/onlicar/serverless-apib-validator'
 description: 'Validate that an API Blueprint has full coverage over a Serverless config'
-stars: 0
+stars: 1
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 0
+watchers: 1
 issues: 0
 issues_trend: 
 issues_diff: 0

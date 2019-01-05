@@ -11,7 +11,7 @@ forks: 2
 forks_trend: 
 forks_diff: 0
 watchers: 19
-issues: 0
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -115,3 +115,7 @@ defaults to Epsagon's regular lambda wrapper. available wrappers:
         - serverless-webpack
         - any-other-plugin
       ```
+* Is TypeScript supported?
+    * Yes! again, just make sure to specify this plugin first in your `serverless.yml`
+* Unable to import module `epsagon_handlers` error:
+    * During deployment, the plugin creates `epsagon_handlers/` dir to wrap the function. Please make sure this dir is not excluded somewhere.

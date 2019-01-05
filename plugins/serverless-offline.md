@@ -4,14 +4,14 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 1869
+stars: 1947
 stars_trend: 
 stars_diff: 0
-forks: 308
+forks: 317
 forks_trend: 
 forks_diff: 0
-watchers: 1869
-issues: 59
+watchers: 1947
+issues: 79
 issues_trend: 
 issues_diff: 0
 ---

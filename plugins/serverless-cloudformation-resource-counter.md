@@ -11,7 +11,7 @@ forks: 0
 forks_trend: 
 forks_diff: 0
 watchers: 2
-issues: 1
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -23,7 +23,7 @@ issues_diff: 0
 [![license](https://img.shields.io/github/license/drexler/serverless-cloudformation-resource-counter.svg)](https://github.com/drexler/serverless-cloudformation-resource-counter/blob/master/LICENSE.md)
 [![downloads](https://img.shields.io/npm/dt/serverless-cloudformation-resource-counter.svg)](https://www.npmjs.com/package/serverless-cloudformation-resource-counter)
 
-A [serverless](https://serverless.com) plugin to count the resources generated in the AWS CloudFormation stack after deployment.
+A [serverless](https://serverless.com) plugin to count the resources generated in the AWS CloudFormation stack after deployment. It provides an option to warn users when a preset number of resources have been created. This is particularly useful when trying the avoid the 200 resource limit set by CloudFormation.
 
 ## Usage
 
@@ -42,6 +42,9 @@ $ npm install serverless-cloudformation-resource-counter
 ```yaml
 plugins:
   - serverless-cloudformation-resource-counter
+
+custom:
+  warningThreshold: 13
 
 ```
 

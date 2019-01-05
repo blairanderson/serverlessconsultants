@@ -4,13 +4,13 @@ title: Serverless Plugin External Sns Events
 repo: silvermine/serverless-plugin-external-sns-events
 homepage: 'https://github.com/silvermine/serverless-plugin-external-sns-events'
 description: 'Add ability for functions to use existing or external SNS topics as an event source'
-stars: 25
+stars: 24
 stars_trend: 
 stars_diff: 0
 forks: 9
 forks_trend: 
 forks_diff: 0
-watchers: 25
+watchers: 24
 issues: 3
 issues_trend: 
 issues_diff: 0
@@ -19,10 +19,10 @@ issues_diff: 0
 
 # Serverless Plugin: External SNS Events
 
-[![Build Status](https://travis-ci.org/silvermine/serverless-plugin-external-sns-events.png?branch=master)](https://travis-ci.org/silvermine/serverless-plugin-external-sns-events)
+[![Build Status](https://travis-ci.org/silvermine/serverless-plugin-external-sns-events.svg?branch=master)](https://travis-ci.org/silvermine/serverless-plugin-external-sns-events)
 [![Coverage Status](https://coveralls.io/repos/github/silvermine/serverless-plugin-external-sns-events/badge.svg?branch=master)](https://coveralls.io/github/silvermine/serverless-plugin-external-sns-events?branch=master)
-[![Dependency Status](https://david-dm.org/silvermine/serverless-plugin-external-sns-events.png)](https://david-dm.org/silvermine/serverless-plugin-external-sns-events)
-[![Dev Dependency Status](https://david-dm.org/silvermine/serverless-plugin-external-sns-events/dev-status.png)](https://david-dm.org/silvermine/serverless-plugin-external-sns-events#info=devDependencies&view=table)
+[![Dependency Status](https://david-dm.org/silvermine/serverless-plugin-external-sns-events.svg)](https://david-dm.org/silvermine/serverless-plugin-external-sns-events)
+[![Dev Dependency Status](https://david-dm.org/silvermine/serverless-plugin-external-sns-events/dev-status.svg)](https://david-dm.org/silvermine/serverless-plugin-external-sns-events#info=devDependencies&view=table)
 
 
 ## What is it?

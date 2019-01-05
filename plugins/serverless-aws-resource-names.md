@@ -4,14 +4,14 @@ title: Serverless Plugin Aws Resource Names
 repo: concon121/serverless-plugin-aws-resource-names
 homepage: 'https://github.com/concon121/serverless-plugin-aws-resource-names'
 description: 'Serverless plugin to alter the default naming conventions for sls resources via a simple mapping file.'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 0
+watchers: 4
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
