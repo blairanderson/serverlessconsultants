@@ -7,13 +7,13 @@ description: 'Emulate AWS λ and API Gateway locally when developing your Server
 stars: 1947
 stars_trend: 
 stars_diff: 0
-forks: 317
-forks_trend: 
-forks_diff: 0
+forks: 319
+forks_trend: up
+forks_diff: 2
 watchers: 1947
-issues: 79
-issues_trend: 
-issues_diff: 0
+issues: 76
+issues_trend: down
+issues_diff: -3
 ---
 
 

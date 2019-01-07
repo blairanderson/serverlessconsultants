@@ -4,13 +4,13 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: 'Keep your lambdas warm during Winter.'
-stars: 349
-stars_trend: 
-stars_diff: 0
+stars: 351
+stars_trend: up
+stars_diff: 2
 forks: 49
 forks_trend: 
 forks_diff: 0
-watchers: 349
+watchers: 351
 issues: 8
 issues_trend: 
 issues_diff: 0

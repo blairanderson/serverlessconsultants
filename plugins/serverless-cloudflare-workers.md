@@ -4,16 +4,16 @@ title: Serverless Cloudflare Workers
 repo: cloudflare/serverless-cloudflare-workers
 homepage: 'https://github.com/cloudflare/serverless-cloudflare-workers'
 description: 'A serverless plugin allowing you to integrate with [Cloudflare Workers](https://cloudflareworkers.com/#12a9195720fe4ed660949efdbd9c0219:https://tutorial.cloudflareworkers.com)'
-stars: 18
-stars_trend: 
-stars_diff: 0
-forks: 8
-forks_trend: 
-forks_diff: 0
-watchers: 18
-issues: 1
-issues_trend: 
-issues_diff: 0
+stars: 19
+stars_trend: up
+stars_diff: 1
+forks: 9
+forks_trend: up
+forks_diff: 1
+watchers: 19
+issues: 3
+issues_trend: up
+issues_diff: 2
 ---
 
 
