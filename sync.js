@@ -1,13 +1,13 @@
 // Assigning modules to local variables
-var fs = require('fs');
-var request = require('request');
-var async = require('async');
-require('dotenv').config();
-var SERVERLESS_PLUGINS = '_data/serverless_plugins.json';
+var fs = require("fs");
+var request = require("request");
+var async = require("async");
+require("dotenv").config();
+var SERVERLESS_PLUGINS = "_data/serverless_plugins.json";
 
 // WE START HERE AND GIT A BUNCH OF CALLBACKS
 request(
-  'https://raw.githubusercontent.com/serverless/plugins/master/plugins.json',
+  "https://raw.githubusercontent.com/serverless/plugins/master/plugins.json",
   parseAndFetchRepoInfo
 );
 
@@ -24,10 +24,10 @@ function getRepoInfo(plugin, callback) {
     function(err, resp, last_month_data) {
       if (err) {
         console.log(err);
-        callback(null, Object.assign(plugin, { 'last-month': 0 }));
+        callback(null, Object.assign(plugin, { "last-month": 0 }));
       } else {
         var newDat = Object.assign(plugin, {
-          'last-month': JSON.parse(last_month_data).downloads || 0
+          "last-month": JSON.parse(last_month_data).downloads || 0
         });
         return callback(null, newDat);
       }
@@ -59,9 +59,9 @@ function asyncDone(e, plugins) {
     fs.writeFile(
       SERVERLESS_PLUGINS,
       JSON.stringify(plugins, null, 2),
-      'utf8',
+      "utf8",
       function() {
-        console.log('done');
+        console.log("done");
       }
     );
   }
@@ -73,9 +73,9 @@ function asyncDone(e, plugins) {
 
 function createFile(filedat) {
   const coname = filedat.url
-    .split('://')[1]
-    .replace('www.', '')
-    .split('.')[0];
+    .split("://")[1]
+    .replace("www.", "")
+    .split(".")[0];
 
   const filename = `./_consultants/${coname}.md`;
 
@@ -86,16 +86,16 @@ function createFile(filedat) {
   } \n---`;
 
   fs.unlinkSync(filename);
-  fs.open(filename, 'r', function(err, fd) {
+  fs.open(filename, "r", function(err, fd) {
     if (err) {
       fs.writeFile(filename, data, function(err) {
         if (err) {
           console.log(err);
         }
-        console.log('The file was saved!');
+        console.log("The file was saved!");
       });
     } else {
-      console.log('The file exists!');
+      console.log("The file exists!");
     }
   });
 }

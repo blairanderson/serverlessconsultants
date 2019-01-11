@@ -101532,5 +101532,24 @@
     },
     "last": null,
     "current": "2019-01-11"
+  },
+  "colynb/serverless-dotenv-plugin": {
+    "topics": [
+
+    ],
+    "2019-01-11": {
+      "size": 28,
+      "stargazers_count": 47,
+      "watchers_count": 47,
+      "forks_count": 17,
+      "open_issues_count": 9,
+      "forks": 17,
+      "open_issues": 9,
+      "watchers": 47,
+      "network_count": 17,
+      "subscribers_count": 2
+    },
+    "last": null,
+    "current": "2019-01-11"
   }
 }
