@@ -1,8 +1,8 @@
 ---
 layout: plugin
 title: Serverless Kms Secrets
-repo: SC5/serverless-kms-secrets
-homepage: 'https://github.com/SC5/serverless-kms-secrets'
+repo: nordcloud/serverless-kms-secrets
+homepage: 'https://github.com/nordcloud/serverless-kms-secrets'
 description: 'Allows to easily encrypt and decrypt secrets using KMS from the serverless CLI'
 stars: 0
 stars_trend: 

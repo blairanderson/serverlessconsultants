@@ -164,7 +164,7 @@
   {
     "name": "serverless-kms-secrets",
     "description": "Allows to easily encrypt and decrypt secrets using KMS from the serverless CLI",
-    "githubUrl": "https://github.com/SC5/serverless-kms-secrets",
+    "githubUrl": "https://github.com/nordcloud/serverless-kms-secrets",
     "last-month": 7083
   },
   {
