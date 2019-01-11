@@ -4,13 +4,13 @@ title: Serverless Oncall
 repo: softprops/serverless-oncall
 homepage: 'https://github.com/softprops/serverless-oncall'
 description: 'Easily manage oncall for your serverless services'
-stars: 5
-stars_trend: 
-stars_diff: 0
+stars: 7
+stars_trend: up
+stars_diff: 2
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 7
 issues: 3
 issues_trend: 
 issues_diff: 0

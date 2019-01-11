@@ -153,7 +153,7 @@ Using the command `serverless remove` will produce an error:
   Command not confirmed. Use [--confirm] or change the configuration of the plugin.
 ```
 
-Using the command `serverless remove --confirm` will suceed!
+Using the command `serverless remove --confirm` will succeed!
 
 ## License
 

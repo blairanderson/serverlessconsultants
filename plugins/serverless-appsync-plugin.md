@@ -4,16 +4,16 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 372
-stars_trend: 
-stars_diff: 0
-forks: 73
-forks_trend: 
-forks_diff: 0
-watchers: 372
-issues: 34
-issues_trend: 
-issues_diff: 0
+stars: 377
+stars_trend: up
+stars_diff: 5
+forks: 75
+forks_trend: up
+forks_diff: 2
+watchers: 377
+issues: 33
+issues_trend: down
+issues_diff: -1
 ---
 
 
@@ -95,7 +95,7 @@ custom:
     # if AMAZON_COGNITO_USER_POOLS
     userPoolConfig:
       awsRegion: # defaults to provider region
-      defaultAction: # ALLOW
+      defaultAction: # required # ALLOW or DENY
       userPoolId: # required # user pool ID
       appIdClientRegex: # optional
     # if OPENID_CONNECT
@@ -215,7 +215,7 @@ Then provide the names of the functions in the mappingTemplate to match the name
 
 ```
 custom:
-  appSync: 
+  appSync:
     mappingTemplates:
       - type: Query
         field: testPipelineQuery
@@ -223,7 +223,7 @@ custom:
         response: 'common-response.vtl'
         kind: PIPELINE
         functions:
-          - authorizeFunction 
+          - authorizeFunction
           - fetchDataFunction
     functionConfigurations:
       - dataSource: graphqlLambda

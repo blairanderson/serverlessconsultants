@@ -7,13 +7,13 @@ description: 'Store output from your AWS CloudFormation Stack in JSON/YAML/TOML 
 stars: 50
 stars_trend: 
 stars_diff: 0
-forks: 16
-forks_trend: 
-forks_diff: 0
+forks: 15
+forks_trend: down
+forks_diff: -1
 watchers: 50
-issues: 14
-issues_trend: 
-issues_diff: 0
+issues: 15
+issues_trend: up
+issues_diff: 1
 ---
 
 

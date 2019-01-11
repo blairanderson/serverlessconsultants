@@ -7,9 +7,9 @@ description: 'Build and include custom stateless libraries for any language'
 stars: 52
 stars_trend: up
 stars_diff: 1
-forks: 10
-forks_trend: 
-forks_diff: 0
+forks: 11
+forks_trend: up
+forks_diff: 1
 watchers: 52
 issues: 3
 issues_trend: 

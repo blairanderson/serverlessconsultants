@@ -4,16 +4,16 @@ title: Serverless Rust
 repo: softprops/serverless-rust
 homepage: 'https://github.com/softprops/serverless-rust'
 description: 'Deploy Rustlang applications to AWS Lambda'
-stars: 57
-stars_trend: 
-stars_diff: 0
+stars: 62
+stars_trend: up
+stars_diff: 5
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 57
-issues: 4
-issues_trend: 
-issues_diff: 0
+watchers: 62
+issues: 5
+issues_trend: up
+issues_diff: 1
 ---
 
 

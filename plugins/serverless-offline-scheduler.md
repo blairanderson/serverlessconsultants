@@ -7,13 +7,13 @@ description: 'Runs scheduled functions offline while integrating with serverless
 stars: 54
 stars_trend: 
 stars_diff: 0
-forks: 15
-forks_trend: 
-forks_diff: 0
+forks: 16
+forks_trend: up
+forks_diff: 1
 watchers: 54
-issues: 2
-issues_trend: 
-issues_diff: 0
+issues: 1
+issues_trend: down
+issues_diff: -1
 ---
 
 

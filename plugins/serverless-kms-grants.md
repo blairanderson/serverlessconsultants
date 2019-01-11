@@ -4,13 +4,13 @@ title: Serverless Kms Grants
 repo: deep-security/serverless-kms-grants
 homepage: 'https://github.com/deep-security/serverless-kms-grants'
 description: 'Create and revoke grants for AWS Lambda functions to use KMS keys.'
-stars: 0
+stars: 1
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 0
+watchers: 1
 issues: 0
 issues_trend: 
 issues_diff: 0

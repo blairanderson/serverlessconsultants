@@ -4,16 +4,16 @@ title: Serverless Plugin Canary Deployments
 repo: davidgf/serverless-plugin-canary-deployments
 homepage: 'https://github.com/davidgf/serverless-plugin-canary-deployments'
 description: 'A Serverless plugin to implement canary deployments of Lambda functions'
-stars: 122
+stars: 123
 stars_trend: up
-stars_diff: 1
+stars_diff: 2
 forks: 19
 forks_trend: 
 forks_diff: 0
-watchers: 122
-issues: 4
-issues_trend: 
-issues_diff: 0
+watchers: 123
+issues: 5
+issues_trend: up
+issues_diff: 1
 ---
 
 

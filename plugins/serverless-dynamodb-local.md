@@ -4,16 +4,16 @@ title: Serverless Dynamodb Local
 repo: 99xt/serverless-dynamodb-local
 homepage: 'https://github.com/99xt/serverless-dynamodb-local'
 description: 'Serverless Dynamodb Local Plugin - Allows to run dynamodb locally for serverless'
-stars: 289
+stars: 293
 stars_trend: up
-stars_diff: 2
-forks: 104
-forks_trend: 
-forks_diff: 0
-watchers: 289
-issues: 51
+stars_diff: 6
+forks: 107
+forks_trend: up
+forks_diff: 3
+watchers: 293
+issues: 53
 issues_trend: up
-issues_diff: 1
+issues_diff: 3
 ---
 
 

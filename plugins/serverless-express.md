@@ -4,13 +4,13 @@ title: Serverless Express
 repo: mikestaub/serverless-express
 homepage: 'https://github.com/mikestaub/serverless-express'
 description: 'Making express app development compatible with serverless framework.'
-stars: 65
-stars_trend: 
-stars_diff: 0
+stars: 67
+stars_trend: up
+stars_diff: 2
 forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 65
+watchers: 67
 issues: 1
 issues_trend: 
 issues_diff: 0
