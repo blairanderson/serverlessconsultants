@@ -3,6 +3,6 @@
 layout: topic
 topic: minify
 title: minify Serverless Plugins
-description: '1 minify ServerLess Plugins'
-count: 1
+description: '2 minify ServerLess Plugins'
+count: 2
 ---

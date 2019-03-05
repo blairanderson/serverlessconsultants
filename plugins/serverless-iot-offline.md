@@ -4,13 +4,13 @@ title: Serverless Iot Offline
 repo: mitipi/serverless-iot-offline
 homepage: 'https://github.com/mitipi/serverless-iot-offline'
 description: 'Serverless plugin that emulates AWS IoT service'
-stars: 1
+stars: 3
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 3
 issues: 0
 issues_trend: 
 issues_diff: 0

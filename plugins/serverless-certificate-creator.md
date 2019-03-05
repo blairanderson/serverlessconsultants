@@ -4,13 +4,13 @@ title: Serverless Certificate Creator
 repo: schwamster/serverless-certificate-creator
 homepage: 'https://github.com/schwamster/serverless-certificate-creator'
 description: 'This serverless plugin creates certificates that you need for your custom domains in API Gateway.'
-stars: 6
+stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 6
+watchers: 8
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -45,7 +45,8 @@ open serverless.yml and add the following:
                 idempotencyToken: 'abcsomedomainio' //optional
                 hostedZoneName: 'somedomain.io.' //required if hostedZoneId is not set
                 hostedZoneId: 'XXXXXXXXX' //required if hostedZoneName is not set
-                writeCertInfoToFile: false // optional default is false. if you set it to true you will get a new file called cert-info.yml (after executing serverless create-cert), that contains certificate info that you can use in your deploy pipeline
+                writeCertInfoToFile: false // optional default is false. if you set it to true you will get a new file (after executing serverless create-cert), that contains certificate info that you can use in your deploy pipeline
+                certInfoFileName: 'cert-info.yml' // optional, only used when writeCertInfoToFile is set to true. It sets the name of the file containing the cert info
                 region: eu-west-1 // optional - default is us-east-1 which is required for custom api gateway domains of Type Edge (default)
 
 

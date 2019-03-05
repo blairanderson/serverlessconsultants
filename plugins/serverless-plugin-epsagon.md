@@ -4,14 +4,14 @@ title: Serverless Plugin Epsagon
 repo: epsagon/serverless-plugin-epsagon
 homepage: 'https://github.com/epsagon/serverless-plugin-epsagon'
 description: 'Distributed tracing that helps you monitor and troubleshoot your serverless applications.'
-stars: 19
+stars: 23
 stars_trend: 
 stars_diff: 0
-forks: 3
-forks_trend: up
-forks_diff: 1
-watchers: 19
-issues: 1
+forks: 6
+forks_trend: 
+forks_diff: 0
+watchers: 23
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---

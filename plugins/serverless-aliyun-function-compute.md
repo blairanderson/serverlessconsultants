@@ -4,14 +4,14 @@ title: Serverless Aliyun Function Compute
 repo: aliyun/serverless-aliyun-function-compute
 homepage: 'https://github.com/aliyun/serverless-aliyun-function-compute'
 description: 'Serverless Alibaba Cloud Function Compute Plugin'
-stars: 64
-stars_trend: up
-stars_diff: 1
-forks: 8
+stars: 68
+stars_trend: 
+stars_diff: 0
+forks: 10
 forks_trend: 
 forks_diff: 0
-watchers: 64
-issues: 17
+watchers: 68
+issues: 19
 issues_trend: 
 issues_diff: 0
 ---

@@ -7,11 +7,11 @@ description: 'See inside your Lambda functions with high fidelity metrics and mo
 stars: 33
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 6
 forks_trend: 
 forks_diff: 0
 watchers: 33
-issues: 13
+issues: 14
 issues_trend: 
 issues_diff: 0
 ---

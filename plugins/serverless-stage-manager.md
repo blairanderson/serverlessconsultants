@@ -4,14 +4,14 @@ title: Serverless Stage Manager
 repo: jeremydaly/serverless-stage-manager
 homepage: 'https://github.com/jeremydaly/serverless-stage-manager'
 description: 'Super simple Serverless plugin for validating stage names before deployment'
-stars: 16
+stars: 19
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 16
-issues: 0
+watchers: 19
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

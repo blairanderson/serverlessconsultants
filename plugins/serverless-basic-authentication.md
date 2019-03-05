@@ -4,16 +4,16 @@ title: Serverless Basic Authentication
 repo: svdgraaf/serverless-basic-authentication
 homepage: 'https://github.com/svdgraaf/serverless-basic-authentication'
 description: 'Serverless Plugin for adding Basic Authentication to your api'
-stars: 7
+stars: 8
 stars_trend: 
 stars_diff: 0
-forks: 3
-forks_trend: up
-forks_diff: 1
-watchers: 7
-issues: 3
-issues_trend: up
-issues_diff: 1
+forks: 5
+forks_trend: 
+forks_diff: 0
+watchers: 8
+issues: 2
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -64,7 +64,7 @@ provider:
     - platypus
 ```
 
-For each function which is marked as `private: true`, the custom authenticator will be inserted, like so:
+For each function that responds to `http` events and is marked as `private: true`, the custom authenticator will be inserted, like so:
 
 ```
 functions:

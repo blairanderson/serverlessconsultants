@@ -4,13 +4,13 @@ title: Serverless Plugin Cloudwatch Dashboard
 repo: codecentric/serverless-plugin-cloudwatch-dashboard
 homepage: 'https://github.com/codecentric/serverless-plugin-cloudwatch-dashboard'
 description: 'Serverless plugin to generate AWS CloudWatch dashboard for AWS Lambda functions'
-stars: 2
-stars_trend: up
-stars_diff: 1
+stars: 3
+stars_trend: 
+stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 3
 issues: 0
 issues_trend: 
 issues_diff: 0

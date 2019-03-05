@@ -4,27 +4,30 @@ title: Serverless Plugin Warmup
 repo: FidelLimited/serverless-plugin-warmup
 homepage: 'https://github.com/FidelLimited/serverless-plugin-warmup'
 description: 'Keep your lambdas warm during Winter.'
-stars: 362
-stars_trend: up
-stars_diff: 13
-forks: 50
-forks_trend: up
-forks_diff: 1
-watchers: 362
-issues: 10
-issues_trend: up
-issues_diff: 2
+stars: 412
+stars_trend: 
+stars_diff: 0
+forks: 55
+forks_trend: 
+forks_diff: 0
+watchers: 412
+issues: 5
+issues_trend: 
+issues_diff: 0
 ---
 
 
-Serverless WarmUP Plugin ♨
+Serverless WarmUp Plugin ♨
 =============================
-[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![npm version](https://badge.fury.io/js/serverless-plugin-warmup.svg)](https://badge.fury.io/js/serverless-plugin-warmup)
-[![npm downloads](https://img.shields.io/npm/dm/serverless-plugin-warmup.svg)](https://www.npmjs.com/package/serverless-plugin-warmup)
+[![Serverless][serverless-badge]](serverless-badge-url)
+[![npm version][npm-version-badge]][npm-version-badge-url]
+[![npm monthly downloads][npm-downloads-badge]][npm-version-badge-url]
+[![Build Status][travis-badge]][travis-badge-url]
+[![Coverage Status][coveralls-badge]][coveralls-badge-url]
+[![Dependency Status][dev-badge]][dev-badge-url]
 [![license](https://img.shields.io/npm/l/serverless-plugin-warmup.svg)](https://raw.githubusercontent.com/FidelLimited/serverless-plugin-warmup/master/LICENSE)
 
-Keep your lambdas warm during Winter.
+Keep your lambdas warm during winter.
 
 **Requirements:**
 * Serverless *v1.12.x* or higher (Recommended *v1.33.x* or higher because of [this](https://github.com/FidelLimited/serverless-plugin-warmup/pull/69)).
@@ -32,129 +35,51 @@ Keep your lambdas warm during Winter.
 
 ## How it works
 
-WarmUP solves *cold starts* by creating one schedule event lambda that invokes all the service lambdas you select in a configured time interval (default: 5 minutes) or a specific time, forcing your containers to stay alive.
+WarmUp solves *cold starts* by creating a scheduled lambda that invokes all the selected service's lambdas in a configured time interval (default: 5 minutes) and forcing your containers to stay warm.
 
-## Setup
-
-
-### Installation
+## Installation
 
 Install via npm in the root of your Serverless service:
 
 ```sh
-npm install serverless-plugin-warmup --save-dev
+npm install --save-dev serverless-plugin-warmup
 ```
 
-Add the plugin to the `plugins` array in your Serverless `serverless.yml`:
+Add the plugin to the `plugins` array in your Serverless `serverless.yaml`:
 
-```yml
+```yaml
 plugins:
   - serverless-plugin-warmup
 ```
 
-### Global configuration
+## Configuration
 
-Add a `warmup.enabled` property to custom to enable/disable the warm up process by default for all the functions
-
-Enable WarmUp in general:
-
-```yml
-custom:
-  warmup:
-    enabled: true
-```
-
-For a specific stage:
-
-```yml
-custom:
-  warmup:
-    enabled: production
-```
-
-For several stages:
-
-```yml
-custom:
-  warmup:
-    enabled: 
-      - production
-      - staging
-```
-
-#### Function-specific configuration
-
-You can override the global `enabled` configuration on any function.
-
-Enable WarmUp for a specific function
-
-```yml
-functions:
-  hello:
-    warmup:
-      enabled: true
-```
-
-For a specific stage:
-
-```yml
-functions:
-  hello:
-    warmup:
-      enabled: production
-```
-
-For several stages:
-
-```yml
-functions:
-  hello:
-    warmup:
-      enabled:
-        - production
-        - staging
-```
-
-Do not warm-up a function if `enabled` is set to false:
- ```yml
-custom:
-  warmup:
-    enabled: true
-
-...
-
-functions:
-  hello:
-    warmup:
-      enabled: false
-```
-
-### Other Options
-
-#### Global options
+Most options are set under `custom.warmup` in the `serverless.yaml` file.
 
 * **folderName** (default `_warmup`)
 * **cleanFolder** (default `true`)
 * **name** (default `${service}-${stage}-warmup-plugin`)
 * **role** (default to role in the provider)
 * **tags** (default to serverless default tags)
-* **schedule** (default `rate(5 minutes)`) - More examples [here](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
+* **vpc** (default to vpc in provider, can be set to `false` to deploy the warmup function outside of VPC)
 * **memorySize** (default `128`)
+* **events** (default `- schedule: rate(5 minutes)`, can be any [Serverless event](https://serverless.com/framework/docs/providers/aws/events/))
+* **package** (default `package: { individually: true, exclude: ['**'], include: ['_warmup/**'] }`)
 * **timeout** (default `10` seconds)
 * **prewarm** (default `false`)
 
-#### Options that can be overridden per function
+But there are some options which can also be set under `custom.warmup` to be applied to all lambdas to be warmed up or can be overridden on each individual lambda.
 
-* **enabled** (default `false`)
-* **source** (default `{ "source": "serverless-plugin-warmup" }`)
-* **sourceRaw** (default `false`)
+* **enabled** (default `false`,an be a boolean, a stage or a list of stages.)
+* **payload** (default `{ "source": "serverless-plugin-warmup" }`, payload will be stringified)
+* **payloadRaw** (default `false`)
 * **concurrency** (default `1`)
 
-```yml
+```yaml
 custom:
   warmup:
-    enabled: true // Whether to warm up functions by default or not
-    folderName: '_warmup' // Name of the folder created for the generated warmup 
+    enabled: true # Whether to warm up functions by default or not
+    folderName: '_warmup' # Name of the folder created for the generated warmup 
     cleanFolder: false
     memorySize: 256
     name: 'make-them-pop'
@@ -162,32 +87,86 @@ custom:
     tags:
       Project: foo
       Owner: bar 
-    schedule: 'cron(0/5 8-17 ? * MON-FRI *)' // Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
+    vpc: false
+    events:
+      - schedule: 'cron(0/5 8-17 ? * MON-FRI *)' # Run WarmUp every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
+    package:
+      individually: true
+      exclude: # exclude additional binaries that are included at the serverless package level
+        - ../**
+        - ../../**
+      include:
+        - ./**
     timeout: 20
-    prewarm: true // Run WarmUp immediately after a deploymentlambda
-    source: '{ "source": "my-custom-payload" }'
-    sourceRaw: true // Won't JSON.stringify() the source, may be necessary for Go/AppSync deployments
-    concurrency: 5 // Warm up 5 concurrent instances
+    prewarm: true # Run WarmUp immediately after a deploymentlambda
+    payload: 
+      source: my-custom-source
+      other: 20
+    payloadRaw: true # Won't JSON.stringify() the payload, may be necessary for Go/AppSync deployments
+    concurrency: 5 # Warm up 5 concurrent instances
+    
+functions:
+  myColdfunction:
+    handler: 'myColdfunction.handler'
+    events:
+      - http:
+          path: my-cold-function
+          method: post
+    warmup:
+      enabled: false
+
+  myLowConcurrencyFunction:
+    handler: 'myLowConcurrencyFunction.handler'
+    events:
+      - http:
+          path: my-low-concurrency-function
+          method: post
+    warmup:
+      payload: different-source-only-for-this-lambda
+      concurrency: 1
+   
+  myProductionOnlyFunction:
+    handler: 'myProductionOnlyFunction.handler'
+    events:
+      - http:
+          path: my-production-only-function
+          method: post
+    warmup:
+      enabled: prod
+      
+   myDevAndStagingOnlyFunction:
+    handler: 'myDevAndStagingOnlyFunction.handler'
+    events:
+      - http:
+          path: my-dev-and-staging-only-function
+          method: post
+    warmup:
+      enabled:
+        - dev
+        - staging
 ```
 
-**Options should be tweaked depending on:**
+##### Options should be tweaked depending on:
+
 * Number of lambdas to warm up
 * Day cold periods
 * Desire to avoid cold lambdas after a deployment
 
-**Lambdas invoked by WarmUP will have event source `serverless-plugin-warmup` (unless otherwise specified above):**
 
-```json
-{
-  "Event": {
-    "source": "serverless-plugin-warmup"
-  }
-}
-```
+#### Legacy options
+
+Over time some options have been removed form the pluging.
+For now, we keep backwards compatibility so they still work.
+However, they are listed here only to facilitate upgrading the pluging and we strongly recommend switching to the options defined above as soon as possible.
+
+* **default** Has been renamed to `enabled`
+* **schedule** `schedule: rate(5 minutes)` is equivalent to `events: - schedule: rate(5 minutes)`.
+* **source** Has been renamed to `payload`
+* **sourceRaw** Has been renamed to `payloadRaw`
 
 ### Permissions
 
-WarmUP requires some permissions to be able to `invoke` lambdas.
+WarmUp requires some permissions to be able to `invoke` your lambdas.
 
 ```yaml
 custom:
@@ -197,7 +176,8 @@ custom:
     memorySize: 256
     name: 'make-them-pop'
     role:  myCustRole0
-    schedule: 'cron(0/5 8-17 ? * MON-FRI *)' # Run WarmUP every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
+    events:
+      - schedule: 'cron(0/5 8-17 ? * MON-FRI *)' # Run WarmUp every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
     timeout: 20
     prewarm: true # Run WarmUp immediately after a deployment
     tags:
@@ -279,42 +259,67 @@ provider:
 If using pre-warm, the deployment user also needs a similar policy so it can run the WarmUp lambda.
 
 
-#### On the function side
+## On the function side
 
-Add an early callback call when the event source is `serverless-plugin-warmup`. You should do this early exit before running your code logic, it will save your execution duration and cost:
+Lambdas invoked by WarmUp will have the event source `serverless-plugin-warmup` (unless otherwise specified using the `payload` option):
+
+```json
+{
+  "Event": {
+    "source": "serverless-plugin-warmup"
+  }
+}
+```
+
+To minimize cost and avoid running your lambda unnecessarily, you should add an early return call before your lambda logic when that payload is received.
 
 ```javascript
-module.exports.lambdaToWarm = function(event, context, callback) {
-  /** Immediate response for WarmUP plugin */
+// Using the Promise style
+module.exports.lambdaToWarm = async function(event, context) {
+  /** Immediate response for WarmUp plugin */
   if (event.source === 'serverless-plugin-warmup') {
-    console.log('WarmUP - Lambda is warm!')
+    console.log('WarmUp - Lambda is warm!');
+    return 'Lambda is warm!';
+  }
+
+  ... add lambda logic after
+}
+
+// Using the Callback style
+module.exports.lambdaToWarm = function(event, context, callback) {
+  /** Immediate response for WarmUp plugin */
+  if (event.source === 'serverless-plugin-warmup') {
+    console.log('WarmUp - Lambda is warm!')
     return callback(null, 'Lambda is warm!')
   }
 
   ... add lambda logic after
 }
-```
-You can also check for the warmp event using the `context` variable. This could be useful if you are handling the raw input and output streams:
 
-```javascript
-...
+// Using context.
+// This could be useful if you are handling the raw input and output streams.
+module.exports.lambdaToWarm = async function(event, context) {
+  /** Immediate response for WarmUp plugin */
+  if (context.custom.source === 'serverless-plugin-warmup') {
+    console.log('WarmUp - Lambda is warm!');
+    return 'Lambda is warm!';
+  }
 
-if(context.custom.source === 'serverless-plugin-warmup'){
-  console.log('WarmUP - Lambda is warm!')
-  return callback(null, 'Lambda is warm!')
+  ... add lambda logic after
 }
-
-...
 ```
-If you're using the `concurrency` option you might consider adding a slight delay before returning when warming up to ensure your function doesn't return before all concurrent requests have been started:
+
+If you're using the `concurrency` option you might want to add a slight delay before returning on warmup calls to ensure that your function doesn't return before all concurrent requests have been started:
 
 ```javascript
-module.exports.lambdaToWarm = async (event) => {
+module.exports.lambdaToWarm = async (event, context) => {
   if (event.source === 'serverless-plugin-warmup') {
-    /** Slightly delayed (25ms) response for WarmUP plugin to ensure concurrent invocation */
-    await new Promise(r => setTimeout(r, 25))
-    console.log('WarmUP - Lambda is warm!')
-    return
+    console.log('WarmUp - Lambda is warm!');
+    /** Slightly delayed (25ms) response 
+    	to ensure concurrent invocation */
+    await new Promise(r => setTimeout(r, 25));
+    return 'Lambda is warm!';
+    
   }
 
   ... add lambda logic after
@@ -322,34 +327,31 @@ module.exports.lambdaToWarm = async (event) => {
 ```
 ## Deployment
 
-Once everything is configured WarmUP will run on SLS `deploy`.
-
-```sh
-serverless deploy
-```
+WarmUp supports `serverless deploy`.
 
 ## Packaging
-WarmUp also runs on SLS `package`.
 
-If you are doing your own [package artifact](https://serverless.com/framework/docs/providers/aws/guide/packaging#artifact) set the `cleanFolder` option to `false` and run
-```sh
-serverless package
-```
+WarmUp supports `serverless package`.
 
-This will allow you to extract the `warmup` NodeJS lambda file from the `_warmup` folder and add it in your custom artifact logic.
+By default, the WarmUp function is packaged individually and it uses a folder named `_warmup` to store duiring the packaging process, which is deleted at the end of the process.
+
+If you are doing your own [package artifact](https://serverless.com/framework/docs/providers/aws/guide/packaging#artifact) you can set the `cleanFolder` option to `false` and include the `_warmup` folder in your custom artifact.
 
 ## Gotchas
 
-If you are deploying to a VPC, you need to use private subnets with a Network Address Translation (NAT) gateway (http://docs.aws.amazon.com/lambda/latest/dg/vpc.html). WarmUp requires this so it can call the other lambdas but this is applicable to any lambda that needs access to the public internet or to any other AWS service.
+The WarmUp function use normal calls to the AWS SDK in order to keep your lambdas warm.
+By deafult, the WarmUp function is deployed outside of any VPC so it can reach AWS API.
+If you use the VPC option to deploy your WarmUp function to a VPC subnet it will need internet access. You can do it by using an [Internet Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html) or a [Network Address Translation (NAT) gateway](http://docs.aws.amazon.com/lambda/latest/dg/vpc.html). 
 
 ## Cost
 
-Lambda pricing [here](https://aws.amazon.com/lambda/pricing/). CloudWatch pricing [here](https://aws.amazon.com/cloudwatch/pricing/). You can use [AWS Lambda Pricing Calculator](https://s3.amazonaws.com/lambda-tools/pricing-calculator.html) to check how much will cost you monthly.
+You can check the Lambda [pricing](https://aws.amazon.com/lambda/pricing/) and CloudWatch [pricing](https://aws.amazon.com/cloudwatch/pricing/) or can use the [AWS Lambda Pricing Calculator](https://s3.amazonaws.com/lambda-tools/pricing-calculator.html) to estimate the monthly cost
 
 #### Example
 
-Free Tier not included + Default WarmUP options + 10 lambdas to warm, each with `memorySize = 1024` and `duration = 10`:
-* WarmUP: runs 8640 times per month = $0.18
+If you want to warm 10 functions, each with `memorySize = 1024` and `duration = 10`, using the default settings (and we ignore the free tier):
+
+* WarmUp: runs 8640 times per month = $0.18
 * 10 warm lambdas: each invoked 8640 times per month = $14.4
 * Total = $14.58
 
@@ -362,8 +364,21 @@ Help us making this plugin better and future proof.
 * Clone the code
 * Install the dependencies with `npm install`
 * Create a feature branch `git checkout -b new_feature`
-* Lint with standard `npm run lint`
+* Add your code and add tests if you implement a new feature
+* Validate your changes `npm run lint` and `npm test` (or `npm run test-with-coverage`)
 
 ## License
 
 This software is released under the MIT license. See [the license file](LICENSE) for more details.
+
+[serverless-badge]: http://public.serverless.com/badges/v3.svg
+[serverless-badge-url]: http://www.serverless.com
+[npm-version-badge]: https://badge.fury.io/js/serverless-plugin-warmup.svg
+[npm-version-badge-url]: https://www.npmjs.com/package/serverless-plugin-warmup
+[npm-downloads-badge]: https://img.shields.io/npm/dm/serverless-plugin-warmup.svg
+[travis-badge]: https://travis-ci.org/FidelLimited/serverless-plugin-warmup.svg
+[travis-badge-url]: https://travis-ci.org/FidelLimited/serverless-plugin-warmup
+[coveralls-badge]: https://coveralls.io/repos/FidelLimited/serverless-plugin-warmup/badge.svg?branch=master
+[coveralls-badge-url]: https://coveralls.io/r/FidelLimited/serverless-plugin-warmup?branch=master
+[dev-badge]: https://david-dm.org/FidelLimited/serverless-plugin-warmup.svg
+[dev-badge-url]: https://david-dm.org/FidelLimited/serverless-plugin-warmup

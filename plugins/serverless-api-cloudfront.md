@@ -4,14 +4,14 @@ title: Serverless Api Cloudfront
 repo: Droplr/serverless-api-cloudfront
 homepage: 'https://github.com/Droplr/serverless-api-cloudfront'
 description: 'Plugin that adds CloudFront distribution in front of your API Gateway for custom domain, CDN caching and access log.'
-stars: 90
-stars_trend: up
-stars_diff: 2
-forks: 21
+stars: 101
+stars_trend: 
+stars_diff: 0
+forks: 24
 forks_trend: 
 forks_diff: 0
-watchers: 90
-issues: 11
+watchers: 101
+issues: 7
 issues_trend: 
 issues_diff: 0
 ---
@@ -76,6 +76,7 @@ custom:
       - page
       - per_page
     priceClass: PriceClass_100
+    minimumProtocolVersion: TLSv1
 ```
 
 ### Notes
@@ -95,11 +96,14 @@ cookies:
   - SecondCookieName
 ```
 
-* `headers` can be *all*, *none* (default) or a list:
+* [`headers`][headers-default-cache] can be *all*, *none* (default) or a list of headers ([see CloudFront custom behaviour][headers-list]):
 
 ```
 headers: all
 ```
+
+[headers-default-cache]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-forwardedvalues
+[headers-list]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior
 
 * `querystring` can be *all* (default), *none* or a list, in which case all querystring parameters are forwarded, but cache is based on the list:
 
@@ -115,3 +119,26 @@ priceClass: PriceClass_All
 ```
 
 [price-class]: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html#cloudfront-GetDistributionConfig-response-PriceClass
+
+* [`minimumProtocolVersion`][minimum-protocol-version] can be `TLSv1` (default), `TLSv1_2016`, `TLSv1.1_2016`, `TLSv1.2_2018` or `SSLv3`:
+
+
+```
+minimumProtocolVersion: TLSv1
+```
+
+[minimum-protocol-version]: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-MinimumProtocolVersion
+
+### IAM Policy
+
+In order to make this plugin work as expected a few additional IAM Policies might be needed on your AWS profile.
+
+More specifically this plugin needs the following policies attached:
+
+* `cloudfront:CreateDistribution`
+* `cloudfront:GetDistribution`
+* `cloudfront:UpdateDistribution`
+* `cloudfront:DeleteDistribution`
+* `cloudfront:TagResource`
+
+You can read more about IAM profiles and policies in the [Serverless documentation](https://serverless.com/framework/docs/providers/aws/guide/credentials#creating-aws-access-keys).

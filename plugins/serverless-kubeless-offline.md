@@ -4,14 +4,14 @@ title: Serverless Kubeless Offline
 repo: usefulio/serverless-kubeless-offline
 homepage: 'https://github.com/usefulio/serverless-kubeless-offline'
 description: 'Simulates Kubeless NodeJS runtimes to run/call your functions offline using the Serverless Framework.'
-stars: 2
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 2
-issues: 0
+watchers: 4
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

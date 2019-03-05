@@ -4,16 +4,16 @@ title: Serverless Rust
 repo: softprops/serverless-rust
 homepage: 'https://github.com/softprops/serverless-rust'
 description: 'Deploy Rustlang applications to AWS Lambda'
-stars: 62
-stars_trend: up
-stars_diff: 5
-forks: 4
+stars: 98
+stars_trend: 
+stars_diff: 0
+forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 62
-issues: 5
-issues_trend: up
-issues_diff: 1
+watchers: 98
+issues: 6
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -58,6 +58,7 @@ functions:
           method: GET
 ```
 
+> 💡 The Rust Lambda runtime requires a binary named `bootstrap`. This plugin renames the binary cargo builds to `bootstrap` for you before packaging. You do not need to do this manually in your Cargo configuration.
 
 ## 🖍️ customize
 

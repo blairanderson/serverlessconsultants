@@ -4,16 +4,16 @@ title: Serverless Wsgi
 repo: logandk/serverless-wsgi
 homepage: 'https://github.com/logandk/serverless-wsgi'
 description: 'Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages'
-stars: 209
-stars_trend: up
-stars_diff: 2
-forks: 33
+stars: 220
+stars_trend: 
+stars_diff: 0
+forks: 35
 forks_trend: 
 forks_diff: 0
-watchers: 209
-issues: 1
-issues_trend: up
-issues_diff: 1
+watchers: 220
+issues: 2
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -88,10 +88,13 @@ def dog(id):
 Load the plugin and set the `custom.wsgi.app` configuration in `serverless.yml` to the
 module path of your Flask application.
 
-All functions that will use WSGI need to have `wsgi.handler` set as the Lambda handler and
+All functions that will use WSGI need to have `wsgi_handler.handler` set as the Lambda handler and
 use the default `lambda-proxy` integration for API Gateway. This configuration example treats
 API Gateway as a transparent proxy, passing all requests directly to your Flask application,
 and letting the application handle errors, 404s etc.
+
+_Note: The WSGI handler was called `wsgi.handler` earlier, but was renamed to `wsgi_handler.handler`
+in `1.7.0`. The old name is still supported but using it will cause a deprecation warning._
 
 ```yaml
 service: example
@@ -105,7 +108,7 @@ plugins:
 
 functions:
   api:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http: ANY /
       - http: ANY {proxy+}
@@ -169,6 +172,9 @@ requests==2.21.0
 
 For more information, see https://pip.pypa.io/en/latest/user_guide/#requirements-files.
 
+The `serverless-wsgi` plugin itself depends on `werkzeug` and will package it automatically,
+even if `werkzeug` is not present in your `requirements.txt`.
+
 You can use the requirement packaging functionality of _serverless-wsgi_ without the WSGI
 handler itself by including the plugin in your `serverless.yml` configuration, without specifying
 the `custom.wsgi.app` setting. This will omit the WSGI handler from the package, but include
@@ -196,6 +202,9 @@ custom:
 For a more advanced approach to packaging requirements, consider using https://github.com/UnitedIncome/serverless-python-requirements.
 When the `serverless-python-requirements` is added to `serverless.yml`, the `packRequirements` option
 is set to `false` by default.
+
+If you have `packRequirements` set to `false`, or if you use `serverless-python-requirements`, remember to add
+`werkzeug` explicitly in your `requirements.txt`.
 
 ### Python version
 
@@ -291,6 +300,11 @@ templates
 urls
 ```
 
+All commands have `local` equivalents that let you run commands through `sls invoke local` rather
+than `sls invoke`, i.e. on the local machine instead of through Lambda. The `local` commands (`sls wsgi command local`,
+`sls wsgi exec local` and `sls wsgi manage local`) take the same arguments as their remote counterparts
+documented above.
+
 ### Explicit routes
 
 If you'd like to be explicit about which routes and HTTP methods should pass through to your
@@ -308,7 +322,7 @@ plugins:
 
 functions:
   api:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http:
           path: cats
@@ -348,7 +362,7 @@ plugins:
 
 functions:
   api:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http: ANY /
       - http: ANY {proxy+}
@@ -417,6 +431,60 @@ custom:
       - application/custom+json
       - application/vnd.company+json
 ```
+
+### Preventing cold starts
+
+Common ways to keep lambda functions warm include [scheduled events](https://serverless.com/framework/docs/providers/aws/events/schedule/)
+and the [WarmUP plugin](https://github.com/FidelLimited/serverless-plugin-warmup). Both these event sources
+are supported by default and will be ignored by `serverless-wsgi`.
+
+### Alternative directory structure
+
+If you have several functions in `serverless.yml` and want to organize them in
+directories, e.g.:
+
+```
+project
+├── web
+│   ├── api.py
+│   └── requirements.txt
+├── serverless.yml
+└── another_function.py
+```
+
+In this case, tell `serverless-wsgi` where to find the handler by prepending the
+directory:
+
+```yaml
+service: example
+
+provider:
+  name: aws
+  runtime: python3.6
+
+plugins:
+  - serverless-wsgi
+
+functions:
+  api:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+      - http: ANY {proxy+}
+
+  another_function:
+    handler: another_function.handler
+
+custom:
+  wsgi:
+    app: web/api.app
+```
+
+Requirements will now be installed into `web/`, rather than at in the service root directory.
+
+The same rule applies when using the `individually: true` flag in the `package` settings, together
+with the `module` option provided by `serverless-python-requirements`. In that case, both the requirements
+and the WSGI handler will be installed into `web/`, if the function is configured with `module: "web"`.
 
 ## Usage without Serverless
 

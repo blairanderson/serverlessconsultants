@@ -4,13 +4,13 @@ title: Serverless Package External
 repo: epsagon/serverless-package-external
 homepage: 'https://github.com/epsagon/serverless-package-external'
 description: 'A Serverless plugin to add external folders to the deploy package'
-stars: 14
-stars_trend: up
-stars_diff: 2
-forks: 0
+stars: 17
+stars_trend: 
+stars_diff: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 14
+watchers: 17
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -27,6 +27,7 @@ issues_diff: 0
 > Deploy a Serverless Python Function services with external code
 
 Before deploying, this plugin symlinks folders containing shared code into the root directory of your Serverless function.
+This plugin works also with `serverless-offline` plugin.
 
 ### Installation
 

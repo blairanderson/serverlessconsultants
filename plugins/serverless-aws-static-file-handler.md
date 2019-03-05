@@ -4,13 +4,13 @@ title: Serverless Aws Static File Handler
 repo: activescott/serverless-aws-static-file-handler
 homepage: 'https://github.com/activescott/serverless-aws-static-file-handler'
 description: 'An easy way to host the front-end of your web applications on Serverless framework on AWS Lambda along with their APIs written in Serverless.'
-stars: 3
+stars: 10
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 10
 issues: 0
 issues_trend: 
 issues_diff: 0

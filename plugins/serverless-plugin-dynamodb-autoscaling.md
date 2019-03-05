@@ -4,13 +4,13 @@ title: Serverless Plugin Dynamodb Autoscaling
 repo: medikoo/serverless-plugin-dynamodb-autoscaling
 homepage: 'https://github.com/medikoo/serverless-plugin-dynamodb-autoscaling'
 description: 'Auto generate auto scaling configuration for configured DynamoDB tables'
-stars: 12
+stars: 13
 stars_trend: 
 stars_diff: 0
 forks: 6
 forks_trend: 
 forks_diff: 0
-watchers: 12
+watchers: 13
 issues: 1
 issues_trend: 
 issues_diff: 0
@@ -122,9 +122,11 @@ custom:
 
 ##### Configurable settings:
 
-- `maxCapacity` (defaults to `200`) refers to [`ScalableTarget.MaxCapacity`](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestSyntax)
-- `minCapacity` (defaults to `5`) refers to [`ScalableTarget.MinCapacity`](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestSyntax)
-- `targetUsage` (defaults to `0.75`) refers to [`ScalingPolicy.TargetTrackingScalingPolicyConfiguration.TargetValue`](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_TargetTrackingScalingPolicyConfiguration.html) (value is multiplied by `100` when assigned to `TargetValue` setting)
+- `maxCapacity` (defaults to `200`) refers to [`ScalableTarget.MaxCapacity`](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_ScalableTarget.html)
+- `minCapacity` (defaults to `5`) refers to [`ScalableTarget.MinCapacity`](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_ScalableTarget.html)
+- `targetUsage` (defaults to `0.75`) refers to [`ScalingPolicy.TargetTrackingScalingPolicyConfiguration.TargetValue`](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_TargetTrackingScalingPolicyConfiguration.html) (value is multiplied by `100` when assigned to `TargetValue` setting)
+- `scaleInCooldown` (defaults to `60`) refers to [`ScalingPolicy.TargetTrackingScalingPolicyConfiguration.ScaleInCooldown`](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_TargetTrackingScalingPolicyConfiguration.html)
+- `scaleOutCooldown` (defaults to `60`) refers to [`ScalingPolicy.TargetTrackingScalingPolicyConfiguration.ScaleOutCooldown`](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_TargetTrackingScalingPolicyConfiguration.html)
 
 #### `ScalingPolicy` chaining
 

@@ -4,13 +4,13 @@ title: Serverless Ngrok Tunnel
 repo: mitipi/serverless-ngrok-tunnel
 homepage: 'https://github.com/mitipi/serverless-ngrok-tunnel'
 description: 'Serverless plugin that creates ngrok public tunnel on localhost'
-stars: 1
+stars: 10
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 10
 issues: 0
 issues_trend: 
 issues_diff: 0

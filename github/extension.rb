@@ -18,6 +18,7 @@ module Github
       plugins = JSON.parse(File.read('./_data/serverless_plugins.json')).map do |datum|
         plugin = OpenStruct.new(datum)
         next if plugin.githubUrl.include?("gitlab.com")
+        next if plugin.githubUrl.include?("@")
         plugin.homepage = plugin.githubUrl
         plugin.repo = plugin.githubUrl.split("github.com/").last
         plugin

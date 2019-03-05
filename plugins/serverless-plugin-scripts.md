@@ -4,13 +4,13 @@ title: Serverless Plugin Scripts
 repo: mvila/serverless-plugin-scripts
 homepage: 'https://github.com/mvila/serverless-plugin-scripts'
 description: 'Add scripting capabilities to the Serverless Framework'
-stars: 58
+stars: 63
 stars_trend: 
 stars_diff: 0
 forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 58
+watchers: 63
 issues: 0
 issues_trend: 
 issues_diff: 0

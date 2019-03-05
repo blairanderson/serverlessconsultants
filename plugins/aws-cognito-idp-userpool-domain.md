@@ -4,14 +4,14 @@ title: Aws Cognito Idp Userpool Domain
 repo: rubentrancoso/aws-cognito-idp-userpool-domain
 homepage: 'https://github.com/rubentrancoso/aws-cognito-idp-userpool-domain'
 description: 'Manage (add and remove) aws hosted domain on Cognito Userpools'
-stars: 1
+stars: 4
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 1
-issues: 0
+watchers: 4
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---

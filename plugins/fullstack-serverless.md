@@ -4,13 +4,13 @@ title: Fullstack Serverless
 repo: MadSkills-io/fullstack-serverless
 homepage: 'https://github.com/MadSkills-io/fullstack-serverless'
 description: 'A Serverless plugin to create an AWS CloudFront distribution that serves static web content from S3 and routes API traffic to API Gateway.'
-stars: 37
+stars: 52
 stars_trend: 
 stars_diff: 0
-forks: 6
+forks: 9
 forks_trend: 
 forks_diff: 0
-watchers: 37
+watchers: 52
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -58,7 +58,7 @@ npm install --save-dev fullstack-serverless
 
 #### Configuration
 
-* All apiCloudFront configuration parameters are optional - e.g. don't provide ACM Certificate ARN
+* All fullstack-serverless configuration parameters are optional - e.g. don't provide ACM Certificate ARN
   to use default CloudFront certificate (which works only for default cloudfront.net domain).
 * This plugin **does not** set-up automatically Route53 for newly created CloudFront distribution.
   After creating CloudFront distribution, manually add Route53 ALIAS record pointing to your
@@ -269,6 +269,39 @@ The name of your error document inside your `distributionFolder`. This is the fi
 
 ---
 
+**objectHeaders** 
+
+_optional_, no default
+
+```yaml
+custom:
+  fullstack:
+    ...
+    objectHeaders:
+      ALL_OBJECTS:
+        - name: header-name
+          value: header-value
+        ...
+      specific-directory/:
+        - name: header-name
+          value: header-value
+        ...
+      specific-file.ext:
+        - name: header-name
+          value: header-value
+        ...
+      ... # more file- or folder-specific rules
+    ...
+```
+
+Use the `objectHeaders` option to set HTTP response headers be sent to clients requesting uploaded files from your website. 
+
+Headers may be specified globally for all files in the bucket by adding a `name`, `value` pair to the `ALL_OBJECTS` property of the `objectHeaders` option. They may also be specified for specific folders or files within your site by specifying properties with names like `specific-directory/` (trailing slash required to indicate folder) or `specific-file.ext`, where the folder and/or file paths are relative to `distributionFolder`. 
+
+Headers with more specificity will take precedence over more general ones. For instance, if 'Cache-Control' was set to 'max-age=100' in `ALL_OBJECTS` and to 'max-age=500' in `my/folder/`, the files in `my/folder/` would get a header of 'Cache-Control: max-age=500'.
+
+---
+
 **singlePageApp**
 
 _optional_, default: `false`
@@ -395,6 +428,7 @@ Use this parameter if you do not want a confirmation prompt to interrupt automat
 
 ## Contributors
 - [jlaramie](https://github.com/jlaramie)
+- [superandrew213](https://github.com/superandrew213)
 
 ## Credits
 Forked from the [**serverless-api-cloudfront**](https://github.com/Droplr/serverless-api-cloudfront/)  

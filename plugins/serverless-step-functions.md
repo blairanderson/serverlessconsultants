@@ -4,16 +4,16 @@ title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
 description: 'AWS Step Functions with Serverless Framework.'
-stars: 388
-stars_trend: up
-stars_diff: 3
-forks: 57
-forks_trend: up
-forks_diff: 1
-watchers: 388
-issues: 37
-issues_trend: up
-issues_diff: 2
+stars: 422
+stars_trend: 
+stars_diff: 0
+forks: 61
+forks_trend: 
+forks_diff: 0
+watchers: 422
+issues: 34
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -66,6 +66,19 @@ stepFunctions:
             Type: Task
             Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello
             End: true
+      dependsOn: CustomIamRole
+      alarms:
+        topics:
+          ok: arn:aws:sns:us-east-1:1234567890:NotifyMe
+          alarm: arn:aws:sns:us-east-1:1234567890:NotifyMe
+          insufficientData: arn:aws:sns:us-east-1:1234567890:NotifyMe
+        metrics:
+          - executionsTimeOut
+          - executionsFailed
+          - executionsAborted
+          - metric: executionThrottled
+            treatMissingData: breaching # overrides below default
+        treatMissingData: ignore # optional
     hellostepfunc2:
       definition:
         StartAt: HelloWorld2
@@ -74,6 +87,10 @@ stepFunctions:
             Type: Task
             Resource: arn:aws:states:#{AWS::Region}:#{AWS::AccountId}:activity:myTask
             End: true
+      dependsOn:
+        - DynamoDBTable
+        - KinesisStream
+        - CUstomIamRole
   activities:
     - myTask
     - yourTask
@@ -128,6 +145,89 @@ plugins:
 ```
 
 You can then `Ref: SendMessageStateMachine` in various parts of CloudFormation or serverless.yml
+
+#### Depending on another logical id
+If your state machine depends on another resource defined in your `serverless.yml` then you can add a `dependsOn` field to the state machine `definition`. This would add the `DependsOn`clause to the generated CloudFormation template.
+
+This `dependsOn` field can be either a string, or an array of strings.
+
+```yaml
+stepFunctions:
+  stateMachines:
+    myStateMachine:
+      dependsOn: myDB
+
+    myOtherStateMachine:
+      dependsOn:
+        - myOtherDB
+        - myStream
+```
+
+#### CloudWatch Alarms
+It's common practice to want to monitor the health of your state machines and be alerted when something goes wrong. You can either:
+
+* do this using the [serverless-plugin-aws-alerts](https://github.com/ACloudGuru/serverless-plugin-aws-alerts), which lets you configure custom CloudWatch Alarms against the various metrics that Step Functions publishes.
+* or, you can use the built-in `alarms` configuration from this plugin, which gives you an opinionated set of default alarms (see below)
+
+```yaml
+stepFunctions:
+  stateMachines:
+    myStateMachine:
+      alarms:
+        topics:
+          ok: arn:aws:sns:us-east-1:1234567890:NotifyMe
+          alarm: arn:aws:sns:us-east-1:1234567890:NotifyMe
+          insufficientData: arn:aws:sns:us-east-1:1234567890:NotifyMe
+        metrics:
+          - executionsTimeOut
+          - executionsFailed
+          - executionsAborted
+          - executionThrottled
+        treatMissingData: missing
+```
+
+Both `topics` and `metrics` are required properties. There are 4 supported metrics, each map to the CloudWatch Metrics that Step Functions publishes for your executions.
+
+You can configure how the CloudWatch Alarms should treat missing data:
+
+* `missing` (AWS default): The alarm does not consider missing data points when evaluating whether to change state.
+* `ignore`: The current alarm state is maintained.
+* `breaching`: Missing data points are treated as breaching the threshold.
+* `notBreaching`: Missing data points are treated as being within the threshold.
+
+For more information, please refer to the [official documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data).
+
+The generated CloudWatch alarms would have the following configurations:
+```yaml
+namespace: 'AWS/States'
+metric: <ExecutionsTimeOut | ExecutionsFailed | ExecutionsAborted | ExecutionThrottled>
+threshold: 1
+period: 60
+evaluationPeriods: 1
+ComparisonOperator: GreaterThanOrEqualToThreshold
+Statistic: Sum
+treatMissingData: <missing (default) | ignore | breaching | notBreaching>
+Dimensions:
+  - Name: StateMachineArn
+    Value: <ArnOfTheStateMachine>
+```
+
+You can also override the default `treatMissingData` setting for a particular alarm by specifying an override:
+
+```yml
+alarms:
+  topics:
+    ok: arn:aws:sns:us-east-1:1234567890:NotifyMe
+    alarm: arn:aws:sns:us-east-1:1234567890:NotifyMe
+    insufficientData: arn:aws:sns:us-east-1:1234567890:NotifyMe
+  metrics:
+    - executionsTimeOut
+    - executionsFailed
+    - executionsAborted
+    - metric: executionThrottled
+      treatMissingData: breaching # override
+  treatMissingData: ignore # default
+```
 
 #### Current Gotcha
 Please keep this gotcha in mind if you want to reference the `name` from the `resources` section. To generate Logical ID for CloudFormation, the plugin transforms the specified name in serverless.yml based on the following scheme.
@@ -348,11 +448,11 @@ stepFunctions:
       events:
         - http:
             path: /users
-            ...     
+            ...
             authorizer:
               # Provide both type and authorizerId
               type: COGNITO_USER_POOLS # TOKEN, CUSTOM or COGNITO_USER_POOLS, same as AWS Cloudformation documentation
-              authorizerId: 
+              authorizerId:
                 Ref: ApiGatewayAuthorizer  # or hard-code Authorizer ID
 ```
 
@@ -600,7 +700,7 @@ stepFunctions:
                 state:
                   - pending
       definition:
-        ...   
+        ...
 ```
 
 ## Specifying a Name
@@ -673,7 +773,7 @@ resources:
   Resources:
     StateMachineRole:
       Type: AWS::IAM::Role
-      Properties: 
+      Properties:
         ...
 ```
 
@@ -848,14 +948,11 @@ stepFunctions:
             Type: Task
             Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello
             Catch:
-            - ErrorEquals:
-              - HandledError
+            - ErrorEquals: ["HandledError"]
               Next: CustomErrorFallback
-            - ErrorEquals:
-              - States.TaskFailed
+            - ErrorEquals: ["States.TaskFailed"]
               Next: ReservedTypeFallback
-            - ErrorEquals:
-              - States.ALL
+            - ErrorEquals: ["States.ALL"]
               Next: CatchAllFallback
             End: true
           CustomErrorFallback:

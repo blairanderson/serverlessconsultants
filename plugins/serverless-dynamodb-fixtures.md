@@ -4,14 +4,14 @@ title: Serverless Dynamodb Fixtures
 repo: chechu/serverless-dynamodb-fixtures
 homepage: 'https://github.com/chechu/serverless-dynamodb-fixtures'
 description: 'Serverless Dynamodb Fixtures - Allows to load data on DynamoDB tables'
-stars: 4
+stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 4
-issues: 3
+watchers: 6
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
@@ -25,7 +25,7 @@ issues_diff: 0
 Serverless plugin to load data on DynamoDB tables.
 
 ## This Plugin Requires
-* [Serverless](https://serverless.com/framework) version > 1.0.0. It has been tested with v1.27.3.
+* [Serverless](https://serverless.com/framework) version > 1.0.0. It has been tested with v1.36.3.
 * Native support of promises: ECMAScript6 - Node 4.9.1
 
 ## Usage

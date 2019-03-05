@@ -4,13 +4,13 @@ title: Serverless Custom Packaging Plugin
 repo: hypoport/serverless-custom-packaging-plugin
 homepage: 'https://github.com/hypoport/serverless-custom-packaging-plugin'
 description: 'Plugin to package your sourcecode using a custom target path inside the zip.'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 4
 issues: 2
 issues_trend: 
 issues_diff: 0

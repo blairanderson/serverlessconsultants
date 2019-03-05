@@ -4,21 +4,20 @@ title: Serverless Offline Ssm
 repo: janders223/serverless-offline-ssm
 homepage: 'https://github.com/janders223/serverless-offline-ssm'
 description: 'Read SSM parameters from a .env file instead of AWS'
-stars: 16
+stars: 18
 stars_trend: 
 stars_diff: 0
 forks: 7
-forks_trend: up
-forks_diff: 1
-watchers: 16
-issues: 2
+forks_trend: 
+forks_diff: 0
+watchers: 18
+issues: 1
 issues_trend: 
 issues_diff: 0
 ---
 
 
 # serverless-offline-ssm
-[![Build Status](https://travis-ci.org/janders223/serverless-offline-ssm.svg?branch=master)](https://travis-ci.org/janders223/serverless-offline-ssm)
 
 This [Serverless](https://github.com/serverless/serverless) plugin allows you to develop offline while using AWS SSM parameters in your `serverless.yml` template. The plugin looks for environment variables which are fulfilled by SSM parameters at build time and substitutes them from a `.env` file when running locally with the [serverless-offline plugin](https://github.com/dherault/serverless-offline).
 
@@ -41,6 +40,8 @@ yarn install -D serverless-offline serverless-offline-ssm
 ```
 
 Then inside of your project's `serverless.yml` file add the following to the plugins section. Note it is important that `serverless-offline-ssm` is loaded before `serverless-offline`. This is important to ensure that we are setting the variables properly for `serverless-offline` before it needs them.
+
+_NOTE:_ It is imperative that `serverless-offline-ssm` be the the first plugin listed in the plugins section of your `serverless.yml` file. Due to the load order of plugins, other plugins may interfere with the loading of your `.env` file.
 
 ```yaml
 plugins:

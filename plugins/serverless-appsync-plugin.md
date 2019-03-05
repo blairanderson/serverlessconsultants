@@ -4,16 +4,16 @@ title: Serverless Appsync Plugin
 repo: sid88in/serverless-appsync-plugin
 homepage: 'https://github.com/sid88in/serverless-appsync-plugin'
 description: 'Serverless Plugin to deploy AppSync GraphQL API'
-stars: 377
-stars_trend: up
-stars_diff: 5
-forks: 75
-forks_trend: up
-forks_diff: 2
-watchers: 377
-issues: 33
-issues_trend: down
-issues_diff: -1
+stars: 432
+stars_trend: 
+stars_diff: 0
+forks: 84
+forks_trend: 
+forks_diff: 0
+watchers: 432
+issues: 26
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -25,7 +25,7 @@ issues_diff: -1
   <br>
 </h1>
 
-Tired of 🚀 **deploying**, ✏️ **updating**, and ❌ **deleting** your AppSync API's using the AWS AppSync dashboard? You can now develop all of your AppSync API's locally using **Serverless** + **Serverless-AppSync-Plugin**! With support for <a href="https://aws.amazon.com/dynamodb" target="_blank">AWS DynamoDB</a>, <a href="https://aws.amazon.com/lambda" target="_blank">AWS Lambda</a>, and <a href="https://aws.amazon.com/elasticsearch-service" target="_blank">AWS Elastic Search</a>; you have everything you need to get started developing your AppSync API's locally.
+Tired of 🚀 **deploying**, ✏️ **updating**, and ❌ **deleting** your AppSync API's using the AWS AppSync dashboard? You can now develop all of your AppSync API's locally using **Serverless** + **Serverless-AppSync-Plugin**! With support for <a href="https://aws.amazon.com/dynamodb" target="_blank">AWS DynamoDB</a>, <a href="https://aws.amazon.com/lambda" target="_blank">AWS Lambda</a>, and <a href="https://aws.amazon.com/elasticsearch-service" target="_blank">AWS Elasticsearch</a>; you have everything you need to get started developing your AppSync API's locally.
 
 <div align="center">Find AppSync examples in the <a href="https://github.com/serverless/serverless-graphql/tree/master/app-backend/appsync" target="_blank"> Serverless-GraphQL</a> Repo 👈</div>
 
@@ -45,6 +45,7 @@ Tired of 🚀 **deploying**, ✏️ **updating**, and ❌ **deleting** your AppS
  <summary><strong>Table of Contents</strong> (click to expand)</summary>
 
 * [Getting Started](#-getting-started)
+* [Minimum requirements](#-minimum-requirements)
 * [Installation](#-installation)
 * [Usage](#️-usage)
 * [Notes](#-notes)
@@ -58,9 +59,14 @@ Tired of 🚀 **deploying**, ✏️ **updating**, and ❌ **deleting** your AppS
 
 Be sure to check out all that <a href="https://aws.amazon.com/appsync" target="_blank">AWS AppSync</a> has to offer. Here are a few resources to help you understand everything needed to get started!
 
-* <a target="_blank" href="https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference.html">Mapping Templates</a> - Not sure how to create Mapping Templates for **DynamoDB**, **Lambda** or **Elastic Search**? Here's a great place to start!
+* <a target="_blank" href="https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference.html">Mapping Templates</a> - Not sure how to create Mapping Templates for **DynamoDB**, **Lambda** or **Elasticsearch**? Here's a great place to start!
 * <a target="_blank" href="https://docs.aws.amazon.com/appsync/latest/devguide/tutorials.html">Data Sources and Resolvers</a> - Get more information on what data sources are supported and how to set them up!
 * <a target="_blank" href="https://docs.aws.amazon.com/appsync/latest/devguide/security.html">Security</a> - Checkout this guide to find out more information on securing your API endpoints with AWS_IAM or Cognito User Pools!
+
+## 🛠 Minimum requirements
+
+* [Node.js v8 or higher](https://nodejs.org)
+* [Serverless v1.30.0 or higher](https://github.com/serverless/serverless)
 
 ## 💾 Installation
 
@@ -148,6 +154,7 @@ custom:
         name: # data source name
         description: 'Lambda DataSource'
         config:
+          functionName: graphql # The function name in your serverless.yml. Ignored if lambdaFunctionArn is provided.
           lambdaFunctionArn: { Fn::GetAtt: [GraphqlLambdaFunction, Arn] } # Where GraphqlLambdaFunction is the lambda function cloudformation resource created by serverless for the serverless function named graphql
           serviceRoleArn: { Fn::GetAtt: [AppSyncLambdaServiceRole, Arn] } # Where AppSyncLambdaServiceRole is an IAM role defined in Resources
           iamRoleStatements: # custom IAM Role statements for this DataSource. Ignored if `serviceRoleArn` is present. Auto-generated if both `serviceRoleArn` and `iamRoleStatements` are omitted
@@ -162,6 +169,7 @@ custom:
         description: 'Http endpoint'
         config:
           endpoint: # required # "https://{DOMAIN}/{PATH}"
+      - ${file({dataSources}.yml)} # link to a file with an array or object of datasources
     substitutions: # allows to pass variables from here to velocity templates
       # ${exampleVar1} will be replaced with given value in all mapping templates
       exampleVar1: "${self:service.name}"
@@ -256,7 +264,7 @@ The AWS_IAM authenticationType is not currently supported.
 
 ## 📝 Notes
 
-* If you are planning on using <a target="_blank" href="https://aws.amazon.com/elasticsearch-service">AWS Elastic Search</a>, you will need to create an Elastic Search domain/endpoint on AWS and set it as the ```endpoint``` option in  ```serverless.yml``` **before** deploying.
+* If you are planning on using <a target="_blank" href="https://aws.amazon.com/elasticsearch-service">AWS Elasticsearch</a>, you will need to create an Elasticsearch domain/endpoint on AWS and set it as the ```endpoint``` option in  ```serverless.yml``` **before** deploying.
 
 ### Offline support
 

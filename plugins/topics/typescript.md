@@ -3,6 +3,6 @@
 layout: topic
 topic: typescript
 title: typescript Serverless Plugins
-description: '1 typescript ServerLess Plugins'
-count: 1
+description: '2 typescript ServerLess Plugins'
+count: 2
 ---

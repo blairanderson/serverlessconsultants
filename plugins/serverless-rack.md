@@ -4,14 +4,14 @@ title: Serverless Rack
 repo: logandk/serverless-rack
 homepage: 'https://github.com/logandk/serverless-rack'
 description: 'Serverless plugin to deploy Ruby Rack applications (Sinatra/Padrino/Cuba etc.)'
-stars: 3
-stars_trend: up
-stars_diff: 1
-forks: 0
+stars: 4
+stars_trend: 
+stars_diff: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 0
+watchers: 4
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---

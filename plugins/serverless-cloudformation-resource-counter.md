@@ -4,13 +4,13 @@ title: Serverless Cloudformation Resource Counter
 repo: drexler/serverless-cloudformation-resource-counter
 homepage: 'https://github.com/drexler/serverless-cloudformation-resource-counter'
 description: 'A plugin to count the resources generated in the AWS CloudFormation stack after deployment.'
-stars: 2
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 4
 issues: 0
 issues_trend: 
 issues_diff: 0

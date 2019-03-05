@@ -4,13 +4,13 @@ title: Serverless Plugin Embedded Env In Code
 repo: zaru/serverless-plugin-embedded-env-in-code
 homepage: 'https://github.com/zaru/serverless-plugin-embedded-env-in-code'
 description: 'Replace environment variables with static strings before deployment. It’s for Lambda@Edge.'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 4
 issues: 0
 issues_trend: 
 issues_diff: 0

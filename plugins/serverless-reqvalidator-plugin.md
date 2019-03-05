@@ -4,14 +4,14 @@ title: Serverless Reqvalidator Plugin
 repo: RafPe/serverless-reqvalidator-plugin
 homepage: 'https://github.com/RafPe/serverless-reqvalidator-plugin'
 description: 'Serverless plugin to add request validator to API Gateway methods'
-stars: 34
+stars: 37
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 34
-issues: 1
+watchers: 37
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---

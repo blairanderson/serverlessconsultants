@@ -7,13 +7,13 @@ description: 'Serverless Plugin that allows you to keep common configuration in 
 stars: 1
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 1
 issues: 2
-issues_trend: up
-issues_diff: 2
+issues_trend: 
+issues_diff: 0
 ---
 
 

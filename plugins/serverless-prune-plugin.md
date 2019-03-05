@@ -4,13 +4,13 @@ title: Serverless Prune Plugin
 repo: claygregory/serverless-prune-plugin
 homepage: 'https://github.com/claygregory/serverless-prune-plugin'
 description: 'Deletes old versions of functions from AWS, preserving recent and aliased versions'
-stars: 82
-stars_trend: up
-stars_diff: 1
+stars: 93
+stars_trend: 
+stars_diff: 0
 forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 82
+watchers: 93
 issues: 1
 issues_trend: 
 issues_diff: 0

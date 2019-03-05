@@ -4,13 +4,13 @@ title: Serverless Discovery Plugin
 repo: aregier/serverless-discovery-plugin
 homepage: 'https://github.com/aregier/serverless-discovery-plugin'
 description: 'A serverless plugin to register AWS micro-service endpoints with a discovery service at serverless deploy or serverless remove time.'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 4
 issues: 1
 issues_trend: 
 issues_diff: 0
@@ -66,7 +66,8 @@ If the service under development is deployed into the same account as the discov
 Based on the configuration above the plugin will search for a file `scripts/deploy.js` with the following content:
 
 ```js
-function handler (data, serverless, options) {
+// async declaration here implicitly returns a Promise<void>
+async function handler (data, serverless, options) {
   console.log('Received Stack Output', data)
 }
 

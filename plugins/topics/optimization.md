@@ -3,6 +3,6 @@
 layout: topic
 topic: optimization
 title: optimization Serverless Plugins
-description: '1 optimization ServerLess Plugins'
-count: 1
+description: '2 optimization ServerLess Plugins'
+count: 2
 ---

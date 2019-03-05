@@ -4,14 +4,14 @@ title: Serverless Dynamodb Autoscaler
 repo: EndemolShineGroup/serverless-dynamodb-autoscaler
 homepage: 'https://github.com/EndemolShineGroup/serverless-dynamodb-autoscaler'
 description: 'Autoscale DynamoDB resources with a single AWS AutoScalingPlan'
-stars: 1
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
-issues: 5
+watchers: 0
+issues: 8
 issues_trend: 
 issues_diff: 0
 ---

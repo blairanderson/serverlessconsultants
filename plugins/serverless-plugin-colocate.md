@@ -4,13 +4,13 @@ title: Serverless Plugin Colocate
 repo: aronim/serverless-plugin-colocate
 homepage: 'https://github.com/aronim/serverless-plugin-colocate'
 description: 'Serverless Plugin to keep your configuration next to your code.'
-stars: 6
+stars: 7
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 6
+watchers: 7
 issues: 1
 issues_trend: 
 issues_diff: 0
@@ -22,6 +22,7 @@ Serverless Colocate Plugin
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![npm version](https://badge.fury.io/js/serverless-plugin-colocate.svg)](https://badge.fury.io/js/serverless-plugin-colocate)
 [![npm downloads](https://img.shields.io/npm/dm/serverless-plugin-colocate.svg)](https://www.npmjs.com/package/serverless-plugin-colocate)
+[![Build Status](https://travis-ci.com/aronim/serverless-plugin-colocate.svg?branch=master)](https://travis-ci.com/aronim/serverless-plugin-colocate)
 [![license](https://img.shields.io/npm/l/serverless-plugin-colocate.svg)](https://raw.githubusercontent.com/aronim/serverless-plugin-colocate/master/LICENSE)
 
 Colocate your Configuration and Code

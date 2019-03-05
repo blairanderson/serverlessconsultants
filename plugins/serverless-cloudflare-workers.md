@@ -4,16 +4,16 @@ title: Serverless Cloudflare Workers
 repo: cloudflare/serverless-cloudflare-workers
 homepage: 'https://github.com/cloudflare/serverless-cloudflare-workers'
 description: 'A serverless plugin allowing you to integrate with [Cloudflare Workers](https://cloudflareworkers.com/#12a9195720fe4ed660949efdbd9c0219:https://tutorial.cloudflareworkers.com)'
-stars: 20
-stars_trend: up
-stars_diff: 2
-forks: 9
-forks_trend: up
-forks_diff: 1
-watchers: 20
-issues: 3
-issues_trend: up
-issues_diff: 2
+stars: 35
+stars_trend: 
+stars_diff: 0
+forks: 12
+forks_trend: 
+forks_diff: 0
+watchers: 35
+issues: 1
+issues_trend: 
+issues_diff: 0
 ---
 
 
@@ -42,6 +42,32 @@ functions:
           url: example.com/myfunction
           method: GET
   
+```
+
+### Environment Variables
+
+While Cloudflare Workers doesn't exactly offer environment vairables, we can bind global variables to values, essentially giving the same capabilities. In your function configuration, add key value pairs in `environment`
+
+```yaml
+functions:
+  myFunction:
+    environment:
+      MYKEY: value_of_my_key
+      ANOTHER_KEY_OF_MINE: sweet_child_o_mine
+
+```
+
+Then in your script, you can reference `MYKEY` to access the value.
+
+You can also add an environment block under `provider`. These will get added to every function. If a function defines the same variable, the function defintion will overwrite the provider block definition.
+
+```yaml
+provider:
+  name: cloudflare
+  environment:
+    MYKEY: value_of_my_key
+    ANOTHER_KEY_OF_MINE: sweet_child_o_mine
+
 ```
 
 ### Using Cloudflare KV Storage

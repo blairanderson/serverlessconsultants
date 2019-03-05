@@ -7,7 +7,7 @@ description: 'Yet another AWS nested stack plugin!'
 stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 5
 forks_trend: 
 forks_diff: 0
 watchers: 6
@@ -72,6 +72,7 @@ custom:
 * **custom.nested-stacks.stacks.parameters** - A list of key value pairs to be passed into the nested stack as parameters.
 * **custom.nested-stacks.stacks.tags** - A list of key value pairs to be passed into the nested stack as its tags.
 * **custom.nested-stacks.stacks.notifications** - A list of existing Amazon SNS topics where notifications about stack events are sent.
+* **custom.nested-stacks.stacks.dependson** - The ID of another CloudFormation resource. Specify another stack ID to order the application of nested stacks.
 
 ## Want to know more?
 

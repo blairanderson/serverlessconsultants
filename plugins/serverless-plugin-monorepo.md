@@ -4,13 +4,13 @@ title: Serverless Plugin Monorepo
 repo: Butterwire/serverless-plugin-monorepo
 homepage: 'https://github.com/Butterwire/serverless-plugin-monorepo'
 description: 'A serverless plugin that allows use of serverless in a mono repo. Avoids needing to use nohoist by automatic symlinking of all dependencies.'
-stars: 20
-stars_trend: up
-stars_diff: 2
-forks: 4
+stars: 25
+stars_trend: 
+stars_diff: 0
+forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 20
+watchers: 25
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -67,6 +67,7 @@ dependencies will be added as expected. Development/peer dependencies are ignore
 The plugin will run when you do:
 - A full deployment (`sls deploy`)
 - Deployment of individual functions (`sls deploy -f`)
+- Spinning up a local sandbox with [serverless-offline](https://github.com/dherault/serverless-offline) (`sls offline [start]`)
 
 ## Contributing
 

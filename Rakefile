@@ -43,6 +43,7 @@ task :sync_github_projects do
   extension.app.github.projects.each do |p|
     filename = "plugins/#{p.name}.md"
     puts p.inspect
+    next if filename.include?("@")
 
     # TODO: also fetch keywords from package.json and marge/dedupe them
     # https://github.com/npm/registry/blob/master/docs/responses/package-metadata.md

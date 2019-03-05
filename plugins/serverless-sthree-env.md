@@ -7,7 +7,7 @@ description: 'Serverless plugin to get config from a json formatted file in S3 a
 stars: 2
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 2

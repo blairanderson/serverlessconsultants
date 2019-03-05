@@ -4,13 +4,13 @@ title: Serverless Vault Plugin
 repo: Rondineli/serverless-vault-plugin
 homepage: 'https://github.com/Rondineli/serverless-vault-plugin'
 description: 'A Serverless plugin to retrieve passwords from vault and encrypt to kms'
-stars: 10
+stars: 11
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 10
+watchers: 11
 issues: 0
 issues_trend: 
 issues_diff: 0

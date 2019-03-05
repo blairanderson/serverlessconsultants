@@ -4,13 +4,13 @@ title: Serverless Spa
 repo: gilmarsquinelato/serverless-spa
 homepage: 'https://github.com/gilmarsquinelato/serverless-spa'
 description: 'Serverless plugin to deploy your website to AWS S3 using Webpack to bundle it.'
-stars: 16
+stars: 17
 stars_trend: 
 stars_diff: 0
 forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 16
+watchers: 17
 issues: 0
 issues_trend: 
 issues_diff: 0

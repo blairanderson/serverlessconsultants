@@ -4,14 +4,14 @@ title: Aws Amplify Serverless Plugin
 repo: awslabs/aws-amplify-serverless-plugin
 homepage: 'https://github.com/awslabs/aws-amplify-serverless-plugin'
 description: 'Generate client-side configuration files for the AWS Amplify library based on your deployed Serverless backend'
-stars: 43
-stars_trend: up
-stars_diff: 1
-forks: 4
+stars: 55
+stars_trend: 
+stars_diff: 0
+forks: 8
 forks_trend: 
 forks_diff: 0
-watchers: 43
-issues: 4
+watchers: 55
+issues: 7
 issues_trend: 
 issues_diff: 0
 ---
