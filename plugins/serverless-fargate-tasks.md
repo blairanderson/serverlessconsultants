@@ -4,14 +4,14 @@ title: Serverless Fargate Tasks
 repo: svdgraaf/serverless-fargate-tasks
 homepage: 'https://github.com/svdgraaf/serverless-fargate-tasks'
 description: 'A plugin to run fargate tasks as part of your Serverless project'
-stars: 3
+stars: 4
 stars_trend: 
 stars_diff: 0
 forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 1
+watchers: 4
+issues: 2
 issues_trend: 
 issues_diff: 0
 ---

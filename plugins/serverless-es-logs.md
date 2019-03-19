@@ -7,7 +7,7 @@ description: 'A Serverless plugin to transport logs to ElasticSearch'
 stars: 10
 stars_trend: 
 stars_diff: 0
-forks: 7
+forks: 8
 forks_trend: 
 forks_diff: 0
 watchers: 10

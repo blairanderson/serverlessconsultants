@@ -4,13 +4,13 @@ title: Serverless Apigateway Service Proxy
 repo: horike37/serverless-apigateway-service-proxy
 homepage: 'https://github.com/horike37/serverless-apigateway-service-proxy'
 description: 'This Serverless Framewrok plugin supports the AWS service proxy integration feature of API Gateway.'
-stars: 25
+stars: 26
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 2
 forks_trend: 
 forks_diff: 0
-watchers: 25
+watchers: 26
 issues: 0
 issues_trend: 
 issues_diff: 0

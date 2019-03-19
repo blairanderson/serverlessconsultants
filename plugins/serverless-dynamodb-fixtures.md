@@ -7,11 +7,11 @@ description: 'Serverless Dynamodb Fixtures - Allows to load data on DynamoDB tab
 stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 4
 forks_trend: 
 forks_diff: 0
 watchers: 6
-issues: 1
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

@@ -4,14 +4,14 @@ title: Serverless Nextjs Plugin
 repo: danielcondemarin/serverless-nextjs-plugin
 homepage: 'https://github.com/danielcondemarin/serverless-nextjs-plugin'
 description: 'Deploy serverless next apps with ease'
-stars: 4
+stars: 40
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 3
 forks_trend: 
 forks_diff: 0
-watchers: 4
-issues: 0
+watchers: 40
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---
@@ -28,6 +28,19 @@ issues_diff: 0
 A [serverless framework](https://serverless.com/) plugin to deploy nextjs apps.
 
 The plugin targets [Next 8 serverless mode](https://nextjs.org/blog/next-8/#serverless-nextjs)
+
+![demo](./demo.gif)
+
+## Contents
+
+- [Motivation](#motivation)
+- [Getting Started](#getting-started)
+- [Next config](#next-configuration)
+- [Deploying](#deploying)
+- [Deploying a single page](#deploying-a-single-page)
+- [Overriding page configuration](#overriding-page-configuration)
+- [Custom page routing](#custom-page-routing)
+- [Examples](#examples)
 
 ## Motivation
 
@@ -52,19 +65,15 @@ module.exports.render = (event, context, callback) => {
 };
 ```
 
-### Also benefit from
-
-- Automatic next builds
-- Dynamic creation of serverless functions for each page.
-- S3 Bucket provisioning for static assets. Relies on [assetPrefix](https://github.com/zeit/next.js/#cdn-support-with-asset-prefix).
-
 ## Getting started
 
 ### Installing
 
 `npm install --save-dev serverless-nextjs-plugin`
 
-The plugin only needs to know where your `next.config.js` file is located. Note it expects the directory and not the actual file path.
+The plugin only needs to know where your `next.config.js` file is located. Using your next configuration it will automatically build the application and compile the pages using the target: `serverless`.
+
+Note it expects `nextConfigDir` to be a directory and not the actual file path.
 
 ```
 nextApp
@@ -89,15 +98,11 @@ custom:
 package:
   exclude:
     - ./**/*
-  include:
-    - sls-next-build/*
 ```
 
-Include the pattern `sls-next-build/*` as this is where the plugin copies the compiled page handlers.
+You can exclude everything. The plugin makes sure the page handlers are included in the artifacts.
 
-### Next configuration
-
-Configure your `next.config.js` like this:
+## Next configuration
 
 ```js
 module.exports = {
@@ -105,24 +110,107 @@ module.exports = {
 };
 ```
 
-`assetPrefix: "https://s3.amazonaws.com/your-bucket-name"`
+| Config Key               | Description                                                                                                                                                                                                                                                  |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| assetPrefix _(Optional)_ | When using a [valid bucket URL](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro) the plugin will create a new S3 Bucket using the parsed name. On deployment, static assets will be uploaded to the bucket provisioned. |
 
-Other [valid bucket URLs](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro) are also fine.
-
-The plugin will parse the bucket name from the `assetPrefix` and will create an S3 bucket using the parsed name. The first time the serverless stack is provisioned, it is assumed there isn't a bucket with this name already, so make sure you don't have a bucket with that name already in your amazon account. On deployment, the plugin will upload the next static assets to your bucket. Note that bucket names must be globally unique.
-
-After doing the above, simply run:
+## Deploying
 
 `serverless deploy`
 
-You should now have one API Gateway GET/ endpoint per next page 🎉
+When running `serverless deploy` all your next pages will be automatically compiled, packaged and deployed.
+
+The Lambda functions created for each page have by default the following configuration:
+
+```yml
+handler: /path/to/page/handler.render
+events:
+  - http:
+      path: pageName # home, about, etc. Unless is the index page which is served at /
+      method: get
+```
+
+If you need to change the default configuration, such as `memorySize`, `timeout` etc. use the top level `provider` which will override the functions configuration. For example, to change the memorySize to 512MB:
+
+```yml
+provider:
+  name: aws
+  runtime: nodejs8.10
+  memorySize: 512
+  ...
+```
+
+See [this](https://serverless.com/framework/docs/providers/aws/guide/functions#configuration) for more information.
+
+## Deploying a single page
+
+If you need to deploy just one of your pages, simply run:
+
+`serverless deploy function --function pageFunctionName`
+
+where `pageFunctionName` will be the page file name + `"Page"`. For example, to deploy `pages/home.js`, you can run:
+
+`serverless deploy function --function homePage`
+
+## Overriding page configuration
+
+You may want to have a different configuration for one or more of your page functions. This is possible by setting the `pageConfig` key in the plugin config:
+
+```yml
+plugins:
+  - serverless-nextjs-plugin
+
+custom:
+  serverless-nextjs:
+    nextConfigDir: ./
+    pageConfig:
+      about:
+        memorySize: 512 # default is 1024
+      home:
+        timeout: 10 # default is 6
+```
+
+The example above will deploy the `about` page function with a smaller `memorySize` and the home page with a higher `timeout` than the default values.
+
+You can set any function property described [here](https://serverless.com/framework/docs/providers/aws/guide/functions#configuration). The values provided will be merged onto the plugin defaults.
+
+## Custom page routing
+
+The default page route is `/{pageName}`. You may want to serve your page from a different path. This is possible by setting your own http path in the `pageConfig`. For example for `pages/post.js`:
+
+```js
+class Post extends React.Component {
+  static async getInitialProps({ query }) {
+    return {
+      slug: query.slug
+    };
+  }
+  render() {
+    return <h1>Post page: {this.props.slug}</h1>;
+  }
+}
+
+export default Post;
+```
+
+```yml
+plugins:
+  - serverless-nextjs-plugin
+
+custom:
+  serverless-nextjs:
+    nextConfigDir: ./
+    pageConfig:
+      post:
+        events:
+          - http:
+              path: post/{slug}
+              request:
+                parameters:
+                  paths:
+                    slug: true
+```
 
 ## Examples
 
 See the `examples/` directory.
-
-## Roadmap
-
-- More examples
-- CloudFront support
-- Mitigation of lambda cold starts

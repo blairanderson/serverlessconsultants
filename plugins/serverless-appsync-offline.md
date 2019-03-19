@@ -4,14 +4,14 @@ title: Serverless Appsync Offline
 repo: aheissenberger/serverless-appsync-offline
 homepage: 'https://github.com/aheissenberger/serverless-appsync-offline'
 description: 'Serverless Plugin to run AWS AppSync GraphQL API localy with dynamoDB and lambda resolvers'
-stars: 36
+stars: 39
 stars_trend: 
 stars_diff: 0
-forks: 12
+forks: 15
 forks_trend: 
 forks_diff: 0
-watchers: 36
-issues: 6
+watchers: 39
+issues: 10
 issues_trend: 
 issues_diff: 0
 ---

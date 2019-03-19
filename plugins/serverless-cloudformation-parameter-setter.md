@@ -4,13 +4,13 @@ title: Serverless Cloudformation Parameter Setter
 repo: trek10inc/serverless-cloudformation-parameter-setter
 homepage: 'https://github.com/trek10inc/serverless-cloudformation-parameter-setter'
 description: 'Set CloudFormation parameters when deploying.'
-stars: 12
+stars: 13
 stars_trend: 
 stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 12
+watchers: 13
 issues: 4
 issues_trend: 
 issues_diff: 0

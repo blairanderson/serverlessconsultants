@@ -4,13 +4,13 @@ title: Serverless Layers
 repo: agutoli/serverless-layers
 homepage: 'https://github.com/agutoli/serverless-layers'
 description: 'How to reduce drastically lambda size'
-stars: 12
+stars: 13
 stars_trend: 
 stars_diff: 0
 forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 12
+watchers: 13
 issues: 1
 issues_trend: 
 issues_diff: 0

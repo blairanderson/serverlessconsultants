@@ -7,11 +7,11 @@ description: 'Natively deploy to CloudFormation via Change sets, instead of dire
 stars: 33
 stars_trend: 
 stars_diff: 0
-forks: 7
+forks: 8
 forks_trend: 
 forks_diff: 0
 watchers: 33
-issues: 4
+issues: 5
 issues_trend: 
 issues_diff: 0
 ---

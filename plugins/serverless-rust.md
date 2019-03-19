@@ -4,14 +4,14 @@ title: Serverless Rust
 repo: softprops/serverless-rust
 homepage: 'https://github.com/softprops/serverless-rust'
 description: 'Deploy Rustlang applications to AWS Lambda'
-stars: 98
+stars: 102
 stars_trend: 
 stars_diff: 0
 forks: 7
 forks_trend: 
 forks_diff: 0
-watchers: 98
-issues: 6
+watchers: 102
+issues: 4
 issues_trend: 
 issues_diff: 0
 ---
@@ -58,7 +58,7 @@ functions:
           method: GET
 ```
 
-> 💡 The Rust Lambda runtime requires a binary named `bootstrap`. This plugin renames the binary cargo builds to `bootstrap` for you before packaging. You do not need to do this manually in your Cargo configuration.
+> 💡 The Rust Lambda runtime requires a binary named `bootstrap`. This plugin renames the binary cargo builds to `bootstrap` for you before packaging. You do **not** need to do this manually in your Cargo configuration.
 
 ## 🖍️ customize
 
@@ -97,6 +97,34 @@ functions:
       - http:
           path: /test
           method: GET
+```
+
+## 🤸 usage
+
+Every [serverless workflow command](https://serverless.com/framework/docs/providers/aws/guide/workflow/) should work out of the box.
+
+### invoke your lambdas locally
+
+```sh
+$ npx serverless invoke local -f hello -d '{"hello":"world"}'
+```
+
+### deploy your lambdas to the cloud
+
+```sh
+$ npx serverless deploy
+```
+
+### invoke your lambas in the cloud directly
+
+```sh
+$ npx serverless invoke -f hello -d '{"hello":"world"}'
+```
+
+### view your lambdas logs
+
+```sh
+$ npx serverless logs -f hello
 ```
 
 

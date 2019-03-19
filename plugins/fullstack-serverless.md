@@ -7,7 +7,7 @@ description: 'A Serverless plugin to create an AWS CloudFront distribution that 
 stars: 52
 stars_trend: 
 stars_diff: 0
-forks: 9
+forks: 10
 forks_trend: 
 forks_diff: 0
 watchers: 52

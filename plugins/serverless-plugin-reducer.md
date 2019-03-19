@@ -7,7 +7,7 @@ description: 'Reduce Node.js lambda package so it contains only lambda dependenc
 stars: 6
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 6

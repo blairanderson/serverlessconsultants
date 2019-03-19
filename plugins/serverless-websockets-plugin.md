@@ -4,13 +4,13 @@ title: Serverless Websockets Plugin
 repo: serverless/serverless-websockets-plugin
 homepage: 'https://github.com/serverless/serverless-websockets-plugin'
 description: 'Websocket support for Serverless Framework on AWS'
-stars: 99
+stars: 102
 stars_trend: 
 stars_diff: 0
-forks: 29
+forks: 31
 forks_trend: 
 forks_diff: 0
-watchers: 99
+watchers: 102
 issues: 0
 issues_trend: 
 issues_diff: 0

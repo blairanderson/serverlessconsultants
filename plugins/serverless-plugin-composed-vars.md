@@ -4,13 +4,13 @@ title: Serverless Plugin Composed Vars
 repo: chris-feist/serverless-plugin-composed-vars
 homepage: 'https://github.com/chris-feist/serverless-plugin-composed-vars'
 description: 'A plugin that composes custom and environment variables based on the deployment stage'
-stars: 2
+stars: 3
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 3
 issues: 1
 issues_trend: 
 issues_diff: 0

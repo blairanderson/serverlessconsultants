@@ -4,14 +4,14 @@ title: Serverless Python Requirements
 repo: UnitedIncome/serverless-python-requirements
 homepage: 'https://github.com/UnitedIncome/serverless-python-requirements'
 description: 'Serverless plugin to bundle Python packages'
-stars: 444
+stars: 455
 stars_trend: 
 stars_diff: 0
-forks: 101
+forks: 105
 forks_trend: 
 forks_diff: 0
-watchers: 444
-issues: 70
+watchers: 455
+issues: 76
 issues_trend: 
 issues_diff: 0
 ---
@@ -478,7 +478,7 @@ zipinfo .serverless/xxx.zip
   `vendor` option
  * [@kichik](https://github.com/kichik) - Imposed windows & `noDeploy` support,
    switched to adding files straight to zip instead of creating symlinks, and
-   improved pip chache support when using docker.
+   improved pip cache support when using docker.
  * [@dee-me-tree-or-love](https://github.com/dee-me-tree-or-love) - the `slim` package option
  * [@alexjurkiewicz](https://github.com/alexjurkiewicz) - [docs about docker workflows](#native-code-dependencies-during-build)
  * [@andrewfarley](https://github.com/andrewfarley) - Implemented download caching and static caching

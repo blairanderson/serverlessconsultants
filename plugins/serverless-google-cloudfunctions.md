@@ -7,11 +7,11 @@ description: 'This plugin enables support for Google Cloud Functions within the 
 stars: 186
 stars_trend: 
 stars_diff: 0
-forks: 47
+forks: 50
 forks_trend: 
 forks_diff: 0
 watchers: 186
-issues: 40
+issues: 43
 issues_trend: 
 issues_diff: 0
 ---

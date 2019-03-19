@@ -4,13 +4,13 @@ title: Serverless Http Invoker
 repo: activescott/serverless-http-invoker
 homepage: 'https://github.com/activescott/serverless-http-invoker'
 description: 'Locally invoke Serverless functions via their HTTP event as specified in Serverless.yml. It makes it easy to test not only your handler logic, but also ensures that you have your http events setup properly in serverless.yml without deploying.'
-stars: 11
+stars: 12
 stars_trend: 
 stars_diff: 0
 forks: 5
 forks_trend: 
 forks_diff: 0
-watchers: 11
+watchers: 12
 issues: 1
 issues_trend: 
 issues_diff: 0

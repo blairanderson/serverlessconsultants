@@ -4,13 +4,13 @@ title: Serverless Plugin Lambda Dead Letter
 repo: gmetzker/serverless-plugin-lambda-dead-letter
 homepage: 'https://github.com/gmetzker/serverless-plugin-lambda-dead-letter'
 description: 'A Serverless plugin that can configure a lambda with a dead letter queue or topic'
-stars: 22
+stars: 23
 stars_trend: 
 stars_diff: 0
 forks: 4
 forks_trend: 
 forks_diff: 0
-watchers: 22
+watchers: 23
 issues: 9
 issues_trend: 
 issues_diff: 0

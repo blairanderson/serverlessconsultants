@@ -11,7 +11,7 @@ forks: 1
 forks_trend: 
 forks_diff: 0
 watchers: 3
-issues: 1
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -93,30 +93,25 @@ provider:
       #- Ref: AppSubnet4
       #- Ref: AppSubnet5
       #- Ref: AppSubnet6
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - 'ec2:CreateNetworkInterface'
-        - 'ec2:DescribeNetworkInterfaces'
-        - 'ec2:DetachNetworkInterface'
-        - 'ec2:DeleteNetworkInterface'
-      Resource: '*'
 
 custom:
   vpcConfig:
     cidrBlock: '10.0.0.0/16'
 
-    # if useNatGateway is a boolean "true", a NAT Gateway and EIP will be provisioned
-    # in each zone auto-discovered or specified below.
-    # if useNatGateway is a number, that number of NAT Gateways will be provisioned
-    useNatGateway: 2
+    # if createNatGateway is a boolean "true", a NAT Gateway and EIP will be
+    # provisioned in each zone auto-discovered or specified below.
+    # if createNatGateway is a number, that number of NAT Gateways will be provisioned
+    createNatGateway: 2
 
     # When enabled, the DB subnet will only be accessible from the Application subnet
     # Both the Public and Application subnets will be accessible from 0.0.0.0/0
-    useNetworkAcl: false
+    createNetworkAcl: false
 
     # Whether to create the DB subnet
-    skipDbCreation: false
+    createDbSubnet: true
+
+    # Whether to enable VPC flow logging to an S3 bucket
+    createFlowLogs: false
 
     # optionally specify AZs (defaults to auto-discover all availabile AZs)
     zones:

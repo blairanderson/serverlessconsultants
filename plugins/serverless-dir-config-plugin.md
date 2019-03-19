@@ -4,13 +4,13 @@ title: Serverless Dir Config Plugin
 repo: economysizegeek/serverless-dir-config-plugin
 homepage: 'https://github.com/economysizegeek/serverless-dir-config-plugin'
 description: 'EXPERIMENTAL - Serverless plugin to load function and resource definitions from a directory.'
-stars: 4
+stars: 5
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 5
 issues: 0
 issues_trend: 
 issues_diff: 0

@@ -7,7 +7,7 @@ description: 'A serverless plugin to run a S3 clone on your local machine'
 stars: 58
 stars_trend: 
 stars_diff: 0
-forks: 33
+forks: 34
 forks_trend: 
 forks_diff: 0
 watchers: 58

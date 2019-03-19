@@ -7,11 +7,11 @@ description: 'After Deploy, this plugin fetches cloudformation resource identifi
 stars: 19
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 6
 forks_trend: 
 forks_diff: 0
 watchers: 19
-issues: 2
+issues: 3
 issues_trend: 
 issues_diff: 0
 ---

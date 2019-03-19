@@ -4,13 +4,13 @@ title: Serverless Kms Grants
 repo: deep-security/serverless-kms-grants
 homepage: 'https://github.com/deep-security/serverless-kms-grants'
 description: 'Create and revoke grants for AWS Lambda functions to use KMS keys.'
-stars: 1
+stars: 2
 stars_trend: 
 stars_diff: 0
-forks: 0
+forks: 1
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 2
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -58,6 +58,8 @@ Configure the AWS KMS key id and lambdaArn for the plugin in serverless.yml:
 
 - kmsKeyId: the `KeyId`, `Alias`, or `Arn` used to identify the KMS key
   (**Required**)
+- lambdaRoleName: the name of the lambda role you wish to grant access to KMS key.
+  (Optional). If name is not specified the plugin will try with default role name.
 - lambdaRoleArn: the Arn of the lambda you wish to grant access to the KMS key
   (Optional). If an arn is not specified, the plugin will look for the default
   lambdaRole and obtain its arn. The default serverless lambda role follows the

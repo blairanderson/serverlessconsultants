@@ -4,13 +4,13 @@ title: Serverless Plugin Registry
 repo: aronim/serverless-plugin-registry
 homepage: 'https://github.com/aronim/serverless-plugin-registry'
 description: 'Serverless plugin to register function names with AWS SSM Parameter Store.'
-stars: 0
+stars: 1
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 0
+watchers: 1
 issues: 0
 issues_trend: 
 issues_diff: 0

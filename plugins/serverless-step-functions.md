@@ -4,14 +4,14 @@ title: Serverless Step Functions
 repo: horike37/serverless-step-functions
 homepage: 'https://github.com/horike37/serverless-step-functions'
 description: 'AWS Step Functions with Serverless Framework.'
-stars: 422
+stars: 424
 stars_trend: 
 stars_diff: 0
-forks: 61
+forks: 63
 forks_trend: 
 forks_diff: 0
-watchers: 422
-issues: 34
+watchers: 424
+issues: 33
 issues_trend: 
 issues_diff: 0
 ---
@@ -67,6 +67,8 @@ stepFunctions:
             Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello
             End: true
       dependsOn: CustomIamRole
+      tags:
+        Team: Atlantis
       alarms:
         topics:
           ok: arn:aws:sns:us-east-1:1234567890:NotifyMe
@@ -91,6 +93,8 @@ stepFunctions:
         - DynamoDBTable
         - KinesisStream
         - CUstomIamRole
+      tags:
+        Team: Atlantis
   activities:
     - myTask
     - yourTask

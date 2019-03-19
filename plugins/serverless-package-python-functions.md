@@ -7,7 +7,7 @@ description: 'Packaging Python Lambda functions with only the dependencies/requi
 stars: 66
 stars_trend: 
 stars_diff: 0
-forks: 21
+forks: 22
 forks_trend: 
 forks_diff: 0
 watchers: 66

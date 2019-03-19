@@ -4,13 +4,13 @@ title: Serverless Offline
 repo: dherault/serverless-offline
 homepage: 'https://github.com/dherault/serverless-offline'
 description: 'Emulate AWS λ and API Gateway locally when developing your Serverless project'
-stars: 2157
+stars: 2203
 stars_trend: 
 stars_diff: 0
-forks: 343
+forks: 346
 forks_trend: 
 forks_diff: 0
-watchers: 2157
+watchers: 2203
 issues: 75
 issues_trend: 
 issues_diff: 0
@@ -114,6 +114,7 @@ All CLI options are optional:
 --disableCookieValidation   Used to disable cookie-validation on hapi.js-server
 --enforceSecureCookies      Enforce secure cookies
 --providedRuntime           Sets the runtime for "provided" lambda runtimes
+--disableModelValidation    Disables the model validation
 ```
 
 Any of the CLI options can be added to your `serverless.yml`. For example:
@@ -345,6 +346,8 @@ resources:
         ValidateRequestBody: true
         ValidateRequestParameters: false
 ```
+
+To disable the model validation you can use `--disableModelValidation`.
 
 ## Usage with Webpack
 
