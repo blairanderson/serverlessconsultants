@@ -15,7 +15,7 @@ layout: default
   {% endfor %}
 {% endcapture %}
 {% capture today %}{{ 'now' | date: "%Y-%m-%d" }}{% endcapture %}
-{% assign data = site.data.plugins[page.repo][{{today}}] %}
+{% assign data = site.data.plugins[page.repo][today] %}
 {% assign topics = site.data.plugins[page.repo]["topics"] %}
 
 <div class="mw8 center">
@@ -82,7 +82,7 @@ layout: default
     <a class="github-button" href="https://github.com/{{page.repo}}/issues" data-icon="octicon-issue-opened" aria-label="Issue {{page.repo}} on GitHub">Issue</a>
     <!-- Place this tag where you want the button to render. -->
     <a class="github-button" href="https://github.com/{{page.repo}}/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download {{page.repo}} on GitHub">Download</a>
-    
+
     <a href="{{github}}/blob/master/LICENSE">
       <img src="https://img.shields.io/github/license/serverless-heaven/serverless-webpack.svg" alt="License">
     </a>

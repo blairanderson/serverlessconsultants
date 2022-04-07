@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'activesupport'
-gem 'jekyll', '3.4.3'
+gem 'jekyll'
 gem 'hash-joiner'
 gem 'jekyll-paginate'
 gem 'jekyll-redirect-from'
