@@ -3,6 +3,6 @@
 layout: topic
 topic: stage
 title: stage Serverless Plugins
-description: '2 stage ServerLess Plugins'
-count: 2
+description: '3 stage ServerLess Plugins'
+count: 3
 ---

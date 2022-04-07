@@ -4,14 +4,14 @@ title: Serverless Vpc Discovery
 repo: amplify-education/serverless-vpc-discovery
 homepage: 'https://github.com/amplify-education/serverless-vpc-discovery'
 description: 'Serverless plugin for discovering VPC / Subnet / Security Group configuration by name.'
-stars: 18
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 18
-issues: 2
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -25,7 +25,34 @@ issues_diff: 0
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3ba87d04fe24b8f881252705e51cc29)](https://www.codacy.com/app/CFER/serverless-vpc-discovery?utm_source=github.com&utm_medium=referral&utm_content=amplify-education/serverless-vpc-discovery&utm_campaign=badger)
 [![npm downloads](https://img.shields.io/npm/dt/serverless-vpc-discovery.svg?style=flat)](https://www.npmjs.com/package/serverless-vpc-discovery)
 
-The vpc discovery plugin takes the given vpc, subnet, and security group names in the serverless file to setup the vpc configuration for the lambda.
+The vpc discovery plugin takes the given vpc name, subnet tag key/value, and security group tag key/value or names in the serverless file to setup the vpc configuration for the lambda.
+
+Basically we use this config:
+```
+vpcDiscovery:
+    vpcName: '<vpc_name>'
+    subnets:
+      - tagKey: <tag_name>
+        tagValues:
+          - '<tag_vale>'
+    securityGroups:
+      - tagKey: <tag_name>
+        tagValues:
+          - '<tag_value>'
+```
+To generate this config:
+```
+vpc:
+    subnetIds:
+        - subnet-123456789
+        ...
+    securityGroupIds:
+        - sg-123456789
+        ...
+```
+For each lambda function.
+      
+> Note: The core serverless `provider.vpc` settings will be used, if they are set, instead of `vpcDiscovery`. You can use also mix settings. For example you may set `provider.vpc.subnetIds` while using `vpcDiscovery` to set the `securityGroupIds`. Take a look at [official documentation](https://www.serverless.com/framework/docs/providers/aws/guide/functions#vpc-configuration). 
 
 # About Amplify
 Amplify builds innovative and compelling digital educational products that empower teachers and students across the country. We have a long history as the leading innovator in K-12 education - and have been described as the best tech company in education and the best education company in tech. While others try to shrink the learning experience into the technology, we use technology to expand what is possible in real classrooms with real students and teachers.
@@ -59,15 +86,88 @@ Then make the following edits to your serverless.yaml file:
 plugins:
   - serverless-vpc-discovery
 
+# Optional: Either set `custom.vpcDiscovery` or `functions.<function name>.vpcDiscovery`
 custom:
-  vpc:
-    vpcName: '${opt:env}'
-    subnetNames:
-      - '${opt:env}_NAME OF SUBNET'
-    securityGroupNames:
-      - '${opt:env}_NAME OF SECURITY GROUP'
+  vpcDiscovery:
+    vpcName: '<vpc_name>'
+    
+    # optional if `securityGroups` option is specified
+    # list of tag key and values 
+    subnets:
+      - tagKey: <tag_name>
+        
+        # an array of values
+        tagValues:
+          - '<tag_value>'
+
+    # optional if `subnets` option is specified
+    # list of tag key and value or names
+    securityGroups:
+      - tagKey: <tag_name>
+        
+        # an array of values
+        tagValues:
+          - '<tag_value>'
+      
+      # optional if `tagKey` and `tagValues` are specified
+      # an array of values
+      - names:
+        - '<security_group_name>'
+
+# Optional: Either set `custom.vpcDiscovery` or `functions.<function name>.vpcDiscovery`
+functions:
+  example:
+    handler: handler.example
+    # inherit `custom.vpcDiscovery` config in case `custom.vpcDiscovery` is specified
+  
+  example2:
+    handler: handler.example
+    
+    # skip vpc configuration for the current function
+    vpcDiscovery: false
+    
+  example3:
+    handler: handler.example
+    
+    # inherit `custom.vpcDiscovery` config in case `custom.vpcDiscovery` is specified and override security group names
+    vpcDiscovery:
+      vpcName: '<vpc_name>'
+      securityGroups:
+        - tagKey: <tag_name>
+          
+          # an array of values
+          tagValues:
+            - '<tag_value>'
+  
+  example4:
+    handler: handler.example
+    # override or set basic subnets and security groups items
+    vpcDiscovery:
+      vpcName: '<vpc_name>'
+      
+      # optional if `custom.vpcDiscovery.securityGroups` option is specified
+      subnets: 
+        - tagKey: <tag_name>
+          
+          # an array of values
+          tagValues:
+            - '<tag_value>'
+
+      # optional if `custom.vpcDiscovery.subnets` option is specified
+      securityGroups: 
+        
+        # optional if `names` option is specified
+        - tagKey: <tag_name>
+          
+          # an array of values
+          tagValues:
+            - '<tag_value>'
+        
+        # optional if `tagKey` and `tagValues` are specified
+        # an array of values
+        - names: 
+          - '<security_group_name>'
 ```
-> NOTE: The naming pattern we used here was building off the vpc name for the subnet and security group by extending it with the the subnet and security group name. This makes it easier to switch to different vpcs by changing the environment variable in the command line
 
 ## Running Tests
 To run the test:
@@ -79,6 +179,13 @@ All tests should pass.
 If there is an error update the node_module inside the serverless-vpc-discovery folder:
 ```
 npm install
+```
+
+To run integration tests, set an environment variable TEST_VPC_NAME to the VPC you will be testing for. Then,
+```
+export AWS_PROFILE=your_profile
+export TEST_VPC_NAME=vpc_name
+npm run integration-test
 ```
 
 ## Deploying with the plugin

@@ -3,6 +3,6 @@
 layout: topic
 topic: js
 title: js Serverless Plugins
-description: '2 js ServerLess Plugins'
-count: 2
+description: '1 js ServerLess Plugins'
+count: 1
 ---

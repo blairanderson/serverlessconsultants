@@ -3,6 +3,6 @@
 layout: topic
 topic: step-functions
 title: step-functions Serverless Plugins
-description: '1 step-functions ServerLess Plugins'
-count: 1
+description: '2 step-functions ServerLess Plugins'
+count: 2
 ---

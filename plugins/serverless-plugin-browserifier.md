@@ -4,14 +4,14 @@ title: Serverless Plugin Browserifier
 repo: digitalmaas/serverless-plugin-browserifier
 homepage: 'https://github.com/digitalmaas/serverless-plugin-browserifier'
 description: 'Reduce the size and speed up your Node.js based lambda&#39;s using browserify.'
-stars: 21
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 21
-issues: 2
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -26,9 +26,30 @@ Serverless Browserifier Plugin
 [![NPM downloads][downloads-badge]][npm-url]
 [![standardjs][standardjs-badge]][standardjs-url]
 
-A [Serverless](https://serverless.com) v1 plugin that uses [`browserify`][browserify-url] to bundle your Node.js Lambda functions.
+> A [Serverless](https://serverless.com) v1 and v2 plugin that uses [`browserify`][browserify-url] to bundle your Node.js Lambda functions.
 
-## Motivation
+1. [Supported Commands](#supported-commands)
+1. [Motivation](#motivation)
+1. [Installation](#installation)
+1. [Basic Setup](#basic-setup)
+1. [Advanced Configuration](#advanced-configuration)
+1. [FAQ](#faq)
+1. [Useful Information](#useful-information)
+1. [License](#license)
+
+
+Supported Commands
+------------------
+
+- `serverless package`
+- `serverless deploy`
+- `serverless deploy function`
+- `serverless invoke local`
+    + the plugin will automatically build and use your bundle to execute the function locally; to avoid it, you can use the `--no-build` option, which will then use your handler file directly
+
+
+Motivation
+----------
 
 Smaller Lambda functions that run faster, with minimal changes to normal serverless configuration.
 
@@ -38,7 +59,7 @@ A project usualy contains several dependencies that are required by different fu
 
 Normal serverless packaging includes all files within the `node_modules` structures, including several files that are not really needed during runtime, like _package.json_ files, documentation files, and much more. And although recent versions of serverless automatically ignore _devDependencies_, you'll certainly still have more dependencies than needed for each single function.
 
-Serverless does support manual preparation of packages, but you will still have to take care of that for each single function individually, which can quickly get out of hand dependending on the number of dependencies you need. This is specially hard after `npm` 3, due to dependency tree flattening.
+Serverless does support manual preparation of packages, but you will still have to take care of that for each single function individually, which can quickly get out of hand dependending on the number of dependencies you need. This is specially hard after `npm` v3, due to dependency tree flattening.
 
 The reduction is package size is, on average, __superior to 90%__. This is important as AWS Lambda has an account-wide [deployment package size limit][lambda-size-limit], and reduces file transfer times.
 
@@ -46,16 +67,23 @@ Less code to parse also means quicker Lambda [_cold start_][container-reuse].
 
 ### Minimal changes
 
-When using this plugin, one of the goals is to reduce serverless configuration changes as much as possible. It must possible to just remove the plugin and resume normal usage of serverless, without any additional modifications.
+When using this plugin, one of the goals is to reduce serverless configuration changes as much as possible. It must possible to just remove it and resume normal usage of serverless, without any additional modifications.
 
-## Installation
+No preset uglification, minification, nor transpilation; just plain bundling. You can add any other transformations you want by using common browserify plugins.
+
+
+Installation
+------------
 
 From your target serverless project, run:
 ```
 npm install serverless-plugin-browserifier --save-dev
 ```
 
-Add the plugin to your `serverless.yml` file and set `package.individually` to `true`:
+Basic Setup
+-----------
+
+Add the plugin to your `serverless.yml`:
 
 ```yaml
 plugins:
@@ -64,11 +92,15 @@ package:
   individually: true
 ```
 
-The property `package.individually` must be set because it makes configuration more straightforward, and if you are not packaging individually size is not a concern of yours in the first place.
+The `package.individually` setting must be set -- either on global or function level -- to allow minimal bundle size based on each lambda's entrypoint.
 
-## Configuration
+You're all set! Use your normal serverless commands to package and deploy.
 
-For most use cases you should **NOT** need to do any configuration. You can, however, introduce custom configuration.
+
+Advanced Configuration
+----------------------
+
+For most use cases you should **NOT** need to do any extra configuration. That said, the ability is present if you need it.
 
 The base config for browserify is read from the `custom.browserify` section of `serverless.yml`.  All [browserify options][browserify-options] are supported (most are auto configured by this plugin).  This plugin adds one special option `disable` which if `true` will bypass this plugin.
 
@@ -77,35 +109,58 @@ The base config can be overridden on a function-by-function basis.  Again, `cust
 ```yaml
 custom:
   browserify:
-    #any option defined in https://github.com/substack/node-browserify#browserifyfiles--opts
+    # any option defined in https://github.com/substack/node-browserify#browserifyfiles--opts
+    extensions:
+      - .js # default
 
 functions:
-    usersGet:
-      name: ${self:provider.stage}-${self:service}-pageGet
-      description: get user
-      handler: users/handler.hello
-      browserify:
-        noParse:
-          - ./someBig.json  #browserify can't optimize json, will take long time to parse for nothing
+  usersGet:
+    description: Get users
+    handler: users/index.handler
+    browserify:
+      # any option defined in https://github.com/substack/node-browserify#browserifyfiles--opts
+      noParse:
+        - ./someBig.json  # browserify can't optimize json, will take long time to parse for nothing
 ```
 
 If you find a package that is not supported or does not behave well with browserify, you can still use function level `package.include` to include extra modules and files to your package. That said, you are encouraged to verify if you specific case can be dealt with by leveraging all available [browserify options][browserify-options] in your `serverless.yml` custom `browserify` section.
 
 You can still use serveless' `package[include|exclude]` options to include extra files within your bundles, if necessary.
 
-## Usage
+### Disabling
+
+You can disable the plugin completely by setting the global or function level `disable` flag:
+
+```yaml
+custom:
+  browserify:
+    disable: true
+
+# ... or ...
+
+functions:
+  usersGet:
+    handler: users/index.handler
+    browserify:
+      disable: true
+```
+
+
+### Debugging
 
 When this plugin is enabled, and `package.individually` is `true`, running `serverless deploy` and `serverless deploy -f <funcName>` will automatically browserify your Node.js lambda code.
 
-If you want to see more information about the process, simply set `SLS_DEBUG=*`. Example:
+If you want to see more information about the process, simply set envvar `SLS_DEBUG=*` for full serverless debug output, or `SLS_BROWSERIFIER_DEBUG=*` for plugin only debug messages. Example:
+
 ```
-$ export SLS_DEBUG=*
+$ export SLS_BROWSERIFIER_DEBUG=*
 $ sls deploy function -v -f usersGet
 ```
 
-You can also verify your bundles by simply using `sls package`, which bundles everything up but does not deploy.
+You may also verify your bundles by simply using `sls package`, which bundles everything up but does not deploy.
 
-## Using browserify plugins/transforms
+
+### Using browserify plugins/transforms
 
 If you want to use browserify plugins, you can easily do that by using the global browserify options. As the plugin merely passes that up to browserify, as if it is calling the main [`browserify`][browserify-options] function, you can use it to add any transformations you want.
 
@@ -134,13 +189,12 @@ custom:
         - noImplicitAny: true
 ```
 
-<sup>
-PS: For a more in-depth example, please check [this issue](https://github.com/digitalmaas/serverless-plugin-browserifier/issues/8).
-</sup>
+For an in-depth example, please check [this issue](https://github.com/digitalmaas/serverless-plugin-browserifier/issues/8).
 
-## Best practices
 
-__If using it with AWS, use discrete SDK clients!__
+### Best practices
+
+#### If using it with AWS, use discrete SDK clients!
 
 The official [aws-sdk-js][aws-sdk] officially [supports browserify][aws-sdk-support]. That allows us to further reduce the size of our bundles (and Lambda memory usage and speed) by loading only what is strictly needed.
 
@@ -153,7 +207,7 @@ const S3 = require('aws-sdk/clients/s3')
 const s3 = new S3()
 ```
 
-__Ignore AWS SDK!__
+#### Ignore AWS SDK v2!
 
 Although you can use discrete clients (see item above), AWS Lambda service always bundles up the latest SDK version in its Lambda container image. That means that, even if you don't add AWS SDK to your bundle, it will still be available in runtime.
 
@@ -167,7 +221,39 @@ custom:
       - aws-sdk/clients/s3
 ```
 
-## FAQ
+To help you out, here's a script you can use to hide `aws-sdk` and all its clients from browserify. You can use it in your custom config for the plugin in _serverless.yml_:
+
+```yml
+# serverless.yml
+
+custom:
+  browserify: ${file(./custom.browserify.js)}
+```
+
+```js
+// custom.browserify.js
+//
+const fs = require('fs')
+const path = require('path')
+
+module.exports = function browserifyOptions () {
+  return {
+    // any other valid browserify configuration...
+    noParse: ['/**/*.json'],
+    exclude: ['aws-sdk', ...getAllAwsSdkClients()]
+  }
+}
+
+function getAllAwsSdkClients () {
+  return fs
+    .readdirSync('./node_modules/aws-sdk/clients', { withFileTypes: true })
+    .filter(file => file.isFile() && path.extname(file.name) === '.js')
+    .map(file => `aws-sdk/clients/${path.basename(file.name, '.js')}`)
+}
+```
+
+FAQ
+---
 
 __Should I use Webpack instead of this plugin?__
 
@@ -177,23 +263,28 @@ __What about uglification? And babel?__
 
 You should be able to use [`uglify-es`][uglify-url] through [`uglifyify`][uglifyify-url]. For babel usage, [`babelify`][babelify-url] should do the trick. Refer back to [_Using browserify plugins_](#using-browserify-pluginstransforms) section to set it up.
 
-__Avoid mixing this plugin with other plugins that modify serverless' packaging behaviour!__
+__This other plugin I use is not playing ball with `serverless-plugin-browserifier`! What's up?__
 
-This plugin _hijacks_ the normal serverless packaging process, so it will probably conflict with other plugins that use similar mechanisms.
+This plugin _hijacks_ the normal serverless packaging process, so it will probably conflict with other plugins that use similar mechanisms. Please avoid mixing this plugin with other plugins that modify serverless' packaging behaviour.
 
-## Useful information
+
+Useful Information
+------------------
 
 - [List of browserify's transforms][useful-transforms-list]
 - [A curated list of awesome Browserify resources, libraries, and tools.][useful-browserify-resources]
 
 
-## License
+License
+-------
 
 MIT License.
 
 This project has been forked from the original [serverless-plugin-browserify][original-plugin] and published under a different name, as the original has been abandoned.
 
 For the complete information, please refer to the [license](./LICENSE) file.
+
+
 
 [serverless-badge]: https://img.shields.io/badge/serverless-%E2%9A%A1-yellow.svg?colorB=555555&style=flat-square
 [version-badge]: https://img.shields.io/npm/v/serverless-plugin-browserifier.svg?style=flat-square

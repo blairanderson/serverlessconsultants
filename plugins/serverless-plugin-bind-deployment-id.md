@@ -4,14 +4,14 @@ title: Serverless Plugin Bind Deployment
 repo: jacob-meacham/serverless-plugin-bind-deployment-id
 homepage: 'https://github.com/jacob-meacham/serverless-plugin-bind-deployment-id'
 description: 'A Serverless plugin to bind the randomly generated deployment resource to your custom resources'
-stars: 24
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 7
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 24
-issues: 3
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -105,6 +105,14 @@ __deployment__:
 ```
 
 ## Release Notes
+* 2.0.3 - Dependency security updates
+* 2.0.2 - Fix default export breaking change
+* 2.0.1 - Remove serverless peer dependency (thanks [@johnmee](https://github.com/johnmee))
+* 2.0.0 - Major dependency upgrades, force node >= 12.
+* 1.2.0 - The Serverless framework has added support for the resources.extensions block, which has slightly-more-formalized merge behaviour. 1.2.0 adds support for replacing the deployment ID in the extensions
+block. (thanks [@glb](https://github.com/glb))
+* 1.1.1 - Dependency upgrades from dependabot
+* 1.1.0 - Dependency upgrade (thanks [@ericsorensen](https://github.com/ericsorenson))
 * 1.0.2 - Update lodash to fix known security issue (thanks [@brownjava](https://github.com/brownjava))
 * 1.0.1 - Fix peer dependency
 * 1.0.0 - Fix an incompatibility with serverless 1.12

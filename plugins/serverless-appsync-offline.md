@@ -4,14 +4,14 @@ title: Serverless Appsync Offline
 repo: aheissenberger/serverless-appsync-offline
 homepage: 'https://github.com/aheissenberger/serverless-appsync-offline'
 description: 'Serverless Plugin to run AWS AppSync GraphQL API localy with dynamoDB and lambda resolvers'
-stars: 39
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 15
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 39
-issues: 10
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -23,7 +23,7 @@ serverless-appsync-offline
 [![npm version](https://badge.fury.io/js/serverless-appsync-offline.svg)](https://badge.fury.io/js/serverless-appsync-offline)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is a wrapper for the excelent [AppSync Emulator](https://github.com/ConduitVC/aws-utils/tree/appsync/packages/appsync-emulator-serverless). 
+This is a wrapper for the excellent [AppSync Emulator](https://github.com/ConduitVC/aws-utils/tree/appsync/packages/appsync-emulator-serverless).
 
 ## This Plugin Requires
 * serverless@v1-rc.1
@@ -103,6 +103,18 @@ custom:
         optimizeDbBeforeStartup: false,
 ```
 
+**How to Query:**
+```sh
+curl -X POST \
+  http://localhost:62222/graphql \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: APIKEY' \
+  -d '{
+	"query": "{ hello { world } }"
+}'
+```
+
+_**Note**: If you're using `API_KEY` as your authenticationType, then a `x-api-key` header has to be present in the request. The value of the key doesn't really matter._
 
 ## Using DynamoDB Local in your code
 You need to add the following parameters to the AWS NODE SDK dynamodb constructor
@@ -142,8 +154,17 @@ Make sure that `serverless-appsync-offline` is above `serverless-offline` so it 
 
 Now your local Appsync and the DynamoDB database will be automatically started before running `serverless offline`.
 
+### Debugging
+
+`SLS_DEBUG=* NODE_DEBUG=appsync-* yarn offline`
+
+or
+
+`SLS_DEBUG=* NODE_DEBUG=appsync-* yarn sls appsync-offline start`
+
+
 ### Using with serverless-offline and serverless-webpack plugin
-Run `serverless offline start`. In comparison with `serverless offline`, the `start` command will fire an `init` and a `end` lifecycle hook which is needed for serverless-offline and serverless-appsync-offline to switch off both ressources. 
+Run `serverless offline start`. In comparison with `serverless offline`, the `start` command will fire an `init` and a `end` lifecycle hook which is needed for serverless-offline and serverless-appsync-offline to switch off both resources.
 
 Add plugins to your `serverless.yml` file:
 ```yaml
@@ -151,7 +172,14 @@ plugins:
   - serverless-webpack
   - serverless-appsync-offline
   - serverless-offline #serverless-offline needs to be last in the list
+
+custom:
+  appsync-emulator:
+    # when using serverless-webpack it (by default) outputs all the build assets to `<projectRoot>/.webpack/service`
+    # this will let appsync-offline know where to find those compiled files
+    buildPrefix: .webpack/service
 ```
+
 ## Notes
 
 The [AppSync Emulator](https://github.com/ConduitVC/aws-utils/tree/appsync/packages/appsync-emulator-serverless) does not support CloudFormation syntax (e.g. `tableName: { Ref: UsersTable }`) in `dataSources`. 

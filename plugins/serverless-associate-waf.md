@@ -4,14 +4,14 @@ title: Serverless Associate Waf
 repo: mikesouza/serverless-associate-waf
 homepage: 'https://github.com/mikesouza/serverless-associate-waf'
 description: 'Associate a regional WAF with the AWS API Gateway used by your Serverless stack'
-stars: 1
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -19,7 +19,7 @@ issues_diff: 0
 
 # serverless-associate-waf
 
-[![Build Status](https://travis-ci.org/MikeSouza/serverless-associate-waf.svg?branch=master)](https://travis-ci.org/MikeSouza/serverless-associate-waf)
+[![NPM Downloads](https://img.shields.io/npm/dt/serverless-associate-waf)](https://www.npmjs.com/package/serverless-associate-waf) [![Build Status](https://travis-ci.org/MikeSouza/serverless-associate-waf.svg?branch=master)](https://travis-ci.org/MikeSouza/serverless-associate-waf)
 [![Coverage Status](https://coveralls.io/repos/github/MikeSouza/serverless-associate-waf/badge.svg?branch=master)](https://coveralls.io/github/MikeSouza/serverless-associate-waf?branch=master)
 
 Associate a regional WAF with the AWS API Gateway used by your Serverless stack.
@@ -45,15 +45,17 @@ Add your custom configuration:
 custom:
   associateWaf:
     name: myRegionalWaf
+    version: Regional #(optional) Regional | V2
 ```
 
 | Property | Required | Type     | Default | Description                                                    |
 |----------|----------|----------|---------|----------------------------------------------------------------|
 | `name`   |  `true`  | `string` |         | The name of the regional WAF to associate the API Gateway with |
+| `version`|  `false` | `string` | `Regional`| The AWS WAF version to be used|
 
 ### Disassociating a Regional WAF from the API Gateway
 
-Remove the `associateWaf` element from your custom configurtation and deploy the application. The plugin must stay in the plugins list of `serverless.yml` in order for the WAF to be disassociated.
+Remove the `name` property from your custom configuration but keep the `version` if specified, and then deploy the application. The plugin must stay in the plugins list of `serverless.yml` in order for the WAF to be disassociated.
 
 ## Usage
 

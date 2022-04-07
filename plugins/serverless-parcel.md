@@ -4,14 +4,14 @@ title: Serverless Parcel
 repo: johnagan/serverless-parcel
 homepage: 'https://github.com/johnagan/serverless-parcel'
 description: 'A Serverless plugin to bundle your functions and assets with Parcel Bundler'
-stars: 3
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

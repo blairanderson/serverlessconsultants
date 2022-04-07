@@ -4,14 +4,14 @@ title: Serverless Plugin Metric
 repo: alex20465/serverless-plugin-metric
 homepage: 'https://github.com/alex20465/serverless-plugin-metric'
 description: 'Creates dynamically AWS metric-filter resources with custom patterns'
-stars: 7
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 7
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

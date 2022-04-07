@@ -4,13 +4,13 @@ title: Fullstack Serverless
 repo: MadSkills-io/fullstack-serverless
 homepage: 'https://github.com/MadSkills-io/fullstack-serverless'
 description: 'A Serverless plugin to create an AWS CloudFront distribution that serves static web content from S3 and routes API traffic to API Gateway.'
-stars: 52
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 10
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 52
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -24,8 +24,7 @@ issues_diff: 0
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/MadSkills-io/fullstack-serverless/master/LICENSE)
 [![npm downloads](https://img.shields.io/npm/dt/fullstack-serverless.svg?style=flat)](https://www.npmjs.com/package/fullstack-serverless)
 
-A [serverless](http://www.serverless.com) plugin that automatically creates an AWS CloudFront distribution that serves static web content from S3 and optionally routes API traffic
-to API Gateway.  
+A [serverless](http://www.serverless.com) plugin that automatically creates an AWS CloudFront distribution that serves static web content from S3 and optionally routes API traffic to API Gateway.  
 
 Home page - https://www.madskills.io/fullstack-serverless/
 
@@ -36,9 +35,10 @@ Home page - https://www.madskills.io/fullstack-serverless/
 - No CORS needed
 - Enables CDN caching of resources - so you don't waste Lambda invocations or API Gateway traffic
   for serving static files (just [set Cache-Control headers](https://serverless.com/framework/docs/providers/aws/events/apigateway/#custom-response-headers) in API responses)
-- Much more CloudWatch statistics of API usage (like bandwidth metrics)
+- More CloudWatch statistics of API usage (like bandwidth metrics)
 - Real world [access log](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) - out of the box, API Gateway currently does not provide any kind of real "apache-like" access logs for your invocations
 - [Web Application Firewall](https://aws.amazon.com/waf/) support - enable AWS WAF to protect your API from security threats
+- Can be used to manage S3 content and CloudFront without API Gateway by simply not defining any functions
 
 ## Before you begin
 * Install the serverless framework
@@ -82,13 +82,21 @@ custom:
     indexDocument: index.html                  # The index document to use
     errorDocument: error.html                  # The error document to use
     singlePageApp: false                       # If true 403 errors will be rerouted (missing assets) to your root index document to support single page apps like React and Angular where the js framework handles routing
-    apiPath: api                               # The path prefix for your API Gateway lambdas. The path for the lambda http event trigger needs to start with this too eg. api/myMethod 
+    invalidationPaths:                         # Custom invalidationPaths for cloudfront in case your frontend framework uses filename hashing
+      - /index.html
+      - /error.html
+    compressWebContent: true                   # Use compression when serving web content
+    apiPath: api                               # The path prefix for your API Gateway lambdas. The path for the lambda http event trigger needs to start with this too eg. api/myMethod
+    apiGatewayRestApiId: a12bc34df5            # If "Api Gateway Rest Api" is not part of the same serverless template, you can set your API id here 
     clientCommand: gulp dist                   # Command to generate the client assets. Defaults to doing nothing
     clientSrcPath: client                      # The path to where you want to run the clientCommand
     waf: 00000000-0000-0000-0000-000000000000  # ID of the Web Application Firewall. Defaults to not used
     logging:
       bucket: my-bucket.s3.amazonaws.com
       prefix: my-prefix
+    minimumProtocolVersion: TLSv1.2_2018
+    priceClass: PriceClass_100
+    noConfirm: false                           # Alternative to --no-confirm flag. Use this parameter if you do not want a confirmation prompt to interrupt automated builds.
 ```
 
 
@@ -191,6 +199,23 @@ functions:
         method: post
         integration: lambda
 ```
+
+---
+
+**apiGatewayRestApiId**
+
+_optional_, default: `not set`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    apiGatewayRestApiId: a12bc34df5
+    ...
+```
+
+This is only needed if "Api Gateway Rest Api" is not part of the same serverless template and the API id is not defined in [provider -> apiGateway](https://serverless.com/framework/docs/providers/aws/events/apigateway/#share-api-gateway-and-api-resources) section.
+The id can be found in API Gateway url. For example, if your Rest API url is `https://a12bc34df5.execute-api.eu-central-1.amazonaws.com`, API id will be `a12bc34df5`. 
 
 ---
 
@@ -318,6 +343,40 @@ If true 403 errors will be rerouted (missing assets) to your root index document
     
 ---
 
+**invalidationPaths**
+
+_optional_, default: `['/*']`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    invalidationPaths:
+      - /index.html
+      - /error.html
+    ...
+```
+
+Custom invalidationPaths for cloudfront in case your frontend framework uses filename hashing
+    
+---
+
+**compressWebContent**
+
+_optional_, default: `true`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    compressWebContent: true
+    ...
+```
+
+Instruct CloudFront to use compression when serving web content, see [Serving Compressed Files](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html) in the Amazon CloudFront Developer Guide.
+    
+---
+
 **clientCommand**
 
 _optional_, default: `not set`
@@ -384,6 +443,133 @@ Real world [access log](https://docs.aws.amazon.com/AmazonCloudFront/latest/Deve
          
 ---
 
+**priceClass**
+
+_optional_, default: `PriceClass_All`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    priceClass: PriceClass_100
+    ...
+```
+
+CloudFront [PriceClass](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html) - can be PriceClass_All (default), PriceClass_100 or PriceClass_200
+
+---
+
+**minimumProtocolVersion**
+
+_optional_, default: `TLSv1`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    minimumProtocolVersion: TLSv1.2_2018
+    ...
+```
+
+Set minimum SSL/TLS [protocol version](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-MinimumProtocolVersion) - `TLSv1_2016`, `TLSv1.1_2016`, `TLSv1.2_2018` or `SSLv3`
+
+- The minimum SSL/TLS protocol that CloudFront uses to communicate with viewers
+- The cipher that CloudFront uses to encrypt the content that it returns to viewers
+
+---
+
+**noConfirm**
+
+_optional_, default: `false`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    noConfirm: true
+    ...
+```
+
+Use this parameter if you do not want a confirmation prompt to interrupt automated builds. If either this or `--no-confirm` CLI parameter is true the confirmation prompt will be disabled. 
+
+---
+
+**origins**
+
+_optional_, default: `not set`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    origins:
+      - Id: Media
+        DomainName: 
+          Fn::GetAtt:
+            - MediaBucket
+            - DomainName
+        S3OriginConfig:
+          OriginAccessIdentity:
+            Fn::Join:
+              - ''
+              - - origin-access-identity/cloudfront/
+                - { Ref: S3OriginAccessIdentity }
+    ...
+```
+
+Use this parameter if you want to add additional origins to the CloudFormation resources.
+
+---
+
+**defaultCacheBehavior**
+
+_optional_, default: `not set`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    defaultCacheBehavior:
+      MinTTL: 3600
+    ...
+```
+
+---
+
+**cacheBehaviors**
+
+_optional_, default: `not set`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    cacheBehaviors:
+      - TargetOriginId: Media
+        PathPattern: media/*
+        AllowedMethods:
+          - GET
+          - HEAD
+          - OPTIONS
+        CachedMethods:
+          - HEAD
+          - GET
+        ForwardedValues:
+          QueryString: true
+          Headers:
+            - Accept
+            - Referer
+            - Authorization
+            - Content-Type
+        ViewerProtocolPolicy: redirect-to-https
+        ...
+    ...
+```
+
+Use this parameter if you want to add additional cache behaviors to the CloudFormation resources.
+
+---
+
 ### Command-line Parameters
 
 
@@ -411,6 +597,21 @@ Use this parameter if you do not want to generate the client code before deployi
 
 ---
 
+**--no-client-deploy**
+
+_optional_, default `false` (deploys the generated client code by default)
+
+```bash
+serverless deploy --no-client-deploy
+```
+
+Use this parameter if you do not want to deploy the client along with the rest of the serverless stack. Almost certainly in this case you don't want to generate the client code either and will want to use 
+```bash
+serverless deploy --no-generate-client --no-client-deploy
+```
+
+---
+
 **--no-confirm**
 
 _optional_, default `false` (disables confirmation prompt)
@@ -423,12 +624,31 @@ Use this parameter if you do not want a confirmation prompt to interrupt automat
 
 ---
 
+**--no-invalidate-distribution**
+
+_optional_, default `false` (disables creating an invalidation for the CloudFront distribution)
+
+```bash
+serverless client deploy --no-invalidate-distribution
+```
+
+Use this parameter if you do not want to invalidate the CloudFront distribution. Invalidations are  for the path `/*`.
+
+---
+
 ## Maintainers
 - Andy Hahn - [andrewphahn](https://github.com/andrewphahn) from [_MadSkills.io_](http://madskills.io)
 
 ## Contributors
 - [jlaramie](https://github.com/jlaramie)
 - [superandrew213](https://github.com/superandrew213)
+- [harmon25](https://github.com/harmon25)
+- [jmortlock](https://github.com/jmortlock)
+- [haochang](https://github.com/haochang)
+- [hakimio](https://github.com/hakimio)
+- [artoliukkonen](https://github.com/artoliukkonen)
+- [pecirep](https://github.com/pecirep)
+- [miguel-a-calles-mba](https://github.com/miguel-a-calles-mba)
 
 ## Credits
 Forked from the [**serverless-api-cloudfront**](https://github.com/Droplr/serverless-api-cloudfront/)  

@@ -4,14 +4,14 @@ title: Serverless Plugin Stack Outputs
 repo: svdgraaf/serverless-plugin-stack-outputs
 homepage: 'https://github.com/svdgraaf/serverless-plugin-stack-outputs'
 description: 'Displays stack outputs for your serverless stacks when `sls info` is ran'
-stars: 8
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 8
-issues: 3
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

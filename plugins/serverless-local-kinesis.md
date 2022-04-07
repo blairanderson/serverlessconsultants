@@ -4,13 +4,13 @@ title: Serverless Local Kinesis
 repo: pidz-development/serverless-local-kinesis
 homepage: 'https://github.com/pidz-development/serverless-local-kinesis'
 description: 'Run a local kinesis and automatically fire events'
-stars: 2
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0

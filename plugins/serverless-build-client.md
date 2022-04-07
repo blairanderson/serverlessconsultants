@@ -4,13 +4,13 @@ title: Serverless Build Client
 repo: tgfischer/serverless-build-client
 homepage: 'https://github.com/tgfischer/serverless-build-client'
 description: 'Build your static website with environment variables defined in serverless.yml'
-stars: 4
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -19,16 +19,23 @@ issues_diff: 0
 
 # Serverless Build Client
 
-[![npm](https://img.shields.io/npm/v/serverless-build-client.svg)](https://www.npmjs.com/package/serverless-build-client)
-[![CircleCI](https://img.shields.io/circleci/project/github/tgfischer/serverless-build-client.svg)](https://circleci.com/gh/tgfischer/serverless-build-client)
-[![GitHub license](https://img.shields.io/github/license/tgfischer/serverless-build-client.svg)](https://github.com/tgfischer/serverless-build-client/blob/master/LICENSE)
-[![Coverage Status](https://coveralls.io/repos/github/tgfischer/serverless-build-client/badge.svg?branch=master)](https://coveralls.io/github/tgfischer/serverless-build-client?branch=master)
+[![npm](https://img.shields.io/npm/v/serverless-build-client)](https://www.npmjs.com/package/serverless-build-client)
+[![CircleCI](https://img.shields.io/circleci/build/github/tgfischer/serverless-build-client)](https://circleci.com/gh/tgfischer/serverless-build-client)
+[![GitHub license](https://img.shields.io/github/license/tgfischer/serverless-build-client)](https://github.com/tgfischer/serverless-build-client/blob/master/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/tgfischer/serverless-build-client/badge?branch=master)](https://coveralls.io/github/tgfischer/serverless-build-client?branch=master)
 
 A Serverless Framework plugin for building the frontend with environment variables defined in `serverless.yml`
 
 ## Introduction
 
 Plugins such as [`serverless-finch`](https://github.com/fernando-mc/serverless-finch) make it easy to host static websites in S3. These websites usually need to be built before being uploaded. Without this plugin, environment variables defined in `serverless.yml` will not be included in the build.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Options](#options)
+- [Example](#example)
 
 ## Installation
 
@@ -61,26 +68,80 @@ This will add all of the environment variables in your `serverless.yml` file to 
 
 ### Options
 
-#### `--packager`, `-p`
+#### `--packager`, `-p` <!-- omit in toc -->
 
 The packager that should be used to build the client. Valid options are `yarn` and `npm`. Default value is `yarn`
 
-##### Example
+##### Example <!-- omit in toc -->
 
 ```
 $ serverless client build --packager yarn
 ```
 
-#### `--command`, `-c`
+#### `--command`, `-c` <!-- omit in toc -->
 
-The command that will build the client. Default value is `build`
+The command that will build the client. Default value is `build` for yarn and `run build` for npm
 
-##### Examples
+##### Examples <!-- omit in toc -->
 
 ```
 $ serverless client build --packager yarn --command build
 $ serverless client build --packager npm --command "run build"
 ```
+
+#### `--cwd`, `-d` <!-- omit in toc -->
+
+The directory that will be used to run the packager. Default value is the current folder. This option is intended for use when the client package.json is in a subfolder or alternate folder.
+
+##### Example <!-- omit in toc -->
+
+```
+$ serverless client build --packager npm --command "run build" --cwd client
+```
+
+#### `--verbose`, `-v` <!-- omit in toc -->
+
+Flag that determines if we should print the environment variables to the console. Default value is `false`
+
+##### Example <!-- omit in toc -->
+
+```
+$ serverless client build --verbose
+```
+
+### Configuration
+
+#### Options
+The above options may also be configured using custom configuration options in your `servless.yml` file
+
+```
+...
+
+custom:
+  buildClient:
+    packager: npm
+    command: run build
+    cwd: client
+    verbose: true
+```
+
+#### Environment variables
+Environment variables may be set for the entire provider:
+```
+provider:
+  environment:
+    REACT_APP_BACKEND_ENDPOINT: ${cf:<backend service name>.ServiceEndpoint}
+```
+
+Or they may be set specificly for this plugin:
+```
+custom:
+  buildClient:
+    environment:
+      REACT_APP_BACKEND_ENDPOINT: ${cf:<backend service name>.ServiceEndpoint}
+```
+
+The plugin will apply both provider environment variables and specific plugin environment variables. In the case of a conflict, the specific plugin environment variable will override the provider environment variable.
 
 ## Example
 
@@ -95,6 +156,19 @@ provider:
   ...
   environment:
     REACT_APP_BACKEND_ENDPOINT: ${cf:<backend service name>.ServiceEndpoint}
+
+...
+```
+
+or
+
+```
+...
+
+custom:
+  buildClient:
+    environment:
+      REACT_APP_BACKEND_ENDPOINT: ${cf:<backend service name>.ServiceEndpoint}
 
 ...
 ```

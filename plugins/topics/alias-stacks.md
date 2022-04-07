@@ -3,6 +3,6 @@
 layout: topic
 topic: alias-stacks
 title: alias-stacks Serverless Plugins
-description: '1 alias-stacks ServerLess Plugins'
-count: 1
+description: '2 alias-stacks ServerLess Plugins'
+count: 2
 ---

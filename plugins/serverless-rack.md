@@ -4,14 +4,14 @@ title: Serverless Rack
 repo: logandk/serverless-rack
 homepage: 'https://github.com/logandk/serverless-rack'
 description: 'Serverless plugin to deploy Ruby Rack applications (Sinatra/Padrino/Cuba etc.)'
-stars: 6
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 6
-issues: 2
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -103,7 +103,7 @@ functions:
     handler: rack_adapter.handler
     events:
       - http: ANY /
-      - http: ANY {proxy+}
+      - http: ANY /{proxy+}
 ```
 
 ### Gemfile
@@ -158,13 +158,23 @@ For more information, see https://bundler.io/docs.html.
 
 If your application depends on any gems that include compiled binaries, these
 must be compiled for the lambda execution environment. Enabling the `dockerizeBundler` configuration
-option will fetch and build the gems using a [docker image](https://hub.docker.com/r/logandk/serverless-rack-bundler)
-that emulates the lambda environment:
+option will fetch and build the gems using a docker image that emulates the lambda environment:
 
 ```yaml
 custom:
   rack:
-    dockerizeBundler: false
+    dockerizeBundler: true
+```
+
+The default docker image that will be used will match the runtime you are using.
+That is, if you are using the `ruby2.7` runtime, then the docker image will be
+`logandk/serverless-rack-bundler:ruby2.7`. You can override the docker image with the
+`dockerImage` configuration option:
+
+```yaml
+custom:
+  rack:
+    dockerImage: lambci/lambda:build-ruby2.5
 ```
 
 ### Bundler configuration
@@ -200,6 +210,17 @@ custom:
     bundlerBin: /path/to/bundler
 ```
 
+### Rack configuration file
+
+If your Rack configuration file (`config.ru`) is not in `./`, set the path explicitly using the `configPath`
+configuration option:
+
+```yaml
+custom:
+  rack:
+    configPath: path/to/config.ru
+```
+
 ### Local server
 
 For convenience, a `sls rack serve` command is provided to run your Rack application
@@ -226,6 +247,8 @@ $ sls rack serve -p 8000
 
 When running locally, an environment variable named `IS_OFFLINE` will be set to `True`.
 So, if you want to know when the application is running locally, check `ENV["IS_OFFLINE"]`.
+
+For use with the `serverless-offline` plugin, run `sls rack install` prior to `sls offline`.
 
 ### Remote command execution
 
@@ -346,7 +369,7 @@ from the browser is usually the preferred approach.
 ### Raw context and event
 
 The raw context and event from AWS Lambda are both accessible through the Rack
-request. The following example shows how to access them when using Flask:
+request. The following example shows how to access them when using Sinatra:
 
 ```ruby
 require 'sinatra'

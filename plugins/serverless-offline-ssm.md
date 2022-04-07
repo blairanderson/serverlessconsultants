@@ -4,14 +4,14 @@ title: Serverless Offline Ssm
 repo: janders223/serverless-offline-ssm
 homepage: 'https://github.com/janders223/serverless-offline-ssm'
 description: 'Read SSM parameters from a .env file instead of AWS'
-stars: 18
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 7
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 18
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -21,9 +21,15 @@ issues_diff: 0
 
 This [Serverless](https://github.com/serverless/serverless) plugin allows you to develop offline while using AWS SSM parameters in your `serverless.yml` template. The plugin looks for environment variables which are fulfilled by SSM parameters at build time and substitutes them from a `.env` file when running locally with the [serverless-offline plugin](https://github.com/dherault/serverless-offline).
 
+## NOTE!!
+
+Version `6.x` only works with `Serverless 3+`. Version `5.X` only works `Serverless 1.69+`, if you'd like to use this
+plugin with `Serverless <= 1.59` use version `4.1.2`
+
 ## Documentation
 
 - [Installation](#installation)
+- [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -36,7 +42,7 @@ npm install serverless-offline serverless-offline-ssm --save-dev
 
 #or
 
-yarn install -D serverless-offline serverless-offline-ssm
+yarn add -D serverless-offline serverless-offline-ssm
 ```
 
 Then inside of your project's `serverless.yml` file add the following to the plugins section. Note it is important that `serverless-offline-ssm` is loaded before `serverless-offline`. This is important to ensure that we are setting the variables properly for `serverless-offline` before it needs them.
@@ -47,6 +53,48 @@ _NOTE:_ It is imperative that `serverless-offline-ssm` be the the first plugin l
 plugins:
     - serverless-offline-ssm
     - serverless-offline
+```
+
+## Configuration
+
+You can choose to use a `.env` file and/or define your variables in
+`serverless.yml`. Variables within `serverless-offline-ssm` take precedence.
+`serverless-offline-ssm` will always check if the section `custom.serverless-offline-ssm`
+have any values, if not it will fallback to `.env`
+
+### Stages
+
+This plugin executes if the stage defined within the plugin options
+or provider sections of your `serverless.yaml` are includes within the
+`stages` property of the plugin configuration. If this condition has not been
+met the plugin has no effect.
+
+The `stages` property of the plugin configuration can be overridden with a
+cli parameter `--ssmOfflineStages` which takes a comma separated list of
+stages.
+
+### .env
+
+Your `.env` file needs to contain only variable names without the `ssm:` prefix and `~(true|false|split)` sulfix.
+
+If you've defined `${ssm:lambda.LAMBDA_NAME.DB_DSN~true}` in `serverless.yml` file your `.env` need to be like the example bellow:
+
+```
+lambda.LAMBDA_NAME.DB_DSN="VAR VALUE"
+```
+
+### serverless.yml
+
+```yaml
+provider:
+  stage: offline
+custom:
+  serverless-offline-ssm:
+    stages:
+      - offline
+    ssm:
+      'lambda.LAMBDA_NAME.DB_DSN': 'sample-value-goes-here'
+      'another.sample.value': '99 red baloons'
 ```
 
 ## Contributing

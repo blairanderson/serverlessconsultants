@@ -4,13 +4,13 @@ title: Serverless Import Apigateway
 repo: mikesouza/serverless-import-apigateway
 homepage: 'https://github.com/mikesouza/serverless-import-apigateway'
 description: 'Dynamically import an existing AWS API Gateway into your Serverless stack'
-stars: 1
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -25,6 +25,10 @@ issues_diff: 0
 Dynamically import an existing AWS API Gateway into your Serverless stack.
 
 ## Purpose
+
+**This plugin should no longer be used and is no longer necessary. See [Serverless](https://www.serverless.com/framework/docs/providers/aws/events/apigateway/#easiest-and-cicd-friendly-example-of-using-shared-api-gateway-and-api-resources) for an example of sharing a single API Gateway between multiple stacks.**
+
+---
 
 This plugin allows you to specify the name and paths of your existing API Gateway's REST API and it will lookup and configure the provider's API Gateway with the necessary IDs.
 

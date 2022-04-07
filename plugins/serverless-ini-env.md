@@ -4,13 +4,13 @@ title: Serverless Ini Env
 repo: agutoli/serverless-ini-env
 homepage: 'https://github.com/agutoli/serverless-ini-env'
 description: 'Nice Serverless plugin to setup environment variables with ini file'
-stars: 2
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 2
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -26,6 +26,10 @@ issues_diff: 0
 ## Install
 
 `npm install -D serverless-ini-env`
+
+or 
+
+`serverless plugin install --name serverless-ini-env`
 
 Add the plugin to your `serverless.yml` file:
 

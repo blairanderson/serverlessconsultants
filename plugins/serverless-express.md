@@ -4,14 +4,14 @@ title: Serverless Express
 repo: mikestaub/serverless-express
 homepage: 'https://github.com/mikestaub/serverless-express'
 description: 'Making express app development compatible with serverless framework.'
-stars: 83
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 10
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 83
-issues: 2
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -98,7 +98,7 @@ module.exports = app
 
 
 ### 3 - In your handler file
-inside the handler file, you hanve to import ```serverless-express/handler``` and call it with your express app.
+inside the handler file, you have to import ```serverless-express/handler``` and call it with your express app.
 It should look something like this:
 
 ```js
@@ -106,8 +106,7 @@ It should look something like this:
 const handler = require('serverless-express/handler')
 const app = require('path/to/your/express/app')
 
-
-exports.api = handler(app)
+module.exports.api = handler(app)
 // that's it ;)
 ```
 
@@ -130,8 +129,8 @@ functions:
     handler: handler.handler  #assuming your handler file is handler.js
     events: 
       - http:
-          path: GET
-          method: /users
+          method: GET
+          path: /users
 
 # or like this
 # be careful, this will route every HTTP event to your function.
@@ -140,8 +139,8 @@ functions:
     handler: handler.handler 
     events: 
       - http:
+          method: ANY   
           path: /{proxy+}
-          method: ANY
 ```
 
 

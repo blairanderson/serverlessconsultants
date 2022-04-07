@@ -4,13 +4,13 @@ title: Serverless Es Logs
 repo: daniel-cottone/serverless-es-logs
 homepage: 'https://github.com/daniel-cottone/serverless-es-logs'
 description: 'A Serverless plugin to transport logs to ElasticSearch'
-stars: 10
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 8
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 10
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -21,7 +21,7 @@ issues_diff: 0
 
 [![serverless][sls-image]][sls-url]
 [![npm package][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url]
+[![Build status][gh-action-image]][gh-action-url]
 [![Coverage status][coveralls-image]][coveralls-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![Renovate][renovate-image]][renovate-url]
@@ -50,6 +50,7 @@ plugins:
 ## Usage
 
 Define your configuration using the `custom` configuration option in `serverless.yml`:
+
 ```yaml
 custom:
   esLogs:
@@ -60,6 +61,25 @@ custom:
 Your logs will now be transported to the specified elasticsearch instance using the provided index.
 
 ### Options
+
+#### apiGWFilterPattern
+
+(Optional) The filter pattern that the Cloudwatch subscription should use for your API Gateway access
+logs. Default is `[event]`, but you can override this to provide a pattern that will match your custom
+access logs format. See
+[Cloudwatch filter pattern syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html)
+for more info.
+
+```yaml
+custom:
+  esLogs:
+    apiGWFilterPattern: '[request_timestamp, apigw_request_id, http_method, resource_path, request_status, response_latency]'
+
+provider:
+  logs:
+    restApi:
+      format: '$context.requestTimeEpoch $context.requestId $context.httpMethod $context.resourcePath $context.status $context.responseLatency'
+```
 
 #### endpoint
 
@@ -86,12 +106,17 @@ custom:
 
 #### includeApiGWLogs
 
-(Optional) An option to be used in conjunction with the [serverless-aws-alias](https://github.com/HyperBrain/serverless-aws-alias) plugin. This will capture logs created by API Gateway and transport them to Elasticsearch.
+(Optional) An option to capture access logs created by API Gateway and transport them to Elasticsearch.
 
 ```yaml
 custom:
   esLogs:
     includeApiGWLogs: true
+
+provider:
+  name: aws
+  logs:
+    restApi: true
 ```
 
 #### index
@@ -103,6 +128,20 @@ custom:
   esLogs:
     index: some-index
 ```
+
+#### indexDateSeparator
+
+(Optional) The separator to use when creating the date suffix for the index. Default is `.`.
+
+The format of the index will be: `<index>-YYYY<indexDateSeparator>MM<indexDateSeparator>DD`
+
+```yaml
+custom:
+  esLogs:
+    indexDateSeparator: '-'
+```
+
+This will result in a date like `2020-04-20`.
 
 #### retentionInDays
 
@@ -126,12 +165,56 @@ custom:
       some_other_tag: something_else
 ```
 
+#### useDefaultRole
+
+(Optional) Override role management for the log processer lambda and use the manually specified default role. Default is false.
+
+```yaml
+custom:
+  esLogs:
+    useDefaultRole: true
+
+provider:
+  name: aws
+  role: arn:aws:iam::123456789012:role/MyCustomRole
+```
+
+#### vpc
+
+(Optional) VPC configuration for the log processor lambda to have.
+
+```yaml
+custom:
+  esLogs:
+    vpc: 
+      securityGroupIds:
+        - sg-123456789
+      subnetIds:
+        - subnet-123456789
+        - subnet-223456789
+        - subnet-323456789
+```
+
+#### xrayTracingPermissions
+
+(Optional) Adds AWS Xray writing permissions to the processor lambda. You will need these if you enable tracing for ApiGateway on your service. 
+
+```yaml
+custom:
+  esLogs:
+    xrayTracingPermissions: true
+
+provider:
+  tracing:
+    apiGateway: true
+```
+
 [sls-image]:http://public.serverless.com/badges/v3.svg
 [sls-url]:http://www.serverless.com
 [npm-image]:https://img.shields.io/npm/v/serverless-es-logs.svg
 [npm-url]:https://www.npmjs.com/package/serverless-es-logs
-[travis-image]:https://travis-ci.org/daniel-cottone/serverless-es-logs.svg?branch=master
-[travis-url]:https://travis-ci.org/daniel-cottone/serverless-es-logs
+[gh-action-image]:https://github.com/daniel-cottone/serverless-es-logs/workflows/Status%20check/badge.svg
+[gh-action-url]:https://github.com/daniel-cottone/serverless-es-logs/actions?query=workflow%3A%22Status+check%22
 [coveralls-image]:https://coveralls.io/repos/github/daniel-cottone/serverless-es-logs/badge.svg?branch=master
 [coveralls-url]:https://coveralls.io/github/daniel-cottone/serverless-es-logs?branch=master
 [snyk-image]:https://snyk.io/test/github/daniel-cottone/serverless-es-logs/badge.svg

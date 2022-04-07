@@ -4,14 +4,14 @@ title: Serverless Package Python Functions
 repo: ubaniabalogun/serverless-package-python-functions
 homepage: 'https://github.com/ubaniabalogun/serverless-package-python-functions'
 description: 'Packaging Python Lambda functions with only the dependencies/requirements they need.'
-stars: 66
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 22
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 66
-issues: 9
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -152,6 +152,7 @@ The plugin configurations are simple:
 | useDocker          | Boolean indicating whether to package pip dependencies using Docker. Set this to true if your project uses platform-specific compiled libraries like numpy. Requires a [Docker installation](https://www.docker.com/get-docker).                        | Yes. Defaults to `false`                                   |
 | dockerImage        | The Docker image to use to compile functions if `useDocker` is set to `true`. Must be specified as `repository:tag`. If the image doesn't exist on the system, it will be downloaded. The initial download may take some time.                            | Yes. Defaults to `lambci/lambda:build-${provider.runtime}` |
 | containerName      | The desired name for the Docker container.                                                                                                                                                                         | Yes. Defaults to `serverless-package-python-functions`     |
+| abortOnPackagingErrors | Boolean indicating whether you want to stop deployment when packaging errors are detected. Examples of scenarios that will cause packaging errors include: `useDocker` is enabled but the Docker service is not running, pip finds dependency mismatches, virtual environment errrors, etc.. When an error is detected, this will prompt via commandline to continue or abort deploy. | Yes. Defaults to `false` |
 
 At the function level, you:
 - Specify `name` to give your function a name. The plugin uses the function's name as the name of the zip artifact

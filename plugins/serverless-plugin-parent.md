@@ -4,14 +4,14 @@ title: Serverless Plugin Parent
 repo: aronim/serverless-plugin-parent
 homepage: 'https://github.com/aronim/serverless-plugin-parent'
 description: 'Serverless Plugin that allows you to keep common configuration in a parent serverless.yml'
-stars: 1
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
-issues: 2
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -55,6 +55,14 @@ home direcory or has gone `x` number of directories up. The default value is 3 b
 custom:
   parent:
     maxLevels: 2     # Optional (Default 3)
+```  
+
+Per default the parent file will overwrite settings in the service files. If you want the service file to have a
+higher priority you can change that using
+```yaml
+custom:
+  parent:
+    overwriteServiceConfig: false     # Optional (Default true)
 ```  
 
 ##### Project Structure

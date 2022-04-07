@@ -1,26 +1,29 @@
 ---
 layout: plugin
 title: Serverless Aws Alias
-repo: HyperBrain/serverless-aws-alias
-homepage: 'https://github.com/HyperBrain/serverless-aws-alias'
+repo: serverless-heaven/serverless-aws-alias
+homepage: 'https://github.com/serverless-heaven/serverless-aws-alias'
 description: 'This plugin enables use of AWS aliases on Lambda functions.'
-stars: 109
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 26
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 109
-issues: 62
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
 
 
-[![Build Status](https://travis-ci.org/HyperBrain/serverless-aws-alias.svg?branch=master)](https://travis-ci.org/HyperBrain/serverless-aws-alias)
-[![Coverage Status](https://coveralls.io/repos/github/HyperBrain/serverless-aws-alias/badge.svg?branch=master)](https://coveralls.io/github/HyperBrain/serverless-aws-alias?branch=master)
-[![npm version](https://badge.fury.io/js/serverless-aws-alias.svg)](https://badge.fury.io/js/serverless-aws-alias)
-[![npm](https://img.shields.io/npm/dt/serverless-aws-alias.svg)](https://www.npmjs.com/package/serverless-aws-alias)
+[![Serverless][ico-serverless]][link-serverless]
+[![License][ico-license]][link-license]
+[![NPM][ico-npm]][link-npm]
+[![npm][ico-npm-downloads]][link-npm]
+[![Build Status][ico-build]][link-build]
+[![Coverage Status][ico-coverage]][link-coverage]
+[![Contributors][ico-contributors]][link-contributors]
 
 # Serverless AWS alias plugin
 
@@ -44,20 +47,35 @@ protecting the aliased function versions, and many more.
 ## Installation
 
 Add the plugin to your package.json's devDependencies and to the plugins array
-in your `serverless.yml` file. After installation the plugin will automatically
-hook into the deployment process.
-Additionally the new `alias` command is added to Serverless which offers some
-functionality for aliases.
+in your `serverless.yml` file
+
+Terminal:
+```
+npm install --save-dev serverless-aws-alias
+```
+
+serverless.yml:
+```
+plugins:
+  - serverless-aws-alias
+```
+
+After installation the plugin will automatically hook into the deployment process. Additionally the new `alias` command is added to Serverless which offers some functionality for aliases.
 
 ## Deploy the default alias
 
 The default alias (for the stage) is deployed just by doing a standard stage
-deployment with `serverless deploy`. From now on you can reference the aliased
-versions on Lambda invokes with the stage qualifier. The aliased version is
-read only in the AWS console, so it is guaranteed that the environment and
-function parameters (memory, etc.) cannot be changed for a deployed version
-by accident, as it can be done with the `$LATEST` qualifier.
-This adds an additional level of stability to your deployment process.
+deployment with `serverless deploy`. By default the alias is set to the stage
+name. Optionally you can set the name of the default (master) alias using the
+option `--masterAlias`, e.g., `serverless deploy --masterAlias`. (If you have
+already created a serverless deployment without manually setting the default
+alias, this option should not be used.)
+From now on you can reference the aliased versions on Lambda invokes with the
+stage qualifier. The aliased version is read only in the AWS console, so it is
+guaranteed that the environment and function parameters (memory, etc.) cannot
+be changed for a deployed version by accident, as it can be done with the
+`$LATEST` qualifier.This adds an additional level of stability to your deployment
+process.
 
 ## Deploy a single function
 
@@ -78,6 +96,12 @@ Example:
 ## Remove an alias
 
 See the `alias remove` command below.
+
+## Maintain versions
+
+By default, when you deploy, the version of the function gets assigned the retention policy of 'Delete'. This means any subsequent deploys will delete any version without an alias. This was done because each lambda version has its own stack. That stack can contain differences in not only the function code, but resources and events. When an alias is removed from a version and the version of the lambda is not deleted, it is no longer possible to tell which stack it came from and which resources/events it was meant to work with. Therefore versions without aliases will get deleted on subsequent deploys.
+
+There are usecases where retaining versions is less risky and as such, you can opt into retaining these versions by deploying with the `--retain` flag.
 
 ## Remove a service
 
@@ -305,7 +329,7 @@ existing resource.
 ### Use with per alias resources
 
 **Currently this feature is not available. The Serverless framework does not
-support variable substitution in property names (see [#49](https://github.com/HyperBrain/serverless-aws-alias/issues/49)).
+support variable substitution in property names (see [#49][link-49]).
 As soon as this has been implemented there, this note will be removed.**
 
 There might be cases where you want to test with your private resources first,
@@ -487,56 +511,117 @@ and _serverless.service.provider.deployedAliasTemplates[]_.
 
 ## Version history
 
+* 1.8.0
+  * Option to retain lambda function versions [#160][link-160]
+  * **Breaking** drop Node.js 6 support [#161][link-161]
+
+* 1.7.2
+  * Added support for Lambda custom roles [#87][link-87] [#88][link-88]
+  * Added support for dash in alias name when creating api gateway authorizers [#140][link-140]
+  * Configurable master alias [#127][link-127]
+  * Fix for "functionnames" where "functionname" A starts with function name B [#159][link-159]
+  * Dependencies updated
+
 * 1.7.1
-	* Restore compatibility with Serverless 1.27 [#120](https://github.com/HyperBrain/serverless-aws-alias/issues/120)
+  * Restore compatibility with Serverless 1.27 [#120][link-120]
 
 * 1.7.0
-	* Support existing custom authorizers [#101](https://github.com/HyperBrain/serverless-aws-alias/issues/101)
-	* Support domain-manager plugin [#110](https://github.com/HyperBrain/serverless-aws-alias/issues/110)
-	* Support pseudo-parameter plugin [#112](https://github.com/HyperBrain/serverless-aws-alias/issues/112)
-	* Show logs from arbitrary versions [#62](https://github.com/HyperBrain/serverless-aws-alias/issues/62), [#89](https://github.com/HyperBrain/serverless-aws-alias/issues/89)
+  * Support existing custom authorizers [#101][link-101]
+  * Support domain-manager plugin [#110][link-110]
+  * Support pseudo-parameter plugin [#112][link-112]
+  * Show logs from arbitrary versions [#62][link-62], [#89][link-89]
 
 * 1.6.1
- * Fixed custom authorizer references [#102](https://github.com/HyperBrain/serverless-aws-alias/pull/102)
- * Fixed broken DynamoDB stream deployments [#85](https://github.com/HyperBrain/serverless-aws-alias/issues/85)
+ * Fixed custom authorizer references [#102][link-102]
+ * Fixed broken DynamoDB stream deployments [#85][link-85]
  * Security: Updated moment
 
 * 1.6.0
- * Fixed issue with request authorizers [#96](https://github.com/HyperBrain/serverless-aws-alias/issues/96)
- * Support subscription to existing SNS topic [#94](https://github.com/HyperBrain/serverless-aws-alias/issues/94)
+ * Fixed issue with request authorizers [#96][link-96]
+ * Support subscription to existing SNS topic [#94][link-94]
 
 * 1.5.1
-  * Support prewarmup with the warmup plugin [#72](https://github.com/HyperBrain/serverless-aws-alias/issues/72)
-	* Support `_ - +` in alias names [#68](https://github.com/HyperBrain/serverless-aws-alias/issues/68)
-	* Support ANY method type with stage configuration [#80](https://github.com/HyperBrain/serverless-aws-alias/issues/80)
+  * Support prewarmup with the warmup plugin [#72][link-72]
+  * Support `_ - +` in alias names [#68][link-68]
+  * Support ANY method type with stage configuration [#80][link-80]
 
 * 1.5.0
-  * Support `serverless deploy function` [#29](https://github.com/HyperBrain/serverless-aws-alias/issues/29)
+  * Support `serverless deploy function` [#29][link-29]
 
 * 1.4.1
   * Fixed crash when using logs --tail
 
 * 1.4.0
-  * Add support for S3 server side encryption [#63](https://github.com/HyperBrain/serverless-aws-alias/issues/63)
-  * Add `serverless logs api` command to watch API logs [#60](https://github.com/HyperBrain/serverless-aws-alias/issues/60)
+  * Add support for S3 server side encryption [#63][link-63]
+  * Add `serverless logs api` command to watch API logs [#60][link-60]
 
 * 1.3.0
-  * Support full stage configuration at multiple levels [#57](https://github.com/HyperBrain/serverless-aws-alias/issues/57)
-  * Fix issue when trying to remove a stage completely [#56](https://github.com/HyperBrain/serverless-aws-alias/issues/56)
+  * Support full stage configuration at multiple levels [#57][link-57]
+  * Fix issue when trying to remove a stage completely [#56][link-56]
 
 * 1.2.1
-  * Fix issue when using a Cognito User Pools authorizer [#51](https://github.com/HyperBrain/serverless-aws-alias/issues/51)
-  * IAM roles of removed aliases are not deleted [#50](https://github.com/HyperBrain/serverless-aws-alias/issues/50)
+  * Fix issue when using a Cognito User Pools authorizer [#51][link-51]
+  * IAM roles of removed aliases are not deleted [#50][link-50]
   * Added note to README to state that per-alias resources do not work until fixed/added in Serverless
 
 * 1.2.0
-  * Fix issue when stage is specified as Serverless variable [#45](https://github.com/HyperBrain/serverless-aws-alias/issues/45)
-  * Add support for SNS Lambda subscriptions [#43](https://github.com/HyperBrain/serverless-aws-alias/issues/43)
-  * Add support for custom authorizers [#22](https://github.com/HyperBrain/serverless-aws-alias/issues/22)
+  * Fix issue when stage is specified as Serverless variable [#45][link-45]
+  * Add support for SNS Lambda subscriptions [#43][link-43]
+  * Add support for custom authorizers [#22][link-22]
 
 * 1.1.0
-  * Use stage variable in APIG [#40](https://github.com/HyperBrain/serverless-aws-alias/issues/40)
-  * Fix tail logging [#42](https://github.com/HyperBrain/serverless-aws-alias/issues/42)
+  * Use stage variable in APIG [#40][link-40]
+  * Fix tail logging [#42][link-42]
 
+* 1.0.0 Support "serverless logs" with aliases. First non-alpha!
 
-* 1.0.0        Support "serverless logs" with aliases. First non-alpha!
+[ico-serverless]: http://public.serverless.com/badges/v3.svg
+[ico-license]: https://img.shields.io/github/license/serverless-heaven/serverless-webpack.svg
+[ico-npm]: https://img.shields.io/npm/v/serverless-aws-alias.svg
+[ico-build]: https://travis-ci.org/serverless-heaven/serverless-aws-alias.svg?branch=master
+[ico-coverage]: https://coveralls.io/repos/github/serverless-heaven/serverless-aws-alias/badge.svg?branch=master
+[ico-contributors]: https://img.shields.io/github/contributors/serverless-heaven/serverless-aws-alias.svg
+[ico-npm-downloads]: https://img.shields.io/npm/dt/serverless-aws-alias.svg
+
+[link-serverless]: http://www.serverless.com/
+[link-license]: ./blob/master/LICENSE
+[link-npm]: https://www.npmjs.com/package/serverless-aws-alias
+[link-build]: https://travis-ci.org/serverless-heaven/serverless-aws-alias
+[link-coverage]: https://coveralls.io/github/serverless-heaven/serverless-aws-alias?branch=master
+[link-contributors]: https://github.com/serverless-heaven/serverless-aws-alias/graphs/contributors
+
+[comment]: # (Referenced issues)
+
+[link-22]: https://github.com/serverless-heaven/serverless-aws-alias/issues/22
+[link-29]: https://github.com/serverless-heaven/serverless-aws-alias/issues/29
+[link-40]: https://github.com/serverless-heaven/serverless-aws-alias/issues/40
+[link-42]: https://github.com/serverless-heaven/serverless-aws-alias/issues/42
+[link-43]: https://github.com/serverless-heaven/serverless-aws-alias/issues/43
+[link-45]: https://github.com/serverless-heaven/serverless-aws-alias/issues/45
+[link-49]: https://github.com/serverless-heaven/serverless-aws-alias/issues/49
+[link-50]: https://github.com/serverless-heaven/serverless-aws-alias/issues/50
+[link-51]: https://github.com/serverless-heaven/serverless-aws-alias/issues/51
+[link-56]: https://github.com/serverless-heaven/serverless-aws-alias/issues/56
+[link-57]: https://github.com/serverless-heaven/serverless-aws-alias/issues/57
+[link-60]: https://github.com/serverless-heaven/serverless-aws-alias/issues/60
+[link-62]: https://github.com/serverless-heaven/serverless-aws-alias/issues/62
+[link-63]: https://github.com/serverless-heaven/serverless-aws-alias/issues/63
+[link-68]: https://github.com/serverless-heaven/serverless-aws-alias/issues/68
+[link-72]: https://github.com/serverless-heaven/serverless-aws-alias/issues/72
+[link-80]: https://github.com/serverless-heaven/serverless-aws-alias/issues/80
+[link-85]: https://github.com/serverless-heaven/serverless-aws-alias/issues/85
+[link-87]: https://github.com/serverless-heaven/serverless-aws-alias/issues/87
+[link-88]: https://github.com/serverless-heaven/serverless-aws-alias/issues/88
+[link-89]: https://github.com/serverless-heaven/serverless-aws-alias/issues/89
+[link-94]: https://github.com/serverless-heaven/serverless-aws-alias/issues/94
+[link-96]: https://github.com/serverless-heaven/serverless-aws-alias/issues/96
+[link-101]: https://github.com/serverless-heaven/serverless-aws-alias/issues/101
+[link-102]: https://github.com/serverless-heaven/serverless-aws-alias/issues/102
+[link-110]: https://github.com/serverless-heaven/serverless-aws-alias/issues/110
+[link-112]: https://github.com/serverless-heaven/serverless-aws-alias/issues/112
+[link-120]: https://github.com/serverless-heaven/serverless-aws-alias/issues/120
+[link-127]: https://github.com/serverless-heaven/serverless-aws-alias/issues/127
+[link-140]: https://github.com/serverless-heaven/serverless-aws-alias/issues/140
+[link-159]: https://github.com/serverless-heaven/serverless-aws-alias/issues/159
+[link-160]: https://github.com/serverless-heaven/serverless-aws-alias/issues/122
+[link-161]: https://github.com/serverless-heaven/serverless-aws-alias/pull/173

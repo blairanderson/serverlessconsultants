@@ -4,13 +4,13 @@ title: Serverless Cloudformation Sub Variables
 repo: santiagocardenas/serverless-cloudformation-sub-variables
 homepage: 'https://github.com/santiagocardenas/serverless-cloudformation-sub-variables'
 description: 'Serverless framework plugin for easily supporting AWS CloudFormation Sub function variables'
-stars: 9
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 9
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0

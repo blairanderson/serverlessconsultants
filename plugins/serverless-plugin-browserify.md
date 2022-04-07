@@ -4,14 +4,14 @@ title: Serverless Plugin Browserify
 repo: doapp-ryanp/serverless-plugin-browserify
 homepage: 'https://github.com/doapp-ryanp/serverless-plugin-browserify'
 description: 'Speed up your node based lambda&#39;s'
-stars: 32
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 32
-issues: 10
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

@@ -3,6 +3,6 @@
 layout: topic
 topic: cloud
 title: cloud Serverless Plugins
-description: '1 cloud ServerLess Plugins'
-count: 1
+description: '3 cloud ServerLess Plugins'
+count: 3
 ---

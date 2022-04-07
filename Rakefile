@@ -1,8 +1,6 @@
 require './github/extension'
-require 'active_support/core_ext/date'
-require 'active_support/core_ext/time'
-require 'active_support/core_ext/hash'
-require 'active_support/core_ext/string'
+require 'active_support'
+require 'active_support/inflector'
 require 'pry'
 require 'fast_blank'
 require 'dotenv'
@@ -10,7 +8,7 @@ require "tmpdir"
 require "jekyll"
 
 LIST = [
-  :fetch_serverless_plugin_list,
+  # :fetch_serverless_plugin_list,
   :sync_github_projects,
   :sync_github_topics
 ]

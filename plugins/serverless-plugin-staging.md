@@ -4,14 +4,14 @@ title: Serverless Plugin Staging
 repo: icarus-sullivan/serverless-plugin-staging
 homepage: 'https://github.com/icarus-sullivan/serverless-plugin-staging'
 description: 'A plugin to restrict the deployment of resources or functions on a per stage basis'
-stars: 1
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 1
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

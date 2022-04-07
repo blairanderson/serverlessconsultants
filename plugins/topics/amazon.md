@@ -3,6 +3,6 @@
 layout: topic
 topic: amazon
 title: amazon Serverless Plugins
-description: '1 amazon ServerLess Plugins'
-count: 1
+description: '2 amazon ServerLess Plugins'
+count: 2
 ---

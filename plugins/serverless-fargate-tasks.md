@@ -4,14 +4,14 @@ title: Serverless Fargate Tasks
 repo: svdgraaf/serverless-fargate-tasks
 homepage: 'https://github.com/svdgraaf/serverless-fargate-tasks'
 description: 'A plugin to run fargate tasks as part of your Serverless project'
-stars: 4
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
-issues: 2
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -27,7 +27,7 @@ The (minimal) config is as follows:
 ```
 custom:
   fargate:
-    network:
+    vpc:
       subnets:
         - subnet-1234
         - subnet-5678
@@ -51,7 +51,7 @@ custom:
     # role for your account
     role: arn:aws:iam::123456789369:role/ecsTaskExecutionRole
 
-    network:
+    vpc:
       public-ip: DISABLED  # optional, defaults to disabled
       subnets:
         - subnet-1234
@@ -61,11 +61,14 @@ custom:
 
     tasks:
       my-task:
+        name: ${self:service}-${self:provider.stage}-my-task # default name is be the object key (here 'my-task')
         image: 123456789369.dkr.ecr.eu-west-1.amazonaws.com/my-image
         environment:  # optional
           platypus: true
           # local variables will always override global ones
           foo: wut
+          # you can also use cloudformation references with eg serverless-pseudo-parameters
+          myArn: #{MyResource.Arn}
         cpu: 512  # optional, defaults to 25% -> 256, see cloudformation docs for valid values
         memory: 1GB  # optional, defaults to 0.5GB
 ```
@@ -89,7 +92,7 @@ custom:
             Foo: Bar
           service:
             Foo: BAR
-          network:
+          vpc:
             Foo: BAR
           role: ARN
 ```

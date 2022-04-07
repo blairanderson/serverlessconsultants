@@ -53,7 +53,7 @@ module Github
       def repo_data_for(repo, day)
         fetch_archive unless cache["archive"]
         data = cache["archive"] && cache["archive"][repo] && cache["archive"][repo][day.to_s]
-        data && data.with_indifferent_access
+        data
       end
 
       def repo_from_archive(repo)
@@ -63,11 +63,11 @@ module Github
       def repo_from_api(repo)
         puts "Syncing: #{repo.inspect}"
 
-        topics_resp = JSON.parse(fetch_repo_topics(repo)).with_indifferent_access
+        topics_resp = JSON.parse(fetch_repo_topics(repo))
         topics_key = "topics".freeze
-        topics = topics_resp[:names]
+        topics = topics_resp["names"]
 
-        JSON.parse(fetch_repo(repo)).with_indifferent_access.tap do |data|
+        JSON.parse(fetch_repo(repo)).tap do |data|
           unless repo_from_archive(repo)
             cache["archive"] ||= {}
             cache["archive"][repo] ||= {}
@@ -129,8 +129,13 @@ module Github
       end
 
       def api_request(url, options = {})
+        raise(ArgumentError.new("Missing GITHUB_TOKEN=something")) unless ENV["GITHUB_TOKEN"]
+        sleep(1)
+
         uri = URI.parse(url)
         req = METHODS[options[:method] || :get].new(uri.path)
+
+        # req['Authorization'] = "token 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"
         req['Authorization'] = "token #{ENV['GITHUB_TOKEN']}" if ENV["GITHUB_TOKEN"]
 
         if options[:accept]
@@ -149,8 +154,19 @@ module Github
         code = res.code.to_i
 
         unless code >= 200 && code <= 300
-          message = "Error communicating with Github #{uri} (#{res.code}): #{res.inspect}"
-          puts message
+          puts "Error communicating with Github #{uri} (#{code}): #{res.inspect}"
+          rdata = uri.to_s.gsub("https://api.github.com/repos/", '').gsub("/topics", '')
+          if code == 301
+            @moved ||= []
+            puts JSON.parse(res.body)
+            @moved.push(rdata)
+          end
+
+          if code == 404
+            @not_found ||= []
+            @not_found.push(rdata)
+          end
+
           return "{}"
           # raise message
         end

@@ -4,13 +4,13 @@ title: Serverless Plugin Monorepo
 repo: Butterwire/serverless-plugin-monorepo
 homepage: 'https://github.com/Butterwire/serverless-plugin-monorepo'
 description: 'A serverless plugin that allows use of serverless in a mono repo. Avoids needing to use nohoist by automatic symlinking of all dependencies.'
-stars: 25
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 25
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -19,7 +19,8 @@ issues_diff: 0
 
 # serverless-plugin-monorepo
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![NPM Package](https://img.shields.io/npm/v/serverless-plugin-monorepo.svg)](https://www.npmjs.com/package/serverless-plugin-monorepo)
 
 A Serverless plugin design to make it possible to use Serverless in a
@@ -44,7 +45,7 @@ yarn add --dev serverless-plugin-monorepo
 npm install --dev serverless-plugin-monorepo
 ```
 
-Currently this plugin requires Node V8+. If there is interest in support older
+Currently this plugin requires Node V10+. If there is interest in support older
 versions then trans-compilation with Babel could be added.
 
 
@@ -69,16 +70,21 @@ The plugin will run when you do:
 - Deployment of individual functions (`sls deploy -f`)
 - Spinning up a local sandbox with [serverless-offline](https://github.com/dherault/serverless-offline) (`sls offline [start]`)
 
+## Settings
+
+On Windows platforms only, the package will create [junction links](https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions) by default as these do not require administrative privileges on older versions of Windows.
+You can set the `linkType` setting to `dir` to create symbolic links instead. This setting is directly passed to the [fs.symlink](https://nodejs.org/docs/latest/api/fs.html#fs_fs_symlink_target_path_type_callback) function. It is ignored on non Windows platforms.
+
 ## Contributing
 
 We welcome issue reports and pull requests!
 
-There is a small `run` script which will launch Node V8 in a Docker container which
+There is a small `run` script which will launch Node V14 in a Docker container which
 you may find useful for development purposes.
 
-Note we are using [StandardJS](https://standardjs.com/) and you can run
+Note we are using [Prettier](https://prettier.io/) with [Typescript ESLint](https://github.com/typescript-eslint/typescript-eslint) and you can run
 the lint tool via `yarn lint` which will attempt to automatically issues like spacing etc.
 
 ## Copyright
 
-Copyright [Butterwire Limited](https://www.butterwire.com) 2018
+Copyright [Butterwire Limited](https://www.butterwire.com) 2018 - 2020

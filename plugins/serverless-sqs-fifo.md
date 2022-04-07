@@ -4,14 +4,14 @@ title: Serverless Sqs Fifo
 repo: vortarian/serverless-sqs-fifo
 homepage: 'https://github.com/vortarian/serverless-sqs-fifo'
 description: 'A serverless plugin to handle creation of sqs fifo queue&#39;s in aws (stop-gap)'
-stars: 6
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 6
-issues: 3
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

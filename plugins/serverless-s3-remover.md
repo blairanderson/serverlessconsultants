@@ -4,14 +4,14 @@ title: Serverless S3 Remover
 repo: sinofseven/serverless-s3-remover
 homepage: 'https://github.com/sinofseven/serverless-s3-remover'
 description: 'A serverless plugin to make s3 buckets empty before deleting cloudformation stack when ```sls remove```'
-stars: 22
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 22
-issues: 6
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

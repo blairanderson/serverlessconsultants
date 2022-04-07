@@ -4,13 +4,13 @@ title: Serverless Cloudflare Workers
 repo: cloudflare/serverless-cloudflare-workers
 homepage: 'https://github.com/cloudflare/serverless-cloudflare-workers'
 description: 'A serverless plugin allowing you to integrate with [Cloudflare Workers](https://cloudflareworkers.com/#12a9195720fe4ed660949efdbd9c0219:https://tutorial.cloudflareworkers.com)'
-stars: 40
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 12
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 40
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -100,6 +100,26 @@ functions:
       kv:
         - variable: TEST
           namespace: BEST_NAMESPACE
+    events:
+      - http:
+          url: example.com/myfunction
+          method: GET
+```
+
+### Web Assembly
+
+The plugin can upload and bind WASM to execute in your worker. The easiest way to do this is to use the --template cloudflare-workers-rust when generating a project. The template includes a Rust create folder setup with wasm-pack, a webpack script for adding the generated javascript into your project, and the yml file settings to upload the wasm file itself.
+
+```yaml
+functions:
+  myfunction:
+    name: myfunction
+    webpack: true
+    script: handlers/myfunctionhandler
+    resources:
+      wasm:
+        - variable: WASM
+          filename: rust/pkg/wasm_bg.wasm
     events:
       - http:
           url: example.com/myfunction

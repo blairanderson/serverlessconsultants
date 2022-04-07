@@ -4,13 +4,13 @@ title: Serverless Plugin Parcel
 repo: threadheap/serverless-plugin-parcel
 homepage: 'https://github.com/threadheap/serverless-plugin-parcel'
 description: 'Serverless Parcel plugin with watch mode and serverless-offline support'
-stars: 11
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 11
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -156,3 +156,7 @@ in `.babelrc`:
 ## Alternatives
 
 [serverless-parcel](https://github.com/johnagan/serverless-parcel)
+
+## Author
+
+[Pavel Vlasov](https://github.com/pavelvlasov)

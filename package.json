@@ -17,10 +17,7 @@
     "dotenv": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-data": "^1.2.1",
-    "request": "^2.81.0",
+    "request": "^2.88.2",
     "tachyons-sass": "^4.7.1"
-  },
-  "scripts": {
-    "postinstall": "gulp"
   }
 }

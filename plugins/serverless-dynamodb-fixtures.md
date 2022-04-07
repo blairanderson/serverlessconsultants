@@ -4,13 +4,13 @@ title: Serverless Dynamodb Fixtures
 repo: chechu/serverless-dynamodb-fixtures
 homepage: 'https://github.com/chechu/serverless-dynamodb-fixtures'
 description: 'Serverless Dynamodb Fixtures - Allows to load data on DynamoDB tables'
-stars: 6
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 4
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 6
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -38,9 +38,9 @@ See the configuration flag `enable`, for each fixture block, for more informatio
 
 ## Configuration
 
-You should include the plugin as dev dependency, and in your serverless.yml file. Then, as a custom variable, you should include a `fixtures` variable with the configuration of the plugin.
+You should include the plugin as dev dependency, and in your serverless.yml file. Then, as a custom variable, you should include a `fixtures` variable with the configuration of the plugin. The fixtures configuration should contain a `rules` element. and optionally an `endpoint` element if you want to use a local instance of DynamoDB (remember to set the **AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY** environment variables if you use dynamodb local).
 
-The accepted configuration is an array of fixtures, where each fixture has the following variables:
+The accepted rules configuration is an array of fixtures, where each fixture has the following variables:
 * **table**: (String) Name of the DynamoDB table where you want to load your fixtures.
 * **enable**: (String or boolean) *Optional*. This flag allows us to enable/disable the load of these fixtures. Accepted values:
   * 'cli': enable the load of these fixtures only if the plugin was launched via CLI (`sls fixtures`). This is the *default value*.
@@ -65,19 +65,21 @@ plugins:
 
 custom:
   fixtures:
-    - table: TABLE1-${self:custom.stage}
-      [enable: true]
-      sources:
-        - ./file1-${self:custom.stage}.yml
-        - ./file2-${self:custom.stage}.json
-      rawsources:
-        - ./rawFormatFile1-${self:custom.stage}.yml
+    endpoint: http://localhost:8000
+    rules:
+        - table: TABLE1-${self:custom.stage}
+        [enable: true]
+        sources:
+            - ./file1-${self:custom.stage}.yml
+            - ./file2-${self:custom.stage}.json
+        rawsources:
+            - ./rawFormatFile1-${self:custom.stage}.yml
 
-    - table: TABLE2-${self:custom.stage}
-      [stage: test]
-      [concurrentWrites: 5]
-      sources:
-        - ./file3-${self:custom.stage}.yml
+        - table: TABLE2-${self:custom.stage}
+        [stage: test]
+        [concurrentWrites: 5]
+        sources:
+            - ./file3-${self:custom.stage}.yml
 
 ```
 

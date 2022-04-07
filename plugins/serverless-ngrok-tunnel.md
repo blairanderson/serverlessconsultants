@@ -4,13 +4,13 @@ title: Serverless Ngrok Tunnel
 repo: mitipi/serverless-ngrok-tunnel
 homepage: 'https://github.com/mitipi/serverless-ngrok-tunnel'
 description: 'Serverless plugin that creates ngrok public tunnel on localhost'
-stars: 10
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 10
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -58,7 +58,7 @@ custom:
       - port: 9000
         ngrokOptions: # optional. custom ngrok options
           authtoken: '12345'
-          region: 'us',
+          region: 'us'
           subdomain: 'my-subdomain'
           
 ```
@@ -71,6 +71,6 @@ If you are using `serverless-offline` plugin, start offline with option flag: `s
 
 Yes, please. Checkout [contributing guidelines](./CONTRIBUTING.md).
 
-##Licence
+## Licence
 
 MIT

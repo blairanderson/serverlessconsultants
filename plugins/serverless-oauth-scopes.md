@@ -4,14 +4,14 @@ title: Serverless Oauth Scopes
 repo: birdcatcher/serverless-oauth-scopes
 homepage: 'https://github.com/birdcatcher/serverless-oauth-scopes'
 description: 'A serverless plugin to set OAuth Scopes on APIGateway methods'
-stars: 3
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

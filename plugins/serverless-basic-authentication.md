@@ -4,14 +4,14 @@ title: Serverless Basic Authentication
 repo: svdgraaf/serverless-basic-authentication
 homepage: 'https://github.com/svdgraaf/serverless-basic-authentication'
 description: 'Serverless Plugin for adding Basic Authentication to your api'
-stars: 9
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 9
-issues: 2
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -75,6 +75,32 @@ functions:
           path: foo/bar
           method: get
           private: true
+```
+
+To send the correct header so that browsers will prompt for username and password, add a `GatewayResponse` to the `resources`:
+
+```
+resources:
+  Resources:
+    GatewayResponse:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.WWW-Authenticate: "'Basic'"
+        ResponseType: UNAUTHORIZED
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'
+        StatusCode: '401'
+```
+
+If you are whitelisting files to be packaged, ensure you add `basic_auth.py` to the list otherwise the authorizer will fail:
+
+```
+package:
+  exclude:
+    - "./**/**"
+  include:
+    - basic_auth.py
 ```
 
 **Note:** The plugin checks if a custom authorizer is already set. So if you provide a custom authorizer it will not override your custom authorizer.

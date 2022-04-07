@@ -4,14 +4,14 @@ title: Serverless Haskell
 repo: seek-oss/serverless-haskell
 homepage: 'https://github.com/seek-oss/serverless-haskell'
 description: 'Deploying Haskell applications to AWS Lambda with Serverless'
-stars: 140
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 14
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 140
-issues: 8
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -19,13 +19,13 @@ issues_diff: 0
 
 # Serverless Haskell
 
-[![Build status](https://img.shields.io/travis/seek-oss/serverless-haskell.svg)](https://travis-ci.org/seek-oss/serverless-haskell)
+![Build status](https://github.com/seek-oss/serverless-haskell/workflows/Build/badge.svg)
 [![Hackage](https://img.shields.io/hackage/v/serverless-haskell.svg)](https://hackage.haskell.org/package/serverless-haskell)
 [![Stackage LTS](https://www.stackage.org/package/serverless-haskell/badge/lts)](https://www.stackage.org/lts/package/serverless-haskell)
 [![Hackage dependencies](https://img.shields.io/hackage-deps/v/serverless-haskell.svg)](https://packdeps.haskellers.com/feed?needle=serverless-haskell)
 [![npm](https://img.shields.io/npm/v/serverless-haskell.svg)](https://www.npmjs.com/package/serverless-haskell)
 
-Deploying Haskell code onto [AWS Lambda] using [Serverless].
+Deploying Haskell code onto [AWS Lambda] as native runtime using [Serverless].
 
 ## Prerequisites
 
@@ -49,18 +49,18 @@ In either case, you will want to have [Serverless] installed, eg. `npm install -
   ```
 
 * Update the resolver in the `stack.yaml` file. This is hardcoded as the resolver number is not known at template interpolation time. You should pick either the latest resolver, or one you have used before and have thus prebuilt many of the core packages for.
-  
+
 * Install the dependencies and build the project:
- 
+
   ```shell
   cd mypackage
   npm install
   stack build
   sls invoke local -f mypackage-func
   ```
-  
+
   This should invoke serverless locally and display output once everything has built.
-  
+
 ### Manually
 
 * Create a [Stack] package for your code:
@@ -69,14 +69,14 @@ In either case, you will want to have [Serverless] installed, eg. `npm install -
   stack new mypackage
   ```
 
-  LTS 9-13 are supported, older versions are likely to work too but untested.
+  LTS 10-17 are supported, older versions are likely to work too but untested.
 
 * Initialise a Serverless project inside the Stack package directory and install
   the `serverless-haskell` plugin:
 
   ```shell
   cd mypackage
-  npm init .
+  npm init -y
   npm install --save serverless serverless-haskell@x.y.z
   ```
 
@@ -94,13 +94,13 @@ In either case, you will want to have [Serverless] installed, eg. `npm install -
 
   functions:
     myfunc:
-      handler: mypackage.myfunc
-      # Here, mypackage is the Haskell package name and myfunc is the executable
-      # name as defined in the Cabal file. The handler field may be prefixed
-      # with a path of the form `dir1/.../dirn`, relative to `serverless.yml`,
-      # which points to the location where the Haskell package `mypackage` is
-      # defined. This prefix is not needed when the Stack project is defined at
-      # the same level as `serverless.yml`.
+      handler: mypackage.mypackage-exe
+      # Here, mypackage is the Haskell package name and mypackage-exe is the
+      # executable name as defined in the Cabal file. The handler field may be
+      # prefixed with a path of the form `dir1/.../dirn`, relative to
+      # `serverless.yml`, which points to the location where the Haskell
+      # package `mypackage` is defined. This prefix is not needed when the
+      # Stack project is defined at the same level as `serverless.yml`.
 
   plugins:
     - serverless-haskell
@@ -122,16 +122,42 @@ In either case, you will want to have [Serverless] installed, eg. `npm install -
     pure [1, 2, 3]
   ```
 
+* Add `aeson` and `serverless-haskell` to `package.yaml`:
+
+  ```yaml
+  dependencies:
+  - base >= 4.7 && < 5
+  - aeson
+  - serverless-haskell
+  ```
+
+* Build and test locally using `sls invoke local`:
+
+  The `serverless-haskell` plugin will build the package using Stack. Note that
+  the first build can take a long time. Consider adding `export SLS_DEBUG=*` so
+  you can see what is happening.
+
+  ```
+  export SLS_DEBUG=*
+  sls invoke local -f myfunc
+  ```
+
 * Use `sls deploy` to deploy the executable to AWS Lambda.
 
-  The `serverless-haskell` plugin will build the package using Stack and upload
+  The `serverless-haskell` plugin will build the package using Stack, then upload
   it to AWS together with a JavaScript wrapper to pass the input and output
   from/to AWS Lambda.
 
-  You can test the function and see the invocation results with `sls invoke
-  myfunc`.
+  ```
+  export SLS_DEBUG=*
+  sls deploy
+  ```
+  You can test the function and see the invocation results with:
 
-  To invoke the function locally, use `sls invoke local -f myfunc`.
+  ```
+  sls invoke -f myfunc`
+  ```
+
 
 ### API Gateway
 
@@ -140,7 +166,12 @@ normally in `serverless.yml` and use
 [AWSLambda.Events.APIGateway](https://hackage.haskell.org/package/serverless-haskell/docs/AWSLambda-Events-APIGateway.html)
 in the handler to process them.
 
-[Serverless Offline] can be used for local testing of API Gateway requests.
+[Serverless Offline] can be used for local testing of API Gateway requests. You
+must use `--useDocker` flag so that the native Haskell runtime works correctly.
+
+When using [Serverless Offline], make sure that the project directory is
+world-readable, otherwise the started Docker container will be unable to access
+the handlers and all invocations will return HTTP status 502.
 
 ### Notes
 
@@ -153,18 +184,16 @@ for documentation, including additional options to control the deployment.
 
 ## Development
 
-Currently, apart from the `master` branch, an `v0.6.x` branch is maintained with
-no breaking changes since 0.6.0, for inclusion into Stackage LTS 12. For
-bugfixes and new features that do not change the existing behavior, please
-target `v0.6.x`. For anything else, target `master`.
+`master` branch is the stable version. It is normally released to Hackage once
+new changes are merged via Git tags.
 
-Changes to the LTS branch will be forward ported to the `master` branch after
-releasing.
+The package is also maintained in Stackage LTS, provided the dependencies are
+not blocking it.
 
 ### Testing
 
 * Haskell code is tested with Stack: `stack test`.
-* JavaScript code is linted with `eslint`.
+* TypeScript code is linted with `eslint`.
 
 ### Integration tests
 
@@ -174,21 +203,26 @@ function to AWS, and it runs with expected functionality.
 Integration test is only automatically run up to deployment due to the need for
 an AWS account. To run manually:
 
-* Ensure you have the required dependencies: `curl`, [jq], [NPM], `pwgen` and
-  [Stack].
+* Ensure you have the required dependencies:
+  - `curl`
+  - [jq]
+  - [NPM]
+  - [`pkg-config`](pkg-config)
+  - `pwgen`
+  - [Stack]
 * Get an AWS account and add the access credentials into your shell environment.
 * Run `./integration-test/run.sh`. The exit code indicates success.
 * To verify just the packaging, without deployment, run
   `./integration-test/run.sh --dry-run`.
-* By default, the integration test is run with LTS 13. To specify a different
-  series, use `RESOLVER_SERIES=lts-9`.
+* By default, the integration test is run with the LTS specified in
+  `stack.yaml`. To specify a different series, use `RESOLVER_SERIES=lts-9`.
 * To avoid creating a temporary directory for every run, specify
   `--no-clean-dir`. This can speed up repeated test runs, but does not guarantee
   the same results as a clean test.
 
 ### Releasing
 
-* Ensure you are on a correct branch (`v0.6.x` or `master`).
+* Ensure you are on the `master` branch.
 * Ensure that all the changes are reflected in the changelog.
 * Run the integration tests.
 * Run `./bumpversion major|minor|patch`. This will increment the version number,
@@ -201,6 +235,7 @@ an AWS account. To run manually:
 [Docker]: https://www.docker.com/
 [jq]: https://stedolan.github.io/jq/
 [NPM]: https://www.npmjs.com/
+[pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
 [Serverless]: https://serverless.com/framework/
 [Serverless Offline]: https://github.com/dherault/serverless-offline
 [Stack]: https://haskellstack.org

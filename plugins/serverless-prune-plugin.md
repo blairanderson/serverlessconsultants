@@ -4,14 +4,14 @@ title: Serverless Prune Plugin
 repo: claygregory/serverless-prune-plugin
 homepage: 'https://github.com/claygregory/serverless-prune-plugin'
 description: 'Deletes old versions of functions from AWS, preserving recent and aliased versions'
-stars: 95
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 95
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -20,10 +20,9 @@ issues_diff: 0
 
 # Serverless Prune Plugin
 
-Following deployment, the Serverless Framework does not purge previous versions of functions from AWS, so the number of deployed versions can grow out of hand rather quickly. This plugin allows pruning of all but the most recent version(s) of managed functions from AWS. This plugin targets Serverless 1.x.
+Following deployment, the Serverless Framework does not purge previous versions of functions from AWS, so the number of deployed versions can grow out of hand rather quickly. This plugin allows pruning of all but the most recent version(s) of managed functions from AWS. This plugin is compatible with Serverless 1.x and higher.
 
 [![Serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![Build Status](https://travis-ci.org/claygregory/serverless-prune-plugin.svg?branch=master)](https://travis-ci.org/claygregory/serverless-prune-plugin)
 [![Coverage Status](https://coveralls.io/repos/github/claygregory/serverless-prune-plugin/badge.svg?branch=master)](https://coveralls.io/github/claygregory/serverless-prune-plugin?branch=master)
 
 ## Installation
@@ -79,7 +78,19 @@ custom:
 ```
 
 To run automatically, the `automatic` property of `prune` must be set to `true` and the `number` of versions to keep must be specified.
+It is possible to set `number` to `0`. In this case, the plugin will delete all the function versions (except $LATEST); this is useful when disabling function versioning for an already-deployed stack.
 
+### Layers
+
+This plugin can also prune Lambda Layers in the same manner that it prunes functions. You can specify a Lambda Layer, or add the flag, `includeLayers`:
+
+```yaml
+custom:
+  prune:
+    automatic: true
+    includeLayers: true
+    number: 3
+```
 
 ### Dry Run
 
@@ -95,10 +106,25 @@ See:
 sls prune --help
 ```
 
-## See Also
+## Permissions Required
 
-The [Serverless Autoprune Plugin](https://github.com/arabold/serverless-autoprune-plugin) by [arabold](https://github.com/arabold) performs a similar role, but targets Serverless 0.5.x projects.
+To run this plugin, the user will need to be allowed the following permissions in AWS:
+- `lambda:listAliases`
+- `lambda:listVersionsByFunction`
+- `lambda:deleteFunction`
+- `lambda:listLayerVersions`
+- `lambda:deleteLayerVersion`
+
+## Common Questions
+
+**How do I set up different pruning configurations per region/stage?**
+
+Several suggestions are available in [this thread](https://github.com/claygregory/serverless-prune-plugin/issues/21#issuecomment-622651886).
+
+**Can I just disable versioning entirely?**
+
+Absolutely. While Serverless Framework has it enabled by default, [versioning can be disabled](https://www.serverless.com/framework/docs/providers/aws/guide/functions/#versioning-deployed-functions).
 
 ## License
 
-See the included [LICENSE](LICENSE.md) for rights and limitations under the terms of the MIT license.
+Copyright (c) 2017 [Clay Gregory](https://claygregory.com). See the included [LICENSE](LICENSE.md) for rights and limitations under the terms of the MIT license.

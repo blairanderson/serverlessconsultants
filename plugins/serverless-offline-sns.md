@@ -4,14 +4,14 @@ title: Serverless Offline Sns
 repo: mj1618/serverless-offline-sns
 homepage: 'https://github.com/mj1618/serverless-offline-sns'
 description: 'Serverless plugin to run a local SNS server and call serverless SNS handlers with events notifications.'
-stars: 52
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 31
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 52
-issues: 13
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -21,12 +21,12 @@ issues_diff: 0
 A serverless plugin to listen to offline SNS and call lambda fns with events.
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![Build Status](https://travis-ci.org/mj1618/serverless-offline-sns.svg?branch=master)](https://travis-ci.org/mj1618/serverless-offline-sns)
+![build status](https://github.com/mj1618/serverless-offline-sns/actions/workflows/build.yml/badge.svg)
 [![npm version](https://badge.fury.io/js/serverless-offline-sns.svg)](https://badge.fury.io/js/serverless-offline-sns)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors)
 
 ## Docs
 - [Prerequisites](#prerequisites)
@@ -66,8 +66,21 @@ custom:
     port: 4002 # a free port for the sns server to run on
     debug: false
     # host: 0.0.0.0 # Optional, defaults to 127.0.0.1 if not provided to serverless-offline
-    # sns-endpoint: http://127.0.0.1:4567 # Optional. Only if you want to use a custom endpoint
+    # sns-endpoint: http://127.0.0.1:4567 # Optional. Only if you want to use a custom SNS provider endpoint
+    # sns-subscribe-endpoint: http://127.0.0.1:3000 # Optional. Only if you want to use a custom subscribe endpoint from SNS to send messages back to
     # accountId: 123456789012 # Optional
+    # location: .build # Optional if the location of your handler.js is not in ./ (useful for typescript)
+```
+
+For example, if you would like to connect to AWS and have callbacks coming via ngrok, use:
+
+```YAML
+serverless-offline-sns:
+    sns-endpoint: sns.${self:provider.region}.amazonaws.com
+    sns-subscribe-endpoint: <ngrok_url>
+    remotePort: 80
+    localPort: <ngrok_port>
+    accountId: ${self:provider.accountId}
 ```
 
 In normal operation, the plugin will use the same *--host* option as provided to serverless-offline. The *host* parameter as shown above overrides this setting.
@@ -91,14 +104,15 @@ functions:
       - sns: test-topic
 ```
 
-Or you can use the exact ARN of the topic:
+Or you can use the exact ARN of the topic, in 2 ways:
 ```YAML
 functions:
   pong:
     handler: handler.pong
     events:
       - sns:
-         arn: "arn:aws:sns:us-east-1:123456789012:test-topic"
+         arn: "arn:aws:sns:us-east-1:123456789012:test-topic" # 1st way
+      - sns: "arn:aws:sns:us-east-1:123456789012:test-topic-two" # 2nd way
 ```
 
 Here's a demo of some code that will trigger this handler:
@@ -110,7 +124,7 @@ var sns = new AWS.SNS({
   region: "us-east-1",
 });
 sns.publish({
-  Message: "hello!",
+  Message: "{content: \"hello!\"}",
   MessageStructure: "json",
   TopicArn: "arn:aws:sns:us-east-1:123456789012:test-topic",
 }, () => {
@@ -130,6 +144,32 @@ custom:
     sns-endpoint: http://localhost:4575 # Default localstack sns endpoint
 ```
 What happens is that the container running localstack will execute a POST request to the plugin, but to reach outside the container, it needs to use the host ip address.
+
+## Hosted AWS SNS configuration
+
+In order to listen to a hosted SNS on AWS, you need the following:
+```YAML
+custom:
+  serverless-offline-sns:
+    localPort: ${env:LOCAL_PORT}
+    remotePort: ${env:SNS_SUBSCRIBE_REMOTE_PORT}
+    host: 0.0.0.0
+    sns-subscribe-endpoint: ${env:SNS_SUBSCRIBE_ENDPOINT}
+    sns-endpoint: ${env:SNS_ENDPOINT}```
+```
+
+If you want to unsubscribe when you stop your server, then call `sls offline-sns cleanup` when the script exits.
+
+## Multiple serverless services configuration
+
+If you have multiple serverless services, please specify a root directory:
+```YAML
+custom:
+  serverless-offline-sns:
+    servicesDirectory: "/path/to/directory"
+```
+
+The root directory must contain directories with serverless.yaml files inside.
 
 ## Usage
 
@@ -165,11 +205,71 @@ Happy to accept contributions, [feature requests](https://github.com/mj1618/serv
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/6138817?v=4" width="100px;" alt="Matthew James"/><br /><sub><b>Matthew James</b></sub>](https://github.com/mj1618)<br />[💬](#question-mj1618 "Answering Questions") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=mj1618 "Code") [🎨](#design-mj1618 "Design") [📖](https://github.com/mj1618/serverless-offline-sns/commits?author=mj1618 "Documentation") [💡](#example-mj1618 "Examples") | [<img src="https://avatars0.githubusercontent.com/u/517620?v=4" width="100px;" alt="darbio"/><br /><sub><b>darbio</b></sub>](https://github.com/darbio)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Adarbio "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=darbio "Code") | [<img src="https://avatars2.githubusercontent.com/u/5116271?v=4" width="100px;" alt="TiVoMaker"/><br /><sub><b>TiVoMaker</b></sub>](https://github.com/TiVoMaker)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ATiVoMaker "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=TiVoMaker "Code") [🎨](#design-TiVoMaker "Design") [📖](https://github.com/mj1618/serverless-offline-sns/commits?author=TiVoMaker "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/32281536?v=4" width="100px;" alt="Jade Hwang"/><br /><sub><b>Jade Hwang</b></sub>](https://github.com/jadehwangsonos)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Ajadehwangsonos "Bug reports") | [<img src="https://avatars1.githubusercontent.com/u/933251?v=4" width="100px;" alt="Bennett Rogers"/><br /><sub><b>Bennett Rogers</b></sub>](https://github.com/bennettrogers)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Abennettrogers "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=bennettrogers "Code") | [<img src="https://avatars2.githubusercontent.com/u/9253219?v=4" width="100px;" alt="Julius Breckel"/><br /><sub><b>Julius Breckel</b></sub>](https://github.com/jbreckel)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=jbreckel "Code") [💡](#example-jbreckel "Examples") [⚠️](https://github.com/mj1618/serverless-offline-sns/commits?author=jbreckel "Tests") | [<img src="https://avatars1.githubusercontent.com/u/29059474?v=4" width="100px;" alt="RainaWLK"/><br /><sub><b>RainaWLK</b></sub>](https://github.com/RainaWLK)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ARainaWLK "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=RainaWLK "Code") |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars2.githubusercontent.com/u/33498?v=4" width="100px;" alt="Jamie Learmonth"/><br /><sub><b>Jamie Learmonth</b></sub>](http://www.boxlightmedia.com)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Ajamiel "Bug reports") | [<img src="https://avatars2.githubusercontent.com/u/2598355?v=4" width="100px;" alt="Gevorg A. Galstyan"/><br /><sub><b>Gevorg A. Galstyan</b></sub>](https://github.com/gevorggalstyan)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Agevorggalstyan "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=gevorggalstyan "Code") | [<img src="https://avatars3.githubusercontent.com/u/412382?v=4" width="100px;" alt="Ivan Montiel"/><br /><sub><b>Ivan Montiel</b></sub>](https://idmontie.github.io)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Aidmontie "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=idmontie "Code") [⚠️](https://github.com/mj1618/serverless-offline-sns/commits?author=idmontie "Tests") | [<img src="https://avatars0.githubusercontent.com/u/205515?v=4" width="100px;" alt="Matt Ledom"/><br /><sub><b>Matt Ledom</b></sub>](https://github.com/mledom)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=mledom "Code") [🎨](#design-mledom "Design") | [<img src="https://avatars3.githubusercontent.com/u/2430033?v=4" width="100px;" alt="Keith Kirk"/><br /><sub><b>Keith Kirk</b></sub>](http://kmfk.io)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=kmfk "Code") [🎨](#design-kmfk "Design") | [<img src="https://avatars1.githubusercontent.com/u/679761?v=4" width="100px;" alt="Kobi Meirson"/><br /><sub><b>Kobi Meirson</b></sub>](https://github.com/kobim)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=kobim "Code") | [<img src="https://avatars2.githubusercontent.com/u/2048655?v=4" width="100px;" alt="Steve Green"/><br /><sub><b>Steve Green</b></sub>](https://github.com/lagnat)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=lagnat "Code") |
-| [<img src="https://avatars1.githubusercontent.com/u/334487?v=4" width="100px;" alt="Daniel"/><br /><sub><b>Daniel</b></sub>](http://dandoes.net)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ADanielSchaffer "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=DanielSchaffer "Code") [🎨](#design-DanielSchaffer "Design") | [<img src="https://avatars2.githubusercontent.com/u/592682?v=4" width="100px;" alt="Zdenek Farana"/><br /><sub><b>Zdenek Farana</b></sub>](https://zdenekfarana.com/)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=byF "Code") | [<img src="https://avatars3.githubusercontent.com/u/80440?v=4" width="100px;" alt="Daniel Maricic"/><br /><sub><b>Daniel Maricic</b></sub>](https://woss.io)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=woss "Code") | [<img src="https://avatars1.githubusercontent.com/u/542245?v=4" width="100px;" alt="Brandon Evans"/><br /><sub><b>Brandon Evans</b></sub>](http://www.brandonmevans.com)<br />[💻](https://github.com/mj1618/serverless-offline-sns/commits?author=BrandonE "Code") | [<img src="https://avatars0.githubusercontent.com/u/1598537?v=4" width="100px;" alt="AJ Stuyvenberg"/><br /><sub><b>AJ Stuyvenberg</b></sub>](https://aaronstuyvenberg.com)<br />[💬](#question-astuyve "Answering Questions") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=astuyve "Code") [⚠️](https://github.com/mj1618/serverless-offline-sns/commits?author=astuyve "Tests") | [<img src="https://avatars1.githubusercontent.com/u/16331726?v=4" width="100px;" alt="justin.kruse"/><br /><sub><b>justin.kruse</b></sub>](https://github.com/jkruse14)<br />[⚠️](https://github.com/mj1618/serverless-offline-sns/commits?author=jkruse14 "Tests") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=jkruse14 "Code") | [<img src="https://avatars2.githubusercontent.com/u/6473775?v=4" width="100px;" alt="Clement134"/><br /><sub><b>Clement134</b></sub>](https://github.com/Clement134)<br />[🐛](https://github.com/mj1618/serverless-offline-sns/issues?q=author%3AClement134 "Bug reports") [💻](https://github.com/mj1618/serverless-offline-sns/commits?author=Clement134 "Code") |
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/mj1618"><img src="https://avatars0.githubusercontent.com/u/6138817?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Matthew James</b></sub></a><br /><a href="#question-mj1618" title="Answering Questions">💬</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=mj1618" title="Code">💻</a> <a href="#design-mj1618" title="Design">🎨</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=mj1618" title="Documentation">📖</a> <a href="#example-mj1618" title="Examples">💡</a></td>
+    <td align="center"><a href="https://github.com/darbio"><img src="https://avatars0.githubusercontent.com/u/517620?v=4?s=100" width="100px;" alt=""/><br /><sub><b>darbio</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Adarbio" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=darbio" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/TiVoMaker"><img src="https://avatars2.githubusercontent.com/u/5116271?v=4?s=100" width="100px;" alt=""/><br /><sub><b>TiVoMaker</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ATiVoMaker" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=TiVoMaker" title="Code">💻</a> <a href="#design-TiVoMaker" title="Design">🎨</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=TiVoMaker" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/jadehwangsonos"><img src="https://avatars3.githubusercontent.com/u/32281536?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jade Hwang</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Ajadehwangsonos" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/bennettrogers"><img src="https://avatars1.githubusercontent.com/u/933251?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bennett Rogers</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Abennettrogers" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=bennettrogers" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jbreckel"><img src="https://avatars2.githubusercontent.com/u/9253219?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Julius Breckel</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=jbreckel" title="Code">💻</a> <a href="#example-jbreckel" title="Examples">💡</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=jbreckel" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/RainaWLK"><img src="https://avatars1.githubusercontent.com/u/29059474?v=4?s=100" width="100px;" alt=""/><br /><sub><b>RainaWLK</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ARainaWLK" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=RainaWLK" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://www.boxlightmedia.com"><img src="https://avatars2.githubusercontent.com/u/33498?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jamie Learmonth</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Ajamiel" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/gevorggalstyan"><img src="https://avatars2.githubusercontent.com/u/2598355?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gevorg A. Galstyan</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Agevorggalstyan" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=gevorggalstyan" title="Code">💻</a></td>
+    <td align="center"><a href="https://idmontie.github.io"><img src="https://avatars3.githubusercontent.com/u/412382?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ivan Montiel</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Aidmontie" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=idmontie" title="Code">💻</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=idmontie" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/mledom"><img src="https://avatars0.githubusercontent.com/u/205515?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Matt Ledom</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=mledom" title="Code">💻</a> <a href="#design-mledom" title="Design">🎨</a></td>
+    <td align="center"><a href="http://kmfk.io"><img src="https://avatars3.githubusercontent.com/u/2430033?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Keith Kirk</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=kmfk" title="Code">💻</a> <a href="#design-kmfk" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/kobim"><img src="https://avatars1.githubusercontent.com/u/679761?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kobi Meirson</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=kobim" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/lagnat"><img src="https://avatars2.githubusercontent.com/u/2048655?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Steve Green</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=lagnat" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://dandoes.net"><img src="https://avatars1.githubusercontent.com/u/334487?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daniel</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3ADanielSchaffer" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=DanielSchaffer" title="Code">💻</a> <a href="#design-DanielSchaffer" title="Design">🎨</a></td>
+    <td align="center"><a href="https://zdenekfarana.com/"><img src="https://avatars2.githubusercontent.com/u/592682?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zdenek Farana</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=byF" title="Code">💻</a></td>
+    <td align="center"><a href="https://woss.io"><img src="https://avatars3.githubusercontent.com/u/80440?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daniel Maricic</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=woss" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.brandonmevans.com"><img src="https://avatars1.githubusercontent.com/u/542245?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brandon Evans</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=BrandonE" title="Code">💻</a></td>
+    <td align="center"><a href="https://aaronstuyvenberg.com"><img src="https://avatars0.githubusercontent.com/u/1598537?v=4?s=100" width="100px;" alt=""/><br /><sub><b>AJ Stuyvenberg</b></sub></a><br /><a href="#question-astuyve" title="Answering Questions">💬</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=astuyve" title="Code">💻</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=astuyve" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/jkruse14"><img src="https://avatars1.githubusercontent.com/u/16331726?v=4?s=100" width="100px;" alt=""/><br /><sub><b>justin.kruse</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=jkruse14" title="Tests">⚠️</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=jkruse14" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Clement134"><img src="https://avatars2.githubusercontent.com/u/6473775?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Clement134</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3AClement134" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=Clement134" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/pjcav"><img src="https://avatars3.githubusercontent.com/u/33069039?v=4?s=100" width="100px;" alt=""/><br /><sub><b>PJ Cavanaugh</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Apjcav" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=pjcav" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/victorsferreira"><img src="https://avatars3.githubusercontent.com/u/25830138?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Victor Ferreira</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Avictorsferreira" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=victorsferreira" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/shierro"><img src="https://avatars2.githubusercontent.com/u/12129589?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Theo</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=shierro" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/mteleskycmp"><img src="https://avatars0.githubusercontent.com/u/47985584?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Matt Telesky</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Amteleskycmp" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=mteleskycmp" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/perkyguy"><img src="https://avatars3.githubusercontent.com/u/4624648?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Garrett Scott</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Aperkyguy" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=perkyguy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Pat-rice"><img src="https://avatars3.githubusercontent.com/u/428113?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Patrice Gargiolo</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=Pat-rice" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://games.crossfit.com/athlete/110515"><img src="https://avatars3.githubusercontent.com/u/5074290?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michael W. Martin</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Aanaerobic" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=anaerobic" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/mr-black-8"><img src="https://avatars0.githubusercontent.com/u/18377620?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mr-black-8</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Amr-black-8" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=mr-black-8" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/brocksamson"><img src="https://avatars1.githubusercontent.com/u/314629?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Matthew Miller</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Abrocksamson" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=brocksamson" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jason-adnuntius"><img src="https://avatars0.githubusercontent.com/u/52263930?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jason Pell</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=jason-adnuntius" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ziktar"><img src="https://avatars2.githubusercontent.com/u/1040751?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ziktar</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Aziktar" title="Bug reports">🐛</a> <a href="https://github.com/mj1618/serverless-offline-sns/commits?author=ziktar" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/stevencsf"><img src="https://avatars1.githubusercontent.com/u/7518762?v=4?s=100" width="100px;" alt=""/><br /><sub><b>stevencsf</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/issues?q=author%3Astevencsf" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/Alexandre-io"><img src="https://avatars.githubusercontent.com/u/8135542?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alexandre</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=Alexandre-io" title="Code">💻</a></td>
+    <td align="center"><a href="http://kmfk.io/"><img src="https://avatars.githubusercontent.com/u/2430033?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Keith Kirk</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=k-k" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/crash7"><img src="https://avatars.githubusercontent.com/u/1450075?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Christian Musa</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=crash7" title="Code">💻</a></td>
+    <td align="center"><a href="https://codepass.ca/"><img src="https://avatars.githubusercontent.com/u/1885333?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Glavin Wiechert</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=Glavin001" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.jagregory.com/"><img src="https://avatars.githubusercontent.com/u/10828?v=4?s=100" width="100px;" alt=""/><br /><sub><b>James Gregory</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=jagregory" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.atheneum.ai/"><img src="https://avatars.githubusercontent.com/u/8024768?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Richard</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=richlloydmiles" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/alex-vance"><img src="https://avatars.githubusercontent.com/u/50587352?v=4?s=100" width="100px;" alt=""/><br /><sub><b>alex-vance</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=alex-vance" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/christiangoltz"><img src="https://avatars.githubusercontent.com/u/2478085?v=4?s=100" width="100px;" alt=""/><br /><sub><b>christiangoltz</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=christiangoltz" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/artem7902"><img src="https://avatars.githubusercontent.com/u/26010756?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Artem Yefimenko</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=artem7902" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/jhackshaw"><img src="https://avatars.githubusercontent.com/u/36460150?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeff Hackshaw</b></sub></a><br /><a href="https://github.com/mj1618/serverless-offline-sns/commits?author=jhackshaw" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

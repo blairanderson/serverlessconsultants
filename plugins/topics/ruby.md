@@ -3,6 +3,6 @@
 layout: topic
 topic: ruby
 title: ruby Serverless Plugins
-description: '1 ruby ServerLess Plugins'
-count: 1
+description: '3 ruby ServerLess Plugins'
+count: 3
 ---

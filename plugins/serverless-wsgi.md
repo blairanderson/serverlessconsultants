@@ -4,13 +4,13 @@ title: Serverless Wsgi
 repo: logandk/serverless-wsgi
 homepage: 'https://github.com/logandk/serverless-wsgi'
 description: 'Serverless plugin to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages'
-stars: 225
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 34
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 225
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -21,15 +21,15 @@ issues_diff: 0
   <img src="https://logandk.github.io/serverless-wsgi/assets/header.svg">
 </p>
 
-[![npm package](https://nodei.co/npm/serverless-wsgi.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/serverless-wsgi/)
+[![npm package](https://nodei.co/npm/serverless-wsgi.svg?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/serverless-wsgi/)
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![Build Status](https://travis-ci.org/logandk/serverless-wsgi.png?branch=master)](https://travis-ci.org/logandk/serverless-wsgi)
+[![Build Status](https://travis-ci.org/logandk/serverless-wsgi.svg?branch=master)](https://travis-ci.org/logandk/serverless-wsgi)
 [![Coverage Status](https://codecov.io/gh/logandk/serverless-wsgi/branch/master/graph/badge.svg)](https://codecov.io/gh/logandk/serverless-wsgi)
-[![Dependency Status](https://david-dm.org/logandk/serverless-wsgi.png)](https://david-dm.org/logandk/serverless-wsgi)
-[![Dev Dependency Status](https://david-dm.org/logandk/serverless-wsgi/dev-status.png)](https://david-dm.org/logandk/serverless-wsgi?type=dev)
+[![Dependency Status](https://david-dm.org/logandk/serverless-wsgi.svg)](https://david-dm.org/logandk/serverless-wsgi)
+[![Dev Dependency Status](https://david-dm.org/logandk/serverless-wsgi/dev-status.svg)](https://david-dm.org/logandk/serverless-wsgi?type=dev)
 
-A Serverless v1.x plugin to build your deploy Python WSGI applications using Serverless. Compatible
+A Serverless Framework plugin to build your deploy Python WSGI applications using Serverless. Compatible
 WSGI application frameworks include Flask, Django and Pyramid - for a complete list, see:
 http://wsgi.readthedocs.io/en/latest/frameworks.html.
 
@@ -40,6 +40,7 @@ http://wsgi.readthedocs.io/en/latest/frameworks.html.
 - Automatically downloads Python packages that you specify in `requirements.txt` and deploys them along with your application
 - Convenient `wsgi serve` command for serving your application locally during development
 - Includes CLI commands for remote execution of Python code (`wsgi exec`), shell commands (`wsgi command`), Flask CLI commands (`wsgi flask`) and Django management commands (`wsgi manage`)
+- Supports both APIGatewayV1 and APIGatewayV2 payloads
 
 ## Install
 
@@ -111,7 +112,7 @@ functions:
     handler: wsgi_handler.handler
     events:
       - http: ANY /
-      - http: ANY {proxy+}
+      - http: ANY /{proxy+}
 
 custom:
   wsgi:
@@ -231,6 +232,8 @@ locally. This command requires the `werkzeug` Python package to be installed,
 and acts as a simple wrapper for starting werkzeug's built-in HTTP server.
 
 By default, the server will start on port 5000.
+(Note: macOS [reserves port 5000](https://twitter.com/mitsuhiko/status/1462734023164416009)
+for AirPlay by default, see below for instructions on changing the port.)
 
 ```
 $ sls wsgi serve
@@ -350,6 +353,8 @@ custom:
 If you use custom domain names with API Gateway, you might have a base path that is
 at the beginning of your path, such as the stage (`/dev`, `/stage`, `/prod`). In this case, set
 the `API_GATEWAY_BASE_PATH` environment variable to let `serverless-wsgi` know.
+E.g, if you deploy your WSGI application to https://mydomain.com/api/myservice,
+set `API_GATEWAY_BASE_PATH` to `api/myservice` (no `/` first).
 
 The example below uses the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager)
 plugin to handle custom domains in API Gateway:
@@ -384,6 +389,28 @@ custom:
     createRoute53Record: true
 ```
 
+**Note**: The **API_GATEWAY_BASE_PATH** configuration is only needed when using the payload V1. In the V2, the path does not have the **basePath** in the beginning.
+
+### Using CloudFront
+
+If you're configuring CloudFront manually in front of your API and setting
+the Path in the CloudFront Origin to include your stage name, you'll need
+to strip it out from the path supplied to WSGI. This is so that your app
+doesn't generate URLs starting with `/production`.
+
+Pass the `STRIP_STAGE_PATH=yes` environment variable to your application
+to set this:
+
+```yaml
+service: example
+
+provider:
+  name: aws
+  runtime: python3.6
+  environment:
+    STRIP_STAGE_PATH: yes
+```
+
 ### File uploads
 
 In order to accept file uploads from HTML forms, make sure to add `multipart/form-data` to
@@ -410,6 +437,9 @@ def index():
     print(request.environ['serverless.context'])
     print(request.environ['serverless.event'])
 ```
+
+For more information on these objects, read the documentation on [events](https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html)
+and the [invocation context](https://docs.aws.amazon.com/lambda/latest/dg/python-context.html).
 
 ### Text MIME types
 

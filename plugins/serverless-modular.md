@@ -4,13 +4,13 @@ title: Serverless Modular
 repo: aa2kb/serverless-modular
 homepage: 'https://github.com/aa2kb/serverless-modular'
 description: 'Helps you deploy and manage multiple features with single root serverless file'
-stars: 18
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 18
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0

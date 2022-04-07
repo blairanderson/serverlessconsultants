@@ -4,13 +4,13 @@ title: Serverless Vpc Plugin
 repo: smoketurner/serverless-vpc-plugin
 homepage: 'https://github.com/smoketurner/serverless-vpc-plugin'
 description: 'Serverless plugin to create a VPC'
-stars: 3
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -29,21 +29,23 @@ Automatically creates an AWS Virtual Private Cloud (VPC) using all available Ava
 This plugin provisions the following resources:
 
 - `AWS::EC2::VPC`
-- `AWS::EC2::InternetGateway` (for outbound internet access)
+- `AWS::EC2::InternetGateway` (for outbound internet access from "Public" subnet)
 - `AWS::EC2::VPCGatewayAttachment` (to attach the `InternetGateway` to the VPC)
-- `AWS::EC2::SecurityGroup` (to execute Lambda functions)
+- `AWS::EC2::SecurityGroup` (to execute Lambda functions [`AppSecurityGroup`])
 
 If the VPC is allocated a /16 subnet, each availability zone within the region will be allocated a /20 subnet. Within each availability zone, this plugin will further divide the subnets:
 
-- `AWS::EC2::Subnet` "Application" (/21) - default route is either `InternetGateway` or `NatGateway`
-- `AWS::EC2::Subnet` "Public" (/22) - default route set `InternetGateway`
-- `AWS::EC2::Subnet` "Database" (/22) - no default route set in routing table
+- `AWS::EC2::Subnet` "Public" (/22) - default route set to the `InternetGateway`
+- `AWS::EC2::Subnet` "Application" (/21) - no default route set (can be set to either a `NatGateway` or `NatInstance`)
+- `AWS::EC2::Subnet` "Database" (/22) - no default route set
 
 The subnetting layout was heavily inspired by the now shutdown [Skyliner](https://skyliner.io) platform. 😞
 
 Optionally, this plugin can also create `AWS::EC2::NatGateway` instances in each availability zone which requires provisioning `AWS::EC2::EIP` resources (AWS limits you to 5 per VPC, so if you want to provision your VPC across all 6 us-east availability zones, you'll need to request an VPC EIP limit increase from AWS).
 
-Any Lambda functions executing with the "Application" subnet will only be able to access:
+Instead of using the managed `AWS::EC2::NatGateway` instances, this plugin can also provision a single `t2.micro` NAT instance in `PublicSubnet1` which will allow HTTP/HTTPS traffic from the "Application" subnets to reach the Internet.
+
+Lambda functions will execute within the "Application" subnet and only be able to access:
 
 - S3 (via an S3 VPC endpoint)
 - DynamoDB (via an DynamoDB VPC endpoint)
@@ -52,12 +54,13 @@ Any Lambda functions executing with the "Application" subnet will only be able t
 - RedShift (provisioned within the "DB" subnet),
 - DAX clusters (provisioned within the "DB" subnet)
 - Neptune clusters (provisioned with the "DB" subnet)
+- Internet Access (if using a `NatGateway` or a `NatInstance`)
 
-If your Lambda functions need to access the internet, then you _MUST_ provision `NatGateway` resources.
+If your Lambda functions need to [access the internet](https://docs.aws.amazon.com/lambda/latest/dg/vpc.html#vpc-internet), then you _MUST_ provision `NatGateway` resources or a NAT instance.
 
 By default, `AWS::EC2::VPCEndpoint` "Gateway" endpoints for S3 and DynamoDB will be provisioned within each availability zone to provide internal access to these services (there is no additional charge for using Gateway Type VPC endpoints). You can selectively control which `AWS::EC2::VPCEndpoint` "Interface" endpoints are available within your VPC using the `services` configuration option below. Not all AWS services are available in every region, so the plugin will query AWS to validate the services you have selected and notify you if any changes are required (there is an additional charge for using Interface Type VPC endpoints).
 
-If you specify more then one availability zone, this plugin will also provision the following database-related resources:
+If you specify more then one availability zone, this plugin will also provision the following database-related resources (controlled using the `subnetGroups` plugin option):
 
 - `AWS::RDS::DBSubnetGroup`
 - `AWS::ElastiCache::SubnetGroup`
@@ -83,23 +86,22 @@ plugins:
   - serverless-vpc-plugin
 
 provider:
+  # you do not need to provide the "vpc" section as this plugin will populate it automatically
   vpc:
     securityGroupIds:
-      - Ref: LambdaExecutionSecurityGroup # this plugin will create this security group for you
-    subnetIds: # if specifying zones below, include the same number of subnets here
-      - Ref: AppSubnet1
-      - Ref: AppSubnet2
-      - Ref: AppSubnet3
-      #- Ref: AppSubnet4
-      #- Ref: AppSubnet5
-      #- Ref: AppSubnet6
+      -  # plugin will add LambdaExecutionSecurityGroup to this list
+    subnetIds:
+      -  # plugin will add the "Application" subnets to this list
 
 custom:
   vpcConfig:
+    # Whether plugin is enabled. Can be used to selectively disable plugin
+    # on certain stages or configurations. Defaults to true.
+    enabled: true
+
     cidrBlock: '10.0.0.0/16'
 
-    # if createNatGateway is a boolean "true", a NAT Gateway and EIP will be
-    # provisioned in each zone auto-discovered or specified below.
+    # if createNatGateway is a boolean "true", a NAT Gateway and EIP will be provisioned in each zone
     # if createNatGateway is a number, that number of NAT Gateways will be provisioned
     createNatGateway: 2
 
@@ -113,17 +115,79 @@ custom:
     # Whether to enable VPC flow logging to an S3 bucket
     createFlowLogs: false
 
-    # optionally specify AZs (defaults to auto-discover all availabile AZs)
+    # Whether to create a bastion host
+    createBastionHost: false
+    bastionHostKeyName: MyKey # required if creating a bastion host
+
+    # Whether to create a NAT instance
+    createNatInstance: false
+
+    # Whether to create AWS Systems Manager (SSM) Parameters
+    createParameters: false
+
+    # Optionally specify AZs (defaults to auto-discover all availabile AZs)
     zones:
       - us-east-1a
       - us-east-1b
       - us-east-1c
 
-    # by default, s3 and dynamodb endpoints will be available within the VPC
+    # By default, S3 and DynamoDB endpoints will be available within the VPC
     # see https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html
     # for a list of available service endpoints to provision within the VPC
     # (varies per region)
     services:
       - kms
       - secretsmanager
+
+    # Optionally specify subnet groups to create. If not provided, subnet groups
+    # for RDS, Redshift, ElasticCache and DAX will be provisioned.
+    subnetGroups:
+      - rds
+
+    # Whether to export stack outputs so it may be consumed by other stacks
+    exportOutputs: false
 ```
+
+## CloudFormation Outputs
+
+After executing `serverless deploy`, the following CloudFormation Stack Outputs will be provided:
+
+- `VPC`: VPC logical resource ID
+- `AppSecurityGroup`: Security Group ID that the applications use when executing within the VPC
+- `LambdaExecutionSecurityGroupId`: DEPRECATED - Please use AppSecurityGroupId instead
+- `BastionSSHUser`: SSH username to access the bastion host, if provisioned
+- `BastionEIP`: Elastic IP address associated to the bastion host, if provisioned
+- `RDSSubnetGroup`: SubnetGroup associated to RDS, if provisioned
+- `ElastiCacheSubnetGroup`: SubnetGroup associated to ElastiCache, if provisioned
+- `RedshiftSubnetGroup`: SubnetGroup associated to Redshift, if provisioned
+- `DAXSubnetGroup`: SubnetGroup associated to DAX, if provisioned
+- `AppSubnet{i}`: Each of the generated "Application" Subnets, where i is a 1 based index
+
+### Exporting CloudFormation Outputs
+
+Setting `exportOutputs: true` will export stack outputs. The name of the exported value will be prefixed by the cloud formation stack name (`AWS::StackName`). For example, the value of the `VPC` output of a stack named `foo-prod` will be exported as `foo-prod-VPC`.
+
+## SSM Parameters
+
+Setting `createParameters: true` will create the below parameters in the AWS Systems Manager (SSM) Parameter Store:
+
+- `/SLS/${AWS::StackName}/VPC`: VPC logical resource ID
+- `/SLS/${AWS::StackName}/AppSecurityGroup`: Security Group ID that the applications use when executing within the VPC
+- `/SLS/${AWS::StackName}/RDSSubnetGroup`: SubnetGroup associated to RDS, if provisioned
+- `/SLS/${AWS::StackName}/ElastiCacheSubnetGroup`: SubnetGroup associated to ElastiCache, if provisioned
+- `/SLS/${AWS::StackName}/RedshiftSubnetGroup`: SubnetGroup associated to Redshift, if provisioned
+- `/SLS/${AWS::StackName}/DAXSubnetGroup`: SubnetGroup associated to DAX, if provisioned
+- `/SLS/${AWS::StackName}/PublicSubnets`: Subnet ID's for the "Public" subnets
+- `/SLS/${AWS::StackName}/AppSubnets`: Subnet ID's for the "Application" subnets
+- `/SLS/${AWS::StackName}/DBSubnets`: Subnet ID's for the "Database" subnets
+
+As an example, if the stack name you want to reference is `new-service-dev`, you can then use Serverless' built-in [support](https://www.serverless.com/framework/docs/providers/aws/guide/variables/#reference-variables-using-the-ssm-parameter-store) for reading from SSM:
+
+```
+vpc:
+  securityGroupIds:
+    - ${ssm:/SLS/new-service-dev/AppSecurityGroup}
+  subnetIds: ${ssm:/SLS/new-service-dev/AppSubnets~split}
+```
+
+(Note the usage of `~split` to split the SSM `StringList` parameter type and return an array of values)

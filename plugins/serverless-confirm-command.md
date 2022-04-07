@@ -4,13 +4,13 @@ title: Serverless Confirm Command
 repo: teddy-gustiaux/serverless-confirm-command
 homepage: 'https://github.com/teddy-gustiaux/serverless-confirm-command'
 description: 'Make commands (and provider-specific options) requiring confirmation before execution.'
-stars: 5
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -21,6 +21,10 @@ issues_diff: 0
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](https://www.serverless.com)
 [![npm package](https://badge.fury.io/js/serverless-confirm-command.svg)](https://badge.fury.io/js/serverless-confirm-command)
+[![Build Status](https://travis-ci.com/teddy-gustiaux/serverless-confirm-command.svg?branch=master)](https://travis-ci.com/teddy-gustiaux/serverless-confirm-command)
+[![Code Coverage](https://img.shields.io/codecov/c/github/teddy-gustiaux/serverless-confirm-command.svg)](https://codecov.io/gh/teddy-gustiaux/serverless-confirm-command)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/teddy-gustiaux/serverless-confirm-command.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/teddy-gustiaux/serverless-confirm-command/context:javascript)
+[![Known Vulnerabilities](https://snyk.io//test/github/teddy-gustiaux/serverless-confirm-command/badge.svg?targetFile=package.json)](https://snyk.io//test/github/teddy-gustiaux/serverless-confirm-command?targetFile=package.json)
 [![License](https://img.shields.io/badge/License-MIT-lightrey.svg)](https://opensource.org/licenses/MIT)
 
 This [Serverless Framework](https://github.com/serverless/serverless) plugin allows you to define commands (as well as provider-specific options) that will require confirmation before being executed.
@@ -49,12 +53,21 @@ Please do not forget to set up and protect your deployments appropriately (espec
 
 ## Documentation
 
-- [Prerequistes](#prerequistes)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Example](#example)
-- [License](#license)
+- [Serverless Confirm Command](#serverless-confirm-command)
+  - [Features](#features)
+  - [Changelog](#changelog)
+  - [Disclaimer](#disclaimer)
+  - [Demonstration](#demonstration)
+  - [Documentation](#documentation)
+  - [Prerequistes](#prerequistes)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+    - [Commands (provider-agnostic)](#commands-provider-agnostic)
+      - [List of commands](#list-of-commands)
+    - [AWS options](#aws-options)
+  - [Usage](#usage)
+  - [Example](#example)
+  - [License](#license)
 
 ## Prerequistes
 
@@ -148,7 +161,7 @@ custom:
 Using the command `serverless remove` will produce an error:
 
 ```YAML
-  Serverless Error ---------------------------------------
+  Serverless Confirm Command Error ---------------------------------------
 
   Command not confirmed. Use [--confirm] or change the configuration of the plugin.
 ```

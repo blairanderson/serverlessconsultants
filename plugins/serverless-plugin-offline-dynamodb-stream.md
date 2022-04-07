@@ -4,14 +4,14 @@ title: Serverless Plugin Offline Dynamodb Stream
 repo: orchestrated-io/serverless-plugin-offline-dynamodb-stream
 homepage: 'https://github.com/orchestrated-io/serverless-plugin-offline-dynamodb-stream'
 description: 'Serverless Plugin for emulating dynamodb stream triggering lambda functions offline'
-stars: 8
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 8
-issues: 5
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

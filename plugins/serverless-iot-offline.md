@@ -4,14 +4,14 @@ title: Serverless Iot Offline
 repo: mitipi/serverless-iot-offline
 homepage: 'https://github.com/mitipi/serverless-iot-offline'
 description: 'Serverless plugin that emulates AWS IoT service'
-stars: 3
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 2
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -46,6 +46,8 @@ plugins:
   - serverless-offline
 ```
 
+> If you are using `serverless-offline` `v5.12.1` and below, use `serverless-iot-offline@0.1.4` for comaptibility.
+
 ## Usage and command line options
 
 Make sure `redis-server` is started.  
@@ -74,7 +76,9 @@ custom:
       db: 12
     # path to initial shadows
     # it is used to seed redis database with preconfigured shadows
-    shadows: ./shadows.json
+    seedShadows: ./shadows.json
+    # optional seedPolicies path
+    seedPolicies: ./policy.json
 ```
 Example of `shadows.json` file which will seed redis with 2 shadows:
 ```json

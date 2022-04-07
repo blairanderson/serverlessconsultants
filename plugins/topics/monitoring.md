@@ -3,6 +3,6 @@
 layout: topic
 topic: monitoring
 title: monitoring Serverless Plugins
-description: '1 monitoring ServerLess Plugins'
-count: 1
+description: '3 monitoring ServerLess Plugins'
+count: 3
 ---

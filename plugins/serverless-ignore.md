@@ -4,13 +4,13 @@ title: Serverless Ignore
 repo: nya1/serverless-ignore
 homepage: 'https://github.com/nya1/serverless-ignore'
 description: 'Serverless plugin to ignore files (.slsignore)'
-stars: 3
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -33,6 +33,10 @@ Serverless plugin to ignore files like a .gitignore
 #### Install
 
 `npm install --save-dev serverless-ignore`
+
+Note:
+
+* for serverless version < 2 use version ^0.1.6
 
 #### Usage
 

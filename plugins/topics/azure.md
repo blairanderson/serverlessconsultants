@@ -3,6 +3,6 @@
 layout: topic
 topic: azure
 title: azure Serverless Plugins
-description: '1 azure ServerLess Plugins'
-count: 1
+description: '2 azure ServerLess Plugins'
+count: 2
 ---

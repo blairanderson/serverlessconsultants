@@ -4,13 +4,13 @@ title: Serverless Plugin Subscription Filter
 repo: tsub/serverless-plugin-subscription-filter
 homepage: 'https://github.com/tsub/serverless-plugin-subscription-filter'
 description: 'A serverless plugin to register AWS CloudWatchLogs subscription filter'
-stars: 17
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 2
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 17
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -79,7 +79,3 @@ functions:
 |stage|The deployment stage with serverless. Because only one subscription filter can be set for one LogGroup.|
 |logGroupName|The log group to associate with the subscription filter. |
 |filterPattern|The filtering expressions that restrict what gets delivered to the destination AWS resource. Sorry, if you want to use '{ $.xxx = "yyy" }' syntax, then surround the whole in ''(single quote).|
-
-## Future supports
-
-* Set IAM Role for subscription filter

@@ -4,14 +4,14 @@ title: Serverless Plugin Stackstorm
 repo: StackStorm/serverless-plugin-stackstorm
 homepage: 'https://github.com/StackStorm/serverless-plugin-stackstorm'
 description: 'Reusable Functions from StackStorm Exchange'
-stars: 29
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 29
-issues: 3
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

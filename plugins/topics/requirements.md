@@ -3,6 +3,6 @@
 layout: topic
 topic: requirements
 title: requirements Serverless Plugins
-description: '2 requirements ServerLess Plugins'
-count: 2
+description: '1 requirements ServerLess Plugins'
+count: 1
 ---

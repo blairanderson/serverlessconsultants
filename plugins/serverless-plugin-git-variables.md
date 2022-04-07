@@ -4,14 +4,14 @@ title: Serverless Plugin Git Variables
 repo: jacob-meacham/serverless-plugin-git-variables
 homepage: 'https://github.com/jacob-meacham/serverless-plugin-git-variables'
 description: 'A Serverless plugin to expose git variables (branch name, HEAD description, full commit hash) to your serverless services'
-stars: 44
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 19
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 44
-issues: 5
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -19,27 +19,40 @@ issues_diff: 0
 
 # serverless-plugin-git-variables
 [![Coverage Status](https://coveralls.io/repos/github/jacob-meacham/serverless-plugin-git-variables/badge.svg?branch=develop)](https://coveralls.io/github/jacob-meacham/serverless-plugin-git-variables?branch=develop)
-[![Build Status](https://travis-ci.org/jacob-meacham/serverless-plugin-git-variables.svg?branch=develop)](https://travis-ci.org/jacob-meacham/serverless-plugin-git-variables)
+![Build Status](https://github.com/jacob-meacham/serverless-plugin-git-variables/actions/workflows/ci.yml/badge.svg)
 
-Expose git variables (HEAD description, branch name, short commit hash, message, and if the local repo has changed files) to your serverless services.
-Moreover, it adds GIT related environment variables and tags (GIT_COMMIT_SHORT, GIT_COMMIT_LONG, GIT_BRANCH, GIT_IS_DIRTY) for each defined function in the serverless file. You can disable this by adding the following custom variable in your serverless.yml file:
+Expose git variables (HEAD description, branch name, short commit hash, message, git tags, and if the local repo has changed files) to your serverless services.
+Moreover, it adds GIT related environment variables and tags (GIT_COMMIT_SHORT, GIT_COMMIT_LONG, GIT_BRANCH, GIT_IS_DIRTY, GIT_REPOSITORY, GIT_TAGS) for each defined function in the serverless file. You can disable this by adding the following custom variable in your serverless.yml file:
 
 ```
 custom:
   exportGitVariables: false
 ```
 
+If you only want to add a specific subset of variables/tags, you can define a whitelist:
+
+```
+custom:
+  gitVariablesEnvWhitelist: ['GIT_COMMIT_SHORT', 'GIT_TAGS']
+  gitVariablesTagsWhitelist: ['GIT_REPOSITORY', 'GIT_COMMIT_LONG']
+```
+
+If you have multiple git tags, you'll run into issues when adding them as AWS tags, so you'll need to exclude them from the whitelist.
+
 # Usage
 ```yaml
+
+custom:
+  gitDescription: ${git:repository} - ${git:branch} - ${git:tags}
 
 functions:
   processEventBatch:
     name: ${self:provider.stage}-${self:service}-process-event-batch
-    description: ${git:branch} - ${git:describe} - ${git:sha1}
+    description: ${self:custom.gitDescription}
 
   processEventBatch2:
     name: ${self:provider.stage}-${self:service}-process-event-batch-2
-    description: ${git:describeLight} - ${git:branch}
+    description: ${self:custom.gitDescription}
 
 plugins:
   - serverless-plugin-git-variables
@@ -51,6 +64,20 @@ resources:
     ${git:message}
 ```
 
+## Available variables
+
+* git:repository - name of the git repository
+* git:sha1 - hash of the current commit
+* git:branch - name of the current branch
+* git:isDirty - true if the workspace is currently dirty
+* git:describe / git:describeLight - see below
+* git:user - The user's name
+* git:email - The user's email
+* git:tags - The tag pointing to the current commit
+* git:message - Full git commit message
+* git:messageSubject - Only the suject of the message, as `git log -1 --pretty=%s`
+* git:messageBody - Only the body of the message, as `git log -1 --pretty=%b`
+
 ## describe and describeLight
 The describe (`${git:describe}`) and the describeLight (`${git:describeLight}`) variables are both used to return the most recent tag of the repo. However the difference is that whilst `describe` evaluates to `git describe --always`, the `describeLight` variable evaluates to `git describe --always --tags`.
 `--always` will ensure that if no tags are present, the commit hash is shown as a fallback option. (See [git describe documentation](https://git-scm.com/docs/git-describe) for more information).
@@ -59,12 +86,36 @@ Annotated tags are shown by both `describe` and `describeLight`, only `describeL
 
 For more information on annotated and lightweight tags go to the [git documentation on tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
 
-# Serverless Version Support
-* If you're using serverless 1.12.x or below, use the 1.x.x version of this plugin.
-* This plugin is currently broken for serverless versions between 1.13 and 1.15 (inclusive).
-* If you're using serverless 1.16.x or above, use the >=2.x.x version of this plugin.
+## tags
+
+The tags (`${git:tags}`) is used to get info about which git tags (separated by ::) are pointing to current commit and if none it will show commit ID as fallback.
 
 # Version History
+* 5.2.0
+  - Support for Serverless v2/v3. Switch to github actions
+* 5.1.0
+  - Add messageSubject/messageBody (Thanks @vhenzl)
+* 5.0.1
+  - Fix module export (Thanks @nason)
+* 5.0.0
+  - Rely on a more modern version of Node, which allows removal of runtime dependencies
+* 4.1.0
+  - Fix sporadic failure with git write-tree (Thanks to @navrkald and @james-hu)
+* 4.0.0
+  - Change `tags` separator from ',' to '::' to conform to the AWS tag regex
+* 3.5.0
+  - Add ability to specify whitelist of variables to set on the environment or in tags
+* 3.4.0
+  - Add user name / email (Thanks to @JordanReiter)
+  - Add git tag information (Thanks to @navrkald)
+* 3.3.3
+  - Update dependencies thanks to dependabot
+* 3.3.2
+  - Fixed issue with sporadic command failures (Thanks to @iamakulov)
+* 3.3.1
+  - Changed approach for finding repository name, to fix plugin on Windows
+* 3.3.0
+  - Added repository name (Thanks to @iDVB)
 * 3.2.0
   - Added a describeLight git variable, which allows use of lightweight tags (Thanks to @domroutley)
 * 3.1.1

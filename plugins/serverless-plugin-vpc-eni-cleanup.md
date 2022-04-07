@@ -4,23 +4,21 @@ title: Serverless Plugin Vpc Eni Cleanup
 repo: medikoo/serverless-plugin-vpc-eni-cleanup
 homepage: 'https://github.com/medikoo/serverless-plugin-vpc-eni-cleanup'
 description: 'Automatic cleanup of VPC network interfaces on stage removal'
-stars: 5
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 3
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 5
-issues: 3
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
 
 
-[![*nix build status][nix-build-image]][nix-build-url]
-[![Windows build status][win-build-image]][win-build-url]
+[![Build status][build-image]][build-url]
 [![Tests coverage][cov-image]][cov-url]
-![Transpilation status][transpilation-image]
 [![npm version][npm-image]][npm-url]
 
 # serverless-plugin-vpc-eni-cleanup
@@ -46,7 +44,7 @@ Activate plugin in `serverless.yml`
 
 ```yaml
 plugins:
- - serverless-plugin-vpc-eni-cleanup
+  - serverless-plugin-vpc-eni-cleanup
 ```
 
 Following IAM policy needs to be ensured for plugin to work without issues
@@ -71,12 +69,9 @@ That's it. Having that, with every `sls remove` operation plugin will attempt to
 npm test
 ```
 
-[nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/serverless-plugin-vpc-eni-cleanup/branches/master/shields_badge.svg
-[nix-build-url]: https://semaphoreci.com/medikoo-org/serverless-plugin-vpc-eni-cleanup
-[win-build-image]: https://ci.appveyor.com/api/projects/status/x5rse1pkowe7ww4s?svg=true
-[win-build-url]: https://ci.appveyor.com/project/medikoo/serverless-plugin-vpc-eni-cleanup
+[build-image]: https://github.com/medikoo/serverless-plugin-vpc-eni-cleanup/workflows/Integrate/badge.svg
+[build-url]: https://github.com/medikoo/serverless-plugin-vpc-eni-cleanup/actions?query=workflow%3AIntegrate
 [cov-image]: https://img.shields.io/codecov/c/github/medikoo/serverless-plugin-vpc-eni-cleanup.svg
 [cov-url]: https://codecov.io/gh/medikoo/serverless-plugin-vpc-eni-cleanup
-[transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
 [npm-image]: https://img.shields.io/npm/v/serverless-plugin-vpc-eni-cleanup.svg
 [npm-url]: https://www.npmjs.com/package/serverless-plugin-vpc-eni-cleanup

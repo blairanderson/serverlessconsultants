@@ -4,13 +4,13 @@ title: Serverless Ssm Fetch
 repo: gozup/serverless-ssm-fetch
 homepage: 'https://github.com/gozup/serverless-ssm-fetch'
 description: 'Sets &quot;AWS Systems Manager Parameter Store (SSM)&quot; parameters into functions&#39; environment variables.'
-stars: 15
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 15
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -29,9 +29,20 @@ Before using this plugin you must have set your parameters into [AWS System Mana
 * ssm:Get*
 * ssm:List*
 
+## Versions
+
+* For serverless framework **v2**: use serverless-ssm-fetch@**1.x**
+* For serverless framework **v3**: use serverless-ssm-fetch@**2.x**
+
+
 ## Setup
 
-First, you have to set `serverless-ssm-fetch` plugin in your `serverless.yml` file.
+First, you have to set `serverless-ssm-fetch` plugin by running: 
+```
+serverless plugin install --name serverless-ssm-fetch
+```
+
+This will install the required npm package and add the plugin to your `serverless.yml` file.
 ```yaml
 ...
 

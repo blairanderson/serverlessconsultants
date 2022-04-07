@@ -3,6 +3,6 @@
 layout: topic
 topic: tree-shaking
 title: tree-shaking Serverless Plugins
-description: '1 tree-shaking ServerLess Plugins'
-count: 1
+description: '2 tree-shaking ServerLess Plugins'
+count: 2
 ---

@@ -4,13 +4,13 @@ title: Serverless Plugin Scripts
 repo: mvila/serverless-plugin-scripts
 homepage: 'https://github.com/mvila/serverless-plugin-scripts'
 description: 'Add scripting capabilities to the Serverless Framework'
-stars: 64
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 5
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 64
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -20,6 +20,10 @@ issues_diff: 0
 # serverless-plugin-scripts [![npm version](https://img.shields.io/npm/v/serverless-plugin-scripts.svg)](https://www.npmjs.com/package/serverless-plugin-scripts)
 
 Add scripting capabilities to the [Serverless Framework](https://serverless.com/framework/).
+
+## Caution
+
+**This project is in maintenance mode, and it will not get any new features.**
 
 ## Installation
 

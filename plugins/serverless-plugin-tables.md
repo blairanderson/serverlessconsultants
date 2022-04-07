@@ -4,13 +4,13 @@ title: Serverless Plugin Tables
 repo: chris-feist/serverless-plugin-tables
 homepage: 'https://github.com/chris-feist/serverless-plugin-tables'
 description: 'Easily configure table resources, such as DynamoDB'
-stars: 5
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -48,10 +48,6 @@ This [Serverless][link-serverless] plugin makes adding tables to your service fi
 Install the dependency:
 ```sh
 yarn add -D serverless-plugin-tables
-```
-or
-```sh
-npm install -D serverless-plugin-tables
 ```
 
 Add `serverless-plugin-tables` to your `serverless.yml` file:

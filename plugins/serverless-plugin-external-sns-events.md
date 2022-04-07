@@ -4,14 +4,14 @@ title: Serverless Plugin External Sns Events
 repo: silvermine/serverless-plugin-external-sns-events
 homepage: 'https://github.com/silvermine/serverless-plugin-external-sns-events'
 description: 'Add ability for functions to use existing or external SNS topics as an event source'
-stars: 24
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 9
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 24
-issues: 3
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -48,7 +48,7 @@ NOTE: at this time, it is assumed that the topic is in the same account and
 region as the Lambda function itself. That can be changed in the future if
 needed - feel free to open an issue, and preferably submit a pull request.
 
-```
+```yaml
 functions:
    doSomething:
       name: ${self:service}-${self:provider.stage}-doSomething

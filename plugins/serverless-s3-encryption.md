@@ -4,13 +4,13 @@ title: Serverless S3 Encryption
 repo: tradle/serverless-s3-encryption
 homepage: 'https://github.com/tradle/serverless-s3-encryption'
 description: 'Set or remove the encryption settings on your s3 buckets'
-stars: 5
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 5
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0

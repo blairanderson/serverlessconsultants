@@ -4,14 +4,14 @@ title: Serverless Plugin Optimize
 repo: FidelLimited/serverless-plugin-optimize
 homepage: 'https://github.com/FidelLimited/serverless-plugin-optimize'
 description: 'Bundle with Browserify, transpile with Babel to ES5 and minify with Uglify your Serverless functions.'
-stars: 83
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 15
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 83
-issues: 12
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -30,7 +30,7 @@ This plugin is a child of the great [serverless-optimizer-plugin](https://github
 
 **Requirements:**
 * Serverless *v1.12.x* or higher.
-* AWS provider and nodejs4.3/6.10/8.10 runtimes
+* AWS provider and nodejs4.3/6.10/8.10/10.x/12.x/14.x runtimes
 
 ## Setup
 

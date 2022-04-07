@@ -4,14 +4,14 @@ title: Serverless Tag Api Gateway
 repo: gfragoso/serverless-tag-api-gateway
 homepage: 'https://github.com/gfragoso/serverless-tag-api-gateway'
 description: 'Serverless plugin to tag API Gateway'
-stars: 4
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 4
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---

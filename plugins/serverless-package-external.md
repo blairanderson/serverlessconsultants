@@ -4,13 +4,13 @@ title: Serverless Package External
 repo: epsagon/serverless-package-external
 homepage: 'https://github.com/epsagon/serverless-package-external'
 description: 'A Serverless plugin to add external folders to the deploy package'
-stars: 17
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 1
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 17
+watchers: 0
 issues: 0
 issues_trend: 
 issues_diff: 0
@@ -72,7 +72,7 @@ In handler.py, external code can be imported:
 ```py
 from common.resource import shared_resource
 ```
-
+ 
 #### Licensing
 
 serverless-package-external is licensed under the [MIT License](./LICENSE.txt).

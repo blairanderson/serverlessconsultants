@@ -4,33 +4,52 @@ title: Serverless Rust
 repo: softprops/serverless-rust
 homepage: 'https://github.com/softprops/serverless-rust'
 description: 'Deploy Rustlang applications to AWS Lambda'
-stars: 102
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 7
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 102
-issues: 4
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
 
 
-# serverless rust [![Build Status](https://travis-ci.org/softprops/serverless-rust.svg?branch=master)](https://travis-ci.org/softprops/serverless-rust) [![npm](https://img.shields.io/npm/v/serverless-rust.svg)](https://www.npmjs.com/package/serverless-rust)
+<div align="center">
+   ⚡ 🦀
+</div>
 
+<h1 align="center">
+  serverless-rust
+</h1>
 
-> A ⚡ [Serverless framework](https://serverless.com/framework/) ⚡ plugin for [Rustlang](https://www.rust-lang.org/en-US/) applications 🦀
+<p align="center">
+   A ⚡ <a href="https://www.serverless.com/framework/docs/">Serverless framework</a> ⚡ plugin for <a href="https://www.rust-lang.org/">Rustlang</a> applications
+</p>
+
+<div align="center">
+  <a href="https://github.com/softprops/serverless-rust/actions">
+    <img alt="GitHub actions build badge" src="https://github.com/softprops/serverless-rust/workflows/Main/badge.svg"/>
+  </a>
+  <a href="https://www.npmjs.com/package/serverless-rust">
+    <img alt="npm release badge" src="https://img.shields.io/npm/v/serverless-rust.svg"/>
+  </a>
+</div>
+
+<br />
 
 ## 📦 Install
 
-Install the plugin with npm
+Install the plugin inside your serverless project with npm.
 
 ```sh
 $ npm i -D serverless-rust
 ```
+💡The `-D` flag adds it to your development dependencies in npm speak
 
-💡 This serverless plugin assumes you are building Rustlang lambdas targetting the AWS Lambda "provided" runtime. The [AWS Lambda Rust Runtime](https://github.com/awslabs/aws-lambda-rust-runtime) makes this easy.
+💡 This plugin assumes you are building Rustlang lambdas targeting the AWS Lambda "provided" runtime. The [AWS Lambda Rust Runtime](https://github.com/awslabs/aws-lambda-rust-runtime) makes this easy.
 
 Add the following to your serverless project's `serverless.yml` file
 
@@ -40,8 +59,8 @@ provider:
   name: aws
   runtime: rust
 plugins:
-  # this adds informs servleress to use
-  # the serverless-rust plugin
+  # this registers the plugin
+  # with serverless
   - serverless-rust
 # creates one artifact for each function
 package:
@@ -58,7 +77,9 @@ functions:
           method: GET
 ```
 
-> 💡 The Rust Lambda runtime requires a binary named `bootstrap`. This plugin renames the binary cargo builds to `bootstrap` for you before packaging. You do **not** need to do this manually in your Cargo configuration.
+> 💡 The Rust Lambda runtime requires a binary named `bootstrap`. This plugin renames the binary cargo builds to `bootstrap` for you. You do **not** need to do this manually in your `Cargo.toml` configuration file.
+
+The default behavior is to build your lambda inside a docker container. Make sure you have a docker daemon running if you are not opting into the dockerless mode.
 
 ## 🖍️ customize
 
@@ -67,21 +88,79 @@ a custom section of your serverless.yaml configuration
 
 ```yaml
 custom:
-  # this section allows for customization of the default
+  # this section customizes of the default
   # serverless-rust plugin settings
   rust:
     # flags passed to cargo
     cargoFlags: '--features enable-awesome'
     # custom docker tag
     dockerTag: 'some-custom-tag'
+    #  custom docker image
+    dockerImage: 'dockerUser/dockerRepo'
 ```
+
+### 🥼 (experimental) local builds
+
+While it's useful to have a build environment that matches your deployment
+environment, dockerized builds come with some notable tradeoffs.
+
+The external dependency on docker itself often causes friction as an added dependency to your build.
+
+Depending on a docker image limits which versions of rust you can build with. The default docker image tracks **stable rust**. Some users might wish to try unstable versions of rust before they stabilize. Local builds enable that.
+
+If you wish to build lambda's locally, use the `dockerless` configuration setting. 
+
+```diff
+custom:
+  # this section allows for customization of the default
+  # serverless-rust plugin settings
+  rust:
+    # flags passed to cargo
+    cargoFlags: '--features enable-awesome'
+    # experimental! when set to true, artifacts are built locally outside of docker
++   dockerless: true
+
+    # when using local builds (dockerless), optionally provide a different target and linker for the compiler
+    # for example, allow local running on ARM macs
+    target: aarch64-apple-darwin
+    linker: clang
+```
+
+The following assumes that you have not specified a different target or linker. If you do, make sure have that you have installed the specified target (via `rustup`) and linker.
+
+This will build and link your lambda as a static binary outside a container that can be deployed in to the lambda execution environment using [MUSL](https://doc.rust-lang.org/edition-guide/rust-2018/platform-and-target-support/musl-support-for-fully-static-binaries.html). The aim is that in future releases, this might become the default behavior.
+
+In order to use this mode its expected that you install the `x86_64-unknown-linux-musl` target on all platforms locally with
+
+```sh
+$ rustup target add x86_64-unknown-linux-musl
+```
+
+On linux platforms, you will need to install musl-tools
+
+```sh
+$ sudo apt-get update && sudo apt-get install -y musl-tools
+```
+
+On Mac OSX, you will need to install a MUSL cross compilation toolchain
+
+```sh
+$ brew install filosottile/musl-cross/musl-cross
+```
+
+Using MUSL comes with some other notable tradeoffs. One of which is complications that arise when depending on dynamically linked dependencies.
+
+* With OpenSSL bindings which you can safely replace is with [rustls](https://github.com/ctz/rustls) or [vendor it](https://docs.rs/openssl/0.10.29/openssl/#vendored)
+* Other limitations are noted [here](https://github.com/KodrAus/rust-cross-compile#limitations).
+
+If you find other MUSL specific issues, please report them by [opening an issue](https://github.com/softprops/serverless-rust/issues/new?template=bug_report.md).
 
 ### 🎨 Per function customization
 
 If your serverless project contains multiple functions, you may sometimes
 need to customize the options above at the function level. You can do this
 by defining a `rust` key with the same options inline in your function
-specficiation.
+specification.
 
 ```yaml
 functions:
@@ -115,7 +194,7 @@ $ npx serverless invoke local -f hello -d '{"hello":"world"}'
 $ npx serverless deploy
 ```
 
-### invoke your lambas in the cloud directly
+### invoke your lambdas in the cloud directly
 
 ```sh
 $ npx serverless invoke -f hello -d '{"hello":"world"}'
@@ -127,14 +206,15 @@ $ npx serverless invoke -f hello -d '{"hello":"world"}'
 $ npx serverless logs -f hello
 ```
 
-
 ## 🏗️ serverless templates
 
-### 0.2.*
+### ^0.2.*
 
 * a minimal echo application - https://github.com/softprops/serverless-aws-rust
 * a minimal http application - https://github.com/softprops/serverless-aws-rust-http
-* a minimal example multi-function application - https://github.com/softprops/serverless-aws-rust-multi
+* a minimal multi-function application - https://github.com/softprops/serverless-aws-rust-multi
+* a minimal apigateway websocket application - https://github.com/softprops/serverless-aws-rust-websockets
+* a minimal kinesis application - https://github.com/softprops/serverless-aws-rust-kinesis
 
 ### 0.1.*
 
@@ -144,4 +224,4 @@ Older versions targeted the python 3.6 AWS Lambda runtime and [rust crowbar](htt
 * multi function lando api gateway application - https://github.com/softprops/serverless-multi-lando
 * crowbar cloudwatch scheduled lambda application - https://github.com/softprops/serverless-crowbar
 
-Doug Tangren (softprops) 2018
+Doug Tangren (softprops) 2018-2019

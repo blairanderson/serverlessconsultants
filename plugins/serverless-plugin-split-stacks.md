@@ -4,14 +4,14 @@ title: Serverless Plugin Split Stacks
 repo: dougmoscrop/serverless-plugin-split-stacks
 homepage: 'https://github.com/dougmoscrop/serverless-plugin-split-stacks'
 description: 'Migrate certain resources to nested stacks'
-stars: 81
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 18
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 81
-issues: 14
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -30,6 +30,7 @@ custom:
   splitStacks:
     perFunction: false
     perType: true
+    perGroupFunction: false
 ```
 
 ## Migration Strategies
@@ -42,6 +43,40 @@ This splits resources off in to a nested stack dedicated to the associated Lambd
 
 This moves resources in to a nested stack for the given resource type. If `Per Lambda` is enabled, it takes precedence over `Per Type`.
 
+### Per Lambda Group
+
+This splits resources off in to a nested stack dedicated to a set of Lambda functions and associated resources. If `Per Lambda` or `Per Type` is enabled, it takes precedence over `Per Lambda Group`. In order to control the number of nested stacks, following configurations are needed:
+
+```yaml
+custom:
+  splitStacks:
+    nestedStackCount: 20 # Controls the number of created nested stacks
+    perFunction: false
+    perType: false
+    perGroupFunction: true
+```
+
+Once set, the `nestedStackCount` configuration should never be changed because the only reliable method of changing it later on is to recreate the deployment from scratch.
+
+## Concurrency
+
+In order to avoid `API rate limit` errors, it is possible to configure the plugin in 2 different ways:
+ * Set nested stacks to depend on each others.
+ * Set resources in the nested stack to depend on each others.
+
+This feature comes with a 2 new configurations, `stackConcurrency` and `resourceConcurrency` :
+
+
+```yaml
+custom:
+  splitStacks:
+    perFunction: true
+    perType: false
+    perGroupFunction: false
+    stackConcurrency: 5 # Controls if enabled and how much stacks are deployed in parallel. Disabled if absent.
+    resourceConcurrency: 10 # Controls how much resources are deployed in parallel. Disabled if absent.
+```
+
 ## Limitations
 
 This plugin is not a substitute for fine-grained services - try to limit the size of your service. This plugin has a hard limit of 200 sub-stacks and does not try to create any kind of tree of nested stacks.
@@ -50,7 +85,7 @@ This plugin is not a substitute for fine-grained services - try to limit the siz
 
 If you create a file in the root of your Serverless project called `stacks-map.js` this plugin will load it.
 
-This file can customize a few things.
+This file can customize migrations, either by exporting a simple map of resource type to migration, or a function that can have whatever logic you want.
 
 ```javascript
 module.exports = {
@@ -59,14 +94,22 @@ module.exports = {
 ```
 
 ```javascript
-const ServerlessPluginSplitStacks = require('serverless-plugin-split-stacks');
-
-ServerlessPluginSplitStacks.resolveMigration = function (resource, logicalId, serverless) {
+module.exports = (resource, logicalId) => {
   if (logicalId.startsWith("Foo")) return { destination: 'Foo' };
 
-  // Fallback to default:
-  return this.stacksMap[resource.Type];
+  // Falls back to default
 };
 ```
 
+You can also point to your custom splitter from the `custom` block in your serverless file:
+```
+custom:
+  splitStacks:
+    custom: path/to/your/splitter.js
+```
+
 __Be careful when introducing any customizations to default config. Many kind of resources (as e.g. DynamoDB tables) cannot be freely moved between CloudFormation stacks (that can only be achieved via full removal and recreation of the stage)__
+
+### Force Migration
+
+Custom migrations can specify `{ force: true }` to force the migration of an existing resource in to a new stack. BE CAREFUL. This will cause a resource to be deleted and recreated. It may not even work if CloudFormation tries to create the new one before deleting the old one and they have a name or some other unique property that cannot have two resources existing at the same time. It can also mean a small window of downtime during this period, for example as an `AWS::Lambda::Permission` is deleted/recreated calls may be denied until IAM sorts things out.

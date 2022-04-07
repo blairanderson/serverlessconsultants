@@ -4,14 +4,14 @@ title: Serverless Api Cloudfront
 repo: Droplr/serverless-api-cloudfront
 homepage: 'https://github.com/Droplr/serverless-api-cloudfront'
 description: 'Plugin that adds CloudFront distribution in front of your API Gateway for custom domain, CDN caching and access log.'
-stars: 101
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 25
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 101
-issues: 7
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -122,12 +122,12 @@ priceClass: PriceClass_All
 
 * [`minimumProtocolVersion`][minimum-protocol-version] can be `TLSv1` (default), `TLSv1_2016`, `TLSv1.1_2016`, `TLSv1.2_2018` or `SSLv3`:
 
-
 ```
 minimumProtocolVersion: TLSv1
 ```
 
 [minimum-protocol-version]: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-MinimumProtocolVersion
+
 
 ### IAM Policy
 
@@ -142,3 +142,7 @@ More specifically this plugin needs the following policies attached:
 * `cloudfront:TagResource`
 
 You can read more about IAM profiles and policies in the [Serverless documentation](https://serverless.com/framework/docs/providers/aws/guide/credentials#creating-aws-access-keys).
+
+## Error troubleshooting
+
+* Make sure you have at least one http event otherwise you'll get ```The CloudFormation template is invalid: Template format error: Unresolved resource dependencies [ApiGatewayRestApi] in the Resources block of the template```

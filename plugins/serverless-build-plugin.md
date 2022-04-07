@@ -4,18 +4,22 @@ title: Serverless Build Plugin
 repo: nfour/serverless-build-plugin
 homepage: 'https://github.com/nfour/serverless-build-plugin'
 description: 'A Node.js focused build plugin for serverless.'
-stars: 41
+stars: 0
 stars_trend: 
 stars_diff: 0
-forks: 12
+forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 41
-issues: 8
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
 
+
+# NOTICE: No longer maintained.
+
+----------
 
 [![NPM](https://img.shields.io/npm/v/serverless-build-plugin.svg)](https://nodei.co/npm/serverless-build-plugin/) &nbsp; [![Build Status](https://travis-ci.org/nfour/serverless-build-plugin.svg?branch=master)](https://travis-ci.org/nfour/serverless-build-plugin)
 

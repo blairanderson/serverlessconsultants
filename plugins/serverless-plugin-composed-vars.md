@@ -4,14 +4,14 @@ title: Serverless Plugin Composed Vars
 repo: chris-feist/serverless-plugin-composed-vars
 homepage: 'https://github.com/chris-feist/serverless-plugin-composed-vars'
 description: 'A plugin that composes custom and environment variables based on the deployment stage'
-stars: 3
+stars: 0
 stars_trend: 
 stars_diff: 0
 forks: 0
 forks_trend: 
 forks_diff: 0
-watchers: 3
-issues: 1
+watchers: 0
+issues: 0
 issues_trend: 
 issues_diff: 0
 ---
@@ -30,10 +30,6 @@ This plugin is [Serverless][link-serverless] variables reimagined, making them c
 
 ## Installation
 
-```sh
-npm install -D serverless-plugin-composed-vars
-```
-or
 ```sh
 yarn add -D serverless-plugin-composed-vars
 ```
